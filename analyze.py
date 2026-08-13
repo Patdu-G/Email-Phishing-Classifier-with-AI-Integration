@@ -12,6 +12,17 @@ URGENCY_KEYWORDS = [
     "we miss you", "expire", "final notice", "don't miss"
 ]
 
+def check_auth_headers(msg):
+    """Extract SPF/DKIM/DMARC verdicts from Authentication-Results header."""
+    auth_header = msg.get("Authentication-Results", "")
+    
+    results = {}
+    for mechanism in ["spf", "dkim", "dmarc"]:
+        match = re.search(rf"{mechanism}=(\w+)", auth_header, re.IGNORECASE)
+        results[mechanism] = match.group(1).lower() if match else "none"
+    
+    return results
+
 def decode_str(s):
     if s is None:
         return ""
@@ -32,6 +43,9 @@ def analyze_email(filename):
 
     print("Subject:", decode_str(msg["subject"]))
     print("From:", decode_str(msg["from"]))
+
+    auth_results = check_auth_headers(msg)
+    print("Auth results (SPF/DKIM/DMARC):", auth_results)
 
     body = ""
     html_body = None
