@@ -35,17 +35,22 @@ def decode_str(s):
             decoded += text
     return decoded
 
-def analyze_email(filename):
-    print(f"\n=========== Analyzing: {filename} ===========")
+def analyze_email(filename, verbose=True):
+    if verbose:
+        print(f"\n=========== Analyzing: {filename} ===========")
 
     with open(filename, "rb") as f:
         msg = email.message_from_binary_file(f)
 
-    print("Subject:", decode_str(msg["subject"]))
-    print("From:", decode_str(msg["from"]))
+    subject = decode_str(msg["subject"])
+    sender = decode_str(msg["from"])
+    if verbose:
+        print("Subject:", subject)
+        print("From:", sender)
 
     auth_results = check_auth_headers(msg)
-    print("Auth results (SPF/DKIM/DMARC):", auth_results)
+    if verbose:
+        print("Auth results (SPF/DKIM/DMARC):", auth_results)
 
     body = ""
     html_body = None
@@ -58,23 +63,27 @@ def analyze_email(filename):
     else:
         body = msg.get_payload(decode=True).decode(errors="ignore")
 
-    print("\n--- Body ---")
-    print(body[:500])
+    if verbose:
+        print("\n--- Body ---")
+        print(body[:500])
 
     links = re.findall(r'https?://[^\s<>"\']+', body)
-    print("\n--- Links found ---")
-    for link in links:
-        print(link)
+    if verbose:
+        print("\n--- Links found ---")
+        for link in links:
+            print(link)
 
     body_lower = body.lower()
     found_keywords = [kw for kw in URGENCY_KEYWORDS if kw in body_lower]
-    print("\n--- Urgency keywords found ---")
-    print(found_keywords)
+    if verbose:
+        print("\n--- Urgency keywords found ---")
+        print(found_keywords)
 
-    print("\n--- Link mismatches ---")
+    if verbose:
+        print("\n--- Link mismatches ---")
+    mismatch_count = 0
     if html_body:
         soup = BeautifulSoup(html_body, "html.parser")
-        mismatch_count = 0
         for a_tag in soup.find_all("a", href=True):
             href = a_tag["href"]
             display_text = a_tag.get_text().strip()
@@ -83,12 +92,46 @@ def analyze_email(filename):
                 text_domain = display_text.replace("http://", "").replace("https://", "").split("/")[0]
                 if href_domain and text_domain and href_domain != text_domain:
                     mismatch_count += 1
-                    print(f"MISMATCH: text says '{text_domain}' but link goes to '{href_domain}'")
-        print(f"Total mismatches: {mismatch_count}")
+                    if verbose:
+                        print(f"MISMATCH: text says '{text_domain}' but link goes to '{href_domain}'")
     else:
-        print("No HTML body found.")
+        if verbose:
+            print("No HTML body found.")
+    if verbose:
+        print(f"Total mismatches: {mismatch_count}")
+
+    return {
+        "filename": filename,
+        "subject": subject,
+        "sender": sender,
+        "auth_results": auth_results,
+        "num_links": len(links),
+        "num_urgency_keywords": len(found_keywords),
+        "urgency_keywords_found": found_keywords,
+        "num_link_mismatches": mismatch_count,
+    }
+
+def extract_features(email_data):
+    """Convert analyze_email()'s output dict into a numeric feature vector."""
+    auth = email_data["auth_results"]
+
+    features = {
+        "spf_pass": 1 if auth["spf"] == "pass" else 0,
+        "dkim_pass": 1 if auth["dkim"] == "pass" else 0,
+        "dmarc_pass": 1 if auth["dmarc"] == "pass" else 0,
+        "num_links": email_data["num_links"],
+        "num_urgency_keywords": email_data["num_urgency_keywords"],
+        "num_link_mismatches": email_data["num_link_mismatches"],
+    }
+    return features
 
 
-files_to_analyze = ["sample.eml", "sample1.eml"]
+files_to_analyze = [
+    "emails/legit/legit_sample.eml",
+    "emails/legit/legit_sample1.eml",
+]
 for filename in files_to_analyze:
-    analyze_email(filename)
+    data = analyze_email(filename)
+    features = extract_features(data)
+    print("\n--- Feature vector ---")
+    print(features)
