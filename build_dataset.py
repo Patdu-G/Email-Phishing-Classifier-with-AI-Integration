@@ -46,5 +46,4 @@ def build_dataset():
             print(f"  ...and {len(errors) - 10} more")
 
 if __name__ == "__main__":
-    for f in files_to_analyze:
-        analyze_email(f)
+    build_dataset()

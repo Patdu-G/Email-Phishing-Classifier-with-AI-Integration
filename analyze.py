@@ -125,13 +125,13 @@ def extract_features(email_data):
     }
     return features
 
-
-files_to_analyze = [
-    "emails/legit/legit_sample.eml",
-    "emails/legit/legit_sample1.eml",
-]
-for filename in files_to_analyze:
-    data = analyze_email(filename)
-    features = extract_features(data)
-    print("\n--- Feature vector ---")
-    print(features)
+if __name__ == "__main__":
+    files_to_analyze = [
+        "emails/legit/legit_sample.eml",
+        "emails/legit/legit_sample1.eml",
+    ]
+    for filename in files_to_analyze:
+        data = analyze_email(filename)
+        features = extract_features(data)
+        print("\n--- Feature vector ---")
+        print(features)

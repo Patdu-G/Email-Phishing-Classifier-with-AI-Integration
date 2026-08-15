@@ -1,0 +1,1625 @@
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:5e09:b0:29b:179e:1f84 with SMTP id q9csp1630800rwn;
+        Mon, 15 Jun 2026 20:49:43 -0700 (PDT)
+X-Received: by 2002:a05:6a00:12d9:b0:842:5719:455b with SMTP id d2e1a72fcca58-84515562fa2mr1694841b3a.42.1781581783175;
+        Mon, 15 Jun 2026 20:49:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1781581783; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PzN41/ULL9UoV6K6+tJbK7ol/rFj4zF6F9Sp+4LbQubmG4W+WY3Bm1UAhaK79h/1FH
+         7LMHwd/6UxlwIJgVuSiHy/P+dCafs9KsWffa7LIcnlwx8V7GcMeQVZKBCWhG4BAFctP3
+         skmCAE6OgTAjL0zgewUZ8C8WV7eNUvhvfVuVakX4tWHrepERoXfYeKhoiL0uh20NtMKi
+         Ya+d0MwlQLzlfShqjsXcQ4PNCqb1lMkAHutSyOAR6/FOmPIc6Bdd325bDKjvqNDxm6fh
+         4hYqd2DVShHzmCpRIB64Wezs0yEl6cvBkQXKYSLYJ7k3ytJ4oixfIDzGjdcci/NppbOd
+         haqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=7aqVR6e+/ex+4lBgfl0kt+jjWeT7kajpKvvV0NjiZYw=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=Xl4Oy8goq+X553Lxv8Qe+OtTy/MOuLKHvH465mE6CuRehC0yNtzsKCOEDTKIeH0m2N
+         wfTb9EjAoTmuG+ny91aLHtUOQEHBZcLOxKCWMKz+kn1BivYbYwWD8G4uyrn5UPM5J49D
+         mSQgZr1kO6hNN7AQyz5uWJ6SA8CMuXxol/xdZc6Q5ejpAcYJ6WBi8Ez5kU5PtPVOoTLx
+         9DNikbo22r3Dk3y1YDTPz07CDwObFgDduNZ1BUswFohMa2qGhRAiv1xF+JwMt9qWBxAM
+         33Wu6S+ZXsynpWCtpQGBLxKDtDK5rwRKWoYM7jiDUw/iI9kGYyleczgo+1rKmaHsa3CX
+         NCUA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@lalamove.com header.s=s1 header.b=i+URolu+;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YQ92MAe+;
+       spf=pass (google.com: domain of bounces+2003827-6285-patriogabrielpatdu=gmail.com@em6447.lalamove.com designates 167.89.50.85 as permitted sender) smtp.mailfrom="bounces+2003827-6285-patriogabrielpatdu=gmail.com@em6447.lalamove.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=lalamove.com
+Return-Path: <bounces+2003827-6285-patriogabrielpatdu=gmail.com@em6447.lalamove.com>
+Received: from o1.em.lalamove.com (o1.em.lalamove.com. [167.89.50.85])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-8434b00d4easi22476051b3a.259.2026.06.15.20.49.42
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 15 Jun 2026 20:49:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+2003827-6285-patriogabrielpatdu=gmail.com@em6447.lalamove.com designates 167.89.50.85 as permitted sender) client-ip=167.89.50.85;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@lalamove.com header.s=s1 header.b=i+URolu+;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YQ92MAe+;
+       spf=pass (google.com: domain of bounces+2003827-6285-patriogabrielpatdu=gmail.com@em6447.lalamove.com designates 167.89.50.85 as permitted sender) smtp.mailfrom="bounces+2003827-6285-patriogabrielpatdu=gmail.com@em6447.lalamove.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=lalamove.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lalamove.com;
+	h=content-type:date:from:mime-version:subject:to:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=s1; t=1781581782;
+	bh=7aqVR6e+/ex+4lBgfl0kt+jjWeT7kajpKvvV0NjiZYw=;
+	b=i+URolu+UQLQflWdkK3yF3NbOjM3JmgXIOIwt/4fPRZ6T6mxieBVDTGulgDGMPLGetS+
+	jaOZGyXON+Qoo1tYCpl+pG55EIqLT4yccDmqVlk1Pas98XUv8GpYjVQ6Yv1mDd7aGpNvJZ
+	YbC9uGfYNtBWmceQwBeKMKoF0atF4b4sg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:to:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=smtpapi; t=1781581782;
+	bh=7aqVR6e+/ex+4lBgfl0kt+jjWeT7kajpKvvV0NjiZYw=;
+	b=YQ92MAe+j2b8B4fWxdNBvkUEdqv3cMO++3plQ8qZW3RdBseOE+sWCpzCprCfEPvYU+aG
+	/y2HrA/YajKpx/+yGuraQ5Q4P2vwDFHSYAuBZY7iiRgvw1mUbMLX7XPIZTtrLtdM9UnBsl
+	ocaYUsevsY7oNzNk1X5bF1P2Q0OIG5LQw=
+Received: by recvd-5744f687b-9rlmj with SMTP id recvd-5744f687b-9rlmj-1-6A30C7D6-4
+	2026-06-16 03:49:42.081665603 +0000 UTC m=+4169552.560727052
+Received: from MjAwMzgyNw (unknown)
+	by geopod-ismtpd-3 (SG) with HTTP
+	id F3LRKHnCQgyh2ou6_-t81A
+	Tue, 16 Jun 2026 03:49:42.008 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=c1e9b96b655d21abf8fe928ac4fed13258b1ee840d7c59f3b57fb11664dc
+Date: Tue, 16 Jun 2026 03:49:42 +0000 (UTC)
+From: Lalamove <no-reply@lalamove.com>
+Mime-Version: 1.0
+Message-ID: <F3LRKHnCQgyh2ou6_-t81A@geopod-ismtpd-3>
+Subject: Your Delivery Receipt (Order #3518890760772743564) from Lalamove
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EgbOSweWaAojBji4c1YG82cvXasgapEmNWrquuK8XGYiKMmAo0DSJPNXqc?=
+ =?us-ascii?Q?rDllCDniaLNf1ydigV+h5715rmdNGMfIcoSNsXY?=
+ =?us-ascii?Q?VW0AytaxKr4nQ95tLx5HCXm5pl0nIX9=2FE43EVOp?=
+ =?us-ascii?Q?EAV9okA21RysKPuPKuAVmpVul+E7MurjNnp=2FRCw?=
+ =?us-ascii?Q?24RNQz2yB5PVRY4FqcP5INwlMzP1T7HKuqKam+B?=
+ =?us-ascii?Q?OBpSz=2FYqiUYxM2fapeX=2FDYc93EYS=2FUD6Lp3Iy6a?=
+ =?us-ascii?Q?2jBh?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprBOxB=2FnZ9XKS0EIl?=
+ =?us-ascii?Q?ubwSQtyEORnhNdERt9YsNOWBtqOaOaXR=2FBWmWAk?=
+ =?us-ascii?Q?YqZZyZQwNAMCRARlRqeU0bYn82wVXzsUZe91V8x?=
+ =?us-ascii?Q?+2TDb3k6U71VeJFVdR1Y1dVqoULu9KGC3Got1gt?=
+ =?us-ascii?Q?XBT=2FsxdHY281lM4AqpI1lOUaC2k8lLx3p+kb1eS?=
+ =?us-ascii?Q?NWr6F0fhROI16n3XclLB5KXM45g9o=2FYOryPMvvO?=
+ =?us-ascii?Q?h9QqpRag6ql9f0OUIR5xzmWXvDYgViONHbXyFML?=
+ =?us-ascii?Q?Y7K3KMLQNz+xYpbP7yEQ9pBNyBXZQB8xsW5pRSd?=
+ =?us-ascii?Q?tfB=2FWin3+Z3wdNnENGIZsn6DEsrJz1XCSnsqdoX?=
+ =?us-ascii?Q?NkklR8tWq=2FCF2PgZJ7jRByDbnyQILZUMc7+Xg2x?=
+ =?us-ascii?Q?ZOd8lLCa+mKQ83XJRt4jPltKWQbc7lpMJDYVgXk?=
+ =?us-ascii?Q?ZfWhJKsNSyytZJcGCjvwca=2FyzUN4EmDF9fG8lc7?=
+ =?us-ascii?Q?Q84G7QeQ4gO9FrqO06uujZSclxvYvBcj0GQXZPD?=
+ =?us-ascii?Q?=2FvdOAXtFXzYqsR45jm0EzxcijYCecw=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.KvjC5ksZrDAqDfJI8L9avg==
+
+--c1e9b96b655d21abf8fe928ac4fed13258b1ee840d7c59f3b57fb11664dc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Thanks for choosing Lalamove!
+
+Your Delivery Receipt
+
+Order ID: 3518890760772743564
+
+
+Tue, Jun 16 2026, 11:49 AM
+
+
+Motorcycle
+
+Total Price (PHP)
+
+ =E2=82=B161.00
+
+
+
+
+Sabon Depot - Sambat Tanauan
+
+Recipient: Retita
+
+
+
+PUP Sto. Tomas, Batangas Branch
+
+Recipient: Patrio
+
+
+
+Marvin Jandusay
+
+4.88
+
+Price Details
+
+
+Delivery fee
+
+=E2=82=B159.00
+
+
+Admin fee
+
+=E2=82=B12.00
+
+
+Total Price
+
+ =E2=82=B161.00
+
+Price shown is non-inclusive of certain fees such as tolls/tunnels, parking=
+ or any other charges agreed upon with the driver
+
+
+
+
+
+Want to unlock benefits for every order? Check out  Lalamove Rewards.
+
+( http://em.lalamove.com/ls/click?upn=3Du001.M-2FPVPgXkXrruiYk0osQali5RbCni=
+eCjn-2BHpwmUeSiiHwJ8zoATo318OAWj7iNRthuzRY_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84T=
+mBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxWN54Pw4nECidQPlDCAkCu=
+YKHjyrCCCM3MHZ-2FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9hcWZheM9ltyz1bVRbrby=
+yFYyyWH6E5lhqX936DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq71OHonFsFQILPdvFl5GI=
+YD3Kl7p39uO7chUwmhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9lmCXQG3srHL1LJh6c6F8J=
+cKAV4rQIrvrBtRJ9Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0boWvGSTq31fanz3DRBJdvP=
+ww82484suu4TcKGlSsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25WCq3FjPdWMcSLa4KBJ-2B=
+LbSpPnaRACEWoiiLZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4EsoRTl-2BuYGH6c937FXQU=
+dX10scPScWJf9Cl4Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62xOKzu3XUTezzJJbw2JEV=
+FayuTxGsUlLWyJB70STkfcNTrl7RCVoNlT7i-2BEmG9TLyeGCbjCw9d4Y4BUrd-2FSyX8PRId9e=
+SkwoYvg53xBGifYC1oj89dcRqkJChCiZ-2FuD0Svngd1w-3D-3D )=20
+
+Lalamove<br>4th Floor Tower 2 PITX, Paranaque City
+
+
+Tax ID: 009-458-944-000
+
+
+facebook ( http://em.lalamove.com/ls/click?upn=3Du001.M-2FPVPgXkXrruiYk0osQ=
+alkFkKVlvYQOUBdrBfxC4PvjSd-2BjHDPA2FTDV70xkO-2BMHVvq7OYm7KKKMuKA3I6lrENAe-2=
+Bl6LW9AAyAgpKY1dU4E-3Dytv-_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkj=
+xd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxWN54Pw4nECidQPlDCAkCuYKHjyrCCCM3MHZ-2=
+FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9hcWZheM9ltyz1bVRbrbyyFYyyWH6E5lhqX93=
+6DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq71OHonFsFQILPdvFl5GIYD3Kl7p39uO7chUw=
+mhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9lmCXQG3srHL1LJh6c6F8JcKAV4rQIrvrBtRJ9=
+Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0boWvGSTq31fanz3DRBJdvPww82484suu4TcKGl=
+SsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25WCq3FjPdWMcSLa4KBJ-2BLbSpPnaRACEWoiiL=
+ZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4EsoRTl-2BuYGH6c937FXQUdX10scPScWJf9Cl4=
+Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62xOKzu5YlIt3DC9vIKm2calVC6KcLKLVnn5e3=
+6daCEkB2O2blmx-2B9T5MJLYpdEKYrwkXopYb1BurkyTasuZs8mPeiq-2FUZwgdo70Zfsnol9Mo=
+ax64vNnzs-2Bw7Xgta9PY-2Bg12IqWw-3D-3D ) linkedin ( http://em.lalamove.com/l=
+s/click?upn=3Du001.M-2FPVPgXkXrruiYk0osQali2aAuNRAbzM-2BvtEbCPIfjgfDnhWarEz=
+5kymjXXrfAf7xowuqnC-2BU19WTqOIiv8OMA-3D-3D6YY2_ifpdZN5Unwyz9jUhBw0jKiHiXszP=
+B84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxWN54Pw4nECidQPlDC=
+AkCuYKHjyrCCCM3MHZ-2FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9hcWZheM9ltyz1bVR=
+brbyyFYyyWH6E5lhqX936DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq71OHonFsFQILPdvF=
+l5GIYD3Kl7p39uO7chUwmhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9lmCXQG3srHL1LJh6c=
+6F8JcKAV4rQIrvrBtRJ9Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0boWvGSTq31fanz3DRB=
+JdvPww82484suu4TcKGlSsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25WCq3FjPdWMcSLa4KB=
+J-2BLbSpPnaRACEWoiiLZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4EsoRTl-2BuYGH6c937=
+FXQUdX10scPScWJf9Cl4Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62xOKzu-2BVYHl3E0O=
+c-2Bnvdvv6P9e6ANDLBMLwQJFd6ncvM-2BSu-2FJSqtVKeISMor2cZ1N4nS-2F-2F8niTXHkomy=
+7ADqsSlhXvTZCYjGIqKj30JFMerbCNKiIg995CyE-2FTk-2BPwho3iO5AWw-3D-3D ) youtube=
+ ( http://em.lalamove.com/ls/click?upn=3Du001.M-2FPVPgXkXrruiYk0osQalnZlg9F=
+3fGSIy11f-2FSYVcr5RYxu0-2FaEfCYKWNW-2F-2BVoYS7zNiISvzz-2F9bTzQttZ-2Fu8jgjch=
+Rnlv4zRmWH52-2BbZsw-3DmRu4_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkj=
+xd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxWN54Pw4nECidQPlDCAkCuYKHjyrCCCM3MHZ-2=
+FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9hcWZheM9ltyz1bVRbrbyyFYyyWH6E5lhqX93=
+6DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq71OHonFsFQILPdvFl5GIYD3Kl7p39uO7chUw=
+mhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9lmCXQG3srHL1LJh6c6F8JcKAV4rQIrvrBtRJ9=
+Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0boWvGSTq31fanz3DRBJdvPww82484suu4TcKGl=
+SsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25WCq3FjPdWMcSLa4KBJ-2BLbSpPnaRACEWoiiL=
+ZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4EsoRTl-2BuYGH6c937FXQUdX10scPScWJf9Cl4=
+Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62xOKzuz2hh07-2F-2B5uUKavehCdSK-2BrYbf=
+2LSl-2Bq7BUx-2BpWjioqJ7bakZsYFhqBFEbX25JTezk16-2FAFHDOmfUoSQc-2FtDaOfUI7rcR=
+inuyxGd70yWUdCzjKnd2UsGFulLD2Krl2edbA-3D-3D )
+
+Don&apos;t want to receive e-Receipts? Unsubscribe in Lalamove app settings=
+.
+--c1e9b96b655d21abf8fe928ac4fed13258b1ee840d7c59f3b57fb11664dc
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en">
+  <head data-id=3D"__react-email-head">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+  </head>
+
+  <body
+    data-id=3D"__react-email-body"
+    style=3D"
+      max-width: 570px;
+      margin: 52px auto;
+      font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+    "
+  >
+    <img
+      data-id=3D"react-email-img"
+      alt=3D"logo"
+      src=3D"https://luna-singapore-public.s3.ap-southeast-1.amazonaws.com/=
+luna-singapore-public/bfe-uapi-api-prd/bfe-uapi-api-prd/20220215/1003b9821c=
+8e36e7484183c5356e01364402.png"
+      style=3D"
+        display: block;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        margin: 52px auto 32px;
+        width: 144.36px;
+        height: 40px;
+      "
+    />
+    <p
+      data-id=3D"react-email-text"
+      style=3D"
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0px;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        color: #535353;
+        text-align: center;
+      "
+    >
+      Thanks for choosing Lalamove!
+    </p>
+    <table
+      align=3D"center"
+      width=3D"100%"
+      data-id=3D"__react-email-container"
+      role=3D"presentation"
+      cellspacing=3D"0"
+      cellpadding=3D"0"
+      border=3D"0"
+      style=3D"
+        max-width: 570px;
+        background: #fef0e9;
+        margin: 16px 0;
+        padding: 16px;
+      "
+    >
+      <tbody>
+        <tr style=3D"width: 100%">
+          <td>
+            <p
+              data-id=3D"react-email-text"
+              style=3D"
+                font-size: 18px;
+                line-height: 21px;
+                margin: 0px 0px 32px;
+                font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-se=
+rif;
+                font-style: normal;
+                font-weight: 700;
+                color: #303030;
+              "
+            >
+              Your Delivery Receipt
+            </p>
+            <table
+              align=3D"center"
+              width=3D"100%"
+              data-id=3D"react-email-section"
+              border=3D"0"
+              cellpadding=3D"0"
+              cellspacing=3D"0"
+              role=3D"presentation"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align=3D"center"
+                      width=3D"100%"
+                      data-id=3D"react-email-row"
+                      role=3D"presentation"
+                      cellspacing=3D"0"
+                      cellpadding=3D"0"
+                      border=3D"0"
+                    >
+                      <tbody style=3D"width: 100%">
+                        <tr style=3D"width: 100%">
+                          <td data-id=3D"__react-email-column">
+                            <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 12px;
+                                line-height: 14px;
+                                margin: 0 0 2px;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #303030;
+                                text-align: left;
+                              "
+                            >
+                              Order ID: 3518890760772743564
+                            </p>
+                                                        <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 12px;
+                                line-height: 14px;
+                                margin: 0 0 2px;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #303030;
+                                text-align: left;
+                              "
+                            >
+                              Tue, Jun 16 2026, 11:49 AM
+                            </p>
+                            <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 12px;
+                                line-height: 14px;
+                                margin: 0 0 2px;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #303030;
+                                text-align: left;
+                              "
+                            >
+                              Motorcycle
+                            </p>
+                          </td>
+                          <td data-id=3D"__react-email-column">
+                            <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 12px;
+                                line-height: 14px;
+                                margin: 0px;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #303030;
+                                text-align: right;
+                              "
+                            >
+                              Total Price (PHP)
+                            </p>
+                            <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 24px;
+                                line-height: 28px;
+                                margin: 2px 0 0;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #f16622;
+                                text-align: right;
+                              "
+                            >
+                                =E2=82=B161.00
+                            </p>
+                          </td>
+                        </tr>
+                        <tr style=3D"width: 100%">
+                          <td data-id=3D"__react-email-column"></td>
+                          <td data-id=3D"__react-email-column">
+                            <p data-id=3D"react-email-text" style=3D"
+                            font-size: 12px;
+                            line-height: 14px;
+                            margin: 0px;
+                            font-family: Roboto, RobotoDraft, Helvetica,
+                            Arial, sans-serif;
+                            font-style: normal;
+                            font-weight: 400;
+                            color: #303030;
+                            text-align: right;
+                            "></p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align=3D"center"
+              width=3D"100%"
+              data-id=3D"react-email-section"
+              style=3D"
+                margin: 14px 0 0;
+                padding: 16px;
+                border-radius: 4px;
+                background-color: #ffffff;
+              "
+              border=3D"0"
+              cellpadding=3D"0"
+              cellspacing=3D"0"
+              role=3D"presentation"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align=3D"center"
+                      width=3D"100%"
+                      data-id=3D"react-email-row"
+                      role=3D"presentation"
+                      cellspacing=3D"0"
+                      cellpadding=3D"0"
+                      border=3D"0"
+                    >
+                      <tbody style=3D"width: 100%">
+                        <tr style=3D"width: 100%">
+                          <td
+                            data-id=3D"__react-email-column"
+                            style=3D"
+                              vertical-align: top;
+                              width: 58%;
+                              margin-right: 10px;
+                              box-sizing: border-box;
+                            "
+                          >
+                            <table
+                              align=3D"center"
+                              width=3D"100%"
+                              data-id=3D"react-email-row"
+                              role=3D"presentation"
+                              cellspacing=3D"0"
+                              cellpadding=3D"0"
+                              border=3D"0"
+                            >
+                              <tbody style=3D"width: 100%">
+                                <tr style=3D"width: 100%">
+                                  <td
+                                    data-id=3D"__react-email-column"
+                                    style=3D"
+                                      border: 1px solid #f1f1f1;
+                                      border-radius: 4px;
+                                      padding: 12px;
+                                    "
+                                  >
+                                    <table
+                                      align=3D"center"
+                                      width=3D"100%"
+                                      data-id=3D"__react-email-container"
+                                      role=3D"presentation"
+                                      cellspacing=3D"0"
+                                      cellpadding=3D"0"
+                                      border=3D"0"
+                                      style=3D"
+                                        max-width: 37.5em;
+                                        padding: 0 0 4px;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr style=3D"width: 100%">
+                                          <td>
+                                            <table
+                                              align=3D"center"
+                                              width=3D"100%"
+                                              data-id=3D"react-email-row"
+                                              style=3D"margin: 0 0 16px"
+                                              role=3D"presentation"
+                                              cellspacing=3D"0"
+                                              cellpadding=3D"0"
+                                              border=3D"0"
+                                            >
+                                              <tbody style=3D"width: 100%">
+                                                <tr style=3D"width: 100%">
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                    style=3D"float: left"
+                                                  >
+                                                    <img
+                                                      data-id=3D"react-emai=
+l-img"
+                                                      alt=3D"start"
+                                                      src=3D"https://hpay-s=
+g-image.s3.ap-southeast-1.amazonaws.com/hpay-sg-image/prd/plutus/2025022514=
+4119668_84.png"
+                                                      width=3D"16"
+                                                      height=3D"16"
+                                                      style=3D"
+                                                        display: block;
+                                                        outline: none;
+                                                        border: none;
+                                                        text-decoration: no=
+ne;
+                                                        margin: 0 4px 0 0;
+                                                      "
+                                                    />
+                                                  </td>
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                    style=3D"width: 100%"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 0 0 4px;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #303030;
+                                                      "
+                                                    >
+                                                      Sabon Depot - Sambat =
+Tanauan
+                                                    </p>
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #888888;
+                                                      "
+                                                    >
+                                                      Recipient: Retita
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table
+                                              align=3D"center"
+                                              width=3D"100%"
+                                              data-id=3D"react-email-row"
+                                              style=3D"margin: 0 0 16px"
+                                              role=3D"presentation"
+                                              cellspacing=3D"0"
+                                              cellpadding=3D"0"
+                                              border=3D"0"
+                                            >
+                                              <tbody style=3D"width: 100%">
+                                                <tr style=3D"width: 100%">
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                    style=3D"float: left"
+                                                  >
+                                                    <img
+                                                      data-id=3D"react-emai=
+l-img"
+                                                      alt=3D"end"
+                                                      src=3D"https://hpay-s=
+g-image.s3.ap-southeast-1.amazonaws.com/hpay-sg-image/prd/plutus/2025022514=
+4241518_102.png"
+                                                      width=3D"16"
+                                                      height=3D"16"
+                                                      style=3D"
+                                                        display: block;
+                                                        outline: none;
+                                                        border: none;
+                                                        text-decoration: no=
+ne;
+                                                        margin: 0 4px 0 0;
+                                                      "
+                                                    />
+                                                  </td>
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                    style=3D"width: 100%"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 0 0 4px;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #303030;
+                                                      "
+                                                    >
+                                                      PUP Sto. Tomas, Batan=
+gas Branch
+                                                    </p>
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #888888;
+                                                      "
+                                                    >
+                                                      Recipient:
+                                                      Patrio
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <table
+                                      align=3D"center"
+                                      width=3D"100%"
+                                      data-id=3D"__react-email-container"
+                                      role=3D"presentation"
+                                      cellspacing=3D"0"
+                                      cellpadding=3D"0"
+                                      border=3D"0"
+                                      style=3D"
+                                        max-width: 37.5em;
+                                        padding-top: 8px;
+                                        border-top: 1px solid #f1f1f1;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr style=3D"width: 100%">
+                                          <td>
+                                            <table
+                                              align=3D"center"
+                                              width=3D"100%"
+                                              data-id=3D"react-email-sectio=
+n"
+                                              border=3D"0"
+                                              cellpadding=3D"0"
+                                              cellspacing=3D"0"
+                                              role=3D"presentation"
+                                            >
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <table
+                                                      align=3D"center"
+                                                      width=3D"100%"
+                                                      data-id=3D"react-emai=
+l-row"
+                                                      role=3D"presentation"
+                                                      cellspacing=3D"0"
+                                                      cellpadding=3D"0"
+                                                      border=3D"0"
+                                                    >
+                                                      <tbody
+                                                        style=3D"width: 100=
+%"
+                                                      >
+                                                        <tr style=3D"width:=
+ 100%">
+                                                          <td
+                                                            data-id=3D"__re=
+act-email-column"
+                                                            style=3D"float:=
+ left"
+                                                          >
+                                                            <img
+                                                              data-id=3D"re=
+act-email-img"
+                                                              alt=3D"avatar=
+"
+                                                              src=3D"https:=
+//hpay-sg-image.s3.ap-southeast-1.amazonaws.com/hpay-sg-image/prd/plutus/20=
+250224145759239_24.png"
+                                                              width=3D"28"
+                                                              height=3D"28"
+                                                              style=3D"
+                                                                display: bl=
+ock;
+                                                                outline: no=
+ne;
+                                                                border: non=
+e;
+                                                                text-decora=
+tion: none;
+                                                              "
+                                                            />
+                                                          </td>
+                                                          <td
+                                                            data-id=3D"__re=
+act-email-column"
+                                                            style=3D"width:=
+ 100%"
+                                                          >
+                                                            <table
+                                                              align=3D"cent=
+er"
+                                                              width=3D"100%=
+"
+                                                              data-id=3D"re=
+act-email-row"
+                                                              role=3D"prese=
+ntation"
+                                                              cellspacing=
+=3D"0"
+                                                              cellpadding=
+=3D"0"
+                                                              border=3D"0"
+                                                            >
+                                                              <tbody
+                                                                style=3D"
+                                                                  width: 10=
+0%;
+                                                                "
+                                                              >
+                                                                <tr
+                                                                  style=3D"
+                                                                    width: =
+100%;
+                                                                  "
+                                                                >
+                                                                  <td
+                                                                    data-id=
+=3D"__react-email-column"
+                                                                  >
+                                                                    <p
+                                                                      data-=
+id=3D"react-email-text"
+                                                                      style=
+=3D"
+                                                                        fon=
+t-size: 12px;
+                                                                        lin=
+e-height: 14px;
+                                                                        mar=
+gin: 0
+                                                                          0=
+ 0
+                                                                          4=
+px;
+                                                                        fon=
+t-family: Roboto,
+                                                                          R=
+obotoDraft,
+                                                                          H=
+elvetica,
+                                                                          A=
+rial,
+                                                                          s=
+ans-serif;
+                                                                        fon=
+t-style: normal;
+                                                                        fon=
+t-weight: 400;
+                                                                        col=
+or: #303030;
+                                                                      "
+                                                                    >
+                                                                      Marvi=
+n Jandusay
+                                                                    </p>
+                                                                  </td>
+                                                                </tr>
+                                                              </tbody>
+                                                            </table>
+                                                            <table
+                                                              align=3D"cent=
+er"
+                                                              width=3D"100%=
+"
+                                                              data-id=3D"re=
+act-email-row"
+                                                              role=3D"prese=
+ntation"
+                                                              cellspacing=
+=3D"0"
+                                                              cellpadding=
+=3D"0"
+                                                              border=3D"0"
+                                                            >
+                                                              <tbody
+                                                                style=3D"
+                                                                  width: 10=
+0%;
+                                                                "
+                                                              >
+                                                                <tr
+                                                                  style=3D"
+                                                                    width: =
+100%;
+                                                                  "
+                                                                >
+                                                                  <td
+                                                                    data-id=
+=3D"__react-email-column"
+                                                                    style=
+=3D"
+                                                                      width=
+: 10px;
+                                                                    "
+                                                                  >
+                                                                    <img
+                                                                      data-=
+id=3D"react-email-img"
+                                                                      alt=
+=3D"star"
+                                                                      src=
+=3D"https://hpay-sg-image.s3.ap-southeast-1.amazonaws.com/hpay-sg-image/prd=
+/plutus/20250224145906409_734.png"
+                                                                      width=
+=3D"8"
+                                                                      heigh=
+t=3D"8"
+                                                                      style=
+=3D"
+                                                                        dis=
+play: block;
+                                                                        out=
+line: none;
+                                                                        bor=
+der: none;
+                                                                        tex=
+t-decoration: none;
+                                                                        mar=
+gin: 1.5px
+                                                                          0
+                                                                          1=
+.5px
+                                                                          4=
+px;
+                                                                      "
+                                                                    />
+                                                                  </td>
+                                                                  <td
+                                                                    data-id=
+=3D"__react-email-column"
+                                                                  >
+                                                                    <p
+                                                                      data-=
+id=3D"react-email-text"
+                                                                      style=
+=3D"
+                                                                        fon=
+t-size: 10px;
+                                                                        lin=
+e-height: 14px;
+                                                                        mar=
+gin: 0
+                                                                          0=
+ 0
+                                                                          2=
+px;
+                                                                        fon=
+t-family: Roboto,
+                                                                          R=
+obotoDraft,
+                                                                          H=
+elvetica,
+                                                                          A=
+rial,
+                                                                          s=
+ans-serif;
+                                                                        fon=
+t-style: normal;
+                                                                        col=
+or: #fea000;
+                                                                        fon=
+t-weight: 400;
+                                                                      "
+                                                                    >
+                                                                      4.88
+                                                                    </p>
+                                                                  </td>
+                                                                </tr>
+                                                              </tbody>
+                                                            </table>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td
+                            data-id=3D"__react-email-column"
+                            style=3D"
+                              vertical-align: top;
+                              padding: 0 0 0 16px;
+                              box-sizing: border-box;
+                            "
+                          >
+                            <table
+                              align=3D"center"
+                              width=3D"100%"
+                              data-id=3D"react-email-row"
+                              role=3D"presentation"
+                              cellspacing=3D"0"
+                              cellpadding=3D"0"
+                              border=3D"0"
+                            >
+                              <tbody style=3D"width: 100%">
+                                <tr style=3D"width: 100%">
+                                  <td data-id=3D"__react-email-column">
+                                    <table
+                                      align=3D"center"
+                                      width=3D"100%"
+                                      data-id=3D"__react-email-container"
+                                      role=3D"presentation"
+                                      cellspacing=3D"0"
+                                      cellpadding=3D"0"
+                                      border=3D"0"
+                                      style=3D"max-width: 37.5em; width: 10=
+0%"
+                                    >
+                                      <tbody>
+                                        <tr style=3D"width: 100%">
+                                          <td>
+                                            <p
+                                              data-id=3D"react-email-text"
+                                              style=3D"
+                                                font-size: 12px;
+                                                line-height: 14px;
+                                                margin: 8px 0 0;
+                                                font-family: Roboto, Roboto=
+Draft,
+                                                  Helvetica, Arial, sans-se=
+rif;
+                                                font-style: normal;
+                                                font-weight: 400;
+                                                color: #303030;
+                                              "
+                                            >
+                                              Price Details
+                                            </p>
+                                            <table
+                                              align=3D"center"
+                                              width=3D"100%"
+                                              data-id=3D"react-email-row"
+                                              role=3D"presentation"
+                                              cellspacing=3D"0"
+                                              cellpadding=3D"0"
+                                              border=3D"0"
+                                            >
+                                              <tbody style=3D"width: 100%">
+                                                <tr style=3D"width: 100%">
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 8px 0 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #888888;
+                                                        padding-right: 10px=
+;
+                                                      "
+                                                    >
+                                                      Delivery fee
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 8px 0 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #888888;
+                                                        float: right;
+                                                      "
+                                                    >
+                                                      =E2=82=B159.00
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table
+                                              align=3D"center"
+                                              width=3D"100%"
+                                              data-id=3D"react-email-row"
+                                              role=3D"presentation"
+                                              cellspacing=3D"0"
+                                              cellpadding=3D"0"
+                                              border=3D"0"
+                                            >
+                                              <tbody style=3D"width: 100%">
+                                                <tr style=3D"width: 100%">
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 8px 0 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #888888;
+                                                        padding-right: 10px=
+;
+                                                      "
+                                                    >
+                                                      Admin fee
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 8px 0 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #888888;
+                                                        float: right;
+                                                      "
+                                                    >
+                                                      =E2=82=B12.00
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table
+                                              align=3D"center"
+                                              width=3D"100%"
+                                              data-id=3D"react-email-row"
+                                              style=3D"
+                                                border-top: 1px solid #f1f1=
+f1;
+                                                margin-top: 8px;
+                                                width: 100%;
+                                              "
+                                              role=3D"presentation"
+                                              cellspacing=3D"0"
+                                              cellpadding=3D"0"
+                                              border=3D"0"
+                                            >
+                                              <tbody style=3D"width: 100%">
+                                                <tr style=3D"width: 100%">
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 8px 0 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #303030;
+                                                      "
+                                                    >
+                                                      Total Price
+                                                    </p>
+                                                  </td>
+                                                  <td
+                                                    data-id=3D"__react-emai=
+l-column"
+                                                  >
+                                                    <p
+                                                      data-id=3D"react-emai=
+l-text"
+                                                      style=3D"
+                                                        font-size: 12px;
+                                                        line-height: 14px;
+                                                        margin: 8px 0 0;
+                                                        font-family: Roboto=
+,
+                                                          RobotoDraft, Helv=
+etica,
+                                                          Arial, sans-serif=
+;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        color: #303030;
+                                                        word-break: break-w=
+ord;
+                                                        float: right;
+                                                      "
+                                                    >
+                                                        =E2=82=B161.00
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <p
+                                              data-id=3D"react-email-text"
+                                              style=3D"
+                                                font-size: 10px;
+                                                line-height: 11px;
+                                                margin: 16px 0 0;
+                                                width: 100%;
+                                                font-family: Roboto, Roboto=
+Draft,
+                                                  Helvetica, Arial, sans-se=
+rif;
+                                                font-style: normal;
+                                                font-weight: 400;
+                                                color: #888888;
+                                              "
+                                            >
+                                              Price shown is non-inclusive =
+of certain fees such as tolls/tunnels, parking or any other charges agreed =
+upon with the driver
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a
+              href=3D"http://em.lalamove.com/ls/click?upn=3Du001.M-2FPVPgXk=
+XrruiYk0osQali5RbCnieCjn-2BHpwmUeSiiHwJ8zoATo318OAWj7iNRthRC96_ifpdZN5Unwyz=
+9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxW=
+N54Pw4nECidQPlDCAkCuYKHjyrCCCM3MHZ-2FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9=
+hcWZheM9ltyz1bVRbrbyyFYyyWH6E5lhqX936DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq=
+71OHonFsFQILPdvFl5GIYD3Kl7p39uO7chUwmhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9l=
+mCXQG3srHL1LJh6c6F8JcKAV4rQIrvrBtRJ9Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0bo=
+WvGSTq31fanz3DRBJdvPww82484suu4TcKGlSsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25W=
+Cq3FjPdWMcSLa4KBJ-2BLbSpPnaRACEWoiiLZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4Es=
+oRTl-2BuYGH6c937FXQUdX10scPScWJf9Cl4Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62=
+xOKzu6pcu-2BHwga3qw5yDLieCqn2efHEtVhVJxRhA7WW3-2FJNwh0VOsdUrNFGvnzAgYix45xJ=
+eD8VYZ-2FRJ61hBA39fC-2Be4Zex2bedricMsjZKjSIhqnqVDH7kIZw6UH5s8x-2FUZHw-3D-3D=
+"
+              data-id=3D"react-email-link"
+              target=3D"_blank"
+              style=3D"color: #067df7; text-decoration: none"
+            >
+              <table
+                align=3D"center"
+                width=3D"100%"
+                data-id=3D"react-email-section"
+                style=3D"
+                  margin: 8px 0 0;
+                  padding: 4px 12px;
+                  border-radius: 4px;
+                  background-color: #ffffff;
+                "
+                border=3D"0"
+                cellpadding=3D"0"
+                cellspacing=3D"0"
+                role=3D"presentation"
+              >
+                <tbody>
+                  <tr>
+                    <td>
+                      <table
+                        align=3D"center"
+                        width=3D"100%"
+                        data-id=3D"react-email-row"
+                        role=3D"presentation"
+                        cellspacing=3D"0"
+                        cellpadding=3D"0"
+                        border=3D"0"
+                      >
+                        <tbody style=3D"width: 100%">
+                          <tr style=3D"width: 100%">
+                            <td
+                              data-id=3D"__react-email-column"
+                              style=3D"padding: 0 8px 0 0; width: 100px"
+                            >
+                              <img
+                                data-id=3D"react-email-img"
+                                alt=3D"rewards"
+                                src=3D"https://luna-singapore-public.s3.ap-=
+southeast-1.amazonaws.com/luna-singapore-public/bfe-uapi-api-prd/bfe-uapi-a=
+pi-prd/20230517/1003fc082285c2fa45e2b3efdfb97cb1e879.png"
+                                width=3D"100"
+                                height=3D"30"
+                                style=3D"
+                                  display: block;
+                                  outline: none;
+                                  border: none;
+                                  text-decoration: none;
+                                "
+                              />
+                            </td>
+                            <td
+                              valign=3D"middle"
+                              data-id=3D"__react-email-column"
+                              style=3D"text-align: left"
+                            >
+                              <p
+                                data-id=3D"react-email-text"
+                                style=3D"
+                                  font-size: 10px;
+                                  line-height: 11px;
+                                  margin: 0;
+                                  font-family: Roboto, RobotoDraft, Helveti=
+ca,
+                                    Arial, sans-serif;
+                                  font-style: normal;
+                                  font-weight: 400;
+                                  color: #535353;
+                                "
+                              >
+                                Want to unlock benefits for every order? Ch=
+eck out=20
+                                <span
+                                  style=3D"
+                                    margin: 0;
+                                    font-family: Roboto, RobotoDraft, Helve=
+tica,
+                                      Arial, sans-serif;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 10px;
+                                    line-height: 11px;
+                                    color: #f16622;
+                                  "
+                                  >Lalamove Rewards.</span
+                                >
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table> </a
+            >
+            <table
+              align=3D"center"
+              width=3D"100%"
+              data-id=3D"react-email-section"
+              border=3D"0"
+              cellpadding=3D"0"
+              cellspacing=3D"0"
+              role=3D"presentation"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align=3D"center"
+                      width=3D"100%"
+                      data-id=3D"react-email-row"
+                      style=3D"margin: 16px 0 0; width: 100%"
+                      role=3D"presentation"
+                      cellspacing=3D"0"
+                      cellpadding=3D"0"
+                      border=3D"0"
+                    >
+                      <tbody style=3D"width: 100%">
+                        <tr style=3D"width: 100%">
+                          <td
+                            valign=3D"top"
+                            data-id=3D"__react-email-column"
+                            style=3D"width: 50%"
+                          >
+                       =20
+                            <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 10px;
+                                line-height: 11px;
+                                margin: 0;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #888888;
+                              "
+                            >
+                              Lalamove<br>4th Floor Tower 2 PITX, Paranaque=
+ City
+                            </p>
+                            <p
+                              data-id=3D"react-email-text"
+                              style=3D"
+                                font-size: 10px;
+                                line-height: 11px;
+                                margin: 4px 0 0;
+                                font-family: Roboto, RobotoDraft, Helvetica=
+,
+                                  Arial, sans-serif;
+                                font-style: normal;
+                                font-weight: 400;
+                                color: #888888;
+                              "
+                            >
+                              Tax ID: 009-458-944-000
+                            </p>
+                          </td>
+                          <td
+                            valign=3D"top"
+                            data-id=3D"__react-email-column"
+                            style=3D"float: right"
+                          >
+                            <table
+                              align=3D"center"
+                              width=3D"100%"
+                              data-id=3D"react-email-row"
+                              role=3D"presentation"
+                              cellspacing=3D"0"
+                              cellpadding=3D"0"
+                              border=3D"0"
+                            >
+                              <tbody style=3D"width: 100%">
+                                <tr style=3D"width: 100%">
+                                  <td data-id=3D"__react-email-column">
+                                    <a
+                                      href=3D"http://em.lalamove.com/ls/cli=
+ck?upn=3Du001.M-2FPVPgXkXrruiYk0osQalkFkKVlvYQOUBdrBfxC4PvjSd-2BjHDPA2FTDV7=
+0xkO-2BMHVvq7OYm7KKKMuKA3I6lrENAe-2Bl6LW9AAyAgpKY1dU4E-3DaUgz_ifpdZN5Unwyz9=
+jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxWN=
+54Pw4nECidQPlDCAkCuYKHjyrCCCM3MHZ-2FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9h=
+cWZheM9ltyz1bVRbrbyyFYyyWH6E5lhqX936DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq7=
+1OHonFsFQILPdvFl5GIYD3Kl7p39uO7chUwmhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9lm=
+CXQG3srHL1LJh6c6F8JcKAV4rQIrvrBtRJ9Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0boW=
+vGSTq31fanz3DRBJdvPww82484suu4TcKGlSsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25WC=
+q3FjPdWMcSLa4KBJ-2BLbSpPnaRACEWoiiLZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4Eso=
+RTl-2BuYGH6c937FXQUdX10scPScWJf9Cl4Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62x=
+OKzu-2BvEn-2Fjcn3P0SMMeveTgTcfqrHl2LUJL2n1u1RJjSRkj-2BixsfkNGoBYD187zER6kO-=
+2FE3W5RzZ6e2AdMJw-2FYfe0zhYQ8JURsQolCZxJcu0d3qbHH89o6bKITiEp4bH29mSg-3D-3D"
+                                      data-id=3D"react-email-link"
+                                      target=3D"_blank"
+                                      style=3D"
+                                        color: #067df7;
+                                        text-decoration: none;
+                                      "
+                                      ><img
+                                        data-id=3D"react-email-img"
+                                        alt=3D"facebook"
+                                        src=3D"https://luna-singapore-publi=
+c.s3.ap-southeast-1.amazonaws.com/luna-singapore-public/bfe-uapi-api-prd/bf=
+e-uapi-api-prd/20230508/1003089fa208c6624ce1b77e9165bbfbedf7.png"
+                                        width=3D"20"
+                                        height=3D"20"
+                                        style=3D"
+                                          display: inline;
+                                          outline: none;
+                                          border: none;
+                                          text-decoration: none;
+                                          margin-left: 8px;
+                                          float: right;
+                                        "
+                                    /></a>
+                                  </td>
+                                  <td data-id=3D"__react-email-column">
+                                    <a
+                                      href=3D"http://em.lalamove.com/ls/cli=
+ck?upn=3Du001.M-2FPVPgXkXrruiYk0osQali2aAuNRAbzM-2BvtEbCPIfjgfDnhWarEz5kymj=
+XXrfAf7xowuqnC-2BU19WTqOIiv8OMA-3D-3DhHbq_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84Tm=
+BbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuRh5jxcxWN54Pw4nECidQPlDCAkCuY=
+KHjyrCCCM3MHZ-2FIll9aDuGjxElq-2F1ad5BZjPpSL6TVrExTmhG9hcWZheM9ltyz1bVRbrbyy=
+FYyyWH6E5lhqX936DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn3QUL0Bq71OHonFsFQILPdvFl5GIY=
+D3Kl7p39uO7chUwmhDGUVq4CnHD8f4iT7WqET6ICIgsGOltmSR3O9lmCXQG3srHL1LJh6c6F8Jc=
+KAV4rQIrvrBtRJ9Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Agb4LN0boWvGSTq31fanz3DRBJdvPw=
+w82484suu4TcKGlSsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqVfDUl25WCq3FjPdWMcSLa4KBJ-2BL=
+bSpPnaRACEWoiiLZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-2BqY4EsoRTl-2BuYGH6c937FXQUd=
+X10scPScWJf9Cl4Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B8T8Ac62xOKzu8M2nT1kXZtW-2B7-=
+2B60JCzwvnSMRWozKQWzmD1IBRNq9909yN2jz-2FxVQohr2Rycw4-2ByXQ0zkM6Roq-2FhCTdmm=
+5NmcEu7i6Gwu1xfvlntGhAgL7gSP3Xge-2F4Ix4fp3S4GYl8vw-3D-3D"
+                                      data-id=3D"react-email-link"
+                                      target=3D"_blank"
+                                      style=3D"
+                                        color: #067df7;
+                                        text-decoration: none;
+                                      "
+                                      ><img
+                                        data-id=3D"react-email-img"
+                                        alt=3D"linkedin"
+                                        src=3D"https://luna-singapore-publi=
+c.s3.ap-southeast-1.amazonaws.com/luna-singapore-public/bfe-uapi-api-prd/bf=
+e-uapi-api-prd/20230508/100339df47ce7e05428db8dd0d32de887d39.png"
+                                        width=3D"20"
+                                        height=3D"20"
+                                        style=3D"
+                                          display: inline;
+                                          outline: none;
+                                          border: none;
+                                          text-decoration: none;
+                                          margin-left: 8px;
+                                          float: right;
+                                        "
+                                    /></a>
+                                  </td>
+                                  <td data-id=3D"__react-email-column">
+                                    <a
+                                      href=3D"http://em.lalamove.com/ls/cli=
+ck?upn=3Du001.M-2FPVPgXkXrruiYk0osQalnZlg9F3fGSIy11f-2FSYVcr5RYxu0-2FaEfCYK=
+WNW-2F-2BVoYS7zNiISvzz-2F9bTzQttZ-2Fu8jgjchRnlv4zRmWH52-2BbZsw-3DSKQf_ifpdZ=
+N5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa7NXcj1-2B0zkGuR=
+h5jxcxWN54Pw4nECidQPlDCAkCuYKHjyrCCCM3MHZ-2FIll9aDuGjxElq-2F1ad5BZjPpSL6TVr=
+ExTmhG9hcWZheM9ltyz1bVRbrbyyFYyyWH6E5lhqX936DIHzIsC2-2BJzTb3M59nmAh4kxvOxbn=
+3QUL0Bq71OHonFsFQILPdvFl5GIYD3Kl7p39uO7chUwmhDGUVq4CnHD8f4iT7WqET6ICIgsGOlt=
+mSR3O9lmCXQG3srHL1LJh6c6F8JcKAV4rQIrvrBtRJ9Ja2d5IGCyzaMZMP4EsRHXjgWzBnFn2Ag=
+b4LN0boWvGSTq31fanz3DRBJdvPww82484suu4TcKGlSsRzcvr0e25p-2Fjd2OdHmuUKjRrtsqV=
+fDUl25WCq3FjPdWMcSLa4KBJ-2BLbSpPnaRACEWoiiLZX8mZ9iEp0xbcNiWoOBjDlqg4IU3Y18-=
+2BqY4EsoRTl-2BuYGH6c937FXQUdX10scPScWJf9Cl4Fp1KprmiUx4aGF2uJ9VxNSab1msPo-2B=
+8T8Ac62xOKzu-2BjErDS4855hU4ftSEJT6vaU5-2B9Xthm0Gm5t-2B9oTaTGZYv-2BsRb0AgQY5=
+Q0EjdUdbhAeHCGKbp5tsBf650z4EXJ3ktMa5mp-2BB0PSOJW5yFEb8V-2B-2F3C7zHuvtyb8NWx=
+QdHHQ-3D-3D"
+                                      data-id=3D"react-email-link"
+                                      target=3D"_blank"
+                                      style=3D"
+                                        color: #067df7;
+                                        text-decoration: none;
+                                      "
+                                      ><img
+                                        data-id=3D"react-email-img"
+                                        alt=3D"youtube"
+                                        src=3D"https://luna-singapore-publi=
+c.s3.ap-southeast-1.amazonaws.com/luna-singapore-public/bfe-uapi-api-prd/bf=
+e-uapi-api-prd/20230508/1003dcc5073e3ec043de8ff279945e9aaeb5.png"
+                                        width=3D"20"
+                                        height=3D"20"
+                                        style=3D"
+                                          display: inline;
+                                          outline: none;
+                                          border: none;
+                                          text-decoration: none;
+                                          margin-left: 8px;
+                                          float: right;
+                                        "
+                                    /></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p
+      data-id=3D"react-email-text"
+      style=3D"
+        font-size: 10px;
+        line-height: 11px;
+        margin: 0px;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #535353;
+        text-align: center;
+      "
+    >
+      Don&apos;t want to receive e-Receipts? Unsubscribe in Lalamove app se=
+ttings.
+    </p>
+  <img src=3D"http://em.lalamove.com/wf/open?upn=3Du001.mRvjWa6a2tdi7UgUZ6H=
+ZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszML-2FImpUXUhQdcoMFLj53BY9G1-=
+2Fqc1WtgmKhMph-2B0DUDy3aIcHr-2BY7FFQt06qzry3PsynRdICnLkm92lh7jDcnj6uinaC-2B=
+4wy7g-2BrlgNYsKeSvgu8cVMOHmzJE3MiQIkA-2Fz0x1J1j4imNxYb6rp8dr2enVhj3NKkUvLu2=
+6dxijSvVGofASLUXVNU2hMQ7MqKV1MocZyaR2oCUCkknC2IpVzaphVzXahGfnbqqYvpIpW9dld-=
+2FH6OW35Af5D8VkY2rab3mUVOHCTZSjLWdaFHtsOo7jGdMdeauaedT4RzEI9f69RVHNAN0V37-2=
+FS7gbsqofSOzPea9xMoy-2BfxAFNKsbhH-2B8nGvleG0kcULrqDuvXZj1KJ5FYaQBNHDLd-2FDA=
+BUlQjBFglfMU9UJTI-2Bhd1qB1pticlSXcwcctbFWmxZJ6t6hXZdPybvxaVnpA7L0Eba1qMdcGE=
+hgu8-2BAnTEemxTQ2FBCfayLMhrIL1S-2FC9C94SJeHv53sb1ds8ad7hjibqxT-2BMJuqdrvy9V=
+PYlZHZPp3MFDs42FEPwmMKwN0GaYCzIyD0ywmP1z6FDNs4Jb-2F7pXeRgMZFKxVqH-2FQ6k07Y-=
+2BvVORsxXmTkgwAG-2FPG6N0-2Fg1zq29JprXhL2IaFaTbqYxz3qSzL1fqA1yW-2F7Vh7Hyc9YL=
+iu9hoLmXVsVrOBQ3X2vpGcrk-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0"=
+ style=3D"height:1px !important;width:1px !important;border-width:0 !import=
+ant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !impo=
+rtant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !i=
+mportant;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--c1e9b96b655d21abf8fe928ac4fed13258b1ee840d7c59f3b57fb11664dc--
