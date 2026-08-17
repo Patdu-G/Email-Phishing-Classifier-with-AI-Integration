@@ -1,0 +1,789 @@
+X-GM-THRID: 1723244711876925812
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a54:2d05:0:0:0:0:0 with SMTP id i5csp872284ecp;
+        Fri, 28 Jan 2022 15:57:02 -0800 (PST)
+X-Google-Smtp-Source: 
+ ABdhPJxHJZJU9sOyvx1l0Z3ebex10VZ9L0jLWzYvU/d5aiDq6oUA797aktPTvS85GcimvXb8mq1R
+X-Received: by 2002:a25:4053:: with SMTP id
+ n80mr15305664yba.661.1643414222481;
+        Fri, 28 Jan 2022 15:57:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1643414222; cv=none;
+        d=google.com; s=arc-20160816;
+        b=h3g9O0p4FMMGRLbIvnkfGIvN7O/EDJcKam0FjfOofHJ1OL8ipr/U3RkGchNCXASsd+
+         Dkmnbdy4qmgQoX0C/APsoiZ2mm1ANBSw3Uhj2pOJrJBJ61hnIdd1z+Kq5UupkOJMOG/h
+         RP8Dfn8iMqcMJq/JCsBhekE5rqtaeMLngbejCBwAWFpFrQGGThQ0BQ63s2MJZhse/RzW
+         sqDlv/qRlxfIQj0npsFEJPfdiW/dHG2aiQJ77UjlTzeC4NBJSANAAi9xC1L1v3AX80ML
+         tO/8NOK+ACQlS/656LQod74JiFEfxP6je0j8PDoNjz8eo5uaA+Zi7QRAtyarv4w/gaz0
+         iO9g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=date:to:from:subject:reply-to:feedback-id:mime-version:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=8nTSCi/Pchk6ZMT8YfhRQ2rKjQfb4nyEhuhrXJleaxQ=;
+        b=KKTYve6agzhuSlRObNvzUdIKSC25IR7QzMdbCUQ8GwhLwELTLRa+CfGQAE+2wkEIW1
+         GyHiHrKHG49fxYzkuUqGCEx/popca852FKF2TCdV46KSFtRi/TX56mj1gXk3iNioK7K0
+         YdUQyxp5WM9vv5V2QiAlgs/dDz62xX2uNAJ8Z7I92OnFt0iRvwTMx493Hc6ys4Dz8rsy
+         9Bsep4k3TxwDbp872m4BEpzpTio20O1UTUkcAg3QxWIBcY6APfK+wOLZCqAxfPfnpX96
+         c659BOdCLDSAzYqWCV3F3pEhxo89pwgZdDekqKzKGvrGmEROOfwWhpdHwl5A7xLONkan
+         gIFg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accts.epicgames.com header.s=ep1
+ header.b="N73KVG6/";
+       spf=pass (google.com: domain of bounce@accts.epicgames.com designates
+ 142.54.246.230 as permitted sender) smtp.mailfrom=bounce@accts.epicgames.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=epicgames.com
+Return-Path: <bounce@accts.epicgames.com>
+Received: from mta230b.pmx13.epsl1.com (mta230b.pmx13.epsl1.com.
+ [142.54.246.230])
+        by mx.google.com with ESMTPS id
+ x14si25218711ybk.265.2022.01.28.15.57.02
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 28 Jan 2022 15:57:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce@accts.epicgames.com
+ designates 142.54.246.230 as permitted sender) client-ip=142.54.246.230;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accts.epicgames.com header.s=ep1
+ header.b="N73KVG6/";
+       spf=pass (google.com: domain of bounce@accts.epicgames.com designates
+ 142.54.246.230 as permitted sender) smtp.mailfrom=bounce@accts.epicgames.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=epicgames.com
+Return-Path: <bounce@accts.epicgames.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=accts.epicgames.com;
+	s=ep1; t=1643414221;
+	bh=rAN7IrpAVrgtmYDVwU975HuCqXN3DsjPNjAmAYXsrDg=;
+	h=MIME-Version:Subject:From:To:Date:Content-Type;
+	b=N73KVG6/QP+jePj1d5JQBlpTLbhSfwJ/DXd85AWQp51pqoGqhcg6/1TyHJ/hvaKf1
+	 l50YPtp0SCkn6d7zujbQN7keWegw2cV4CJtZ4SRJlzJ/vK71L8oUbsf/oLWtwKyiU+
+	 5+JF6ncUm0se+XSDNdD+zyb2zG3CWSxqMJI3AyrQ=
+Received: from [10.233.18.231] ([10.233.18.231:53474])
+	by fe1udsmtn9n15 (envelope-from <bounce@accts.epicgames.com>)
+	(ecelerity 4.2.38.62370 r(:)) with ECSTREAM
+	id C1/B4-19545-CC284F16; Fri, 28 Jan 2022 23:57:01 +0000
+List-Unsubscribe: 
+ <mailto:bounce-HP2v60000017ea31eed74af7bc4f4bbcfb920202@accts.epicgames.com?subject=list-unsubscribe>
+Message-ID: <HP2v60000017ea31eed74af7bc4f4bbcfb920202@accts.epicgames.com>
+MIME-Version: 1.0
+Feedback-ID: 
+ ae5612af-82eb-415c-b80c-0a0b72e7da7e:cd028d2a-ae88-4bb0-a7f9-b4e58f86e28a:email:epslh1
+X-NSS: ae5612af-82eb-415c-b80c-0a0b72e7da7e
+Reply-To: "help@accts.epicgames.com" <help@accts.epicgames.com>
+Subject: =?UTF-8?B?WW914oCZdmUgcmVjZWl2ZWQgYSAkMTAgY291cG8=?=
+ =?UTF-8?B?biBmcm9tIHRoZSBFcGljIEdhbWVzIFN0b3Jl?=
+From: Epic Games  <help@accts.epicgames.com>
+To: patriogabrielpatdu@gmail.com
+Date: Fri, 28 Jan 2022 23:57:00 +0000
+Content-Type: multipart/alternative;
+ boundary="-=Part.14ed483.8e93a76f9d0360ee.17ea31ef001.5e1ae2cbc3af8789=-"
+
+---=Part.14ed483.8e93a76f9d0360ee.17ea31ef001.5e1ae2cbc3af8789=-
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1=2E0 Strict//EN" "http://www=2Ew=
+3=2Eorg/TR/xhtml1/DTD/xhtml1-strict=2Edtd">
+<html xmlns=3D"http://www=2Ew3=2Eorg/1999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"=
+>
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <meta charset=3D"utf-8" name=3D"viewport" content=3D"width=3Ddevice-widt=
+h, initial-scale=3D1=2E0">
+  <title>Epic Games Account Services Email</title>
+
+<style type=3D"text/css">
+		#outlook a{
+			padding:0;
+		}
+		=2EReadMsgBody{
+			width:100%;
+		}
+		=2EExternalClass{
+			width:100%;
+		}
+		body{
+			width:100% !important;
+			min-width:100%;
+			-webkit-text-size-adjust:100%;
+			-ms-text-size-adjust:100%;
+			margin:0;
+			padding:0;
+		}
+		table,td,a{
+			-webkit-text-size-adjust:100%;
+			-ms-text-size-adjust:100%;
+			margin:0;
+			padding:0;
+		}
+		body{
+			margin:0;
+			padding:0;
+		}
+		img{
+			outline:none;
+			text-decoration:none;
+			border:none;
+			height:auto;
+			line-height:100%;
+			-ms-interpolation-mode:bicubic;
+		}
+		table,table td{
+			border-collapse:collapse;
+		}
+		a img{
+			border:none;
+		}
+		a{
+			color:#037aee;
+		}
+		body{
+			height:100% !important;
+			margin:0;
+			padding:0;
+			background-color:#f1f1f1;
+		}
+		p{
+			margin:0px 0px !important;
+		}
+		=2EExternalClass,=2EExternalClass p,=2EExternalClass span,=2EExternalCla=
+ss font,=2EExternalClass td,=2EExternalClass div{
+			line-height:100%;
+		}
+		td=2Eexpander{
+			visibility:hidden;
+			width:0px;
+			padding:0 !important;
+		}
+		=2EappleFooter a{
+			text-decoration:none !important;
+		}
+		=2EappleLink a{
+			text-decoration:none !important;
+		}
+		=2EappleLink1 a{
+			text-decoration:none !important;
+		}
+		=2EappleLink2 a{
+			text-decoration:none !important;
+		}
+		=2EExternalClass span[class=3Decxoutlook-text]{
+			font-size:13px !important;
+		}
+		=2Edesktop-hide{
+			height:0;
+		}
+   =20
+	@media only screen and (max-width: 600px){
+		=2Ebody{
+			min-width:100% !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dexpand]{
+			max-height:100% !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dpanel]{
+			width:100% !important;
+			min-width:0px !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dpanel-block]{
+			width:100% !important;
+			display:block !important;
+			min-width:0px !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dpanel-padded]{
+			width:90% !important;
+			display:block !important;
+			min-width:0px !important;
+			padding:0 15px !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dpanel-float]{
+			width:90% !important;
+			padding:0 15px !important;
+			display:block !important;
+			min-width:0px !important;
+			float:left;
+			margin-bottom:40px;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dimage]{
+			height:auto !important;
+			max-width:100% !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		=2Ehide{
+			display:none !important;
+			height:0 !important;
+			font-size:0 !important;
+			line-height:0 !important;
+			min-height:0 !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dpromo]{
+			float:left;
+			width:30% !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dcontent]{
+			float:right;
+			width:65% !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dline]{
+			height:1px;
+			background:#dadada;
+			width:100%;
+		}
+
+}	@media only screen and (max-width: 600px){
+		[class=3Dexpander]{
+			width:1px !important;
+		}
+
+}	@media only screen and (max-width: 600px){
+		a[href^=3Dtel]{
+			color:#313131;
+			text-decoration:none;
+		}
+
+}	@media only screen and (max-width: 450px){
+		zoom 1=2E0width 400px{
+			zoom:1=2E0;
+			width:400px;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dmid]{
+			display:none!important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Ddesktop-hide]{
+			height:30px !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dtitle]{
+			font-size:34px !important;
+			line-height:38px !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dcolumn-block]{
+			width:100% !important;
+			display:block !important;
+			min-width:0px !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dcolumn-padded]{
+			width:100% !important;
+			display:block !important;
+			min-width:0px !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dcolumn-block] div>img{
+			width:100% !important;
+			max-width:100% !important;
+			max-height:auto !important;
+			height:auto !important;
+			padding:0 !important;
+			display:inline !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dcolumn-block] div>a>img{
+			width:100% !important;
+			max-width:100% !important;
+			max-height:auto !important;
+			height:auto !important;
+			padding:0 !important;
+			display:inline !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dthree-column-block]{
+			width:250px !important;
+			display:inline !important;
+			min-width:0px !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		[class=3Dcontent]{
+			float:none;
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		=2Etext-center{
+			text-align:center!important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		td[class=3DsocialIcons]{
+			display:none !important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		a[class=3DfullWidth]{
+			width:100%!important;
+			text-align:center!important;
+		}
+
+}	@media only screen and (max-width: 450px){
+		img[class=3DmobileLogo]{
+			display:inline !important;
+		}
+
+}	@media only screen and (max-width: 420px){
+		[class=3Dcontent]{
+			float:none;
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 420px){
+		[class=3Dpromo]{
+			margin-bottom:20px;
+		}
+
+}</style></head>
+<body leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" marginheight=3D"0=
+" offset=3D"0" style=3D"background-color:#f1f1f1; min-width:600px; padding:=
+0" class=3D"body"><img src=3D'https://accts=2Eepicgames=2Ecom/O/v60000017ea=
+31eed74af7bc4f4bbcfb920/ae5612af82eb415c00004c5a42963aa1' style=3D"display:=
+none; max-height: 0px; font-size: 0px; overflow: hidden; mso-hide: all"/>
+  <!-- Environment Code, first check if TO_ENVIRONMENT presents, then chec=
+k its value -->
+   <!--  End of Environment Code -->
+              <table class=3D"body" width=3D"100%" style=3D"background-col=
+or:#f1f1f1; min-width:600px" bgcolor=3D"#f1f1f1">
+                <tr>
+                  <td class=3D"body" align=3D"center" valign=3D"top" width=
+=3D"100%" style=3D"min-width:600px">
+                    <center>
+                      <!--[if mso>
+                     <table width=3D"500" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#f1f1f1" padding=3D"0" align=3D"center">
+                       <tr>
+                         <td>
+                     <![endif]-->
+                     <!--[if (IE)]>
+                     <table width=3D"500" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" bgcolor=3D"#f1f1f1" padding=3D"0" align=3D"center">
+                      <tr>
+                        <td>
+                     <![endif]-->
+                    <!-- Start of First Section -->
+                    <table width=3D"100%" style=3D"min-width:500px;" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"body" bgcolor=3D"#f1f1=
+f1">
+                      <tr>
+                        <td align=3D"center">
+                          <table width=3D"100%" style=3D"min-width:500px" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"body">
+                            <tr height=3D"50">
+                              <td width=3D"100%" height=3D"50" style=3D"li=
+ne-height:1px; font-size:1px">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td align=3D"center">
+                                <table class=3D"panel" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"min-width:500px;">
+                                  <tr>
+                                    <td valign=3D"middle" align=3D"center"=
+ class=3D"panel">
+                                      <div class=3D"expand" style=3D"max-h=
+eight:40px">
+                                        <div>
+                                          <a href=3D"https://accts=2Eepicg=
+ames=2Ecom/T/v60000017ea31eed74af7bc4f4bbcfb920/ae5612af82eb415c0000021ef3a=
+0bcc2/ae5612af-82eb-415c-b80c-0a0b72e7da7e?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0Zs=
+ixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMW=
+oX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxp9CWnI6HiATM_Y5CXyCLSUOvBNpeON5J_RcmN5zr=
+KKU_tx-dj86qGdKi5wLLp_1G-EIHpWuulcdnwU4gxhkcXa8vp1xEZ2hY2v-bzVrL-F_T4XIh2cb=
+WGp57Fu2QYK-ufozjW6pgpl7yy4dpqOnHn6lELmwtC-_8qlliLeABZSpbnq0D2qXpFRRSSdYWEA=
+lm_0xu1ZW3a_pbf6MKoSUMmweBMU-15vn-0=3D" class=3D"text-decoration:none"><img=
+ align=3D"none" alt=3D"Epic Games" border=3D"0" hspace=3D"0" src=3D"http://=
+images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images/61a7fbcf-9940-4c13-a=
+d82-1cc8d60d33bf/RTM_Images/EML_EPICGAMES_LOGO=2Epng" style=3D"max-width: 7=
+0px; height: auto; display: block; margin: 0px;" title=3D"Epic Games" vspac=
+e=3D"0" width=3D"55px">
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table>
+                              <tr>
+                                <td align=3D"center" style=3D"font-family:=
+ arial,helvetica,sans-serif; mso-line-height-rule: exactly; font-size:26px;=
+ color:#313131; line-height:32px">&nbsp;</td>
+                              </tr>
+                            <tr>
+                              <td align=3D"center">&nbsp;</td>
+                            </tr>
+                          </table>
+                          <table width=3D"100%" style=3D"min-width:500px;"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"body">
+                            <tr>
+                              <td align=3D"center">
+                                <table width=3D"500" class=3D"panel" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"min-width:500px">
+                                  <tr>
+                                    <td width=3D"100%" height=3D"50" style=
+=3D"line-height:1px; font-size:1px">
+                                    	<div style=3D"font-family: sans-serif=
+; mso-line-height-rule: exactly; color:#202020; text-align: center; font-si=
+ze: 26px; line-height: 32px; line-height: 100%; letter-spacing: 2px;">
+                                    		<!-- Start Heading -->
+						Connect and Save: $10 Epic Games Store Coupon
+                                         =20
+<br/><br/>
+							<!-- End Heading -->
+                                    	</div>
+                                    </td>
+                                  </tr>
+                                  </table>
+                                  <table width=3D"100%" style=3D"min-width=
+:500px;" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"body">
+                                    <tr height=3D"40">
+                                     <td align=3D"center">&nbsp;</td>
+                                    </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                    <!-- End of First Section -->
+                    <!-- Start of Greetings -->
+                    <table width=3D"500" class=3D"panel-padded" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color: #fff; mar=
+gin: 0 auto;">
+                      <tr height=3D"50">
+                        <td width=3D"50">&nbsp;</td>
+                        <td height=3D"50" style=3D"line-height:1px; font-s=
+ize:1px">&nbsp;</td>
+                        <td width=3D"50">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td width=3D"50">&nbsp;</td>
+                        <td align=3D"left" style=3D"font-family: arial,hel=
+vetica,sans-serif; mso-line-height-rule: exactly; font-size:14px; color:#20=
+2020; line-height:19px; line-height: 134%; letter-spacing: =2E5px;">
+
+ <!-- Start Greeting -->
+                          You've been granted a coupon as a thanks for sta=
+ying connected to Epic Games via email=2E Your $10 Epic Games Store Coupon =
+(or local equivalent) will automatically be applied at checkout on any elig=
+ible game $14=2E99 and up (or local equivalent) or any basket spend of $14=
+=2E99 or above when purchasing full games=2E <a href=3D"https://accts=2Eepi=
+cgames=2Ecom/T/v60000017ea31eed74af7bc4f4bbcfb920/ae5612af82eb415c0000021ef=
+3a0bcc3/ae5612af-82eb-415c-b80c-0a0b72e7da7e?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0=
+ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvX=
+MWoX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxrIGNDabab91RzbqOFjAYWy_947wKw22JlAk9ut=
+m-KCS53gcDTlQy5_ac7C7l1fJ1SvjLyKewUn-mfMQZs42euJw2WbQQUDCMbGEBZKxCpSI2BgFZ1=
+ivdONc55oxGKhFK4uBS5LWWYTo5r4d9rIIhHZCn9GdmSnSjpcckc15tsPJ1QBwjXdoWmPf9gkAq=
+VRr1gakLM-WjT6-28_oIzktSoIbeIt2I1BrVyeLnfZbB_iugLMFJPG1W-RS7Q6Wz-KzCWZ2ckks=
+0xWWb9gHxbGqikq">Learn more here</a>=2E
+                         =20
+<br/><br/>
+<!-- End Greeting -->
+                        </td>
+                        <td width=3D"50">&nbsp;</td>
+                      </tr>
+<!-- Start Body 1 -->=20
+                      <tr>
+                        <td width=3D"50">&nbsp;</td>
+                        <td align=3D"left" style=3D"font-family: arial,hel=
+vetica,sans-serif; mso-line-height-rule: exactly; font-size:14px; color:#20=
+2020; line-height:19px; line-height: 134%; letter-spacing: =2E5px;">
+
+ <!-- Start Greeting -->
+                        Offer ends February 27*
+                         =20
+<br/><br/>
+<!-- End Greeting -->
+                        </td>
+                        <td width=3D"50">&nbsp;</td>
+                      </tr>
+<!-- End Body 1-->                                =20
+                      <tr height=3D"25">
+                        <td width=3D"50">&nbsp;</td>
+                        <td style=3D"line-height:1px; font-size:1px">&nbsp=
+;</td>
+                        <td width=3D"50">&nbsp;</td>
+                      </tr>
+                    </table>
+                    <!-- end of Greetings -->
+                    <!-- Start of Button -->
+                                <table width=3D"500" class=3D"panel-padded=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-colo=
+r: #fff;">
+      <!--[if mso>
+                                  <tr height=3D"50">
+                                    <td width=3D"50">&nbsp;</td>
+                                    <td style=3D"line-height:1px; font-siz=
+e:1px">&nbsp;</td>
+                                    <td width=3D"50">&nbsp;</td>
+                                  </tr>
+  <![endif]-->
+                                  <tr>
+                                    <td align=3D"center">
+                                        <a style=3D"text-decoration:none" =
+href=3D"https://accts=2Eepicgames=2Ecom/T/v60000017ea31eed74af7bc4f4bbcfb92=
+0/ae5612af82eb415c0000021ef3a0bcc4/ae5612af-82eb-415c-b80c-0a0b72e7da7e?__d=
+U__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvjHMDjR=
+PMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxpDuRHn9Mc4j=
+k7AGPcn7d9FgBDomZ-N4H_0uOvZ55Iw28-nPi8kUU5WYejoUIXJhLL3Ve8ACvn6HF7R7b90sPQp=
+PoVHFAMpSUjGKq-RMonZa8IsNGnchGpZ3m5tvCdivYhsO8ygnJXsbRmgJIUGTBi7HsVaD9p-9vN=
+lvbq1z7m6TzuktCdD-6yuSd60oDtPWKPzlampyIW-TIBz57wKCzVC7mUqEoFc2MBFp0B5dGKYyw=
+=3D=3D">
+                                        <table align=3D"center" width=3D"4=
+00" height=3D"50" border=3D"0" bgcolor=3D"#037bee" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"height:50px;border-collapse: separate !important;mso-t=
+able-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-t=
+ext-size-adjust: 100%; border-radius: 6px;">
+                                          <tr>
+                                            <td align=3D"center" valign=3D=
+"middle" style=3D"max-width: 80%;font-family: Ariel, Helvetica, sans-serif;=
+font-size: 14px; mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                              <div style=3D"font-family: A=
+riel, Helvetica, sans-serif;font-weight: bold;text-transform:uppercase;lett=
+er-spacing: normal;line-height: 100%;text-align: center; padding: 5%;text-d=
+ecoration:none;color: #FFFFFF;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;">
+<!-- Start Button -->
+						Redeem Now
+                                               =20
+<!-- End Button -->
+</div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </a>
+                                    </td>
+                                  </tr>
+      <!--[if mso>
+                                  <tr height=3D"50">
+                                    <td width=3D"50">&nbsp;</td>
+                                    <td style=3D"line-height:1px; font-siz=
+e:1px">&nbsp;</td>
+                                    <td width=3D"50">&nbsp;</td>
+                                  </tr>
+  <![endif]-->
+                                  <tr height=3D"25">
+                                    <td width=3D"100%" height=3D"25" style=
+=3D"line-height:1px; font-size:1px;">&nbsp;</td>
+                                  </tr>
+                                </table>
+                        <!-- End of button -->
+                        <table width=3D"500" class=3D"panel-padded" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"min-width:400px; backgr=
+ound-color: #fff;">
+                                                        <tr>
+                              <td width=3D"50">&nbsp;</td>
+                              <td align=3D"left" style=3D"font-family: ari=
+al,helvetica,sans-serif; mso-line-height-rule: exactly; font-size:12px; col=
+or:#202020; line-height:19px; line-height: 134%;">
+                                <div style=3D"font-family: arial,helvetica=
+,sans-serif; mso-line-height-rule: exactly; font-size:12px; color:#202020; =
+line-height:15px; letter-spacing: =2E5px;">
+                                    <!-- Start Signoff --><br/><br/>
+                                  *This is a limited time offer; void wher=
+e prohibited=2E Your coupon is non-transferrable and may not be resold or r=
+edeemed for cash=2E For more information, <a href=3D"https://accts=2Eepicga=
+mes=2Ecom/T/v60000017ea31eed74af7bc4f4bbcfb920/ae5612af82eb415c0000021ef3a0=
+bcc5/ae5612af-82eb-415c-b80c-0a0b72e7da7e?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0Zsi=
+xpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWo=
+X_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxrIGNDabab91RzbqOFjAYWy_947wKw22JlAk9utm-K=
+CS0h2sWq6e-n9CNH22In2vjUFLmjwNbDvNc7bjZ-gHAYj1xne8fJnpqRNJYks5s3W_hXVgBSIMw=
+BtBMwgKuFPsayPt2sG63kYxpaT9t1kyWhXy1s7SnQi5LcSsjDt5JyxjlUQ5M7w3SU-5YypmqJZF=
+GK7MNbF22miJ-KUKgFROBpaOSEJRMY51o_XZCWB3heZdjIwFyXR_OQvCimplv-Zhg2WrZ_Y_HC5=
+97Vzwa1FcuQ7GjIiZPhLfb8=3D">see our full terms</a>=2E
+                                 =20
+							<!-- End Signoff -->
+                                </div>
+                              </td>
+                              <td width=3D"50">&nbsp;</td>
+                            </tr>
+                          <tr height=3D"25">
+                            <td width=3D"50">&nbsp;</td>
+                            <td style=3D"line-height:1px; font-size:1px">&=
+nbsp;</td>
+                            <td width=3D"50">&nbsp;</td>
+                          </tr>                           =20
+                          </table>
+                     <!-- start of copyright and Legal -->
+                    <table width=3D"100%" style=3D"min-width:500px;" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"body">
+                      <tr>
+                        <td align=3D"center">
+                          <table width=3D"500" class=3D"panel" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"min-width:500px">
+                                <tr height=3D"50">
+                                    <td width=3D"100%" height=3D"20" style=
+=3D"line-height:1px; font-size:1px">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align=3D"center">
+<!-- Start help -->
+
+<!-- Start help --> =20
+<div style=3D"font-family: arial, helvetica, sans-serif;font-weight:bold; =
+mso-line-height-rule: exactly; font-size:10px; color:#000; text-align:cente=
+r; line-height:12px; text-decoration:none;">
+ Need Help?  <a style=3D"text-decoration:none;color:#000" href=3D"https://=
+accts=2Eepicgames=2Ecom/T/v60000017ea31eed74af7bc4f4bbcfb920/ae5612af82eb41=
+5c0000021ef3a0bcc6/ae5612af-82eb-415c-b80c-0a0b72e7da7e?__dU__=3Dv0G4RBKTXg=
+2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcP=
+xvDgUUCCPvXMWoX_30tcPSLyBQEVxcxZVIrRNjLGlO7ag0Cq_K8h1Z6eadrc_Y5CXyCLSUOvBNp=
+eON5J_RcmN5zrKKU_tx-dj86qGdKi5wLLp_1G-EIHpWuulcdnwU4gxhkcXa8vp1xEZ2hY2v-bzV=
+rL-F_T4XIh2cbWGp57Fu2QYK-ufozjW6pgpl7yy4dpqOnHn6lELmwtC-_8ruK-b6WOmx3dpX8WU=
+3EWTmX1xQoAnHrl1AZyNDGPpvI7GvFpGTwsxheBMU-15vn-0=3D">help=2Eepicgames=2Ecom=
+</a><br></div>
+
+<!-- End help -->
+<!-- End help -->=20
+                                     </td>
+                                </tr>
+                                <tr height=3D"30">
+                                    <td width=3D"100%" height=3D"20" style=
+=3D"line-height:1px; font-size:1px">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align=3D"center" class=3D"panel-pa=
+dded">
+                                      <div style=3D"font-family: arial, he=
+lvetica, sans-serif; mso-line-height-rule: exactly; font-size:10px; color:#=
+202020; text-align:center; line-height:12px">
+<!-- Start legal -->
+                                       =20
+<p><!-- Start legal --> =20
+&#169; 2022, Epic Games, Inc=2E All rights reserved=2E Epic, Epic Games, t=
+he Epic Games logo, Unreal, Unreal Engine, the Unreal Engine logo, Epic Gam=
+es Store, and the Epic Games Store logo are trademarks or registered tradem=
+arks of Epic Games, Inc=2E in the USA and elsewhere=2E All other trademarks=
+ are the property of their respective owners=2E
+
+<!-- End legal --> =20
+</p>
+<!-- End legal -->=20
+                                      </div>
+                                    </td>
+                                </tr>
+                                <tr height=3D"30">
+                                    <td width=3D"100%" height=3D"30" style=
+=3D"line-height:1px; font-size:1px">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                  <td align=3D"center" class=3D"panel-padd=
+ed">
+                                    <div style=3D"font-family: arial, helv=
+etica, sans-serif; mso-line-height-rule: exactly; font-size:10px; color:#20=
+2020; text-align:center; line-height:12px">
+<!-- Start TOS -->                                   =20
+<!-- Start TOS -->=20
+<a style=3D"color:#000;" href=3D"https://accts=2Eepicgames=2Ecom/T/v600000=
+17ea31eed74af7bc4f4bbcfb920/ae5612af82eb415c0000021ef3a0bcc7/ae5612af-82eb-=
+415c-b80c-0a0b72e7da7e?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJ=
+T0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9v=
+kwo_mga2JAbIShxprPa-JJdz0Wq68mnO8WjEye58w6mQ3qdMf58BR6W5gnT8zBPOB9r_VysHWY9=
+YVuIIWtGzd077yuoKDavBtCdOtvJz1YIXf_nUQrkt5S0TEheE321wKO5JIxOQXx7PycQHDKfpFA=
+1RiKt6BEsxhmLo_PoVHFAMpSUgv7pLtqoCvQgN2PDnnMJHkrb5YVs_zgC7kq9fYEIi6QpsZxtde=
+FVbRb5H9f7cP4X5O5idML7XOwA=3D=3D">Terms of Service</a>
+
+<!-- End TOS--> =20
+ <!-- END TOS -->=20
+ |=20
+<!-- Start Privacy -->                                   =20
+<!-- Start Privacy Policy -->
+<a style=3D"color:#000;" href=3D"https://accts=2Eepicgames=2Ecom/T/v600000=
+17ea31eed74af7bc4f4bbcfb920/ae5612af82eb415c0000021ef3a0bcc8/ae5612af-82eb-=
+415c-b80c-0a0b72e7da7e?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJ=
+T0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9v=
+kwo_mga2JAbIShxp7JLvxiLMEAzZjdsyV3hB6TsAY9yft30WAEOiZn43gf_S469nnkjDbz6c-Ly=
+RRTlZh6OhQhcmEsvdV7wAK-focXtHtv3Sw9Ck-hUcUAylJSMYqr5Eyidlrwiw0adyEalnebm28J=
+2K9iGw7zKCclextGaAkhQZMGLsexVoP2n7282W9urXPubpPaDg2L1a6vPwAnS3yQchmJnlgjgwe=
+KRBZcDXzuQp-saDuZSoSgVzYwEWnQHl0YpjL">Privacy Policy</a>
+
+<!-- End Privacy Policy -->
+                                      |
+=20
+<a style=3D"color:#000;" href=3D"https://accts=2Eepicgames=2Ecom/U/v600000=
+17ea31eed74af7bc4f4bbcfb920/ae5612af82eb415c0000021ef3a0bcc9">Unsubscribe</=
+a>
+
+                                      |
+<!-- Start MCP -->=20
+<a href=3D"https://accts=2Eepicgames=2Ecom/T/v60000017ea31eed74af7bc4f4bbc=
+fb920/ae5612af82eb415c0000021ef3a0bcca/ae5612af-82eb-415c-b80c-0a0b72e7da7e=
+?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvjH=
+MDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxp4lAcTg=
+LkjUuOxoHUHImMOq1JDNRbUTTy8d1r0dlcV5mtrZ51sbswBLMyUDK0xtZIx1x7cgwpJj88MUNdm=
+sHZgJDZC4_blsqBROoFDBhrUUZr6O3emVySI-h63DdhjZwVF29q7tvJ6mf_rlRK3rPwEHBcieHF=
+YC_QyA3L2s6U27mrGlJWmeyAHeaJ_wXfoZUxf0h1R2hOA0YIyZesozCtqeymyKkEelI6lEAv8zP=
+-rZoEmdyFrPEBr" style=3D"color:#000000" alias=3D"Terms of Service">Manage Y=
+our Preferences</a>
+
+<!-- End MCP--> =20
+                                      <!-- END Privacy --> =20
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr height=3D"20">
+                                  <td width=3D"100%" height=3D"20" style=
+=3D"line-height:1px; font-size:1px">&nbsp;</td>
+                                <tr>
+                                <tr height=3D"20">
+                                  <td width=3D"100%" height=3D"20" align=
+=3D"center" style=3D"font-family: arial, helvetica, sans-serif; mso-line-he=
+ight-rule: exactly; font-size:10px; color:#858585; text-align:center; line-=
+height:12px">Box 254, 2474 Walnut Street, Cary, North Carolina, 27518</td>
+                                <tr>
+                              </table>
+                              </td>
+                            </tr>
+                          </table>
+                    <!-- End of legal -->
+                    <!--[if (IE)]>
+                  </td>
+                </tr>
+              </table>
+              <![endif]-->
+              <!--[if mso>
+            </td>
+          </tr>
+        </table>
+        <![endif]-->
+                     =20
+                    </center>
+                  </td>
+                </tr>
+              </table>
+</body>
+</html>
+
+---=Part.14ed483.8e93a76f9d0360ee.17ea31ef001.5e1ae2cbc3af8789=---
+

@@ -1,0 +1,974 @@
+X-GM-THRID: 1853298612575504305
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:a014:0:b0:257:cd84:643b with SMTP id a20csp8984365eic;
+        Sat, 3 Jan 2026 04:28:07 -0800 (PST)
+X-Google-Smtp-Source: 
+ AGHT+IGY6MZjU7PEvXQkkYr2AUa067ldQNOHb6q7i5+E6RXXFvz5o/2Q3tgdkoXCXaKTq3e5WFCB
+X-Received: by 2002:a05:622a:1c11:b0:4f1:e0fc:343e with SMTP id
+ d75a77b69052e-4f4abd4c1b5mr763323281cf.37.1767443287077;
+        Sat, 03 Jan 2026 04:28:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1767443287; cv=none;
+        d=google.com; s=arc-20240605;
+        b=NUijCGKoZLkMUoi6k6y5Jb7VJHl6C8YsxkGfWNFqwkJXvMg+Lg1yxYJ8ux4n3UwS+F
+         Zx19yz/qBKh3WLppjaF+zOjD5YbsZTvGeNaAlmGUm/anKFwqH87RtbLOzva7n+ADa22m
+         0xatMpoaqGEg7xV/SnV6SRDLX9D9GMtp07efjIOTueRhJFCcJ3aVyap6hogFaH4XJ3gX
+         fxigQkNFF5EPb4pGsEsJGXQyH4VJDTxnKVmpr+VyLbZJA2LSM/W466ajFvp0xLaEXRPs
+         bYh6/Vbtv+9WwQOlP6IeUc1ReUnphGXbG20qrXU3MCLWfPBr/ZZpDfxgImv2AAMX1XfB
+         hzrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=list-unsubscribe-post:list-unsubscribe:to:subject:message-id
+         :mime-version:from:date:content-transfer-encoding:dkim-signature
+         :dkim-signature;
+        bh=MA+Y4FDH5wQraNb86ZmwPVuGcTsm4C28EOrZCUeu5Zs=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=L7YhEhVoYdqavSM0YuwXbkU8ZTV58PKSLDlpYAJ6izYN4MJLQ+ay2LzRMZfMNBevCA
+         dpbd4mKr/2DsUCR/ajBVEhJXYLEZE0wb5/zuNVdy2PuAjNipd4XLmWfCU3cGCN783Sjk
+         cngR/P3I7U63Az1SjhvtJKBJbXNZBKee3W1N2wDT3Zb7wDdWShZvQdh3b8/76jhIoMt/
+         xKD0LLbsljlO8kYVE7b29cDEAWnCG6YDwFLLg9NEqUobOlr5HNWfpBr1p+snmIipUL3E
+         aC9fqgudfoZIj01Yhupf9bXeAOjfQfmdMntorxsQL6yzbSGzckz4Zi7+cCSAPlX0pZF0
+         UXUw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b=wclq5DS0;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=aBaTpC6m;
+       spf=pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 159.183.13.236 as permitted sender)
+ smtp.mailfrom="bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+Return-Path: 
+ <bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com>
+Received: from o23.ptr5360.openai.com (o23.ptr5360.openai.com.
+ [159.183.13.236])
+        by mx.google.com with ESMTPS id
+ d75a77b69052e-4f8ec5818d1si187439681cf.29.2026.01.03.04.28.06
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 03 Jan 2026 04:28:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 159.183.13.236 as permitted sender) client-ip=159.183.13.236;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b=wclq5DS0;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=aBaTpC6m;
+       spf=pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 159.183.13.236 as permitted sender)
+ smtp.mailfrom="bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.openai.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=s1; bh=MA+Y4FDH5wQraNb86ZmwPVuGcTsm4C28EOrZCUeu5Zs=;
+	b=wclq5DS0rVKohc7+OQBlrO0N1qMWXaAgrVz12s/uRXshztHTbUO3gqHTeQZAnhB5IuZx
+	O+mqz1aGTAF3flbhkSMaOzAn4+VJUqy2k3i7ndHETXnv8SACq9HJIC4yNOgEHK/yu465tI
+	711YpKpJtbShoTUjI5xnuCXQ1RsydxLkqwt/ZhP2Vk6B93AV4yYGzUUYspO8I9d/x4lFbb
+	pMm+XL7Spk6ZV6p7hi9CXICCUQpwoSXh715uiqMi7rg/P1/GJEszoMFrNajKhdZkk1Awdh
+	ZAtDU6CsbbnIUiw7Gnv4Ztm+qXbvg1xLBnyzk9JDvmpzr8aFnay84YzeWAQUHilA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=smtpapi; bh=MA+Y4FDH5wQraNb86ZmwPVuGcTsm4C28EOrZCUeu5Zs=;
+	b=aBaTpC6m0TyWPfA127RvNKESF7uKI9mHylKHm9Ge5PGsh26qTh10INqYRJqOGWgWNrnR
+	zqIIVaJtVfczVNo4IrEhhkGWeO2rAm0Wzm0y+wm4QtFrr3R3MqIbNEDHK4u7x2D/sXL/jy
+	P2TIcKSkd2LcXFk95Ghunz2gNt095NjY0=
+Received: by recvd-78b965c8d8-7g2kq with SMTP id
+ recvd-78b965c8d8-7g2kq-1-69590B55-C
+	2026-01-03 12:28:05.0762456 +0000 UTC m=+1432576.157509469
+Received: from MjAyMTY3MDY (unknown)
+	by geopod-ismtpd-22 (SG) with HTTP
+	id ALev-ASbQEWZiv53VWCw-Q
+	Sat, 03 Jan 2026 12:28:05.067 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Sat, 03 Jan 2026 12:28:05 +0000 (UTC)
+From: ChatGPT <noreply@email.openai.com>
+Mime-Version: 1.0
+Message-ID: <ALev-ASbQEWZiv53VWCw-Q@geopod-ismtpd-22>
+Subject: Easy self-care you can start today
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E2cVJOEP6rValQfJKwZO1ZPPp2yIilXnDhherIW4DlfmwSM5DUph+QZwre?=
+ =?us-ascii?Q?qLMgSI4FMsfC5+p8Cia8sKY9FC7+q0FXs02jkWN?=
+ =?us-ascii?Q?C5U6Y+ekH+Ru0x+iz=2FlajDuu+CDvdP21B3lr0Yd?=
+ =?us-ascii?Q?oyqZ2p=2F9OvaaLVAKrA1YOeUIkU0ShmMHEWbrwBm?=
+ =?us-ascii?Q?Jyvc3g9WXnCcg4pwsJ+hOx6rJBpyvM3jEDaQrbX?=
+ =?us-ascii?Q?ohG5N7ZCpB2IHXUo6DIi8QGAjQ14sBV055PZD2c?= =?us-ascii?Q?=2FL3C?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCfzdk8Q6weRGnug?=
+ =?us-ascii?Q?VdQiDX=2F9fA21ImNfrXLOO32jHkU+vu8madnpR58?=
+ =?us-ascii?Q?CPXhh98SEPq87yx17kojpXXwm29bKMwLavTy1rq?=
+ =?us-ascii?Q?3tcGXl+NZLthxG+9t6fiRvWau5spCyvxPHprRhf?=
+ =?us-ascii?Q?cOjKTk9W3ODLayjvjWFmCtIMa=2F1Fgne4PyXHQJI?=
+ =?us-ascii?Q?TudZLP7RvHQO+duV9m1jMzmGWX7orkUV7HCXAuW?=
+ =?us-ascii?Q?QQusVAX8nsOGD9+IZy9VuehMr3dQqdHgvGYPg8Y?=
+ =?us-ascii?Q?mA1db0wJaFPjMwmPeDwClL8ARXtDkqucalUwwnY?=
+ =?us-ascii?Q?YLkpYlWRaZGkAn7DAS6RyhRKqhdqj8Qome0o+Ec?=
+ =?us-ascii?Q?FBjbddIAi2jHyqmfVwSyzo+ndiKp2WPAQFGbfX2?=
+ =?us-ascii?Q?iCiCJMAJudiF=2FVRKn+YTrWBaPTalQ2ZJ1L1b72W?=
+ =?us-ascii?Q?YvX1Ty0xx2KGAB6I2j4ZzdQ=3D=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.bVuJR+6WQkYgHBZFem2ybw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fu20216706=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2EWG03?=
+ =?us-ascii?Q?Xv4yQWv26pn8oTu2WyzixVD6DzzEYD3ENvhDdNu?=
+ =?us-ascii?Q?5tNs4L5UZxIrqlr4R2L86zXynFyiHlOD8i8JGMZ?=
+ =?us-ascii?Q?MBdpkMe-hO-WK2c-FFHOIiWnIS=5F090hMIIprra1?=
+ =?us-ascii?Q?jd9CtIN3MxowHFuiowkhzItp1hKEm7aNKyv1rrv?=
+ =?us-ascii?Q?UGowqI-S40hacaHdMlmiERgpbXNtL4maRN5mpZv?=
+ =?us-ascii?Q?j2XvgHKxhncMXeHSo7Ld-LDxzpEKrDWax5-DB2E?=
+ =?us-ascii?Q?C9fdsW64wrscyPDBuez4Ym0UtOyOOW5kv81UW=5FO?=
+ =?us-ascii?Q?aKQop-uS6beV2Y9WhOgHnH4N5miRDUTNCk-rCrU?=
+ =?us-ascii?Q?R0BTKGGi6Uum=5FVIAO5Immw=5F24=5FpwN9eIkr8Duzz?=
+ =?us-ascii?Q?XLhwRw-EA2GgEOxZxsLDVzF=5FUFrce-KD8QTfsdD?=
+ =?us-ascii?Q?3x3yg7s2A8nR6FJ5bMSVMuUyeyhIbWpvwMli-dc?=
+ =?us-ascii?Q?9SrXq2143O2sVV7CnmKXwjriQx2MzFc3-8J6pzM?=
+ =?us-ascii?Q?RbPSxE78j-h0Zob4nNAIqUSeLzqrATxinnhqTGF?=
+ =?us-ascii?Q?TOZRktGmq-ZzAxrjG9X8yE5FPDH3kVK3cqKyAXs?=
+ =?us-ascii?Q?CLNrJb0afTSyd9Q1zIsU=5FMgzQCqsQE1V=5FXS3x-Y?=
+ =?us-ascii?Q?fDX-zGAKYUud8J2ib1E=5Fl4KgpsaxgGe=5FLCVkxlu?=
+ =?us-ascii?Q?kF7cbP1EZ7LpaAlmluthRw6zzRmbMNJWLBW9z7k?=
+ =?us-ascii?Q?Qfh2GA8am0Itd6Va6o9eHvvYZG1BA6carxtTaLQ?=
+ =?us-ascii?Q?jNSAJOEr9eL1woDDXSMIHMclAB7xuXSqkuf6iGU?=
+ =?us-ascii?Q?R1AaBbZQTukrFaUnKfz9zBG4CxpPejeam9CUZvO?=
+ =?us-ascii?Q?nYQnbDfpEwc0llEK9rdrteZpJgBzDKYGcDSOwfA?=
+ =?us-ascii?Q?l2r253Eg8uFCSzDFRrqO7IhkZvHa=5FIHQqmqoydT?=
+ =?us-ascii?Q?qvzDkIV9ysVUgBEcvYtfQrovkoHTtvblYAW4f4l?=
+ =?us-ascii?Q?-cFNpUEVaLN6gTO0d-QvxP0XUEsSjkP7basJ6Fo?=
+ =?us-ascii?Q?=5FyRHO7GvvUxFnpMwDtO4ks8KBVjdW9iZadCfw4L?=
+ =?us-ascii?Q?1z-6J1JzaEtfdqupw4n=5FF8g2Qgzp=5F9PumCJjmnN?=
+ =?us-ascii?Q?WvFe0vtZ9bl3IfrJeet5YavMSVe=5FVO7bKYqkGCJ?=
+ =?us-ascii?Q?kNOA=5Fbu2KeUo6bLhG5OageYJTTyA6J0i7c9-Of-?=
+ =?us-ascii?Q?O8d1U=5FmEPdrYP8z7o9Bf4mO3Rnupg7RJ33co4hC?=
+ =?us-ascii?Q?D-SxOzFc1p2TKC9L-qwPKCAqqvCLSilDxgUeA1o?=
+ =?us-ascii?Q?XMMmZ-EPFEOq3lYhKO4CUeUQ7czQfD6TzA5nDcd?=
+ =?us-ascii?Q?lcKs1KGAJNg7RTuHU06DUvUjY5GwKNIaTxbI7X3?=
+ =?us-ascii?Q?Sv1ZB3i3sFacD6e7GcS3F=5Fo2li4jLOW8LZBtwCh?=
+ =?us-ascii?Q?QECf7k7moOFUVN5qXIW72bfCMadQcm4c=3E=2C=3Cmail?=
+ =?us-ascii?Q?to=3Aunsubscribe=40em6623=2Eemail=2Eopenai=2Ecom=3F?=
+ =?us-ascii?Q?subject=3D20216706=2E33byOm4Mkht-fT57Q96sc9?=
+ =?us-ascii?Q?IK0Pd758JbOGoYGd8HOvVoMDAwdTAwMLAdUSe4o?=
+ =?us-ascii?Q?vRPkOV65FmHKJtHtgAsBKmC5inxRi=5FItLwTc-Ku?=
+ =?us-ascii?Q?eb0pILnUWWVEcJgtqffn2p8Si-KiyfvR0VtrY1l?=
+ =?us-ascii?Q?WorgXPcc=5F2I1MzdnDEEokbIIeRFE94oVuQZe5rQ?=
+ =?us-ascii?Q?rm5g=3D=3D=2EKQPNEW7CkjuZbhfph35ej6nBO6p7Lprp?=
+ =?us-ascii?Q?hZsFvkxQbSpoMDAwdTAwMLAVKdzn8Nzn8FK2NgH?=
+ =?us-ascii?Q?Pgak9IoNtznj7RqnkouedggdoBZ252iWzAQ5xM7?=
+ =?us-ascii?Q?OhdhZQBe0HOiKuVxIGiRav-SHMal99wGm6dHbOB?=
+ =?us-ascii?Q?V8L90zq4SYlPRdfZIdmL1QicQOf778EFe0VarqK?=
+ =?us-ascii?Q?VlMBfWpaLNCAartOEb5JtvN1h14pFsjAJqZ4TzE?=
+ =?us-ascii?Q?2p5migMIJ56XhMAWjoYCBaklcnZY1UI=5Fa4yPpjI?=
+ =?us-ascii?Q?sYEaVv42s6AIgzl4ClmPcIbGHwaczgS3AOungvx?=
+ =?us-ascii?Q?bcN0ltP9=5FRkw0bX6-7RBTMgUtOFqBZMtMTr4RUy?=
+ =?us-ascii?Q?SBToKvjmQswrUMILtsTgYSI7enGDupHZrJPew1u?=
+ =?us-ascii?Q?5qho7TGLdsoTb9Ex3DPZdBSZsGB9eAfEH9BbZTm?=
+ =?us-ascii?Q?A6gP2FJuB5Z8b70xoi6hZKBS9=5FW1-rZDgVZg-Ce?=
+ =?us-ascii?Q?qD1AlRKpZRT11LXMxWu=5F6KqFH5pZHYIqP7CBBbF?=
+ =?us-ascii?Q?ZGibrtxqQwZjEZWhAyhpHxdjI4oXot5RBxYhT9k?=
+ =?us-ascii?Q?8kC9MDIsMLbfRUOxPbRAmAh19sQf0xhTgOQ7fFH?=
+ =?us-ascii?Q?4zELn5c0DJ-Q60bwM0Zrywq-GCh69-9AZjnPq4d?=
+ =?us-ascii?Q?Qk-nrnG4geY0mmDgYw0qIxq90xVeTHy6Eio86he?=
+ =?us-ascii?Q?ju0wZQUAizJaanCj=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+<!DOCTYPE html>
+<html dir=3D"ltr">
+<head>
+  <meta charset=3D"utf-8">
+  <meta http-equiv=3D"x-ua-compatible" content=3D"ie=3Dedge">
+  <title></title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <style type=3D"text/css">
+  /**
+   * Google webfonts. Recommended to include the .woff version for cross-cl=
+ient compatibility.
+   */
+  @media screen {
+    /* OpenAI Sans font family */
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 500;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Medium.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 600;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Semibold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 700;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Bold.woff2") format("woff2");
+    }
+  }
+
+  /**
+   * Avoid browser level font resizing.
+   * 1. Windows Mobile
+   * 2. iOS / OSX
+   */
+  body,
+  table,
+  td,
+  a {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: 'OpenAI Sans', Helvetica, Arial, sans-serif;
+  }
+
+  /**
+   * Remove extra space added to tables and cells in Outlook.
+   */
+  table,
+  td {
+    mso-table-rspace: 0pt;
+    mso-table-lspace: 0pt;
+    vertical-align: top; /* Align content to the top of table cells */
+  }
+
+  /**
+   * Better fluid images in Internet Explorer.
+   */
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /**
+   * Remove blue links for iOS devices.
+   */
+  a[x-apple-data-detectors] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /**
+   * Fix centering issues in Android 4.4.
+   */
+  div[style*=3D"margin: 16px 0;"] {
+    margin: 0 !important;
+  }
+
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Collapse table borders to avoid space between cells.
+   */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  a {
+    color: #898A8D;
+  }
+
+  img {
+    height: auto;
+    line-height: 100%;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+  }
+
+  /* Composer image sizing (mobile default) */
+  .composer-img {
+      width: 83px !important;
+      height: auto !important;
+      padding: 16px !important;
+  }
+
+  h1 {
+      font-size: 34px;
+      line-height: 41px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      margin: 0;
+  }
+  h2 {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 150%;
+      letter-spacing: -0.2px;
+  }
+  p {
+      font-size: 16px;
+      line-height: 130%;
+      font-weight: 500;
+      margin: 0;
+  }
+  p + p {
+      margin-top: 16px;
+  }
+  /* Intro blocks (H1/H2) sizing */
+  .intro-block {
+      width: 345px !important;
+      max-width: 345px !important;
+  }
+  /* Composer card sizing */
+  .composer-card {
+      width: 377px !important;
+      max-width: 377px !important;
+  }
+  /* Button styling */
+  a.button {
+      background-color: #000000 !important; /* default black */
+      border-radius: 24px !important; /* make button curvy */
+      padding: 11.5px 24px 11.5px !important; /* bigger size */
+      font-size: 16px !important; /* revert text size */
+      line-height: 24px !important;
+  }
+
+  a.button:active {
+      background-color: #414141 !important; /* dark gray on click */
+      border-radius: 36px !important;
+  }
+  /* Badges: stacked by default */
+  .badges .badge {
+      display: block !important;
+      width: 100% !important;
+      margin: 10px 0 0px 0 !important;
+  }
+
+  /* Desktop: 2 columns & bigger badges */
+  @media screen and (min-width:480px) {
+      .badges {
+          width: 300px !important; /* Increase from 300px */
+          max-width: 100% !important;
+          display: table !important;
+      }
+      .badges .badge {
+          display: table-cell !important;
+          width: 50% !important;
+          margin: 0 !important;
+          vertical-align: bottom !important;
+          padding: 0px 6px !important;
+      }
+      .badges .badge img {
+          width: 400px !important; /* bigger on desktop */
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+      }
+  }
+
+  /* Desktop: larger typography */
+  @media screen and (min-width:480px) {
+      h1 {
+          font-size: 34px !important;
+          line-height: 41px !important;
+          letter-spacing: 0.4px;
+          font-weight: 400 !important;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        line-height: 150%;
+        letter-spacing: -0.2px;
+      }
+      /* Header cell: increase side padding on desktop only */
+      td.header-td {
+          padding-left: 57px !important;
+          padding-right: 57px !important;
+      }
+      /* Composer image sizing for desktop */
+      .composer-img {
+          width: 98px !important;
+      }
+      /* Body content cells: increase side padding on desktop */
+      td.content-td {
+          padding-left: 60px !important;
+          padding-right: 60px !important;
+      }
+      td.footer-td {
+          padding-left: 56px !important;
+          padding-right: 56px !important;
+      }
+      p {
+          font-size: 16px !important;
+          line-height: 130% !important;
+          font-weight: 400;
+      }
+      td {
+          font-size: 10px !important;
+          line-height: 16px !important;
+          font-weight: 400;
+      }
+      a.button {
+          font-size: 16px !important;
+          line-height: 24px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 4px !important;
+      }
+      /* Composer card width on desktop */
+      .composer-card {
+          width: 400px !important;
+          max-width: 400px !important;
+      }
+      /* Intro blocks width on desktop */
+      .intro-block {
+          width: 360px !important;
+          max-width: 360px !important;
+      }
+  }
+  /* Mobile stacking helper for columns */
+  @media screen and (max-width:480px) {
+      /* Ensure footer badges bottom-align with copyright on mobile */
+      td.header-td {
+          padding-left: 21px !important;
+          padding-right: 21px !important;
+      }
+      /* Body content cells: smaller side padding on mobile */
+      td.content-td {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+      }
+      td.footer-td {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 4px !important;
+      }
+  }
+
+
+  /* RTL mirroring */
+  [dir=3D"rtl"] body,
+  [dir=3D"rtl"] table,
+  [dir=3D"rtl"] td,
+  [dir=3D"rtl"] a {
+      direction: rtl !important;
+  }
+  [dir=3D"rtl"] h1,
+  [dir=3D"rtl"] h2,
+  [dir=3D"rtl"] p {
+      text-align: right !important;
+  }
+
+  </style>
+
+</head>
+<body dir=3D"ltr" style=3D"background-color: #FFFFFF;">
+
+  <div class=3D"preheader" style=3D"display: none; max-width: 0; max-height=
+: 600; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opa=
+city: 0;">
+    Generate, refine, and export in minutes
+  </div>
+
+  <!-- start body -->
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" di=
+r=3D"ltr">
+    <!-- start body block -->
+    <tr>
+      <td align=3D"center">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"360">
+        <tr>
+        <td align=3D"center" valign=3D"top" width=3D"360">
+        <![endif]-->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" style=3D"width: 100%; max-width: 600px; background-color:#fff;">
+                      <!-- header image -->
+            <tr>
+                <td valign=3D"top" class=3D"header-td" style=3D"padding: 42=
+px 24px 42px 24px;">
+                    <table align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"min-width:100%; background-color:=
+#ffffff;">
+                        <tbody><tr>
+                            <td valign=3D"top" align=3D"center" style=3D"pa=
+dding-top: 0; padding-bottom: 0;">
+                                <a href=3D"https://chat.openai.com/?mode=3D=
+default&utm_campaign=3DEML-HealthAndWellnessBroadPrompts&utm_content=3Dutm_=
+content&utm_medium=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_term" targe=
+t=3D"_blank" style=3D"display:inline-block;">
+                                  <img alt=3D"" src=3D"http://cdn.mcauto-im=
+ages-production.sendgrid.net/d4ef4a73d51fe844/b7626bee-28ca-4e2f-b25b-7d81a=
+f34e7a1/206x51.png" width=3D"103" style=3D"display:block; margin:0 auto; wi=
+dth:103px; height:auto; max-width:100%; border:0; background-color:#ffffff;=
+">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+         =20
+    <tr>
+  <td align=3D"center" bgcolor=3D"#ffffff" class=3D"content-td" style=3D"pa=
+dding: 12px 24px 0px 24px;">
+    <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 345px; width: 10=
+0%;">
+      <tr>
+        <td align=3D"center" style=3D"padding:0;">
+          <h1 style=3D"text-align: center;">
+              Just tap a chat to start
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </td>
+  </tr>
+    <tr>
+  <td align=3D"center" bgcolor=3D"#ffffff" class=3D"content-td" style=3D"pa=
+dding: 12px 24px 0px 24px;">
+    <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 345px; width: 10=
+0%;">
+      <tr>
+        <td align=3D"center" style=3D"padding:0;">
+          <h2 style=3D"margin: 0 auto; text-align: center;">
+              Try these ideas for fitting in more wellness.
+          </h2>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+    <tr>
+        <td align=3D"center" bgcolor=3D"#ffffff" class=3D"content-td" style=
+=3D"padding: 16px 24px 0 24px;">
+          <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" align=3D"center" style=3D"max-width: 552px;">
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"https://chatgpt.com/?mode=3Ddefault&pid=3D1a2b3c4d-5e6f-40=
+71-8a9b-0c1d2e3f4a5b&q=3DCreate%20a%2020-minute%2C%20no-equipment%20routine=
+%20for%20a%20home%20workout.%20Include%20mobility%2C%20light%20strength%2C%=
+20and%20cardio.%20Include%20a%20quick%20cool-down.%20Ask%20anything%20you%2=
+0might%20need%20to%20know%20about%20me%20to%20finetune%20the%20plan&utm_cam=
+paign=3DEML-HealthAndWellnessBroadPrompts&utm_content=3Dutm_content&utm_med=
+ium=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_term" target=3D"_blank" st=
+yle=3D"display:block; text-decoration:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card" style=3D"=
+border-radius: 24px; border: 1px solid var(--border-default, rgba(13, 13, 1=
+3, 0.10)); background: #FFF; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05); =
+border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td>
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                <tr>
+                 =20
+                    <td valign=3D"middle">
+                      <img class=3D"composer-img" src=3D"http://cdn.mcauto-=
+images-production.sendgrid.net/d4ef4a73d51fe844/e1dbd54f-385e-4dc8-b766-011=
+de5afcde4/196x196.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display=
+:block; border:0; border-radius:12px; width:56px; height:56px;">
+                    </td>
+                    <td valign=3D"middle" dir=3D"ltr" style=3D"width:100%; =
+font-size:16px; line-height:150%; color:#000; vertical-align: middle; text-=
+align: left; padding: 0;">
+                      <h2>I don=E2=80=99t belong to a gym. Make a no-equipm=
+ent, 20-minute home workout</h2>
+                    </td>
+                    <td valign=3D"bottom" align=3D"right" width=3D"48" styl=
+e=3D"vertical-align: bottom; padding: 16px;">
+                      <img src=3D"http://cdn.mcauto-images-production.sendg=
+rid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139.png" =
+width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; height:=
+32px;">
+                    </td>
+                 =20
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"https://chatgpt.com/?mode=3Ddefault&pid=3D2b3c4d5e-6f70-41=
+82-9a0b-1c2d3e4f5a6b&q=3DI%20want%20to%20eat%20more%20protein.%20Plan%205%2=
+0protein-rich%2C%20balanced%20dinners.%20Provide%20me%20with%20menu%2C%20pr=
+ep%20steps%2C%20shared%20ingredients%2C%20and%20a%20consolidated%20shopping=
+%20list%20grouped%20by%20aisle&utm_campaign=3DEML-HealthAndWellnessBroadPro=
+mpts&utm_content=3Dutm_content&utm_medium=3Demail&utm_source=3Dsendgrid&utm=
+_term=3Dutm_term" target=3D"_blank" style=3D"display:block; text-decoration=
+:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card" style=3D"=
+border-radius: 24px; border: 1px solid var(--border-default, rgba(13, 13, 1=
+3, 0.10)); background: #FFF; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05); =
+border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td>
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                <tr>
+                 =20
+                    <td valign=3D"middle">
+                      <img class=3D"composer-img" src=3D"http://cdn.mcauto-=
+images-production.sendgrid.net/d4ef4a73d51fe844/0530dfa2-8dc5-462e-9e77-72d=
+d533f069f/196x196.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display=
+:block; border:0; border-radius:12px; width:56px; height:56px;">
+                    </td>
+                    <td valign=3D"middle" dir=3D"ltr" style=3D"width:100%; =
+font-size:16px; line-height:150%; color:#000; vertical-align: middle; text-=
+align: left; padding: 0;">
+                      <h2>I want to eat more protein. Plan 5 protein-rich, =
+balanced dinners</h2>
+                    </td>
+                    <td valign=3D"bottom" align=3D"right" width=3D"48" styl=
+e=3D"vertical-align: bottom; padding: 16px;">
+                      <img src=3D"http://cdn.mcauto-images-production.sendg=
+rid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139.png" =
+width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; height:=
+32px;">
+                    </td>
+                 =20
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"https://chatgpt.com/?mode=3Ddefault&pid=3D3c4d5e6f-7081-42=
+93-a0b1-2c3d4e5f6a7b&q=3DLead%20a%20timed%205-minute%20breathing%20reset.%2=
+0Tell%20me%20the%20cadence%20%28e.g.%2C%204-2-6%29%2C%20posture%2C%20and%20=
+where%20to%20place%20attention.%20Add%20one%20simple%20visualization%20and%=
+20a%20quick%20%E2%80%98use%20in%20the%20moment%E2%80%99%20tip&utm_campaign=
+=3DEML-HealthAndWellnessBroadPrompts&utm_content=3Dutm_content&utm_medium=
+=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_term" target=3D"_blank" style=
+=3D"display:block; text-decoration:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card" style=3D"=
+border-radius: 24px; border: 1px solid var(--border-default, rgba(13, 13, 1=
+3, 0.10)); background: #FFF; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05); =
+border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td>
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                <tr>
+                 =20
+                    <td valign=3D"middle">
+                      <img class=3D"composer-img" src=3D"http://cdn.mcauto-=
+images-production.sendgrid.net/d4ef4a73d51fe844/d94071c5-5a76-411c-96af-d78=
+debf96b59/196x196.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display=
+:block; border:0; border-radius:12px; width:56px; height:56px;">
+                    </td>
+                    <td valign=3D"middle" dir=3D"ltr" style=3D"width:100%; =
+font-size:16px; line-height:150%; color:#000; vertical-align: middle; text-=
+align: left; padding: 0;">
+                      <h2>I=E2=80=99ve had a stressful day. Talk me through=
+ a 5-min breathing exercise</h2>
+                    </td>
+                    <td valign=3D"bottom" align=3D"right" width=3D"48" styl=
+e=3D"vertical-align: bottom; padding: 16px;">
+                      <img src=3D"http://cdn.mcauto-images-production.sendg=
+rid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139.png" =
+width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; height:=
+32px;">
+                    </td>
+                 =20
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"https://chatgpt.com/?mode=3Ddefault&pid=3D4d5e6f70-8192-43=
+a4-b0c1-3d4e5f6a7b8c&q=3DI%20don%E2%80%99t%20know%20what%20to%20cook.%20Loo=
+k%20at%20my%20fridge%20to%20recommend%20a%20recipe.%20First%2C%20ask%20me%2=
+0for%20a%20photo%20of%20what%27s%20inside%20my%20fridge%20or%20a%20list%20o=
+f%20the%20ingredients%20I%20have&utm_campaign=3DEML-HealthAndWellnessBroadP=
+rompts&utm_content=3Dutm_content&utm_medium=3Demail&utm_source=3Dsendgrid&u=
+tm_term=3Dutm_term" target=3D"_blank" style=3D"display:block; text-decorati=
+on:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card" style=3D"=
+border-radius: 24px; border: 1px solid var(--border-default, rgba(13, 13, 1=
+3, 0.10)); background: #FFF; box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05); =
+border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td>
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                <tr>
+                 =20
+                    <td valign=3D"middle">
+                      <img class=3D"composer-img" src=3D"http://cdn.mcauto-=
+images-production.sendgrid.net/d4ef4a73d51fe844/999ff79e-229c-4e56-8a56-60b=
+6ba779b74/196x196.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display=
+:block; border:0; border-radius:12px; width:56px; height:56px;">
+                    </td>
+                    <td valign=3D"middle" dir=3D"ltr" style=3D"width:100%; =
+font-size:16px; line-height:150%; color:#000; vertical-align: middle; text-=
+align: left; padding: 0;">
+                      <h2>I don=E2=80=99t know what to cook. Look at my fri=
+dge to recommend a recipe</h2>
+                    </td>
+                    <td valign=3D"bottom" align=3D"right" width=3D"48" styl=
+e=3D"vertical-align: bottom; padding: 16px;">
+                      <img src=3D"http://cdn.mcauto-images-production.sendg=
+rid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139.png" =
+width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; height:=
+32px;">
+                    </td>
+                 =20
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+          </table>
+        </td>
+    </tr>
+   =20
+      <tr>
+  <td align=3D"center" bgcolor=3D"#ffffff" class=3D"content-td" style=3D"pa=
+dding: 12px 24px 0px 24px;">
+    <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 345px; width: 10=
+0%;">
+      <tr>
+        <td align=3D"center" style=3D"padding:0;">
+          <h1 style=3D"text-align: center;">
+              Ask ChatGPT for more wellness tips
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </td>
+  </tr>
+   =20
+   =20
+      <tr>
+  <td align=3D"center" bgcolor=3D"#ffffff">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+      <tr>
+        <td align=3D"center" bgcolor=3D"#ffffff" class=3D"content-td" style=
+=3D"padding: 24px 24px 28px 24px;">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center">
+            <tr>
+              <td align=3D"center" bgcolor=3D"#000000" style=3D"border-radi=
+us: 36px; background-color: #ffffff;">
+                <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-=
+com:vml" href=3D"https://chatgpt.com/?mode=3Ddefault" style=3D"height:40px;=
+v-text-anchor:middle;width:160px;" arcsize=3D"50%" stroke=3D"f" fillcolor=
+=3D"#000000"><w:anchorlock/><center style=3D"color:#ffffff;font-family:Helv=
+etica,Arial,sans-serif;font-size:16px;font-weight:400;letter-spacing:-0.32p=
+x;">Start chatting</center></v:roundrect><![endif]-->
+                <!--[if !mso]><!-- --><a href=3D"https://chatgpt.com/?mode=
+=3Ddefault&utm_campaign=3DEML-HealthAndWellnessBroadPrompts&utm_content=3Du=
+tm_content&utm_medium=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_term" ta=
+rget=3D"_blank" class=3D"button" style=3D"display:inline-block;padding:11px=
+ 24px 11px 24px;font-weight:400;font-size:16px;line-height:24px;letter-spac=
+ing:-0.32px;color:#ffffff;text-decoration:none;border-radius:36px;backgroun=
+d-color:#000000;  border: 1px solid #ffffff; border-style: solid; border-co=
+lor: #ededed; overflow: hidden;">Start chatting</a><!--<![endif]-->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end body block -->
+
+        <!-- start footer -->
+    <tr>
+      <td align=3D"center" style=3D"padding:20px 0;">
+        <!--[if mso]>
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"600"><tr><td>
+        <![endif]-->
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" style=3D"max-width:600px;">
+          <tr>
+            <td align=3D"center" class=3D"footer-td" style=3D"background-co=
+lor:#ededed; border-radius:12px; padding:30px;">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%">
+                <tr>
+                  <td align=3D"left" style=3D"padding-bottom:14px;">
+                    <a href=3D"https://chat.openai.com/?mode=3Ddefault&utm_=
+campaign=3DEML-HealthAndWellnessBroadPrompts&utm_content=3Dutm_content&utm_=
+medium=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_term" target=3D"_blank"=
+ style=3D"display:inline-block;">
+                      <img src=3D"http://cdn.mcauto-images-production.sendg=
+rid.net/d4ef4a73d51fe844/9565285e-bcf8-4984-9e55-d42c631c25aa/150x58.png" w=
+idth=3D"90" alt=3D"OpenAI" style=3D"display:block;border:0; background-colo=
+r:#ededed;">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%">
+                      <tr class=3D"footer-row">
+                        <td valign=3D"bottom" align=3D"left" style=3D"font-=
+size:10px; line-height:1.8; color:#000; width:60%; padding-right:12px; vert=
+ical-align: bottom; padding-left: 4px;">
+                          1455 3rd Street<br/>San Francisco, CA 94158<br/>
+                          <a href=3D"http://url3243.email.openai.com/asm/un=
+subscribe/?user_id=3D20216706&amp;data=3DNwZQKTwE_6aWyNvxqR8-1Hc5VT4VLytxUX=
+icYEBf8CFoMDAwdTAwMPSudpzfKXCqob6FQkc64DUwsi7dCdpVg1qm8xNtH5v9qHu3ruADOLxZZ=
+aW_ukg4j7A7KaIrRyi_xLfrv0bJYQ3xOTHWv38dnEjelIB66M1LSZ2DFOog743CycCrQ7-TDGoI=
+NMsuUm5eiWs9a5smqY8PHQtxmB6MhOo_nfH8t81Hlm6pufNbAxFn3gYU8U3Tzfn7PXU23vMNcf4=
+esaZWiHjiOE8mwBWKebJ5_t8XAyt6fLjeLoXC_L0mw35OxBE9tM7BEFbjItVtQnb5L7bQ9p_YS_=
+CY2suoKx6wG2kllmK6P2mwBVJaClehqdAudovxkhERRkBSkMORrxkylCMHRys_nmOgyo2gqVO7v=
+95yJXJHElHaX_Nrs-Uot4EMZyF9PpzPfCNjnYWmKN86mnQsNkpC9H5T-0K9f68zNv3wTFKjR0dV=
+qfG69jXuC3KnJUr5xqpoqWap8OtMY7p2XBVv7x9pfat97Eg5-NXqevBZPnwfUJrVGxlqOMXsstt=
+_NVZuwRpO4YGiKqfg2HHXEBtZ3AClKfg-1Fj_-4LbsvZUf2OlV1YWns4gDujUGm95IKficnZK9S=
+8n-s8SbHDYl8LoSuZZSdXn-8mhWZsx-4EOBTUWf_F4oAExR8_488szboxedQ_LBWOzmfGLmiE8k=
+-sNNPzxFwNyyfVc580RO8DyfY6iSR7fJwsnLgtUCGRrX-dWI1K0iEQH4AImxQ5RRX9a1FBswkhX=
+zr44MKScAFiKseSQ7xSzKveVoTxVBKZ_sAFdmKD70LukbwbkHGYvMh_1a9JU4Nh4i8c_qXhuSZn=
+K6FxzcBg_aRQt0VNRV4FChcUo7w=3D=3D" target=3D"_blank" style=3D"color:#898A8D=
+; text-decoration:underline;">Unsubscribe</a><br/>
+                          <a href=3D"https://openai.com/privacy?utm_campaig=
+n=3DEML-HealthAndWellnessBroadPrompts&utm_content=3Dutm_content&utm_medium=
+=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_term" target=3D"_blank" style=
+=3D"color:#898A8D; text-decoration:underline;">Privacy</a> &middot; <a href=
+=3D"https://openai.com/terms?utm_campaign=3DEML-HealthAndWellnessBroadPromp=
+ts&utm_content=3Dutm_content&utm_medium=3Demail&utm_source=3Dsendgrid&utm_t=
+erm=3Dutm_term" target=3D"_blank" style=3D"color:#898A8D; text-decoration:u=
+nderline;">Terms</a><br/>
+                          <span style=3D"color:#888; display:block; margin-=
+top: 1.8em;">OpenAI =C2=A9 2015-2025</span>
+                        </td>
+                        <td valign=3D"bottom" style=3D"width:40%; text-alig=
+n:center; vertical-align: bottom;">
+                          <table role=3D"presentation" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" class=3D"badges" style=3D"width:100%;">
+                            <tr>
+                              <td class=3D"badge" style=3D"text-align:cente=
+r; padding:0 6px;">
+                                <a href=3D"https://play.google.com/store/ap=
+ps/details?id=3Dcom.openai.chatgpt&pcampaignid=3DpcampaignidMKT-Other-globa=
+l-all-co-prtnr-py-PartBadge-Mar2515-1&utm_campaign=3DEML-HealthAndWellnessB=
+roadPrompts&utm_content=3Dutm_content&utm_medium=3Demail&utm_source=3Dsendg=
+rid&utm_term=3Dutm_term" target=3D"_blank" style=3D"display:inline-block;">
+                                  <img src=3D"http://cdn.mcauto-images-prod=
+uction.sendgrid.net/d4ef4a73d51fe844/f0bb62f0-5199-4600-a341-38aa871bde57/2=
+40x80.png" width=3D"120" alt=3D"Get it on Google Play" style=3D"display:blo=
+ck; border:0; width:120px; height:auto;">
+                                </a>
+                              </td>
+                              <td class=3D"badge" style=3D"text-align:cente=
+r; padding:0 6px;">
+                                <a href=3D"https://apps.apple.com/us/app/ch=
+atgpt/id6448311069?utm_campaign=3DEML-HealthAndWellnessBroadPrompts&utm_con=
+tent=3Dutm_content&utm_medium=3Demail&utm_source=3Dsendgrid&utm_term=3Dutm_=
+term" target=3D"_blank" style=3D"display:inline-block;">
+                                  <img src=3D"http://cdn.mcauto-images-prod=
+uction.sendgrid.net/d4ef4a73d51fe844/7556e4e9-fd26-44ce-b5db-098b33274c20/2=
+40x80.png" width=3D"120" alt=3D"Download on the App Store" style=3D"display=
+:block; border:0; width:120px; height:auto;">
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]></td></tr></table><![endif]-->
+      </td>
+    </tr>
+    <!-- end footer -->
+
+  </table>
+  <!-- end body -->
+
+<img src=3D"http://url3243.email.openai.com/wf/open?upn=3Du001.mRvjWa6a2tdi=
+7UgUZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszauk-2FtLuX3qTpWitWor4=
+DA2SXrxycg-2B18m7gLWWjDrMA-2BROg24t8MA7fP8ZFdy5QU8YFH5g1F6k-2FzKc4SrF3nn8qA=
+jv1V9UZtyfe9881OHPGvP4fu5XazVBFHVBLwc6CNbOsKb-2BFuTltkfe8pAbr8ERJ8ZZayqrili=
+oVJJcYzUTGFFedtAYMjczA9OpL0N1Q5NrRWeBHGbUs1uaPzq9aDthfiH2i9rWVnHxPJTL-2BUo4=
+xha1a-2F9oFIT7kDcCgr13HML56e0WeysXC5Kl3DbrGv9H6cXxkhGgukWURzyoCoSWi11tG30Mn=
+FEjRmqkaXtPQziz1unyT5ALKY43VhXdnUbdG-2FAFGGM53Of8FXJCDZV5Ch4EvdcLSRRD-2Fw1a=
+RW4-2BEEpV7CVxiaOQPFNjXSkXnC70gF1Du1sL5SggTUmHc477jpfssziyqoVjPfRCinBwMOsJ9=
+bF6t4KXr8cODLMHzeuUg-2FhBXt46tCilOaCep9x66LWgxnQfv5nFCqJOqSdNSJ1TUhTvo601h2=
+KElgeY1VOrJBxeyv5rLxJTCck9wncFIATzAupZzpjwlczCILqFr0r0gyg-2FKcd-2BGt0mkcPDR=
+8NbMhrcTV81KqrBFj0-2FHyMzY-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"=
+0" style=3D"height:1px !important;width:1px !important;border-width:0 !impo=
+rtant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !im=
+portant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 =
+!important;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>

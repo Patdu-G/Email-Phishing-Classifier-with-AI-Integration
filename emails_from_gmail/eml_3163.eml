@@ -1,0 +1,1688 @@
+X-GM-THRID: 1725062609367944267
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a50:348a:0:0:0:0:0 with SMTP id ct10csp375114ecb;
+        Thu, 17 Feb 2022 17:31:45 -0800 (PST)
+X-Google-Smtp-Source: 
+ ABdhPJyR7aZbK3uSZVO9T0T3Z69/Pf+hISy2JdeOXb0Gc+J0tsNMZWFPJBJqmqkeQFj5YshDuMZX
+X-Received: by 2002:a17:906:53d2:b0:6ce:791a:31a0 with SMTP id
+ p18-20020a17090653d200b006ce791a31a0mr4593420ejo.59.1645147904979;
+        Thu, 17 Feb 2022 17:31:44 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1645147904; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=zuKDtOZU5SThSd7UDFEJobOA2wUG2Oum5/luo/+MhxgW63m8DFP/i8gLMYFR1TtXH7
+         XasuUvyO43sWCZgchWx3iwlMZYTF5BkyaA5BGfQFdQwg0XtQu8Ok8FWN69Z/YEAK9eV7
+         4TFyT0WOr9EFWTUkKXCGFIenWEllvTKc8shd1uMB6ish+0K8lbCMpiNV7XEwtXuyTnSQ
+         uBW4tS+ttpxqY7A9pl2MyUe2fPVRYxZelrDR5dHZzW/11baKbDWNAa3NW0MzVhqzvY8A
+         +lIo964OPh3+ChWZtI5WjoFnX9lqhdPWzJBdb5Qn6Mly3/P6JGDhWB8gbt1+iAhd3W27
+         hDeA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=g6Y3FgRqmpSoLlzKwirTFm0H4DKC/CcfX/Zq1vXg63M=;
+        b=nPDZhLb3LbmD+jZ92o5N2N6tX5FjFjhXaLzSYRvzKcTTpO639gNethCRAp/0pkJ/Nm
+         mdNszE9tPnHllz7ZdVi4TNv+q6gWflhtxy87Q2W2fQq/9yV+5PpUskhCny77QxtKcjJv
+         m0BN01ETKcqrAFAC0thQN1PbxcmiutrgZUEv0TK2Oyx+n7wd93i75bPWH6wGS9rZdkKS
+         F4G47eepQHoPLCbYmvlhgaExFmo5wvk310oB/GmL/7L89K7hC3E0GbcvZhmr4mS9yvTs
+         lqidgUnB1sV/CLlL91okZ5ETHW1AZKsH3Qq3OBv1Vn6LMSUHOeQRvwf2E5JRpYfHGvzO
+         6MWg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@stiedu.onmicrosoft.com
+ header.s=selector2-stiedu-onmicrosoft-com header.b=vT4YFw0R;
+       arc=pass (i=1 spf=pass spfdomain=sti.edu dkim=pass dkdomain=sti.edu
+ dmarc=pass fromdomain=sti.edu);
+       spf=pass (google.com: domain of donotreply@sti.edu designates
+ 2a01:111:f400:febc::613 as permitted sender) smtp.mailfrom=donotreply@sti.edu
+Return-Path: <donotreply@sti.edu>
+Received: from APC01-HK2-obe.outbound.protection.outlook.com
+ (mail-hk2apc01on0613.outbound.protection.outlook.com.
+ [2a01:111:f400:febc::613])
+        by mx.google.com with ESMTPS id p3si2690725ejy.59.2022.02.17.17.31.44
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 17 Feb 2022 17:31:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of donotreply@sti.edu designates
+ 2a01:111:f400:febc::613 as permitted sender)
+ client-ip=2a01:111:f400:febc::613;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@stiedu.onmicrosoft.com
+ header.s=selector2-stiedu-onmicrosoft-com header.b=vT4YFw0R;
+       arc=pass (i=1 spf=pass spfdomain=sti.edu dkim=pass dkdomain=sti.edu
+ dmarc=pass fromdomain=sti.edu);
+       spf=pass (google.com: domain of donotreply@sti.edu designates
+ 2a01:111:f400:febc::613 as permitted sender) smtp.mailfrom=donotreply@sti.edu
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=S3HYqXsVRHCcQAX5q/LMPpX3Mg7yCJ/eARRLxV1ao0SwsbsQ7CcgmIcifdc6rH6/urcKWIUYaaFXG4qe3r4ZcmPhDQu49JP/6UPwuIbOIv6CCmSimYmySdipRosoB9oMXDOprRQxsBUehKZZ0bhYLn4pL56FntTqRIir7PyZt7w3vaLLeztcCnTLhdEqFcImPvsoMqI5bSt3jo2gp9noH/3jQEhZ7rJ41VnkwXRBlevOlhXtIN8SP4IMUcUhV7zys7S+tzA/7A9YiSSXgzlVIaOirKUph5pC8s3Io1I82Zl5+8ddppsB0LQoFjjuRmvpxULQL2cBYuE9fC3bp+0kFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=g6Y3FgRqmpSoLlzKwirTFm0H4DKC/CcfX/Zq1vXg63M=;
+ b=KR0hL3x60N4EXS589K8s1GVVz7K16hWrey2cAkAvIX3Qf93G5i0jl7Ga1kYicAHlIpGLYsxF+otcbWRtLlJtJ1kw3DJ12bCcCEmgSMHIqhb3ZV3GzCp+l/dwAh4lRnMHqnmCbhMWYzzN4vTjpmlbXwVbWve5i9m/b9AvXT98YW8ijTMZyrjARJi/i9EX6MTTl9ScpfjNMdlut7JV6TB8cjDwRgXvzxKQn3i+KrNUVXiziHPO6nZ+rDOYShIQuplRKcYNS5WpvkMfIglK8sHHm+uRnxVlEOXqHujI/4FhM4a4NYvuzyBKC7mLP7ivl6WU4nmMGFy5Dn7M59xgg395Cg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sti.edu; dmarc=pass action=none header.from=sti.edu; dkim=pass
+ header.d=sti.edu; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=stiedu.onmicrosoft.com; s=selector2-stiedu-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=g6Y3FgRqmpSoLlzKwirTFm0H4DKC/CcfX/Zq1vXg63M=;
+ b=vT4YFw0RSIRyInk3Kmt6ANaBd68/zTTwLWGWWne8TFq6+MusAvB9ypUHQIg1ILEFe7/uFkB3QrsEDGbc1627EH3ocDuVBdDc1FFjkdPQnwl3/2TEGEOGtL4wRtEYKYubIUFmVs/WXTaM4hyXYQ3ilurT8bCrE8//6/fwHRmJHmE=
+Received: from SI2PR03MB5690.apcprd03.prod.outlook.com (2603:1096:4:15d::13)
+ by HK0PR03MB5105.apcprd03.prod.outlook.com (2603:1096:203:bb::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5017.9; Fri, 18 Feb
+ 2022 01:31:40 +0000
+Received: from SI2PR03MB5690.apcprd03.prod.outlook.com
+ ([fe80::984a:2676:1816:fb41]) by SI2PR03MB5690.apcprd03.prod.outlook.com
+ ([fe80::984a:2676:1816:fb41%5]) with mapi id 15.20.4995.015; Fri, 18 Feb 2022
+ 01:31:40 +0000
+From: STI College <donotreply@sti.edu>
+To: "patriogabrielpatdu@gmail.com" <patriogabrielpatdu@gmail.com>
+Subject: Read this Before You Choose a SHS Track
+Thread-Topic: Read this Before You Choose a SHS Track
+Thread-Index: AQHYJGcEWzHfP4JsJ0G+sZd2dhfxxg==
+Date: Fri, 18 Feb 2022 01:29:48 +0000
+Message-ID: 
+ <SI2PR03MB5690D462F55FA6372E3EE601C2379@SI2PR03MB5690.apcprd03.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sti.edu;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 434e506f-d455-4536-d7fa-08d9f27e69e6
+x-ms-traffictypediagnostic: HK0PR03MB5105:EE_
+x-microsoft-antispam-prvs: 
+ <HK0PR03MB51050DD04BD260FDF3539E45C2379@HK0PR03MB5105.apcprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5236;
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 
+ A77+2C0kkhKCPrjvgD/km/8XTy86beLmc3UA4ML2CzFApbo+KvTO2eJmqKGvcKnxL0nQqyG+Ya93MYLuXUTm+MrwKfFdXgCdSxssaeLV1hpQrelP+fM+0xcKlKPiKOUjWgl15RAK8I9PfWn8UmAVCucAqQ6ivgG3GlLcibSSpjB77IZc6OFPNqxgx36Vlhy1R1rt5Su/K51gvMZaVjSc7Qfyfepze1cxw0J08LHTCcT32K8cAmXQM3JZvznwrdnwdE5eal4eBYzNwNd2NfFUZtNhuvqFbh9dgenevUg75/EQelS3sF44tvtWSiseH7tUp6K/Z182Nov6uRAF1rBWD6GAH3W8ZdVrPx3eC8VEjgsk4ZiZriIQboBYSS/X/EeGMI0oJUNoOG1Msa/iEol1Kw2kzQu2j4CVSn/6ZbI5/L2/I596th8eMtxetIVqbHbH0uQwuBINX1ZZONEvjSiMKfkTXbyxXUTnDb5Sr8gtxQJD+R4q3FXkuHUUO0sDdMAf6rC7RtxYfIEH8x5Hz223ngVe9Ch+I1vX8HlfyWC3es9bTHfio+RdPiM/ej/KvVoEWeThabp9UElS/c1AGC9V9eyXML8QFZtTqMJ9lc9bSWPe2fYIL02+e+l3qOVDZmkU4fmwJaWzIQd5IJEg3Cwbcnrxr4uhyjVkQNmgBGqNLMYPgi8OD5XjK+zpF2S4e8F6T+4xD6+zULYIGT8Yz4y8JjcKRVu7uU7HrXWJXeD11gRAXP6EI41BCa/VpF8lNAiyvVRcQXSMTD8xlMrloiNvbPdyTLJUdQNSG2sI7SktEac3Xe07Vrd3PlmYI6ulYjX/tX7IoXuLtFUmltJcvMm8f1gv2qtnFVeFTk/eZ/7V136W+CjtMlVwWbfh4/cV5rYr9JnhEsf/6nh0mAJ9meqgrBLP9br2bIXsTQtgT30AKKw=
+x-forefront-antispam-report: 
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SI2PR03MB5690.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230001)(366004)(6506007)(2906002)(8936002)(19627405001)(7696005)(5660300002)(38070700005)(52536014)(76236003)(75432002)(71200400001)(122000001)(38100700002)(86362001)(166002)(9686003)(55016003)(8676002)(33656002)(26005)(40140700001)(66476007)(66556008)(64756008)(66446008)(76116006)(84970400001)(186003)(66946007)(786003)(316002)(83380400001)(508600001)(6916009)(91956017)(579004)(559001)(15669805003)(19627315001)(19625255004);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: 
+ =?windows-1256?Q?rZEUGUR3tHU2XyeM6AmMp9FsXwOtvK7nLc4HYI7yw5yisSlTH+9b25YU?=
+ =?windows-1256?Q?BhNIr1gs39xfGp65hjkDyaZVPLSQyV5cJgMx/OPWHQneQWipdDtsOKJC?=
+ =?windows-1256?Q?BtyS6zkuL4rvMAYAO8rVt4Q+Hv/eZStTHy2+/v+/TujCbvJCc5YzhdDt?=
+ =?windows-1256?Q?Ek15kb1Z5KplpiBK5sd8vMGlZRjwKBy+EM3CYRnf9aTqy4NzelY40xBF?=
+ =?windows-1256?Q?BSySKmX1j6B8HkJdBm6ano5Hk0IXINkjzHjlC6PPV5kqwztgowkJ/rB3?=
+ =?windows-1256?Q?eXA/JOVR8jHDuIwV3bRSt0VUrWjhJcH7XO/zS7dLcuQkHgUqzhIfACHG?=
+ =?windows-1256?Q?Yn/3X2eDcGlUv6ySWnmOUAS3rDkQXjOwbvde4ej3nOITWgYKyf0sfYDY?=
+ =?windows-1256?Q?/lDJ74Daaq/t2N9fKQTHFpNufIJvyzpmRYUxv/7r8KWD2cvzmpFSGZBz?=
+ =?windows-1256?Q?64NStdRERIIt2nvSRH/dX0uVgpZ+TGkRgApCYOBiwgSZvo48qcx2pL4g?=
+ =?windows-1256?Q?HMttSQoDGYT+k9ZxNQkbeBjL1oc5csZkx/beDrb/cC22GJq7P3enYLrI?=
+ =?windows-1256?Q?/RcRbfjB/G7ohDYc+XTRIlD82lMdnZ55dRxyWicb90FjGWMZ0LDknhHe?=
+ =?windows-1256?Q?yAIKpG0NLD9b/aIcXzWoZtd/t9rc9UAlGAX/I96n2O4HbIlDB6ODZ4Jx?=
+ =?windows-1256?Q?59Ew+G1QsPuVZkY9dKOAer2svGbzj/SjTVnM/sW9wHvD35T7v7bmzm31?=
+ =?windows-1256?Q?V3MVjlFTUiyVBkuDXqc4Ifot+XxLYH7OXe7Z4kIdLL7g5o+JCC/iabrp?=
+ =?windows-1256?Q?NUl4S1w6JlcnUdoSMbHZWvI8KthFAtBhdrbmbY7pb1bDZd7Zx1QMVXtF?=
+ =?windows-1256?Q?d0TEiiZVT0SHg/t6ZHVEQvQicfDEbZ7dYIQ8EtXUDRTckDkW4w1ER2Ml?=
+ =?windows-1256?Q?E3138/l1ead0vKMTTEDQhfzXlUTr98h6+cFDZaKZooig2z67KnUSazCo?=
+ =?windows-1256?Q?pBZEeZpEFN1oZA2eRR4zhJHCpDBG7pcmFr8vYeKski26chMw0Rb9TuFi?=
+ =?windows-1256?Q?WoNINEpQd7RFJO+Q73Rj4As/padmFjwEXx5BH7yykNBNYouafP+nd7te?=
+ =?windows-1256?Q?mqXInL/WMliaCeqeKrlxX8sIClmm30J4TloQP3xZsOZzZe1RBdYIXBQ8?=
+ =?windows-1256?Q?TD2i2cVpvnGAniU/26YqYiT8+KM4gnt59ngFr5HZRkBOr50LhpdZCN+F?=
+ =?windows-1256?Q?1F9mjRXwDrWhnqbk8as/8c0hKgqK0nC4ILvQaviFVPYSKd+lVvVCBVHy?=
+ =?windows-1256?Q?0kphnAEZzjEdqhXvP7BN8gSFFsD0z+EGAjK/fXtSuKgjEy8kyDi2BW6W?=
+ =?windows-1256?Q?lc8b0USvBRjil/0ApJtiD4W2EWN/7V2JeESVYeQML4j1tTFdF/3saqlA?=
+ =?windows-1256?Q?8ee8qTnoP2XoHrf8fSJtIaJvyybrAb9EsbkKn1gcpiden5pXgCd10ynd?=
+ =?windows-1256?Q?6bE4uZZpptsO2rkk7M1CK4+W0qzbKw1fuwtcHtOWlGckHZh7MSgFc907?=
+ =?windows-1256?Q?xwF64iyt73Jt4GbL4qmOV9kJJYNwVbdKDhG0ar+lIMbqr6TkIpDCArKk?=
+ =?windows-1256?Q?Pv/9vM6j4gkVFSSVYfHLJ+LqKHZMbJClyzadR6kbgnhvgGg2Jxv08g3y?=
+ =?windows-1256?Q?zvTZL+zO5riqh+qo0cXuXrA4w2TD3bDwwoML3w8SsaaEoQQGjgLajhx5?=
+ =?windows-1256?Q?Qq+c0fU5VR0rSO5RRjTLrn3SQBT9IlwQZUrniWb2?=
+Content-Type: multipart/alternative;
+	boundary="_000_SI2PR03MB5690D462F55FA6372E3EE601C2379SI2PR03MB5690apcp_"
+MIME-Version: 1.0
+X-OriginatorOrg: sti.edu
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SI2PR03MB5690.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 
+ 434e506f-d455-4536-d7fa-08d9f27e69e6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Feb 2022 01:29:48.1484
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 96c62f5f-3c65-48a8-9dd3-868be91bdce3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 
+ 5cooHNkm6ypeX56VqlscNEa/90FrSOmkBpVgCvlyXuVVqe96m9qXzrrStQk6sdLbCJvIzyGfvq26LCc7beM+Sg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK0PR03MB5105
+
+--_000_SI2PR03MB5690D462F55FA6372E3EE601C2379SI2PR03MB5690apcp_
+Content-Type: text/plain; charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+Are you making the right choice for Senior High? =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D
+
+[https://scope.sti.edu/img/mailer/mail1_1_img7.png] <https://www.sti.edu>
+[https://scope.sti.edu/img/mailer/mail1_1_img1_1.png]
+
+
+Congratulations, B12!
+
+You got an exciting journey ahead of you.
+
+Completing your Grade 10 is an end to a chapter. Next school year, you need=
+ to make a big decision that will take you one step closer to your career g=
+oals.
+
+Have you decided on your track in Senior High yet?
+
+Is it based on your personality, interests, and skills? Is it according to =
+your parents=92 wishes?
+
+Or is it based on the track that your friends are also taking?
+
+No matter how you made that important decision, you must choose what is bes=
+t for you.
+
+Choosing the right path will make you happier, more passionate, and more pr=
+oductive. This is your stepping stone to the person you dream of becoming =
+=96 someone who is job-ready and life-ready.
+
+
+If you have already made your mind up on who you want to be, it=92s time to=
+ take action.
+
+REGISTER ONLINE <https://www.sti.edu/admissions_registration.asp>
+
+If you are still torn between your choices or unsure, don't worry.
+
+Talk to us on our Official Facebook Page on STI College San Fernando, Pampa=
+nga Page or thru Messenger at m.me/sanfernando.sti.edu or give us a call at=
+ (045) 963-5126 / 961-1423<tel:(045)%20963-5126%20/%20961-1423>.
+
+What will be your next move, B12?
+
+We, at STI, will be here to help you make the right moves. Looking forward =
+to hearing from you.
+
+Stay safe!
+
+
+
+
+
+
+[https://scope.sti.edu/img/mailer/mail1_1_img3.png]
+
+Better yet, you can sign up for the Virtual STI Career Camp<https://scope.s=
+ti.edu/virtualcareercamp> where you can experience and explore your options=
+ in our Photographer=92s Camp, Baker=92s Camp, Game Developer=92s Camp, and=
+ Entrepreneur=92s Camp for FREE!
+
+
+
+
+
+Connect with us
+
+[facebook]<https://www.facebook.com/sti.edu>            [twitter] <https://=
+twitter.com/sticollege>              [instragram] <https://www.instagram.co=
+m/sti_college/>           [youtube] <https://www.youtube.com/channel/UClwI5=
+kKZkrUGSdyKaXCyacQ>
+
+PRIVACY POLICY<https://www.sti.edu/dataprivacy/>
+
+You are receiving this email because you took the STI SCOPE. You may unsubs=
+cribe here.
+
+--_000_SI2PR03MB5690D462F55FA6372E3EE601C2379SI2PR03MB5690apcp_
+Content-Type: text/html; charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dwindows-1=
+256">
+<!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:Pixels=
+PerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]-->
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<link rel=3D"shortcut icon" href=3D"https://www.sti.edu/images/favicon.ico"=
+>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D9; IE=3D8; IE=3D7; IE=
+=3DEDGE">
+<title></title>
+</head>
+<body style=3D"width: 100% !important;min-width: 100%;-webkit-text-size-adj=
+ust: 100%;-ms-text-size-adjust: 100% !important;margin: 0;padding: 0;backgr=
+ound-color: #ffffff">
+<style>.preheader{display:none !important;visibility:hidden;opacity:0;color=
+:transparent;height:0;width:0}</style><span class=3D"preheader" style=3D"di=
+splay: none !important; visibility: hidden; opacity: 0; color: transparent;=
+ height: 0; width: 0;">Are you making
+ the right choice for Senior High?&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp=
+;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D</span=
+><style id=3D"media-query">#outlook a{padding:0}.ExternalClass{width:100%}.=
+ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, =
+.ExternalClass td, .ExternalClass div{line-height:100%}#backgroundTable{mar=
+gin:0;padding:0;width:100% !important;line-height:100% !important}.button a=
+{display:inline-block;text-decoration:none;-webkit-text-size-adjust:none;te=
+xt-align:center}.button a div{text-align:center !important}body.outlook p{d=
+isplay:inline !important}@media only screen and (max-width: 570px){table[cl=
+ass=3D'body'] img{height:auto !important;width:100% !important}table[class=
+=3D'body'] img.fullwidth{max-width:100% !important}table[class=3D'body'] ce=
+nter{min-width:0 !important}table[class=3D'body'] .container{width:95% !imp=
+ortant}table[class=3D'body'] .row{width:100% !important;display:block !impo=
+rtant}table[class=3D'body'] .wrapper{display:block !important;padding-right=
+:0 !important}table[class=3D'body'] .columns, table[class=3D'body'] .column=
+{table-layout:fixed !important;float:none !important;width:100% !important;=
+padding-right:0px !important;padding-left:0px !important;display:block !imp=
+ortant}table[class=3D'body'] .wrapper.first .columns, table[class=3D'body']=
+ .wrapper.first .column{display:table !important}table[class=3D'body'] tabl=
+e.columns td, table[class=3D'body'] table.column td,.col{width:100% !import=
+ant}table[class=3D'body'] table.columns td.expander{width:1px !important}ta=
+ble[class=3D'body'] .right-text-pad, table[class=3D'body'] .text-pad-right{=
+padding-left:10px !important}table[class=3D'body'] .left-text-pad, table[cl=
+ass=3D'body'] .text-pad-left{padding-right:10px !important}table[class=3D'b=
+ody'] .hide-for-small, table[class=3D'body'] .show-for-desktop{display:none=
+ !important}table[class=3D'body'] .show-for-small, table[class=3D'body'] .h=
+ide-for-desktop{display:inherit !important}.mixed-two-up .col{width:100% !i=
+mportant}}@media screen and (max-width: 570px){div[class=3D'col']{width:100=
+% !important}}@media screen and (min-width: 571px){table[class=3D'container=
+']{width:570px !important}}</style>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"body" bo=
+rder=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-al=
+ign: top;height: 100%;width: 100%;table-layout: fixed">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"word-break: b=
+reak-word;border-collapse: collapse !important;vertical-align: top;text-ali=
+gn: center;background-color: #ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #086bbe;padding-top: 0px;padding-right:=
+ 0px;padding-bottom: 0px;padding-left: 0px;border-top: 0px solid transparen=
+t;border-right: 0px solid transparent;border-bottom: 0px solid transparent;=
+border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;p=
+adding-left: 0px">
+<div style=3D"color:#FEFF00;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;color:#FEFF00;font-family:Ver=
+dana, Geneva, sans-serif;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: center"=
+><span style=3D"font-size: 8px; line-height: 9px;display: none !important;"=
+></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #FEFF00">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #FEFF00">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #333;backgro=
+und-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 0px;padding-ri=
+ght: 0px;padding-bottom: 0px;padding-left: 0px;border-top: 0px solid transp=
+arent;border-right: 0px solid transparent;border-bottom: 0px solid transpar=
+ent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td align=3D"center" style=3D"word-break: break-word;border-collapse: colla=
+pse !important;vertical-align: top;width: 100%;padding-top: 0px;padding-rig=
+ht: 0px;padding-bottom: 0px;padding-left: 0px">
+<div align=3D"center" style=3D"font-size:12px"><a href=3D"https://www.sti.e=
+du" target=3D"_blank"><img class=3D"center fullwidth" align=3D"center" bord=
+er=3D"0" alt=3D"" title=3D"" style=3D"outline: none;text-decoration: none;-=
+ms-interpolation-mode: bicubic;clear: both;display: block;border: none;heig=
+ht: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !importan=
+t;max-width: 570px;" width=3D"570" src=3D"https://scope.sti.edu/img/mailer/=
+mail1_1_img7.png">
+</a></div>
+<div align=3D"center" style=3D"font-size:12px"><img class=3D"center fullwid=
+th" align=3D"center" border=3D"0" alt=3D"" title=3D"" style=3D"outline: non=
+e;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display=
+: block;border: 0;height: auto;line-height: 100%;margin: 0 auto;float: none=
+;width: 100% !important;max-width: 500px" width=3D"500" src=3D"https://scop=
+e.sti.edu/img/mailer/mail1_1_img1_1.png"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: collap=
+se;vertical-align: top;width: 100%;max-width: 570px;color: #000000;backgrou=
+nd-color: #ffffff">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;text-align: center;font-size: 0=
+">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'#ffffff' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif]-->=
+<!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'width:5=
+70px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: collap=
+se;vertical-align: top;width: 100%;max-width: 570px;color: #000000;backgrou=
+nd-color: #ffffff">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;text-align: center;font-size: 0=
+">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'#ffffff' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif]-->=
+<!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'width:5=
+70px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 25px;padding-r=
+ight: 25px;padding-bottom: 0px;padding-left: 25px;border-top: 1px solid #D2=
+D2D2;border-right: 1px solid #D2D2D2;border-bottom: 0px solid #ffffff;borde=
+r-left: 1px solid #D2D2D2">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;padding-top: 10px;padding-right=
+: 25px;padding-bottom: 30px;padding-left: 25px;border-top: 0px solid #fffff=
+f;border-right: 1px solid #D2D2D2;border-bottom: 1px solid #D2D2D2;border-l=
+eft: 1px solid #D2D2D2">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 15px;padding-right: 10px;padding-bottom: 0px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: left"><=
+span style=3D"font-size: 20px; line-height: 24px;"><strong>Congratulations,=
+ B12!</strong></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 5px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">You got an exciting jour=
+ney ahead of you.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">Completing your Grade 10=
+ is an end to a chapter. Next school year, you need to make a big decision =
+that will take you one step closer to
+ your career goals.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:28px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 28px;text-align: left"><=
+span style=3D"line-height: 28px; font-size: 26px;"><strong>Have you decided=
+ on your track in Senior High yet?</strong></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">Is it based on your pers=
+onality, interests, and skills? Is it according to your parents=92 wishes?
+</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">Or is it based on the tr=
+ack that your friends are also taking?</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">No matter how you made t=
+hat important decision, you must choose what is best for you.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 20px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">Choosing the right path =
+will make you happier, more passionate, and more productive. This is your s=
+tepping stone to the person you dream
+ of becoming =96 someone who is job-ready and life-ready. </span></p>
+<br>
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">If you have already made=
+ your mind up on who you want to be, it=92s time to take action.</p>
+</div>
+</div>
+</span></td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td class=3D"button-container" align=3D"center" style=3D"word-break: break-=
+word;border-collapse: collapse !important;vertical-align: top;padding-top: =
+10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" class=3D"button" align=3D"center" valign=3D"middle" styl=
+e=3D"word-break: break-word;border-collapse: collapse !important;vertical-a=
+lign: top">
+<!--[if mso]> <v:roundrect xmlns:v=3D'urn:schemas-microsoft-com:vml' xmlns:=
+w=3D'urn:schemas-microsoft-com:office:word' href=3D'http://www.deakin.edu.a=
+u/courses/courses-by-atar/?utm_source=3DMarketo&utm_medium=3DEDM&utm_campai=
+gn=3Dgeneric' style=3D'height:46px; v-text-anchor:middle; width:400px;' arc=
+size=3D'0%' strokecolor=3D'#FEFF00' fillcolor=3D'#FEFF00' > <w:anchorlock/>=
+<center style=3D'color:#000000; font-family:Verdana, Geneva, sans-serif; fo=
+nt-size:14px;'> <![endif]--><!--[if !mso]><!-- -->
+<div align=3D"center" style=3D"display: inline-block; border-radius: 0px; -=
+webkit-border-radius: 0px; -moz-border-radius: 0px; max-width: 100%; width:=
+ 100%; border-top: 1px solid #FEFF00; border-right: 1px solid #FEFF00; bord=
+er-bottom: 1px solid #FEFF00; border-left: 1px solid #FEFF00;">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top;height=
+: 46">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td valign=3D"middle" style=3D"word-break: break-word;border-collapse: coll=
+apse !important;vertical-align: top;border-radius: 0px;-webkit-border-radiu=
+s: 0px;-moz-border-radius: 0px;color: #000000;background-color: #fff200;pad=
+ding-top: 10px;padding-right: 5px;padding-bottom: 10px;padding-left: 5px;fo=
+nt-family: Verdana, Geneva, sans-serif;text-align: center">
+<!--<![endif]--><a href=3D"https://www.sti.edu/admissions_registration.asp"=
+ target=3D"_blank" style=3D"display: inline-block;text-decoration: none;-we=
+bkit-text-size-adjust: none;text-align: center;background-color: #Fff200;co=
+lor: #000000"><span style=3D"font-size:22px;line-height:24px;"><strong>REGI=
+STER
+ ONLINE</strong></span> </a><!--[if !mso]><!-- --></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--<![endif]--><!--[if mso]></center> </v:roundrect> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 20px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;margin-top:20px;font-size: 14px;line-height: 21px;tex=
+t-align: left">
+<span style=3D"font-size: 14px; line-height: 21px;">If you are still torn b=
+etween your choices or unsure, don't worry.<br>
+<br>
+Talk to us on our Official Facebook Page on <strong>STI College San Fernand=
+o, Pampanga</strong> Page or thru Messenger at
+<strong><a href=3D"m.me/sanfernando.sti.edu">m.me/sanfernando.sti.edu</a></=
+strong> or give us a call at
+<strong><a href=3D"tel:(045) 963-5126 / 961-1423">(045) 963-5126 / 961-1423=
+</a></strong>.<br>
+<br>
+What will be your next move, B12?<br>
+<br>
+We, at STI, will be here to help you make the right moves. Looking forward =
+to hearing from you.<br>
+<br>
+Stay safe!</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 20px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left">&=
+nbsp;</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 25px;padding-bottom: 10px;padding-left: 25px;border-top: 0px solid tr=
+ansparent;border-right: 0px solid transparent;border-bottom: 0px solid tran=
+sparent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 5px;=
+padding-left: 10px">
+<div style=3D"color:#E5E5E5;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#E5E5E5;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: center"=
+><span style=3D"font-size: 14px; line-height: 21px;">&nbsp;</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200;">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 25px;padding-bottom: 10px;padding-left: 25px;border-top: 0px solid tr=
+ansparent;border-right: 0px solid transparent;border-bottom: 0px solid tran=
+sparent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 5px;=
+padding-left: 10px">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;padding-top: 5px;padding-right:=
+ 25px;padding-bottom: 30px;padding-left: 25px;border-top: 0px solid transpa=
+rent;border-right: 0px solid transparent;border-bottom: 0px solid transpare=
+nt;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 20p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<div align=3D"center"><img class=3D"center fullwidth" align=3D"center" bord=
+er=3D"0" width=3D"500" style=3D"margin-top:10px;" src=3D"https://scope.sti.=
+edu/img/mailer/mail1_1_img3.png"></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 20p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">Better yet, you can sign=
+ up for the
+<a href=3D"https://scope.sti.edu/virtualcareercamp"><strong>Virtual STI Car=
+eer Camp</strong></a> where you can experience and explore your options in =
+our Photographer=92s Camp, Baker=92s Camp, Game Developer=92s Camp, and Ent=
+repreneur=92s Camp for FREE!
+</span><br>
+</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td class=3D"button-container" align=3D"center" style=3D"word-break: break-=
+word;border-collapse: collapse !important;vertical-align: top;padding-top: =
+10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 0px;padding-bottom: 10px;padding-left: 0px;border-top: 0px solid tran=
+sparent;border-right: 0px solid transparent;border-bottom: 0px solid transp=
+arent;border-left: 0px solid transparent">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #BE00FF">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]--><!--[if mso]></td></tr></table> <![endif]-->=
+<!--[if (IE)]></td></tr></table> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #333333">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #0D0D0D">
+<!--[if gte mso 9]><table id=3D'outlookholder' border=3D'0' cellspacing=3D'=
+0' cellpadding=3D'0' align=3D'center'><tr><td> <![endif]--><!--[if (IE)]><t=
+able width=3D'570' align=3D'center' cellpadding=3D'0' cellspacing=3D'0' bor=
+der=3D'0'><tr><td> <![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<!--[if (gte mso 9)|(IE)]><table width=3D'100%' align=3D'center' bgcolor=3D=
+'transparent' cellpadding=3D'0' cellspacing=3D'0' border=3D'0'><tr><![endif=
+]--><!--[if (gte mso 9)|(IE)]><td valign=3D'top' width=3D'570' style=3D'wid=
+th:570px;'><![endif]-->
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 0px;padding-bottom: 30px;padding-left: 0px;border-top: 0px solid tran=
+sparent;border-right: 0px solid transparent;border-bottom: 0px solid transp=
+arent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 25px;padding-right: 10px;padding-bottom: 10p=
+x;padding-left: 10px">
+<div style=3D"color:#CDCDCD;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;font-family:Verdana, Geneva, =
+sans-serif;color:#CDCDCD;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: center"=
+><span style=3D"font-size: 14px; line-height: 16px;">Connect with us</span>=
+</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;font-size: 16px;font-family: Verdana, Geneva, sans-serif"=
+>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.facebook.com/sti.edu"><img width=3D"24" height=3D"24" alt=3D"faceb=
+ook " src=3D"https://scope.sti.edu/img/socials/facebook.png"></a></td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://twitter.com/sticollege"><img width=3D"24" height=3D"24" alt=3D"twitter=
+ " src=3D"https://scope.sti.edu/img/socials/twitter.png"></a></td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.instagram.com/sti_college/"><img width=3D"24" height=3D"24" alt=3D=
+"instragram " src=3D"https://scope.sti.edu/img/socials/instagram.png"></a><=
+/td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.youtube.com/channel/UClwI5kKZkrUGSdyKaXCyacQ"><img width=3D"24" he=
+ight=3D"24" alt=3D"youtube" src=3D"https://scope.sti.edu/img/socials/youtub=
+e.png"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 5px=
+;padding-left: 10px">
+<div style=3D"color:#555555;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;color:#555555;font-family:Ver=
+dana, Geneva, sans-serif;text-align:left;">
+<p style=3D"margin: 0;font-size: 11px;line-height: 14px;text-align: center"=
+><span style=3D"font-size: 11px; line-height: 13px;"><a style=3D"color:#6D6=
+D6D;text-decoration: underline; font-size: 11px; line-height: 13px;" href=
+=3D"https://www.sti.edu/dataprivacy/" target=3D"_blank">PRIVACY
+ POLICY</a></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 25px;padding-bottom: 0px;=
+padding-left: 25px">
+<div style=3D"color:#CDCDCD;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;font-family:Verdana, Geneva, =
+sans-serif;color:#CDCDCD;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: center"=
+><span style=3D"line-height: 12px; font-size: 7px;">You are receiving this =
+email because you took the STI SCOPE. You may unsubscribe here.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]></td><![endif]--><!--[if (gte mso 9)|(IE)]></td><=
+/tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table> <![endif]--><!--[if (IE)]></td></tr></table=
+> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+--_000_SI2PR03MB5690D462F55FA6372E3EE601C2379SI2PR03MB5690apcp_--

@@ -1,0 +1,761 @@
+X-GM-THRID: 1740229360908555296
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a59:c9cf:0:b0:2da:399f:145e with SMTP id o15csp273195vqt;
+        Thu, 4 Aug 2022 04:20:46 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AA6agR7+vtiuNZiI143YHuFH4U3k27XDujSwhswdbrMRRFtZNFcg3dvuTbm1yhVKYl4a6lC4kL/Z
+X-Received: by 2002:a62:cd8c:0:b0:52d:a632:a8e0 with SMTP id
+ o134-20020a62cd8c000000b0052da632a8e0mr1437297pfg.52.1659612045848;
+        Thu, 04 Aug 2022 04:20:45 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1659612045; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=By1wrpz4iZXTU/H3XloQoEJ7PGeKoZ+wEpIvtZisgsH7apT3J3rOeWVfBQQdgfiObn
+         OiZ9ejfti+PQLkL/bp3YcMwbHPr52Io5A4fWhxHcSr8rxlxeau0HOs2Mb7B0vfOWCYim
+         XHB3NtsRJR8t6h/GMz/pMEw1Tw8Y6jJUlBFYxjwea2FKP+qg9odL3yYFSogpIUpy/jLi
+         pYy3CdwHbIkGoJy3R3NT3NaNJtCtlzLAbwzkMzuL/THKu5cIwxoSm/VNGybmWfT8oJxz
+         MzK52KTakpYYWi96SWdR1s8WvusN4oR7oOSX0XCP8ShN1fOwZofC75y2PLHpfHMvKb+h
+         MhSA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=toeKxb8dgKJYJVcISiJ2Yxs47LUQvQ4teBBOe6jCgVM=;
+        b=vMgmnBKMxM46P5h3O4m3NvtU0KPThM0+zSelRxV2l+OODTatK1hripE05rZ6fO0/T5
+         wlEapBQ0oM2sO4/mKqUh53DR98ZKtSBLwmDBJGqj6RBNmfvwIM5MljCMJUkBVEiZ3z1o
+         ym5padN++4NzGbz1R58BbX/fL/VuQDoFuZTHBk4YQ9Up6jxA3D7YM1o85sbRSp+xRSxa
+         sYCHcTQWRybvLl3bw/DDeaec474b/7pu58XSxTOxGEzmpNGed6z8Dm+E8bGZJZx0b/2N
+         S3cCD+JAmL0JE6qaj4AmOY9du7xDbMhj47VEqp5lxdHUNnAKqaGpg1AeG7NRF1oOLS3e
+         hzVw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@stiedu.onmicrosoft.com
+ header.s=selector2-stiedu-onmicrosoft-com header.b=hbIIGUal;
+       arc=pass (i=1 spf=pass spfdomain=sti.edu dkim=pass dkdomain=sti.edu
+ dmarc=pass fromdomain=sti.edu);
+       spf=pass (google.com: domain of donotreply3@sti.edu designates
+ 40.107.117.70 as permitted sender) smtp.mailfrom=donotreply3@sti.edu
+Return-Path: <donotreply3@sti.edu>
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com
+ (mail-tyzapc01on2070.outbound.protection.outlook.com. [40.107.117.70])
+        by mx.google.com with ESMTPS id
+ q2-20020a632a02000000b0041cef94f2cfsi135609pgq.836.2022.08.04.04.20.45
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 Aug 2022 04:20:45 -0700 (PDT)
+Received-SPF: pass (google.com: domain of donotreply3@sti.edu designates
+ 40.107.117.70 as permitted sender) client-ip=40.107.117.70;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@stiedu.onmicrosoft.com
+ header.s=selector2-stiedu-onmicrosoft-com header.b=hbIIGUal;
+       arc=pass (i=1 spf=pass spfdomain=sti.edu dkim=pass dkdomain=sti.edu
+ dmarc=pass fromdomain=sti.edu);
+       spf=pass (google.com: domain of donotreply3@sti.edu designates
+ 40.107.117.70 as permitted sender) smtp.mailfrom=donotreply3@sti.edu
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=VlNc+r+QEZjJKltlbwDhunQQVSXKGraRGrQJUl/xp+AsyP6CMDmFTJpmiqYsNl4YmNWKf7AD/BMpFJA1+1qThOaAnL7dh2WJgbm7rNQw6yU0tTCAncuXLq4AP0lFyg+rMGx5WfFO9/QVTX0jSBN1Adw/n915DdpmZfF+Wj+4YMV8T6pUstRk1tqfU5x65Q82FF6/RzNTX043dut5jKkM8gAS56goo19My6Funbolfj7ZsWgQYsHYP9XiMZK0GZDlNh9BSldgFEdCMu4Sqcd56IrepDpPFzS9bAcyPGZ4MAqV2ymhyrS98i5vOyKcauOHF7X5OvuviRB4Be7js9ItRg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=toeKxb8dgKJYJVcISiJ2Yxs47LUQvQ4teBBOe6jCgVM=;
+ b=Aj0R1NavcKCsCHr6QyK+wXzhc6jBqdj4K296YsJ69B243rnYZh3xf03F05//G4Cp2XBLlyTvqbbyUMxjypxa/fnQpMCOVLLI5qkRysx1vXurczVBpfJr4JxSPGM352j9QA17F4n6ioos9OAq2UW/Iy1ezGoMfg0vKW6Wtoq/beibzq9wtCQYdoHjMqh3ePX3zkslA3sd1Ojln+kPa/ql2WN2outXdTmyJeVwzwEQ+FXdIhLc38pwXO/J1B61KS/Bj6fEtvnu5bafhS8HKd/8qnMulQXcDny3aO4e5TkAY13cN0zVLfx9vlJII98gBNWiFSrzfF2u94Kgzsoc3DkVwQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sti.edu; dmarc=pass action=none header.from=sti.edu; dkim=pass
+ header.d=sti.edu; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=stiedu.onmicrosoft.com; s=selector2-stiedu-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=toeKxb8dgKJYJVcISiJ2Yxs47LUQvQ4teBBOe6jCgVM=;
+ b=hbIIGUalL3m59DUAyZIR4XvQzmvuqWsJFjvod4xGoipNr8xWaVJKVvGZB9Omq7rXVM3j5Gisu4lObDySzaXu9xc6r32NTQeHOth6qphYvEYmcnYMoYmSxP/83BbFfHCoaW78dY0uFL5eNNaY2VUFZJfzuJwQJ3XB4lDPeeaEjGE=
+Received: from TY2PR03MB3886.apcprd03.prod.outlook.com (2603:1096:404:63::14)
+ by TY0PR03MB6475.apcprd03.prod.outlook.com (2603:1096:400:1bd::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5504.14; Thu, 4 Aug
+ 2022 11:20:41 +0000
+Received: from TY2PR03MB3886.apcprd03.prod.outlook.com
+ ([fe80::d40e:343d:4199:8793]) by TY2PR03MB3886.apcprd03.prod.outlook.com
+ ([fe80::d40e:343d:4199:8793%7]) with mapi id 15.20.5504.014; Thu, 4 Aug 2022
+ 11:20:41 +0000
+From: STI College <donotreply3@sti.edu>
+To: "patriogabrielpatdu@gmail.com" <patriogabrielpatdu@gmail.com>
+Subject: Looking for scholarship grants this SY 2022-2023?
+Thread-Topic: Looking for scholarship grants this SY 2022-2023?
+Thread-Index: AQHYp/KyEfRd2RDrPEqsKTEnrnowvQ==
+Date: Thu, 4 Aug 2022 11:09:42 +0000
+Message-ID: 
+ <TY2PR03MB3886C1BFDD58D7B076A60CE1F19F9@TY2PR03MB3886.apcprd03.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sti.edu;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c866fa99-261f-496b-87b2-08da760b5dd3
+x-ms-traffictypediagnostic: TY0PR03MB6475:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 
+ qfk6RhpXeBKMb8nPmUkf748oTqkAQNpy4PaJ+l4YtKWPvNr2LlJIsuOMG+/crkqNFVNbHpJnA5vsJuJb4yNrY5U8L8v1m09hJWUK+lLAAvK3CXH6RmRK9gPIHsQLvl1zKNGKyodICQ2uTdaVrU8TW60NspeHgfcabWSmOjfq640QRJAAquqRgb6kr3WlsD7I+sn7U/v8Gvi1gMiMNaFNwv6hYMiWdA6/P/owjWZttbGnzASxmp8pxsY/fTdmjNDcqf+sMdTYSpJIi7bsoMqUJge2jOFfEJtNBL3tOJHeCXq/JmSu4Q8JIL9sGb8kiPRQ3cTvklMBkD5tFfa4FXpRDy8SJZ1tugerGX/lyNGm9d2wZRUbos67QvaR/T2+fFFYbUQ6nBIKD4TfqfN6iteyFuw+/oeWfo20soAMp6LQbYWdCbDuA2VdqJXk37hBMJ+d5UIUeAizxKXY9q5amxC151aT9kZrtpMIJT/UjGq0lUJ41sZnBG3ZsEIyS7sstwN3VBWuWuzUnW70kBOrhenQEBdG5YGtjao0+0DBm6ZOOukz8rf9LhftuAl2E8VRK62CYVFOuE7cgUaieTkUMqfbhewEEP+Qf7m37IWSUNUyePZgQWsVV97X1u4o+ikXwrNtKH7v6Htxi6AS4cA5irb+981PqLljKcfmTQArWvR3jK+p4Zzc7S0qNc8991equQNNQoXlCvISspI8qWA1vWe4vm7ei84ScUz771D33nc0Y3i03T8Z3inIms4vRgKt5hMPSWUn1zW2Djqr3/I+OB32jbMidpfh125J9JbDiTac5tJ6yQ5mh/qnaOobGHdOO6tJvlKrEAGLSUZkUMXUa84Fmw4ksmzkDXCW/D+NaHjvpCjXegL1ITJptlfIF8iX/Q/x+wTLKDDEgICvpPB7huuHrc3en+ECGohCWDIcrX97ljBGOn6UXOTRe0xJB5y0N55+
+x-forefront-antispam-report: 
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY2PR03MB3886.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(376002)(396003)(366004)(39860400002)(136003)(346002)(9686003)(7696005)(86362001)(41300700001)(26005)(6916009)(55016003)(478600001)(6506007)(166002)(71200400001)(84970400001)(786003)(38070700005)(316002)(38100700002)(75432002)(122000001)(186003)(64756008)(66476007)(83380400001)(8676002)(91956017)(66556008)(66446008)(33656002)(41320700001)(5660300002)(2906002)(76116006)(8936002)(19627405001)(66946007)(40140700001)(52536014)(145853001)(19627315001)(19625255004);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: 
+ =?windows-1256?Q?rRSvtjvVC3oKOludglldWqUvG66JTZSr+mk0LGklh8iP5f4+tMCMnAtY?=
+ =?windows-1256?Q?JuoVPvQRZsUJWg+mYVLDtmrnBFx5QaiyDGtXOuLBe3fHWXcnN8AWS2v2?=
+ =?windows-1256?Q?qfD7zMZELU1bWY8m/zxUJrNVywUZW2W1wwZFFel2C3OuS6Bnv8XcZBSH?=
+ =?windows-1256?Q?0FWef+BMKA+3S2qLuxGrBlvNpZD19XdC0kAfG7vE1X338jaawX5EDY57?=
+ =?windows-1256?Q?swwbr+AAqNgh7/cR9dNYL8npsODQWFfpX+RArR/hoMmnhb37IAFrnOxf?=
+ =?windows-1256?Q?sO8sbjDQwRRcWy6x9XPmh+mpjgbQzt8EEIZ+fdskcAm0jrGvhmcM0SKD?=
+ =?windows-1256?Q?aUpSxBCJ2FybAVdujrj2KR3+9vphYerJ3A5+YKCXSXA1qu8/Mokv3wBH?=
+ =?windows-1256?Q?GyIiJfLHLcSSh/FMWUoL24KqEW4R06cmfmbCM9efp6z8/CIU4sCGu5ek?=
+ =?windows-1256?Q?rayHGMSjKzEEIa2RnialaTJgehyJC2FsZq4auVb4ydR89ztA9VraPHqM?=
+ =?windows-1256?Q?nk5X6RuskoQeyXbuzzgdXbETZQtvuExLl0Ob9yUSv1u8jEKlsfZc757x?=
+ =?windows-1256?Q?U0ur+g0l27/2wFwO+XlM6nyUtdince9tDroCSnpa544YcE7wI2wq/Q+f?=
+ =?windows-1256?Q?aqJuVZz+lqBId9jEgRhmd5IbV8c02msQUOkx3cmWknMr9ieXAO/VYlxr?=
+ =?windows-1256?Q?u8r7NucrOpM4otNr6DnKgNfeFKGpXKije6AxqUzQwsEeDKFAPezuy6HJ?=
+ =?windows-1256?Q?qUppvCRfyqDkrIHuDPBGmB/gb6NKkimFF5G/DeOWG/XSJJehFU5buz8I?=
+ =?windows-1256?Q?G54rPc4y7FO56WzSKkUGeUj0y1EEaKwVuYVsrj1Fvshx8wFewvM8Svis?=
+ =?windows-1256?Q?/kKHPDga0X7WhznWLUq46OC2Ptieq4ZJt4vt+eoI/4rkBA40JqlwLnpZ?=
+ =?windows-1256?Q?WvGQ5WtgDXtrD208uCwnv/XHCyrjX9KbHEns9dtlN5LyZ9ulcodueowg?=
+ =?windows-1256?Q?W804Qxa9Ygc2hVOr3gZsZ7YNVZjD/F7cE5ZEtMO4l70vCAOLvpSMciW+?=
+ =?windows-1256?Q?/BOBJCC42fACN93ahHUx6Sd2t9HYketMhNjtQO1Sg1fUoSniuK+b4oS2?=
+ =?windows-1256?Q?DRck66TzJhnsrSU4MVgbB2Dj1FItWjAwmm9f7iX9a9VKQHvWHyWYnFBp?=
+ =?windows-1256?Q?8CVoS9GrRp9InaRsAd2sgoRpejyH5Ne+4JehLwjD3Z2KwIPT8doPVvlh?=
+ =?windows-1256?Q?vKD7mPtgx5okHH2CPUNOCqEuE0VpA6tNKDdeuI3d3ybSCwsXu6K7LtmW?=
+ =?windows-1256?Q?e+bYCnyxL7tnHD+BVfcQQMrzjJVjuxrNkvd60jEso0RM2ayd9vJyW5lW?=
+ =?windows-1256?Q?AN6Id+BWfrHdBoP2PQksIVxqEvPsDaqFFvqfJzK5r5J+xzA4JK9fnk6b?=
+ =?windows-1256?Q?1kDOdGVtBYJJiOEJuRTZJvVM1I42kTxDCqfLeD4c6RQOqgNUeo//PsAh?=
+ =?windows-1256?Q?231hcbzJtQM6r/YkAScKMyzNFT3GDyBJIESGVXuD2eMBHOzRmxmAVB5y?=
+ =?windows-1256?Q?68i+gvCW3a1HSoD0dWrW8JEMyw7oScMUIiarphIcrT+ooZL4HTuxek2p?=
+ =?windows-1256?Q?i+3LDeXKJPucX6bQkz5fEbcBRL5qVBgyvEO1ySpKn5/M6EgitL75b7QL?=
+ =?windows-1256?Q?dNieLKI8zHawKJxX8iZBQnnB9K13WFNeXJUSbVlOGAkYhYEQhCdkhw?=
+ =?windows-1256?Q?=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_TY2PR03MB3886C1BFDD58D7B076A60CE1F19F9TY2PR03MB3886apcp_"
+MIME-Version: 1.0
+X-OriginatorOrg: sti.edu
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY2PR03MB3886.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 
+ c866fa99-261f-496b-87b2-08da760b5dd3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Aug 2022 11:09:42.7973
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 96c62f5f-3c65-48a8-9dd3-868be91bdce3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 
+ JcGgCXq+tGAdvBy6MFsTjDBBOu6AWX1E2+I2CBaG/wv+lKoGQz3eJuFhkruj0ybplM3RTU4PwXiNkM0rFOyjKg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR03MB6475
+
+--_000_TY2PR03MB3886C1BFDD58D7B076A60CE1F19F9TY2PR03MB3886apcp_
+Content-Type: text/plain; charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+Learn about the various financial aid programs in STI  =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D
+
+[STI]<https://www.sti.edu>
+
+Save up on tuition fees for School Year 2022-2023
+View the various scholarship and financial aid programs available at STI. T=
+ap or click each section to find out more.
+
+APPLY FOR A SCHOLARSHIP NOW<https://financialaid.sti.edu>
+
+The STI Open Scholarship Program
+
+Incoming grade 11 and first year college students can get a scholarship dep=
+ending on their exam scores. No minimum grades needed. Just set an exam sch=
+edule at your preferred STI campus online.
+
+
+STI Campus Health and Safety Protocols will be strictly implemented for eve=
+ry onsite activity.
+
+[Scholarship]
+Get 20% scholarship grant for GSIS or Pag-IBIG dependents
+
+
+
+[GSIS]
+Got a GSIS member in the family? Show their UMID and a proof of relationshi=
+p to avail of the GSIS-STI Educational Assistance Program.
+[Pagibig]
+If your parents are Pag-IBIG Loyalty Plus or Loyalty cardholders, you can a=
+vail of the Pag-IBIG =96 STI Educational Assistance Program.
+
+
+
+[Senior High School]
+No Tuition Fee in Select STI Senior High Schools
+
+For the upcoming academic year, STI Senior High Schools will have reduced o=
+r zero top-up. Click or tap here to find your nearest STI campus and inquir=
+e now<https://campuses.sti.edu/>.
+
+STI schools also accept
+[DepEd]
+DepEd Senior High School Vouchers
+[PEAC]
+PEAC Educational Service Contracting (ESC) Grants
+[UniFast]
+Tertiary Education Subsidy (TES)
+
+
+
+
+
+Got questions or need more guidance?
+SEND US A MESSAGE
+[https://scope.sti.edu/img/mailer/icon-fb.png]  m.me/sanfernando.sti.edu<ht=
+tps://m.me/sanfernando.sti.edu>
+
+[https://scope.sti.edu/img/mailer/icon-tel.png] (045) 963-5126 / 961-1423<t=
+el:(045)%20963-5126%20/%20961-1423>
+
+
+
+
+
+Connect with us
+
+[https://scope.sti.edu/img/socials/facebook.png]<https://www.facebook.com/s=
+ti.edu>      [https://scope.sti.edu/img/socials/twitter.png] <https://twitt=
+er.com/sticollege>        [https://scope.sti.edu/img/socials/instagram.png]=
+ <https://www.instagram.com/sti_college/>      [https://scope.sti.edu/img/s=
+ocials/youtube.png] <https://www.youtube.com/channel/UClwI5kKZkrUGSdyKaXCya=
+cQ>
+
+
+
+PRIVACY POLICY<https://www.sti.edu/dataprivacy/>
+
+You are receiving this email because you took the STI SCOPE. You may unsubs=
+cribe here.
+
+
+
+--_000_TY2PR03MB3886C1BFDD58D7B076A60CE1F19F9TY2PR03MB3886apcp_
+Content-Type: text/html; charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dwindows-1=
+256">
+<title>STI</title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0, maximum-scale=3D1.0">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<!--[if !mso]> <!--><link href=3D"https://fonts.googleapis.com/css?family=
+=3DLato:100,100i,300,300i,400,700,700i,900,900i" rel=3D"stylesheet"><!--<![=
+endif]--><style type=3D"text/css">body{margin:0;padding:0;-webkit-text-size=
+-adjust:100% !important;-ms-text-size-adjust:100% !important;-webkit-font-s=
+moothing:antialiased !important}img{border:0 !important;outline:none !impor=
+tant}p{margin:0px !important;padding:0px !important}table{border-collapse:c=
+ollapse;mso-table-lspace:0px;mso-table-rspace:0px}td,a,span{border-collapse=
+:collapse;mso-line-height-rule:exactly}.divider{border-top:1px solid #2E2E2=
+E;margin-top:40px;margin-bottom:40px;height:2px}.main-item{float:left;width=
+:150px;text-align:center;margin-left:25px;margin-right:25px}.main-item h3{f=
+ont-family:Helvetica,Arial,sans-serif;color:#fff;font-weight:bold;font-size=
+:15px}.main-item p{font-family:Helvetica,Arial,sans-serif;color:#B6B6B6;fon=
+t-size:13px;line-height:18px}a.red-link{font-family:Helvetica,Arial,sans-se=
+rif;font-weight:bold;text-decoration:none;color:#F23166}.em_wrapper{border-=
+radius:12px}.address{font-family:Helvetica,Arial,sans-serif;color:#8C8C8C;m=
+argin-top:30px;margin-bottom:30px;font-size:11px;line-height:16px}.address =
+a{font-family:Helvetica,Arial,sans-serif;text-decoration:underline;color:#8=
+C8C8C;font-size:11px}.copy p{font-family:Helvetica,Arial,sans-serif;color:#=
+8C8C8C;font-size:11px}.suggestedHashtags img{vertical-align:bottom}.demi-co=
+lumn{border-radius:18px;height:306px}.demi-column h3{font-family:Helvetica,=
+Arial,sans-serif;color:#fff;font-size:18px;margin-bottom:10px;line-height:2=
+4px}.demi-column p{font-size:14px;line-height:18px}.column-members{overflow=
+:hidden;border-radius:18px;background-color:#000;float:left;margin-bottom:4=
+0px}.column-members img{margin-bottom:20px}.column-members h5{font-family:H=
+elvetica,Arial,sans-serif;font-size:18px;line-height:22px;font-weight:bold;=
+color:#fff}.column-members a{font-family:Helvetica,Arial,sans-serif;font-si=
+ze:13px;color:#0cc;text-transform:none;text-decoration:none;display:block;m=
+argin-top:10px}.uppercase-title{font-family:Helvetica,Arial,sans-serif;font=
+-size:10px;font-weight:bold;color:#8E8E8E;text-transform:uppercase;margin-b=
+ottom:5px;display:block}@media only screen and (max-width: 480px){td.intro{=
+padding-left:20px!important;padding-right:20px!important}.em_full_wrap{widt=
+h:100%!important}.em_main_table{width:100%!important;color:#fff}.em_full_im=
+g{width:100%!important;height:auto!important}.main-item{display:block;float=
+:left;position:relative;width:80%;margin-left:10%;margin-right:10%;margin-b=
+ottom:50px}.main-item:last-child{margin-bottom:30px!important}.main-item h3=
+{font-size:22px;line-height:28px;margin-bottom:10px}.main-item p{font-size:=
+15px;line-height:20px}.main-item img{width:50px;height:auto}.downloadButton=
+{font-size:15px!important;font-weight:bold;border-radius:36px!important;wid=
+th:90%!important;padding:5px}.intro{width:90%;padding-left:8%!important;pad=
+ding-right:8%!important}.subtitle{padding-left:8%!important;padding-right:8=
+%!important}.em_wrapper{display:inline-block;position:relative;float:left;w=
+idth:90%!important;margin-left:5%!important;margin-right:5%!important;margi=
+n-bottom:40px;border-radius:8px}.em_full_img2{width:90%;height:auto}.logo{w=
+idth:100px;height:auto}.address{float:left;width:80%;margin-left:10%;margin=
+-right:10%}.copy p{font-size:12px}.suggestedHashtags{margin-bottom:30px!imp=
+ortant}.suggestedHashtags td{display:block;width:86%;padding:0!important;fl=
+oat:left;margin-left:7%;margin-top:20px}.suggestedHashtags h3, .suggestedHa=
+shtags p{text-align:center}.suggestedHashtags img{width:100%!important;heig=
+ht:auto}.demi-column{width:84%;margin-left:7%;margin-right:7%;padding-botto=
+m:40px;margin-bottom:30px!important}.demi-column td{display:block;width:90%=
+;padding:0!important;float:left;margin-left:5%}.demi-column img{width:100%;=
+height:auto}.demi-column h3, .suggestedHashtags h3{font-size:26px;line-heig=
+ht:34px}.demi-column p{font-size:18px;line-height:26px;margin-bottom:20px!i=
+mportant}.demi-column.media h3{margin-top:20px!important}.demi-column.media=
+ td{margin-top:20px!important}h5{font-size:20px!important;line-height:26px!=
+important;margin-top:0}.headline{font-size:18px!important;line-height:24px!=
+important}.column-members{float:inherit!important;width:84%!important;margi=
+n-left:8%!important;margin-right:8%!important}.column-members h5{font-size:=
+22px!important;line-height:26px!important}.column-members a{font-size:16px}=
+.uppercase-title{font-size:14px}.headerMembers{padding-left:15px!important;=
+padding-right:15px!important;padding-top:20px!important}.containerMembers{p=
+adding:0!important}.spacingMembers{height:30px!important}.members{border-ra=
+dius:0!important}}</style>
+</head>
+<body class=3D"em_body" style=3D"margin:0px auto; padding:0px;" bgcolor=3D"=
+#ffffff">
+<style>.preheader{display:none !important;visibility:hidden;opacity:0;color=
+:transparent;height:0;width:0}</style><span class=3D"preheader" style=3D"di=
+splay: none !important; visibility: hidden; opacity: 0; color: transparent;=
+ height: 0; width: 0;">Learn about the
+ various financial aid programs in STI &nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D</s=
+pan>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"em_full_wrap" align=3D"center" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:600px; table-layout:fixe=
+d;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"background-color:#ffffff;" bgc=
+olor=3D"#121212" class=3D"em_aside10" height=3D"40">
+&nbsp;</td>
+</tr>
+<tr align=3D"center">
+<td height=3D"50"><a href=3D"https://www.sti.edu" target=3D"_blank"><img al=
+t=3D"STI" width=3D"160" height=3D"auto" class=3D"STI" src=3D"https://www.st=
+i.edu/images/sti_logo2.png"></a></td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"height:30px; font-size:0px; line-height:0px;">&n=
+bsp;</td>
+</tr>
+<tr>
+<td class=3D"em_blue em_center intro" align=3D"center" valign=3D"top" style=
+=3D"font-family: Arial, sans-serif; font-size: 34px; line-height: 46px; col=
+or:#000; font-weight:bold;padding-left:50px;padding-right:50px;">
+Save up on tuition fees for School Year 2022-2023</td>
+</tr>
+<tr>
+<td class=3D"em_blue em_center intro" align=3D"center" valign=3D"top" style=
+=3D"font-family: Arial, sans-serif; font-size: 18px; line-height: 22px; col=
+or:#000; font-weight:normal;padding-left:50px;padding-right:50px;">
+View the various scholarship and financial aid programs available at STI. T=
+ap or click each section to find out more.</td>
+</tr>
+<tr>
+<td height=3D"14" style=3D"height:14px; font-size:0px; line-height:0px;">&n=
+bsp;</td>
+</tr>
+<tr>
+<td class=3D"em_white" height=3D"36" align=3D"center" valign=3D"middle" sty=
+le=3D"font-family: Helvetica, Arial, sans-serif; font-size: 13px; color:#ff=
+ffff; font-weight:normal; height:34px;padding-top:10px;">
+<a href=3D"https://financialaid.sti.edu" target=3D"_blank" style=3D"text-de=
+coration:none; color:#ffffff; line-height:36px; display:block;background-co=
+lor:#006767;width:70%;border-radius:30px;font-size:14px;padding-top:8px;pad=
+ding-bottom:8px;font-weight:bold;" class=3D"downloadButton">APPLY
+ FOR A SCHOLARSHIP NOW</a></td>
+</tr>
+<tr>
+<td height=3D"40" style=3D"height:40px; font-size:0px; line-height:0px;">&n=
+bsp;</td>
+</tr>
+<tr>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"left" bgcolor=3D"#664b00" style=3D"border-radius:18px;margin-bottom:20=
+px;" class=3D"suggestedHashtags">
+<tbody>
+<tr>
+<td valign=3D"center" align=3D"left" width=3D"220" style=3D"padding-top:20p=
+x;padding-left:30px;color:#fff;padding-bottom:30px;">
+<h3 style=3D"font-family:Helvetica,Arial,sans-serif;font-size:22px;margin-b=
+ottom:15px;">
+The STI Open Scholarship Program</h3>
+<p style=3D"font-family:Helvetica,Arial,sans-serif;font-size:16px;line-heig=
+ht:22px;">
+Incoming grade 11 and first year college students can get a scholarship dep=
+ending on their exam scores. No minimum grades needed. Just set an exam sch=
+edule at your preferred STI campus online.</p>
+<br>
+<p style=3D"display:block;margin-top:20px;font-size:11px;color:#d8ba6b;font=
+-family:Helvetica,Arial,sans-serif;margin-bottom:20px;">
+STI Campus Health and Safety Protocols will be strictly implemented for eve=
+ry onsite activity.</p>
+</td>
+<td align=3D"center" valign=3D"bottom"><img width=3D"244" height=3D"auto" a=
+lt=3D"Scholarship" src=3D"https://scope.sti.edu/img/mailer/mail3_1.png"></t=
+d>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width=3D"100%" align=3D"center" style=3D"background-color:#004f98;bo=
+rder-radius:18px;" class=3D"members">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family: Arial, sans-serif=
+;color:#fff;padding-left:80px;padding-right:80px;padding-top:20px;" class=
+=3D"headerMembers">
+<h4 style=3D"font-family:Helvetica,Arial,sans-serif;font-size:26px;line-hei=
+ght:32px;margin-bottom:10px;">
+Get 20% scholarship grant for GSIS or Pag-IBIG dependents</h4>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr align=3D"center">
+<td valign=3D"top" align=3D"center" style=3D"padding-left: 30px;padding-rig=
+ht:30px;" class=3D"containerMembers">
+<table width=3D"260" class=3D"column-members" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"margin-right:20px;">
+<tbody>
+<tr align=3D"left">
+<td valign=3D"top" style=3D"background-color:#001848;padding-top:30px;" ali=
+gn=3D"center">
+<img width=3D"60%" height=3D"auto" alt=3D"GSIS" src=3D"https://scope.sti.ed=
+u/img/mailer/mail3_2_3.png"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family:Helvetica,Arial,sans-serif;paddin=
+g-left:20px;padding-right:20px;padding-bottom:20px;text-align:left;backgrou=
+nd-color:#001848;" width=3D"100%">
+<h5 style=3D"margin-top:0;color:#fff;font-weight:normal;">Got a GSIS member=
+ in the family? Show their UMID and a proof of relationship to avail of the
+<strong>GSIS-STI Educational Assistance Program</strong>.</h5>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"260" class=3D"column-members" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0">
+<tbody>
+<tr align=3D"left">
+<td valign=3D"top" style=3D"background-color:#001848;padding-top:30px;" ali=
+gn=3D"center">
+<img width=3D"60%" height=3D"auto" alt=3D"Pagibig" src=3D"https://scope.sti=
+.edu/img/mailer/mail3_3_3.png"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family:Helvetica,Arial,sans-serif;color:=
+#fff;padding-left:20px;padding-right:20px;padding-bottom:20px;text-align:le=
+ft;background-color:#001848;" width=3D"100%">
+<h5 style=3D"margin-top:0;color:#fff;font-weight:normal;">If your parents a=
+re Pag-IBIG Loyalty Plus or Loyalty cardholders, you can avail of the
+<strong>Pag-IBIG =96 STI Educational Assistance Program</strong>.</h5>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top">
+<p>&nbsp;</p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"left" bgcolor=3D"#009292" style=3D"border-radius:18px;margin-bottom:20=
+px;" class=3D"suggestedHashtags">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"bottom"><img width=3D"217" height=3D"auto" a=
+lt=3D"Senior High School" src=3D"https://scope.sti.edu/img/mailer/mail3-12.=
+png"></td>
+<td valign=3D"left" align=3D"left" width=3D"250" style=3D"padding-right:50p=
+x;color:#fff;">
+<h3 style=3D"font-family:Helvetica,Arial,sans-serif;font-size:22px;margin-b=
+ottom:15px;">
+No Tuition Fee in Select STI Senior High Schools</h3>
+<p style=3D"font-family:Helvetica,Arial,sans-serif;font-size:16px;line-heig=
+ht:22px;color:#fff;">
+For the upcoming academic year, STI Senior High Schools will have reduced o=
+r zero top-up.
+<a href=3D"https://campuses.sti.edu/" style=3D"color:#ffffff;font-weight:bo=
+ld;">Click or tap here to find your nearest STI campus and inquire now</a>.=
+</p>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width=3D"100%" align=3D"center" style=3D"background-color:#e92c2c;bo=
+rder-radius:18px;" class=3D"members">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family: Arial, sans-serif=
+;color:#fff;padding-left:80px;padding-right:80px;padding-top:30px;" class=
+=3D"headerMembers">
+<h4 style=3D"font-family:Helvetica,Arial,sans-serif;font-size:26px;line-hei=
+ght:32px;margin-bottom:15px;color:#fff;">
+STI schools also accept</h4>
+</td>
+</tr>
+<tr align=3D"center">
+<td valign=3D"top" align=3D"center" style=3D"padding-left: 30px;padding-rig=
+ht:30px; " class=3D"containerMembers">
+<table width=3D"168" class=3D"column-members" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"margin-right:20px;background-color:#510000;">
+<tbody>
+<tr align=3D"left">
+<td valign=3D"top" align=3D"center" style=3D"padding-top:20px;"><img width=
+=3D"80%" height=3D"auto" alt=3D"DepEd" src=3D"https://scope.sti.edu/img/mai=
+ler/mail3_5_4.png"></td>
+</tr>
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"height:100px;font-family:Helve=
+tica,Arial,sans-serif;color:#fff;padding-left:24px;padding-right:24px;paddi=
+ng-bottom:0px;text-align:center;" width=3D"100%">
+<h5 style=3D"margin-top:0;color:#fff;">DepEd Senior High School Vouchers</h=
+5>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"168" class=3D"column-members" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"margin-right:20px;background-color:#510000;">
+<tbody>
+<tr align=3D"left">
+<td valign=3D"top" align=3D"center" style=3D"padding-top:20px;"><img width=
+=3D"80%" height=3D"auto" alt=3D"PEAC" src=3D"https://scope.sti.edu/img/mail=
+er/mail3_6_4.png"></td>
+</tr>
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"height:100px;font-family:Helve=
+tica,Arial,sans-serif;color:#fff;padding-left:24px;padding-right:24px;paddi=
+ng-bottom:0px;text-align:center;" width=3D"100%">
+<h5 style=3D"margin-top:0;color:#fff;">PEAC Educational Service Contracting=
+ (ESC) Grants</h5>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"164" class=3D"column-members" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"background-color:#510000;">
+<tbody>
+<tr align=3D"left">
+<td valign=3D"top" align=3D"center" style=3D"padding-top:20px;"><img width=
+=3D"80%" height=3D"auto" alt=3D"UniFast" src=3D"https://scope.sti.edu/img/m=
+ailer/mail3_7_4.png"></td>
+</tr>
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"height:120px;font-family:Helve=
+tica,Arial,sans-serif;color:#fff;padding-left:24px;padding-right:24px;paddi=
+ng-bottom:0px;text-align:center;" width=3D"100%">
+<h5 style=3D"margin-top:0;color:#fff;">Tertiary Education Subsidy (TES)</h5=
+>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr valign=3D"top">
+<td style=3D"padding-left:30px;padding-right:30px;">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h5 style=3D"font-family: Helvetica,Arial,sans-serif;font-size:16px;color:#=
+000000;line-height:22px;font-weight:normal;text-align:center;margin:0px;pad=
+ding:0px;">
+Got questions or need more guidance?</h5>
+<h1 style=3D"font-family: Helvetica,Arial,sans-serif;font-size:24px;color:#=
+000000;line-height:22px;font-weight:bold;text-align:center;margin:10px 0px =
+20px 0px;padding:0px;">
+SEND US A MESSAGE</h1>
+</td>
+</tr>
+<tr>
+<td class=3D"em_white" height=3D"36" align=3D"center" valign=3D"middle" sty=
+le=3D"font-family: Helvetica, Arial, sans-serif; font-size: 13px; color:#ff=
+ffff; font-weight:normal; height:34px;">
+<a href=3D"https://m.me/sanfernando.sti.edu" target=3D"_blank" style=3D"tex=
+t-decoration:none; color:#000; line-height:36px; display:block;background-c=
+olor:#e5de16;width:60%;border-radius:30px;font-size:15px;padding-top:8px;pa=
+dding-bottom:8px;font-weight:bold;" class=3D"downloadButton"><img width=3D"=
+16" height=3D"auto" src=3D"https://scope.sti.edu/img/mailer/icon-fb.png">&n=
+bsp;
+ m.me/sanfernando.sti.edu</a></td>
+</tr>
+<tr>
+<td style=3D"height:4px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"em_white" height=3D"36" align=3D"center" valign=3D"middle" sty=
+le=3D"font-family: Helvetica, Arial, sans-serif; font-size: 13px; color:#ff=
+ffff; font-weight:normal; height:34px;">
+<a href=3D"tel:(045) 963-5126 / 961-1423" target=3D"_blank" style=3D"text-d=
+ecoration:none; color:#000; line-height:36px; display:block;background-colo=
+r:#00cccc;width:60%;border-radius:30px;font-size:15px;padding-top:8px;paddi=
+ng-bottom:8px;font-weight:bold;" class=3D"downloadButton"><img width=3D"16"=
+ height=3D"auto" src=3D"https://scope.sti.edu/img/mailer/icon-tel.png">&nbs=
+p;(045)
+ 963-5126 / 961-1423</a>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"height:30px;">&nbsp;</td>
+</tr>
+<tr>
+<td valign=3D"top"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" style=3D"background-color:#000000;">
+<tbody>
+<tr>
+<td class=3D"wrapper" width=3D"600" align=3D"center">
+<table class=3D"section header" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"600">
+<tbody>
+<tr>
+<td class=3D"column">
+<table>
+<tbody>
+<tr>
+<td align=3D"center" style=3D"width:600px;padding-top:30px;text-align:cente=
+r;">
+<p style=3D"text-align:center;font-size:16px;line-height:24px;color:#ffffff=
+;">Connect with us</p>
+<center>
+<table width=3D"160" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center">
+<tbody>
+<tr>
+<td><a href=3D"https://www.facebook.com/sti.edu"><img style=3D"width:30px;"=
+ src=3D"https://scope.sti.edu/img/socials/facebook.png"></a></td>
+<td><a href=3D"https://twitter.com/sticollege"><img style=3D"width:30px;" s=
+rc=3D"https://scope.sti.edu/img/socials/twitter.png"></a></td>
+<td><a href=3D"https://www.instagram.com/sti_college/"><img style=3D"width:=
+30px;" src=3D"https://scope.sti.edu/img/socials/instagram.png"></a></td>
+<td><a href=3D"https://www.youtube.com/channel/UClwI5kKZkrUGSdyKaXCyacQ"><i=
+mg style=3D"width:30px;" src=3D"https://scope.sti.edu/img/socials/youtube.p=
+ng"></a></td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>&nbsp;</p>
+<p style=3D"text-align:center;font-size:14px;line-height:18px;color:#454e63=
+;margin-top:20px;">
+<a href=3D"https://www.sti.edu/dataprivacy/">PRIVACY POLICY</a></p>
+<p style=3D"text-align:center;font-size:8px;line-height:24px;color:#ffffff;=
+margin:0px; padding:0px;">
+You are receiving this email because you took the STI SCOPE. You may unsubs=
+cribe here.</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+--_000_TY2PR03MB3886C1BFDD58D7B076A60CE1F19F9TY2PR03MB3886apcp_--

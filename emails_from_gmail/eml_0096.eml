@@ -1,0 +1,643 @@
+X-GM-THRID: 1872597066134739931
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:e62f:b0:2a5:d81a:dd30 with SMTP id
+ bm47csp4992400rwb;
+        Tue, 4 Aug 2026 05:48:47 -0700 (PDT)
+X-Received: by 2002:a05:6214:2f87:b0:904:3227:18a8 with SMTP id
+ 6a1803df08f44-90849558abcmr319923466d6.7.1785847727040;
+        Tue, 04 Aug 2026 05:48:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1785847727; cv=none;
+        d=google.com; s=arc-20260327;
+        b=sDD3HpxNReEs+igyp7FAUpBsUWr+U425fOlf1NJ9HknIOqLOJBn78PkAEyvr9HpFnD
+         oWJv/Lb7kR9axvkoari3KR3QLyp7QryERNile29LKXfMXpjvxmBzrIjpGozm6d7Kpiy9
+         Idyd/0YdzKOxKNRrdfSPIIkLpOmGReb2/zQfyLJpgIeeZrHVvuCrvqxD2n5Hs2x8tBKF
+         ArCnFyEjXytTZBhfPQSDTOkmed/HS1ABqE+V4YcJm1DfBTLFAzs7gUx0cIrN8KqOHkAI
+         Fy5Oy3Q+rvUnkVI7Y1331P4UXVAPlDgHw+IBvBo+jkG9Wj3VCEyR9YGOzJdawRcdmcHZ
+         mLgw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=1T6ygBKS6n2Nk61uvbFU5fJ9yOqMHp45NBZik9QvY2Q=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=dXOHiBGCFqtwdppYZ0YNtRvPONYAXsTtW0kU/wV8nz61hCuuR1CHR5W2lM3+3nzQdS
+         Qfx2VQQiOmKlFar3r9cAH3wxnOmSKr9GUr616TIREz0wk/8tnHMG2jldXek7HzVAEhra
+         Dr3K1ls2YIj8HZBdWFFqOBXGg6C9iviCEM66lA5cn49gkROISniAul5UMp54AJKUQtRi
+         K7PQAvLtqoWMn7LNxqpIZmUsSZ32rgPB+kIm86qp33371rx8/OQoPId1L4dOhjTx/WPQ
+         J8EZ1oJ2zzJu5o3dWTRcUt2VrJoyvEqy21GYG6pVwVqBx0gKCwq/tCzpqHLqtiUSePwW
+         2htg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=pRYAp8Vr;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=DEE0UeFr;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5138.v5c4dda55.use4.send.mailgun.net
+ (v5138.v5c4dda55.use4.send.mailgun.net. [159.112.241.138])
+        by mx.google.com with UTF8SMTPS id
+ 6a1803df08f44-9087fffcc9csi360856d6.157.2026.08.04.05.48.46
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 04 Aug 2026 05:48:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender) client-ip=159.112.241.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=pRYAp8Vr;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=DEE0UeFr;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1785847726; x=1785854926;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=1T6ygBKS6n2Nk61uvbFU5fJ9yOqMHp45NBZik9QvY2Q=;
+ b=pRYAp8VrDe18aUyuC3txtDJH3pVfps00Oxr2cj7JZ70+7AToTuRIZmEmMLoA1amocKntdBKhKuC5KXgQ09IvVjs21hupV6AELPEONa/GXCMS0WxrDqXepBDUnP7m44Yx0BDPcecQ+eOp0t4Ow1cSNuyW5vCVMgDDhl+5OwhqVso=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1785847726; x=1785854926;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=1T6ygBKS6n2Nk61uvbFU5fJ9yOqMHp45NBZik9QvY2Q=;
+ b=DEE0UeFrYFiuvaGCjZEJ1iLwKAKA5YcZXpMGKkbKfbOL9qNR7/o1cdiMwUtUP4KCNUj7Bl8K4jTRdiKOg8lJ2ZCVii41Pavmvfa8JM5iAoGqi/8G+FUdhnju80yuJQIuHnnzZYwFeusfGBxEH62iPbyNMxez8zeJeeXhw8VI/XQ=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by 851e8890d3db2afff391a0dd6f0cff735f3d050c044a69aa9ea92cfe30e8706c
+ with HTTP
+ id 6a71dfae175d4938637a6a91; Tue, 04 Aug 2026 12:48:46 GMT
+X-Mailgun-Sending-Ip: 159.112.241.138
+Date: Tue, 04 Aug 2026 12:48:46 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="610d8b549edd4107ff0800c0b8f85cdc6073270747e7ae7f73ea3081e0cb"
+Subject: =?UTF-8?q?=F0=9F=A4=AB_Six_months,_on_me.?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ_M0b16p1OJq9YFpcyHKw==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNF6TJQMIYTM4BRJ5FHCOKZIZYGG6KIJN3T2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ_M0b16p1OJq9YFpcyHKw==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ_M0b16p1OJq9YFpcyHKw=="}
+Message-Id: <20260804124846.c120ceae1841ae38@cio56239.tryhackme.com>
+
+--610d8b549edd4107ff0800c0b8f85cdc6073270747e7ae7f73ea3081e0cb
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+VERA has a message she probably shouldn't be sending. 6 months free on an a=
+nnual Premium subscription. =C2=A0
+
+VERA has a message she probably shouldn't be sending. 6 months free on an a=
+nnual Premium subscription.
+
+TryHackMe ( https://tryhackme.com/dashboard )
+
+6 months free with an annual Premium subscription ( https://tryhackme.com/w=
+hy-subscribe?utm_source=3Dcio&utm_medium=3Demail&utm_campaign=3D2026augflas=
+hsale30 )
+
+Limited Time
+
+VERA
+
+A Message From VERA
+
+******************
+Six months, on me.
+******************
+
+Don't tell the other guests.
+
+Somewhere between the room investigations and Patch's mysteriously "Resolve=
+d" tickets, I decided you've earned something the brochure never mentioned:
+
+6 months free on an annual Premium subscription.
+
+Whether you're chasing every investigation or just passing through, Premium=
+ gives you the structure, the labs, and the direction to keep progressing l=
+ong after check-out.
+
+With Premium, you get
+
+=E2=9C=8F=EF=B8=8F
+Full access to Beginner & Intermediate Learning Paths
+
+=F0=9F=8E=AF
+Structured paths that take you from zero to job-ready
+
+=F0=9F=9A=80
+Real-world skills you can put in front of employers
+
+=F0=9F=93=8B
+A clear direction instead of figuring it out alone
+
+Byte Lotus keeps its secrets. This one's yours to keep too, 6 months free o=
+n Premium Annual.
+
+Claim Your 6 Months Free ( https://tryhackme.com/pricing?utm_source=3Dcio&u=
+tm_medium=3Demail&utm_campaign=3D2026augflashsale30 )
+
+VERA
+
+P.S.
+
+This offer wasn't cleared by management. Use it before someone notices.
+
+Limited time. I won't mention it twice.
+
+This offer is valid for free users only. Applies exclusively to annual plan=
+ purchases and cannot be combined with other discounts, including student o=
+ffers. This offer does not give you an additional 6 months, it reflects the=
+ value of the discount applied to an annual subscription. Offer valid from =
+04/08/2026 12:00 PM UK time until 07/08/2026 11:59 PM UK time.
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) =C2=A0|=C2=A0 Unsubscribe ( https://t=
+rack.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ_M0b16p1OJq9YFpcyHKw=3D=
+=3D )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--610d8b549edd4107ff0800c0b8f85cdc6073270747e7ae7f73ea3081e0cb
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"color-scheme" content=3D"light only"/>
+  <meta name=3D"supported-color-schemes" content=3D"light"/>
+  <title>TryHackMe - August Flash Sale - Free - RoW - Launch</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #151d2b; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-spacing: 0; border-collapse: collapse; }
+    img { border: 0; display: block; max-width: 100%; height: auto; }
+    .wrap { width: 100%; max-width: 600px; }
+    .body-p { font-family: Arial, Helvetica, sans-serif; font-size: 16px; l=
+ine-height: 1.75; color: #d7e1f0; margin: 0; }
+    .headline { font-family: Arial, Helvetica, sans-serif; font-size: 26px;=
+ line-height: 1.25; font-weight: 700; color: #ffffff; margin: 0; }
+    .pill { display: inline-block; font-family: Arial, Helvetica, sans-seri=
+f; font-size: 12px; line-height: 1; letter-spacing: 1px; text-transform: up=
+percase; color: #a3ea2a; background-color: #24324a; border: 1px solid #3347=
+6a; border-radius: 999px; padding: 8px 14px; }
+    .cta-a { display: inline-block; font-family: Arial, Helvetica, sans-ser=
+if; font-size: 16px; line-height: 1; font-weight: 700; color: #151d2b !impo=
+rtant; text-decoration: none; background-color: #a3ea2a; border-radius: 10p=
+x; padding: 16px 28px; }
+    .footer-link { color: #ffffff !important; text-decoration: underline; }
+    @media screen and (max-width: 620px) {
+      .wrap { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad { padding-left: 20px !important; padding-right: 20px !imp=
+ortant; }
+      .headline { font-size: 22px !important; }
+      .body-p { font-size: 15px !important; }
+      .cta-a { display: block !important; width: 100% !important; box-sizin=
+g: border-box !important; text-align: center !important; }
+    }
+  </style>
+</head>
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">VERA has a message she probably shouldn't be sending. 6 =
+months free on an annual Premium subscription. =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD=C2=A0</div>
+
+  <!-- Preheader -->
+  <div style=3D"display:none; max-height:0; overflow:hidden; opacity:0; mso=
+-hide:all;">
+    VERA has a message she probably shouldn't be sending. 6 months free on =
+an annual Premium subscription.
+  </div>
+
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b;">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding: 24px 16px;">
+
+        <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" class=3D"wrap">
+
+          <!-- Logo -->
+          <tbody><tr>
+            <td align=3D"center" style=3D"padding: 0 0 22px 0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmM=
+xMDFhY2UwZGIwMyIsImxpbmtfaWQiOjEyMX0/bd71d3827d9837242a97a107d644521f129583=
+ebdf744fbe3428427719231d38" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-bee.customeriomail.com/images/c=
+lient-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe" width=3D"118" sty=
+le=3D"width:118px; height:auto;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD TOP: Banner -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:16px 16px =
+0 0; padding:16px 16px 0; font-size:0; line-height:0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS93aHktc3Vic2NyaWJlP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXR=
+tX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj0yMDI2YXVnZmxhc2hzYWxlMzAiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjM0OTkzfQ/37b38f=
+b3318a59e75a831927cfbf3ab5c927dcd4e3a36d4704f56fef63d19683" style=3D"text-d=
+ecoration:none;">
+                <img src=3D"https://userimg-assets.customeriomail.com/image=
+s/client-env-92874/01KZ3QTSHK3V5D4NXCZWSJ7YNM.png" alt=3D"6 months free wit=
+h an annual Premium subscription" width=3D"568" style=3D"width:100%; max-wi=
+dth:568px; height:auto; display:block; border-radius:10px;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD BOTTOM: Content -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:0 0 16px 1=
+6px;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0">
+                <tbody><tr>
+                  <td class=3D"mobile-pad" style=3D"padding: 32px 40px 36px=
+ 40px;">
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+
+                      <!-- Pill -->
+                      <tbody><tr>
+                        <td align=3D"center" style=3D"padding-bottom: 18px;=
+">
+                          <span class=3D"pill">Limited Time</span>
+                        </td>
+                      </tr>
+
+                      <!-- VERA header: avatar + eyebrow + H1, first-person=
+ voice -->
+                      <tr>
+                        <td style=3D"padding-bottom: 4px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0">
+                            <tbody><tr>
+                              <td width=3D"52" valign=3D"middle" style=3D"p=
+adding-right:14px;">
+                                <table role=3D"presentation" width=3D"46" h=
+eight=3D"46" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color:=
+#1a2233; border-radius:50%;">
+                                  <tbody><tr>
+                                    <td align=3D"center" valign=3D"middle">
+                                      <img src=3D"https://cdn-images.tryhac=
+kme.com/room-icons/5dbea226085ab6182a2ee0f7-1784110375678" alt=3D"VERA" wid=
+th=3D"46" height=3D"46" style=3D"border-radius:50%; display:block; width:46=
+px; height:46px;"/>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                              <td valign=3D"middle">
+                                <p style=3D"margin:0; font-family:Arial, He=
+lvetica, sans-serif; font-size:10px; font-weight:700; letter-spacing:1px; t=
+ext-transform:uppercase; color:#8c9ab3;">A Message From VERA</p>
+                                <h1 class=3D"headline" style=3D"text-align:=
+left;">Six months, on me.</h1>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Subheadline -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 26px;=
+ padding-top: 10px;">
+                          <p style=3D"margin:0; font-family:Georgia, 'Times=
+ New Roman', serif; font-size:18px; line-height:1.3; font-weight:400; font-=
+style:italic; color:#7ec41a;">
+                            Don't tell the other guests.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Story -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 26px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Somewhere between the room investigations and P=
+atch's mysteriously &#34;Resolved&#34; tickets, I decided you've earned som=
+ething the brochure never mentioned:<br/>
+                            <strong style=3D"color:#a3ea2a;">6 months free<=
+/strong> on an annual Premium subscription.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Story line 2 -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 26px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Whether you're chasing every investigation or j=
+ust passing through, Premium gives you the structure, the labs, and the dir=
+ection to keep progressing long after check-out.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Benefits box label -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom:10px;"=
+>
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:14px; line-height:1.4; color:#a3ea2a; font-weight:=
+700; text-transform:uppercase; letter-spacing:.8px;">With Premium, you get<=
+/p>
+                        </td>
+                      </tr>
+
+                      <!-- Benefits box -->
+                      <tr>
+                        <td style=3D"background-color:#222d43; border:1px s=
+olid #30415f; border-radius:14px; padding:18px 20px;" align=3D"center">
+                          <table role=3D"presentation" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"margin:0 auto;">
+                            <tbody><tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 10px 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; l=
+ine-height:1.6; white-space:nowrap;" valign=3D"top">=E2=9C=8F=EF=B8=8F</td>
+                              <td valign=3D"top" style=3D"padding-bottom:10=
+px;"><p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-s=
+ize:15px; line-height:1.6; color:#e8eef8;">Full access to Beginner &amp; In=
+termediate Learning Paths</p></td>
+                            </tr>
+                            <tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 10px 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; l=
+ine-height:1.6; white-space:nowrap;" valign=3D"top">=F0=9F=8E=AF</td>
+                              <td valign=3D"top" style=3D"padding-bottom:10=
+px;"><p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-s=
+ize:15px; line-height:1.6; color:#e8eef8;">Structured paths that take you f=
+rom zero to job-ready</p></td>
+                            </tr>
+                            <tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 10px 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; l=
+ine-height:1.6; white-space:nowrap;" valign=3D"top">=F0=9F=9A=80</td>
+                              <td valign=3D"top" style=3D"padding-bottom:10=
+px;"><p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-s=
+ize:15px; line-height:1.6; color:#e8eef8;">Real-world skills you can put in=
+ front of employers</p></td>
+                            </tr>
+                            <tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 0 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; line=
+-height:1.6; white-space:nowrap;" valign=3D"top">=F0=9F=93=8B</td>
+                              <td valign=3D"top"><p style=3D"margin:0; font=
+-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.6; colo=
+r:#e8eef8;">A clear direction instead of figuring it out alone</p></td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Closing line -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-top: 24px; pa=
+dding-bottom: 8px;">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Byte Lotus keeps its secrets. This one's yours =
+to keep too, 6 months free on Premium Annual.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- CTA -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-top:20px; pad=
+ding-bottom:20px;">
+                          <table role=3D"presentation" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"center">
+                            <tbody><tr>
+                              <td bgcolor=3D"#a3ea2a" style=3D"border-radiu=
+s:10px;">
+                                <a href=3D"https://e.customeriomail.com/e/c=
+/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9KcTlZRnBjeUhLdz=
+09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9wcmljaW5nP3V0bV9zb3VyY2U9Y2lvX=
+HUwMDI2dXRtX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj0yMDI2YXVnZmxhc2hzYWxl=
+MzAiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjM0OTk=
+0fQ/e720564673067a526590dfcb0bda343335ca80ac3903ccf52e7d84e37d25063f" style=
+=3D"display:block;
+                                          padding:16px 28px;
+                                          font-family:Arial, Helvetica, san=
+s-serif;
+                                          font-size:16px;
+                                          font-weight:700;
+                                          line-height:16px;
+                                          color:#151d2b;
+                                          text-decoration:none;">Claim Your=
+ 6 Months Free</a>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- VERA P.S. -->
+                      <tr>
+                        <td style=3D"background-color:#171f30; border:1px d=
+ashed rgba(163,234,42,0.45); border-radius:8px; padding:14px 18px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0">
+                            <tbody><tr>
+                              <td width=3D"38" valign=3D"top" style=3D"padd=
+ing-right:12px;">
+                                <table role=3D"presentation" width=3D"30" h=
+eight=3D"30" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color:=
+#1a2233; border-radius:50%;">
+                                  <tbody><tr>
+                                    <td align=3D"center" valign=3D"middle">
+                                      <img src=3D"https://cdn-images.tryhac=
+kme.com/room-icons/5dbea226085ab6182a2ee0f7-1784110375678" alt=3D"VERA" wid=
+th=3D"30" height=3D"30" style=3D"border-radius:50%; display:block; width:30=
+px; height:30px;"/>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                              <td valign=3D"top">
+                                <p style=3D"margin:0 0 4px 0; font-family:A=
+rial, Helvetica, sans-serif; font-size:10px; font-weight:700; letter-spacin=
+g:1px; text-transform:uppercase; color:#a3ea2a;">P.S.</p>
+                                <p style=3D"margin:0; font-family:'Courier =
+New', Courier, monospace; font-size:13.5px; line-height:1.55; color:#d7e1f0=
+;">This offer wasn't cleared by management. Use it before someone notices.<=
+/p>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Sub-CTA -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-top: 20px; pa=
+dding-bottom: 22px;">
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:13px; line-height:1.6; color:#8c9ab3;">Limited tim=
+e. I won't mention it twice.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Divider + Disclaimer -->
+                      <tr>
+                        <td style=3D"border-top:1px solid #2a3650; padding-=
+top:16px;">
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:12px; line-height:1.6; color:#71809d;">
+                            This offer is valid for free users only. Applie=
+s exclusively to annual plan purchases and cannot be combined with other di=
+scounts, including student offers. This offer does not give you an addition=
+al 6 months, it reflects the value of the discount applied to an annual sub=
+scription. Offer valid from 04/08/2026 12:00 PM UK time until 07/08/2026 11=
+:59 PM UK time.
+                          </p>
+                        </td>
+                      </tr>
+
+                    </tbody></table>
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align=3D"center" style=3D"padding: 28px 20px 10px 20px;">
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"margin:0 auto 24px auto;">
+                <tbody><tr>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9=
+KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/6b4dcd=
+4a1e4193fe7609d40a71cb70f4ceeab93d013514fbf34b7c55db28bb18" style=3D"text-d=
+ecoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/so=
+cial-networks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" w=
+idth=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9=
+KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW=
+50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/726f8=
+b81acd6c1721fac115a54b09f49746b6db12baf1a26d6adb354eecde553" style=3D"text-=
+decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/s=
+ocial-networks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=
+=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9=
+KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja2=
+1lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/13=
+8a2e1e24fb17bc478a2c89bc2fc9a1c9260b6483fd682cc655c28842250712" style=3D"te=
+xt-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resource=
+s/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Inst=
+agram" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9=
+KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aG=
+Fja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyM=
+jE5OX0/75114a5c0b9d72d131f1d754c854037c012b7ddfd50c7882069e186936734754" st=
+yle=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public=
+/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=
+=3D"LinkedIn" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9=
+KcTlZRnBjeUhLdz09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrbW=
+UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxf=
+Q/f7ee06025800b6aea496fc6ca437f057f978376e70d13e797a664c929346a3b7" style=
+=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"=
+YouTube" width=3D"30"/></a></td>
+                </tr>
+              </tbody></table>
+              <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, =
+sans-serif; font-size:14px; line-height:1.6; color:#ffffff; text-align:cent=
+er;">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9KcTlZRnBjeUhLdz09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/779ad574ae7b2a6ae832c28a891788f09b2827305ca=
+ab58b6b11ae765fea09b1" class=3D"footer-link">Terms</a> =C2=A0|=C2=A0 <a hre=
+f=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ_M0b16p=
+1OJq9YFpcyHKw=3D=3D" class=3D"footer-link">Unsubscribe</a>
+              </p>
+              <p style=3D"margin:0; font-family:Arial, Helvetica, sans-seri=
+f; font-size:14px; line-height:1.6; color:#ffffff; text-align:center;">=C2=
+=A9 2026 TryHackMe. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVpfTTBiMTZwMU9KcTlZRnBjeUhLdz09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--610d8b549edd4107ff0800c0b8f85cdc6073270747e7ae7f73ea3081e0cb--

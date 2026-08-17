@@ -1,0 +1,573 @@
+X-GM-THRID: 1824564826704559606
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:a607:b0:213:83fc:b380 with SMTP id t7csp1227744eif;
+        Thu, 20 Feb 2025 00:36:54 -0800 (PST)
+X-Google-Smtp-Source: 
+ AGHT+IE9amwJPbAI/kUjfooajN6vcLqV3Pu5YG+Xq7nBGOZcewF1DbwGbmZPlaKXwRnVtveWoDOf
+X-Received: by 2002:a05:620a:260d:b0:7c0:99b9:c8a3 with SMTP id
+ af79cd13be357-7c0b5366baemr973126485a.58.1740040613830;
+        Thu, 20 Feb 2025 00:36:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1740040613; cv=none;
+        d=google.com; s=arc-20240605;
+        b=budnMMTrZDGB54+WJ1zhSk27UOjXuc1S2ExX/up854zoqaKiFjdHsvZ8DBv0aiVE4f
+         rt4A5TC+HG8QrOZNS3a3dX18VfLESrDaC093WUnnjyMaIoFk4klqTzZbVCiLFp5I9eNL
+         T9/P4nz2lEX7kMw+gEQmTo8h73c/l7OVU3d03t8wQV2Z4dp301Z7YRu2Br/WsbR7w31H
+         wKpQifWdBcKtUXOAcy0h6hls/Ynda4UPmUsmnc8g+vzPcZDGgW50BNbezHiJukPbKpBg
+         mTcbqXgTIFfptSl2J/pOzxE2qevCEAJEfuGUGVuoLSAKa6ImZdjK81ldxJMFH1pvLHCM
+         4Nvg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=to:priority:importance:bimi-selector:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=X/LMbSOfL7+YKSSJcC1EMdOuSDh863+gWnBPL2jZdPY=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=L1NhL8fUiR2L7XgFM68a8mdKRt58S8DfdGpcy568fHcyqB5+ECbSQXXEWrdAHcbOw6
+         ZJAM9fKNTKCA1wbGTwvzHeFK/91PfItyOv5QuYS69xGM8j3KmQd4Lu8+Ixft9Zi62VWD
+         poEv+sZE3N8nmMPhPomUwNaYsoBuBA1fahQekw7dwh0zMzcfcs5ufh43+pUPF0FpxLFS
+         4RnWoF/7SULgDL4HPSggvmtkhppHyqRYrVJZIEgKG8F0rPe7zP33OxzrNLtT0Sx1VzoU
+         fx1orfEn+hmyjxG0+nZoHCUNlm/ZFysptv9WXm7FKEd/qMzT+HO1n9kAlOrr+NJ4RQ6f
+         yMQw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.airbnb.com header.s=s20150428
+ header.b=eGANyqG7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=UqReGDYD;
+       spf=pass (google.com: domain of
+ bounces+1453977-0557-patriogabrielpatdu=gmail.com@email.airbnb.com designates
+ 159.183.140.0 as permitted sender)
+ smtp.mailfrom="bounces+1453977-0557-patriogabrielpatdu=gmail.com@email.airbnb.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=airbnb.com
+Return-Path: 
+ <bounces+1453977-0557-patriogabrielpatdu=gmail.com@email.airbnb.com>
+Received: from o33.email.airbnb.com (o33.email.airbnb.com. [159.183.140.0])
+        by mx.google.com with ESMTPS id
+ af79cd13be357-7c0a1a9e35fsi684513085a.259.2025.02.20.00.36.53
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 20 Feb 2025 00:36:53 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ bounces+1453977-0557-patriogabrielpatdu=gmail.com@email.airbnb.com designates
+ 159.183.140.0 as permitted sender) client-ip=159.183.140.0;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.airbnb.com header.s=s20150428
+ header.b=eGANyqG7;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=UqReGDYD;
+       spf=pass (google.com: domain of
+ bounces+1453977-0557-patriogabrielpatdu=gmail.com@email.airbnb.com designates
+ 159.183.140.0 as permitted sender)
+ smtp.mailfrom="bounces+1453977-0557-patriogabrielpatdu=gmail.com@email.airbnb.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=airbnb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.airbnb.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s20150428; bh=X/LMbSOfL7+YKSSJcC1EMdOuSDh863+gWnBPL2jZdPY=;
+	b=eGANyqG7gszt69CYAoMc1DU75RLg/ckUD88ElrC8c7Xj2yRm/L3SZCmqAcC6VRDaeWYG
+	uo/fWXcUcX4t6OpBanQiaTuF2wtHy95kD+JMrzYbC+/zbZJV34XaAKC6Xl5CCZIz3Ht/sy
+	rg3DTMhH+YwGWl8aZkdG2i7thsNhOG9Bg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=X/LMbSOfL7+YKSSJcC1EMdOuSDh863+gWnBPL2jZdPY=;
+	b=UqReGDYDTg2C4m+96+C+Dy+UnI7uIG3JjIxkE4Q5oKNuzog9Jyzh2WUxYBTEhZlqLSBC
+	xS2xVA6fHH08kd+ZKfNe/tEcEx5wl4kcUx3xlrrnWS2TiouGkh25cg05vj+OjzRZ6UTQHi
+	W4Xc15Ls7MPC0TpxkB/voO1rObcyybHNY=
+Received: by recvd-6869fc5b69-kxbsm with SMTP id
+ recvd-6869fc5b69-kxbsm-1-67B6E9A4-34
+	2025-02-20 08:36:52.900809271 +0000 UTC m=+2464817.421449776
+Received: from MTQ1Mzk3Nw (unknown)
+	by geopod-ismtpd-16 (SG) with HTTP
+	id 4u6TI4tGSo6TSAdd58Wx9g
+	Thu, 20 Feb 2025 08:36:52.879 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=1fc3fdb6960b360c852341c9c2720ea77b7e7615fd970b7b16db83902577
+Date: Thu, 20 Feb 2025 08:36:52 +0000 (UTC)
+From: Airbnb <discover@airbnb.com>
+Mime-Version: 1.0
+Message-ID: <4u6TI4tGSo6TSAdd58Wx9g@geopod-ismtpd-16>
+Subject: =?UTF-8?B?V2XigJlyZQ==?= updating our Terms and Privacy Policy
+BIMI-Selector: v=BIMI1; s=belov2;
+Importance: high
+Priority: Urgent
+Return-Path: discover@airbnb.com
+X-Category: support
+X-Locale: en
+X-MSMail-Priority: High
+X-Message-Package-UUID: a5a9d2c0-4259-ad52-6484-77adb397102f
+X-Priority: 1
+X-Strategy: email
+X-Template: omni/omni_support
+X-User-ID: 580125082
+X-rpcampaign: airbnb20250220149530518066539333943320212216330853642
+X-Feedback-ID: 1453977:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E373TPjtMqGbzwgRnUiLO4X8=2F0zPQPgFdLVhfGHneqxbddiRTtyZYR9Nzr?=
+ =?us-ascii?Q?0jWjDjONqfDS1f5lB8BbxarZqjCW53aU267QaK+?=
+ =?us-ascii?Q?KMSuC62ujfrndSDt71g1zNDsahyOW9NYqrbEWhJ?=
+ =?us-ascii?Q?H+qcGXe5BVIpy8EMJzQhI5t4uq2XkeEWEU2sXrY?=
+ =?us-ascii?Q?sYIIvsG0dvzemVEfEIFukI74lcwGiToRZG3Dfbf?=
+ =?us-ascii?Q?NGFSEHmkRrfsWO1Lye7E=2FPcRNkb+hr4oijNXxsi?= =?us-ascii?Q?Bazu?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3Bs912jhttV80DpC5xCXrakTw29f+iIgvN6oCF?=
+ =?us-ascii?Q?q0A8peScxyHFns5ROGr1YiA9x3RK8L3rBGO1Yiv?=
+ =?us-ascii?Q?hqIUulV=2FbcIotvB6sbz9NA8iYjIeU0=2FMkQFHHlR?=
+ =?us-ascii?Q?SFriN6rAgOB+dKOxkQ0tjzvnck2neS+IG0ik2nI?=
+ =?us-ascii?Q?x6KOeZVedw21jhj1mobPb+AwJuexNgQn=2FEtV2TC?=
+ =?us-ascii?Q?5WFUcsHsC6EU39ibCd3e5X+jajKT6J4nuunWWS7?=
+ =?us-ascii?Q?dZOVt9kgF2FBnJr0yz4rC556VLTrxQvigyVrWEa?=
+ =?us-ascii?Q?Ya=2FvT5JfhePdwUROIriPSMY2pVnL2XCqthWfDQv?=
+ =?us-ascii?Q?p6XoXLIYlkfiXmj1FmEsBSuZZMcuEmSrM0CGT5V?=
+ =?us-ascii?Q?GnbaCPx4hkDPnEpzCgwx6USm=2FxnsPdk0ndQp1gu?=
+ =?us-ascii?Q?Dn2mBN34slHzRJwpwEO=2F0BhTpXJuAJuvyGT9qbc?=
+ =?us-ascii?Q?eSmX3M=2FYfZnQhKOTmiIzNXuAnI2JICEs6tfQptB?=
+ =?us-ascii?Q?v3CMnRGIojELVti4r87MUV6FBu?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.w77WwF8qvIcDhV1QIHM+Ig==
+
+--1fc3fdb6960b360c852341c9c2720ea77b7e7615fd970b7b16db83902577
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Updated Terms and Privacy Policy
+%opentrack%
+
+https://www.airbnb.com/?src_section=3D12727049276849&c=3D.pi80.pkb21uaS8xLz=
+MwODU5MzQ4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f
+
+
+UPDATED TERMS AND PRIVACY POLICY
+
+
+We are updating our Terms of Service, other terms and policies including th=
+ose listed below
+(=E2=80=9CTerms=E2=80=9D), and our Privacy Policy. These updates will suppo=
+rt our evolving business and new
+features, provide additional clarity regarding how personal information is =
+processed, and address
+upcoming laws and regulations.
+
+
+
+THE UPDATED TERMS AND PRIVACY POLICY WILL GO INTO EFFECT FOR EXISTING USERS=
+ ON APRIL 17, 2025
+
+After that date, you will need to agree to the updated Terms and acknowledg=
+e the Privacy Policy in
+order to book or manage reservations. Your use of the Airbnb Platform from =
+that date onward will be
+subject to the updated Privacy Policy. We encourage you to review the updat=
+ed Terms and Privacy
+Policy in full and download hard copies
+[https://www.airbnb.com/e/termsofserviceupdate?c=3D.pi80.pkb21uaS8xLzMwODU5=
+MzQ4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f]
+for your reference.
+Updated Terms and Privacy Policy
+ * Terms of Service
+   [https://www.airbnb.com/help/article/2854?c=3D.pi80.pkb21uaS8xLzMwODU5Mz=
+Q4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f]
+ * Privacy Policy
+   [https://www.airbnb.com/help/article/2855?c=3D.pi80.pkb21uaS8xLzMwODU5Mz=
+Q4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f]
+ * Payments Terms of Service
+   [https://www.airbnb.com/help/article/2856?c=3D.pi80.pkb21uaS8xLzMwODU5Mz=
+Q4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f]
+ * Host Damage Protection
+   [https://www.airbnb.com/help/article/2869?c=3D.pi80.pkb21uaS8xLzMwODU5Mz=
+Q4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f]
+ * Rebooking and Refund Policy for Homes
+   [https://www.airbnb.com/help/article/2868?c=3D.pi80.pkb21uaS8xLzMwODU5Mz=
+Q4NTg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f]
+
+We=E2=80=99ve also provided an overview of how our Terms and Privacy Policy=
+ are changing in our Help Center
+[https://www.airbnb.com/help/article/2877?c=3D.pi80.pkb21uaS8xLzMwODU5MzQ4N=
+Tg3MzQx&euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f].
+If you disagree with the updated Terms or Privacy Policy, you may terminate=
+ your agreement with
+Airbnb at any time by deleting your account.
+
+Thank you for being a valued member of our community.
+
+
+Airbnb Ireland UC
+
+8 Hanover Quay
+
+Dublin 2, Ireland
+
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0
+--1fc3fdb6960b360c852341c9c2720ea77b7e7615fd970b7b16db83902577
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<html lang=3D"en"><head><meta http-equiv=3D"Content-Type" content=3D"text/h=
+tml; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3Ddevice-wid=
+th, initial-scale=3D1"><style type=3D"text/css">
+@font-face {
+  font-family: Cereal;
+  src: url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/font=
+s/Airbnb_Cereal-Book-9a1c9cca9bb3d65fefa2aa487617805e.woff2") format("woff2=
+"), url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/fonts/A=
+irbnb_Cereal-Book-aa38e86e3f98554f9f7053d7b713b4db.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;}
+@font-face {
+  font-family: Cereal;
+  src: url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/font=
+s/Airbnb_Cereal-Medium-50fc004b3082375f12ff0cfb67bf8e56.woff2") format("wof=
+f2"), url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/fonts=
+/Airbnb_Cereal-Medium-4bc8dafd2e0fd8914bf4d5edce9acd24.woff") format('woff'=
+);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;}
+@font-face {
+  font-family: Cereal;
+  src: url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/font=
+s/Airbnb_Cereal-Bold-bdfb98485e7836ba31b456f65cded088.woff2") format("woff2=
+"), url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/fonts/A=
+irbnb_Cereal-Bold-a188841af78481a25b7bb2316a5f5716.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;}
+</style><div><!--[if (mso)|(IE)]>
+<style type=3D"text/css">
+h1, h2, h3, h4, h5, h6, a, p, li, div, span {
+  font-family: Cereal, Helvetica Neue, Helvetica, sans-serif !important;
+}
+
+a {
+  color: #222222 !important;
+}
+
+.outlook-only {
+  display: block !important;
+}
+
+.non-outlook-only {
+  background-color: red;
+  display: none !important;
+  height: 0 !important;
+  max-height: 0px !important;
+  mso-hide: all !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  width: 0 !important;
+}
+</style>
+<![endif]--></div><style data-linaria=3D"true">
+@media only screen and (max-width:560px) {
+  .dir.baweun7 {
+    padding-bottom: 24px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.t26zkf7 {
+    padding-top: 4px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.tcl2k0x {
+    padding-top: 24px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .r1rx5rev {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .c1n1cc46 {
+    overflow: visible !important;
+  }
+
+  .dir.c1n1cc46 {
+    border: none !important;
+    border-radius: unset !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .f4lz9tb {
+    font-size: 16px !important;
+    font-size: 1rem !important;
+    line-height: 24px !important;
+    line-height: 1.5rem !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .fzib3qr {
+    font-size: 18px !important;
+    font-size: 1.125rem !important;
+    line-height: 24px !important;
+    line-height: 1.5rem !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .f1bdudd9 {
+    font-size: 32px !important;
+    font-size: 2rem !important;
+    line-height: 36px !important;
+    line-height: 2.25rem !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.tf21v15 {
+    padding-top: 0 !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.t1m6arhj {
+    padding-top: 12px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.t109xh4o {
+    padding-top: 24px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.b6si5ex {
+    padding-bottom: 0 !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.bf5nrx0 {
+    padding-bottom: 0 !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.b6ool25 {
+    padding-bottom: 4px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.b1mmw049 {
+    padding-bottom: 12px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.bh5eciz {
+    padding-bottom: 16px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.b1e5ld55 {
+    padding-bottom: 24px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir-ltr.c1tim5eq {
+    padding-left: 16px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir-ltr.c2ihj2e {
+    padding-right: 16px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.cgz7fyc {
+    padding-top: 32px !important;
+    padding-bottom: 12px !important;
+  }
+}
+@media only screen and (max-width:560px) {
+  .dir.l1gviw91 {
+    padding-bottom: 12px !important;
+  }
+}
+</style></head><body style=3D"margin:0 auto!important;padding:0" id=3D"body=
+"><div style=3D"color:transparent;display:none !important;font-size:0px;hei=
+ght:0;opacity:0;width:0">Updated Terms and Privacy Policy</div><div style=
+=3D"color:transparent;display:none !important;font-size:0px;height:0;opacit=
+y:0;width:0"><img src=3D"http://email.airbnbmail.com/wf/open?upn=3Du001.mRv=
+jWa6a2tdi7UgUZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszFTIE6Jg2Mym-=
+2F6oHhiBzMrqsR-2F4OFKOmw0ZB8ho-2BkABmGcvbL9LE7ZxFjBo4kr2nO75EYlgy6vFZHbh7Yt=
+h-2BrSpCWt2hPBIZn2CtIjwy5q1fLMgbXt3z1iWHJsNeU6X6P1-2BDIIEqvKx64NiXdDRVJs99t=
+4U5maYr1C-2F7Bh-2FOM0FjyfgDmTZm-2FCEQLmvvsn2SnbWKy0QLpB4K8lopDF1rsaKuLiGL6y=
+hw0W8WBxvOkx7bRMldxn5sNwfYhTcL2Cuhbt7TiRoODt-2Bx80M2r2VabuchDLDvbb7Whz9Mi1R=
+6rZnjAfNpA38F-2B-2B1h8PbbDUbqW5uoymHNnUky5K151QRFa92PfPZCwQ4lL33tKqJmF3-2BQ=
+tgeUrqtifRI9zFArvWjCpfy-2F1dWDb06I-2F3xjyFf6e3nZfsIbDiL-2FivaQgwsA5v-2Fg-2F=
+d7CXlBNhhMmtx1j7szudjbmBU-2BsHwUngE5BKPpJ-2FU-2BxOdZpoBsKDPZTXJ5dGaETjcGP3R=
+5oanPYTb6DoQKp5DDP-2FwN4i-2BBKP-2BhPJEvpIZS4ZVQ-2F65XDLA-2BYbPkmDlTq-2FJp9s=
+-2BwifMl38ym7dbAXcEAQhgZtuT-2Fo8IVbYr3tDgp6BjWIZXI0IDgc5qeqlnRY9GiEmTzjzDMu=
+44qCMWrcv" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1=
+px !important;width:1px !important;border-width:0 !important;margin-top:0 !=
+important;margin-bottom:0 !important;margin-right:0 !important;margin-left:=
+0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-r=
+ight:0 !important;padding-left:0 !important;"/></div><div id=3D"app"><div d=
+ir=3D"ltr"><div class=3D"c1n1cc46 dir dir-ltr" style=3D"color: #222222; fon=
+t-family: Cereal,Helvetica Neue,Helvetica,sans-serif; position: relative; v=
+ertical-align: top; width: 100%; overflow: hidden; box-sizing: border-box; =
+margin-left: auto; margin-right: auto; padding: 0; border: 1px solid #ddddd=
+d; border-radius: 12px; max-width: 640px;"><div data-section-id=3D"12727049=
+276849"><div style=3D"background-color:#ffffffff;padding:0 48px 0 48px" cla=
+ss=3D"c1tim5eq c2ihj2e tf21v15 b6si5ex dir dir-ltr outlook-row-container"><=
+table cellpadding=3D"0" class=3D" g6qqs1l dir dir-ltr" role=3D"presentation=
+" style=3D"border-collapse: collapse; border-spacing: 0; width: 100%; font-=
+size: inherit;" width=3D"100%"><tbody><tr class=3D"r19nf6iz dir dir-ltr" st=
+yle=3D"margin: 0;"><td width=3D"99%" class=3D"c7ku1a8 dir dir-ltr" style=3D=
+"overflow-wrap: break-word;"><div style=3D"padding-top: 48px; padding-botto=
+m: 24px; text-align: left;" class=3D"cgz7fyc dir dir-ltr"><a target=3D"_sel=
+f" rel=3D"noreferrer" style=3D"font-size: 18px; line-height: 28px; color: #=
+222222; font-weight: 800; -webkit-text-decoration: underline !important; te=
+xt-decoration: underline !important;" class=3D"agfxp9d u1essgmc r1rx5rev di=
+r dir-ltr" aria-label=3D"Airbnb Homepage" data-eon-role=3D"link" data-eon-p=
+rop=3D"href" href=3D"https://www.airbnb.com/?src_section=3D12727049276849&a=
+mp;c=3D.pi80.pkb21uaS8xLzMwODU5MzQ4NTg3MzQx&amp;euid=3Da5a9d2c0-4259-ad52-6=
+484-77adb397102f"><img class style=3D"border: 0; width: 32px; height: 32px;=
+" data-eon-role=3D"image" data-eon-prop=3D"src" alt=3D"Airbnb" src=3D"https=
+://a0.muscache.com/pictures/2049b489-349c-4456-853b-71e925327e25.jpg" role=
+=3D"presentation" aria-hidden=3D"true" width=3D"32" height=3D"32"></a></div=
+></td></tr></tbody></table></div></div><div data-section-id=3D"123858720132=
+49"><div style=3D"background-color:#ffffffff;padding:32px 48px 32px 48px;te=
+xt-align:left" class=3D"c1tim5eq c2ihj2e t109xh4o b1e5ld55 dir dir-ltr outl=
+ook-row-container"><h1 class=3D"b1hjflwn f1bdudd9 tf21v15 bh5eciz dir dir-l=
+tr" style=3D"color: #222222; font-family: Cereal,Helvetica Neue,Helvetica,s=
+ans-serif; -webkit-letter-spacing: normal; -moz-letter-spacing: normal; -ms=
+-letter-spacing: normal; margin: 0; font-weight: 700; font-size: 40px; line=
+-height: 44px; letter-spacing: -0.02em; padding: 0 0 24px 0;">Updated Terms=
+ and Privacy Policy<br></h1><div class=3D"b1hjflwn f4lz9tb b6si5ex dir dir-=
+ltr" style=3D"font-family: Cereal,Helvetica Neue,Helvetica,sans-serif; -web=
+kit-letter-spacing: normal; -moz-letter-spacing: normal; -ms-letter-spacing=
+: normal; letter-spacing: normal; margin: 0; padding: 0; color: #222222ff; =
+font-weight: 400; font-size: 18px; line-height: 28px;">We are updating our =
+Terms of Service, other terms and policies including those listed below (=
+=E2=80=9CTerms=E2=80=9D), and our Privacy Policy. These updates will suppor=
+t our evolving business and new features, provide additional clarity regard=
+ing how personal information is processed, and address upcoming laws and re=
+gulations.</div><div class></div></div></div><div data-section-id=3D"128661=
+56232531"><div style=3D"background-color:#ffffffff;padding:32px 48px 32px 4=
+8px" class=3D"c1tim5eq c2ihj2e t109xh4o b1e5ld55 dir dir-ltr outlook-row-co=
+ntainer"><h2 class=3D"b1hjflwn fzib3qr tf21v15 b6ool25 dir dir-ltr" style=
+=3D"color: #222222; font-family: Cereal,Helvetica Neue,Helvetica,sans-serif=
+; -webkit-letter-spacing: normal; -moz-letter-spacing: normal; -ms-letter-s=
+pacing: normal; letter-spacing: normal; margin: 0; font-weight: 700; font-s=
+ize: 22px; line-height: 26px; padding: 0 0 8px 0;"><strong>The updated Term=
+s and Privacy Policy will go into effect for existing users on April 17, 20=
+25</strong></h2><div class=3D"b1hjflwn f4lz9tb tf21v15 b1e5ld55 dir dir-ltr=
+" style=3D"font-family: Cereal,Helvetica Neue,Helvetica,sans-serif; -webkit=
+-letter-spacing: normal; -moz-letter-spacing: normal; -ms-letter-spacing: n=
+ormal; letter-spacing: normal; margin: 0; color: #222222ff; font-weight: 40=
+0; font-size: 18px; line-height: 28px; padding: 0 0 32px 0;">After that dat=
+e, you will need to agree to the updated Terms and acknowledge the Privacy =
+Policy in order to book or manage reservations. Your use of the Airbnb Plat=
+form from that date onward will be subject to the updated Privacy Policy. W=
+e encourage you to review the updated Terms and Privacy Policy in full and =
+<a style=3D"font-size:inherit;font-weight:inherit;color:inherit;text-decora=
+tion:underline" class=3D"[object Object]" href=3D"https://www.airbnb.com/e/=
+termsofserviceupdate?c=3D.pi80.pkb21uaS8xLzMwODU5MzQ4NTg3MzQx&amp;euid=3Da5=
+a9d2c0-4259-ad52-6484-77adb397102f">download hard copies</a> for your refer=
+ence.</div><div class=3D"b1hjflwn fzib3qr tf21v15 b6ool25 dir dir-ltr" styl=
+e=3D"color: #222222; font-family: Cereal,Helvetica Neue,Helvetica,sans-seri=
+f; -webkit-letter-spacing: normal; -moz-letter-spacing: normal; -ms-letter-=
+spacing: normal; letter-spacing: normal; margin: 0; font-weight: 700; font-=
+size: 22px; line-height: 26px; padding: 0 0 8px 0;">Updated Terms and Priva=
+cy Policy</div><ul class=3D"lpio06p dir dir-ltr" style=3D"margin: 0; paddin=
+g-right: 16px; padding-left: 20px;"><li><div class=3D"l1gviw91 dir dir-ltr"=
+ style=3D"padding: 0 16px 4px;"><div class=3D"b1hjflwn f4lz9tb tf21v15 bf5n=
+rx0 dir dir-ltr" style=3D"color: #222222; font-family: Cereal,Helvetica Neu=
+e,Helvetica,sans-serif; -webkit-letter-spacing: normal; -moz-letter-spacing=
+: normal; -ms-letter-spacing: normal; letter-spacing: normal; margin: 0; fo=
+nt-weight: 400; font-size: 18px; line-height: 28px; padding: 0 0 4px 0;"><a=
+ style=3D"font-size:inherit;font-weight:inherit;color:inherit;text-decorati=
+on:underline" class=3D"[object Object]" href=3D"https://www.airbnb.com/help=
+/article/2854?c=3D.pi80.pkb21uaS8xLzMwODU5MzQ4NTg3MzQx&amp;euid=3Da5a9d2c0-=
+4259-ad52-6484-77adb397102f">Terms of Service</a></div></div></li><li><div =
+class=3D"l1gviw91 dir dir-ltr" style=3D"padding: 0 16px 4px;"><div class=3D=
+"b1hjflwn f4lz9tb tf21v15 bf5nrx0 dir dir-ltr" style=3D"color: #222222; fon=
+t-family: Cereal,Helvetica Neue,Helvetica,sans-serif; -webkit-letter-spacin=
+g: normal; -moz-letter-spacing: normal; -ms-letter-spacing: normal; letter-=
+spacing: normal; margin: 0; font-weight: 400; font-size: 18px; line-height:=
+ 28px; padding: 0 0 4px 0;"><a style=3D"font-size:inherit;font-weight:inher=
+it;color:inherit;text-decoration:underline" class=3D"[object Object]" href=
+=3D"https://www.airbnb.com/help/article/2855?c=3D.pi80.pkb21uaS8xLzMwODU5Mz=
+Q4NTg3MzQx&amp;euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f">Privacy Policy<=
+/a></div></div></li><li><div class=3D"l1gviw91 dir dir-ltr" style=3D"paddin=
+g: 0 16px 4px;"><div class=3D"b1hjflwn f4lz9tb tf21v15 bf5nrx0 dir dir-ltr"=
+ style=3D"color: #222222; font-family: Cereal,Helvetica Neue,Helvetica,sans=
+-serif; -webkit-letter-spacing: normal; -moz-letter-spacing: normal; -ms-le=
+tter-spacing: normal; letter-spacing: normal; margin: 0; font-weight: 400; =
+font-size: 18px; line-height: 28px; padding: 0 0 4px 0;"><a style=3D"font-s=
+ize:inherit;font-weight:inherit;color:inherit;text-decoration:underline" cl=
+ass=3D"[object Object]" href=3D"https://www.airbnb.com/help/article/2856?c=
+=3D.pi80.pkb21uaS8xLzMwODU5MzQ4NTg3MzQx&amp;euid=3Da5a9d2c0-4259-ad52-6484-=
+77adb397102f"><u>Payments Terms of Service</u></a></div></div></li><li><div=
+ class=3D"l1gviw91 dir dir-ltr" style=3D"padding: 0 16px 4px;"><div class=
+=3D"b1hjflwn f4lz9tb tf21v15 bf5nrx0 dir dir-ltr" style=3D"color: #222222; =
+font-family: Cereal,Helvetica Neue,Helvetica,sans-serif; -webkit-letter-spa=
+cing: normal; -moz-letter-spacing: normal; -ms-letter-spacing: normal; lett=
+er-spacing: normal; margin: 0; font-weight: 400; font-size: 18px; line-heig=
+ht: 28px; padding: 0 0 4px 0;"><a style=3D"font-size:inherit;font-weight:in=
+herit;color:inherit;text-decoration:underline" class=3D"[object Object]" hr=
+ef=3D"https://www.airbnb.com/help/article/2869?c=3D.pi80.pkb21uaS8xLzMwODU5=
+MzQ4NTg3MzQx&amp;euid=3Da5a9d2c0-4259-ad52-6484-77adb397102f"><u>Host Damag=
+e Protection</u></a></div></div></li><li><div class=3D"l1gviw91 dir dir-ltr=
+" style=3D"padding: 0 16px 4px;"><div class=3D"b1hjflwn f4lz9tb tf21v15 bf5=
+nrx0 dir dir-ltr" style=3D"color: #222222; font-family: Cereal,Helvetica Ne=
+ue,Helvetica,sans-serif; -webkit-letter-spacing: normal; -moz-letter-spacin=
+g: normal; -ms-letter-spacing: normal; letter-spacing: normal; margin: 0; f=
+ont-weight: 400; font-size: 18px; line-height: 28px; padding: 0 0 4px 0;"><=
+a style=3D"font-size:inherit;font-weight:inherit;color:inherit;text-decorat=
+ion:underline" class=3D"[object Object]" href=3D"https://www.airbnb.com/hel=
+p/article/2868?c=3D.pi80.pkb21uaS8xLzMwODU5MzQ4NTg3MzQx&amp;euid=3Da5a9d2c0=
+-4259-ad52-6484-77adb397102f">Rebooking and Refund Policy for Homes</a></di=
+v></div></li></ul></div></div><div data-section-id=3D"12779997501483"><div =
+style=3D"background-color:#ffffffff;padding:16px 48px 16px 48px;text-align:=
+left" class=3D"c1tim5eq c2ihj2e t1m6arhj b1mmw049 dir dir-ltr outlook-row-c=
+ontainer"><div class=3D"b1hjflwn f4lz9tb b6si5ex dir dir-ltr" style=3D"font=
+-family: Cereal,Helvetica Neue,Helvetica,sans-serif; -webkit-letter-spacing=
+: normal; -moz-letter-spacing: normal; -ms-letter-spacing: normal; letter-s=
+pacing: normal; margin: 0; padding: 0; color: #222222ff; font-weight: 400; =
+font-size: 18px; line-height: 28px;">We=E2=80=99ve also provided an overvie=
+w of how our Terms and Privacy Policy are changing in our <a style=3D"font-=
+size:inherit;font-weight:inherit;color:inherit;text-decoration:underline" c=
+lass=3D"[object Object]" href=3D"https://www.airbnb.com/help/article/2877?c=
+=3D.pi80.pkb21uaS8xLzMwODU5MzQ4NTg3MzQx&amp;euid=3Da5a9d2c0-4259-ad52-6484-=
+77adb397102f"><u>Help Center</u></a>. If you disagree with the updated Term=
+s or Privacy Policy, you may terminate your agreement with Airbnb at any ti=
+me by deleting your account.</div><div class></div></div></div><div data-se=
+ction-id=3D"12832149663057"><div style=3D"background-color:#ffffffff;paddin=
+g:16px 48px 16px 48px;text-align:left" class=3D"c1tim5eq c2ihj2e t1m6arhj b=
+1mmw049 dir dir-ltr outlook-row-container"><div class=3D"b1hjflwn f4lz9tb t=
+f21v15 b6ool25 dir dir-ltr" style=3D"font-family: Cereal,Helvetica Neue,Hel=
+vetica,sans-serif; -webkit-letter-spacing: normal; -moz-letter-spacing: nor=
+mal; -ms-letter-spacing: normal; letter-spacing: normal; margin: 0; color: =
+#222222ff; font-weight: 400; font-size: 18px; line-height: 28px; padding: 0=
+ 0 8px 0;">Thank you for being a valued member of our community.</div><div =
+class></div></div></div><div data-section-id=3D"12663560171222"><div style=
+=3D"background-color:#ffffffff;padding:32px 48px 0px 48px" class=3D"c1tim5e=
+q c2ihj2e t109xh4o b6si5ex dir dir-ltr outlook-row-container"><div class=3D=
+"t26zkf7 dir dir-ltr" style=3D"padding-top: 8px;"><div class=3D"t11ekukz di=
+r dir-ltr" style=3D"border-top: 1px solid #DDDDDD;"></div></div><div class=
+=3D"baweun7 tcl2k0x dir dir-ltr" style=3D"padding-bottom: 32px; padding-top=
+: 32px;"><table cellpadding=3D"0" class=3D" g6qqs1l dir dir-ltr" role=3D"pr=
+esentation" style=3D"border-collapse: collapse; border-spacing: 0; width: 1=
+00%; font-size: inherit;" width=3D"100%"><tbody><tr class=3D"r19nf6iz dir d=
+ir-ltr" style=3D"margin: 0;"><td class=3D"l1inpvua c7ku1a8 dir dir-ltr" sty=
+le=3D"overflow-wrap: break-word; width: 100%; text-align: left;" width=3D"1=
+00%" align=3D"left"><img class style=3D"border: 0; width: 32px; height: 32p=
+x;" data-eon-role=3D"image" data-eon-prop=3D"src" alt=3D"Airbnb" src=3D"htt=
+ps://a0.muscache.com/pictures/2049b489-349c-4456-853b-71e925327e25.jpg" wid=
+th=3D"32" height=3D"32"></td></tr></tbody></table><div style=3D"padding-top=
+:24px" class><div class><p class=3D"ahe7zcw dir dir-ltr" style=3D"font-fami=
+ly: Cereal,Helvetica Neue,Helvetica,sans-serif; font-size: 14; font-weight:=
+ 400; line-height: 18px; color: #222222; margin: 0;">Airbnb Ireland UC</p><=
+/div><div class><p class=3D"ahe7zcw dir dir-ltr" style=3D"font-family: Cere=
+al,Helvetica Neue,Helvetica,sans-serif; font-size: 14; font-weight: 400; li=
+ne-height: 18px; color: #222222; margin: 0;">8 Hanover Quay</p></div><div c=
+lass><p class=3D"ahe7zcw dir dir-ltr" style=3D"font-family: Cereal,Helvetic=
+a Neue,Helvetica,sans-serif; font-size: 14; font-weight: 400; line-height: =
+18px; color: #222222; margin: 0;">Dublin 2, Ireland</p></div></div></div></=
+div></div></div></div></div><div style=3D"color:white;display:none !importa=
+nt;font:15px courier;line-height:0;white-space:nowrap">=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0</div></body></html>
+--1fc3fdb6960b360c852341c9c2720ea77b7e7615fd970b7b16db83902577--

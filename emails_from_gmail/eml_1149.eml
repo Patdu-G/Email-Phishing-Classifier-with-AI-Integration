@@ -1,0 +1,726 @@
+X-GM-THRID: 1831125776399683242
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:9e01:0:b0:226:35eb:c730 with SMTP id h1csp1611173eig;
+        Sat, 3 May 2025 11:40:23 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IEfwfhwtm7xwn7cwf2BsNB6DB7xpUMrznNozcyFaqxTp6xmWyts6dYUYoTgIXQRRiOuoZA8
+X-Received: by 2002:a17:90a:e184:b0:309:ebe3:1ef9 with SMTP id
+ 98e67ed59e1d1-30a6198d1e8mr3324183a91.12.1746297623185;
+        Sat, 03 May 2025 11:40:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746297623; cv=none;
+        d=google.com; s=arc-20240605;
+        b=fa7p2lmldC8V+0/38C+Ut/E961tIaovjW5Tdnha4v31O6DMFoay+oqkaRVL3GTHSRu
+         BuwmgqJ51oQhTa54VKjkSUOqKgxitFKoKOekTYrdZNpSlq+KpjEAXnCz9QrmFzh2+4aC
+         LJMB6fm/b22oqRAnRTjX70ih4HqAgfgDdZLNiNjVpYHScp/gJm4f7xXw4iVm/vTmaKb/
+         H6INNcSq2PWnGGMa93cszXN5DkPnuouH9FBk4sfft7SbsBeny26y3WIL+NhNo2N05DhW
+         S+folcP7BROwj55z4JuUVc7R7JsAQ7Q3g3vmlceEfYhVK9lMafcskzWGEMyaqR9tn76n
+         uQzQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=to:auto-submitted:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=kxbUsQbHoUuqyQXZTjokmJTleRpn9M0k9cC5CYupNiw=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=kTN87CqfO/wYLEE4sr/S5aKSJz1Dv3n5uZLjytM8eSFV+tHeoKLADkRFzGcjcHDXo4
+         OxIOUcr6hBSVyFyJicDfxJINSFQINp1e0O0uEe8eGr6jvHM77j/BsdqgGJr1VI1LzUef
+         iTA46DVGd/hmGxQIMQTWmNoFbV4HWuNglSkjylUM+GzXF+vynzBzOpXd6X1V3fJl0p02
+         vxubYYVb6jvm519MDPK8vZ5IYQa2J9vKikfzKGNfR90VbytTd25ZcR+6Zk+s99/gpQmm
+         Nyrquk2AodJKoGUF7kBFcAcyZRUWoSfmPJkvEU9XNdW4jKvNdMgzOS2cJqGP6EoAuiox
+         6KJQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@todoist.com header.s=s1 header.b=EIzVjcYv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="r6jIE/B3";
+       spf=pass (google.com: domain of
+ bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com designates
+ 50.31.61.47 as permitted sender)
+ smtp.mailfrom="bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=todoist.com
+Return-Path: 
+ <bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com>
+Received: from o3.em.todoist.com (o3.em.todoist.com. [50.31.61.47])
+        by mx.google.com with ESMTPS id
+ 98e67ed59e1d1-30a4762cf75si7277402a91.102.2025.05.03.11.40.22
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 03 May 2025 11:40:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com designates
+ 50.31.61.47 as permitted sender) client-ip=50.31.61.47;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@todoist.com header.s=s1 header.b=EIzVjcYv;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="r6jIE/B3";
+       spf=pass (google.com: domain of
+ bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com designates
+ 50.31.61.47 as permitted sender)
+ smtp.mailfrom="bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=todoist.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=todoist.com;
+	h=content-type:from:mime-version:subject:to:cc:content-type:feedback-id:
+	from:subject:to;
+	s=s1; bh=kxbUsQbHoUuqyQXZTjokmJTleRpn9M0k9cC5CYupNiw=;
+	b=EIzVjcYvhU9hG31NzdfXtOx5kRZH0GI2wHn1a/seZxaR/hVOVj68WSqaDYYnqttlc96p
+	Ou3mB+T0OnMvlH9RAW8CeXNjCZpJUMCCOPkowjoOLozGE/lYkoX3RqCpYkdVd4vRPYbpXu
+	xhVYRyD2mij3J4j8QEBnpt+kiYjms/ZTGp0Enw0CA1ArJlyGESrfiXgIjbtwoBjCVdV1qE
+	qVgIkZKfXOVDEVVeVkW3Qf18ussDM+PVBXJuz4idluGOt+zKP8cv77kscGns5VA6/Hw43y
+	Q4vw5kIYBo2yrlYa+PDkq41DxNPxW4HigZ9LPNYrmdG3dhoijcodATv2tx6myVcQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:to:cc:content-type:feedback-id:
+	from:subject:to;
+	s=smtpapi; bh=kxbUsQbHoUuqyQXZTjokmJTleRpn9M0k9cC5CYupNiw=;
+	b=r6jIE/B39Cwzbm8P+oXChy59gLMCKNKgnzxxN1gZ/oJU7ZaascCBxBjRhls91Cke8E5Q
+	UKsItqaL52j12D8gVrtWYNjME3U5HkkFPDC2frcD+doDNTMnWgzdVinn1RcyQ8CjZFHASJ
+	B6QUBe5tUtgI8zEgEU9SHoLEibq+fKOzM=
+Received: by recvd-77d6774547-5b952 with SMTP id
+ recvd-77d6774547-5b952-1-68166315-9D
+	2025-05-03 18:40:21.862457075 +0000 UTC m=+2147548.184974160
+Received: from MTYyMzkyMQ (unknown)
+	by geopod-ismtpd-11 (SG) with HTTP
+	id qJQd7BgsQoupMiNW55q8kg
+	Sat, 03 May 2025 18:40:21.818 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=eff63da7621aa4367ff9579fb88d73b3a6481cec48c3fb0626816b5dd906
+Date: Sat, 03 May 2025 18:40:21 +0000 (UTC)
+From: Todoist <no-reply@todoist.com>
+Mime-Version: 1.0
+Message-ID: <qJQd7BgsQoupMiNW55q8kg@geopod-ismtpd-11>
+Subject: Updates to our Terms of Service and Privacy Policy
+Auto-Submitted: auto-generated
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EV6zNZVZYSKpEQhYxOUdK6M6gYyvf4BPXaBXbqKnCkruB4xC1UUieBSXC+?=
+ =?us-ascii?Q?y6HVSfqcGPrxHekdA0lgy4uGXTea5rlX5UjGwDS?=
+ =?us-ascii?Q?yuUjmcY5aSiE2Yy7nRX23h3qC3rADAZg6YtkvMt?=
+ =?us-ascii?Q?HZy5+yhP1desPfTSd4v6ckOXKsF1F83ufpW5UFE?=
+ =?us-ascii?Q?xxgBk51G+dpZVRzq9DTn6Tta7XXtMyYB6PUT0Jj?=
+ =?us-ascii?Q?EU5NonXkZyeQ4g7cZlox=2FLQIvewMLnGM7J85ixR?= =?us-ascii?Q?gkT5?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BqwIFTSfQHWfD1vbXB20HWddb53V0=2FcO4CDse?=
+ =?us-ascii?Q?Qr8lvwjFeUQJDcS6xAfgdKrz87euA=3D=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.w0whwtffAp2d1sGMpfnwVg==
+
+--eff63da7621aa4367ff9579fb88d73b3a6481cec48c3fb0626816b5dd906
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Updates to our Terms of Service and Privacy Policy
+Effective as of May 25, 2025
+=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=
+=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=
+=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=
+=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=
+=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=
+=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=
+=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=
+=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=
+=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=
+=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=
+=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=
+=8F=EF=BB=BF=C2=A0=E2=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=
+=80=8C =E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF=C2=A0=E2=80=8C
+=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF
+
+Display in your browser
+[https://todoist.doist-emails.com/en/emails/todoist/cms/TOSUpdates?o=3DeyJm=
+aXJzdF9uYW1lIjoiU3Ryb25rIiwidW5zdWJzY3JpYmVfbGluayI6Imh0dHBzOi8vYXBwLnRvZG9=
+pc3QuY29tL3Vuc3Vic2NyaWJlIn0%3D&s=3DNDPIzVg2wICC48z938U-peLnP6V4ENJ_7KwqB3A=
+VFxs]
+
+Todoist logo
+[https://todoist.doist-emails.com/_next/static/images/todoist-logo_72b3fc1c=
+96843f71fb23350260f1d64d.png]
+
+We=E2=80=99re writing to let you know that we=E2=80=99ve updated the Terms =
+of Service
+[https://doist.com/terms-of-service?utm_source=3Dtodoist&utm_medium=3Demail=
+&utm_campaign=3D2504_tos_updates]
+and Privacy Policy
+[https://doist.com/privacy?utm_source=3Dtodoist&utm_medium=3Demail&utm_camp=
+aign=3D2504_tos_updates]
+that cover Todoist. The new versions will go into effect on May 25, 2025.
+
+=E2=80=8A
+
+We=E2=80=99ve made these updates in order to:
+
+=E2=80=8A
+
+ * Clarify our data lifecycle and ownership policies, particularly how shar=
+ed
+   projects work and what happens to your data when an account is deleted.
+
+ * Introduce clearer retention periods for your data and content, with spec=
+ific
+   timelines for different scenarios.
+
+ * Enhance our data management practices with more detailed information abo=
+ut
+   how different types of content are stored and processed.
+
+ * Add information about our use of AI technologies in our services, includ=
+ing
+   details about the models we use
+   [https://doist.com/legals/subprocessors?utm_source=3Dtodoist&utm_medium=
+=3Demail&utm_campaign=3D2504_tos_updates]
+   and how your data is handled. Todoist=E2=80=99s AI features use models i=
+ncluding (but
+   not limited to) Meta=E2=80=99s Llama and Anthropic=E2=80=99s Claude. The=
+se models are hosted
+   on our own servers to protect your privacy. Your data is not shared with
+   these providers.
+
+ * Improve language throughout for clarity and readability.
+
+=E2=80=8A
+
+You don=E2=80=99t have to do anything to accept these changes. By continuin=
+g to use
+Todoist after May 25, 2025, you=E2=80=99re agreeing to the new Terms of Ser=
+vice and
+Privacy Policy policies.
+
+=E2=80=8A
+
+[https://todoist.doist-emails.com/_next/static/images/info-circle-grey_aff7=
+3ef5b4ffba2b1507f220087d2310.png]
+
+Have questions? We=E2=80=99ve updated our Todoist security, privacy, and co=
+mpliance FAQ
+[https://www.todoist.com/help/articles/todoist-security,-privacy,-and-compl=
+iance-mqmhua06?utm_source=3Dtodoist&utm_medium=3Demail&utm_campaign=3D2504_=
+tos_updates]
+to reflect these changes. If you have a question not answered there, you ca=
+n
+reach out
+[https://www.todoist.com/contact?utm_source=3Dtodoist&utm_medium=3Demail&ut=
+m_campaign=3D2504_tos_updates]
+to us any time.
+
+=E2=80=8A
+
+Kind regards,
+
+[https://todoist.doist-emails.com/_next/static/images/signature_ff6d562960d=
+845568a95d42ffe0aac71.png]
+
+=E2=80=8A
+
+Note: You=E2=80=99re receiving this notice because you have a Todoist accou=
+nt registered
+to this email address (if you=E2=80=99d like to delete the account, please =
+follow these
+steps
+[https://www.todoist.com/help/articles/delete-your-account-luq3xH?utm_sourc=
+e=3Dtodoist&utm_medium=3Demail&utm_campaign=3D2504_tos_updates]).
+Also, this email is a legal notice, which is why you are receiving it even =
+if
+you=E2=80=99ve opted out of marketing communications.
+
+Not sure why you received this email? Learn more
+[https://www.todoist.com/help/articles/how-can-i-unsubscribe-from-marketing=
+-emails-VOYhyrr7Y?utm_source=3Dtodoist&utm_medium=3Demail&utm_campaign=3D25=
+04_tos_updates]
+
+Inspiration Hub
+[https://www.todoist.com/inspiration?utm_source=3Dtodoist&utm_medium=3Demai=
+l&utm_campaign=3D2504_tos_updates]=C2=A0=C2=A0=C2=A0|=C2=A0=C2=A0=C2=A0Down=
+load
+Apps
+[https://www.todoist.com/downloads?utm_source=3Dtodoist&utm_medium=3Demail&=
+utm_campaign=3D2504_tos_updates]=C2=A0=C2=A0=C2=A0|=C2=A0=C2=A0=C2=A0Help
+Center
+[https://www.todoist.com/help?utm_source=3Dtodoist&utm_medium=3Demail&utm_c=
+ampaign=3D2504_tos_updates]
+
+=C2=A9 Doist Inc. 2100 Geng Road, Suite 210 Palo Alto, CA 94303 US
+--eff63da7621aa4367ff9579fb88d73b3a6481cec48c3fb0626816b5dd906
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html data-app-version=3D"v5.1.3009" lang=3D"en" dir=3D"ltr"=
+><head><meta charset=3D"utf-8"><meta name=3D"viewport" content=3D"width=3Dd=
+evice-width"></head><body><div id=3D"__next"><style data-mantine-styles=3D"=
+true">:root{--mantine-primary-color-filled: var(--mantine-color-gray-filled=
+);--mantine-primary-color-filled-hover: var(--mantine-color-gray-filled-hov=
+er);--mantine-primary-color-light: var(--mantine-color-gray-light);--mantin=
+e-primary-color-light-hover: var(--mantine-color-gray-light-hover);--mantin=
+e-primary-color-light-color: var(--mantine-color-gray-light-color);--mantin=
+e-spacing-xs: 0.5rem;--mantine-spacing-sm: 0.75rem;--mantine-spacing-md: 1r=
+em;--mantine-spacing-lg: 1.5rem;--mantine-spacing-xl: 2rem;--mantine-primar=
+y-color-0: var(--mantine-color-gray-0);--mantine-primary-color-1: var(--man=
+tine-color-gray-1);--mantine-primary-color-2: var(--mantine-color-gray-2);-=
+-mantine-primary-color-3: var(--mantine-color-gray-3);--mantine-primary-col=
+or-4: var(--mantine-color-gray-4);--mantine-primary-color-5: var(--mantine-=
+color-gray-5);--mantine-primary-color-6: var(--mantine-color-gray-6);--mant=
+ine-primary-color-7: var(--mantine-color-gray-7);--mantine-primary-color-8:=
+ var(--mantine-color-gray-8);--mantine-primary-color-9: var(--mantine-color=
+-gray-9);}:root[data-mantine-color-scheme=3D"dark"]{--mantine-color-anchor:=
+ var(--mantine-color-gray-4);}:root[data-mantine-color-scheme=3D"light"]{--=
+mantine-color-anchor: var(--mantine-color-gray-6);}</style><style data-mant=
+ine-styles=3D"classes">@media (max-width: 35.99375em) {.mantine-visible-fro=
+m-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-=
+from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantin=
+e-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.ma=
+ntine-hidden-from-sm {display: none !important;}}@media (max-width: 61.9937=
+5em) {.mantine-visible-from-md {display: none !important;}}@media (min-widt=
+h: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-w=
+idth: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@me=
+dia (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}=
+@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !im=
+portant;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none =
+!important;}}</style><meta content=3D"text/html; charset=3DUTF-8" http-equi=
+v=3D"Content-Type"><meta name=3D"x-apple-disable-message-reformatting"><tit=
+le>Updates to our Terms of Service and Privacy Policy</title><meta name=3D"=
+color-scheme" content=3D"light"><meta name=3D"supported-color-schemes" cont=
+ent=3D"light"><meta name=3D"doist-emails-preheader" content=3D"Effective as=
+ of May 25, 2025"><meta name=3D"doist-emails-sender" content=3D"Todoist <no=
+-reply@todoist.com>"><style>html{background-color:#fefdfc;}body{line-height=
+:1;color:#202020;margin:0 auto !important;padding:0 !important;height:100% =
+!important;width:100% !important;-webkit-font-smoothing:antialiased;-moz-os=
+x-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adju=
+st:100%;}body, td, input, textarea, select{font-family:Helvetica, Arial, sa=
+ns-serif;}img{border:0;height:auto;line-height:100%;outline:none;text-decor=
+ation:none;-ms-interpolation-mode:bicubic;max-width:100%;}#outlook a{paddin=
+g:0;}.ReadMsgBody{width:100%;}.ios-links a{color:#e44232 !important;text-de=
+coration:none !important;}a:hover{text-decoration:none !important;}h1, h2, =
+h3, h4, h5, h6, p, div{padding:0;margin:0;}</style><style>.underlineOnHover=
+{text-decoration:none !important;}.underlineOnHover:hover{text-decoration:u=
+nderline !important;}</style><style>.container{padding:24px 24px;background=
+-color:#ffffff;border-radius:10px;max-width:600px !important;}body{backgrou=
+nd-color:#fefdfc;font-family:Helvetica, Arial, sans-serif;}@media (min-widt=
+h: 481px){body{background-color:#fefdfc;}.container{border:1px solid #e8e5e=
+3;}.content{padding:0 24px;}}</style><style>@media (min-width: 481px){.mobi=
+leOnly{-msohide:all !important;display:none !important;}}@media (max-width:=
+ 480px){.desktopOnly{-msohide:all !important;display:none !important;}}</st=
+yle><style>.primary-todoist:hover{background-color:#cf3520 !important;}.sec=
+ondary-todoist:hover{background-color:#e8e5e3 !important;}.tertiary-todoist=
+:hover{background-color:#e9f5f7 !important;}.primary-todoist:focus, .second=
+ary-todoist:focus, .tertiary-todoist:focus{box-shadow:0px 0px 0px 4px #D9EB=
+FF, 0px 0px 0px 1px #0062C9 !important;}</style><style>@media (prefers-colo=
+r-scheme: dark){.hasElevatedBoxShadow{box-shadow:none !important;}}[data-og=
+sc]{.hasElevatedBoxShadow{box-shadow:none !important;}}</style><style>.icon=
+CardLink{text-decoration:none !important;}.iconCard{border-radius:10px;bord=
+er:1px solid #dcd8d5;background-color:#ffffff;box-shadow:0px 1px 0px 0px #E=
+EEEEE;padding:16px;}.iconCard:hover{border:1px solid #d0cec8;background-col=
+or:#ffffff;box-shadow:0 1px 1px 0 #EEEEEE, 0 1px 4px -1px #E3E2E3;}.iconCar=
+d:focus{box-shadow:0px 1px 1px 0px #DCEAFD, 0px 1px 4px -1px #2960C2;}</sty=
+le><style>.shareButtons a{display:block !important;}</style><style>@media (=
+max-width: 480px){.responsiveColumn{display:inline-block !important;width:1=
+00% !important;}}</style><style>.renderMarkdownContainer > *:not(:last-chil=
+d){margin-bottom:14px !important;}pre{border:1px solid #e8e5e3;border-radiu=
+s:6px;padding:4px 12px;}code{border:1px solid #e8e5e3;border-radius:3px;pad=
+ding:2px;white-space:pre-wrap;}pre code{border:none;border-radius:unset;pad=
+ding:0;}</style><div style=3D"display:none;overflow:hidden;line-height:1px;=
+opacity:0;max-height:0;max-width:0">Effective as of May 25, 2025<div>&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=
+=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=
+=EF=BB=BF&nbsp;=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=
+=E2=80=8C=E2=80=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF&nbsp;=E2=80=8C=E2=80=
+=8B=E2=80=8D=E2=80=8E=E2=80=8F=EF=BB=BF</div></div><table align=3D"center" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation"><tbody style=3D"width:100%"><tr style=3D"width:100%"><td class=
+=3D"" data-id=3D"__react-email-column" style=3D"text-align:center;padding-t=
+op:16px;padding-bottom:16px;vertical-align:top"><a href=3D"https://em.todoi=
+st.net/ls/click?upn=3Du001.PfoGewT3HeXkAdyXrnL9Qdy9z4677DTZ-2B-2F2HIzg-2FAP=
+7fVHo7jMBpU-2F-2BA16phzQxtgl4qldw74o2D-2BwZbgyDbnS1j-2BDiQ8r4ns2nkG1MIYyMCJ=
+Sin9j4hDa3-2FnxHlOxE0GywwJ39u0MwTJa1tfrzjwvKEaWOnymBrOLLHjtvOD5bVV4CazMFcF8=
+-2B6tpu8UuPFdxlXsyF-2Ffr1hZV3BX4lIzcwAWvX8gNl7tQuxQjXRB17aOFSzxfgzRqKBIRnnQ=
+xNg233P2WGjb8crhTZt-2BGcr771mYp8LValfENKs6ef-2BjumDaXQ8X5GO52fAVoTZaKN2FBrJ=
+_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7CpRo8v0Z9HL8lSVF-2B4tERy91=
+1Ynr15FaKNbAecO2fXKHiiqVSezv-2FykfGrLBh4l3yUJ9YnBKMuXyUdzwHkJlPA2kYVoutPsh1=
+T-2BaNyMySqcDflCdASJRplp2y-2FDo7DUdD-2BktQ90DLtkvsFcY-2FCVNKU2AdITjhPwZ-2Bq=
+FMLqCqE4KffNo-2FguChrmzq7rzYgc06lO-2BTlo01CZFvipAFSV" class=3D"underlineOnH=
+over" style=3D"color:#726c65;text-decoration-line:none;text-decoration:unde=
+rline;font-family:Helvetica;font-size:13px;font-style:normal;font-weight:40=
+0;line-height:17.29px;letter-spacing:0.26px" target=3D"_blank">Display in y=
+our browser</a></td></tr></tbody></table><table align=3D"center" width=3D"1=
+00%" class=3D"container" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"max-width:37.5em"><tbody><tr style=3D"width:1=
+00%"><td><table align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"text-align:left;paddin=
+g-bottom:32px"><tbody><tr><td><img alt=3D"Todoist logo" height=3D"32" src=
+=3D"https://todoist.doist-emails.com/_next/static/images/todoist-logo_72b3f=
+c1c96843f71fb23350260f1d64d.png" style=3D"display:inline-block;outline:none=
+;border:none;text-decoration:none;margin:0;text-align:left;padding-bottom:0=
+" width=3D"128"></td></tr></tbody></table><div class=3D"content"><table ali=
+gn=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"text-align:left"><tbody><tr><td><table al=
+ign=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation"><tbody style=3D"width:100%"><tr style=3D"width:10=
+0%"><td class=3D"" data-id=3D"__react-email-column" style=3D"text-align:lef=
+t;vertical-align:top"><p style=3D"font-size:16px;line-height:26.4px;margin:=
+0;font-family:Helvetica;font-style:normal;font-weight:400;letter-spacing:0.=
+16px;color:#25221e">We=E2=80=99re writing to let you know that we=E2=80=99v=
+e updated the <a target=3D"_blank" href=3D"https://em.todoist.net/ls/click?=
+upn=3Du001.PfoGewT3HeXkAdyXrnL9QY04f2VlL0UyL-2BmZdWv82RnT7egXBScwP6rQij2mHS=
+jwyHWXfiQPCbjhsY7tlP-2Fc7v58F7etjvHVf9ewm4uS7pfgKbnoGAmXyGA0HyDquJ43j5fNNI6=
+xbKmoiobp8mn41A-3D-3DIaHn_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7C=
+pRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecOwao68hb1S8HCw66i4YciodW3Pw1duS5wVIS=
+jlw0pcipIExhLbSIslId2FJLgnHBDOWx3UfEZrN0YYZm4TswpqRI9ALvSqtMKxUAlLh7Ye58UP4=
+YTFH7M1ALEFfMGWemkU-2BoSXO2HJIAqUQrCIhakAog4absEgQFsxifhvuGlTGW" style=3D"c=
+olor:#0f66ae" rel=3D"noreferrer"><span style=3D"color:#0f66ae">Terms of Ser=
+vice</span></a> and <a target=3D"_blank" href=3D"https://em.todoist.net/ls/=
+click?upn=3Du001.PfoGewT3HeXkAdyXrnL9Qak8GWCZ7lLMa5J9AGjR-2Fw-2FLgxsQ50WkUC=
+-2BDp6IAefvtCNSdOZNP-2BuZ-2FMyDQHI5g17NzmRs87LMVZ0FQC1jqg6NUdK4flFMrsRrBh1g=
+lSRtIf-2FoO9J8H2Z4vjW5zCXgxwA-3D-3Dp2gv_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBb=
+BPLJ-2B9OaTj7CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecO87eTZJb5vSxYjUBchBGR-=
+2FTU7TBZ-2BhgQFOd0FQwqNb8mowXIM-2BDvkPgOutkNW7oNi-2F78jIr5g8uHs-2Ftk0IlOpSH=
+aaWjDyzF-2Fa03eh-2Fj-2Ba7-2Bp4j3MGGWiIlSO8GLOhhForosZB6uMjAHL-2FmZ5m02aE3ar=
+faf1dIUoJGJplMMSYTNh" style=3D"color:#0f66ae" rel=3D"noreferrer"><span styl=
+e=3D"color:#0f66ae">Privacy Policy</span></a> that cover Todoist. The new v=
+ersions will go into effect on May 25, 2025.</p><span style=3D"display:bloc=
+k;width:100%;height:12px;line-height:12px">=E2=80=8A</span><p style=3D"font=
+-size:16px;line-height:26.4px;margin:0;font-family:Helvetica;font-style:nor=
+mal;font-weight:400;letter-spacing:0.16px;color:#25221e">We=E2=80=99ve made=
+ these updates in order to:</p><span style=3D"display:block;width:100%;heig=
+ht:12px;line-height:12px">=E2=80=8A</span><ul style=3D"margin:0 0 0 20px;pa=
+dding:0"><li><p style=3D"font-size:16px;line-height:26.4px;margin:0;font-fa=
+mily:Helvetica;font-style:normal;font-weight:400;letter-spacing:0.16px;colo=
+r:#25221e">Clarify our data lifecycle and ownership policies, particularly =
+how shared projects work and what happens to your data when an account is d=
+eleted.</p></li><li><p style=3D"font-size:16px;line-height:26.4px;margin:0;=
+font-family:Helvetica;font-style:normal;font-weight:400;letter-spacing:0.16=
+px;color:#25221e">Introduce clearer retention periods for your data and con=
+tent, with specific timelines for different scenarios.</p></li><li><p style=
+=3D"font-size:16px;line-height:26.4px;margin:0;font-family:Helvetica;font-s=
+tyle:normal;font-weight:400;letter-spacing:0.16px;color:#25221e">Enhance ou=
+r data management practices with more detailed information about how differ=
+ent types of content are stored and processed.</p></li><li><p style=3D"font=
+-size:16px;line-height:26.4px;margin:0;font-family:Helvetica;font-style:nor=
+mal;font-weight:400;letter-spacing:0.16px;color:#25221e">Add information ab=
+out our use of AI technologies in our services, including details about <a =
+target=3D"_blank" href=3D"https://em.todoist.net/ls/click?upn=3Du001.PfoGew=
+T3HeXkAdyXrnL9QY-2FiEdwq2WsL-2FvISsc3z9ZvRAWiascBqzxZcvsmfLMjisRRqmMoNaTxpE=
+MJJQskmpdOpktjKQvppDUMFlB1042yG9mGOOz5oKXrfsjDGVq3NSuCxnaIN4T9gqZL79nQPQ758=
+rzrz66CuJAANhIwYkuc-3Dg9Md_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7=
+CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecO98-2BGnTViM2G6-2FEIxW8f4-2BsEtwREK=
+byEHNS7RbDxT7GiHWbIovZJiWxTi5un4eP1BevhMWfcqMAWJExm7njXbZup88LwB4P5Jn27GO-2=
+Bo9B8kgbOvN1BL3dcXhFYjehYHBs7aEDrioTsj3XR90sAs4-2BKU-2BiFay9V-2B6hGEljw4dGJ=
+1" style=3D"color:#0f66ae" rel=3D"noreferrer"><span style=3D"color:#0f66ae"=
+>the models we use</span></a> and how your data is handled.
+Todoist=E2=80=99s AI features use models including (but not limited to) Met=
+a=E2=80=99s Llama and Anthropic=E2=80=99s Claude. These models are hosted o=
+n our own servers to protect your privacy. Your data is not shared with the=
+se providers.</p></li><li><p style=3D"font-size:16px;line-height:26.4px;mar=
+gin:0;font-family:Helvetica;font-style:normal;font-weight:400;letter-spacin=
+g:0.16px;color:#25221e">Improve language throughout for clarity and readabi=
+lity.</p></li></ul><span style=3D"display:block;width:100%;height:12px;line=
+-height:12px">=E2=80=8A</span><p style=3D"font-size:16px;line-height:26.4px=
+;margin:0;font-family:Helvetica;font-style:normal;font-weight:400;letter-sp=
+acing:0.16px;color:#25221e">You don=E2=80=99t have to do anything to accept=
+ these changes. By continuing to use Todoist after May 25, 2025, you=E2=80=
+=99re agreeing to the new Terms of Service and Privacy Policy policies.</p>=
+<span style=3D"display:block;width:100%;height:12px;line-height:12px">=E2=
+=80=8A</span><table align=3D"center" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"text-align:left;pa=
+dding:16px;background-color:#fff6f0;border-radius:10px"><tbody><tr><td><tab=
+le align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation"><tbody style=3D"width:100%"><tr style=3D"wid=
+th:100%"><td class=3D"" data-id=3D"__react-email-column" style=3D"padding-r=
+ight:12px;width:20px;vertical-align:text-top"><img height=3D"20" src=3D"htt=
+ps://todoist.doist-emails.com/_next/static/images/info-circle-grey_aff73ef5=
+b4ffba2b1507f220087d2310.png" style=3D"display:inline-block;outline:none;bo=
+rder:none;text-decoration:none" width=3D"20"></td><td class=3D"" data-id=3D=
+"__react-email-column" style=3D"vertical-align:top"><table align=3D"center"=
+ width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"text-align:left"><tbody><tr><td><table align=3D"center=
+" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation"><tbody style=3D"width:100%"><tr style=3D"width:100%"><td class=
+=3D"" data-id=3D"__react-email-column" style=3D"text-align:left;vertical-al=
+ign:top"><p style=3D"font-size:16px;line-height:26.4px;margin:0;font-family=
+:Helvetica;font-style:normal;font-weight:400;letter-spacing:0.16px;color:#2=
+5221e">Have questions? We=E2=80=99ve updated our =E2=80=8B=E2=80=8B<a targe=
+t=3D"_blank" href=3D"https://em.todoist.net/ls/click?upn=3Du001.PfoGewT3HeX=
+kAdyXrnL9QasMLtTFWq-2BbLnVnzPWk1Xh7Bc1OHJCEbXDwPJehpskHvR-2BNMdd6hSbMspb46E=
+oGUFzSOYA5DBiKwW7oL6mpfxZa5j0vHviM6PdHEqT5fFmebHrtvzPP63NPCyjGCL81prC3xnJCg=
+XlGTSX-2BE-2FQn11cwMdSR-2FHrmt20KESGo-2F4pwDY-2FVWCNIBiKmxTvzJSNM-2FoYHz4-2=
+Fl2Wt7L7ZA6-2Fm5l1o-3Dzb2y_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7=
+CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecOxlg-2Bpzq83hAq0dA-2F01Z7Vzxmq7CP75=
+fmOFjh6LJoMzJInEN0jNqGUUqEvxpzCc96CU-2Biq7mM0vH2WwHFrx-2BSrxbSaNtaP4PGYbvRQ=
+bAJOdCuOoqCqW-2BVluqywtHZCtQxkvv4v80WUzGomoP8MSuAGiMz1E8VaXdakmi0W3PyxM9" s=
+tyle=3D"color:#0f66ae" rel=3D"noreferrer"><span style=3D"color:#0f66ae">Tod=
+oist security, privacy, and compliance FAQ</span></a> to reflect these chan=
+ges. If you have a question not answered there, you can <a target=3D"_blank=
+" href=3D"https://em.todoist.net/ls/click?upn=3Du001.PfoGewT3HeXkAdyXrnL9Qa=
+sMLtTFWq-2BbLnVnzPWk1XhgIL3Pi5C0sY4L4eHFvpiAxzPWarefgcepfsnQ0Y-2BIyyydtGCgK=
+eJCojIEcCVscEespTcjiFSHGZiKqidEFHqPrcuLiYupRQI40XzuhxJTGA-3D-3DZ1RE_ifpdZN5=
+Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15Fa=
+KNbAecOwGQZz8jmCBzpUu8lrCkEO7dzsMuRR-2BQcGXNiMAihfW6KaQn6ocdcCgyP5EwzzU0r7E=
+vknTX90QL6GJ4Qrqan82q7U-2FMdxgc1LYmXJueU-2FGHHifZpFpH74UVAAr6ZANpbGMVVcRZO0=
+rQ7jBTs-2FmSmr38P2YqSYPuAnOdDHeQOJwr" style=3D"color:#0f66ae" rel=3D"norefe=
+rrer"><span style=3D"color:#0f66ae">reach out</span></a> to us any time.</p=
+></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table><span style=3D"display:block;width:100%;height:32px;line-height:32px=
+">=E2=80=8A</span><table align=3D"center" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"text-align:ce=
+nter;padding-top:16px;padding-bottom:0px"><tbody><tr><td><p style=3D"font-s=
+ize:16px;line-height:26.4px;margin:0;font-family:Helvetica;font-style:norma=
+l;font-weight:400;letter-spacing:0.16px;color:#25221e;margin-bottom:12px">K=
+ind regards,</p><img alt=3D"" height=3D"auto" src=3D"https://todoist.doist-=
+emails.com/_next/static/images/signature_ff6d562960d845568a95d42ffe0aac71.p=
+ng" style=3D"display:block;outline:none;border:none;text-decoration:none;ma=
+rgin:0 auto;text-align:center" width=3D"212"></td></tr></tbody></table><spa=
+n style=3D"display:block;width:100%;height:32px;line-height:32px">=E2=80=8A=
+</span><table align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"text-align:left;padding:=
+16px;background-color:#fff6f0;border-radius:10px"><tbody><tr><td><table ali=
+gn=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation"><tbody style=3D"width:100%"><tr style=3D"width:100=
+%"><td class=3D"" data-id=3D"__react-email-column" style=3D"vertical-align:=
+top"><table align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"text-align:left"><tbody><t=
+r><td><table align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation"><tbody style=3D"width:100%"><tr st=
+yle=3D"width:100%"><td class=3D"" data-id=3D"__react-email-column" style=3D=
+"text-align:center;vertical-align:top"><p style=3D"font-size:16px;line-heig=
+ht:26.4px;margin:0;font-family:Helvetica;font-style:normal;font-weight:400;=
+letter-spacing:0.16px;color:#25221e">Note: You=E2=80=99re receiving this no=
+tice because you have a Todoist account registered to this email address (i=
+f you=E2=80=99d like to delete the account, please <a target=3D"_blank" hre=
+f=3D"https://em.todoist.net/ls/click?upn=3Du001.PfoGewT3HeXkAdyXrnL9QasMLtT=
+FWq-2BbLnVnzPWk1XgNpfyrc6I8NcxrsvAH-2ByMBFyZLxc3NBiERalEteRK-2BMKGKQaXgTBME=
+6jyuzZo40btpgiwkLrGmAUQiGDbajhSj4xognM0z28yzD-2BcDBDDXeFtuxzlOgIY3w-2BxrIgE=
+Jc6MQu1ea5rMTcyma4SpYJLBvMrwW_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9Oa=
+Tj7CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecO74vcXW-2FZjOQ0zjRo9B-2FG0n2En5D=
+yydURHiFjHm7ofxKZX3lXQ3pK8cPnNuRdExcCiL7MPAsTxzwDkbcDbtGeyk6vQh-2BEu9en8rhS=
+sITd7RDTPh8Lt3-2Fw3DRTKzZ4Oa1QJxIkeIdBCuuF5ebUx0AwrJV5zR928WgGx7qs0UFehj8" =
+style=3D"color:#0f66ae" rel=3D"noreferrer"><span style=3D"color:#0f66ae">fo=
+llow these steps</span></a>). Also, this email is a legal notice, which is =
+why you are receiving it even if you=E2=80=99ve opted out of marketing comm=
+unications.</p></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r></tbody></table></td></tr></tbody></table></div></td></tr></tbody></table=
+><table align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"text-align:left;padding:24px 1=
+2px 32px"><tbody><tr><td><p style=3D"font-size:13px;line-height:17.29px;mar=
+gin:0;font-family:Helvetica;font-style:normal;font-weight:400;letter-spacin=
+g:0.26px;color:#726c65;text-align:center;margin-bottom:16px">Not sure why y=
+ou received this email? <a target=3D"_blank" href=3D"https://em.todoist.net=
+/ls/click?upn=3Du001.PfoGewT3HeXkAdyXrnL9QasMLtTFWq-2BbLnVnzPWk1XiOxevO9JQx=
+WC1ytVWvamO1jaIzMlUkcZlf-2BvcV-2F6bCyvEB2Rj1L9kWy7Bw-2Boqpzgz99Ukj0RXR78ANw=
+S0AgdAjyg7rfoWfxWBe937qvLOhnJ99iRaWMR-2FXBfFWu5vQMRmcedXx2K6DPSFed0Oi0fuJho=
+bdCaNfgp4bpEdDYIpSMlhF53hpU95-2BTbw9GLi8WQk-3DVWNx_ifpdZN5Unwyz9jUhBw0jKiHi=
+XszPB84TmBbBPLJ-2B9OaTj7CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecO7fiw0VWGCG=
+gSLuBfLS1WtSWmL1LHuqp3LlLiI9lKdIedQxRJkKO-2FhRL69OyVXuqiHrV6dKT56isfXDBkmea=
+YKNOroKwIVT2-2BLw2K9NhEbCWUvarHBvVeojpwMxF137H8hQRcrIjqLMOBG9bD8jmv4wfcRbuK=
+vTEDF8nJNJNIzU3" style=3D"color:#726c65" rel=3D"noreferrer"><span style=3D"=
+color:#726c65">Learn more</span></a></p><p style=3D"font-size:13px;line-hei=
+ght:17.29px;margin:0;font-family:Helvetica;font-style:normal;font-weight:40=
+0;letter-spacing:0.26px;color:#726c65;text-align:center;margin-bottom:16px"=
+><a class=3D"underlineOnHover" href=3D"https://em.todoist.net/ls/click?upn=
+=3Du001.PfoGewT3HeXkAdyXrnL9QasMLtTFWq-2BbLnVnzPWk1Xh57vVh6-2FdHot4bQchV8sV=
+dmpU92ekEcDTKl3uMaijv4KMnG4APYLAG-2BUgRhQmJtO21HLNqOfQfvLsMqRElvxkgWGrCICTu=
+lS1vnp0ywcCJCQ-3D-3DDxan_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7Cp=
+Ro8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecO9brLM-2FiUP0yNwQNnrGx0tkKduXgsbeaf6t=
+XqRfmujvMuQ1VairhvGy2bMdQoKl-2FFqsiLFaheiJb5Y-2Fq5NrCIBRiwObQ8XUxfo3UV0-2Fw=
+u8VJTN0sOxuXGcnV-2FqSAcqkbCPx2STgA-2FcdPEp-2BeQsKzRAlCyYM9r65XqzWk8SpD2NBd"=
+ style=3D"color:#726c65;text-decoration-line:none;text-decoration:underline=
+;font-family:Helvetica;font-size:13px;font-style:normal;font-weight:400;lin=
+e-height:17.29px;letter-spacing:0.26px" target=3D"_blank">Inspiration Hub</=
+a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class=3D"underlineOnHover" href=
+=3D"https://em.todoist.net/ls/click?upn=3Du001.PfoGewT3HeXkAdyXrnL9QasMLtTF=
+Wq-2BbLnVnzPWk1XjidvZKOqxFOubBfd7KnE9Clg8eB5aH4BJoM-2FbV4MXPlfdWh41s504V69h=
+mWFwMBVNgd70k9YG-2BDBEtZqtmQ0dzvdDf0hQiJrYLEiIJWwECeg-3D-3DlBzI_ifpdZN5Unwy=
+z9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj7CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbA=
+ecO84FqT-2FWvurjiHiONfa0rfhUHs7MbrazqglUXR3HOcQCuBauTC0EHriNgDf-2FFqXbzqOuC=
+-2F28WMWvzHnkY7Wv1TmZ6QQdzAK9-2BuR-2BEjjvqKPE-2B94GMil6la7UyCQGyxurE-2BRCLy=
+jHQYUTtKc0a2-2Fw62wPLQNCwwaIpg3v-2Bym9CEAr" style=3D"color:#726c65;text-dec=
+oration-line:none;text-decoration:underline;font-family:Helvetica;font-size=
+:13px;font-style:normal;font-weight:400;line-height:17.29px;letter-spacing:=
+0.26px" target=3D"_blank">Download Apps</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&=
+nbsp;<a class=3D"underlineOnHover" href=3D"https://em.todoist.net/ls/click?=
+upn=3Du001.PfoGewT3HeXkAdyXrnL9QasMLtTFWq-2BbLnVnzPWk1XgjTfiFrByHX-2BjO31XY=
+ov8xyguL26bREjMA7qdqMHx9OrvSo2QnFBbBbqWlAoxjzpz-2FcXr19HSMoJBtqBCU4C9EuHGpr=
+DSnBBXr6tSOCZo4pw-3D-3DwuDn_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OaTj=
+7CpRo8v0Z9HL8lSVF-2B4tERy911Ynr15FaKNbAecO2Iyf7lf00kR2vipXm-2Fg1spk0ydd2UUb=
+lcrtYntIn-2FOPns5G1cGyew1VmmngQFcVazH8NeJjKVnBufhGeXmp1rIdPzSJ-2FUh8dczfrH-=
+2FX-2FDnUu4etcon8J2xaEze5DjK-2B1AYI7Vp59SAnJ4-2BCtusqjqzWYeisibj9O7WLb9Lgoi=
+RDrkKYnARXx3Cvx2JNGNJZZg-3D-3D" style=3D"color:#726c65;text-decoration-line=
+:none;text-decoration:underline;font-family:Helvetica;font-size:13px;font-s=
+tyle:normal;font-weight:400;line-height:17.29px;letter-spacing:0.26px" targ=
+et=3D"_blank">Help Center</a></p><p style=3D"font-size:13px;line-height:17.=
+29px;margin:0;font-family:Helvetica;font-style:normal;font-weight:400;lette=
+r-spacing:0.26px;color:#726c65;text-align:center">=C2=A9 Doist Inc. 2100 Ge=
+ng Road, Suite 210 Palo Alto, CA 94303 US</p></td></tr></tbody></table></di=
+v><img src=3D"https://em.todoist.net/wf/open?upn=3Du001.mRvjWa6a2tdi7UgUZ6H=
+ZrkXhqfFHG3WP-2BJ6jpRS1ZIkd5-2BZNGVE2j22eZcOth6jT6f1l5ZhAjZdccrwBxF0kRU6wL5=
+IiSF4E8dBy1ocOQ04uye8Cf9bOXTGHEDh44w8rMbSDL9Dhn4VmimiBsixTZdgCoEBhm2ExtHys5=
+SqqpqHi9Kz-2BkGkTt-2BZovxXOzjZRMb1tHgDg6uK-2BnT3Kf36z5S-2B45zfF1w-2BCFwubpw=
+GVG-2B1IpcKDnVQ8muY9BJyRt7t1EWcUMHOODjGantaljZhjNw-3D-3D" alt=3D"" width=3D=
+"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !imp=
+ortant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !i=
+mportant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !=
+important;padding-bottom:0 !important;padding-right:0 !important;padding-le=
+ft:0 !important;"/></body></html>
+--eff63da7621aa4367ff9579fb88d73b3a6481cec48c3fb0626816b5dd906--

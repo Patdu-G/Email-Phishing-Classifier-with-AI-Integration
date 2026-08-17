@@ -1,0 +1,836 @@
+X-GM-THRID: 1849286229413823310
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:9a04:0:b0:253:ca7f:f8bf with SMTP id n4csp737748eic;
+        Wed, 19 Nov 2025 21:33:00 -0800 (PST)
+X-Google-Smtp-Source: 
+ AGHT+IFvLOY2y9/hUgNZOnl+K7siokaxkbeoaEyqRgCKAhIEOUhvt8CoKWs0pPNI0mddTKLjMjP2
+X-Received: by 2002:a05:690c:708b:b0:788:763:179b with SMTP id
+ 00721157ae682-78a7abfb76fmr11374437b3.45.1763616780682;
+        Wed, 19 Nov 2025 21:33:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1763616780; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ciGrNQvlLplCcs7lVpnKg3iYckYqNjixzcFelchlxqb3tjWXuKmP0+wQvwItgGkTRk
+         q4bxu/uBKTeOEZWuRXxy774Vx9iwSy+em+TezalX9eGblxpK9aQhe94T2amxPnwm5/1y
+         v/KeWCyY5+Z9YIHL8YrZ3uj/UU3EZaAMKVxGAU36eQOkamDvStgNcaamrjsf30yCXaZn
+         jkMicUf6uy5uLyOGJb6Ov2+ru2eHQgJXK3Fx6cEjnRfALO32/EmiI5g6J5DYH3DXDUPA
+         6GckUFNn+pqfWxRqOCh+cLJAd+QzMbpemXI8iAXUTJNKTOW5haJzVSuayso/AQa+QLYF
+         2dSg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=feedback-id:subject:from:reply-to:mime-version:date:message-id:to
+         :dkim-signature;
+        bh=rFCi+yENUbmT8C5p1oCM+3FUhWOqO0B7LieVAFv2t8c=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=ic8gVb5I422yvM68opo1KPEZzgmBUJMYYPTi2dig0j7KldFxz2Dxyty15JBJ4wVG1N
+         Lr2cAaQqJv4VUZeETKHcQmPIxt6XfaooLwfLx5g1qe/AktWAXfJI2DYKHHI1yNorSS6W
+         uVHbgh0ubcDxUYgyrrlMjZl/PUQho8T9KcjVawKrYMQ5d256bzX6OC/mB2wgJ1SsHm2M
+         WiWoG01W6Q2Zp3xwnu3AlHqfuto5a758JvfbMFPaNLLMVZIpDauUCsS9vWxUPDlNgadT
+         fx/81G4NLG6YG9o5W+bxAvVsO7XMGwMct6qDZ1jWX6enfk6igroimAEZkoTr6k2ES7qV
+         BwnA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@update.strava.com header.s=scph1118
+ header.b=S6bIENyP;
+       spf=pass (google.com: domain of
+ msprvs1=20419rwrzcmrz=bounces-244190@bounce.strava.com designates
+ 156.70.5.201 as permitted sender)
+ smtp.mailfrom="msprvs1=20419RWRZCmrZ=bounces-244190@bounce.strava.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=strava.com
+Return-Path: <msprvs1=20419RWRZCmrZ=bounces-244190@bounce.strava.com>
+Received: from mta-70-5-201.update.strava.com.sparkpostmail.com
+ (mta-70-5-201.update.strava.com.sparkpostmail.com. [156.70.5.201])
+        by mx.google.com with ESMTPS id
+ 00721157ae682-78a79990985si7191607b3.552.2025.11.19.21.33.00
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 19 Nov 2025 21:33:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ msprvs1=20419rwrzcmrz=bounces-244190@bounce.strava.com designates
+ 156.70.5.201 as permitted sender) client-ip=156.70.5.201;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@update.strava.com header.s=scph1118
+ header.b=S6bIENyP;
+       spf=pass (google.com: domain of
+ msprvs1=20419rwrzcmrz=bounces-244190@bounce.strava.com designates
+ 156.70.5.201 as permitted sender)
+ smtp.mailfrom="msprvs1=20419RWRZCmrZ=bounces-244190@bounce.strava.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=strava.com
+Return-Path: <msprvs1=20419RWRZCmrZ=bounces-244190@bounce.strava.com>
+X-MSFBL: G6mQWa56+334tO3cKfidW9D3d3b5vYSHL5hvma2+mrU=|eyJyIjoicGF0cmlvZ2F
+	icmllbHBhdGR1QGdtYWlsLmNvbSIsImN1c3RvbWVyX2lkIjoiMjQ0MTkwIiwic3V
+	iYWNjb3VudF9pZCI6IjAiLCJ0ZW5hbnRfaWQiOiJzcGMiLCJtZXNzYWdlX2lkIjo
+	iNjkxNzBjYTgxZTY5NmY4YTBhYjkifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=update.strava.com;
+	s=scph1118; t=1763616780; i=@update.strava.com;
+	bh=rFCi+yENUbmT8C5p1oCM+3FUhWOqO0B7LieVAFv2t8c=;
+	h=To:Message-ID:Date:Content-Type:From:Subject:From:To:Cc:Subject;
+	b=S6bIENyPB7mzAOUiONJOyc4bUtbSZvrEpObjSr9VGV91rg3lVs9ucg9qi56HXZ+x4
+	 g85OX8ukIxejQvftDJ/79ccCVLqz2CHiZol/wrFlRp4zQel3EVuE0i23fXqyw4zGNk
+	 MoD5nCUH+lDx6/NeVV3iDnORGOx1tn0GSy/kWexo=
+Received: from [10.90.21.180] ([10.90.21.180])
+	by i-055d38219b3b5646c.mta1vrest.sd.prd.sparkpost (ecelerity 5.1.0.74691
+ r(msys-ecelerity:tags/5.1.0.19)) with REST
+	id 9B/A0-22653-C08AE196; Thu, 20 Nov 2025 05:33:00 +0000
+To: patriogabrielpatdu@gmail.com
+Message-ID: 
+ <9B.A0.22653.C08AE196@i-055d38219b3b5646c.mta1vrest.sd.prd.sparkpost>
+Date: Thu, 20 Nov 2025 05:33:00 +0000
+Content-Type: multipart/alternative;
+ boundary="_----aHAM0s/BcdYaPGJzP7+aHQ===_7B/A0-22653-C08AE196"
+MIME-Version: 1.0
+Reply-To: no-reply@strava.com
+X-Campaign-ID: 15729116
+From: "Strava" <mail@update.strava.com>
+Subject: =?utf-8?B?VXBkYXRlcyB0byBTdHJhdmHigJlzIFRlcm1zIG9mIFNlcnZpY2Ug?=
+	=?utf-8?B?YW5kIFBvbGljaWVz?=
+X-Message-ID: 0b074033efe74e0b9cacbb2bfbc58ecd
+X-Feedback-ID: 20467526:15729116:16055:iterable
+Feedback-ID: 20467526:15729116:16055:iterable
+
+--_----aHAM0s/BcdYaPGJzP7+aHQ===_7B/A0-22653-C08AE196
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Strava =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=0A=0A=0A=0AHi Pa=
+trio Gabriel,=0A=0AWe want to let you know that we=E2=80=99ve rewritten and=
+ redesigned our Terms of =0AService <https://www.strava.com/legal/terms=3F$=
+web_only=3Dtrue> (=E2=80=9CTerms=E2=80=9D), Privacy =0APolicy <https://www.=
+strava.com/legal/privacy=3F$web_only=3Dtrue>, and Cookie Policy =0A<https:/=
+/www.strava.com/legal/cookie_policy=3F$web_only=3Dtrue> (collectively, =0A=
+=E2=80=9CPolicies=E2=80=9D). We made these updates to simplify and streamli=
+ne our Terms and =0APolicies, provide you with more information, and suppor=
+t our evolving business.=0A=0AThese updates take effect on January 1, 2026.=
+ By continuing to use Strava, you =0Aagree with these updated Terms and Pol=
+icies.=0A=0AWe encourage you to read the documents in full. We have also in=
+cluded a =0Asummary of key changes below:=0A=0ATerms of Service=0A=0A * How=
+ we bill for subscriptions: We added more information about how Strava =0Ab=
+ills for subscriptions, including autorenewing subscriptions. =0A * How we =
+treat content posted by users: We clarified that certain content, =0Asuch a=
+s publicly shared routes or segments, clubs or posts to support channels, =
+=0Amay remain visible even if you close your account. =0A * How we expect u=
+sers to use geolocation sharing: We included reminders to =0Ause geolocatio=
+n sharing features responsibly=E2=80=94especially if you work in a =0Asensi=
+tive job or position of trust. =0A * How we handle legal disputes: We updat=
+ed our arbitration agreement. =0APolicies=0A=0A * How we collect and use in=
+formation: We updated our policies to make it =0Aeasier to understand our d=
+ata practices, including what we collect, how we use =0Ait to provide, impr=
+ove, and develop features, and the types of parties we may =0Ashare it with=
+. =0A * How you can manage your privacy settings: We updated our privacy c=
+ontrols =0Aso that you can manage whether you contribute to community-power=
+ed features =0Alike the Global Heatmap, Points of Interest, and Start Point=
+s, and developing =0Aand testing new features, including smarter AI feature=
+s. =0A * Local privacy laws: We updated our policies to reflect changes in =
+the legal =0Aand regulatory landscape around the world. =0AThank you for be=
+ing a part of our community!=0A=0AThe Strava Team=0A=0A=0A=0APlease do not =
+reply to this email. You are receiving this email because you =0Acreated a =
+Strava account atstrava.com <https://www.strava.com=3F$web_only=3Dtrue> =0A=
+or from our mobile app.=0A=0A =C2=A9 2025 Strava =0A181 Fremont Ave, Floor =
+27, San Francisco, CA 94105
+--_----aHAM0s/BcdYaPGJzP7+aHQ===_7B/A0-22653-C08AE196
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html lang=3D"en" dir=3D"ltr=
+" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsof=
+t-com:office:office" style=3D"opacity: 1; -ms-text-size-adjust: 100% !impor=
+tant;" xmlns=3D"http://www.w3.org/1999/xhtml"> <head> <title>Strava</title>=
+ <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"> =
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <meta name=3D"v=
+iewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"> <meta http-=
+equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge,chrome=3D1"> <meta name=3D"c=
+olor-scheme" content=3D"light dark"> <meta name=3D"supported-color-schemes"=
+ content=3D"light dark"> <meta name=3D"format-detection" content=3D"telepho=
+ne=3Dno, date=3Dno, address=3Dno, email=3Dno, url=3Dno"> <meta name=3D"x-ap=
+ple-disable-message-reformatting"> <!-- Font Family --> <!--[if !mso]><!-->=
+ <style type=3D"text/css">@font-face{font-family:'Book';font-style:normal;s=
+rc:url('https://s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse=
+-Regular.woff2') format('woff2'),url('https://s3.amazonaws.com/strava.stati=
+c/webfonts/boathouse/Boathouse-Regular.ttf') format('ttf')}@font-face{font-=
+family:'XBold';font-style:normal;src:url('https://s3.amazonaws.com/strava.s=
+tatic/webfonts/boathouse/Boathouse-Extended-Bold.woff2') format('woff2'),ur=
+l('https://s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse-Exte=
+nded-Bold.ttf') format('ttf')}@font-face{font-family:'Demi';font-style:norm=
+al;src:url('https://s3.amazonaws.com/strava.static/webfonts/boathouse/Boath=
+ouse-Medium.woff2') format('woff2'),url('https://s3.amazonaws.com/strava.st=
+atic/webfonts/boathouse/Boathouse-Medium.ttf') format('ttf')}@font-face{fon=
+t-family:'Bold';font-style:normal;src:url('https://s3.amazonaws.com/strava.=
+static/webfonts/boathouse/Boathouse-Bold.woff2') format('woff2'),url('https=
+://s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse-Bold.ttf') f=
+ormat('ttf')}@font-face{font-family:'Reg';font-style:normal;src:url('https:=
+//s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse-Regular.woff2=
+') format('woff2'),url('https://s3.amazonaws.com/strava.static/webfonts/boa=
+thouse/Boathouse-Regular.ttf') format('ttf')}</style> <!--<![endif]--> <!--=
+ // Font Family --> <style type=3D"text/css">:root{Color-scheme:light dark;=
+supported-color-schemes:light dark}body{margin:0;padding:0;-webkit-text-siz=
+e-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-sm=
+oothing:antialiased!important;font-family:'Book',Helvetica,Arial,sans-serif=
+!important}*{-ms-text-size-adjust:100%!important}a,body,table,td,th{-webkit=
+-text-size-adjust:100%;-ms-text-size-adjust:100%;box-sizing:border-box!impo=
+rtant}img{border:0!important;outline:none!important}table{border-collapse:c=
+ollapse!important;mso-table-lspace:0!important;mso-table-rspace:0!important=
+}td,a,span{border-collapse:collapse;mso-line-height-rule:exactly;mso-table-=
+lspace:0!important;mso-table-rspace:0!important}table{table-layout:fixed}su=
+p{font-size:60%;line-height:0}.footer a{color:#fff!important}.addressStyle =
+a{color:inherit!important;text-decoration:none!important}a[x-apple-data-det=
+ectors]{color:inherit!important;font-size:inherit!important;font-family:inh=
+erit!important;font-weight:inherit!important;line-height:inherit!important}=
+u+#body a{color:inherit!important;font-size:inherit!important;font-family:i=
+nherit!important;font-weight:inherit!important;line-height:inherit!importan=
+t}#MessageViewBody a{color:inherit!important;font-size:inherit!important;fo=
+nt-family:inherit!important;font-weight:inherit!important;line-height:inher=
+it!important}u+.body .gmail-blend-screen{background:#000!important;mix-blen=
+d-mode:screen!important}u+.body .gmail-blend-difference{background:#000!imp=
+ortant;mix-blend-mode:difference!important}.custom p{font-family:'Helvetica=
+ Neue',Helvetica,Helvetica,Arial,sans-serif;font-weight:400;font-size:17px;=
+line-height:24px;margin:8px 0 0;color:#000}.margin-auto{margin:0 auto!impor=
+tant}@media all and (max-width:500px){u+.body .em_full_wrap{width:100%!impo=
+rtant;width:100vw!important}.row{display:block!important}.padding-no-top{pa=
+dding:0 25px 48px!important}.width-full{width:100%!important}.width-auto{wi=
+dth:auto!important}.background-img{background:url('https://d15k2d11r6t6rl.c=
+loudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a=
+/71b0d80eb21d4d72bd6edd756ec7d223/editor_images/hero_mb%20.png');background=
+-size:cover;background-repeat:no-repeat;background-position:center bottom;v=
+ertical-align:top;width:100%!important;height:570px!important}.full{width:1=
+00%!important}.padding{padding:0!important}.hide{display:none!important}.ce=
+nter{text-align:center!important}.margin-auto{margin:0 auto!important}.show=
+{display:block!important}.p-15{padding-left:15px!important;padding-right:15=
+px!important}.p-25,.padding-sides{padding-left:25px!important;padding-right=
+:25px!important}.pt-15{padding-top:15px!important}.pt-24{padding-top:24px!i=
+mportant}.pt-36{padding-top:36px!important}.pt-48{padding-top:48px!importan=
+t}.pb-36{padding-bottom:36px!important}.pb-48{padding-bottom:48px!important=
+}.p-35{padding-left:35px!important;padding-right:35px!important}h1{font-siz=
+e:34px!important;line-height:38px!important}h2{font-size:28px!important;lin=
+e-height:34px!important}h3{font-size:26px!important;line-height:30px!import=
+ant}.eyebrow{font-size:14px!important;line-height:21px!important}.mobile-im=
+g{width:260px!important;max-width:260px!important}}</style> <style>@media(p=
+refers-color-scheme:dark){u+.body .gmail-blend-screen{background:#000!impor=
+tant;mix-blend-mode:screen!important}u+.body .gmail-blend-difference{backgr=
+ound:#000!important;mix-blend-mode:difference!important}}</style> <!--[if (=
+gte mso 9)|(IE)]><style type=3D"text/css">table{border-collapse:collapse;bo=
+rder-spacing:0}</style><![endif]--> <!--[if gte mso 9]><xml> <o:OfficeDocum=
+entSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:Office=
+DocumentSettings> </xFreeml><![endif]--> </head> <!-- --> <body class=3D"bo=
+dy vsc-initialized" style=3D"margin: 0px auto; padding: 0px; font-family: '=
+Book', Helvetica, Arial, sans-serif !important; box-sizing: border-box !imp=
+ortant; -webkit-text-size-adjust: 100% !important; -ms-text-size-adjust: 10=
+0% !important; -webkit-font-smoothing: antialiased !important;">=0D=0A<div =
+style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;border=
+:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!importa=
+nt;display:none!important;line-height:0px!important;"><img border=3D"0" wid=
+th=3D"1" height=3D"1" src=3D"http://links1.strava.com/q/Yxllsttiu844gRVRCDw=
+KOg~~/AAO53hA~/w_BDjc3rI8O2Y5ExcsRAZ6AJedti7hApfWFnja1op6czWhtqotMQgq1uhL8-=
+D67cFO0cK7aVsIexo7g87-Sz7g~~" alt=3D""/></div>=0D=0A<span style=3D"color:tr=
+ansparent;visibility:hidden;display:none;opacity:0;height:0;width:0;font-si=
+ze:0;"></span><img src=3D"http://links.strava.com/s/eo/jyAoVGE0xiCxuy7txBOA=
+HsoBsECIqf6YtLuCTeNSo6nzWYQ2Kw5GGpqCvB5sUQmMiZcLLwOCCGI0hoGbMYVH9g4CKwU5H4o=
+1A0fiL4NT4app77jXxqMOuifQXJnSP-Q2a7b6HBO3G_A9WfZUSpiW5mv89WANwa_Moy4uTSZTQo=
+N4jVsUoneEUrRA94l7FzEkFaI3skN-Fr41eg22aDGUdsdkEpoWoHi2Mjx9/7d2L3F-aAHL4TYIl=
+cV8owc0sO7NkgRGF/15" style=3D"border:0;width:1px;height:1px;border-width:0p=
+x!important;display:none!important;line-height:0!important;" width=3D"1" he=
+ight=3D"1"/> <div style=3D"display: none !important; font-size: 1px; line-h=
+eight: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; =
+mso-hide: all;">&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#819=
+9; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &s=
+hy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; =
+&#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;=
+ &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#8=
+47; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#=
+8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847;=
+ &shy; &#8199; &#847; &shy; &#8199; &#847; &shy;</div> <!-- catalog --> <di=
+v style=3D"display: none !important; font-size: 1px; line-height: 1px; max-=
+height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">=
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy;</div> <!-- //catalog --> <table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"-webk=
+it-text-size-adjust: 100%; table-layout: fixed; -ms-text-size-adjust: 100% =
+!important; box-sizing: border-box !important; border-collapse: collapse !i=
+mportant; mso-table-lspace: 0px !important; mso-table-rspace: 0px !importan=
+t;" width=3D"100%"> <tr style=3D"-ms-text-size-adjust: 100% !important;"> <=
+td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust: 100%;=
+ border-collapse: collapse; mso-line-height-rule: exactly; -ms-text-size-ad=
+just: 100% !important; box-sizing: border-box !important; mso-table-lspace:=
+ 0pt !important; mso-table-rspace: 0pt !important;"> <!--outer container-->=
+ <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" cla=
+ss=3D"wrap" bgcolor=3D"#E5E8EB" style=3D"-webkit-text-size-adjust: 100%; ta=
+ble-layout: fixed; background-color: #E5E8EB; width: 100%; -ms-text-size-ad=
+just: 100% !important; box-sizing: border-box !important; border-collapse: =
+collapse !important; mso-table-lspace: 0px !important; mso-table-rspace: 0p=
+x !important;" role=3D"presentation"> <tr style=3D"-ms-text-size-adjust: 10=
+0% !important;"> <!--inner container--> <td align=3D"center" valign=3D"top"=
+ style=3D"-webkit-text-size-adjust: 100%; border-collapse: collapse; mso-li=
+ne-height-rule: exactly; -ms-text-size-adjust: 100% !important; box-sizing:=
+ border-box !important; mso-table-lspace: 0pt !important; mso-table-rspace:=
+ 0pt !important;"> <!-- header --> <!-- if using a dark, Strava branded col=
+or, use a dark mode optimization (color block image) as background that won=
+'t invert logo color --> <!-- otherwise, use standard header code, no dark =
+mode optimizations --> <table align=3D"center" bgcolor=3D"#FC5200" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"full width-full" role=
+=3D"presentation" style=3D"max-width:640px;width:100%;background-color:#FC5=
+200; max-width: 640px;"> <tr> <td align=3D"center" valign=3D"top" class=3D"=
+p-25" style=3D"padding: 29px 32px; text-align:center"> <img alt=3D"Strava" =
+class=3D"center margin-auto" border=3D"0" src=3D"https://library.iterable.c=
+om/1468/4637/b2dbf4363a97453c86c91712275cc924-combined-shape.png" style=3D"=
+width: 90px; max-width: 90px;display: block;" width=3D"90"> </td> </tr> </t=
+able> <!-- // header --> <!-- intro table --> <!--[if (gte mso 9)|(IE)]><ta=
+ble align=3D"center" bgcolor=3D"#FEFFFF" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" role=3D"presentation" style=3D"width:640px;padding: 48px 32p=
+x 0;"> <tr> <td align=3D"center" valign=3D"top" style=3D"width: 100px;heigh=
+t: 125px;"><![endif]--> <table align=3D"center" bgcolor=3D"#FEFFFF" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"width-full" style=3D"-w=
+ebkit-text-size-adjust: 100%; table-layout: fixed; max-width: 640px; width:=
+ 100%; -ms-text-size-adjust: 100% !important; box-sizing: border-box !impor=
+tant; border-collapse: collapse !important; mso-table-lspace: 0px !importan=
+t; mso-table-rspace: 0px !important;" width=3D"100%"> <tr style=3D"-ms-text=
+-size-adjust: 100% !important;"> <td align=3D"left" class=3D"padding-sides"=
+ style=3D"-webkit-text-size-adjust: 100%; border-collapse: collapse; mso-li=
+ne-height-rule: exactly; color: #000000; font-size: 16px; font-weight: norm=
+al; line-height: 22px; padding: 36px 30px 0; -ms-text-size-adjust: 100% !im=
+portant; box-sizing: border-box !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important; font-family: Helvetica, Arial, sans-se=
+rif !important;" valign=3D"top"> <p style=3D"margin: 24px 0 0; -ms-text-siz=
+e-adjust: 100% !important;">Hi Patrio Gabriel,</p> <p style=3D"margin: 24px=
+ 0 0; -ms-text-size-adjust: 100% !important;">We want to let you know that =
+we=E2=80=99ve rewritten and redesigned our <a href=3D"http://links.strava.c=
+om/s/c/VEsC31robw0EduCXorDuyd3yLjLNsxtszj1-1iq5zbbAYZh5o4WKklgayQQ0sFqU8P52=
+59x01HDPNYnqzGavJ-UW_vJn4uijaUvbJInNwlCcLbwmxRX0AVDi-XfuqytOGjcatEgXAUoD-QR=
+d_44ykBocS_NX3qNwUr5q4iGtWyPiZ659cmYeVQDO36yM-MJjkcQzCFqdjUULDU__GaEBTEcYmO=
+kTEdsIpIj5eLKDLN0W6EdURYUBEuAFALIYSsV2YgF1IlzLH0045cm4aiqI_eCO66rO-o7tPzcBJ=
+4P69ydhZm7L-zIexpUq1SjqkQ/10upUMmyKqMGuF9PvMOka2nAoA5tN_QX/15" style=3D"col=
+or: #FC5200; text-decoration: underline !important;">Terms of Service</a> (=
+=E2=80=9CTerms=E2=80=9D), <a href=3D"http://links.strava.com/s/c/A7la5pvRKd=
+0abbOTJmnYNc0jG0EQS54bDIYhIdWt1TrpzfPdhV25J1b4LQJlu_SDwui8ATyYd2MMYiMoUDdM7=
+f9pksfMshJ-hEtL94lr1AUgwRkFMpS0p57Y_-XnQ-FWw_isLkPLVTPY937G3r7NWkUi4Mb0cWYB=
+56MAZmZp-MX1UCForgQOkZYI_nszQSXNjUNhtcHR3r32iuBcrpgvkfh1dnKU3GRrath2ZC97Ijg=
+AwixBqQN-UMC6wF1Vv-cKSXQc1TTUngo0YEDrxk0Mn8s9DP1GDQ2DFrpLev_B6sKAWJiYkwuAD4=
+gTBBIaL4gx/ewM82EHT5EGN-rd4j2WPo0p30eVasBcz/15" style=3D"color: #FC5200; te=
+xt-decoration: underline !important;">Privacy Policy</a>, and <a href=3D"ht=
+tp://links.strava.com/s/c/vIgJGqhlk7KVJQh-AgQgaTzplHUBeiJsC-EMD1VR6wOt_ncqr=
+Vzxd46R-4iR8EXW4q7kqAJRP31WVGcYd9AxGVZLXIlYlTc-91y1g7vVxgXGmoV-q4-njIFaakdK=
+2WlcwnSNcEytdNNFaVRBgaBIHYGHkJc2us7bGZZiobNoqdS3qshOLIJabV5Ig8IFu-qsFbk3Ni3=
+IePXY5vrUmpiKLEfzOy3FTnfr-krSyTHxaN4WYie4-Df7jYoM5KJez2B0aGmN5m9DFFie_bB2g9=
+WABilyb06Cwvn8a7N7YSccStYg1upQTAhbLNRDjTZaWrUzqxJvTCYa/y7B1kApNd7mjmE5xGLGJ=
+5X2jSJ98B9EH/15" style=3D"color: #FC5200; text-decoration: underline !impor=
+tant;">Cookie Policy</a> (collectively, =E2=80=9CPolicies=E2=80=9D). We mad=
+e these updates to simplify and streamline our Terms and Policies, provide =
+you with more information, and support our evolving&nbsp;business.</p> <p s=
+tyle=3D"margin: 24px 0 0; -ms-text-size-adjust: 100% !important;">These upd=
+ates take effect on <b>January 1, 2026</b>. By continuing to use Strava, yo=
+u agree with these updated Terms and Policies.</p> <p style=3D"margin: 24px=
+ 0 0; -ms-text-size-adjust: 100% !important;">We encourage you to read the =
+documents in full. We have also included a summary of key changes below:</p=
+> <p style=3D"margin: 24px 0 0; -ms-text-size-adjust: 100% !important;"><b =
+style=3D"-ms-text-size-adjust: 100% !important;">Terms of Service</b></p> <=
+ul align=3D"center" style=3D"color: #000000; font-family: 'Helvetica Neue',=
+ Helvetica, Helvetica, Arial, sans-serif; font-weight: 400; font-size: 16px=
+; line-height: 22px; margin: 0; padding-left: 20px; list-style-position: ou=
+tside; text-align: left; -ms-text-size-adjust: 100% !important;"> <li style=
+=3D"-ms-text-size-adjust: 100% !important;"><u>How we bill for subscription=
+s</u>: We added more information about how Strava bills for subscriptions, =
+including autorenewing subscriptions.</li> <li style=3D"-ms-text-size-adjus=
+t: 100% !important;"><u>How we treat content posted by users</u>: We clarif=
+ied that certain content, such as publicly shared routes or segments, clubs=
+ or posts to support channels, may remain visible even if you close your ac=
+count.</li> <li style=3D"-ms-text-size-adjust: 100% !important;"><u>How we =
+expect users to use geolocation sharing</u>: We included reminders to use g=
+eolocation sharing features responsibly=E2=80=94especially if you work in a=
+ sensitive job or position of trust.</li> <li style=3D"-ms-text-size-adjust=
+: 100% !important;"><u>How we handle legal disputes</u>: We updated our arb=
+itration agreement.</li> </ul> <p style=3D"margin: 24px 0 0; -ms-text-size-=
+adjust: 100% !important;"><b style=3D"-ms-text-size-adjust: 100% !important=
+;">Policies</b></p> <ul align=3D"center" style=3D"color: #000000; font-fami=
+ly: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-weight:=
+ 400; font-size: 16px; line-height: 22px; margin: 0; padding-left: 20px; li=
+st-style-position: outside; text-align: left; -ms-text-size-adjust: 100% !i=
+mportant;"> <li style=3D"-ms-text-size-adjust: 100% !important;"><u>How we =
+collect and use information</u>: We updated our policies to make it easier =
+to understand our data practices, including what we collect, how we use it =
+to provide, improve, and develop features, and the types of parties we may =
+share it with.</li> <li style=3D"-ms-text-size-adjust: 100% !important;"><u=
+>How you can manage your privacy settings</u>: We updated our privacy contr=
+ols so that you can manage whether you contribute to community-powered feat=
+ures like the Global Heatmap, Points of Interest, and Start Points, and dev=
+eloping and testing new features, including smarter AI features.</li> <li s=
+tyle=3D"-ms-text-size-adjust: 100% !important;"><u>Local privacy laws</u>: =
+We updated our policies to reflect changes in the legal and regulatory land=
+scape around the world.</li> </ul> <p style=3D"margin: 24px 0 0; -ms-text-s=
+ize-adjust: 100% !important;">Thank you for being a part of our&nbsp;commun=
+ity!</p> <p style=3D"margin: 24px 0 5px; -ms-text-size-adjust: 100% !import=
+ant;">The Strava Team</p> </td> </tr> </table> <!--[if (gte mso 9)|(IE)]></=
+td> </tr> </table><![endif]--> <!-- // intro table --> <!-- footer --> <tab=
+le bgcolor=3D"#feffff" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" class=3D"width-full" role=3D"presentation" style=3D"backgroun=
+d-color:#feffff;max-width: 640px; width: 100%;"> <tbody> <tr> <td align=3D"=
+center" valign=3D"top" style=3D"padding: 80px 0 40px;" align=3D"center"> <i=
+mg alt=3D"Strava" width=3D"106px" src=3D"https://d2axdqolvqmdvx.cloudfront.=
+net/53ffeb71-8c58-463f-b3fa-166fd2eb8d09/stravawordmark2x.png"/> </td> </tr=
+> <tr> <td align=3D"center" valign=3D"top" width=3D"100%" align=3D"center" =
+style=3D"padding: 0 40px 80px;"> <p style=3D"font-size: 13px; font-weight: =
+normal; font-family: Helvetica Neue, Arial, sans-serif; line-height: 20px; =
+color: #6d6d78; display: block;padding:0;margin:0">Please do not reply to t=
+his email. You are receiving this email because you created a Strava accoun=
+t at <a href=3D"http://links.strava.com/s/c/52b4_Ny9UmxRpZ-AHVcLeST8tMEBW8b=
+-wzKV6HXzv34lMh1DtKh_FziOJjoo9StelJlatnPCvyFeCpmUkLRFmMmrQY4hJoZnWMiMqNnu8b=
+i8Ktl918YdNJ3Iv1I08p9gx7TvnBy1ZAzJ4F3I6TCtXFqzrGPHsRjHj45pEBzrxEAldOMCJuUZT=
+LSpYQGY1B7Em4BFeiJUW7hj_P_14QGfVqt1HT7YBlMbLSMbVdEdCOYrZTzOakD-sH0AxzUOgoEr=
+pw8Ubr6p32TT9kAXje2rBoTb6d4b26-mM2bm3zz2xwu3bA/bGX083x0dlZU29hyoFwFaFhABYVB=
+1xNl/15" style=3D"color: #6d6d78; text-decoration: underline;">strava.com</=
+a> or from our mobile&nbsp;app. <br/> <br/> =C2=A9 2025&nbsp;Strava <br/><s=
+pan class=3D"addressStyle">181&nbsp;Fremont&nbsp;Ave,&nbsp;Floor&nbsp;27<sp=
+an class=3D"hide">,</span> San&nbsp;Francisco,&nbsp;CA&nbsp;94105</span> </=
+p> </td> </tr> </tbody> </table> <!-- // footer --> </td> <!--//inner conta=
+iner--> </tr> </table> <!--//outer container--> </td> </tr> </table> =0D=0A=
+<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://links1.st=
+rava.com/q/OocMe8b8q3YiDjbaeSr8bQ~~/AAO53hA~/AEDCco-9g6Vfnq_f9yW5cdJXEEp9VX=
+VweGcS6IlLCbA6lDtuRxDwTmVaElxgeqotxw0RPkiD1f7gGMgMYW_LKw~~">=0D=0A</body> <=
+/html>
+--_----aHAM0s/BcdYaPGJzP7+aHQ===_7B/A0-22653-C08AE196--
+

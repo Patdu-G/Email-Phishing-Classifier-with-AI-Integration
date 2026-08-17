@@ -1,0 +1,83 @@
+X-GM-THRID: 1867455110039930954
+X-Gmail-Labels: Inbox,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:1204:b0:29b:179e:1f84 with SMTP id h4csp2087841rwi;
+        Mon, 8 Jun 2026 11:39:35 -0700 (PDT)
+X-Received: by 2002:a05:620a:4725:b0:90f:9d1d:7031 with SMTP id
+ af79cd13be357-915ad0fb7d4mr1809081285a.17.1780943975618;
+        Mon, 08 Jun 2026 11:39:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1780943975; cv=none;
+        d=google.com; s=arc-20240605;
+        b=aiXiBLC7gP+gP+LZWKRPJLy+nK5L4vb7oaH3ccqwa7HLYkp22z7XFK7jYL0duWcdtm
+         yqdwytXeiD3Si5vZrIgk+XjT19aH8YDXhbAXmNf2hu3JA/FUS506dJ0th6eA0maMIsx2
+         q6+vFrOGhtuI5vsCz1wmA7kfB4BABaxVJN61eDhUl3wmI8qCF32t0bxkunesvcqXh3Mu
+         7t2sYebyIH2RbO6y6YXoSBU2B7g2WxiDzvYLydC+vsf6li3+2K5vZW4y6p3XzYZgBox8
+         tcKyI4rChiuRT1mW89y3utHLlTBfK32C73Po89Lh0ngl96oX3wdYnLyjLWl4msJWkUe3
+         YrwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=J5xMQb+dSYUn6y5bshwHIZD9LTjzz4lnU+0LqPJcEtM=;
+        fh=1VtsGqZcdNJlo0nqDzzujvlBUuas7of3PwKPAsQABRQ=;
+        b=jGw5a+VNWs2kV3UvfMK2mMGBCEFMt6zKK9tuytb7647tkC1kucr3phEoAOVfc9b9kY
+         IeXu+bjywNse397rwBHVPfaPYwprgykh5bXVjXXzjt67VdGKeUb2XIKkIw3AW0lq2TEu
+         nVWs+187Q9jdenFxIcdRs9ubZ/ZtJYru/KZXPnagGqqE5y7x5zT9OE6CoyP3P/JcaqOS
+         ALw6WY4MUY0XSQT8chb8Rts4Lhb+r70aV+1mvLa47JMOIDpYIbu97gkptZr3ZXgBxq7U
+         iGSOGOMcIFbALe37SL1Ms7359ogZpuVg7UPi/qYVSO00RfuPdvKzIhyX4xKqrqt/QIyr
+         YZqQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2023 header.b=N6xR1eqn;
+       spf=pass (google.com: domain of noreply@github.com designates
+ 192.30.252.194 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <noreply@github.com>
+Received: from out-3.smtp.github.com (out-3.smtp.github.com. [192.30.252.194])
+        by mx.google.com with ESMTPS id
+ af79cd13be357-915992451ddsi1678723485a.107.2026.06.08.11.39.35
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 08 Jun 2026 11:39:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@github.com designates
+ 192.30.252.194 as permitted sender) client-ip=192.30.252.194;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2023 header.b=N6xR1eqn;
+       spf=pass (google.com: domain of noreply@github.com designates
+ 192.30.252.194 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=github.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2023; t=1780943975;
+	bh=J5xMQb+dSYUn6y5bshwHIZD9LTjzz4lnU+0LqPJcEtM=;
+	h=Date:From:To:Subject:From;
+	b=N6xR1eqnrg6rxKHpaHrRWb+u2/s37RPMhQKTjVry0DgHIrxM6QvGhQDTYkE9i3+QS
+	 /3EP/CBtbXr2YVsuRD6OzMCYvPrK001NiP8A+YN6yYwKiopQUmY8e+h+WAr2ZJrvjs
+	 RNLGncER8iSWNj5OqWdjLjGTl6ocF/2xKt7/XSGI=
+Received: from github.com (hubbernetes-node-8d16d19.va3-iad.github.net
+ [10.48.209.107])
+	by smtp.github.com (Postfix) with ESMTPA id 3CA1F340980
+	for <patriogabrielpatdu@gmail.com>; Mon,  8 Jun 2026 11:39:35 -0700 (PDT)
+Date: Mon, 08 Jun 2026 11:39:35 -0700
+From: GitHub <noreply@github.com>
+To: Patrio Gabriel Patdu <patriogabrielpatdu@gmail.com>
+Message-ID: <6a270c673a24c_13a11081383a4@sharedworker-5bdbc7fcb5-sv9ql.mail>
+Subject: [GitHub] A first-party GitHub OAuth application has been added to
+ your account
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All
+
+Hey Patdu-G!
+
+A first-party GitHub OAuth application (Git Credential Manager) with gist, repo, and workflow scopes was recently authorized to access your account.
+Visit https://github.com/settings/connections/applications/0120e057bd645470c1ed for more information.
+
+To see this and other security events for your account, visit https://github.com/settings/security-log
+
+If you run into problems, please contact support by visiting https://github.com/contact
+
+Thanks,
+The GitHub Team
+

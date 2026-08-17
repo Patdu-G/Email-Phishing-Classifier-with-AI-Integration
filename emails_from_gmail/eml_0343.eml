@@ -1,0 +1,947 @@
+X-GM-THRID: 1864990472670951207
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:71c9:b0:295:53c1:9933 with SMTP id u9csp2651154rwu;
+        Tue, 12 May 2026 06:45:14 -0700 (PDT)
+X-Received: by 2002:a05:6214:3f81:b0:89f:4a69:44b9 with SMTP id
+ 6a1803df08f44-8c663f6deb2mr42708506d6.40.1778593514326;
+        Tue, 12 May 2026 06:45:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1778593514; cv=none;
+        d=google.com; s=arc-20240605;
+        b=U/h73hWV4gOnfyzDVUygUSoRgyy5uM5l0gWmLInvupO9Z/QWXvOm8EXrxAD7mtZ3X3
+         bXy/C4mmEPh8pS/ssmTNS22U1aVKCBUa5pcaUPghdGGaM6xSG2bz8NXXOVNM2pES8Wpt
+         jNJZLw5g8QlwZXCkpq+AD31HFys5WudobmSCRmEfvzl3xSGGD4vU/Q4wPRtygHMNtbdK
+         q5V7tpYnBkF+x69M1ObN2T0XbmGdf+aMfyRJUu8kYx41ymawwqmCsC4UowiKWOk8I9Sw
+         +LhO8NJzPRiTl/mgNQefPot4FriTz0PGKrJ8G7F1IrKFJxDKYofT3CzbIV8h+OAWsi/7
+         rtxg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe:list-unsubscribe-post:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=7L1rupurnT5vKCphqmX66rFmjDb88NXtPnMI/9+jWWc=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=PobLWYUHcT7oimX9zFvXA1AA2LCcQWLvlGgrfSCjVjLPmUt8DytEMRjCvyF22MFiLH
+         S4Pevq0ZphaIZIZaGX0AohY7xARDFTqTjVL9FRWH+aIG71NBz6Qrmn3XZcKVEReLupmH
+         gfO4IhWxCLrgZfL0jLACe7Uq1RsiIVn0FAiiavZW3zh90voJHrk7RCyCx+N0WC2g4Pkv
+         VB9X9FoRHGMG4EGO53A4GUsHU/szuXq3acbxo1YqzpfqIoPJXa/wFlVHhv+KRi/zOosh
+         KeEE1UD8W42s6rhdVWDvJi939TJZmLQAWybE/dNIUvc+jFhZCiYEGPBaZOVdslSlh4t0
+         4ffA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=e9gren0l;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=UXErPH1E;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5136.v5c4dda55.use4.send.mailgun.net
+ (v5136.v5c4dda55.use4.send.mailgun.net. [159.112.241.136])
+        by mx.google.com with UTF8SMTPS id
+ 6a1803df08f44-8b53de0408bsi462918166d6.652.2026.05.12.06.45.13
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 12 May 2026 06:45:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender) client-ip=159.112.241.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=e9gren0l;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=UXErPH1E;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1778593513; x=1778600713;
+ h=Message-Id: List-Unsubscribe: List-Unsubscribe-Post: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=7L1rupurnT5vKCphqmX66rFmjDb88NXtPnMI/9+jWWc=;
+ b=e9gren0lvAfrqtLR440QIqav3CithEfrjiePr+8sloOCOefXDaD+oRMgoMQHI72ZFRUIB5CoiabK35pSOdlYrdXziWJwLwHGU82qcntWEvOFoh31M0u5MJ87keQQJi8Pm9k8daVemHDwltV40cIdadM/dvPJn5PO0y3KSYdGsV0=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1778593513; x=1778600713;
+ h=Message-Id: List-Unsubscribe: List-Unsubscribe-Post: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=7L1rupurnT5vKCphqmX66rFmjDb88NXtPnMI/9+jWWc=;
+ b=UXErPH1E00y9b2mSxsB4s3/xdpO8f1exQreuoCP/EbMnqZbO5Z+NPgnwsGyIIf7e45ZQ+iFeQXAClIg4/wZaCtXLAcxYG+ZBoeemMjt/zFFtMwfp/amJxyWN0Sji+IWJRKIj8J5y1DcX5kdm4ogUMc20XNrtPegoz6yBp7Iod8M=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by 376a95e366bd9e380638ee9b5a29bf1846bfa21a1c70cdbb5bf1be0940b4a4c4
+ with HTTP
+ id 6a032ee71e1852f3ca940d9a; Tue, 12 May 2026 13:45:11 GMT
+X-Mailgun-Sending-Ip: 159.112.241.136
+Date: Tue, 12 May 2026 13:45:11 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="e80a53a66638fde2e0df52a60f05534536c7932facb68af6b74e3bb97614"
+Subject: =?UTF-8?q?=F0=9F=9A=80_Tomorrow_at_10am_BST:_2026_An_AI_Odyssey?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ4cbzWFuEVFTAXP1xShIA==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNDIY3CPJLUM5KFKZDFIQKYKAYXQU3IJFAT2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ4cbzWFuEVFTAXP1xShIA==>
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ4cbzWFuEVFTAXP1xShIA=="}
+Message-Id: <20260512134511.ee02a2b2e025e4d0@cio56239.tryhackme.com>
+
+--e80a53a66638fde2e0df52a60f05534536c7932facb68af6b74e3bb97614
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Watch industry leaders discuss AI security live from London. =C2=A0
+
+Tomorrow at 10am BST =E2=80=94 tune into the AI Odyssey livestream from Lon=
+don.
+
+TryHackMe ( https://tryhackme.com/dashboard )
+
+Live from London =C2=A0=C2=B7=C2=A0 13 May 2026
+
+********************
+2026:=C2=A0An AI Odyssey
+=F0=9F=9A=80
+********************
+
+Tomorrow, 13 May at 10am BST,
+we're going live from London for
+
+2026: An AI Odyssey,
+a livestream exploring the future of AI security with some of the industry'=
+s leading voices.
+
+Live Panel
+
+Hear from the people shaping
+the future of AI security.
+
+Sam Stepanyan
+
+OWASP Global Board Member & London Chapter Leader
+
+Eva Benn
+
+Cyber security leader, educator, TEDx & keynote speaker
+
+Abed Hamdan (UnixGuy)
+
+Cyber security leader followed by thousands across the industry
+
+Max Robertson
+
+Senior Content Engineer and creator of the AI Security Path
+
+=C2=A0
+
+Live Challenge
+
+Watch UnixGuy face a live AI security challenge in real time.
+
+=E2=9A=A1
+
+No safety net
+
+No edits. No prep.
+
+Just one live attempt.
+
+=F0=9F=A7=A0
+
+Can he crack it?
+
+Watch the challenge
+
+unfold live from London.
+
+=F0=9F=93=85
+
+13 May
+
+=E2=80=A2
+
+=F0=9F=95=99
+
+10am BST
+
+=C2=A0
+
+Watch the livestream =E2=86=92 ( https://tryhackme.com/ai-odyssey/?utm_sour=
+ce=3Dcio&utm_medium=3Demail&utm_campaign=3Daictflivestreamreminder )
+
+Then
+
+Global CTF Opens 14 May
+
+The Global AI CTF opens the next day,=C2=A014 May
+=C2=A0and runs through 17 May.
+
+Open to everyone. No in-person ticket needed.
+
+Just show up and compete.
+
+=F0=9F=93=85
+
+14=E2=80=9317 May
+
+=E2=80=A2
+
+=F0=9F=8C=8D
+
+Global & Online
+
+Get ready.
+
+Thanks for being part of this,
+
+The TryHackMe Team
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms )
+=C2=A0|=C2=A0
+Unsubscribe ( https://track.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ4=
+cbzWFuEVFTAXP1xShIA=3D=3D )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--e80a53a66638fde2e0df52a60f05534536c7932facb68af6b74e3bb97614
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en" xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"color-scheme" content=3D"light only"/>
+  <meta name=3D"supported-color-schemes" content=3D"light"/>
+  <title>Live from London: 2026 An AI Odyssey</title>
+
+  <style>
+    body {
+      margin:0;
+      padding:0;
+      background-color:#151d2b;
+      -webkit-text-size-adjust:100%;
+      -ms-text-size-adjust:100%;
+    }
+
+    table {
+      border-spacing:0;
+      border-collapse:collapse;
+      mso-table-lspace:0pt;
+      mso-table-rspace:0pt;
+    }
+
+    img {
+      border:0;
+      display:block;
+      max-width:100%;
+      height:auto;
+    }
+
+    .wrap {
+      width:600px;
+      max-width:600px;
+    }
+
+    .footer-link,
+    .footer-link:link,
+    .footer-link:visited,
+    .footer-link:hover,
+    .footer-link:active {
+      color:#ffffff !important;
+      text-decoration:underline !important;
+    }
+
+    @media screen and (max-width:620px) {
+      .wrap {
+        width:100% !important;
+        max-width:100% !important;
+      }
+
+      .mobile-pad {
+        padding-left:20px !important;
+        padding-right:20px !important;
+      }
+
+      .headline {
+        font-size:32px !important;
+      }
+
+      .challenge-title {
+        font-size:24px !important;
+      }
+
+      .challenge-heading {
+        font-size:20px !important;
+      }
+
+      .challenge-copy {
+        font-size:14px !important;
+      }
+
+      .speaker-name {
+        font-size:18px !important;
+      }
+
+      .speaker-copy {
+        font-size:14px !important;
+      }
+
+      .cta-td {
+        width:100% !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">Watch industry leaders discuss AI security live from Lon=
+don. =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=C2=A0</div>
+
+  <div style=3D"display:none; max-height:0; overflow:hidden; opacity:0; mso=
+-hide:all; color:#151d2b;">
+    Tomorrow at 10am BST =E2=80=94 tune into the AI Odyssey livestream from=
+ London.
+  </div>
+
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b;">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding:24px 16px;">
+
+    <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" class=3D"wrap">
+
+      <tbody><tr>
+        <td align=3D"center" style=3D"padding:0 0 22px 0;">
+          <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnV=
+EsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZGVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBz=
+Oi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDF=
+hY2UwZGIwMyIsImxpbmtfaWQiOjEyMX0/38ffd9e3266a9e4bf3a229f4d0a3e8e4cdf81e0b3c=
+c14614dfe37bbbbff83135" style=3D"text-decoration:none;">
+            <img src=3D"https://userimg-bee.customeriomail.com/images/clien=
+t-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe" width=3D"118" style=
+=3D"width:118px; height:auto;"/>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td style=3D"background-color:#1c2538; border-radius:16px; box-shad=
+ow:0 0 0 1px rgba(255,255,255,0.03), 0 12px 40px rgba(0,0,0,0.35);">
+
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0">
+            <tbody><tr>
+              <td class=3D"mobile-pad" style=3D"padding:32px 40px 36px 40px=
+;">
+
+                <table role=3D"presentation" width=3D"100%" cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0">
+
+                  <tbody><tr>
+                    <td align=3D"center" style=3D"padding-bottom:14px;">
+                      <p style=3D"margin:0; font-family:Arial, Helvetica, s=
+ans-serif; font-size:12px; font-weight:700; color:#a3ea2a !important; lette=
+r-spacing:0.12em; text-transform:uppercase; text-align:center;">
+                        Live from London =C2=A0=C2=B7=C2=A0 13 May 2026
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td align=3D"center" style=3D"padding-bottom:22px;">
+                      <h1 class=3D"headline" style=3D"margin:0; font-family=
+:Arial, Helvetica, sans-serif; font-size:36px; line-height:1.2; font-weight=
+:700; color:#ffffff !important; text-align:center;">
+                        2026:=C2=A0<span style=3D"white-space:nowrap;">An A=
+I Odyssey
+                          <span style=3D"display:inline-block; font-size:30=
+px; line-height:30px; vertical-align:-2px; mso-line-height-rule:exactly;">=
+=F0=9F=9A=80</span>
+                        </span>
+                      </h1>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style=3D"padding-bottom:18px;">
+                      <p style=3D"margin:0; font-family:Arial, Helvetica, s=
+ans-serif; font-size:15px; line-height:1.7; color:#d7e1f0 !important; text-=
+align:center;">
+                        Tomorrow, <strong style=3D"color:#a3ea2a !important=
+;">13 May at 10am BST</strong>,
+                        we're going live from London for
+<br/>                        <strong style=3D"color:#ffffff !important;">20=
+26: An AI Odyssey</strong>,
+                        a livestream exploring the future of AI security wi=
+th some of the industry's leading voices.
+                      </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style=3D"padding-bottom:24px;">
+                      <table role=3D"presentation" width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#101b2f; =
+border:1px solid #263a5c; border-radius:16px;">
+                        <tbody><tr>
+                          <td align=3D"center" style=3D"padding:30px 24px;"=
+>
+
+                            <p style=3D"margin:0 0 10px 0; font-family:Aria=
+l, Helvetica, sans-serif; font-size:12px; font-weight:700; color:#a3ea2a !i=
+mportant; letter-spacing:0.18em; text-transform:uppercase; text-align:cente=
+r;">
+                              Live Panel
+                            </p>
+
+                            <p style=3D"margin:0 0 22px 0; font-family:Aria=
+l, Helvetica, sans-serif; font-size:20px; line-height:1.4; font-weight:700;=
+ color:#ffffff !important; text-align:center;">
+                              Hear from the people shaping <br/>the future =
+of AI security.
+                            </p>
+
+                            <table role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"margin-bottom:12px; =
+background-color:#172640; border:1px solid #2a3f61; border-radius:14px;">
+                              <tbody><tr>
+                                <td style=3D"padding:18px 16px;">
+                                  <p class=3D"speaker-name" style=3D"margin=
+:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:18px; line-=
+height:1.3; font-weight:800; color:#a3ea2a !important; text-align:left;">
+                                    Sam Stepanyan
+                                  </p>
+                                  <p class=3D"speaker-copy" style=3D"margin=
+:0; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1=
+=2E6; color:#c8d3e6 !important; text-align:left;">
+                                    OWASP Global Board Member &amp; London =
+Chapter Leader
+                                  </p>
+                                </td>
+                              </tr>
+                            </tbody></table>
+
+                            <table role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"margin-bottom:12px; =
+background-color:#172640; border:1px solid #2a3f61; border-radius:14px;">
+                              <tbody><tr>
+                                <td style=3D"padding:18px 16px;">
+                                  <p class=3D"speaker-name" style=3D"margin=
+:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:18px; line-=
+height:1.3; font-weight:800; color:#a3ea2a !important; text-align:left;">
+                                    Eva Benn
+                                  </p>
+                                  <p class=3D"speaker-copy" style=3D"margin=
+:0; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1=
+=2E6; color:#c8d3e6 !important; text-align:left;">
+                                    Cyber security leader, educator, TEDx &=
+amp; keynote speaker
+                                  </p>
+                                </td>
+                              </tr>
+                            </tbody></table>
+
+                            <table role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"margin-bottom:12px; =
+background-color:#172640; border:1px solid #2a3f61; border-radius:14px;">
+                              <tbody><tr>
+                                <td style=3D"padding:18px 16px;">
+                                  <p class=3D"speaker-name" style=3D"margin=
+:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:18px; line-=
+height:1.3; font-weight:800; color:#a3ea2a !important; text-align:left;">
+                                    Abed Hamdan <span style=3D"color:#fffff=
+f !important;">(UnixGuy)</span>
+                                  </p>
+                                  <p class=3D"speaker-copy" style=3D"margin=
+:0; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1=
+=2E6; color:#c8d3e6 !important; text-align:left;">
+                                    Cyber security leader followed by thous=
+ands across the industry
+                                  </p>
+                                </td>
+                              </tr>
+                            </tbody></table>
+
+                            <table role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#17=
+2640; border:1px solid #2a3f61; border-radius:14px;">
+                              <tbody><tr>
+                                <td style=3D"padding:18px 16px;">
+                                  <p class=3D"speaker-name" style=3D"margin=
+:0 0 8px 0; font-family:Arial, Helvetica, sans-serif; font-size:18px; line-=
+height:1.3; font-weight:800; color:#a3ea2a !important; text-align:left;">
+                                    Max Robertson
+                                  </p>
+                                  <p class=3D"speaker-copy" style=3D"margin=
+:0; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:1=
+=2E6; color:#c8d3e6 !important; text-align:left;">
+                                    Senior Content Engineer and creator of =
+the AI Security Path
+                                  </p>
+                                </td>
+                              </tr>
+                            </tbody></table>
+
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style=3D"padding-bottom:24px;">
+                      <table role=3D"presentation" width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody><tr>
+  <td style=3D"padding-bottom:24px;">
+    <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0">
+      <tbody><tr>
+        <td width=3D"4" style=3D"background-color:#a3ea2a; font-size:1px; l=
+ine-height:1px;">=C2=A0</td>
+    <td style=3D"background-color:#1a2840; padding:34px 28px;">
+
+      <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, sans-ser=
+if; font-size:12px; font-weight:700; color:#a3ea2a !important; letter-spaci=
+ng:0.18em; text-transform:uppercase; text-align:center;">
+        Live Challenge
+      </p>
+
+      <p class=3D"challenge-title" style=3D"margin:0 0 34px 0; font-family:=
+Arial, Helvetica, sans-serif; font-size:26px; line-height:1.4; font-weight:=
+800; color:#a3ea2a !important; text-align:center;">
+        Watch UnixGuy face a live AI security challenge in real time.
+      </p>
+
+      <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" style=3D"margin-bottom:30px; table-layout:fixed;">
+        <tbody><tr>
+          <td width=3D"50%" valign=3D"top" align=3D"center" style=3D"paddin=
+g:0 8px 0 0;">
+            <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0">
+              <tbody><tr>
+                <td align=3D"center" style=3D"padding:0 0 12px 0;">
+                  <table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" align=3D"center">
+                    <tbody><tr>
+                      <td align=3D"center" valign=3D"middle" style=3D"width=
+:32px; height:32px; font-family:'Segoe UI Emoji','Apple Color Emoji',Arial,=
+sans-serif; font-size:24px; line-height:24px; mso-line-height-rule:exactly;=
+ text-align:center;">
+                        =E2=9A=A1
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+
+              <tr>
+                <td align=3D"center">
+                  <p class=3D"challenge-heading" style=3D"margin:0 0 10px 0=
+; font-family:Arial, Helvetica, sans-serif; font-size:22px; line-height:1.4=
+; font-weight:800; color:#ffffff !important; text-align:center;">
+                    No safety net
+                  </p>
+                  <p class=3D"challenge-copy" style=3D"margin:0; font-famil=
+y:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.8; color:#d7e=
+1f0 !important; text-align:center;">
+                    No edits. No prep.<br/>
+                    Just one live attempt.
+                  </p>
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+
+          <td width=3D"50%" valign=3D"top" align=3D"center" style=3D"paddin=
+g:0 0 0 8px;">
+            <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0">
+              <tbody><tr>
+                <td align=3D"center" style=3D"padding:0 0 12px 0;">
+                  <table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" align=3D"center">
+                    <tbody><tr>
+                      <td align=3D"center" valign=3D"middle" style=3D"width=
+:32px; height:32px; font-family:'Segoe UI Emoji','Apple Color Emoji',Arial,=
+sans-serif; font-size:24px; line-height:24px; mso-line-height-rule:exactly;=
+ text-align:center;">
+                        =F0=9F=A7=A0
+                      </td>
+                    </tr>
+                  </tbody></table>
+                </td>
+              </tr>
+
+              <tr>
+                <td align=3D"center">
+                  <p class=3D"challenge-heading" style=3D"margin:0 0 10px 0=
+; font-family:Arial, Helvetica, sans-serif; font-size:22px; line-height:1.4=
+; font-weight:800; color:#ffffff !important; text-align:center;">
+                    Can he crack it?
+                  </p>
+                  <p class=3D"challenge-copy" style=3D"margin:0; font-famil=
+y:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.8; color:#d7e=
+1f0 !important; text-align:center;">
+                    Watch the challenge<br/>
+                    unfold live from London.
+                  </p>
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+
+      <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" align=3D"center" style=3D"margin:0 auto;">
+        <tbody><tr>
+          <td align=3D"center" style=3D"background-color:#15233c; border-ra=
+dius:999px; padding:13px 24px;">
+            <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" align=3D"center">
+              <tbody><tr>
+                <td valign=3D"middle" style=3D"width:18px; height:18px; fon=
+t-family:'Segoe UI Emoji','Apple Color Emoji',Arial,sans-serif; font-size:1=
+4px; line-height:14px; mso-line-height-rule:exactly; text-align:center;">
+                  =F0=9F=93=85
+                </td>
+
+                <td valign=3D"middle" style=3D"padding-left:6px; font-famil=
+y:Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-weig=
+ht:700; color:#ffffff !important; white-space:nowrap;">
+                  13 May
+                </td>
+
+                <td valign=3D"middle" style=3D"padding:0 10px; font-family:=
+Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-weight=
+:700; color:#ffffff !important;">
+                  =E2=80=A2
+                </td>
+
+                <td valign=3D"middle" style=3D"width:18px; height:18px; fon=
+t-family:'Segoe UI Emoji','Apple Color Emoji',Arial,sans-serif; font-size:1=
+4px; line-height:14px; mso-line-height-rule:exactly; text-align:center;">
+                  =F0=9F=95=99
+                </td>
+
+                <td valign=3D"middle" style=3D"padding-left:6px; font-famil=
+y:Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-weig=
+ht:700; color:#ffffff !important; white-space:nowrap;">
+                  10am BST
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+
+    </td>
+
+    <td width=3D"4" style=3D"background-color:#a3ea2a; font-size:1px; line-=
+height:1px;">=C2=A0</td>
+  </tr>
+</tbody></table>
+
+  </td>
+</tr>
+
+<tr>
+  <td align=3D"center" style=3D"padding-bottom:32px;">
+    <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" style=3D"margin:0 auto;">
+      <tbody><tr>
+        <td class=3D"cta-td" align=3D"center" bgcolor=3D"#a3ea2a" style=3D"=
+background-color:#a3ea2a; border-radius:10px; padding:16px 36px;">
+          <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnV=
+EsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZGVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBz=
+Oi8vdHJ5aGFja21lLmNvbS9haS1vZHlzc2V5Lz91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWR=
+pdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249YWljdGZsaXZlc3RyZWFtcmVtaW5kZXIiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjMyNjMxfQ/6b0714=
+98f4c7c4caffda98df68eb240ad33f3d268b179f994af239a75f3d4de4" style=3D"font-f=
+amily:Arial, Helvetica, sans-serif; font-size:15px; line-height:1; font-wei=
+ght:700; color:#151d2b !important; text-decoration:none; white-space:nowrap=
+;">
+            Watch the livestream =E2=86=92
+          </a>
+        </td>
+      </tr>
+    </tbody></table>
+  </td>
+</tr>
+
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+<!-- NEW SECTION: Global CTF =E2=80=94 14=E2=80=9317 May                   =
+      -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+<tr>
+  <td style=3D"padding-bottom:24px;">
+    <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" style=3D"background-color:#101b2f; border:1px solid #=
+263a5c; border-radius:16px;">
+      <tbody><tr>
+        <td align=3D"center" style=3D"padding:30px 24px;">
+
+          <!-- eyebrow label -->
+          <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, sans=
+-serif; font-size:12px; font-weight:700; color:#a3ea2a !important; letter-s=
+pacing:0.18em; text-transform:uppercase; text-align:center;">
+            Then
+          </p>
+
+          <!-- emoji + headline -->
+          <p style=3D"margin:0 0 14px 0; font-family:Arial, Helvetica, sans=
+-serif; font-size:26px; line-height:1.3; font-weight:800; color:#ffffff !im=
+portant; text-align:center;">Global CTF Opens 14 May
+          </p>
+
+          <!-- body copy -->
+          <p style=3D"margin:0 0 22px 0; font-family:Arial, Helvetica, sans=
+-serif; font-size:15px; line-height:1.8; color:#d7e1f0 !important; text-ali=
+gn:center;">
+            The Global AI CTF opens the next day,=C2=A0<strong style=3D"col=
+or:#ffffff !important;">14 May<br/></strong>=C2=A0and runs through <strong =
+style=3D"color:#ffffff !important;">17 May</strong>.<br/>
+            Open to everyone. No in-person ticket needed.<br/>
+            Just show up and compete.
+          </p>
+
+          <!-- date badge -->
+          <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" align=3D"center" style=3D"margin:0 auto 22px auto;">
+            <tbody><tr>
+              <td align=3D"center" style=3D"background-color:#15233c; borde=
+r-radius:999px; padding:13px 24px;">
+                <table role=3D"presentation" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"center">
+                  <tbody><tr>
+                    <td valign=3D"middle" style=3D"font-family:'Segoe UI Em=
+oji','Apple Color Emoji',Arial,sans-serif; font-size:14px; line-height:14px=
+; mso-line-height-rule:exactly; text-align:center;">
+                      =F0=9F=93=85
+                    </td>
+                    <td valign=3D"middle" style=3D"padding-left:6px; font-f=
+amily:Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-=
+weight:700; color:#ffffff !important; white-space:nowrap;">
+                      14=E2=80=9317 May
+                    </td>
+                    <td valign=3D"middle" style=3D"padding:0 10px; font-fam=
+ily:Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-we=
+ight:700; color:#ffffff !important;">
+                      =E2=80=A2
+                    </td>
+                    <td valign=3D"middle" style=3D"font-family:'Segoe UI Em=
+oji','Apple Color Emoji',Arial,sans-serif; font-size:14px; line-height:14px=
+; mso-line-height-rule:exactly; text-align:center;">
+                      =F0=9F=8C=8D
+                    </td>
+                    <td valign=3D"middle" style=3D"padding-left:6px; font-f=
+amily:Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-=
+weight:700; color:#ffffff !important; white-space:nowrap;">
+                      Global &amp; Online
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <!-- get ready tag -->
+          <p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; f=
+ont-size:15px; line-height:1; font-weight:800; color:#a3ea2a !important; te=
+xt-align:center; letter-spacing:0.06em; text-transform:uppercase;">
+            Get ready.
+          </p>
+
+        </td>
+      </tr>
+    </tbody></table>
+  </td>
+</tr>
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+<!-- END NEW SECTION                                              -->
+<!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+
+<tr>
+  <td align=3D"center">
+    <p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-si=
+ze:15px; line-height:1.8; color:#d7e1f0 !important; text-align:center;">
+      Thanks for being part of this,<br/>
+      <strong style=3D"color:#ffffff !important;">The TryHackMe Team</stron=
+g>
+    </p>
+  </td>
+</tr>
+
+</tbody></table>
+
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+
+<tr>
+  <td align=3D"center" style=3D"padding:28px 20px 10px 20px;">
+
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"margin:0 auto 24px auto;">
+                <tbody><tr>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZ=
+GVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/ce2734=
+0fc11dbba384f05def049c7f5a3b762e0745de2b634dab77ac47f0dd77" style=3D"text-d=
+ecoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/so=
+cial-networks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" w=
+idth=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZ=
+GVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW=
+50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/93851=
+0b9109c3336c2dc4351d8c861665a5a84e6f832b6f24710839cec338006" style=3D"text-=
+decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/s=
+ocial-networks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=
+=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZ=
+GVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja2=
+1lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/74=
+6a348987a6824fa7c480dd6c0ed92c92513198eac0d4a5788ec3a1401ca632" style=3D"te=
+xt-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resource=
+s/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Inst=
+agram" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZ=
+GVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aG=
+Fja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyM=
+jE5OX0/ec98f94faa4c771df98959c8d22a2dd11b80b50e465bdc23aebdc7e7465e2e14" st=
+yle=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public=
+/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=
+=3D"LinkedIn" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZ=
+GVEFYUDF4U2hJQT09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrbW=
+UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxf=
+Q/66a4d7ccffdcab4afeb4d6b1f4360029421cb9b2310ebfa78bd2fe140fab645f" style=
+=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"=
+YouTube" width=3D"30"/></a></td>
+                </tr>
+              </tbody></table>
+
+              <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, =
+sans-serif; font-size:14px; line-height:1.6; color:#ffffff !important; text=
+-align:center;">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZGVEFYUDF4U2hJQT09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/47a60bae8d3418ffd179be944de121a2ae87639b163=
+1bb2dcedd9eedcb35d7df" class=3D"footer-link" style=3D"color:#ffffff !import=
+ant; text-decoration:underline !important;">Terms</a>
+                =C2=A0|=C2=A0
+                <a href=3D"https://e.customeriomail.com/unsubscribe/dgTK1QU=
+LAKzg2wOr4NsDAZ4cbzWFuEVFTAXP1xShIA=3D=3D" class=3D"footer-link" style=3D"c=
+olor:#ffffff !important; text-decoration:underline !important;">Unsubscribe=
+</a>
+              </p>
+
+              <p style=3D"margin:0; font-family:Arial, Helvetica, sans-seri=
+f; font-size:14px; line-height:1.6; color:#ffffff !important; text-align:ce=
+nter;">
+                =C2=A9 2026 TryHackMe. All rights reserved.
+              </p>
+
+            </td>
+          </tr>
+
+        </tbody></table>
+
+      </td>
+    </tr>
+  </tbody></table>
+
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVo0Y2J6V0Z1RVZGVEFYUDF4U2hJQT09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--e80a53a66638fde2e0df52a60f05534536c7932facb68af6b74e3bb97614--

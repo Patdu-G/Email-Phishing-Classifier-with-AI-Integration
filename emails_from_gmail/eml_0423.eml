@@ -1,0 +1,697 @@
+X-GM-THRID: 1862710318885548348
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:5605:b0:289:d514:b724 with SMTP id b5csp196473rwf;
+        Fri, 17 Apr 2026 02:43:10 -0700 (PDT)
+X-Received: by 2002:a05:620a:1a26:b0:8cd:b7bc:5184 with SMTP id
+ af79cd13be357-8e78f442e29mr245895785a.8.1776418989809;
+        Fri, 17 Apr 2026 02:43:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1776418989; cv=none;
+        d=google.com; s=arc-20240605;
+        b=AC53qItjIrboje2sNsGkp1jLzXcn7exVS7eGkr+puYQEVG+lmDZkea5VjcUy2mMiHP
+         qyXgtVMg9gzlotFZWD/6/1ohq48nGmuHzen1Knw2oEQ0KhDtOvf6LbvFACzAaaIxnVVZ
+         ATY6/+/up60MTny9M17uGjJU4DPewUfJ3pCrMrcsR/P/r4yx3VlI3VhoAJhFJXcH7RKi
+         iqQLxz85Sq7tNSavfMvNjbsPfNFQDqwjw+oxvpo3vjNLg+CfKJy+WPNNGaQX3EbVfjHC
+         jFDdOpRGHX3ZqhHMsSk9Cd94nfIYt0B52U48xdmWhf0/NPPH6vY01W8fg8FHSfldvhID
+         d/lw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=UUMHhjTKRE2LcI4yHjR6oymqN4lxYjEpanEtwxEsqE8=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=Xpmb8YQQadxoTo0Rm8gPNNRmkGfcFKw3uEqo6Mj6tMtAveb9GQbsvHYKyiGTxlpzH1
+         1BioTM9m4iyM1oM5+y9r2m2OIrkCPzl72qyGXFKz2JYd1+0MrMOS4VM2MtVkjE59q8EY
+         GwT3SJNeRla7xCrkJbzxnQNDXyKEfOUbON/OUov7g7VZ22FHdY5jK1Z6V0WpYoECzeDV
+         5V4uz6LUYgBdfS3Y+BGfe72qPmJufWXrehPQNMXV56NhGdXq/MaJOv05XD36HY5NHpOb
+         G7xMLQysFGbWQh10bcbyPQR+proWrl767/Pdh8KG1h3WuI4CDkFxLGPF1ep4P0NAgrg9
+         otxQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=hulrAN+n;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=LE+gS2t3;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5136.v5c4dda55.use4.send.mailgun.net
+ (v5136.v5c4dda55.use4.send.mailgun.net. [159.112.241.136])
+        by mx.google.com with UTF8SMTPS id
+ af79cd13be357-8e7d61e2fe4si81206985a.114.2026.04.17.02.43.09
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 17 Apr 2026 02:43:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender) client-ip=159.112.241.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=hulrAN+n;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=LE+gS2t3;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1776418989; x=1776426189;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=UUMHhjTKRE2LcI4yHjR6oymqN4lxYjEpanEtwxEsqE8=;
+ b=hulrAN+nTbTTcmL9M9sZzzuDX/mlUEjoNnsCGgiqpo2z584zzh/mcJWg8tPTmU5xiLNaYJ96jnSkgU6Lc5ywIFXGvUUtjPDVX2mmiKAT3527GPYu4ucQLa9x8fYOtoXVkuP0I2m8D245ejW3sAIP6SGwiw2+/XmZFP58PKnjzNo=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1776418989; x=1776426189;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=UUMHhjTKRE2LcI4yHjR6oymqN4lxYjEpanEtwxEsqE8=;
+ b=LE+gS2t3TC32w5AHCU0R24NJHtnRhJK2pWZgNPjy4kA65TbFqVg+9/L5hlaWM24za+joO9AFkOXeFZb3oVHeNoJrVENY/wdYVQCeRs2oBJ5TXCxKxenCfxnl70TdnDtk8nmTcoUy32+uhDJOxLO5ymYcM8LWly0GHcshAWgiJFg=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by bc0af54622312e4d51d87deebb92cd84d05da60149093abebe3b6626833db7a5
+ with HTTP
+ id 69e200ad946c658a7dd7ce3a; Fri, 17 Apr 2026 09:43:09 GMT
+X-Mailgun-Sending-Ip: 159.112.241.136
+Date: Fri, 17 Apr 2026 09:43:09 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="952580359a0deda5dae9f7fa725575a1a0a9757d82a7ad56c5a39051e89f"
+Subject: 
+ =?UTF-8?q?=F0=9F=91=81=EF=B8=8F_In_case_you_missed_it._This_is_what's_ins?=
+ =?UTF-8?q?ide?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNDEYJQOFCDG3KEJE4GI3K2GJ2DIYLBJZ3T2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ2a0qD3mDI8dmZ2t4aaNw==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ2a0qD3mDI8dmZ2t4aaNw==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ2a0qD3mDI8dmZ2t4aaNw=="}
+Message-Id: <20260417094309.15f3ace3f5522f09@cio56239.tryhackme.com>
+
+--952580359a0deda5dae9f7fa725575a1a0a9757d82a7ad56c5a39051e89f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+A closer look at what's inside the AI Security Learning Path. =C2=A0
+
+A closer look at what's inside the AI Security Learning Path.
+
+TryHackMe ( https://tryhackme.com/dashboard )
+
+AI Security Learning Path ( https://tryhackme.com/path/outline/aisecurity?u=
+tm_source=3Dcio&utm_medium=3Demail&utm_campaign=3D2026ailaunchseg5reminder =
+)
+
+***************************
+What does it mean to secure
+an AI system?
+***************************
+
+We launched something new this week.
+
+So instead of repeating the announcement,
+
+let's break it down.
+
+-----------------------------
+The AI Security Learning Path
+-----------------------------
+
+A structured, hands-on way to understand
+how AI systems are attacked and defended.
+
+What you'll actually learn
+
+Module 1
+
+AI Fundamentals
+
+Threat landscape =C2=B7 adversarial attacks =C2=B7 AI forensics
+
+=E2=86=93
+
+Module 2
+
+Secure AI Systems
+
+LLM security =C2=B7 threat modelling =C2=B7 reconnaissance
+
+=E2=86=93
+
+Module 3
+
+Model Security
+
+Supply chain risks =C2=B7 backdoors =C2=B7 model detection
+
+=E2=86=93
+
+Module 4
+
+Prompt Injection
+
+Direct + indirect attacks =C2=B7 mitigations =C2=B7 challenges
+
+=E2=86=93
+
+Module 5
+
+Data Poisoning
+
+RAG security =C2=B7 data & model poisoning =C2=B7 sensitive data exposure
+
+25 rooms. Real AI systems. Hands-on from start to finish.
+
+Explore the AI Security Learning Path ( https://tryhackme.com/path/outline/=
+aisecurity?utm_source=3Dcio&utm_medium=3Demail&utm_campaign=3D2026ailaunchs=
+eg5reminder )
+
+Whether you're learning cyber or already working in it, this is one of the =
+fastest-moving areas right now.
+
+No pressure. Just making sure you've seen what's inside.
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) =C2=A0|=C2=A0 Unsubscribe ( https://t=
+rack.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ2a0qD3mDI8dmZ2t4aaNw=3D=
+=3D )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--952580359a0deda5dae9f7fa725575a1a0a9757d82a7ad56c5a39051e89f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"color-scheme" content=3D"light only"/>
+  <meta name=3D"supported-color-schemes" content=3D"light"/>
+  <title>TryHackMe =E2=80=93 AI Security Learning Path</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #151d2b; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-spacing: 0; border-collapse: collapse; }
+    img { border: 0; display: block; max-width: 100%; height: auto; }
+    .wrap { width: 100%; max-width: 600px; }
+    .body-p { font-family: Arial, Helvetica, sans-serif; font-size: 15px; l=
+ine-height: 1.7; color: #d7e1f0; margin: 0; }
+    .headline { font-family: Arial, Helvetica, sans-serif; font-size: 26px;=
+ line-height: 1.25; font-weight: 700; color: #ffffff; margin: 0; }
+    .cta-a { font-family: Arial, Helvetica, sans-serif; font-size: 15px; li=
+ne-height: 1; font-weight: 700; color: #151d2b !important; text-decoration:=
+ none; }
+    .footer-link { color: #ffffff !important; text-decoration: underline; }
+    @media screen and (max-width: 620px) {
+      .wrap { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad { padding-left: 20px !important; padding-right: 20px !imp=
+ortant; }
+      .headline { font-size: 22px !important; }
+    }
+  </style>
+</head>
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">A closer look at what's inside the AI Security Learning =
+Path. =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=C2=A0</div>
+
+  <div style=3D"display:none; max-height:0; overflow:hidden; opacity:0; mso=
+-hide:all;">
+    A closer look at what's inside the AI Security Learning Path.
+  </div>
+
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b;">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding: 24px 16px;">
+        <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" class=3D"wrap">
+
+          <!-- Logo -->
+          <tbody><tr>
+            <td align=3D"center" style=3D"padding: 0 0 22px 0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmM=
+xMDFhY2UwZGIwMyIsImxpbmtfaWQiOjEyMX0/02ba26749b1eed269faff7bd47f5f404747beb=
+72efdedfda1db9cf1d51a6600e" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-bee.customeriomail.com/images/c=
+lient-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe" width=3D"118" sty=
+le=3D"width:118px; height:auto;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD TOP: Banner -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:16px 16px =
+0 0; padding:16px 16px 0; font-size:0; line-height:0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9wYXRoL291dGxpbmUvYWlzZWN1cml0eT91dG1fc291cmNlPWN=
+pb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249MjAyNmFpbGF1bmNoc2=
+VnNXJlbWluZGVyIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX=
+2lkIjozMjIxNn0/91ca2ee5bcb6fb25fc693625bcabb202fd40ce118a0327229752949b13f1=
+78d0" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-assets.customeriomail.com/image=
+s/client-env-92874/01KNRWDT1P81K1ASHPFW1X5BP3.png" alt=3D"AI Security Learn=
+ing Path" width=3D"568" style=3D"width:100%; max-width:568px; height:auto; =
+display:block; border-radius:10px;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD BOTTOM: Content -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:0 0 16px 1=
+6px;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0">
+                <tbody><tr>
+                  <td class=3D"mobile-pad" style=3D"padding: 32px 40px 36px=
+ 40px;">
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+
+                      <!-- Headline -->
+                      <tbody><tr>
+                        <td align=3D"center" style=3D"padding-bottom: 20px;=
+">
+                          <h1 class=3D"headline" style=3D"text-align:center=
+;">What does it mean to secure <br/>an AI system?</h1>
+                        </td>
+                      </tr>
+
+                      <!-- Opener -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 14px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            We launched something new this week.<br/>
+                            So instead of repeating the announcement,<br/>
+                            let's break it down.
+                          </p>
+                        </td>
+                      </tr>
+
+                    =20
+
+
+
+                      <!-- Divider -->
+                      <tr><td style=3D"border-top:1px solid #2a3650; paddin=
+g-bottom: 22px;"></td></tr>
+
+                      <!-- Path title -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 4px;"=
+>
+                          <h2 style=3D"margin:0; font-family:Arial, Helveti=
+ca, sans-serif; font-size:22px; font-weight:700; color:#a3ea2a; text-align:=
+center; line-height:1.3;">The AI Security Learning Path</h2>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 16px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">=
+A structured, hands-on way to understand <br/>how AI systems are attacked a=
+nd defended.</p>
+                        </td>
+                      </tr>
+
+                      <!-- What you'll learn label -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 10px;=
+">
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:12px; color:#a3ea2a; font-weight:700; text-transfo=
+rm:uppercase; letter-spacing:.8px; text-align:center;">What you'll actually=
+ learn</p>
+                        </td>
+                      </tr>
+
+                      <!-- Modules =E2=80=94 HTML table path visual -->
+                      <tr>
+                        <td style=3D"padding-bottom: 14px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"max-width:360px; margi=
+n:0 auto;">
+
+                            <!-- Module 1 =E2=80=94 highlighted -->
+                            <tbody><tr>
+                              <td align=3D"center">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color=
+:#1e3a1e; border:1.5px solid #a3ea2a; border-radius:12px;">
+                                  <tbody><tr>
+                                    <td style=3D"padding:10px 20px;">
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; color:#=
+a3ea2a; text-transform:uppercase; letter-spacing:1.2px; text-align:center;"=
+>Module 1</p>
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#=
+ffffff; text-align:center;">AI Fundamentals</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al, Helvetica, sans-serif; font-size:11px; color:#7aaa7a; text-align:center=
+; line-height:1.5;">Threat landscape =C2=B7 adversarial attacks =C2=B7 AI f=
+orensics</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Connector -->
+                            <tr>
+                              <td align=3D"center" style=3D"padding:0; line=
+-height:1; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:=
+#a3ea2a;">=E2=86=93</td>
+                            </tr>
+
+                            <!-- Module 2 -->
+                            <tr>
+                              <td align=3D"center">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color=
+:#1c2538; border:1px solid #30415f; border-radius:12px;">
+                                  <tbody><tr>
+                                    <td style=3D"padding:10px 20px;">
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; color:#=
+a3ea2a; text-transform:uppercase; letter-spacing:1.2px; text-align:center;"=
+>Module 2</p>
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#=
+ffffff; text-align:center;">Secure AI Systems</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al, Helvetica, sans-serif; font-size:11px; color:#8c9ab3; text-align:center=
+; line-height:1.5;">LLM security =C2=B7 threat modelling =C2=B7 reconnaissa=
+nce</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Connector -->
+                            <tr>
+                              <td align=3D"center" style=3D"padding:0; line=
+-height:1; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:=
+#a3ea2a;">=E2=86=93</td>
+                            </tr>
+
+                            <!-- Module 3 -->
+                            <tr>
+                              <td align=3D"center">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color=
+:#1c2538; border:1px solid #30415f; border-radius:12px;">
+                                  <tbody><tr>
+                                    <td style=3D"padding:10px 20px;">
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; color:#=
+a3ea2a; text-transform:uppercase; letter-spacing:1.2px; text-align:center;"=
+>Module 3</p>
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#=
+ffffff; text-align:center;">Model Security</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al, Helvetica, sans-serif; font-size:11px; color:#8c9ab3; text-align:center=
+; line-height:1.5;">Supply chain risks =C2=B7 backdoors =C2=B7 model detect=
+ion</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Connector -->
+                            <tr>
+                              <td align=3D"center" style=3D"padding:0; line=
+-height:1; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:=
+#a3ea2a;">=E2=86=93</td>
+                            </tr>
+
+                            <!-- Module 4 -->
+                            <tr>
+                              <td align=3D"center">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color=
+:#1c2538; border:1px solid #30415f; border-radius:12px;">
+                                  <tbody><tr>
+                                    <td style=3D"padding:10px 20px;">
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; color:#=
+a3ea2a; text-transform:uppercase; letter-spacing:1.2px; text-align:center;"=
+>Module 4</p>
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#=
+ffffff; text-align:center;">Prompt Injection</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al, Helvetica, sans-serif; font-size:11px; color:#8c9ab3; text-align:center=
+; line-height:1.5;">Direct + indirect attacks =C2=B7 mitigations =C2=B7 cha=
+llenges</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Connector -->
+                            <tr>
+                              <td align=3D"center" style=3D"padding:0; line=
+-height:1; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:=
+#a3ea2a;">=E2=86=93</td>
+                            </tr>
+
+                            <!-- Module 5 -->
+                            <tr>
+                              <td align=3D"center">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color=
+:#1c2538; border:1px solid #30415f; border-radius:12px;">
+                                  <tbody><tr>
+                                    <td style=3D"padding:10px 20px;">
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:10px; font-weight:700; color:#=
+a3ea2a; text-transform:uppercase; letter-spacing:1.2px; text-align:center;"=
+>Module 5</p>
+                                      <p style=3D"margin:0 0 1px 0; font-fa=
+mily:Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; color:#=
+ffffff; text-align:center;">Data Poisoning</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al, Helvetica, sans-serif; font-size:11px; color:#8c9ab3; text-align:center=
+; line-height:1.5;">RAG security =C2=B7 data &amp; model poisoning =C2=B7 s=
+ensitive data exposure</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Stats line -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 20px;=
+">
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:14px; font-weight:700; color:#ffffff; text-align:c=
+enter; line-height:1.6;">25 rooms. Real AI systems. Hands-on from start to =
+finish.</p>
+                        </td>
+                      </tr>
+
+                      <!-- CTA -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 20px;=
+">
+                          <table role=3D"presentation" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"margin:0 auto;">
+                            <tbody><tr>
+                              <td align=3D"center" bgcolor=3D"#a3ea2a" styl=
+e=3D"background-color:#a3ea2a; border-radius:10px; padding:15px 28px;">
+                                <a href=3D"https://e.customeriomail.com/e/c=
+/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk4ZG1aMnQ0YWFOdz=
+09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9wYXRoL291dGxpbmUvYWlzZWN1cml0e=
+T91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249=
+MjAyNmFpbGF1bmNoc2VnNXJlbWluZGVyIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWN=
+lMGRiMDMiLCJsaW5rX2lkIjozMjIxNn0/91ca2ee5bcb6fb25fc693625bcabb202fd40ce118a=
+0327229752949b13f178d0" class=3D"cta-a" style=3D"font-family:Arial, Helveti=
+ca, sans-serif; font-size:15px; font-weight:700; color:#151d2b; text-decora=
+tion:none; white-space:nowrap;">Explore the AI Security Learning Path</a>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Divider -->
+                      <tr><td style=3D"border-top:1px solid #2a3650; paddin=
+g-bottom: 22px;"></td></tr>
+
+                      <!-- Closing copy -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 8px;"=
+>
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Whether you're learning cyber or already workin=
+g in it, this is one of the fastest-moving areas right now.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center">
+                          <p class=3D"body-p" style=3D"text-align:center; f=
+ont-style:italic; color:#8c9ab3;">
+                            No pressure. Just making sure you've seen what'=
+s inside.
+                          </p>
+                        </td>
+                      </tr>
+
+                    </tbody></table>
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align=3D"center" style=3D"padding: 28px 20px 10px 20px;">
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"margin:0 auto 24px auto;">
+                <tbody><tr>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk=
+4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/aeb1ba=
+0cbb844d1b5289fedfea4510e175a49461946148fa994a69dcd1b2ed83" style=3D"text-d=
+ecoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/so=
+cial-networks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" w=
+idth=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk=
+4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW=
+50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/2c044=
+054cd142de1928362272f51eecd1901baf68d87d4b993ce2ec538dc9fe8" style=3D"text-=
+decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/s=
+ocial-networks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=
+=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk=
+4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja2=
+1lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/14=
+0c67f9548434f2ef8cd700da5e4282ce7ffb35aa11a99c08cabdb3a5a5c24e" style=3D"te=
+xt-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resource=
+s/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Inst=
+agram" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk=
+4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aG=
+Fja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyM=
+jE5OX0/a7520b2b0faaa5eeb0ef1876889474f409ea1340710a66e5d3af99740e7f5bdc" st=
+yle=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public=
+/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=
+=3D"LinkedIn" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk=
+4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrbW=
+UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxf=
+Q/3dcc25a789ff8dd35b5d0517eeb76b2201f726809e819eb443172700cc46e929" style=
+=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"=
+YouTube" width=3D"30"/></a></td>
+                </tr>
+              </tbody></table>
+              <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, =
+sans-serif; font-size:14px; line-height:1.6; color:#ffffff; text-align:cent=
+er;">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyYTBxRDNtREk4ZG1aMnQ0YWFOdz09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/0097285ec13e27b24f0bb5cdedd41fd330439ce1d50=
+bd3b59cc588df7d654a94" class=3D"footer-link">Terms</a> =C2=A0|=C2=A0 <a hre=
+f=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ2a0qD3m=
+DI8dmZ2t4aaNw=3D=3D" class=3D"footer-link">Unsubscribe</a>
+              </p>
+              <p style=3D"margin:0; font-family:Arial, Helvetica, sans-seri=
+f; font-size:14px; line-height:1.6; color:#ffffff; text-align:center;">=C2=
+=A9 2026 TryHackMe. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVoyYTBxRDNtREk4ZG1aMnQ0YWFOdz09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--952580359a0deda5dae9f7fa725575a1a0a9757d82a7ad56c5a39051e89f--

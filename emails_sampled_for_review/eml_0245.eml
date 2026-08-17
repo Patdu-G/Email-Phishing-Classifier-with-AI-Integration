@@ -1,0 +1,750 @@
+X-GM-THRID: 1868616211957655210
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:5e09:b0:29b:179e:1f84 with SMTP id q9csp5133280rwn;
+        Sun, 21 Jun 2026 07:14:48 -0700 (PDT)
+X-Received: by 2002:a0c:f985:0:b0:8d9:fb0b:e09d with SMTP id
+ 6a1803df08f44-8de411e7490mr151562546d6.23.1782051288422;
+        Sun, 21 Jun 2026 07:14:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1782051288; cv=none;
+        d=google.com; s=arc-20260327;
+        b=AgPez6iAbphRaNaCW/H7WHsG/RbgauYGiHxk5n2KEdDp/Z0H+VoCAu+12Ttb8siwAF
+         K7Tc2gQZ6JMfgIC9DRjpZ5px72Eqp1IEEBqs5ISJPGUd7Cnm+Z/wwVUTIdadmWyojMTS
+         SONNql1CLnkrNPn+0GYSv52v4kYim5Hq0kOiIDN4pYl8hPEqmAqqDADLEXYSOACxOM1A
+         E3GN7o+BPXWnal65hDy0F3shyuh/EVLbmbVKGHJ/vRBB0okGT17n1jMz6G8lC6IiRqQX
+         yJxQ6F3FSAiWHGlwvlZeKArfuLPhanKOCsyb/DZelbtIXKz2HJN7uVsnOvuKc/uod05f
+         IHjg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=feedback-id:precedence:list-id:list-unsubscribe-post
+         :list-unsubscribe:mime-version:subject:message-id:cc:to:reply-to
+         :from:date:dkim-signature:dkim-signature;
+        bh=rJkcDhDRujUANxit0cq+M3MqzujzT9/Y+5xK33QQqyM=;
+        fh=2NrTVEe0ipVhdRZARjn6k7Yle2/Xqqhj06yIu1Y8RLo=;
+        b=PypETdEoyKLVMiaqGjI025QN9wchW5ny1vhecIbTuYBqBlQAsCmsqQVE0+qLconJfP
+         3IaLFbdpyh0fz8Pve8cefcDjAHs0wKmdQVngUdJQs37OTs6p3kw3YL/OYlD5dp6GCarm
+         U8jO83IxpLKYk55WrPS/38mrMhj9f5/WFvwlJqnkyz2Bzb6/dl78cGtzUdVlAd6un0Yh
+         nVAktr6esyuV+75IuMZ6bdtzNLW5ipngiyISX0pEOVPkksB28qUFETSldw0Jxg4+Psyb
+         9HIuWwwQLViJP12D7QvqKD8ZlYFVTttUkXTY2g5jI2o03CkyZ/iGd2L4F8eGHE74Hsrx
+         VzWA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ollama.com
+ header.s=elfmudtlneeqwtkhh5dcvjpsfwxoewoe header.b=TX7eRSKO;
+       dkim=pass header.i=@amazonses.com
+ header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=fVfrjUSm;
+       spf=pass (google.com: domain of
+ 0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@envelope.ollama.com
+ designates 24.110.89.109 as permitted sender)
+ smtp.mailfrom=0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@envelope.ollama.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=ollama.com
+Return-Path: 
+ <0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@envelope.ollama.com>
+Received: from i89-109.smtp-out.amazonses.com (i89-109.smtp-out.amazonses.com.
+ [24.110.89.109])
+        by mx.google.com with ESMTPS id
+ 6a1803df08f44-8dff32c5f8fsi53024116d6.619.2026.06.21.07.14.48
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 21 Jun 2026 07:14:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ 0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@envelope.ollama.com
+ designates 24.110.89.109 as permitted sender) client-ip=24.110.89.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ollama.com
+ header.s=elfmudtlneeqwtkhh5dcvjpsfwxoewoe header.b=TX7eRSKO;
+       dkim=pass header.i=@amazonses.com
+ header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=fVfrjUSm;
+       spf=pass (google.com: domain of
+ 0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@envelope.ollama.com
+ designates 24.110.89.109 as permitted sender)
+ smtp.mailfrom=0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@envelope.ollama.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=ollama.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=elfmudtlneeqwtkhh5dcvjpsfwxoewoe; d=ollama.com; t=1782051288;
+	h=Date:From:Reply-To:To:Cc:Message-ID:Subject:MIME-Version:List-Unsubscribe:List-Unsubscribe-Post:List-ID:Content-Type;
+	bh=5GuAYWf79xiQb058Ve6hVEbGUZqG6xpbwloq3CCC4ZE=;
+	b=TX7eRSKOoAjd2yLOvzRcW0S+yDHKrjuo2g13cLqkqm+mIP/eKcgvsiJYFTw/yufb
+	k/EfA7FEXlfjTl99vurV3qowYA5ljvqtkOwExmqvp6OsTIU7feiOkALHgiDH6I6A8QX
+	aoZrVBdksWqEYKQyA1VlqZGa0hH9jMX9X4mdQXT4Cxpe2Gz9J3b1uDViUnTSDdnc+22
+	GTXj3xw7vkNDW8KupUmoeqEdj9a6H9XB+14rqST8rDMJ0V3GIc+lClku9rDVLPo0VB/
+	VJ6URe0/Og5LejLwmNLIXPTqBBDr+dRZOnsMnWDhYncLTg9J4FfkX0+WbBvSE7vON1Q
+	CHlpvwDOrw==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1782051288;
+	h=Date:From:Reply-To:To:Cc:Message-ID:Subject:MIME-Version:List-Unsubscribe:List-Unsubscribe-Post:List-ID:Content-Type:Feedback-ID;
+	bh=5GuAYWf79xiQb058Ve6hVEbGUZqG6xpbwloq3CCC4ZE=;
+	b=fVfrjUSmGZN8t+ZVArDXP2Iwfw/3N3Q7tQ1DsUM0sUl1ai5ybkR3Nb1VWyZpco8h
+	Il9ds2AG5TEll2Rcxqs3lrSCP/gNG+xEa1FJ5BimadoGC04MmhvET+q40gWcBuG/L0a
+	p8FlohP6fDp4BbVDufeeC4hRy/eAXPVZJPAyWuMQ=
+Date: Sun, 21 Jun 2026 14:14:48 +0000
+From: Ollama <hello@ollama.com>
+Reply-To: Ollama <hello@ollama.com>
+To: patriogabrielpatdu@gmail.com
+Cc: 
+Message-ID: 
+ <0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000@email.amazonses.com>
+Subject: 
+ =?utf-8?B?RXh0cmEgdXNhZ2UgZm9yIE9sbGFtYeKAmXMgUHJvIGFuZCBNYXggcGxhbnM=?=
+MIME-Version: 1.0
+List-Unsubscribe: 
+ <mailto:cmqnvbq2tr3t101beg8nw8oz3+9d565369a01287bbf69cbcfaef9519b292fd32c1f0f572afa6facbf8eeaa8f93f929ea7c66241859288bdfbd48aedd0c7433eec4c76f197d4acaf44a@unsubscribe.loops.so?subject=unsubscribe>,<https://app.loops.so/unsubscribe/cmqnvbq2tr3t101beg8nw8oz3/9d565369a01287bbf69cbcfaef9519b292fd32c1f0f572afa6facbf8eeaa8f93f929ea7c66241859288bdfbd48aedd0c7433eec4c76f197d4acaf44a>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-ID: "Ollama" <general.ollama.com>
+Precedence: Bulk
+X-Auto-Response-Suppress: All
+Content-Type: multipart/alternative; boundary=h9nu9d8v25e
+Feedback-ID: 
+ :1.us-east-1.JDzjX75ORX7ZOlDQyH3e+sAhM8zXt0YcbCHaAUiTifupgpKOd0I9rAZkeLPRsSzJJxHTof/pHxfonOD0A05jDGayFrCfJJZf9pd+N1bB5d6OKiOV9J4UJMd5BbKaJxykDuLbmlFxDOt6RI624h7C+sx/dQ4pKDGs1SnKa2fxkKM=:1.us-east-1.1nRXWOT+ETvogqnAUaOa7HjKGx1p40xVES7T8DfH/Gc=:AmazonSES
+X-SES-Outgoing: 2026.06.21-24.110.89.109
+
+--h9nu9d8v25e
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+=C2=A0
+
+
+
+If you're on Ollama's Pro and Max plans and reach your 5-hour =
+session or weekly usage limit, you can purchase extra usage to
+continue access without waiting for your limit to reset. Extra usage can be=
+ managed in settings [https://ollama.com/settings].
+=C2=A0
+
+Add extra usage [https://ollama.com/extra-usage]
+
+=C2=A0
+Not yet on a Pro or Max plan? Upgrade your plan [https://ollama.=
+com/pricing] to access larger models using Ollama's cloud.
+=C2=A0
+Efficient pricing, US-hosted open models
+Ollama's extra usage consumes =
+credits 4-6x more efficiently than usage credits for proprietary models. =
+Extra usage credits can be
+used towards all models on Ollama's cloud =
+including GLM-5.2, hosted in the US with zero data retention.
+=C2=A0
+Automatic reloading
+Enable automatic reloading to refresh your extra usage =
+balance with no interruption or manual steps required.
+=C2=A0
+Spend limits
+You can set a spend limit to control how much extra usage will be =
+automatically reloaded for a given month. If you hit your spend
+limit, you=E2=80=99ll pause at the included usage limits until the next =
+billing cycle or until you increase your spend limit.
+=C2=A0
+=E2=9D=A4=EF=B8=8F Ollama
+=C2=A0
+You are receiving this email because you =
+opted in to receive updates from Ollama
+Ollama, 744 High Street, Palo Alto,=
+ CA 94301
+Unsubscribe [https://app.loops.so/unsubscribe/cmqnvbq2tr3t101beg8=
+nw8oz3/9d565369a01287bbf69cbcfaef9519b292fd32c1f0f572afa6facbf8eeaa8f93f929=
+ea7c66241859288bdfbd48aedd0c7433eec4c76f197d4acaf44a]
+
+--h9nu9d8v25e
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"en" dir=3D"auto" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns=
+:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:o=
+ffice:office" style=3D"background-color: #FFFFFF;">
+  <head>
+    <title>Extra usage for Ollama=E2=80=99s Pro and Max plans</title>
+    <!--[if !mso]><!-->
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <!--<![endif]-->
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <style type=3D"text/css">
+      #outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }
+    </style>
+    <!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]-->
+    <!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]-->
+   =20
+   =20
+    <style type=3D"text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+      }
+    </style>
+    <style media=3D"screen and (min-width:480px)">
+      .moz-text-html .mj-column-per-100 { width:100% !important; max-width:=
+ 100%; }
+    </style>
+   =20
+   =20
+ =20
+   =20
+    <style type=3D"text/css">
+
+    @media only screen and (max-width:479px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+ =20
+    </style>
+    =20
+    <style type=3D"text/css">
+.wfix {
+          max-width: 600px !important;
+        }
+       =20
+        @media(max-width: 480px) {
+          .body-image-mobile-width-381 td { width: 381px !important; }
+          .body-image td  { max-width: 100% !important; }
+          .body-image img  { box-sizing: border-box; }
+          .social-icon-mobile-spacer {
+            display: inline-block !important;
+          }
+        }
+       =20
+    .mobile-only { display: none !important; } .desktop-only { display: blo=
+ck !important; }
+    @media(max-width: 480px) { .column-stack { width: 100% !important; max-=
+width: 100% !important; display: block !important; } .column-stack td,.colu=
+mn-stack th { padding-left: 0 !important; padding-right: 0 !important; } .m=
+obile-only { display: block !important; } .desktop-only { display: none !im=
+portant; } }
+    </style>
+    <style>
+          .wrapper {
+            padding: 0 12px;
+          }
+
+          /* Superhuman selector */
+          .ShadowHTML .wrapper {
+            padding: 0 !important;
+          }
+        =20
+        =20
+        =20
+        =20
+  .ShadowHTML :is(.styleUnquotedContent .unquoted-content, .styleUnquotedCo=
+ntent .sh-unquoted-content, .styleQuotedContent .sh-quoted-content, .sh-sig=
+nature, .Signature-settings) :is(td.column-container, div[class^=3D"mj-colu=
+mn-per-"]){font-size:0!important}
+  html.sh-color :is(td.column-container, div[class^=3D"mj-column-per-"], di=
+v.mj-column-per-100.mj-outlook-group-fix){font-size:0!important}
+  @media(max-width:480px){
+    html.sh-color .column-stack{width:100%!important;max-width:100%!importa=
+nt;display:block!important}
+    html.sh-color :is(.column-stack td,.column-stack th){padding-left:0!imp=
+ortant;padding-right:0!important;width:100%!important;max-width:100%!import=
+ant;display:block!important}
+    html.sh-color :is(.column-stack, .column-stack *){word-break:break-word=
+!important;overflow-wrap:anywhere!important}
+    html.sh-color :is(.column-persist, .column-persist *){word-break:break-=
+word!important;overflow-wrap:anywhere!important}
+  }
+  html.sh-color a[href^=3D"tel:"]{color:inherit!important;text-decoration:n=
+one!important;font-size:inherit!important;line-height:inherit!important;let=
+ter-spacing:inherit!important;vertical-align:baseline!important}
+
+        =20
+      .isMarketing { background-color: #FFFFFF !important; }
+      .isMarketing .styled-primary-column { background-color: transparent !=
+important; border-radius: 12px; }
+   =20
+        =20
+         [class~=3D"x_social-icon-dark-mode"] { display: none !important; m=
+so-hide:all;  width: 0px !important; padding: 0px !important; }
+
+          /* Gmail selectors */
+          u + .body .wrapper {
+            padding: 0 !important;
+          }
+          div > u + .body .wrapper {
+            padding: 0 !important;
+          }
+         =20
+    a { text-decoration: none; color: #2D2A2A; }
+   =20
+ =20
+         =20
+         =20
+          .link-unsubscribe { color: #9ca3af !important; }
+          </style>
+<meta name=3D"color-scheme" content=3D"light">
+          <meta name=3D"supported-color-schemes" content=3D"light">
+  </head>
+ =20
+      <body class=3D"body email-body" style=3D"word-spacing:normal;backgrou=
+nd-color:#FFFFFF;">
+       =20
+    <div style=3D"display:none;font-size:1px;color:#ffffff;line-height:1px;=
+max-height:0px;max-width:0px;opacity:0;overflow:hidden;"></div>
+ =20
+        <div aria-label=3D"Extra usage for Ollama=E2=80=99s Pro and Max pla=
+ns" aria-roledescription=3D"email" role=3D"article" lang=3D"en" dir=3D"auto=
+" style=3D"word-spacing:normal;background-color:#FFFFFF;">
+        <img alt=3D"" src=3D"https://c.vialoops.com/CI0/0100019eea88b3cc-86=
+8bb311-cde1-4058-8220-27bd3626cf0b-000000/DeelKVxJ8y87wnNifjz9H4UvrAKsFbHrP=
+TESVDmrq34=3D452" style=3D"display: none; width: 1px; height: 1px;">
+
+        <!--[if mso]><style type=3D"text/css"> a { text-decoration: underli=
+ne !important; } .button a { text-decoration: none !important; } .outlook-l=
+ist-fix { margin-left:4px !important; } .outlook-break-full-link { word-bre=
+ak: break-all !important; } .outlook-hide-social-icon { display: none !impo=
+rtant; mso-hide:all; width: 0px !important; padding: 0px !important; } .out=
+look-hide-social-icon * { display: none !important; mso-hide:all; width: 0p=
+x !important; padding: 0px !important; } .outlook-hide-social-icon table { =
+display: none !important; mso-hide:all; width: 0px !important; padding: 0px=
+ !important; } .outlook-hide-social-icon tbody { display: none !important; =
+mso-hide:all; width: 0px !important; padding: 0px !important; } .outlook-hi=
+de-social-icon tr { display: none !important; mso-hide:all; width: 0px !imp=
+ortant; padding: 0px !important; } .outlook-hide-social-icon td { display: =
+none !important; mso-hide:all; width: 0px !important; padding: 0px !importa=
+nt; } .outlook-hide-social-icon img { display: none !important; mso-hide:al=
+l; width: 0px !important; padding: 0px !important; } .outlook-hide-social-i=
+con a { display: none !important; mso-hide:all; width: 0px !important; padd=
+ing: 0px !important; }
+</style><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"wfix-outlook gmail-no-padding-outlook wrapper-outlook" role=
+=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"li=
+ne-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+   =20
+     =20
+      <div class=3D"wfix gmail-no-padding wrapper" style=3D"margin:0px auto=
+;max-width:600px;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:20px 0;paddi=
+ng-top:0;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"wfix-outlook" width=
+=3D"600px" ><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"wfix-outlook" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-h=
+eight-rule:exactly;"><![endif]-->
+   =20
+     =20
+      <div class=3D"wfix" style=3D"margin:0px auto;max-width:600px;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:20px 0;paddi=
+ng-bottom:24px;padding-left:0px;padding-right:0px;padding-top:24px;text-ali=
+gn:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center" class=3D"wfix=
+-outlook rounded-corners-outlook styled-primary-column-outlook" style=3D"ve=
+rtical-align:top;width:600px;" ><![endif]-->
+           =20
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix wfix rounded-cor=
+ners styled-primary-column" style=3D"font-size:0px;text-align:left;directio=
+n:ltr;display:inline-block;vertical-align:top;width:100%;">
+       =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"100%" style=3D"border-collapse: separate;">
+        <tbody>
+          <tr>
+            <td style=3D"background-color:transparent;border-radius:12px;ve=
+rtical-align:top;border-collapse:separate;padding-top:4px;padding-right:24p=
+x;padding-bottom:4px;padding-left:24px;">
+             =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style width=3D"100%">
+        <tbody>
+         =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"center" class=3D"body-image body-image-mobile-=
+width-381" style=3D"font-size:0px;padding:10px 25px;padding-top:4px;padding=
+-right:0px;padding-bottom:4px;padding-left:0px;word-break:break-word;">
+                 =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:collapse;border-spacing:0px;">
+        <tbody>
+          <tr>
+            <td style=3D"width:381px;">
+             =20
+      <img alt src=3D"https://images.vialoops.com/cmqcqbndn085k0jx17u66din0=
+/cmqldu4mc00oh0j084krbehr0.png" style=3D"border:0;border-radius:48px;displa=
+y:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:=
+13px;" width=3D"381" height=3D"auto">
+   =20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"line-height: 25px !important; font-size: 14px; font-size: =
+14px !important; white-space: pre-wrap;">If you're on Ollama's Pro and Max =
+plans and reach your 5-hour session or weekly usage limit, you can purchase=
+ extra usage to continue access without waiting for your limit to reset. Ex=
+tra usage can be managed in </span><a target=3D"_blank" rel=3D"noopener nor=
+eferrer" class=3D"body-link dark-force" href=3D"https://c.vialoops.com/CL0/=
+https:%2F%2Follama.com%2Fsettings/1/0100019eea88b3cc-868bb311-cde1-4058-822=
+0-27bd3626cf0b-000000/eqbOeYe6BpXddNe3mB_0Zt_2u1jt8qRucdPHuDgVYRo=3D452" st=
+yle=3D"text-decoration: none; color: #2D2A2A;"><span style=3D"font-size: 14=
+px; white-space: pre-wrap; text-decoration: underline !important; line-heig=
+ht: 25px !important; font-size: 14px !important;" class=3D"underline">setti=
+ngs</span></a><span style=3D"line-height: 25px !important; font-size: 14px;=
+ font-size: 14px !important; white-space: pre-wrap;">.</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"button sh-button" style=3D"font=
+-size:0px;padding:10px 25px;padding-top:4px;padding-right:0px;padding-botto=
+m:4px;padding-left:0px;word-break:break-word;">
+                 =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:separate;line-height:100%;">
+        <tbody>
+          <tr>
+            <td align=3D"center" bgcolor=3D"#000000" role=3D"presentation" =
+style=3D"border:none;border-radius:100px;cursor:auto;mso-padding-alt:12px=
+=20
+  16px;background:#000000;" valign=3D"middle">
+              <a href=3D"https://c.vialoops.com/CL0/https:%2F%2Follama.com%=
+2Fextra-usage/1/0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-00000=
+0/NMFb9tNdb3oJa8qUMqBGCY270Ce6gR18vXdHDvIa1Nc=3D452" style=3D"display: inli=
+ne-block; background: #000000; color: #ffffff; font-family: ui-sans-serif, =
+sans-serif; font-weight: normal; margin: 0; text-decoration: none; text-tra=
+nsform: none; padding: 12px=20
+  16px; mso-padding-alt: 0px; border-radius: 100px; font-size: 15px !import=
+ant; line-height: 15px !important;" target=3D"_blank" class=3D"sh-preserve-=
+color">
+                Add extra usage
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"font-style: italic; font-size: 14px; white-space: pre-wrap=
+; line-height: 25px !important; font-size: 14px !important;" class=3D"itali=
+c">Not yet on a Pro or Max plan? </span><a target=3D"_blank" rel=3D"noopene=
+r noreferrer" class=3D"body-link dark-force" href=3D"https://c.vialoops.com=
+/CL0/https:%2F%2Follama.com%2Fpricing/1/0100019eea88b3cc-868bb311-cde1-4058=
+-8220-27bd3626cf0b-000000/0GaiVB06WBm7y8KCoABNZX7SebUzTce83fUy_Tc99Uo=3D452=
+" style=3D"text-decoration: none; color: #2D2A2A;"><span style=3D"font-styl=
+e: italic; font-size: 14px; white-space: pre-wrap; text-decoration: underli=
+ne !important; line-height: 25px !important; font-size: 14px !important;" c=
+lass=3D"italic underline">Upgrade your plan</span></a><span style=3D"font-s=
+tyle: italic; font-size: 14px; white-space: pre-wrap; line-height: 25px !im=
+portant; font-size: 14px !important;" class=3D"italic"> to access larger mo=
+dels using Ollama's cloud.</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"font-weight: 600; font-size: 14px; white-space: pre-wrap; =
+line-height: 25px !important; font-size: 14px !important;" class=3D"bold">E=
+fficient pricing, US-hosted open models</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"line-height: 25px !important; font-size: 14px; font-size: =
+14px !important; white-space: pre-wrap;">Ollama's extra usage consumes cred=
+its 4-6x more efficiently than usage credits for proprietary models. Extra =
+usage credits can be used towards all models on Ollama's cloud including GL=
+M-5.2, hosted in the US with zero data retention.</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"font-weight: 600; font-size: 14px; white-space: pre-wrap; =
+line-height: 25px !important; font-size: 14px !important;" class=3D"bold">A=
+utomatic reloading</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"line-height: 25px !important; font-size: 14px; font-size: =
+14px !important; white-space: pre-wrap;">Enable automatic reloading to refr=
+esh your extra usage balance with no interruption or manual steps required.=
+</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"font-weight: 600; font-size: 14px; white-space: pre-wrap; =
+line-height: 25px !important; font-size: 14px !important;" class=3D"bold">S=
+pend limits</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"line-height: 25px !important; font-size: 14px; font-size: =
+14px !important; white-space: pre-wrap;">You can set a spend limit to contr=
+ol how much extra usage will be automatically reloaded for a given month. I=
+f you hit your spend limit, you=E2=80=99ll pause at the included usage limi=
+ts until the next billing cycle or until you increase your spend limit.</sp=
+an></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span style=3D"line-height: 25px !important; font-size: 14px; font-size: =
+14px !important; white-space: pre-wrap;">=E2=9D=A4=EF=B8=8F Ollama</span></=
+div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;=
+padding-left:0px;word-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:14px;le=
+tter-spacing:0px;line-height:25px !important;text-align:left;color:#2D2A2A;=
+"><span>&nbsp;</span></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td align=3D"left" class=3D"dark-force" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:24px;padding-right:0px;padding-left:0px;w=
+ord-break:break-word;">
+                 =20
+      <div style=3D"font-family:ui-sans-serif, sans-serif;font-size:12px;le=
+tter-spacing:0px;line-height:21px !important;text-align:left;color:#9ca3af;=
+"><span class=3D"opt-in-explanation" style=3D"color: #9ca3af !important; fo=
+nt-size: 12px !important; line-height: 21px !important;">
+  You are receiving this email because you opted in to receive updates from=
+ Ollama<br>
+  Ollama, 744 High Street, Palo Alto, CA 94301<br>
+  <a style=3D"font-weight: 600; color: #9ca3af !important; text-decoration:=
+ none !important; font-size: 12px !important; line-height: 21px !important;=
+" href=3D"https://c.vialoops.com/CL0/https:%2F%2Fapp.loops.so%2Funsubscribe=
+%2Fcmqnvbq2tr3t101beg8nw8oz3%2F9d565369a01287bbf69cbcfaef9519b292fd32c1f0f5=
+72afa6facbf8eeaa8f93f929ea7c66241859288bdfbd48aedd0c7433eec4c76f197d4acaf44=
+a/1/0100019eea88b3cc-868bb311-cde1-4058-8220-27bd3626cf0b-000000/MkZmZs-xIB=
+O5u2rWQ5y3RzWema7XZdoLLyWwU_zkkPI=3D452" target=3D"_blank" rel=3D"noopener =
+noreferrer" class=3D"bold link-unsubscribe">
+  Unsubscribe
+  </a>
+  </span></div>
+   =20
+                </td>
+              </tr>
+           =20
+        </tbody>
+      </table>
+   =20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+      </div>
+   =20
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+   =20
+     =20
+      <!--[if mso | IE]></td></tr></table></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+   =20
+     =20
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+   =20
+   =20
+      </div>
+      </body>
+   =20
+</html>
+ =20
+
+--h9nu9d8v25e--

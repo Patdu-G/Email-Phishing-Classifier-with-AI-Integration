@@ -1,0 +1,575 @@
+X-GM-THRID: 1870324600111953131
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:a5b:b0:2a5:d81a:dd30 with SMTP id 27csp150766rwb;
+        Fri, 10 Jul 2026 03:48:54 -0700 (PDT)
+X-Received: by 2002:a05:620a:4093:b0:92e:8405:7ad2 with SMTP id
+ af79cd13be357-92ecf5e5328mr1131639985a.41.1783680534043;
+        Fri, 10 Jul 2026 03:48:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1783680534; cv=none;
+        d=google.com; s=arc-20260327;
+        b=QJoI4hiFcKRSyvTETtV4bjOYiqgfKsYEZ1jH+D6tESuJkwm2UnWcaY6n3J0UmvC51B
+         S8MPx/ZubpgTPwe0SMipoKALPZYQgZR4WnsCM1jI8tux6R/Ay3GMjhlZ6OGtZDZ04luf
+         cN7roZnb1a4YdUBrUc2WxBGj+h1lXUCAvVdbDLLSGZEa8xbPV9R7PpnvPRhm6k8w/M8J
+         yryoGiyzBnKVq9rNCejPQxtSVZ5nGf3LnpdW9csCeqCuuqdMQ6Xh4LfT9GPCyxIaTTSA
+         0tMAApPeQUS9qTORcYDDP1OA6f+vMrr2Wd5+PAO+QFWhYjS5ZsMKc6mUmJgH5e/kH4B9
+         zXPQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=message-id:list-unsubscribe:list-unsubscribe-post:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=ZnvyYT6khzVV6ZejbNzxK5Oy2xCJAaGpWa8sbnbsL34=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=Qpcvxo/oYikhaTTJfi9Fat75aIEgayh113aac5xEluWu/pWuYePat+YkAHTCyHNmhI
+         W2Clh27MJZLpZkVMQGh9qFdUUarbzikz1/G5IKNAo/z/SvHeurkT7syJd7VeEu4eJVdg
+         eHGgtLzdouD/WJdqqJfdIKwlQZx7l3iG3JBMeTl0KT+lHtPfKx+1RtbBRt/t6B1ui8wO
+         0tQTRQAQ34lAGXWlrN55dL/echXKtraaK1rEJM+dQVBxO7LUTPNv9che18v7H190X/q2
+         mSQpRRdNPnB1Uvw8fMgcfrPTzulxAbgnkv0epSaTqee5SkDnY8aTNeAj7HuXFRwnxmCX
+         5qNQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=GQXl2MRc;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=HBLjth8m;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5138.v5c4dda55.use4.send.mailgun.net
+ (v5138.v5c4dda55.use4.send.mailgun.net. [159.112.241.138])
+        by mx.google.com with UTF8SMTPS id
+ af79cd13be357-92ee5cfe002si193558785a.172.2026.07.10.03.48.53
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 10 Jul 2026 03:48:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender) client-ip=159.112.241.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=GQXl2MRc;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=HBLjth8m;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1783680533; x=1783687733;
+ h=Message-Id: List-Unsubscribe: List-Unsubscribe-Post: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=ZnvyYT6khzVV6ZejbNzxK5Oy2xCJAaGpWa8sbnbsL34=;
+ b=GQXl2MRczIrWd2zweUTKz/JG9Rz3Jswp2awGaBQ+5KS2dyEeEQRybVMSqSw2Nh5K04uWvGg4pFIWvpFCSVzPyL2ykOdWHMo4Zr2tFKCsmOXYztxL0qIeFGp8kuLA9CU6JLq6xLzBHZdAl2iZ0PI0v9B6IFf8JFhShzkuUi3uxr0=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1783680533; x=1783687733;
+ h=Message-Id: List-Unsubscribe: List-Unsubscribe-Post: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=ZnvyYT6khzVV6ZejbNzxK5Oy2xCJAaGpWa8sbnbsL34=;
+ b=HBLjth8mP3+IuAg0ZD+gAMHL+N+wVWJhFkReYciDKSJCACCA9R2Eq7YVfQ1pDqd5oh+TzWthoY4r1UW/JAyFlbCtm7hURjZjhHVRivX6Yt2OtJhJIrQ8cmNHdvmciMaJbbjIZT+X7o7bBVvEqnQKjYcQyw940CAX0M6WxjRJinU=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by ddc4a873061f978634579d5046e657dedd8cd0b4e2569ec8d2ad20077484ed98
+ with HTTP
+ id 6a50ce15a82daeb8b5eb0a43; Fri, 10 Jul 2026 10:48:53 GMT
+X-Mailgun-Sending-Ip: 159.112.241.138
+Date: Fri, 10 Jul 2026 10:48:53 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="b3f27b32023528d6a595cda9a0a0b71cc7646e04195b04b40bd456742da6"
+Subject: =?UTF-8?q?=E2=8F=B0_Last_chance:_30%_off_Premium_ends_today?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ9LpPwgB6hnaHoybMM5lw==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNDSTDQKB3WOQRWNBXGCSDPPFRE2TJVNR3T2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ9LpPwgB6hnaHoybMM5lw==>
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ9LpPwgB6hnaHoybMM5lw=="}
+Message-Id: <20260710104853.c66172b795cee38f@cio56239.tryhackme.com>
+
+--b3f27b32023528d6a595cda9a0a0b71cc7646e04195b04b40bd456742da6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Your 30% off offer disappears at midnight. This is your last chance to lock=
+ it in. =C2=A0
+
+Last chance. 30% off Premium Annual ends tonight at 11:59 PM UK time.
+
+TryHackMe ( https://tryhackme.com/dashboard )
+
+30% off Premium Annual ( https://tryhackme.com/why-subscribe?utm_source=3Dc=
+io&utm_medium=3Demail&utm_campaign=3D2026julflashsale30lastday )
+
+Ends Tonight
+
+************
+Last chance.
+************
+
+Make it count.
+
+The final hours of our summer offer are here.
+
+30% off Premium Annual, and it ends tonight at 11:59 PM UK time.
+
+If you've been thinking about it, this is the moment. After tonight, the pr=
+ice goes back up.
+
+One decision. A whole summer (and beyond) of building real skills.
+
+With Premium, you get
+
+=E2=9C=8F=EF=B8=8F
+Full access to Beginner & Intermediate Learning Paths
+
+=F0=9F=8E=AF
+Structured paths that take you from zero to job-ready
+
+=F0=9F=9A=80
+Real-world skills you can put in front of employers
+
+=F0=9F=93=8B
+A clear direction instead of figuring it out alone
+
+Don't let it slip. Lock in 30% off before midnight tonight.
+
+Claim 30% Off, Last Chance ( https://tryhackme.com/why-subscribe?utm_source=
+=3Dcio&utm_medium=3Demail&utm_campaign=3D2026julflashsale30lastday )
+
+Offer ends 10 July 2026 at 11:59 PM UK time. No extensions.
+
+This offer is valid for free users only. Applies exclusively to annual plan=
+ purchases and cannot be combined with other discounts, including student o=
+ffers. Offer ends 10 July 2026 at 11:59 PM UK time.
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) =C2=A0|=C2=A0 Unsubscribe ( https://t=
+rack.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ9LpPwgB6hnaHoybMM5lw=3D=
+=3D )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--b3f27b32023528d6a595cda9a0a0b71cc7646e04195b04b40bd456742da6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"color-scheme" content=3D"light only"/>
+  <meta name=3D"supported-color-schemes" content=3D"light"/>
+  <title>TryHackMe =E2=80=93 July Flash Sale  30% Last Chance</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #151d2b; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-spacing: 0; border-collapse: collapse; }
+    img { border: 0; display: block; max-width: 100%; height: auto; }
+    .wrap { width: 100%; max-width: 600px; }
+    .body-p { font-family: Arial, Helvetica, sans-serif; font-size: 16px; l=
+ine-height: 1.75; color: #d7e1f0; margin: 0; }
+    .headline { font-family: Arial, Helvetica, sans-serif; font-size: 32px;=
+ line-height: 1.2; font-weight: 700; color: #ffffff; margin: 0; }
+    .pill { display: inline-block; font-family: Arial, Helvetica, sans-seri=
+f; font-size: 12px; line-height: 1; letter-spacing: 1px; text-transform: up=
+percase; color: #a3ea2a; background-color: #24324a; border: 1px solid #3347=
+6a; border-radius: 999px; padding: 8px 14px; }
+    .cta-a { display: inline-block; font-family: Arial, Helvetica, sans-ser=
+if; font-size: 16px; line-height: 1; font-weight: 700; color: #151d2b !impo=
+rtant; text-decoration: none; background-color: #a3ea2a; border-radius: 10p=
+x; padding: 16px 28px; }
+    .footer-link { color: #ffffff !important; text-decoration: underline; }
+    @media screen and (max-width: 620px) {
+      .wrap { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad { padding-left: 20px !important; padding-right: 20px !imp=
+ortant; }
+      .headline { font-size: 28px !important; }
+      .body-p { font-size: 15px !important; }
+      .cta-a { display: block !important; width: 100% !important; box-sizin=
+g: border-box !important; text-align: center !important; }
+    }
+  </style>
+</head>
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">Your 30% off offer disappears at midnight. This is your =
+last chance to lock it in. =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD=C2=A0</div>
+
+  <!-- Preheader -->
+  <div style=3D"display:none; max-height:0; overflow:hidden; opacity:0; mso=
+-hide:all;">
+    Last chance.  30% off Premium Annual ends tonight at 11:59 PM UK time.
+  </div>
+
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b;">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding: 24px 16px;">
+
+        <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" class=3D"wrap">
+
+          <!-- Logo -->
+          <tbody><tr>
+            <td align=3D"center" style=3D"padding: 0 0 22px 0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmhuYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmM=
+xMDFhY2UwZGIwMyIsImxpbmtfaWQiOjEyMX0/b4fddc2bcd4a19d13009ecad812f465a77ad33=
+81cf0354c11689a182df6d9347" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-bee.customeriomail.com/images/c=
+lient-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe" width=3D"118" sty=
+le=3D"width:118px; height:auto;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD TOP: Banner -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:16px 16px =
+0 0; padding:16px 16px 0; font-size:0; line-height:0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmhuYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS93aHktc3Vic2NyaWJlP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXR=
+tX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj0yMDI2anVsZmxhc2hzYWxlMzBsYXN0ZG=
+F5IiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozNDMzO=
+X0/7b4572287c096b7378d52eaf0bb9710185ba8ad13fa0b6c0e5f215d3dd446ed6" style=
+=3D"text-decoration:none;">
+                <img src=3D"https://userimg-assets.customeriomail.com/image=
+s/client-env-92874/01KWXQYRT2XS8G4GVRYA41D4EH.png" alt=3D" 30% off Premium =
+Annual" width=3D"568" style=3D"width:100%; max-width:568px; height:auto; di=
+splay:block; border-radius:10px;"/>
+              </a>
+            </td>
+          </tr>
+
+
+          <!-- CARD BOTTOM: Content -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:0 0 16px 1=
+6px;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0">
+                <tbody><tr>
+                  <td class=3D"mobile-pad" style=3D"padding: 32px 40px 36px=
+ 40px;">
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+
+                      <!-- Pill -->
+                      <tbody><tr>
+                        <td align=3D"center" style=3D"padding-bottom: 16px;=
+">
+                          <span class=3D"pill">Ends Tonight</span>
+                        </td>
+                      </tr>
+  <!-- Headline -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 18px;=
+">
+                          <h1 class=3D"headline">Last chance. </h1>
+                          <!-- italic, smaller, muted green -->
+                          <p style=3D"margin:10px 0 0 0; font-family:Georgi=
+a, 'Times New Roman', serif; font-size:18px; line-height:1.3; font-weight:4=
+00; font-style:italic; color:#7ec41a;">
+                            Make it count.
+                          </p>
+                        </td>
+                      </tr>
+                 =20
+
+                    =20
+
+                      <!-- Story -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 26px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            The final hours of our summer offer are here.<b=
+r/>
+                            <strong style=3D"color:#a3ea2a;"> 30% off Premi=
+um Annual,</strong> and it ends tonight at 11:59 PM UK time.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Story line 2 -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 26px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            If you've been thinking about it, this is the m=
+oment. After tonight, the price goes back up.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Story line 3 -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 26px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            One decision. A whole summer (and beyond) of bu=
+ilding real skills.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Benefits box label -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom:10px;"=
+>
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:14px; line-height:1.4; color:#a3ea2a; font-weight:=
+700; text-transform:uppercase; letter-spacing:.8px;">With Premium, you get<=
+/p>
+                        </td>
+                      </tr>
+
+                      <!-- Benefits box -->
+                      <tr>
+                        <td style=3D"background-color:#222d43; border:1px s=
+olid #30415f; border-radius:14px; padding:18px 20px;" align=3D"center">
+                          <table role=3D"presentation" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"margin:0 auto;">
+                           <tbody><tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 10px 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; l=
+ine-height:1.6; white-space:nowrap;" valign=3D"top">=E2=9C=8F=EF=B8=8F</td>
+                              <td valign=3D"top" style=3D"padding-bottom:10=
+px;"><p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-s=
+ize:15px; line-height:1.6; color:#e8eef8;">Full access to Beginner &amp; In=
+termediate Learning Paths
+</p></td>
+                            </tr>
+                            <tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 10px 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; l=
+ine-height:1.6; white-space:nowrap;" valign=3D"top">=F0=9F=8E=AF</td>
+                              <td valign=3D"top" style=3D"padding-bottom:10=
+px;"><p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-s=
+ize:15px; line-height:1.6; color:#e8eef8;">Structured paths that take you f=
+rom zero to job-ready</p></td>
+                            </tr>
+                            <tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 10px 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; l=
+ine-height:1.6; white-space:nowrap;" valign=3D"top">=F0=9F=9A=80</td>
+                              <td valign=3D"top" style=3D"padding-bottom:10=
+px;"><p style=3D"margin:0; font-family:Arial, Helvetica, sans-serif; font-s=
+ize:15px; line-height:1.6; color:#e8eef8;">Real-world skills you can put in=
+ front of employers</p></td>
+                            </tr>
+                            <tr>
+                              <td width=3D"24" style=3D"width:24px; padding=
+:0 10px 0 0; font-family:Arial, Helvetica, sans-serif; font-size:16px; line=
+-height:1.6; white-space:nowrap;" valign=3D"top">=F0=9F=93=8B</td>
+                              <td valign=3D"top"><p style=3D"margin:0; font=
+-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.6; colo=
+r:#e8eef8;">A clear direction instead of figuring it out alone</p></td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Closing line -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-top: 24px; pa=
+dding-bottom: 8px;">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Don't let it slip. Lock in  30% off before midn=
+ight tonight.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- CTA -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-top:20px; pad=
+ding-bottom:12px;">
+                          <table role=3D"presentation" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"center">
+                            <tbody><tr>
+                              <td bgcolor=3D"#a3ea2a" style=3D"border-radiu=
+s:10px;">
+                                <a href=3D"https://e.customeriomail.com/e/c=
+/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmhuYUhveWJNTTVsdz=
+09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS93aHktc3Vic2NyaWJlP3V0bV9zb3VyY=
+2U9Y2lvXHUwMDI2dXRtX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj0yMDI2anVsZmxh=
+c2hzYWxlMzBsYXN0ZGF5IiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJ=
+saW5rX2lkIjozNDMzOX0/7b4572287c096b7378d52eaf0bb9710185ba8ad13fa0b6c0e5f215=
+d3dd446ed6" style=3D"display:block;
+                                          padding:16px 28px;
+                                          font-family:Arial, Helvetica, san=
+s-serif;
+                                          font-size:16px;
+                                          font-weight:700;
+                                          line-height:16px;
+                                          color:#151d2b;
+                                          text-decoration:none;">
+Claim  30% Off, Last Chance              </a>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Sub-CTA -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 22px;=
+">
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:13px; line-height:1.6; color:#8c9ab3;">Offer ends =
+10 July 2026 at 11:59 PM UK time. No extensions.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- Divider + Disclaimer -->
+                      <tr>
+                        <td style=3D"border-top:1px solid #2a3650; padding-=
+top:16px;">
+                          <p style=3D"margin:0; font-family:Arial, Helvetic=
+a, sans-serif; font-size:12px; line-height:1.6; color:#71809d;">
+                            This offer is valid for free users only. Applie=
+s exclusively to annual plan purchases and cannot be combined with other di=
+scounts, including student offers. Offer ends 10 July 2026 at 11:59 PM UK t=
+ime.
+                          </p>
+                        </td>
+                      </tr>
+
+                    </tbody></table>
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align=3D"center" style=3D"padding: 28px 20px 10px 20px;">
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"margin:0 auto 24px auto;">
+                <tbody><tr>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmh=
+uYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/bda770=
+84dd377a829f27685a73eceb5d67c79f14291297e0315625f779e1b619" style=3D"text-d=
+ecoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/so=
+cial-networks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" w=
+idth=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmh=
+uYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW=
+50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/cde65=
+d0cdcafa1f46946aec231580ddf2f8769ecaba119df15f29cad8b4d7f1b" style=3D"text-=
+decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/s=
+ocial-networks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=
+=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmh=
+uYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja2=
+1lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/b8=
+619e61b0c9e622d48a123d63787ff67a9a649cb7e3628fe7749dc6cef48b58" style=3D"te=
+xt-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resource=
+s/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Inst=
+agram" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmh=
+uYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aG=
+Fja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyM=
+jE5OX0/0a81fae07580b1c98467ab5d56d10d192b4ba22cd6162878c7d45242a45d871a" st=
+yle=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public=
+/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=
+=3D"LinkedIn" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmh=
+uYUhveWJNTTVsdz09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrbW=
+UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxf=
+Q/30e74d0bdb383d14fca3e939c7424fdc72c7736cdda1553bb017bd2d3f4baeb9" style=
+=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"=
+YouTube" width=3D"30"/></a></td>
+                </tr>
+              </tbody></table>
+              <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, =
+sans-serif; font-size:14px; line-height:1.6; color:#ffffff; text-align:cent=
+er;">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo5THBQd2dCNmhuYUhveWJNTTVsdz09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/b912aa4145bed08402ee92df2b5177833c11de6790a=
+33f3c918bb64e43682240" class=3D"footer-link">Terms</a> =C2=A0|=C2=A0 <a hre=
+f=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ9LpPwgB=
+6hnaHoybMM5lw=3D=3D" class=3D"footer-link">Unsubscribe</a>
+              </p>
+              <p style=3D"margin:0; font-family:Arial, Helvetica, sans-seri=
+f; font-size:14px; line-height:1.6; color:#ffffff; text-align:center;">=C2=
+=A9 2026 TryHackMe. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVo5THBQd2dCNmhuYUhveWJNTTVsdz09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--b3f27b32023528d6a595cda9a0a0b71cc7646e04195b04b40bd456742da6--

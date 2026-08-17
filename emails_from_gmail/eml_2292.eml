@@ -1,0 +1,639 @@
+X-GM-THRID: 1779116187103421998
+X-Gmail-Labels: Inbox,Category Personal,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:cd85:0:b0:1e0:96db:5ad6 with SMTP id q5csp1101345eio;
+        Sat, 7 Oct 2023 09:50:13 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IGuaPeAw1ADg4KRpU7Xm/RyUSrmgvD61CS3sQ8PIhe8qNc2qhA+tcq8wuP5FPhaZvCqEJGq
+X-Received: by 2002:a05:6830:2089:b0:6c0:f0e6:a325 with SMTP id
+ y9-20020a056830208900b006c0f0e6a325mr11240833otq.16.1696697413461;
+        Sat, 07 Oct 2023 09:50:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696697413; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Cw7Zdl3Y4045w163iz0iEYAwGaw6OXro6tQtiP6iBnAQY63tuZI4eKHLqO745iHWRb
+         r8Xs/ChaJKTddJkpg30DhF5H6WcWo2CI3s/on0MBAAj0dcsoXygaVDHl8OUQGeh7i+SR
+         Tgx608KI/NR0MwQI7YkHnk/BPwRAbc49a7vNWYxLDCiakdoXggwoBUO9pY+hOOeJ5beZ
+         7axxqZI+xdYTA43D1CVCcxLI4Ls2I20Ui0cGdCB7wJC+qRsPmam9VNtxAC6LJ/BhhPh/
+         GOPAn5KoDzzNTzHOED5PHbSc0FwV6BUT8sy5iwgaCv3KHsGBU8ryjhmnelJvQ5noOGkx
+         AXoA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=feedback-id:message-id:list-id:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature;
+        bh=3ICYD9lPV9/QYfAiUhPvd0AwoP2AvxbpgGDUmTEHy8A=;
+        fh=f3FQLNOJu1B32Cm741XS53FMLTctkzAwk6CcouTEVw8=;
+        b=bt8JEpZDHWNIHS4DnmGfyTz9G5gHkYJTjq8pjnRBZPpOfo3Om62+BY+embUQx6JwiR
+         atnk2//IAbjUvHOyTtoPRWZo0eFzTT+JO3Evvv6ZRlzzTZ1a26piN2FyvpN4L+oTw6TH
+         FA/ns2jnWyK7O5nZiDEJkVciPIrUpHkqGinXfFU2NmKtext3LH/gxFE3QyKpBgoNzuOT
+         FhDTDYbndTTXePC6HJ1pzY1HQ6Tug+GiZn5XNLKBFPfG6Q+8QG6sz8n5CZdp+k2+XpSQ
+         fgTA6oX0PDSMelUaid6XLtfIf6JyjPyibL1MSqzc2s9245nViouqO+6GNdb6YNNmdnEM
+         KkHQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@em.riotgames.com header.s=10dkim1
+ header.b=pTNA7XT8;
+       spf=pass (google.com: domain of
+ bounce-2204_html-269218365-1106957-100025126-5019@bounce.em.riotgames.com
+ designates 13.111.142.79 as permitted sender)
+ smtp.mailfrom=bounce-2204_HTML-269218365-1106957-100025126-5019@bounce.em.riotgames.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=riotgames.com
+Return-Path: 
+ <bounce-2204_HTML-269218365-1106957-100025126-5019@bounce.em.riotgames.com>
+Received: from mta15.em.riotgames.com (mta15.em.riotgames.com.
+ [13.111.142.79])
+        by mx.google.com with ESMTPS id
+ b22-20020a056830311600b006bdcfaffff8si2200130ots.10.2023.10.07.09.50.13
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 07 Oct 2023 09:50:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounce-2204_html-269218365-1106957-100025126-5019@bounce.em.riotgames.com
+ designates 13.111.142.79 as permitted sender) client-ip=13.111.142.79;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@em.riotgames.com header.s=10dkim1
+ header.b=pTNA7XT8;
+       spf=pass (google.com: domain of
+ bounce-2204_html-269218365-1106957-100025126-5019@bounce.em.riotgames.com
+ designates 13.111.142.79 as permitted sender)
+ smtp.mailfrom=bounce-2204_HTML-269218365-1106957-100025126-5019@bounce.em.riotgames.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=riotgames.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=10dkim1;
+ d=em.riotgames.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=RiotGames@em.riotgames.com;
+ bh=3ICYD9lPV9/QYfAiUhPvd0AwoP2AvxbpgGDUmTEHy8A=;
+ b=pTNA7XT8yahVNueYTeX9Mant5YYgL7LA0AtmuuxdoqzBSCblFCOcXngXpYBs4brMogHJ9/vsXhMV
+   eM+Uue9ZDJ/kOc99rjrGbvJ7sUVL9WNsIEYzD99cDy/7nu5fGeqRHntIiRQb5oMgJKdeB9lZN/kG
+   blwN9p6ByGGN79zaUiOKJ2+OcZ+pkmASaPERwiwAQdEbgDHZXF3pASxhugOpD9SNn2TJotB+A8o6
+   fwd8zfpx0EBf4MRcCBUii1iJlTgf1+xoUNDsCPS2y6SilYCQw18EP0sJq2pwV+Y3QhvXKkwTFOOx
+   9ICmq3ghJ1KWksnwyL+gr1iipNvgBzs6V9orRQ==
+Received: by mta15.em.riotgames.com id h4664a2fmd49 for
+ <patriogabrielpatdu@gmail.com>;
+ Sat, 7 Oct 2023 16:50:11 +0000 (envelope-from <bounce-2204_HTML-269218365-1106957-100025126-5019@bounce.em.riotgames.com>)
+From: "Riot Games" <RiotGames@em.riotgames.com>
+To: <patriogabrielpatdu@gmail.com>
+Subject: We've Updated our Privacy Notice and Terms of Service
+Date: Sat, 07 Oct 2023 10:50:11 -0600
+List-Unsubscribe: 
+ <https://click.em.riotgames.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMDAwMjUxMjYiLCJzIjoiMjY5MjE4MzY1IiwibGlkIjoiMjIwNCIsImoiOiIxMTA2OTU3IiwiamIiOiI1MDE5IiwiZCI6IjEwMDE5MyJ9.qcVCERIq2kReYB2bUYsQY2ymfrJTyXYzUP1yRuzoBp4>,
+ <mailto:leave-fd23167275606b2531492c-fe2516767c660575761275-fe92157175620d7872-fe3e157075640678741676-ff301170746d@leave.em.riotgames.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+List-ID: <100025126.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 10
+x-job: 100025126_1106957
+Message-ID: <988270eb-cef4-4947-90b8-3d6e0020fc30@dfw1s10mta714.xt.local>
+Feedback-ID: 100025126:1106957:13.111.142.79:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="t5qU0oisIMMr=_?:"
+
+This is a multi-part message in MIME format.
+
+--t5qU0oisIMMr=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+
+Hey players,
+
+
+
+ We wanted to let you know that we will be updating our 
+http://www.riotgames.com/en/privacy-notice-2023 
+Privacy Notice  and 
+http://www.riotgames.com/en/terms-of-service-2023 
+Terms of Service  next month. You won't have to do anything new, but you can check out the new language in those links. These updates will go into effect 10/29/23.
+
+
+
+As always, thanks for playing! GLHF
+
+
+
+ - The Riot Games Team
+
+
+
+
+
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+
+ This is a service notification mailing.
+(c) 2023 Riot Games. All rights reserved
+Riot Games, Inc. 12333 West Olympic Blvd. Los Angeles, CA 90064, United States
+ 
+ 
+
+
+
+--t5qU0oisIMMr=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title></title>
+    <style type="text/css">
+        
+        #outlook a {
+            padding: 0;
+        }
+
+        body {
+            Margin: 0;
+            padding: 0;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+            .ExternalClass * {
+                line-height: 100%
+            }
+
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #ebebeb;
+        }
+
+        table, table td {
+            table-layout: fixed;
+            border-collapse: separate;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+
+        td, a, span {
+            border-collapse: seperate;
+            mso-line-height-rule: exactly;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: none;
+            outline: none !important;
+            display: block;
+        }
+ 
+      
+        .yshortcuts a {
+            border-bottom: none !important;
+        }
+
+        .ios-footer a {
+            color: #aaaaaa !important;
+            text-decoration: underline;
+        }
+
+        a, a img {
+            transition: all .25s;
+        }
+
+            a:hover {
+                opacity: .6;
+            }
+
+        p {
+            Margin: 0px !important;
+            Padding: 0px !important;
+        }
+
+        .sup {
+            font-size: 70%;
+            line-height: 150%;
+            vertical-align: top;
+            mso-text-raise: 70%;
+            border-collapse: seperate;
+            mso-line-height-rule: exactly;
+        }
+
+        .smallspacer {
+            font-size: 1px;
+            line-height: 1px;
+        }
+
+        .bgtable {
+            background-color: #000000;
+            width: 100%;
+            min-width: 100%;
+        }
+
+        body {
+            font-family: 'Avenir Book', sans-serif;
+            line-height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .preheader {
+            font-size: 10px;
+            line-height: 15px;
+            color: #1a1a18;
+        }
+
+            .preheader a {
+                text-decoration: underline;
+                color: #1a1a18;
+            }
+
+        .nav, .nav a {
+            font-family: 'Futura', sans-serif;
+            font-size: 13.2px;
+            line-height: 18px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .h1, .h1 a {
+            font-family: Avenir, sans-serif;
+            font-size: 16px;
+            line-height: 18px;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        .h2, .h2 a {
+            font-family: Avenir, sans-serif;
+            font-size: 31px;
+            line-height: 32px;
+            color: #1a1a18;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        .h3, .h3 a {
+            font-family: Avenir, sans-serif;
+            font-size: 20px;
+            line-height: 21px;
+            color: #3D4145;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .h4, .h4 a {
+            font-size: 18px;
+            line-height: 20px;
+            color: #1a1a18;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .body {
+            font-size: 13px;
+            line-height: 20px;
+            color: #454545;
+        }
+
+            .body a {
+                color: #D03639;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+        .footer, .footer a {
+            font-size: 13px;
+            line-height: 16px;
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        .cta-01 {
+            font-size: 16px;
+        }
+       
+      .cta-03 {
+            font-size: 12px;
+        }
+
+        .cta {
+            background-color: #3D4145;
+        }
+
+            .cta a {
+                font-family: Avenir, sans-serif;
+                font-size: 31px;
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+                line-height: 31px;
+                display: block;
+                padding: 10px 30px;
+            }
+
+        .cta2 {
+            background-color: #ffffff;
+            border: 1px solid #000000
+        }
+
+            .cta2 a {
+                font-family: Avenir, sans-serif;
+                font-size: 17px;
+                color: #000000;
+                text-decoration: none;
+                font-weight: bold;
+                line-height: 18px;
+                display: block;
+                padding: 6px 20px
+            }
+
+
+        .cta3 {
+            background-color: #3D4145;
+        }
+
+            .cta3 a {
+                font-family: Avenir, sans-serif;
+                font-size: 17px;
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+                line-height: 18px;
+                display: block;
+                padding: 6px 20px
+            }
+
+        .cta4 {
+            background-color: #E7E6E3;
+            border: 1px solid #000000
+        }
+
+            .cta4 a {
+                font-family: Avenir, sans-serif;
+                font-size: 17px;
+                color: #000000;
+                text-decoration: none;
+                font-weight: bold;
+                line-height: 18px;
+                display: block;
+                padding: 6px 20px
+            }
+
+        .wrapper {
+            width: 600px;
+            min-width: 600px;
+        }
+
+        .maintable {
+            width: 90%;
+        }
+
+        .innertable {
+            width: 80%;
+        }
+
+        .pad1 {
+            padding-top: 30px;
+        }
+
+        .gutter {
+            width: 30px;
+        }
+
+        .gutter2 {
+            width: 15px;
+        }
+
+        .fleximg {
+        }
+
+        .footer-image {
+            margin-left: 10px;
+            margin-right: 10px;
+            max-width: 150px !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .footer-image2 {
+            margin-left: 10px;
+            margin-right: 10px;
+            max-height: 70px !important;
+            height: 100% !important;
+            width: auto !important;
+        }
+
+        .footer-image3 {
+            margin-left: 10px;
+            margin-right: 10px;
+            max-height: 50px !important;
+            height: 100% !important;
+            width: auto !important;
+        }
+
+        .rating {
+            max-height: 70px !important;
+            height: 100% !important;
+            width: auto !important;
+        }
+
+        .rating2 {
+            max-height: 70px !important;
+            height: 100% !important;
+            width: auto !important;
+        }
+
+        @media only screen and (max-width:599px) {
+            .wrapper, .mobile100 {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            .cta-01 {
+                font-size: 12px;
+            }
+
+            .footer-image {
+                margin-left: 10px;
+                margin-right: 10px;
+                max-width: 75px !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .footer-image2 {
+                margin-left: 10px;
+                margin-right: 10px;
+                max-height: 40px !important;
+                height: 100% !important;
+                width: auto !important;
+            }
+
+            .footer-image3 {
+                margin-left: 10px;
+                margin-right: 10px;
+                max-height: 30px !important;
+                height: 100% !important;
+                width: auto !important;
+            }
+
+            .rating {
+                max-height: 40px !important;
+                height: 100% !important;
+                width: auto !important;
+            }
+
+            .rating2 {
+                max-height: 40px !important;
+                height: 100% !important;
+                width: auto !important;
+            }
+
+            .maintable, .mobile90 {
+                width: 96% !important;
+            }
+
+            .hide, .gutter, .gutter2 {
+                display: none !important;
+            }
+
+            .fleximg img, .fleximg {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .center {
+                text-align: center !important;
+            }
+
+            .br {
+                display: block !important;
+            }
+
+            .h1 br, .h2 br, .h3 br {
+                display: none !important;
+            }
+
+            .col {
+                display: block !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+    <!--[if gte mso 12]><style type="text/css"> .cta {padding:10px 30px !important;} .cta2 {padding:6px 20px !important;}</style><![endif]-->
+    <!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+</head>
+
+<body style="margin: 0px;padding: 0px;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: 'Avenir Book', sans-serif;line-height: 100%;">
+<img src="https://click.em.riotgames.com/open.aspx?ffcb10-fe92157175620d7872-fe3316767764067d741c77-fe3e157075640678741676-ff3716727560-fe2516767c660575761275-ff301170746d&d=100193&bmt=0" width="1" height="1" alt="">
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="bgtable" mc:repeatable=mc:repeatable mc:variant="Full Image Section" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;background-color: #000000;width: 100%;min-width: 100%;">
+      <tr>
+          <td align="center" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+
+              <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                  <tr>
+                      <td height="20" class="smallspacer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 1px;line-height: 1px;"> </td>
+                  </tr>
+              </table>
+
+
+              <table align="center" border="0" cellspacing="0" cellpadding="0" class="wrapper" width="600" style="width: 600px;table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;min-width: 600px;">
+                  <tr>
+                      <!--FULL IMAGE -->
+                      <td align="center" valign="top" bgcolor="#E7E6E3" mc:edit="fullimage" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                          <img src="https://image.em.riotgames.com/lib/fe3e157075640678741676/m/8/rito_2.jpg" width="600" class="fleximg" style="max-width: 600px;-ms-interpolation-mode: bicubic;border: none;display: block;transition: all .25s;outline: none !important;" />
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+  </table>
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="bgtable" mc:repeatable=mc:repeatable mc:variant="Full Article Section" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;background-color: #000000;width: 100%;min-width: 100%;">
+<tr>
+    <td align="center" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+        <table border="0" align="center" cellpadding="0" cellspacing="0" class="wrapper" width="600" style="width: 600px;table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;min-width: 600px;">
+            <tr>
+                <td align="center" bgcolor="#E7E6E3" class="pad1" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;padding-top: 30px;">
+
+
+<table class="maintable" border="0" cellspacing="0" cellpadding="0" mc:hideable=mc:hideable style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;width: 85%;">
+
+    <tr>
+        <td align="left" class="body" mc:edit="fabody" style="padding-bottom: 20px;padding-left: 20px;padding-right: 20px;border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-family: Avenir, sans-serif; font-size: 13px;line-height: 20px;color: #454545;">Hey players,
+<br><Br>
+         We wanted to let you know that we will be updating our <a href="https://click.em.riotgames.com/?qs=aa557f9ac5d3d28096b5addec8474a6d18289344da26d01af00cea023aa5f9633f5810605fc76763bde7761419d7fe17c3aa600714a22441294d20800e8583e0"  style="display: inline-block; font-weight:bold;color:#D03639;text-decoration:underline;line-height:100%;">Privacy Notice</a> and <a href="https://click.em.riotgames.com/?qs=aa557f9ac5d3d28090c7193195e4616d45af6480c455847174cb0d1b7d1be449b20a4b75640cc763119147063905d84b075075869238deea03a110546b58e508"  style="display: inline-block; font-weight:bold;color:#D03639;text-decoration:underline;line-height:100%;">Terms of Service</a> next month. You won't have to do anything new, but you can check out the new language in those links. These updates will go into effect 10/29/23.
+
+<br><Br>As always, thanks for playing! GLHF
+<br><Br>
+        - The Riot Games Team
+
+
+
+
+
+
+        </td>
+    </tr>
+</table>
+
+          <table border="0" align="center" cellpadding="0" cellspacing="0" class="bgtable" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;background-color: #000000;width: 100%;min-width: 100%;">
+        <tr>
+            <td align="center" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                <table align="center" border="0" cellspacing="0" cellpadding="0" class="wrapper" width="600" style="width: 600px;table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;min-width: 600px;">
+                    <tr>
+                        <td align="center" valign="top" class="pad" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                            <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;"><tr><td height="10" class="smallspacer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 1px;line-height: 1px;">&nbsp;</td></tr></table>
+                            <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;"><tr><td height="10" class="smallspacer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 1px;line-height: 1px;">&nbsp;</td></tr></table>
+
+                            <table border="0" cellspacing="0" cellpadding="0" class="mobile100" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                                <tr>
+                                     </tr>
+                            </table>
+          
+           
+                            
+                                        <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;"><tr><td height="10" class="smallspacer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 1px;line-height: 1px;">&nbsp;</td></tr></table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;"><tr><td height="10" class="smallspacer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 1px;line-height: 1px;">&nbsp;</td></tr></table>
+                            <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                                <tr>
+                                    <!--FOOTER-->
+                                 
+                                </tr>
+                            </table>
+                            
+                            <table width="540" border="0" cellpadding="0" cellspacing="0" class="maintable" style="width: 540px;table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;">
+                                <tr>
+                                    <td valign="top" align="center" class="footer" mc:edit="footer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 13px;line-height: 16px;color: #aaaaaa;text-decoration: none;">
+                                        This is a service notification mailing.<br />&copy; 2023 Riot Games. All rights reserved<br />Riot Games, Inc. 12333 West Olympic Blvd. Los Angeles, CA 90064, United States
+                                    </td>
+                                </tr>
+                            </table> <table border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;border-collapse: separate;mso-table-lspace: 0px;mso-table-rspace: 0px;"><tr><td height="30" class="smallspacer" style="border-collapse: separate;mso-line-height-rule: exactly;table-layout: fixed;mso-table-lspace: 0px;mso-table-rspace: 0px;font-size: 1px;line-height: 1px;">&nbsp;</td></tr></table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+--t5qU0oisIMMr=_?:--
+

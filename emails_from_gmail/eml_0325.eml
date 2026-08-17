@@ -1,0 +1,481 @@
+X-GM-THRID: 1866811914247592469
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6359:7c1d:b0:298:94eb:e200 with SMTP id
+ xm29csp1903135rwb;
+        Mon, 1 Jun 2026 09:16:16 -0700 (PDT)
+X-Received: by 2002:a05:6808:67cb:b0:485:5997:d38d with SMTP id
+ 5614622812f47-485fb60ae87mr6565989b6e.29.1780330576039;
+        Mon, 01 Jun 2026 09:16:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1780330576; cv=none;
+        d=google.com; s=arc-20240605;
+        b=hdr5lorIwqNIxdjv38frKdwoAI2I//NLmkFaVkgNk7EQCn4seMx15pztyRSxHusYa0
+         8tEkMnv9gfh9B4ZcF+cr36y5FnSrPloAPFfmxINjLzVrNcIcfCN0lbgHywOSlUQqmuf8
+         H73c17V9HbNSHwJ8Jbqp5BidWsZKh1hQfs2G1VY9+IHWMOXIVqgRPhydtQtw5x5AdWta
+         XnShdyxy45svlENYFSs6KLX9xdmEKcdL5bm5FU18/UKciidZR7gRNwlefLG9wZbKG5mf
+         LBrwd6F7K6tBI/kBficxS2CPK/XYlvgj6A/2F33eiXtLYna0U97+rbyqraF9FUOQ3t8k
+         7cWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=to:priority:importance:bimi-selector:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=AcWNBeIBS2AZdXWdgXGKAElCPhKR7JzC06HBV+NKcZE=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=YU2Fiwkhi0kA1+wVfXRi5vPUyC89wtwu7Ub0uDHSq/4HKML2ZKsQNKMh6ZKWKNHzXW
+         hf2xoUgHeAQOjiCAqlINEmP0LjUF8BYieVC2fjpYM1/PtNI78pPdjVNVi2vuBhIjYnuq
+         7e2JS5v13xcGccbAUTWkH4b6ovprlOihTMGtxl4a1L25jKiKZ3QTeP9U7VAVXd/Fhvnl
+         hAKbjnGGUEM7Gfrc9jZj5cE/LuHLwsWBP6WcKHAvaHBAVSriVGelWd5EJeHQTsWngTi7
+         AOzuZFXxQHyL8/QKkY1xAz8tvjqEOG5K3ekz2gddbXFvrWfqkjseQwlKynQR5hJ3IY3a
+         mQ0Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@automated.airbnb.com header.s=s1 header.b=F0aDyYYC;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QW0YN5Ze;
+       spf=pass (google.com: domain of
+ bounces+60337934-bd0f-patriogabrielpatdu=gmail.com@em5923.automated.airbnb.com
+ designates 167.89.32.249 as permitted sender)
+ smtp.mailfrom="bounces+60337934-bd0f-patriogabrielpatdu=gmail.com@em5923.automated.airbnb.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=airbnb.com
+Return-Path: 
+ <bounces+60337934-bd0f-patriogabrielpatdu=gmail.com@em5923.automated.airbnb.com>
+Received: from o7.email.airbnb.com (o7.email.airbnb.com. [167.89.32.249])
+        by mx.google.com with ESMTPS id
+ d75a77b69052e-51741daa671si70118691cf.128.2026.06.01.09.16.15
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 01 Jun 2026 09:16:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+60337934-bd0f-patriogabrielpatdu=gmail.com@em5923.automated.airbnb.com
+ designates 167.89.32.249 as permitted sender) client-ip=167.89.32.249;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@automated.airbnb.com header.s=s1 header.b=F0aDyYYC;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QW0YN5Ze;
+       spf=pass (google.com: domain of
+ bounces+60337934-bd0f-patriogabrielpatdu=gmail.com@em5923.automated.airbnb.com
+ designates 167.89.32.249 as permitted sender)
+ smtp.mailfrom="bounces+60337934-bd0f-patriogabrielpatdu=gmail.com@em5923.automated.airbnb.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=airbnb.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=automated.airbnb.com;
+	h=content-type:date:from:mime-version:subject:to:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=s1; t=1780330573;
+	bh=AcWNBeIBS2AZdXWdgXGKAElCPhKR7JzC06HBV+NKcZE=;
+	b=F0aDyYYChPDzMsGFyFZuPr9kU4WfYp47sXO81pa9AGbJ8rBUGvD1QKr10zgVKBMdvyEk
+	QH66g4/HwkXCBcMBptnOqUP1DRXBeF5ApfYyhUntyM7b70ERj44+ICTcocLvO4KtkqJGiA
+	N+/jFwb0T8ZFuu77Qer7kQj4I+UNSvTQX9RsgguwPaMmCUhLyan5bHVP+1JnmI4VXgg4Ow
+	OqO/2F12EhOP/k3y6+Umj4sAMFUxQkev+ZyQm8g4U04WmsG3N3XTl6zvSEm+yDYUXDTqzV
+	GyLCNHyM8lBmFAPwNxNtCKrfcyxKTV8DtlFymgwK9t4Ri4s4Nt0mRY0zJjouA+bg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:to:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=smtpapi; t=1780330573;
+	bh=AcWNBeIBS2AZdXWdgXGKAElCPhKR7JzC06HBV+NKcZE=;
+	b=QW0YN5ZePW9dG4XSPyLVgKlKqz8BMExzlB97kVy59oSqdhlpH0kGkgZdq+VKcKvGyaJB
+	xKcKSEyNffMHe0XW/fTPAdrnfwS2Cg48nedy+ZKn9LMBHjVDIf1HpXuatvoFQk7ersn58d
+	+yx1l8AvIWL4Iqm1kwca3bXSQ/GgbDhDE=
+Received: by recvd-6767c66449-ggnkk with SMTP id
+ recvd-6767c66449-ggnkk-1-6A1DB04D-DA
+	2026-06-01 16:16:13.811247792 +0000 UTC m=+2918210.686119971
+Received: from NjAzMzc5MzQ (unknown)
+	by geopod-ismtpd-43 (SG) with HTTP
+	id kQLw8NcRTPWEtR6r2_V1dg
+	Mon, 01 Jun 2026 16:16:13.799 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=66b5a4c670d1597ed44338ca5508ce6d0d89309ef802706280ab77a0f58c
+Date: Mon, 01 Jun 2026 16:16:13 +0000 (UTC)
+From: Airbnb <automated@airbnb.com>
+Mime-Version: 1.0
+Message-ID: <kQLw8NcRTPWEtR6r2_V1dg@geopod-ismtpd-43>
+Subject: Account activity: New phone number added
+BIMI-Selector: v=BIMI1; s=belov2;
+Importance: high
+Priority: Urgent
+Return-Path: mail@automated.airbnb.com
+X-Category: support
+X-Locale: en
+X-MSMail-Priority: High
+X-Message-Package-UUID: 39098992-d333-9a2a-cd01-3e59d8d1f5a8
+X-Priority: 1
+X-Strategy: email
+X-Template: TRUST_ACCOUNT_ALERT_VERIFIED_PHONE_NUMBER
+X-User-ID: 580125082
+X-rpcampaign: airbnb2026060121116795126506664765091005009882311800
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E373TPjtMqGbzwgRnUiLO4XljsWSZKewimAbF7sau2vF2RcaqvXC4aBu98?=
+ =?us-ascii?Q?qmouqE3ZBmmViWC6A7sb7XQrtgX5v2nLjWsMtUQ?=
+ =?us-ascii?Q?+SNZ9aIxkcAxavBKurk7K=2Fk08ML8P=2FGSJKL=2F0Jp?=
+ =?us-ascii?Q?jeweuc0tv=2Fm8H26bs5oDI+X12qe5K+vY+tUaJuS?=
+ =?us-ascii?Q?0iehteYlLw1Q5Cl8+l4iHxp=2FiGKZ2f6zBqh4thd?=
+ =?us-ascii?Q?cTVH5ztyF3ygy0CuPQHsVg7eVNtetH=2FjuwJ8DFs?= =?us-ascii?Q?JRIc?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BgvWYR3RTG8rmjka1JHjaJZDP7SXVW9Tamvxl?=
+ =?us-ascii?Q?dxHIUBAmFPodEYpS=2F1BzEt7A0EDTPWdr3lr1kPw?=
+ =?us-ascii?Q?7+tDne2pCeNZ8swxh47NIt=2FylBJapV+xkyntkTc?=
+ =?us-ascii?Q?5nJ1dBlGsGxRiJH0nm1Eg4vf8oi7mvJKc=2F3tExK?=
+ =?us-ascii?Q?7AgZkf79Ak62g7vkmIoWZ9w+wwSOzx0P2=2Fx9Pu8?=
+ =?us-ascii?Q?yv5fTFmaifi6qb9aSFeHNho54kjvdWYeQdrgd7e?=
+ =?us-ascii?Q?9jLiHq7bPYv9gjkxsFjgovMceGoi6DBn9Ye4ATP?=
+ =?us-ascii?Q?ljSLRpr5s52LmFCu9FC1a+MigzIYSuTAtMtNSn4?=
+ =?us-ascii?Q?AJlHoM4aRzmYnUtSmN3dTxjmsoyb3Yy9qzusluR?=
+ =?us-ascii?Q?rebsc3hGQHdvPnwI=2Fd=2Fl7HQyhbeQDdf9eX+jqu9?=
+ =?us-ascii?Q?Zk0IU4QvucRUF0QWBu4=2FhuEh44DyKPbxWpGAe=2FW?=
+ =?us-ascii?Q?tvUW9+LL2YRKXZpKyV520mk4JD5sW=2FuJqv4mkmz?=
+ =?us-ascii?Q?RW25k1s1NyNZLF6RVxLd+ht8FQoKK3Y113OANCo?=
+ =?us-ascii?Q?0Y1FS+ttv9kJDmYZWDpBdFCE63C9iLbQqAtdcze?=
+ =?us-ascii?Q?PFv2=2FXK90P7V?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.iMA/figTSN0zC9QyE22xZA==
+
+--66b5a4c670d1597ed44338ca5508ce6d0d89309ef802706280ab77a0f58c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+%opentrack%
+
+https://www.airbnb.com/?c=3D.pi80.pkYWNjb3VudF9hbGVydHMvdmVyaWZpZWRfcGhvbmV=
+fbnVtYmVy&euid=3D39098992-d333-9a2a-cd01-3e59d8d1f5a8
+
+DID YOU ADD THIS PHONE NUMBER TO YOUR ACCOUNT?
+
+We noticed the following phone number was recently added to
+your account. If you didn't do this, review your account
+now. If this was you, you can safely disregard this email.
+
+THIS PHONE NUMBER WAS ADDED
+
+639057505096
+
+WHEN
+
+Tue, Jun 2, 2026, 12:16 AM PST
+
+WHERE
+
+Dasmari=F1as, Philippines
+
+DEVICE TYPE
+
+Airbnb App using Android
+
+Review my account
+[https://www.airbnb.com/review_your_account?rya_flow_token=3DfawI4-cIrYC6v1=
+_q9t-QrK&user_id=3D580125082]
+
+Airbnb Ireland UC
+
+8 Hanover Quay
+
+Dublin 2, Ireland
+
+=A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0=
+ =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0
+--66b5a4c670d1597ed44338ca5508ce6d0d89309ef802706280ab77a0f58c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<html lang=3D"en"><head><meta http-equiv=3D"Content-Type" content=3D"text/h=
+tml; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3Ddevice-wid=
+th, initial-scale=3D1"><style type=3D"text/css">@font-face{font-family:Airb=
+nb Cereal;src:url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/bui=
+ld/fonts/cereal-web/AirbnbCereal_W_Bk.4ea70e6ea450ad96e13c57aa4e90f8b8.woff=
+2") format("woff2"),url("https://a0.muscache.com/airbnb/static/airbnb-dls-w=
+eb/build/fonts/cereal-web/AirbnbCereal_W_Bk.d5933bc735ca9031c13adadc2e16a14=
+b.woff") format('woff');font-weight:400;font-style:normal;font-display:swap=
+}@font-face{font-family:Airbnb Cereal;src:url("https://a0.muscache.com/airb=
+nb/static/airbnb-dls-web/build/fonts/cereal-web/AirbnbCereal_W_Md.84ad4c433=
+dd0e3186136f089058b6ee6.woff2") format("woff2"),url("https://a0.muscache.co=
+m/airbnb/static/airbnb-dls-web/build/fonts/cereal-web/AirbnbCereal_W_Md.6c3=
+0b9f8c60a0fb0c1df4f4bade89656.woff") format('woff');font-weight:500;font-st=
+yle:normal;font-display:swap}@font-face{font-family:Airbnb Cereal;src:url("=
+https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/fonts/cereal-web=
+/AirbnbCereal_W_SBd.c9ca4ee4d9394ffbc1efe123480071e9.woff2") format("woff2"=
+),url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/fonts/cer=
+eal-web/AirbnbCereal_W_SBd.6df76d286d3f6387d3fc010c17b60485.woff") format('=
+woff');font-weight:600;font-style:normal;font-display:swap}@font-face{font-=
+family:Airbnb Cereal;src:url("https://a0.muscache.com/airbnb/static/airbnb-=
+dls-web/build/fonts/cereal-web/AirbnbCereal_W_Bd.609cfacbd842277786b7a83ed8=
+16a175.woff2") format("woff2"),url("https://a0.muscache.com/airbnb/static/a=
+irbnb-dls-web/build/fonts/cereal-web/AirbnbCereal_W_Bd.de94633934407484fd02=
+223ab2624a06.woff") format('woff');font-weight:700;font-style:normal;font-d=
+isplay:swap}</style><div><!--[if (mso)|(IE)]>
+<style type=3D"text/css">a{color:#222222!important}h1,h2,h3,h4,h5,h6,a,p,li=
+,div,span{color:#222222!important}.outlook-row-container{padding-bottom:24p=
+x!important;padding-left:48px!important;padding-right:48px!important;paddin=
+g-top:24px!important}a.base-button{border:1px solid #222222!important;color=
+:#222222!important;display:inline-block!important;font-size:18px!important;=
+font-weight:bold!important;padding-top:16px!important}a.embedded-button{bor=
+der:1px solid #222222!important;color:#222222!important;display:inline-bloc=
+k!important;font-size:18px!important;font-weight:bold!important;padding-top=
+:8px!important}div#brand-header{padding-bottom:24px!important;padding-top:4=
+8px!important}div#brand-header-new-belo{line-height:0px!important;padding-b=
+ottom:24px!important;padding-top:32px!important}.outlook-only{display:block=
+!important}.non-outlook-only{background-color:red;display:none!important;he=
+ight:0!important;max-height:0px!important;mso-hide:all!important;overflow:h=
+idden!important;padding-bottom:0!important;width:0!important}</style>
+<![endif]--></div><style type=3D"text/css">@media only screen and (max-widt=
+h:560px){table .height_12_10{height:10px!important}table .height_18_16{heig=
+ht:16px!important}table .height_32_24{height:24px!important}table .height_4=
+8_24{height:24px!important}table .height_64_48{height:48px!important}table =
+.bottom_0_1{padding-bottom:8px!important}table .bottom_1_1{padding-bottom:8=
+px!important}table .bottom_1_0{padding-bottom:0px!important}table .bottom_3=
+_2{padding-bottom:16px!important}table .bottom_3_3{padding-bottom:24px!impo=
+rtant}table .bottom_4_2{padding-bottom:16px!important}table .bottom_4_3{pad=
+ding-bottom:24px!important}table .bottom_5_3{padding-bottom:24px!important}=
+table .bottom_5_4{padding-top:32px!important}table .bottom_6_4{padding-bott=
+om:32px!important}table .left_0-5_0-25{padding-left:2px!important}table .le=
+ft_1-25_1-5{padding-left:12px!important}table .left_2_0{padding-left:0px!im=
+portant}table .left_2_1-5{padding-left:12px!important}table .left_3_2{paddi=
+ng-left:16px!important}table .left_6_2{padding-left:16px!important}table .l=
+eft_6_3{padding-left:24px!important}table .left_9_6{padding-left:48px!impor=
+tant}table .right_0-5_0-25{padding-right:2px!important}table .right_1_0{pad=
+ding-right:0px!important}table .right_1-25_1-5{padding-right:12px!important=
+}table .right_2_0{padding-right:0px!important}table .right_3_2{padding-righ=
+t:16px!important}table .right_6_2{padding-right:16px!important}table .right=
+_6_3{padding-right:24px!important}table .right_9_6{padding-right:48px!impor=
+tant}table .top_0-5_1{padding-top:8px!important}table .top_0-75_0-5{padding=
+-top:4px!important}table .top_0_3{padding-top:24px!important}table .top_1_0=
+{padding-top:0px!important}table .top_1_0-5{padding-top:4px!important}table=
+ .top_1-25_0-5{padding-top:4px!important}table .top_1-5_0-5{padding-top:4px=
+!important}table .top_1-5_1{padding-top:8px!important}table .top_1-5_1-5{pa=
+dding-top:12px!important}table .top_1-75_0-5{padding-top:4px!important}tabl=
+e .top_1-75_1-25{padding-top:10px!important}table .top_2_1{padding-top:8px!=
+important}table .top_2_1-25{padding-top:10px!important}table .top_2-25_1-5{=
+padding-top:12px}table .top_2_3{padding-top:24px!important}table .top_3_1{p=
+adding-top:8px!important}table .top_3_2{padding-top:16px!important}table .t=
+op_3_3{padding-top:24px!important}table .top_4_2{padding-top:16px!important=
+}table .top_4_3{padding-top:24px!important}table .top_5_4{padding-top:32px!=
+important}table .top_6_4{padding-top:32px!important}table .width_12_10{widt=
+h:10px!important}table .width_18_16{width:16px!important}table .width_20_24=
+{width:24px!important}table .width_28_20{width:20px!important}table .width_=
+32_24{width:24px!important}table .width_46_30{width:30.67px}table .width_48=
+_24{width:24px!important}table .width_64_48{width:48px!important}table .wid=
+th_64_48{width:48px!important}table .hide_small{display:block!important}tab=
+le .hide_large{display:none!important}table a.base-button{display:block!imp=
+ortant;font-size:16px!important;line-height:20px!important;padding:14px 24p=
+x!important;font-weight:500!important}table a.embedded-button{display:block=
+!important;font-size:14px!important;line-height:18px!important;padding:8px =
+14px!important}table div.base-button-container{display:block!important;widt=
+h:100%!important}table div.base-button-container,table div.base-button-no-r=
+esize{font-size:16px!important;line-height:20px!important}table .brand-head=
+er{padding-bottom:0px!important;padding-top:32px!important}table .brand-hea=
+der-new-belo{line-height:0px!important;padding-bottom:16px!important;paddin=
+g-top:24px!important}table a.header-nav{font-size:12px!important}table div.=
+full-width{width:100%!important}table div.normal-container{border:none!impo=
+rtant;border-radius:unset!important;overflow:visible!important}table div.he=
+ader-middle{background-color:transparent!important;border:none!important}ta=
+ble div.header-bottom{border:none!important}table div.hero-container-top-st=
+yle{margin-top:0px!important;border:none!important;border-radius:unset!impo=
+rtant;overflow:visible!important}table div.hero-container-bottom-style{marg=
+in-bottom:0px!important;border-radius:0px!important}table .heading1{font-si=
+ze:24px!important;line-height:28px!important}table .heading2{font-size:18px=
+!important;line-height:22px!important}table .heading3{font-size:16px!import=
+ant;line-height:20px!important}table .heading4{font-size:14px!important;lin=
+e-height:18px!important}table h1.super1{font-size:32px!important;line-heigh=
+t:36px!important}table h1.super2,table h2.super2{font-size:32px!important;l=
+ine-height:36px!important}table p.heading-level-2-3{font-size:16px!importan=
+t;line-height:20px!important}table p.heading-32-24{font-size:24px!important=
+;line-height:28px!important}table p.medium{font-size:16px!important;line-he=
+ight:22px!important}table a.regular,table p.regular,table div.regular{font-=
+size:14px!important;line-height:20px!important}table a.small,table p.small,=
+table div.small{font-size:12px!important;line-height:18px!important}table p=
+.ui-large,table div.ui-large{font-size:14px!important;line-height:18px!impo=
+rtant}table p.ui-medium,table div.ui-medium{font-size:12px!important;line-h=
+eight:16px!important}table p.ui-small,table div.ui-small{font-size:10px!imp=
+ortant;line-height:12px!important}table p.ui-xlarge,table div.ui-xlarge{fon=
+t-size:14px!important;line-height:18px!important}table p.ui-xxlarge,table d=
+iv.ui-xxlarge{font-size:22px!important;line-height:26px!important}table a.x=
+-small,table p.x-small,table div.x-small{font-size:12px!important;line-heig=
+ht:18px!important}table td.cell-padding-bottom{padding-bottom:24px!importan=
+t}table td.height_715_546{height:546px!important}table.mobile-view,table .m=
+obile-view{display:table!important}div.mobile-view-block,div .mobile-view-b=
+lock{display:block!important}table.desktop-view,table .desktop-view{display=
+:none!important}table.desktop-view-for-mobile-default,table .desktop-view-f=
+or-mobile-default{display:none!important}}@media only screen and (min-width=
+:561px){table.desktop-view-for-mobile-default,table .desktop-view-for-mobil=
+e-default{display:table!important}table.mobile-view-for-mobile-default,tabl=
+e .mobile-view-for-mobile-default{display:none}}</style></head><body style=
+=3D"margin:0 auto!important;padding:0" id=3D"body"><div style=3D"color:tran=
+sparent;display:none!important;font-size:0px;height:0;opacity:0;width:0"><i=
+mg src=3D"https://u60337934.ct.sendgrid.net/wf/open?upn=3Du001.mRvjWa6a2tdi=
+7UgUZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszFTIE6Jg2Mym-2F6oHhiBz=
+MrqsR-2F4OFKOmw0ZB8ho-2BkABkIKxCcupyt2ew8TjClIJVO4wGRlvYv9XpN6AEYkphqrN8T0P=
+cX9Cj4dQdDuzlikaSqeReTiu7qTTlSd8wt6qWW79yx-2Bil7fEkX-2Fnezv2eM0MFArBxSHkioB=
+rkvnGh8qW2S0fF7rGkyK9wM2erJkjkkYSgTjs8TvACtHF7eOjLESzJ-2FxlRiIcVPdBV6K2gUc-=
+2FVhopsdQy2YPfosJcpp5P2RzZ44usXdXePp0se4gu-2FpPzv4UWbEsV136cl0ipF6xpZU7nUX2=
+eaCwUbxgNF2mbP-2Fj2I1i8i5sIzfoZSR3Y-2FYwDmDiXY4Z8X9C8GZSer55zDspD7QsZxF1uA4=
+RxHw8gomGSuLthncXXhrJLg3gJoCGkwp1H0C5y8a-2BXA9JmL51vtv4TbhFGX9-2B335to5HIjt=
+SPL0hcvJCKecx-2FnscDYi0arucmIEFt0-2BSMiRfTeqSMj5FexM-2FkkF2875EiAC9p8coQKqW=
+ediaUTTzBp6UFgoznvqjHnu1faa69A9TLgCexFpuFxXoeMQAwAJQ5DUpvbNUNMhNde7hNg4-2FM=
+9vbxGrkbKeBY5F9GmWtL3eae7tvko6YJVtwPxqPw0dsObs3wlP0-2Bf4tCRtGvIsEDlvviHmi-2=
+BGwSZpUqVi7nNTTBoyAFN3OLpZd8PUKtVIHmJt8kUzGg" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;bor=
+der-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;m=
+argin-right:0 !important;margin-left:0 !important;padding-top:0 !important;=
+padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !impo=
+rtant;"/></div><div id=3D"app" style=3D"font-family:Airbnb Cereal, Helvetic=
+a Neue, Helvetica, sans-serif"><div dir=3D"ltr"><table cellpadding=3D"0" st=
+yle=3D"max-width:640px;border-collapse:collapse!important;border-spacing:0p=
+x!important;color:#222222!important;display:table!important;font-family:Air=
+bnb Cereal, Helvetica Neue, Helvetica, sans-serif!important;margin-left:aut=
+o!important;margin-right:auto!important;padding:0px!important;position:rela=
+tive!important;vertical-align:top!important;width:100%!important" role=3D"p=
+resentation" width=3D"100% !important" valign=3D"top !important"><tbody><tr=
+ style=3D"margin:0px!important"><td><div class=3D"normal-container" style=
+=3D"border:1px solid #DDDDDD;border-radius:12px;overflow:hidden"><table cel=
+lpadding=3D"0" class style=3D"border-collapse:collapse;border-spacing:0;wid=
+th:100%" role=3D"presentation"><tbody><tr style=3D"margin:0px!important"><t=
+d class=3D"outlook-row-container left_6_2 right_6_2" style=3D"padding-left:=
+48px;padding-right:48px"><table cellpadding=3D"0" class style=3D"border-col=
+lapse:collapse;border-spacing:0;width:100%" role=3D"presentation"><tbody><t=
+r style=3D"margin:0px!important"><td class=3D"brand-header-new-belo" style=
+=3D"line-height:0px;padding-bottom:24px;padding-top:32px"><a target=3D"_sel=
+f" rel=3D"noreferrer" data-eon-role=3D"link" data-eon-prop=3D"href" href=3D=
+"https://www.airbnb.com/?c=3D.pi80.pkYWNjb3VudF9hbGVydHMvdmVyaWZpZWRfcGhvbm=
+VfbnVtYmVy&amp;euid=3D39098992-d333-9a2a-cd01-3e59d8d1f5a8" class=3D"regula=
+r" style=3D"font-size:18px;line-height:28px;display:inline-block;height:28p=
+x;font-weight:700;color:#222222;text-decoration:underline!important"><img d=
+ata-eon-role=3D"image" data-eon-prop=3D"src" alt=3D"Airbnb" src=3D"https://=
+a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-can=
+vas-email/original/088c2933-673e-4ff9-89e8-6215848098eb.png" style=3D"heigh=
+t:28px;width:26px;border:0!important" width=3D"26" height=3D"28"></a></td><=
+/tr></tbody></table></td></tr></tbody></table><table cellpadding=3D"0" clas=
+s style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"pr=
+esentation"><tbody><tr style=3D"margin:0px!important"><td style=3D"padding-=
+left:48px;padding-right:48px;padding-top:0px;padding-bottom:24px" class=3D"=
+outlook-row-container left_6_2 right_6_2 top_0_3"><table cellpadding=3D"0" =
+class style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=
+=3D"presentation"><tbody><tr style=3D"margin:0px!important"><td class=3D"bo=
+ttom_3_2" style=3D"padding-bottom:24px"><div><h1 class=3D"heading1" style=
+=3D"font-size:32px;line-height:36px;color:#222222;font-family:Airbnb Cereal=
+, Helvetica Neue, Helvetica, sans-serif;font-weight:700;margin:0"><div role=
+=3D"heading" aria-level=3D"1">Did you add this phone number to your account=
+?</div></h1></div></td></tr></tbody></table><table cellpadding=3D"0" class =
+style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"pres=
+entation"><tbody><tr style=3D"margin:0px!important"><td><p class=3D"regular=
+" style=3D"font-size:18px;line-height:28px;font-family:Airbnb Cereal, Helve=
+tica Neue, Helvetica, sans-serif;margin:0!important;font-weight:400!importa=
+nt">We noticed the following phone number was recently added to your accoun=
+t. If you didn&#x27;t do this, review your account now. If this was you, yo=
+u can safely disregard this email.</p></td></tr></tbody></table><table cell=
+padding=3D"0" class style=3D"border-collapse:collapse;border-spacing:0;widt=
+h:100%" role=3D"presentation"><tbody><tr style=3D"margin:0px!important"><td=
+><table cellpadding=3D"0" class style=3D"border-collapse:collapse;border-sp=
+acing:0;width:100%" role=3D"presentation"><tbody><tr style=3D"margin:0px!im=
+portant"><td style=3D"padding-bottom:24px;padding-top:24px"><div><h2 class=
+=3D"bottom_1_1 heading2" style=3D"padding-bottom:8px;font-size:22px;line-he=
+ight:26px;color:#222222;font-family:Airbnb Cereal, Helvetica Neue, Helvetic=
+a, sans-serif;font-weight:700;margin:0">This phone number was added</h2></d=
+iv><p class=3D"regular" style=3D"font-size:18px;line-height:28px;font-famil=
+y:Airbnb Cereal, Helvetica Neue, Helvetica, sans-serif;margin:0!important;f=
+ont-weight:400!important">639057505096</p></td></tr></tbody></table><table =
+cellpadding=3D"0" class style=3D"border-collapse:collapse;border-spacing:0;=
+width:100%" role=3D"presentation"><tbody><tr style=3D"margin:0px!important"=
+><td style=3D"padding-top:0px"><table width=3D"100%" style=3D"border-spacin=
+g:0px!important" role=3D"presentation"><tbody><tr><td style=3D"padding:0px!=
+important;border-top:1px solid #DDDDDD!important" width=3D"100%" role=3D"se=
+parator"></td></tr></tbody></table></td></tr></tbody></table><table cellpad=
+ding=3D"0" class style=3D"border-collapse:collapse;border-spacing:0;width:1=
+00%" role=3D"presentation"><tbody><tr style=3D"margin:0px!important"><td st=
+yle=3D"padding-bottom:24px;padding-top:24px"><div><h2 class=3D"bottom_1_1 h=
+eading2" style=3D"padding-bottom:8px;font-size:22px;line-height:26px;color:=
+#222222;font-family:Airbnb Cereal, Helvetica Neue, Helvetica, sans-serif;fo=
+nt-weight:700;margin:0">When</h2></div><p class=3D"regular" style=3D"font-s=
+ize:18px;line-height:28px;font-family:Airbnb Cereal, Helvetica Neue, Helvet=
+ica, sans-serif;margin:0!important;font-weight:400!important">Tue, Jun 2, 2=
+026, 12:16 AM PST</p></td></tr></tbody></table><table cellpadding=3D"0" cla=
+ss style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"p=
+resentation"><tbody><tr style=3D"margin:0px!important"><td style=3D"padding=
+-top:0px"><table width=3D"100%" style=3D"border-spacing:0px!important" role=
+=3D"presentation"><tbody><tr><td style=3D"padding:0px!important;border-top:=
+1px solid #DDDDDD!important" width=3D"100%" role=3D"separator"></td></tr></=
+tbody></table></td></tr></tbody></table><table cellpadding=3D"0" class styl=
+e=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"presenta=
+tion"><tbody><tr style=3D"margin:0px!important"><td style=3D"padding-bottom=
+:24px;padding-top:24px"><div><h2 class=3D"bottom_1_1 heading2" style=3D"pad=
+ding-bottom:8px;font-size:22px;line-height:26px;color:#222222;font-family:A=
+irbnb Cereal, Helvetica Neue, Helvetica, sans-serif;font-weight:700;margin:=
+0">Where</h2></div><p class=3D"regular" style=3D"font-size:18px;line-height=
+:28px;font-family:Airbnb Cereal, Helvetica Neue, Helvetica, sans-serif;marg=
+in:0!important;font-weight:400!important">Dasmari=F1as, Philippines</p></td=
+></tr></tbody></table><table cellpadding=3D"0" class style=3D"border-collap=
+se:collapse;border-spacing:0;width:100%" role=3D"presentation"><tbody><tr s=
+tyle=3D"margin:0px!important"><td style=3D"padding-top:0px"><table width=3D=
+"100%" style=3D"border-spacing:0px!important" role=3D"presentation"><tbody>=
+<tr><td style=3D"padding:0px!important;border-top:1px solid #DDDDDD!importa=
+nt" width=3D"100%" role=3D"separator"></td></tr></tbody></table></td></tr><=
+/tbody></table><table cellpadding=3D"0" class style=3D"border-collapse:coll=
+apse;border-spacing:0;width:100%" role=3D"presentation"><tbody><tr style=3D=
+"margin:0px!important"><td style=3D"padding-bottom:24px;padding-top:24px"><=
+div><h2 class=3D"bottom_1_1 heading2" style=3D"padding-bottom:8px;font-size=
+:22px;line-height:26px;color:#222222;font-family:Airbnb Cereal, Helvetica N=
+eue, Helvetica, sans-serif;font-weight:700;margin:0">Device Type</h2></div>=
+<p class=3D"regular" style=3D"font-size:18px;line-height:28px;font-family:A=
+irbnb Cereal, Helvetica Neue, Helvetica, sans-serif;margin:0!important;font=
+-weight:400!important">Airbnb App using Android </p></td></tr></tbody></tab=
+le></td></tr></tbody></table><table cellpadding=3D"0" class style=3D"border=
+-collapse:collapse;border-spacing:0;width:100%" role=3D"presentation"><tbod=
+y><tr style=3D"margin:0px!important"><td><table cellpadding=3D"0" style=3D"=
+border-collapse:collapse!important;width:100%!important" role=3D"presentati=
+on" width=3D"100% !important"><tbody><tr><td><div class=3D"base-button-cont=
+ainer" style=3D"display:inline-block;font-size:18px;line-height:24px;backgr=
+ound:linear-gradient(90deg, #E61E4D 1.83%, #E31C5F 50.07%, #D70466 96.34%);=
+background-color:#FF385C;border-radius:8px;font-family:Airbnb Cereal, Helve=
+tica Neue, Helvetica, sans-serif;font-weight:500;text-align:center;width:au=
+to!important"><a class=3D"base-button" style=3D"font-size:18px;line-height:=
+24px;padding:16px 24px;font-weight:500;color:#FFFFFF;text-align:center;text=
+-decoration:none;display:block" data-eon-role=3D"button" data-eon-prop=3D"h=
+ref" href=3D"https://www.airbnb.com/review_your_account?rya_flow_token=3Dfa=
+wI4-cIrYC6v1_q9t-QrK&amp;user_id=3D580125082"><span style=3D"color:#FFFFFF!=
+important">Review my account</span></a></div></td></tr></tbody></table></td=
+></tr></tbody></table></td></tr></tbody></table><table cellpadding=3D"0" cl=
+ass style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"=
+presentation"><tbody><tr style=3D"margin:0px!important"><td style=3D"paddin=
+g-left:48px;padding-right:48px;padding-top:0px" class=3D"outlook-row-contai=
+ner left_6_2 right_6_2"><table width=3D"100%" style=3D"border-spacing:0px!i=
+mportant" role=3D"presentation"><tbody><tr><td style=3D"padding:0px!importa=
+nt;border-top:1px solid #DDDDDD!important" width=3D"100%" role=3D"separator=
+"></td></tr></tbody></table></td></tr></tbody></table><table cellpadding=3D=
+"0" class style=3D"border-collapse:collapse;border-spacing:0;width:100%" ro=
+le=3D"presentation"><tbody><tr style=3D"margin:0px!important"><td><table ce=
+llpadding=3D"0" class style=3D"border-collapse:collapse;border-spacing:0;wi=
+dth:100%" role=3D"presentation"><tbody><tr style=3D"margin:0px!important"><=
+td class=3D"outlook-row-container left_6_2 right_6_2" style=3D"padding-left=
+:48px;padding-right:48px"><table cellpadding=3D"0" class style=3D"border-co=
+llapse:collapse;border-spacing:0;width:100%" role=3D"presentation"><tbody><=
+tr style=3D"margin:0px!important"><td class=3D"bottom_4_3 top_4_3" style=3D=
+"padding-bottom:32px;padding-top:32px"><table cellpadding=3D"0" class style=
+=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"presentat=
+ion"><tbody><tr style=3D"margin:0px!important"><td align=3D"left" width=3D"=
+100%" style=3D"line-height:0"><img data-eon-role=3D"image" data-eon-prop=3D=
+"src" alt=3D"Airbnb" src=3D"https://a0.muscache.com/im/pictures/airbnb-plat=
+form-assets/AirbnbPlatformAssets-canvas-email/original/088c2933-673e-4ff9-8=
+9e8-6215848098eb.png" style=3D"height:28px;width:26px;border:0!important" w=
+idth=3D"26" height=3D"28"></td></tr></tbody></table><table cellpadding=3D"0=
+" class style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=
+=3D"presentation"><tbody><tr style=3D"margin:0px!important"><td class=3D"to=
+p_4_3" style=3D"padding-top:32px"><table cellpadding=3D"0" class style=3D"b=
+order-collapse:collapse;border-spacing:0;width:100%" role=3D"presentation">=
+<tbody><tr style=3D"margin:0px!important"><td><p style=3D"color:#222222!imp=
+ortant;font-family:Airbnb Cereal, Helvetica Neue, Helvetica, sans-serif!imp=
+ortant;font-size:14px!important;font-weight:400!important;line-height:18px!=
+important;margin:0px!important">Airbnb Ireland UC</p></td></tr></tbody></ta=
+ble><table cellpadding=3D"0" class style=3D"border-collapse:collapse;border=
+-spacing:0;width:100%" role=3D"presentation"><tbody><tr style=3D"margin:0px=
+!important"><td><p style=3D"color:#222222!important;font-family:Airbnb Cere=
+al, Helvetica Neue, Helvetica, sans-serif!important;font-size:14px!importan=
+t;font-weight:400!important;line-height:18px!important;margin:0px!important=
+">8 Hanover Quay</p></td></tr></tbody></table><table cellpadding=3D"0" clas=
+s style=3D"border-collapse:collapse;border-spacing:0;width:100%" role=3D"pr=
+esentation"><tbody><tr style=3D"margin:0px!important"><td><p style=3D"color=
+:#222222!important;font-family:Airbnb Cereal, Helvetica Neue, Helvetica, sa=
+ns-serif!important;font-size:14px!important;font-weight:400!important;line-=
+height:18px!important;margin:0px!important">Dublin 2, Ireland</p></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table></td></tr></tbody></table></div></td></tr></tbody></tabl=
+e></div></div><div style=3D"color:white;display:none!important;font:15px co=
+urier;line-height:0;white-space:nowrap">=A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0=
+ =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 =
+=A0 =A0 =A0</div></body></html>
+--66b5a4c670d1597ed44338ca5508ce6d0d89309ef802706280ab77a0f58c--

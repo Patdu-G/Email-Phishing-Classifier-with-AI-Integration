@@ -1,0 +1,524 @@
+X-GM-THRID: 1827387440115774110
+X-Gmail-Labels: Inbox,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:8e07:0:b0:226:35eb:c730 with SMTP id p7csp1402388eih;
+        Sun, 23 Mar 2025 05:21:08 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IEOIL5x0CUn5QRoAORC/VaifDe85Bnu6tK3dBp1al+6OsNa3q+t7WGQ/vCBOpwnMWYAnYKF
+X-Received: by 2002:a05:690c:3809:b0:6e2:1527:446b with SMTP id
+ 00721157ae682-700babe54c1mr128925617b3.3.1742732468019;
+        Sun, 23 Mar 2025 05:21:08 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1742732468; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=Om26oW+8UiFq9QMli5ivcBuNMUla1XRGkeKGm4uiSjnCR5Gm/rWsz8OFMeUrewTb0H
+         6/Rcql0VhT7mniH3FMWlgqATeBLVuDVexVz4YAnMqqcMB+1hsSND13kH4Q8dado1aB9Q
+         auJ+hI7Vx+ZEJNBD6phQY51hjoHR72ZjIEVK+TzP41TQY0SdeWjru93WMIoVCoNWq5fq
+         khDFTP1d72FcaWvVjk1aIC3DX5YVZmnCC7L6PTi18yhXJR4ZpMs78RxwNX6N1ISVA1KL
+         Q4hXdcxOr/xbB3grpDrwiFwkmBtLya50pkcAYCqfX0XibFRmjQlPDkFpLH/+F+PZFXGE
+         NrDQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:content-transfer-encoding:mime-version:encoding:from
+         :subject:date:to:dkim-signature;
+        bh=RC4ZuPdQoR9Uf/DYjhqsY1IassfjFQT2KjTg/722XbA=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=lamvw7gAyODfAGLmUyHGcT4vNyHnAM/aNqSVF3vuZFexDsR7LdiSroRjq0DvGC7yba
+         2EpPWjNdEvQvFHNaqrpLrKcGU3Z4bLPefNU/GWuYgMB4BJB8WAh+Pnmlafkr+mZuhH1R
+         KLZFsUinQIm3dylQgZ86TbcTC/zRWqlewwRU+AM9IGsaJAYIEreSyQrdcfIRngQEiUPc
+         DZyzm66BQLCdu9z/6d4S0dFpcB0zdeCZRbaMpLBLZPVqUpCXirKBykGBsfAHAnMKpxs/
+         kXawjK3fq8fcdDozPmsyrHuJ9v2izjjHnI34PScE6znK9Yb/TVDtys5TKsbcBCIZI2pS
+         AveA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@pup.edu.ph header.s=selector2 header.b=Us0Gw1zn;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of crm-noreply@pup.edu.ph designates
+ 2a01:111:f403:200f::729 as permitted sender)
+ smtp.mailfrom=crm-noreply@pup.edu.ph;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=pup.edu.ph
+Return-Path: <crm-noreply@pup.edu.ph>
+Received: from APC01-SG2-obe.outbound.protection.outlook.com
+ (mail-sg2apc01on20729.outbound.protection.outlook.com.
+ [2a01:111:f403:200f::729])
+        by mx.google.com with ESMTPS id
+ 3f1490d57ef6-e66a4490200si5031366276.314.2025.03.23.05.21.07
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 23 Mar 2025 05:21:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of crm-noreply@pup.edu.ph designates
+ 2a01:111:f403:200f::729 as permitted sender)
+ client-ip=2a01:111:f403:200f::729;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@pup.edu.ph header.s=selector2 header.b=Us0Gw1zn;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of crm-noreply@pup.edu.ph designates
+ 2a01:111:f403:200f::729 as permitted sender)
+ smtp.mailfrom=crm-noreply@pup.edu.ph;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=pup.edu.ph
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=dBMG8H+6jTlUCUjMrWQcWw9oBlxr3ILVUYrFZzxxupYHZ5MaV9h6R03IyXAUYjtHwnOD5Td1x4GcgNCCSnANG7hSs3dznOoVvfGaWjZU48pgSDEg9uUiGd5SbeO5rFzcmfNXqUGhXJkhISbrtEOcIuRLgkIQL3vljQ2WhLpxrJ7oNq0eKQEsA4U//7WdNv8hAcxge9AR3QoKTXR/AKYBR6+meTYHs0zZbTLeNH964HD6tyu3rGYsLUNASBMdCy6px3fZ+vcfXdORyw0vQJGl1BTP8sJrbw0ufU6WldG2AnnQ68AAdchpM9HrJwmPkSAoBssrC2Lt/k5QuKVtXNszZA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RC4ZuPdQoR9Uf/DYjhqsY1IassfjFQT2KjTg/722XbA=;
+ b=GcmIm8uHq4Bk81lvYxpWzcGSb+eEMgjEqg7pNhQo0KszzKaMVcRBr8Y0lG9LX/7aXTI2sNzCXI38SEaa7C/Fsuq9sZxjZqN7FwT66AMWUa0s1CFZ96ZuDEtfiucBhmpuioADhr0AZ2PbfZQYPqn96s133ISHQlRoR45TsHEfeNV8+ZNr9SofU37qwrkQgHKjSUZxtGZpqBtcc96fL0B3ThRhOEdO7sGp/Y8bNCNVJaaJtknbT7MDU4K5H4qceWHlJMytrFaADJI8jNgjgDkST2Hh8aYh9AnMvVEHHZ/gdDgZbyNUjc0Mwka0vj/Zi0UUEFrvjH52jnbzyhG+/ws7TQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none
+ action=none header.from=pup.edu.ph; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pup.edu.ph;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RC4ZuPdQoR9Uf/DYjhqsY1IassfjFQT2KjTg/722XbA=;
+ b=Us0Gw1znXgoCqo0NhZgOMTC7oSSkkjo4pw9sh9n4OOPj5s1PImrgYaEzHt1JUpVdDQ1ODLRWZi7oW7fRQKF3xJN3kuxOWK9skGglQTcjtjg0ml4JH+IKx0IXELei+LTzYRO76HM5rjfSZaj2Hpc0Uz2DEkUEy8XdF4wRAaColxVHuvM0tkjxmRR4sD2ADcwwDL+OMRQEo3kopLTWXcakW/w4l+mKHQbybE0U/Ay0qnngQtqvqTFUcYGdFl0T6rfTiTkj6gu9MEJ8vyDa6eu+BF0EHbgWBHZ8g6EEpw+GbsC8I6TsefFiSUFEMSQHFZqpaHgtzvYnAuLW8fbfdliVNg==
+Received: from OSTP286CA0058.JPNP286.PROD.OUTLOOK.COM (2603:1096:604:217::7)
+ by TYUPR01MB5187.apcprd01.prod.exchangelabs.com (2603:1096:400:344::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8534.42; Sun, 23 Mar
+ 2025 12:21:03 +0000
+Received: from OSA0EPF000000CC.apcprd02.prod.outlook.com
+ (2603:1096:604:217:cafe::ba) by OSTP286CA0058.outlook.office365.com
+ (2603:1096:604:217::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8534.37 via Frontend Transport; Sun,
+ 23 Mar 2025 12:21:03 +0000
+X-MS-Exchange-Authentication-Results: spf=none (sender IP is 52.123.1.82)
+ smtp.mailfrom=pup.edu.ph; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=pup.edu.ph;
+Received: from teams-ntfs-email-email-processor-86b6767887-mq94f (52.123.1.82)
+ by OSA0EPF000000CC.mail.protection.outlook.com (10.167.240.58) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8534.20 via Frontend Transport; Sun, 23 Mar 2025 12:21:02 +0000
+To: patriogabrielpatdu@gmail.com
+Date: Sun, 23 Mar 2025 12:21:01 +0000
+Subject: 
+ =?utf-8?B?WW91IGhhdmUgYmVlbiBhZGRlZCBhcyBhIGd1ZXN0IHRvIFBvbHl0ZWNobmljIFVuaXZlcnNpdHkgb2YgdGhlIFBoaWxpcHBpbmVzIGluIE1pY3Jvc29mdCBUZWFtcw==?=
+From: Microsoft Teams <crm-noreply@pup.edu.ph>
+Encoding: utf-8
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: 
+ <1e6d96b1-f652-4bab-82f2-0f1346f56541@OSA0EPF000000CC.apcprd02.prod.outlook.com>
+Return-Path: crm-noreply@pup.edu.ph
+X-EOPAttributedMessage: 0
+X-MS-TrafficTypeDiagnostic: 
+ OSA0EPF000000CC:EE_FirstParty-Teams-V1|TYUPR01MB5187:EE_FirstParty-Teams-V1
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 3f471c7e-4b73-45c6-d363-08dd6a052d8f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: 
+ BCL:0;ARA:13230040|61400799027|41320700013|69100299015|1032899013|376014|8096899003|2066899003|13003099007;
+X-Microsoft-Antispam-Message-Info: 
+ =?utf-8?B?dzVENGZEZFdBaHBqQjZrUXBNQk1pdG5rUWR2ZmsxdGdjLzc1SGF6R3BWQ2Er?=
+ =?utf-8?B?bTVZdlJRamFqT00vT0QzV2lzS0p5MUtLU2NVc29qMjRIQUZqck96aGVBKzk0?=
+ =?utf-8?B?SWZFNStRaEorVjgwYXY2djltMG1BVlMrc3RuZzdXNTVxeTdmMjE2WFFWbWNW?=
+ =?utf-8?B?ZENhUHpiY1hVam5LZmRjeXZqbmhKK011aVFwTUY5OVM3bjFhTVp1TmxCek5u?=
+ =?utf-8?B?bEM4MG1JMXpLSmFGb2NIT3k3Rm5HbUNxeDB5eUZvMlJUVkxscllXQUdxRCtB?=
+ =?utf-8?B?NGtPUG5Ec0M1N21YZzJtTFJrZm5oMFBJTnBqaTBpQkRTV3VINmtxeER1c3Jq?=
+ =?utf-8?B?UUZ5d25oQ20vcy96aHI3S2VpbzdvOFQyUVhnQXlYeTlyeFJQbkdKTHptSjRM?=
+ =?utf-8?B?eEtoYmk3dktTblM4THQ4UFRpbDdjQTk5L25XemhocDlqQzJZY3Bzb1pBSktJ?=
+ =?utf-8?B?N0FDeXVHUWpFWnZBS3dlVUNpKzRzRXBiWXlLNEJ0SUVCQmo2U01IN3pnU0Rt?=
+ =?utf-8?B?QUV2Vzh6clBrUm9waWZ1NnBLYzVLeVpVQ1JjZm4vMjhYeEYrS3RNWFlZRUQw?=
+ =?utf-8?B?L0JBcGNFeExBNHJDaldRcjR4VmhoNC9janhlMEhkWXFmRUNnUHpOMTROalBS?=
+ =?utf-8?B?OENIaE52YXM2T1Fkb2FkR0pyMUM4eCtoZTErNDlESzJHcTlmUW1lbElBNm8z?=
+ =?utf-8?B?R2preXQ0WDFCYWxUSUFRS0tOYnF6QVVqOEkrNllzb1E2RVZXSXNTd2RsZTVU?=
+ =?utf-8?B?ZkNXOFcrbGo4U2xuNVJ6Wm1MOE9mS0wvVTBNTXBQR3J1eWFYb3FlekQxOTkz?=
+ =?utf-8?B?VExueit2ZXAwWGZEQzgzTzBkai94bk16Y3dUdEFzcUQ1Z1drT2hMZWcyOEph?=
+ =?utf-8?B?cGZmWStReU1aT2Y1U0VxbXpIWGM2bTJKQ2s1S2tCdDJ3VWF0cEpiWFhvSUJw?=
+ =?utf-8?B?dTFqWWlTMmRleE9rQko4QVE2dENOS1Z2WUJncDVGMzNQNmk2R0pmM25mdlBY?=
+ =?utf-8?B?cGJMYklhNGxHUW40UDNEdHpDa1k1T3cwUWhTUmRGSmQ2YjlUeitBRWp1WUox?=
+ =?utf-8?B?TUpDODlhbWp1WGtUcnNTQnZLZjhGMG9LZWRqd2lCQjRCcndkUkFEdy9VSS9Q?=
+ =?utf-8?B?SGtxUUtmWGdpV2o4STliWGFkQ3crNUFXVWVKZ0F6ZUFrZVQza2dFQ05QSDUz?=
+ =?utf-8?B?NHlyNzJ4U0FFYUZFbk5FTEZVQnQ1YnYzRFlhLytxWjhieVNHZGJ2YVlmMUJm?=
+ =?utf-8?B?VTBwSEIybTBEdzBUeWQ4QlB1ZE1nZTZyNkFWOGZvdjFkclAwRHhvSGVXTThM?=
+ =?utf-8?B?dlB6RG5GTnNOL0dRQzNDSlNQMWZLMzEwNm1PeHRuUGlJeEYwV1VEWTRrYWNE?=
+ =?utf-8?B?RWNCZVhhMnJpZmh6S1ZiUFZpckpoWktGS3BrMFBPekFZTnA1L21iVTJkM1FM?=
+ =?utf-8?B?UFBpQndISm9zelUrWmd5Y0tVem84djg4NGJRUENnTFVMdkt1clhhQnF0S3hy?=
+ =?utf-8?B?SElFM2dJS1Q0RDc1S2lKc3BKSnFZNEhPK002bmlDcHRkMlYvaWJUT3VieTc2?=
+ =?utf-8?B?SWp3b0U1b2YvY2E4V212UUtPcjhYanFNRWFPbk1lVDhjbzA4Y2pvUHQrRHlX?=
+ =?utf-8?B?RytZL21SS29GVTBYV3NJSnh2c1dBVUEzcTl4K2dNN2ltK0RZTEIyTGJlclNm?=
+ =?utf-8?B?dEdrWHc2L2tFUWdVYmZseEVDYjBIbnI3a2lDM3lwTXgvRXY5d0tMVERUUTFF?=
+ =?utf-8?B?Ly9YZnlLaW04cGxnRzBiSElFcTBCck9oYkFMcGU2NmpDblhMd2Z3cGtJbFV0?=
+ =?utf-8?B?ZHl6aStPVUhIV0VNM1ZQMTN2WXFENkRZYW1MTlo1clhwMGxxNEduRzU3bW1V?=
+ =?utf-8?Q?/oarFvbmktn25?=
+X-Forefront-Antispam-Report: 
+ CIP:52.123.1.82;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:teams-ntfs-email-email-processor-86b6767887-mq94f;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(61400799027)(41320700013)(69100299015)(1032899013)(376014)(8096899003)(2066899003)(13003099007);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 
+ pGFXtuRtKn4oI6xjjQp6LXAKlEahF1H+x1fw/GpDcT5xshrMVDjOE7PKoUbzcQpDz5+KcTU+Sq7MFcbRXYWliH1RMwSr71BWiftAsAypghqyVQtThfeWap9HT5mlFP1TBXrccJgYseYaSDffUM0PpF6Yy6an1UP9MMeB2u1hOjo/4fuUy42VtECYCBYWFYlUbWv8ndCFmnr3tC3W5KE8tXht9YOsgqKsLLusx2yMLiHKCKiJ0K1w2Es5O7FlE4HTfB94lYe1osRIHvJewGsjhrFsJRSt3uRN4qjnek7L+LvxtbQOIESSZA5W/i0CfR8kyPhg1gvjGeswIT0ZSGF68SdJ6cQjopRWs0cEYWIHmOIkz3e/anmVYFNM0tss/8VsdhVXP2/grrA6JhIJz1ZLiQ==
+X-OriginatorOrg: pup.edu.ph
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Mar 2025 12:21:02.4507
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 
+ 3f471c7e-4b73-45c6-d363-08dd6a052d8f
+X-MS-Exchange-CrossTenant-Id: 4da98571-dcea-4839-8fb1-0bdd5dc969f9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: 
+ TenantId=4da98571-dcea-4839-8fb1-0bdd5dc969f9;Ip=[52.123.1.82];Helo=[teams-ntfs-email-email-processor-86b6767887-mq94f]
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: 
+ TreatMessagesAsInternal-OSA0EPF000000CC.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYUPR01MB5187
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body style=3D"margin: 0; padding: 10px;">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<table border=3D"0" bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"border-top: 4px solid #5558AF; padding: 20px =
+0 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-siz=
+e: 24px; color: #5558af;">
+Microsoft Teams </td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"padding: 20px;">
+<h3 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; font-weight: normal; margin: 0;">
+A Microsoft customer, <strong><a>Concepcion</a></strong>, from the <strong>=
+<a>Polytechnic University of the Philippines</a></strong> organization has =
+added you to a team.</h3>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"padding: 0 162px">
+<table border=3D"0" bgcolor=3D"#FFFFFF" cellspacing=3D"0" cellpadding=3D"0"=
+ width=3D"280">
+<tbody>
+<tr>
+<td width=3D"10"></td>
+<td align=3D"center" style=3D"color: #535C6D; padding: 20px 0px 5px; font-f=
+amily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 10px;" w=
+idth=3D"260">
+Team name </td>
+<td width=3D"10"></td>
+</tr>
+<tr>
+<td width=3D"10"></td>
+<td align=3D"center" style=3D"max-width: 260px; padding-bottom: 10px; overf=
+low: hidden;" width=3D"260">
+<h3 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; margin: 0;">
+<strong><a>BSIT-ST 1-1 GEED 020 (Politics, Governance and Citizenship)</a><=
+/strong></h3>
+</td>
+<td width=3D"10"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding: 5px 162px 0px">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"280">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#5558AF" style=3D"border: 2px solid #5558AF=
+; padding: 10px 0px;" width=3D"280">
+<a href=3D"https://login.microsoftonline.com/redeem?rd=3Dhttps%3a%2f%2finvi=
+tations.microsoft.com%2fredeem%2f%3ftenant%3d4da98571-dcea-4839-8fb1-0bdd5d=
+c969f9%26user%3d94e10a23-a68d-41eb-9e43-4139a3a7e78a%26ticket%3doPE0jLwuhwY=
+0oj7YzDqbs0LH%25252bt7cYv83tNmtgMImp1g%25253d%26ver%3d2.0" target=3D"_blank=
+" style=3D"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; fo=
+nt-size: 14px; color: #FFF; text-decoration: none;">Open
+ Microsoft Teams</a> </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding: 5px 162px 40px">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"280">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding: 10px 0px;" width=3D"280">
+<p style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma, Geneva, Verdan=
+a, sans-serif; font-size: 10px;">
+The information shared above was not created by Microsoft. Only continue if=
+ you recognize this person and you're expecting this invitation.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#E2E7EC" style=3D"border-rig=
+ht: 4px solid #EEF1F5; border-bottom: 4px solid #EEF1F5; padding: 10px 30px=
+ 40px; font-size: 12px; line-height: 20px;" height=3D"380" width=3D"300">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" width=3D"220" height=3D"220"><img sr=
+c=3D"https://statics.teams.skype.com/icons/img_teams_channels.png" alt=3D"B=
+ring your team together" width=3D"220">
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; font-size: 14px; line-height: 20px; margin: 0;">
+Bring your team together</h4>
+<p style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma, Geneva, Verdan=
+a, sans-serif; font-size: 14px;">
+Create an open, collaborative workspace for your team. Use channels to orga=
+nize conversations by topic, area, or anything else.</p>
+</td>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#E2E7EC" style=3D"border-bot=
+tom: 4px solid #EEF1F5; padding: 10px 28px 40px; font-size: 12px; line-heig=
+ht: 20px;" height=3D"380" width=3D"300">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" width=3D"220" height=3D"220"><img sr=
+c=3D"https://statics.teams.skype.com/icons/img_chat.png" alt=3D"Chat 1:1 wi=
+th groups" width=3D"220">
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; font-size: 14px; line-height: 20px; margin: 0;">
+Chat 1:1 and with groups</h4>
+<p style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma, Geneva, Verdan=
+a, sans-serif; font-size: 14px;">
+Outside of open team conversations, chat privately and share files and note=
+s with anyone in your organization.</p>
+</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#E2E7EC" style=3D"border-rig=
+ht: 4px solid #EEF1F5; padding: 10px 32px 40px; font-size: 12px; line-heigh=
+t: 20px;" height=3D"380" width=3D"300">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" width=3D"220" height=3D"220"><img sr=
+c=3D"https://statics.teams.skype.com/icons/img_videocalling.png" alt=3D"Mak=
+e video calls and schedule online meetings" width=3D"220">
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; font-size: 14px; line-height: 20px; margin: 0;">
+Make video calls and schedule online meetings</h4>
+<p style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma, Geneva, Verdan=
+a, sans-serif; font-size: 14px;">
+Have impromptu or scheduled meetings in any channel. Or just call someone=
+=E2=80=A6</p>
+</td>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#E2E7EC" style=3D"padding: 1=
+0px 32px 40px; font-size: 12px; line-height: 20px;" height=3D"380" width=3D=
+"300">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" width=3D"220" height=3D"220"><img sr=
+c=3D"https://statics.teams.skype.com/icons/img_tabs.png" alt=3D"Team files,=
+ notes, and apps in one place" width=3D"220">
+</td>
+</tr>
+</tbody>
+</table>
+<h4 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; font-size: 14px; line-height: 20px; margin: 0;">
+Team files, notes, and apps in one place</h4>
+<p style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma, Geneva, Verdan=
+a, sans-serif; font-size: 14px;">
+Your team's tools are organized and integrated in Microsoft Teams with the =
+power of Office 365.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding: 30px 162px">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"280">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#5558AF" style=3D"border: 2px solid #5558AF=
+; padding: 10px 0px;" width=3D"280">
+<a href=3D"https://login.microsoftonline.com/redeem?rd=3Dhttps%3a%2f%2finvi=
+tations.microsoft.com%2fredeem%2f%3ftenant%3d4da98571-dcea-4839-8fb1-0bdd5d=
+c969f9%26user%3d94e10a23-a68d-41eb-9e43-4139a3a7e78a%26ticket%3doPE0jLwuhwY=
+0oj7YzDqbs0LH%25252bt7cYv83tNmtgMImp1g%25253d%26ver%3d2.0" target=3D"_blank=
+" style=3D"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; fo=
+nt-size: 14px; color: #FFF; text-decoration: none;">Open
+ Microsoft Teams</a> </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td height=3D"2" width=3D"30"></td>
+<td height=3D"2" style=3D"border-top: 2px solid #E2E7EC">&nbsp;</td>
+<td height=3D"2" width=3D"30"></td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td colspan=3D"6" align=3D"center" style=3D"padding: 0 0 30px">
+<h3 style=3D"color: #16233A; font-family: 'Segoe UI', Tahoma, Geneva, Verda=
+na, sans-serif; font-weight: normal; margin: 0">
+Get it now! Take it with you wherever you go.</h3>
+</td>
+</tr>
+<tr>
+<td width=3D"150"></td>
+<td align=3D"right" width=3D"56" style=3D"padding: 3px 0"><img src=3D"https=
+://statics.teams.microsoft.com/evergreen-assets/icons/icn_windows.png" alt=
+=3D"Microsoft Teams - Windows" height=3D"16" width=3D"16">
+</td>
+<td width=3D"96" style=3D"border-right: 2px solid #E2E7EC; color: #535C6D; =
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12=
+px;">
+&nbsp;&nbsp;Windows </td>
+<td align=3D"right" width=3D"36" style=3D"padding: 3px 0"><img src=3D"https=
+://statics.teams.skype.com/icons/icn_apple.png" alt=3D"Microsoft Teams - iO=
+S" height=3D"16" width=3D"16">
+</td>
+<td width=3D"116" style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma,=
+ Geneva, Verdana, sans-serif; font-size: 12px;">
+&nbsp;&nbsp;iOS </td>
+<td width=3D"150"></td>
+</tr>
+<tr>
+<td width=3D"150"></td>
+<td align=3D"right" width=3D"56" style=3D"padding: 3px 0"><img src=3D"https=
+://statics.teams.skype.com/icons/icn_apple.png" alt=3D"Microsoft Teams - Wi=
+ndows" height=3D"16" width=3D"16">
+</td>
+<td width=3D"96" style=3D"border-right: 2px solid #E2E7EC; color: #535C6D; =
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12=
+px;">
+&nbsp;&nbsp;Mac </td>
+<td align=3D"right" width=3D"36" style=3D"padding: 3px 0"><img src=3D"https=
+://statics.teams.skype.com/icons/icn_android.png" alt=3D"Microsoft Teams - =
+Android" height=3D"16" width=3D"16">
+</td>
+<td width=3D"116" style=3D"color: #535C6D; font-family: 'Segoe UI', Tahoma,=
+ Geneva, Verdana, sans-serif; font-size: 12px;">
+&nbsp;&nbsp;Android </td>
+<td width=3D"150"></td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td colspan=3D"6" align=3D"center" style=3D"padding: 20px 202px 24px">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"200">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"border: 2px solid #5558AF; padding: 6px 0 8px=
+;"><a href=3D"https://aka.ms/downloadteams" target=3D"_blank" style=3D"font=
+-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; =
+color: #5558AF; text-decoration: none;">Go
+ to downloads page</a> </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td height=3D"2" width=3D"30"></td>
+<td height=3D"2" style=3D"border-top: 2px solid #E2E7EC;">&nbsp;</td>
+<td height=3D"2" width=3D"30"></td>
+</tr>
+</tbody>
+</table>
+<table bgcolor=3D"#EEF1F5" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ width=3D"604">
+<tbody>
+<tr>
+<td colspan=3D"4" align=3D"center" style=3D"color: #535C6D; font-family: 'S=
+egoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; padding: 0 =
+0 40px; line-height: 18px;">
+=C2=A9 2024 Microsoft Corporation <br>
+One Microsoft Way, Redmond, WA 98052-7329 <br>
+<a href=3D"http://go.microsoft.com/fwlink/p/?LinkID=3D512132" target=3D"_bl=
+ank">Privacy policy</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td><img src=3D"https://urlshortener.teams.cloud.microsoft/8DD6A04B8440C2E-=
+3-0" style=3D"display: none;"></td>
+</tr>
+</tbody>
+</table>
+<div style=3D"font: italic 10pt arial, sans-serif;border-top:1px solid #aaa=
+aaa;margin-top:20px;padding-top:20px;">
+<p><strong style=3D"font-style: normal;">POLYTECHNIC UNIVERSITY OF THE PHIL=
+IPPINES</strong><br>
+<br>
+<a href=3D"http://www.pup.edu.ph/"><img src=3D"https://i.imgur.com/mNfyZqS.=
+jpg" title=3D"source: imgur.com" style=3D"max-width:380px;background:#fffff=
+f"></a><br>
+<br>
+This communication is intended solely for the use of the addressee. It may =
+contain confidential or legally privileged information. If you are not the =
+intended recipient, any disclosure, copying, distribution or taking any act=
+ion in reliance on this communication
+ is strictly prohibited and unlawful. If you received this communication in=
+ error, please notify the sender immediately and delete this communication =
+from your system. The Polytechnic University of the Philippines is neither =
+liable for the proper and complete
+ transmission of this communication nor for any delay in its receipt.<br>
+<br>
+For more information, please read the PUP Online Services <a href=3D"http:/=
+/www.pup.edu.ph/terms/">
+Terms of Use</a>, <a href=3D"https://www.pup.edu.ph/privacy/">Privacy State=
+ment</a>, and the
+<a href=3D"https://www.microsoft.com/en-us/trust-center/privacy">Office 365=
+ Privacy Statement</a></p>
+</div>
+</body>
+</html>

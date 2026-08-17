@@ -1,0 +1,711 @@
+X-GM-THRID: 1826091065859383434
+X-Gmail-Labels: Inbox,Important,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:1fc7:b0:226:35eb:c730 with SMTP id j7csp430273eiv;
+        Sat, 8 Mar 2025 20:55:49 -0800 (PST)
+X-Google-Smtp-Source: 
+ AGHT+IGvmnYYRh6Kk5DG3zFoYR6SRFQWbXrnEQmyhDuw1Iz7Mmhv2/6AkgOATI77MPiebAWj0yD2
+X-Received: by 2002:a05:6a20:7f93:b0:1ee:e2ac:5159 with SMTP id
+ adf61e73a8af0-1f544b15798mr15040621637.19.1741496148816;
+        Sat, 08 Mar 2025 20:55:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1741496148; cv=none;
+        d=google.com; s=arc-20240605;
+        b=SavypgosPfDBDn+RQIuYG+kaKCQXf0L0poiLkzawjiRLqV6xHNTCvKk0YVeU8OBuL/
+         xmMguZ7sYWtIxWzr3WIHA/ALClUtF6OWDaB1aQnIZJo5SVaSIzW6ctTJsyBlqpce+JE4
+         D7ScG/1Km0xlYt6Hbq9G0+JYXqkL8DKtdjUX/32ag8sL3tGIurA9ax5Lj5TyhhupJVgt
+         qt+M1WKXv5A4dagLh9Cwbu2GFLpTJq6HTj7LWCPLza0KuGpyO5998alPDKgA480+gJFA
+         2MLFj2/iERAXG9XsGxta73A9m+qgXn24lEsXeAM2Vanxu9ej2tHstYHITKZRBEN0kZl3
+         b7pA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=YA8LwIyDKKKlEPh7TDLNFi18RkusHDvv7cx3N2CJ8R8=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=b6VE32TGT7QokWhPDtYmEr9YKQudt228ITx8rQpsBHITlSmls3OrUQ81z6ayhdZOxr
+         8Z8gz8VHAlZ0Hqp6k/laxuDPpL32n/aN4TqvqKLstMs/gH8ZmLv/7t+S/2/iVNabtOFd
+         s8Oj/evtDn+2yZ6MfbfSLO9ia5i9zC4JnIoroidMk2D8Bz5d6kv5fczxgX6TuJthsCQs
+         bw8MARuFl13lfk/euusMdic2JEThwiUxoNpS4H9JQCD+LRFIFfNFWtzulqoHdEi3xtXL
+         s9plNye670A9h3+71/Tz+p/VDdnxfwekx7rKixIzwVkjRQEjW03N5Bly0CQz2lJAeusM
+         n+mg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@zoom.us header.s=sg header.b=FVfCJdOX;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=g1sb+Mee;
+       spf=pass (google.com: domain of
+ bounces+19187958-1a1e-patriogabrielpatdu=gmail.com@bounce-sg.zoom.us
+ designates 149.72.198.100 as permitted sender)
+ smtp.mailfrom="bounces+19187958-1a1e-patriogabrielpatdu=gmail.com@bounce-sg.zoom.us";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=zoom.us
+Return-Path: 
+ <bounces+19187958-1a1e-patriogabrielpatdu=gmail.com@bounce-sg.zoom.us>
+Received: from o11.ptr7220.sg.zoom.us (o11.ptr7220.sg.zoom.us.
+ [149.72.198.100])
+        by mx.google.com with ESMTPS id
+ 41be03b00d2f7-af525a1610csi1558977a12.8.2025.03.08.20.55.47
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 08 Mar 2025 20:55:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ bounces+19187958-1a1e-patriogabrielpatdu=gmail.com@bounce-sg.zoom.us
+ designates 149.72.198.100 as permitted sender) client-ip=149.72.198.100;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@zoom.us header.s=sg header.b=FVfCJdOX;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=g1sb+Mee;
+       spf=pass (google.com: domain of
+ bounces+19187958-1a1e-patriogabrielpatdu=gmail.com@bounce-sg.zoom.us
+ designates 149.72.198.100 as permitted sender)
+ smtp.mailfrom="bounces+19187958-1a1e-patriogabrielpatdu=gmail.com@bounce-sg.zoom.us";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=zoom.us
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=zoom.us;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=sg; bh=YA8LwIyDKKKlEPh7TDLNFi18RkusHDvv7cx3N2CJ8R8=;
+	b=FVfCJdOXd5ZVqMfWe1Udpqoq/tSRU+32Lm5Bq+AB/6HH4FLBM4mSI9cAw02ONicU9ZIV
+	68flom/m7bj7IMKiq2iae9vJNSCKcWydhHa/noUsmgw/fZwbPSTLuxjQgQdX7X1xSVsQ+h
+	qUgLVw2YhJoMuzaLgZdY1BuGcMMB+p+aqEcEY5CXqauYTFfb7gB+mrSmWg/Cbz4Y4hez6K
+	n0MF5W1Zwz5Ec4FqiEGWaq8mJTHvLN0vzP46HZ4NzZfwrwVroSP4na1EB/GX6jVRCkVYdy
+	eUUV5DHXw8aDt6R+Cyyab0F/1qmj88YWJMPw16GVCQ103+pZgRhXa2LiN5J+jxCg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=YA8LwIyDKKKlEPh7TDLNFi18RkusHDvv7cx3N2CJ8R8=;
+	b=g1sb+Meelq4+cX0ujFElZJyam2p0PDpXOunYMilM2w6Ux08VEBLaGY5twxTCJ86ioOPt
+	h/z8Vl218wRlC3lD0az8qcBkyvTB0oxvVVqYrrtbmxBxKLzOEdF0G6auRfJtJt70DbWxgz
+	IVoJsw88ytTXX6Ql8Wq0V01kERUgsTb7I=
+Received: by recvd-645b8ddfc8-l224b with SMTP id
+ recvd-645b8ddfc8-l224b-1-67CD1F50-1E
+	2025-03-09 04:55:44.996953477 +0000 UTC m=+9876843.273190786
+Received: from MTkxODc5NTg (unknown)
+	by geopod-ismtpd-20 (SG) with HTTP
+	id ym_HisZ8TAeojZPy3tc3ew
+	Sun, 09 Mar 2025 04:55:44.927 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Sun, 09 Mar 2025 04:55:45 +0000 (UTC)
+From: Zoom <no-reply@zoom.us>
+Mime-Version: 1.0
+Message-ID: <ym_HisZ8TAeojZPy3tc3ew@geopod-ismtpd-20>
+Subject: Code for signing in to Zoom
+X-Feedback-ID: 19187958:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EV=2FCrMu5=2F7JiV4gIYr+InI6MELJgR7AD1buWM99=2FR73ZFoqqpDBbZ3TVvT?=
+ =?us-ascii?Q?+Lil2N=2FgbEmrYBgm1ayIeoWhi3wTVWqAsAFahQj?=
+ =?us-ascii?Q?EGA2cjaKaR65GC5CReEHGB1sTCDIOf68wurYb11?=
+ =?us-ascii?Q?SottnfGmyQKOjiihyxxGlO9VikiemqhWrip5Y86?=
+ =?us-ascii?Q?UuXMzvnB+2Sx0oaBW3EFt9oeuTdCq2qM6+DKPxh?=
+ =?us-ascii?Q?xcIBy9gVPHJ4Tv+xT2sWZg=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BgOlqr24dK9bJzrVAuAkdpEWt+qypQ+xLFHZc?=
+ =?us-ascii?Q?+UY+H4Fq0=2FAU1YzARzcgdnfjO8c5na22GeoEbvy?=
+ =?us-ascii?Q?M+aKVQJaJKD60XRkJH0UO5Jih3QUlaMEl7LYvnj?=
+ =?us-ascii?Q?g9O6JbAI4pQ=2FLVkXNcskn1NNdR4jbC3+r7lnd3Y?=
+ =?us-ascii?Q?Kmxpgpem0OhPvlRylyba+kUFaCmc8ZEdZFWsGL6?=
+ =?us-ascii?Q?Ia2Tf3uLb61GWcRoxa00xlBgc6olE+boGnRLk=2Fy?=
+ =?us-ascii?Q?VppT19RubpQJQ8fxdScxWuuSFxcXtOj90J5lkCB?=
+ =?us-ascii?Q?B8Vgi1RFAzp598wGOt7jpcUhLdQ7avjjBC2RvOc?=
+ =?us-ascii?Q?AwmtHB0svXWX056oiM2kA0Gd1hTlLC4XQNfZvNc?=
+ =?us-ascii?Q?tre22q0cFVN2lI0R4=2Fe=2FV0=2F5dufO6dZ0ZMEjfev?=
+ =?us-ascii?Q?pOY2OTALJUYG+ukpioYTaOQWFhhYBHoRFv46Oo1?=
+ =?us-ascii?Q?JKlx3Wkl69MnDhJFLEAEJlE19t+KAXpy=2FV3Ctiw?=
+ =?us-ascii?Q?PSXI9UpXaO=2FizzUnPCgnTmNPek4qD7Fj44U6uHJ?=
+ =?us-ascii?Q?0ef5RLlv8YF8KThJFYNb83E3+cS2e55y8nnpouU?=
+ =?us-ascii?Q?WH92Wi6wBn3tz4E8JIzkNFBYxjHOupYdOUOQcDf?=
+ =?us-ascii?Q?VL0QB7hSctS=2F=2FNOI=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.ved9i04a9u0alP5Mcb7AEw==
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+    <style type=3D"text/css">
+        /* FONTS */
+        @media screen {
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Lato Light'), local('Lato-Light'), url(https://=
+fonts.gstatic.com/s/lato/v13/dPJ5r9gl3kK6ijoeP1IRsvY6323mHUZFJMgTvxaG2iE.wo=
+ff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 300;
+                src: local('Lato Light'), local('Lato-Light'), url(https://=
+fonts.gstatic.com/s/lato/v13/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(http=
+s://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff=
+2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(http=
+s://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff=
+2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fo=
+nts.gstatic.com/s/lato/v13/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff=
+2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fo=
+nts.gstatic.com/s/lato/v13/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 900;
+                src: local('Lato Black'), local('Lato-Black'), url(https://=
+fonts.gstatic.com/s/lato/v13/R4a6fty3waPci7C44H8AjvY6323mHUZFJMgTvxaG2iE.wo=
+ff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 900;
+                src: local('Lato Black'), local('Lato-Black'), url(https://=
+fonts.gstatic.com/s/lato/v13/tI4j516nok_GrVf4dhunkg.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 300;
+                src: local('Lato Light Italic'), local('Lato-LightItalic'),=
+ url(https://fonts.gstatic.com/s/lato/v13/XNVd6tsqi9wmKNvnh5HNEBJtnKITppOI_=
+IvcXXDNrsc.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 300;
+                src: local('Lato Light Italic'), local('Lato-LightItalic'),=
+ url(https://fonts.gstatic.com/s/lato/v13/2HG_tEPiQ4Z6795cGfdivFtXRa8TVwTIC=
+girnJhmVJw.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https:=
+//fonts.gstatic.com/s/lato/v13/YMOYVM-eg6Qs9YzV9OSqZfesZW2xOQ-xsNqO47m55DA.=
+woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https:=
+//fonts.gstatic.com/s/lato/v13/PLygLKRVCQnA5fhu3qk5fQ.woff2) format('woff2'=
+);
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), u=
+rl(https://fonts.gstatic.com/s/lato/v13/AcvTq8Q0lyKKNxRlL28RnxJtnKITppOI_Iv=
+cXXDNrsc.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), u=
+rl(https://fonts.gstatic.com/s/lato/v13/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgi=
+rnJhmVJw.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+
+            @font-face {
+                font-family: 'Playfair Display';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Playfair Display'), local('PlayfairDisplay-Regu=
+lar'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr=
+9bm1CUR-13DsDU150T1bKbJZejI.woff2) format('woff2');
+                unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+211=
+6;
+            }
+            @font-face {
+                font-family: 'Playfair Display';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Playfair Display'), local('PlayfairDisplay-Regu=
+lar'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr=
+9bm1CfoVn-aGdXvQRwgLLg-TkDk.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20A=
+D-20CF, U+2C60-2C7F, U+A720-A7FF;
+            }
+            @font-face {
+                font-family: 'Playfair Display';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Playfair Display'), local('PlayfairDisplay-Regu=
+lar'), url(https://fonts.gstatic.com/s/playfairdisplay/v10/2NBgzUtEeyB-Xtpr=
+9bm1Cdhy5e3cTyNKTHXrP9DO-Rc.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+=
+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+            }
+        }
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-=
+adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; }
+        /* RESET STYLES */
+        img { border: 0; height: auto; line-height: 100%; outline: none; te=
+xt-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !i=
+mportant; width: 100% !important; }
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        .em_preheader a {
+            color:#9da0b1;
+            text-decoration:none;
+        }
+        .em_header a {
+            color:#76798a;
+            text-decoration:none;
+        }
+        .em_blk a {
+            color:#333333;
+            text-decoration:none;
+        }
+        .em_blk2 a {
+            color:#000000;
+            text-decoration:none;
+        }
+        .em_dkgray a {
+            color:#414155;
+            text-decoration:none;
+        }
+        .em_mdgray a {
+            color:#747487;
+            text-decoration:none;
+        }
+        .em_grayfooter a {
+            color:#828282;
+            text-decoration:none;
+        }
+        .em_red a {
+            color:#dd2b0d;
+            text-decoration:none;
+        }
+        .em_blue a {
+            color:#0E72ED;
+            text-decoration:none;
+        }
+        .em_wht a {
+            color:#ffffff;
+            text-decoration:none;
+        }
+        @media screen and (min-width: 601px) {
+            .container {
+                width: 600px !important;
+            }
+        }
+        /* MOBILE STYLES */
+        @media screen and (max-width:600px){
+            .em_wrapper {
+                width:100% !important;
+            }
+            .em_pad {
+                padding:40px 15px 40px 15px !important;
+            }
+            .em_p15 {
+                padding-bottom:15px !important;
+            }
+            .em_p25 {
+                padding-bottom:25px !important;
+            }
+            .em_p40 {
+                padding-bottom:40px !important;
+            }
+            .em_pad_1 {
+                padding: 0px 15px 10px 15px !important;
+            }
+            .em_pad_2 {
+                padding: 0px 15px 40px 15px !important
+            }
+            .em_brk {
+                display:block !important;
+            }
+            .em_hide {
+                display:none !important;
+            }
+            .em_center {
+                text-align:center !important;
+            }
+            .BodyCopy {
+                font-size: 16px !important;
+                line-height: 24px !important;
+            }
+
+
+            /* BR STYLES */
+
+            .em_d20 {
+                height: 20px;
+            }
+
+            .em_d40 {
+                height: 40px;
+            }
+
+            .img-max {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+
+            .mobile-first {display: table-header-group !important;}
+            .mobile-intermediate {display: table-row !important;}
+            .mobile-last {display: table-footer-group !important;}
+
+            .mobile-center {
+                display: table !important;
+                float: none;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .mobile-full-width {
+                display: table;
+                width: 100%;
+            }
+
+            .mobile-cta {
+                padding: 20px 25px !important;
+                font-size:14px !important;
+            }
+
+
+        }
+        /* ANDROID CENTER FIX */
+        div[style*=3D"margin: 14px 0;"] { margin: 0 !important; }
+    </style>
+</head>
+<body style=3D"background-color: #EEEEEE; margin: 0 !important; padding: 0 =
+!important;">
+<!-- Preheader -->
+
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%">
+    <tbody>
+    <tr>
+        <td align=3D"center" valign=3D"top">
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"container" style=3D"max-width:600px;" width=3D"100%"><!-=
+- Navigation -->
+                <tbody>
+                <tr>
+                    <td align=3D"center" valign=3D"top">
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"max-width:600px;" width=3D"100%">
+                            <tbody>
+                            <tr>
+                                <td align=3D"left" bgcolor=3D"#FFFFFF" styl=
+e=3D"font-size:0; padding-top:0px;" valign=3D"top" class=3D"">
+                                    <div style=3D"display:inline-block; max=
+-width:600px; vertical-align:top; width:100%;background-color: #0E72ED;">
+                                        <table align=3D"left" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                            <tr>
+                                                <td align=3D"left" style=3D=
+"padding: 20px 30px" valign=3D"middle" class=3D""><a href=3D"https://zoom.u=
+s/?zcid=3D1640" style=3D"text-decoration:none;" target=3D"_blank"><img alt=
+=3D"Zoom Logo" border=3D"0" src=3D"http://click.zoom.us/l/84442/2020-05-20/=
+blf6y3/84442/140394/zoom_logo_white.png" style=3D"display:block; font-famil=
+y:'Lato', Helvetica, sans-serif; font-size:18px; line-height:22px; color:#7=
+6798a; font-weight:bold; width:100%; max-width: 100px" width=3D"100"> </a><=
+/td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Body -->
+                <tr>
+                    <td align=3D"center" bgcolor=3D"#ffffff" style=3D"paddi=
+ng:0px 30px 40px 30px;" valign=3D"top">
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"max-width:600px;" width=3D"100%">
+                            <tbody>
+                            <tr>
+                                <td align=3D"left" class=3D"BodyCopy" style=
+=3D"padding-bottom: 20px; font-family:'Lato', Helvetica, sans-serif; font-s=
+ize:14px; line-height:17px; font-weight:400; color:#232333; letter-spacing:=
+ .01em; text-align: left;margin-top: 40px;">
+                                    <div style=3D"margin-top: 40px;">Hi Pat=
+rio Gabriel Patdu,</div>
+                                        <div style=3D"margin-top: 24px;">We=
+ detected an unusual sign-in from a device or location you don't usually us=
+e. If this was you, enter the code below to sign in to Zoom.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" class=3D"BodyCopy" style=
+=3D"padding-bottom: 20px; font-family:'Lato', Helvetica, sans-serif; font-s=
+ize:28px; line-height:32px; font-weight:400; color:#000000; letter-spacing:=
+ 0.2em; text-align: left; font-weight: bold">
+                                    303569
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" class=3D"BodyCopy" style=
+=3D"padding-bottom: 20px; font-family:'Lato', Helvetica, sans-serif; font-s=
+ize:14px; line-height:17px; font-weight:400; color:#232333; letter-spacing:=
+ .01em; text-align: left;">
+                                    <div>The code will expire in 10 minutes=
+.</div>
+                                        <div style=3D"padding-top: 20px">Pl=
+ease review the sign in activity details below:</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" style=3D"padding-top: =
+12px;background-color: #F7F7FC;padding-bottom: 12px">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"padding: 12px; font-family:helvetica,arial; font-=
+size:14px; line-height:29px; color:#333333; width: 500px;">
+                                        <tbody>
+                                        <tr>
+                                            <td style=3D"color: #747487;">D=
+ate</td>
+                                            <td>03/09/2025 04:55:44 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style=3D"color: #747487;">B=
+rowser</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td style=3D"color: #747487;">O=
+perating System</td>
+                                            <td>Windows</td>
+                                        </tr>
+                                        <tr>
+                                            <td style=3D"color: #747487;">L=
+ocation</td>
+                                            <td>Province of Cavite(PH)</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" class=3D"BodyCopy" style=
+=3D"font-family:'Lato', Helvetica, sans-serif; font-size:14px; line-height:=
+17px; font-weight:400; color:#232333; letter-spacing: .01em; text-align: le=
+ft">
+                                    <div style=3D"margin-top: 24px;">If thi=
+s wasn't you, please let us know <a href=3D"https://us04web.zoom.us/termina=
+te_unusual_login_help?code=3Djlz9xs5LMXQlug0lGZ-snd4Jq4HLJt5IfBl9ncO6D1Q.AG=
+.Rq6nE5GysrwE8AFskgxcdkxOxoXUmqhmk3fBw7WFjhe_y6W37VL3RhafUTZzi1zjge8NLZh_OX=
+CVAgMKfUefd551E-iAmahgmuQtZU58zHAYBJhHRtNFlSm6PNa2fE7iUxw5fM4Y5f4vCJOprhPoJ=
+JTAOU7fHm56HGbHPXb6NwO222tk9jI2HEvQF4ksJ3W1NcTSufMUL-3P7LuNv1kZ_s63WA1WbxKB=
+orjFQ49IqKpm8OjkaV5A-CXDklI2aCP_5Au-vtT6C6SYpgF2fi9JgXlvie7c4Tw8g_NoFnFHt-a=
+CqHMGkvAm5w1f-EJoCC45T0ikiI8bue-nJ6w.AbsWNjyW9Z0uDYsyTiCd0A.ptg109cv-0JW-i4=
+V" target=3D"_blank" style=3D"text-decoration: none;color: #0E71EB;">here</=
+a>. We recommend that you update your password and enable two-factor authen=
+tication to secure your account.</div>
+                                    <div style=3D"margin-top: 24px;">Thank =
+you,</div>
+                                    <div style=3D"margin-bottom: 24px;">The=
+ Zoom Team</div>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td align=3D"left" class=3D"BodyCopy"><=
+div style=3D"border-top: solid;background: #EDEDF4;position: static;color: =
+#EDEDF4;margin-bottom: 24px;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align=3D"left" class=3D"BodyCopy" s=
+tyle=3D"font-family:'Lato', Helvetica, sans-serif; font-size:12px; line-hei=
+ght:15px; font-weight:400; color:#747487; letter-spacing: .01em; text-align=
+: left">
+                                        <div>To improve the security of you=
+r account, we've enabled sign-in alerts. We will notify you when we detect =
+sign-in activity from a new browser, location, or device.</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!--END Body-->
+                <!-- Gray Box -->
+                <tr>
+                    <td align=3D"center" bgcolor=3D"#E4E4ED" valign=3D"top"=
+>
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"max-width:600px;" width=3D"100%">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" style=3D"padding:30px =
+15px;" valign=3D"top">
+                                    <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" style=3D"p=
+adding-bottom:15px;" valign=3D"top">
+                                                <table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td align=3D"center=
+" valign=3D"top" class=3D""><a href=3D"https://twitter.com/zoom" style=3D"t=
+ext-decoration:none;" target=3D"_blank"><img alt=3D"Twitter" border=3D"0" h=
+eight=3D"28" src=3D"http://click.zoom.us/l/84442/2019-12-26/bfs1bv/84442/14=
+0021/Social_Twitter_2020.png" style=3D"display:block; font-family:'Lato', H=
+elvetica, sans-serif; font-size:9px; line-height:22px; color:#ffffff;" widt=
+h=3D"28"></a></td>
+                                                        <td width=3D"12" cl=
+ass=3D"">&nbsp;</td>
+                                                        <td align=3D"center=
+" valign=3D"top" class=3D""><a href=3D"https://www.linkedin.com/company/zoo=
+m-video-communications/" style=3D"text-decoration:none;" target=3D"_blank">=
+<img alt=3D"LinkedIn" border=3D"0" height=3D"28" src=3D"http://click.zoom.u=
+s/l/84442/2019-12-26/bfs1bs/84442/140023/Social_LinkedIn_2020.png" style=3D=
+"display:block; font-family:'Lato', Helvetica, sans-serif; font-size:9px; l=
+ine-height:22px; color:#ffffff;" width=3D"28"></a></td>
+                                                        <td width=3D"12" cl=
+ass=3D"">&nbsp;</td>
+                                                        <td align=3D"center=
+" valign=3D"top" class=3D""><a href=3D"http://blog.zoom.us/" style=3D"text-=
+decoration:none;" target=3D"_blank"><img alt=3D"Blog" border=3D"0" height=
+=3D"28" src=3D"http://click.zoom.us/l/84442/2019-12-26/bfs1bx/84442/140025/=
+Social_Blog_2020.png" style=3D"display:block; font-family:'Lato', Helvetica=
+, sans-serif; font-size:9px; line-height:22px; color:#ffffff;" width=3D"28"=
+></a></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"center" class=3D"e=
+m_grayfooter" style=3D"font-family:'Lato', Helvetica, sans-serif; font-size=
+:12px; line-height:15px; color:#828282;"><a href=3D"tel:1-888-799-9666" sty=
+le=3D" text-decoration: none; color: #828282;">+1.888.799.9666</a><br>
+                                                =A92025 Zoom - All Rights R=
+eserved</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Footer -->
+                <tr>
+                    <td align=3D"center" bgcolor=3D"#eeeeee" valign=3D"top"=
+>
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"max-width:600px;" width=3D"100%">
+                            <tbody>
+                            <tr>
+                                <td align=3D"center" style=3D"padding:30px =
+0 10px 0;" valign=3D"top">
+                                    <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                        <tbody>
+                                        <tr>
+                                            <td align=3D"center" class=3D"e=
+m_grayfooter" style=3D"font-family:'Lato', Helvetica, sans-serif; font-size=
+:12px; line-height:15px; color:#969AA1;">Visit <a href=3D"http://zoom.us" s=
+tyle=3D"color:#969AA1" target=3D"_blank">zoom.us</a><br>
+                                                <a href=3D"https://www.goog=
+le.com/maps/place/55+Almaden+Blvd,+San+Jose,+CA+95113/@37.3328541,-121.8970=
+97,17z/data=3D!3m1!4b1!4m5!3m4!1s0x808fcca40adf3cb7:0x5a2d33d3593e0a33!8m2!=
+3d37.3328541!4d-121.8949083" style=3D"color:#969AA1; text-decoration: none;=
+" target=3D"_blank">
+                                                    55 Almaden Blvd<br/>San=
+ Jose, CA 95113
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

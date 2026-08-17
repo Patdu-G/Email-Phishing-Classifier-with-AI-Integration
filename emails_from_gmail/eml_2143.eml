@@ -1,0 +1,610 @@
+X-GM-THRID: 1785793195048047372
+X-Gmail-Labels: Inbox,Important,Opened,Category Personal
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:8d88:0:b0:1eb:babb:f4fc with SMTP id q8csp3204328eig;
+        Tue, 26 Dec 2023 22:17:53 -0800 (PST)
+X-Received: by 2002:a05:6358:281e:b0:172:b539:3fcd with SMTP id
+ k30-20020a056358281e00b00172b5393fcdmr9876454rwb.53.1703657873442;
+        Tue, 26 Dec 2023 22:17:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703657873; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Qye5rNhKUTIOd4WT/3KX2HH/cYBUFc/iIMCrKrprSib13leFrieRIBoW/alHTkLw0T
+         PbpvEsExNcewCbf141B1TJi5bPmIszrXiuk1yzn3/OhgV67/O+XYAocoyfpc70QAiRi8
+         2wfIY9JnfWa7pJztz3IRcR3oEQ99MIqNlgUgKBRa5qMelEcj17RZdAlduXULaISciwvs
+         EUgW7qc2MExNUMF4QhljOWkGBFezyp73012/TKL/ucMUr6muwodYpSn19PG/unA3X1Av
+         Is2/i4Uj3K+Bd84fHkwPFpxcN6QVHaFlN/3GDgVQontoMWYMCO40BXqVUAZ0EMxT9iqI
+         3oSQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=Ig6TzvtZYujWsm1vQxWCE7OCaK9JeCBCE8K0/yVQI20=;
+        fh=C3/Aec3xE30aIos8MPML7q6jmjRJ9sINcC+L6LAS82s=;
+        b=OiUYjn3/Rlw2HjFh6YWGhVmnlqGr2kD7bSNnU1m2HvfKoVjokzI6OZP811qVG950nA
+         t6GH1qzprTo4emFKplKUAeMT1MRomTxL0v4Wru+Lizqunadote472KIFv5ZjEGR4blIq
+         LLkBWNfutcmhyILKrGHeMlYGAWuuw4vYEfhiEyd1yg/BlDja4qHD8vfBF4LBYJOVYHhx
+         +lHxwMxQra0gsgeOsP/Y+Xx2EBCUk6+w9nenxXYKjMaMcTrHHx+GGzJjfuso9jsX3f/+
+         XK7vO5Mxdjw9AO9aXHJpxP/BZwCzzllnEu0UM96bDX3AsfkZBiW0qf+D5/c38TwqoxLq
+         a6Bw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dost.gov.ph header.s=google header.b=gh1WrGlm;
+       spf=pass (google.com: domain of ptritestinglab@ptri.dost.gov.ph
+ designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=ptritestinglab@ptri.dost.gov.ph;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=dost.gov.ph
+Return-Path: <ptritestinglab@ptri.dost.gov.ph>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com.
+ [209.85.220.41])
+        by mx.google.com with SMTPS id
+ 30-20020a630c5e000000b005cde381b3acsor2288558pgm.8.2023.12.26.22.17.52
+        for <patriogabrielpatdu@gmail.com>
+        (Google Transport Security);
+        Tue, 26 Dec 2023 22:17:53 -0800 (PST)
+Received-SPF: pass (google.com: domain of ptritestinglab@ptri.dost.gov.ph
+ designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dost.gov.ph header.s=google header.b=gh1WrGlm;
+       spf=pass (google.com: domain of ptritestinglab@ptri.dost.gov.ph
+ designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=ptritestinglab@ptri.dost.gov.ph;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=dost.gov.ph
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=dost.gov.ph; s=google; t=1703657872; x=1704262672; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Ig6TzvtZYujWsm1vQxWCE7OCaK9JeCBCE8K0/yVQI20=;
+        b=gh1WrGlmdt1+7HClbW94wbv8XLTRG9vYKe8sXonWsGw3pVWpfHo7utFOPcFRnAKF6v
+         bRZIDS9fxZjuu4Jr1y8jEn1dRiBbbjCBZVKux32BoFpajs0luCUplZRyqy4Qh7dR6pHT
+         pyzIp1R1EH9TiqUfmNsL/wifAVsq3wcGHRBO/uCp5DSdbiNdHqOy75z0ITKWtsXXQOln
+         ejGAmazgtKm5h6ILtvB1pjsFoslOsZ9PO/BkTb9NP5SxCWGU5aOBjPoHqXbCipeK5o8j
+         /0l7jo/uVpuUEHqgY8ZcC+3fBsiRonIFn1W3kFDzA1tduuGWl4Z/qOq1iQtNUuh1vecj
+         c8Gw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1703657872; x=1704262672;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ig6TzvtZYujWsm1vQxWCE7OCaK9JeCBCE8K0/yVQI20=;
+        b=Mjr11hGw59rf8X1X5tucsvw+etgucNQ++Ird/pDlkBIDeDlKKFNs/JZ8hxlCIFpv9/
+         JqTa65ZEYSVzp/dwipmKcprN7LNWA2VJlkZdHoLBdEtfYEP5TvYjAvn1EZkzzobEVY8w
+         rapXxJQWNDGUrG+RpBcAQQiENz91eUt6v1Yp/vLytAGHGkZ2d4TvaPNZ+JMcOdD7VzT+
+         jimcq/rDLSui0/uLin9lo07pYjNicIbLOg4oxPCSxgKJKDAa9KFLYmMsQ0Yj10Jrak3n
+         7pjAp7wXQcL8s2wDhGTpni5lehJEzJAzSA8hDmt/wKJr6arnklMmdiD6t0ks6aTn0Qva
+         qN5A==
+X-Gm-Message-State: AOJu0Yw5oWep/EzYvz8Qe/x0TqJf+8I5CogpOaCaip1TWyj2d1cGzvP+
+	uiO6Nb5W7tZ/LjSPYPwmxk/NwNZ7Uuw82MffFmev/UovnlPj2qI2EMsZihFqj3s=
+X-Google-Smtp-Source: 
+ AGHT+IEFwzo7UdrlGfgtjbU7zHeOOkoGrNvfmFVwpltaa9+P88IUTAuNPu1oaPzC+8+FwK/F9tEaAs/j41bBXj2TfmQ=
+X-Received: by 2002:a17:90a:7041:b0:28b:c163:b4db with SMTP id
+ f59-20020a17090a704100b0028bc163b4dbmr2407355pjk.72.1703657872064; Tue, 26
+ Dec 2023 22:17:52 -0800 (PST)
+MIME-Version: 1.0
+References: 
+ <CAC0992fPdJrGD_TG9A9euuPpHESMFz56jE_Bg_NteSPJCbVX5w@mail.gmail.com>
+ <CAJt8z04_WWEU4Z7x15h2+xRDkUyT5jPwfOE4gGU0CzHbjC8AEQ@mail.gmail.com>
+ <CALqOurbVkvrLOh6ZeSEMUsFap9-N7H5arFYEekLkqP_D6-Q5Eg@mail.gmail.com>
+ <CAC0992f2s3fss98KZ1yf6iqR9sKzhOK4ZgAhUjjtU63qN+Fs4g@mail.gmail.com>
+In-Reply-To: 
+ <CAC0992f2s3fss98KZ1yf6iqR9sKzhOK4ZgAhUjjtU63qN+Fs4g@mail.gmail.com>
+From: PTRI Testing Laboratories <ptritestinglab@ptri.dost.gov.ph>
+Date: Wed, 27 Dec 2023 14:17:39 +0800
+Message-ID: 
+ <CALqOurZQddL1e-zHUQ9pC0hHxh=ANqcVdf6FFn_zXV5i3LNaXg@mail.gmail.com>
+Subject: Re: Inquiry Regarding Processing and Testing Fees for Textile
+ Production
+To: "B6 PATDU, Patrio Gabriel A." <patriogabrielpatdu@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000489c25060d77c2a0"
+
+--000000000000489c25060d77c2a0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello Ms. Manalang,
+
+Good day.
+
+See below my response:
+
+1. Fiber extraction you may  contact this email  rdd@ptri.dost.gov.ph
+2. Fiber into textile products - may we ask what kind of textile
+products you are referring to?
+3. Fiber Testing - for fiber testing we have tensile strength single
+strand, fiber fineness, moisture content and microscopical view -
+longitudinal and cross sectional
+
+
+
+
+Warm regards,
+
+Christy
+
+
+
+
+
+
+
+
+You may contact us for further queries. Thank you for trusting DOST-PTRI
+for your testing and analysis needs.
+
+We are looking forward to our next transaction.
+
+Christy Jane S. Tizon / Angelica Rose S. Lallo
+*PTRI Testing Laboratory Receiving and Releasing Office*
+Department of Science and Technology
+*Philippine Textile Research Institute *
+General Santos Ave. Bicutan Taguig City
+Tel: 8837-1158
+Cp No. 09166389760
+
+*Advisory:*
+
+*DOST PTRI is open from Monday to Friday **with office hours from 8:00 am
+to 5:00 pm. *
+*We are closed on Weekends and Public Holidays.*
+
+NOTE:
+
+*To claim the Test Report - Bring the Test Request.  *
+
+DISCLAIMER: This email (including any attachment/s) is confidential and/or
+may also be legally privileged. If you are not the intended recipient,
+please delete immediately; do not use it for any purpose, nor disclose its
+contents to anyone. Please notify the sender immediately via email if you
+received this email by mistake and delete it from your system. The sender
+cannot guarantee that email transmissions are secure or error-free as
+information may be corrupted, arrive late, or incomplete, or contain
+viruses, and therefore does not accept any liability for any errors or
+omissions in the content of this message. Views and opinions expressed
+herein are those of the sender and does not necessarily reflect the views
+of DOST-PTRI.
+
+
+
+On Sat, Dec 23, 2023 at 10:50=E2=80=AFAM B6 PATDU, Patrio Gabriel A. <
+patriogabrielpatdu@gmail.com> wrote:
+
+> Subject: Inquiry Regarding Cogon Grass Testing, Fiber Extraction, and
+> Textile Production
+>
+> Greetings!
+>
+> Re: Your recent response on our last email.
+>
+> We would like to know if your testing center accepts samples of cogon
+> grass for production and testing processes.
+>
+> Additionally, we would also like to know if your facility offers the
+> extraction of fibers from cogon grass preferably using mechanical retting=
+.
+>
+> Lastly, does the facility offer services to convert the cogon grass fiber=
+s
+> into textiles products?
+>
+> Any information regarding the processes, fees, or requirements of creatin=
+g
+> textiles from cogon grass fibers would be greatly appreciated.
+>
+> Could you kindly provide details on your services, procedures, and any
+> prerequisites or limitations associated with these services?
+>
+> We are particularly interested in exploring the potential of cogon grass
+> as a sustainable material for various applications, and we believe your
+> expertise and facilities could be helpful in our study.
+>
+> Thank you for your time and consideration. We look forward to your
+> response.
+>
+> Warm regards,
+>
+> Patrio Gabriel A. Patdu
+>
+> Patrio Gabriel A. Patdu
+>
+> 09057505096
+>
+> patriogabrielpatdu@gmail.com
+>
+> Kaithleen Sophia R. Mallari
+>
+> 09190917278
+>
+> kaithleensophia@gmail.com
+>
+> Sheira M. Manalang
+>
+> 0921 924 8117
+>
+> manalangsheira@gmail.com
+>
+> On Thu, 21 Dec 2023, 1:52 pm PTRI Testing Laboratories, <
+> ptritestinglab@ptri.dost.gov.ph> wrote:
+>
+>> Dear Mr. Gabriel,
+>>
+>>
+>> Good day.
+>>
+>>
+>> May we ask if your sample is already in a form of fiber? Or it needs to
+>> extract first?
+>>
+>> For fiber testing we have the following test:
+>>
+>> 1. Tensile Strength Single Strand
+>> 2. Fiber Fineness
+>> 3. Moisture Content
+>> 4. Microscopical View - Longitudinal and cross sectional
+>>
+>>
+>> For the first two test we have a format prior to send samples to us
+>>
+>>
+>>
+>>
+>> Warm regards,
+>>
+>> Christy
+>>
+>> On Thu, Dec 21, 2023, 7:54 AM DOST PTRI <ptri@ptri.dost.gov.ph> wrote:
+>>
+>>>
+>>>
+>>> ---------- Forwarded message ---------
+>>> From: B6 PATDU, Patrio Gabriel A. <patriogabrielpatdu@gmail.com>
+>>> Date: Wed, Dec 20, 2023 at 5:40=E2=80=AFPM
+>>> Subject: Inquiry Regarding Processing and Testing Fees for Textile
+>>> Production
+>>> To: <ptri@ptri.dost.gov.ph>
+>>>
+>>>
+>>> To whom this may concern,
+>>>
+>>> I hope this email finds you well. I am Patrio Gabriel A. Patdu along
+>>> with my fellow research members Kaithleen Sophia R. Mallari and Sheira =
+M.
+>>> Manalang.
+>>>
+>>> We are Grade 12 students from Information and Communication Technology
+>>> High School who are currently conducting an experimental study focused =
+on
+>>> exploring alternative fibers for textile production. Specifically, our
+>>> research delves into the potential utilization of COGON GRASS as an
+>>> alternative fiber for this purpose.
+>>>
+>>> Our group is reaching out to inquire about the processing fees
+>>> associated with your testing facility for our experimentation process.
+>>> Additionally, we would also like to know the pricing of testing fees to
+>>> assess the fibers afterwards.
+>>>
+>>> In summary, would it be possible to provide us with detailed informatio=
+n
+>>> regarding the following:
+>>>
+>>> 1. The processing fees involved in utilizing your facilities for the
+>>> experimentation process involving cogon grass fiber.
+>>>
+>>> 2. The testing fees associated with the rigorous analysis and assessmen=
+t
+>>> of cogon grass fibers for their suitability in textile production.
+>>>
+>>> Moreover, should there be any specific protocols or prerequisites neede=
+d
+>>> prior to submitting our samples or any other information concerning the
+>>> conduct of experiments at your center, we would greatly appreciate your
+>>> guidance on these matters.
+>>>
+>>> Thank you sincerely for your time and consideration in this matter. We
+>>> eagerly anticipate your response.
+>>>
+>>> Respectfully,
+>>>
+>>> Patrio Gabriel A. Patdu
+>>> 09057505096
+>>> patriogabrielpatdu@gmail.com
+>>>
+>>> Kaithleen Sophia R. Mallari
+>>> 09190917278
+>>> kaithleensophia@gmail.com
+>>>
+>>> Sheira M. Manalang
+>>> 0921 924 8117
+>>> manalangsheira@gmail.com
+>>>
+>>>
+>>> --
+>>> Department of Science and Technology
+>>> *PHILIPPINE TEXTILE RESEARCH INSTITUTE*
+>>> Gen. Santos Ave., Bicutan, Taguig City
+>>> Telefax: 8837 1325 |  8837 1158  |  8837 1349
+>>> Email: ptridost47@gmail.com
+>>>
+>>> DISCLAIMER: Information contained herein may include confidential
+>>> information and personal data as defined under the applicable laws. It =
+is
+>>> intended solely for the use of the party to whom it is addressed and to
+>>> others authorized to receive it. If you are not the intended recipient,=
+ you
+>>> are hereby notified that any disclosure, copying, distribution or takin=
+g
+>>> action in reliance to the contents of this information is strictly
+>>> prohibited and may be in violation of local and international laws
+>>> including the "Data Privacy Act of 2012=E2=80=9D.
+>>>
+>>
+
+--000000000000489c25060d77c2a0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hello Ms. Manalang,<div><br></div><div>Good day.</div><div=
+><br></div><div>See below my response:</div><div><br></div><div>1. Fiber ex=
+traction you may=C2=A0 contact this email=C2=A0<font color=3D"#0000ff"> <a =
+href=3D"mailto:rdd@ptri.dost.gov.ph">rdd@ptri.dost.gov.ph</a>=C2=A0=C2=A0</=
+font></div><div><font color=3D"#000000">2. Fiber into textile products - </=
+font><font color=3D"#0000ff">may we ask what kind of textile products=C2=A0=
+you are referring to?</font></div><div><font color=3D"#000000">3. Fiber Tes=
+ting </font><font color=3D"#0000ff">- for fiber testing=C2=A0we have tensil=
+e=C2=A0strength single strand, fiber fineness, moisture=C2=A0content and mi=
+croscopical view - longitudinal and cross sectional=C2=A0</font></div><div>=
+<font color=3D"#0000ff"><br></font></div><div><font color=3D"#0000ff"><br><=
+/font></div><div><font color=3D"#0000ff"><br></font></div><div><font color=
+=3D"#0000ff"><br></font></div><div><font color=3D"#000000">Warm=C2=A0regard=
+s,</font></div><div><font color=3D"#000000"><br></font></div><div><font col=
+or=3D"#000000">Christy</font></div><div><font color=3D"#0000ff"><br></font>=
+</div><div><font color=3D"#0000ff"><br></font></div><div><font color=3D"#00=
+00ff"><br></font></div><div><font color=3D"#0000ff"><br></font></div><div><=
+br></div><div><br></div><div><br></div><div><br clear=3D"all"><div><div dir=
+=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div =
+dir=3D"ltr"><div><font color=3D"#000000" face=3D"tahoma, sans-serif">You ma=
+y contact us for further queries. Thank you for trusting DOST-PTRI=C2=A0 fo=
+r your testing and analysis needs.</font></div><div><font color=3D"#000000"=
+ face=3D"tahoma, sans-serif"><br></font></div><div><font color=3D"#000000" =
+face=3D"tahoma, sans-serif">We are looking forward to our next transaction.=
+</font></div><div><font color=3D"#000000" face=3D"tahoma, sans-serif"><br><=
+/font></div><div><font color=3D"#000000" face=3D"tahoma, sans-serif">Christ=
+y Jane S. Tizon / Angelica Rose S. Lallo=C2=A0</font></div><div><font color=
+=3D"#000000" face=3D"tahoma, sans-serif"><b>PTRI Testing Laboratory Receivi=
+ng and Releasing Office</b></font></div><div><font color=3D"#000000" face=
+=3D"tahoma, sans-serif">Department of Science and Technology</font></div><d=
+iv><font color=3D"#000000" face=3D"tahoma, sans-serif"><b>Philippine Textil=
+e Research Institute=C2=A0</b></font></div><div><font color=3D"#000000" fac=
+e=3D"tahoma, sans-serif">General Santos Ave. Bicutan Taguig City=C2=A0</fon=
+t></div><div><font color=3D"#000000" face=3D"tahoma, sans-serif">Tel: 8837-=
+1158</font></div><div><font color=3D"#000000" face=3D"tahoma, sans-serif">C=
+p No. 09166389760</font></div><div><font color=3D"#000000" face=3D"tahoma, =
+sans-serif"><br></font></div><div><div style=3D"font-weight:bold;line-heigh=
+t:normal"><font color=3D"#000000" face=3D"tahoma, sans-serif"><b style=3D"t=
+ext-align:center"><u>Advisory:</u></b></font></div><div style=3D"font-weigh=
+t:bold;line-height:normal"><font color=3D"#000000" face=3D"tahoma, sans-ser=
+if"><b style=3D"text-align:center">=C2=A0</b></font></div><div style=3D"lin=
+e-height:normal"><div><div style=3D"font-weight:bold;color:rgb(34,34,34);li=
+ne-height:normal"><font face=3D"tahoma, sans-serif"><b style=3D"text-align:=
+center"><font color=3D"#000000">DOST PTRI is open from Monday to Friday=C2=
+=A0</font></b><b style=3D"text-align:center"><font color=3D"#000000">with o=
+ffice hours from 8:00 am to 5:00 pm.=C2=A0</font></b></font></div><div styl=
+e=3D"font-weight:bold;color:rgb(34,34,34);line-height:normal"><font face=3D=
+"tahoma, sans-serif"><b style=3D"text-align:center"><font color=3D"#000000"=
+>We are closed on Weekends and Public Holidays.</font></b></font></div><div=
+ style=3D"font-weight:bold;color:rgb(34,34,34);line-height:normal"><font fa=
+ce=3D"tahoma, sans-serif"><b style=3D"text-align:center"><font color=3D"#00=
+0000"><br></font></b></font></div><div style=3D"font-weight:bold;text-align=
+:left;line-height:normal"><font color=3D"#000000" face=3D"tahoma, sans-seri=
+f">NOTE:</font></div><div style=3D"font-weight:bold;text-align:left;line-he=
+ight:normal"><br></div><div style=3D"text-align:left;line-height:normal"><f=
+ont color=3D"#000000" face=3D"tahoma, sans-serif"><b>To claim=C2=A0the Test=
+ Report - Bring the Test Request.=C2=A0=C2=A0</b></font></div><div style=3D=
+"font-weight:bold;color:rgb(34,34,34);line-height:normal"><font face=3D"tah=
+oma, sans-serif"><b style=3D"text-align:center"><font color=3D"#000000"><br=
+></font></b></font></div><div style=3D"font-weight:bold;color:rgb(34,34,34)=
+;line-height:normal"><span style=3D"font-size:8pt;font-family:Arial;color:r=
+gb(38,38,38);vertical-align:baseline;white-space:pre-wrap">DISCLAIMER: </sp=
+an><span style=3D"font-weight:400;font-size:8pt;font-family:Arial;color:rgb=
+(38,38,38);vertical-align:baseline;white-space:pre-wrap">This email (includ=
+ing any attachment/s) is confidential and/or may also be legally privileged=
+. If you are not the intended recipient, please delete immediately; do not =
+use it for any purpose, nor disclose its contents to anyone. Please notify =
+the sender immediately via email if you received this email by mistake and =
+delete it from your system. The sender cannot guarantee that email transmis=
+sions are secure or error-free as information may be corrupted, arrive late=
+, or incomplete, or contain viruses, and therefore does not accept any liab=
+ility for any errors or omissions in the content of this message. Views and=
+ opinions expressed herein are those of the sender and does not necessarily=
+ reflect the views of DOST-PTRI.</span><font face=3D"tahoma, sans-serif"><b=
+ style=3D"text-align:center"><font color=3D"#000000"><br></font></b></font>=
+</div><div style=3D"font-weight:400;color:rgb(34,34,34)"><b style=3D"text-a=
+lign:center"><font face=3D"times new roman, serif" color=3D"#000000"><br></=
+font></b></div></div></div></div></div></div></div><br></div></div><br><div=
+ class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Sat, Dec 23=
+, 2023 at 10:50=E2=80=AFAM B6 PATDU, Patrio Gabriel A. &lt;<a href=3D"mailt=
+o:patriogabrielpatdu@gmail.com" target=3D"_blank">patriogabrielpatdu@gmail.=
+com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"marg=
+in:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1e=
+x"><div dir=3D"auto"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0p=
+t;margin-bottom:0pt"><span style=3D"font-size:16pt;font-family:&quot;google=
+ sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal;font-variant-east-=
+asian:normal;vertical-align:baseline">Subject: Inquiry Regarding Cogon Gras=
+s Testing, Fiber Extraction, and Textile Production</span></p><br><p dir=3D=
+"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span sty=
+le=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);f=
+ont-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:ba=
+seline">Greetings!</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;m=
+argin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;font-family:=
+&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;vertical-align:baseline">Re: Your recent response =
+on our last email.</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;m=
+argin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;font-family:=
+&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;vertical-align:baseline">We would like to know if =
+your testing center accepts samples of cogon grass for production and testi=
+ng processes.=C2=A0</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;=
+margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;font-family=
+:&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal;font-=
+variant-east-asian:normal;vertical-align:baseline">Additionally, we would a=
+lso like to know if your facility offers the extraction of fibers from cogo=
+n grass preferably using mechanical retting.=C2=A0</span></p><br><p dir=3D"=
+ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span styl=
+e=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);fo=
+nt-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:bas=
+eline">Lastly, does the facility offer services to convert the cogon grass =
+fibers into textiles products?</span></p><br><p dir=3D"ltr" style=3D"line-h=
+eight:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;=
+font-family:&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;vertical-align:baseline">Any informati=
+on regarding the processes, fees, or requirements of creating textiles from=
+ cogon grass fibers would be greatly appreciated.</span></p><br><p dir=3D"l=
+tr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:base=
+line">Could you kindly provide details on your services, procedures, and an=
+y prerequisites or limitations associated with these services?</span></p><b=
+r><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt=
+"><span style=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:r=
+gb(0,0,0);font-variant-numeric:normal;font-variant-east-asian:normal;vertic=
+al-align:baseline">We are particularly interested in exploring the potentia=
+l of cogon grass as a sustainable material for various applications, and we=
+ believe your expertise and facilities could be helpful in our study.</span=
+></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bot=
+tom:0pt"><span style=3D"font-size:16pt;font-family:&quot;google sans&quot;;=
+color:rgb(0,0,0);font-variant-numeric:normal;font-variant-east-asian:normal=
+;vertical-align:baseline">Thank you for your time and consideration. We loo=
+k forward to your response.</span></p><br><p dir=3D"ltr" style=3D"line-heig=
+ht:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;fon=
+t-family:&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:norm=
+al;font-variant-east-asian:normal;vertical-align:baseline">Warm regards,</s=
+pan></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bott=
+om:0pt"><span style=3D"font-size:16pt;font-family:&quot;google sans&quot;;c=
+olor:rgb(0,0,0);font-variant-numeric:normal;font-variant-east-asian:normal;=
+vertical-align:baseline">Patrio Gabriel A. Patdu</span></p><br><p dir=3D"lt=
+r" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:base=
+line">Patrio Gabriel A. Patdu</span></p><p dir=3D"ltr" style=3D"line-height=
+:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;font-=
+family:&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal=
+;font-variant-east-asian:normal;vertical-align:baseline">09057505096</span>=
+</p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0=
+pt"><span style=3D"font-size:16pt;font-family:&quot;google sans&quot;;color=
+:rgb(0,0,0);font-variant-numeric:normal;font-variant-east-asian:normal;vert=
+ical-align:baseline"><a href=3D"mailto:patriogabrielpatdu@gmail.com" target=
+=3D"_blank">patriogabrielpatdu@gmail.com</a></span></p><br><p dir=3D"ltr" s=
+tyle=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"f=
+ont-size:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);font-var=
+iant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline"=
+>Kaithleen Sophia R. Mallari</span></p><p dir=3D"ltr" style=3D"line-height:=
+1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;font-f=
+amily:&quot;google sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal;=
+font-variant-east-asian:normal;vertical-align:baseline">09190917278</span><=
+/p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0p=
+t"><span style=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:=
+rgb(0,0,0);font-variant-numeric:normal;font-variant-east-asian:normal;verti=
+cal-align:baseline"><a href=3D"mailto:kaithleensophia@gmail.com" target=3D"=
+_blank">kaithleensophia@gmail.com</a></span></p><br><p dir=3D"ltr" style=3D=
+"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-siz=
+e:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);font-variant-nu=
+meric:normal;font-variant-east-asian:normal;vertical-align:baseline">Sheira=
+ M. Manalang</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:=
+0pt;margin-bottom:0pt"><span style=3D"font-size:16pt;font-family:&quot;goog=
+le sans&quot;;color:rgb(0,0,0);font-variant-numeric:normal;font-variant-eas=
+t-asian:normal;vertical-align:baseline">0921 924 8117</span></p><p dir=3D"l=
+tr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:16pt;font-family:&quot;google sans&quot;;color:rgb(0,0,0);fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:base=
+line"><a href=3D"mailto:manalangsheira@gmail.com" target=3D"_blank">manalan=
+gsheira@gmail.com</a></span></p></div><br><div class=3D"gmail_quote"><div d=
+ir=3D"ltr" class=3D"gmail_attr">On Thu, 21 Dec 2023, 1:52 pm PTRI Testing L=
+aboratories, &lt;<a href=3D"mailto:ptritestinglab@ptri.dost.gov.ph" target=
+=3D"_blank">ptritestinglab@ptri.dost.gov.ph</a>&gt; wrote:<br></div><blockq=
+uote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1p=
+x solid rgb(204,204,204);padding-left:1ex"><div dir=3D"auto">Dear Mr. Gabri=
+el,<div dir=3D"auto"><br></div><div dir=3D"auto"><br></div><div dir=3D"auto=
+">Good day.</div><div dir=3D"auto"><br></div><div dir=3D"auto"><br></div><d=
+iv dir=3D"auto">May we ask if your sample is already in a form of fiber? Or=
+ it needs to extract first?</div><div dir=3D"auto"><br></div><div dir=3D"au=
+to">For fiber testing we have the following test:</div><div dir=3D"auto"><b=
+r></div><div dir=3D"auto">1. Tensile Strength Single Strand</div><div dir=
+=3D"auto">2. Fiber Fineness</div><div dir=3D"auto">3. Moisture Content</div=
+><div dir=3D"auto">4. Microscopical View - Longitudinal and cross sectional=
+</div><div dir=3D"auto"><br></div><div dir=3D"auto"><br></div><div dir=3D"a=
+uto">For the first two test we have a format prior to send samples to us</d=
+iv><div dir=3D"auto"><br></div><div dir=3D"auto"><br></div><div dir=3D"auto=
+"><br></div><div dir=3D"auto"><br></div><div dir=3D"auto">Warm regards,</di=
+v><div dir=3D"auto"><br></div><div dir=3D"auto">Christy=C2=A0</div></div><b=
+r><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Thu, =
+Dec 21, 2023, 7:54 AM DOST PTRI &lt;<a href=3D"mailto:ptri@ptri.dost.gov.ph=
+" rel=3D"noreferrer" target=3D"_blank">ptri@ptri.dost.gov.ph</a>&gt; wrote:=
+<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8=
+ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr=
+"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">=
+---------- Forwarded message ---------<br>From: <strong class=3D"gmail_send=
+ername" dir=3D"auto">B6 PATDU, Patrio Gabriel A.</strong> <span dir=3D"auto=
+">&lt;<a href=3D"mailto:patriogabrielpatdu@gmail.com" rel=3D"noreferrer nor=
+eferrer" target=3D"_blank">patriogabrielpatdu@gmail.com</a>&gt;</span><br>D=
+ate: Wed, Dec 20, 2023 at 5:40=E2=80=AFPM<br>Subject: Inquiry Regarding Pro=
+cessing and Testing Fees for Textile Production<br>To:  &lt;<a href=3D"mail=
+to:ptri@ptri.dost.gov.ph" rel=3D"noreferrer noreferrer" target=3D"_blank">p=
+tri@ptri.dost.gov.ph</a>&gt;<br></div><br><br><div dir=3D"auto"><div dir=3D=
+"auto">To whom this may concern,<br></div><div dir=3D"auto"><br></div><div =
+dir=3D"auto">I hope this email finds you well. I am Patrio Gabriel A. Patdu=
+ along with my fellow research members Kaithleen Sophia R. Mallari and Shei=
+ra M. Manalang.=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">We=
+ are Grade 12 students from Information and Communication Technology High S=
+chool who are currently conducting an experimental study focused on explori=
+ng alternative fibers for textile production. Specifically, our research de=
+lves into the potential utilization of COGON GRASS as an alternative fiber =
+for this purpose.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Our gr=
+oup is reaching out to inquire about the processing fees associated with yo=
+ur testing facility for our experimentation process. Additionally, we would=
+ also like to know the pricing of testing fees to assess the fibers afterwa=
+rds.</div><div dir=3D"auto"><br></div><div dir=3D"auto">In summary, would i=
+t be possible to provide us with detailed information regarding the followi=
+ng:</div><div dir=3D"auto"><br></div><div dir=3D"auto">1. The processing fe=
+es involved in utilizing your facilities for the experimentation process in=
+volving cogon grass fiber.</div><div dir=3D"auto"><br></div><div dir=3D"aut=
+o">2. The testing fees associated with the rigorous analysis and assessment=
+ of cogon grass fibers for their suitability in textile production.</div><d=
+iv dir=3D"auto"><br></div><div dir=3D"auto">Moreover, should there be any s=
+pecific protocols or prerequisites needed prior to submitting our samples o=
+r any other information concerning the conduct of experiments at your cente=
+r, we would greatly appreciate your guidance on these matters.</div><div di=
+r=3D"auto"><br></div><div dir=3D"auto">Thank you sincerely for your time an=
+d consideration in this matter. We eagerly anticipate your response.</div><=
+div dir=3D"auto"><br></div><div dir=3D"auto">Respectfully,</div><div dir=3D=
+"auto"><br></div><div dir=3D"auto">Patrio Gabriel A. Patdu</div><div dir=3D=
+"auto">09057505096</div><div dir=3D"auto"><a href=3D"mailto:patriogabrielpa=
+tdu@gmail.com" rel=3D"noreferrer noreferrer" target=3D"_blank">patriogabrie=
+lpatdu@gmail.com</a></div><div dir=3D"auto"><br></div><div dir=3D"auto">Kai=
+thleen Sophia R. Mallari</div><div dir=3D"auto">09190917278</div><div dir=
+=3D"auto"><a href=3D"mailto:kaithleensophia@gmail.com" rel=3D"noreferrer no=
+referrer" target=3D"_blank">kaithleensophia@gmail.com</a></div><div dir=3D"=
+auto"><br></div><div dir=3D"auto">Sheira M. Manalang</div><div dir=3D"auto"=
+>0921 924 8117</div><div dir=3D"auto"><a href=3D"mailto:manalangsheira@gmai=
+l.com" rel=3D"noreferrer noreferrer" target=3D"_blank">manalangsheira@gmail=
+.com</a></div></div>
+</div><br clear=3D"all"><div><br></div><span class=3D"gmail_signature_prefi=
+x">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><div dir=3D"ltr=
+"><font color=3D"#ff9900">Department of Science and Technology</font><div><=
+font color=3D"#ff9900"><b>PHILIPPINE TEXTILE RESEARCH INSTITUTE</b></font><=
+/div><div><font color=3D"#ff9900">Gen. Santos Ave., Bicutan, Taguig City</f=
+ont></div><div><font color=3D"#ff9900">Telefax: 8837 1325 |=C2=A0 8837 1158=
+=C2=A0 |=C2=A0 8837 1349=C2=A0</font></div><div><font color=3D"#ff9900">Ema=
+il: <a href=3D"mailto:ptridost47@gmail.com" rel=3D"noreferrer noreferrer" t=
+arget=3D"_blank">ptridost47@gmail.com</a></font></div><div><br></div><div><=
+span style=3D"color:rgb(34,34,34);font-family:Calibri,sans-serif;font-size:=
+14.6667px">DISCLAIMER: Information contained herein may include confidentia=
+l information and personal data as defined under the applicable laws. It is=
+ intended solely for the use of the party to whom it is addressed and to ot=
+hers authorized to receive it. If you are not the intended recipient, you a=
+re hereby notified that any disclosure, copying, distribution or taking act=
+ion in reliance to the contents of this information is strictly prohibited =
+and may be in violation of local and international laws including the &quot=
+;Data Privacy Act of 2012=E2=80=9D.</span><br></div></div></div></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+
+--000000000000489c25060d77c2a0--

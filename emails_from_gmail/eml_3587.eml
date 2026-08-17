@@ -1,0 +1,639 @@
+X-GM-THRID: 1700963471566019984
+X-Gmail-Labels: Inbox,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a54:2dd2:0:0:0:0:0 with SMTP id w18csp791695ecr;
+        Thu, 27 May 2021 18:26:16 -0700 (PDT)
+X-Google-Smtp-Source: 
+ ABdhPJxCReTIlims4EafHGT4bb0dXDrD1CzURgXk36x82AYLqti3QdaBbMKQZnh5BRdPmm5cOD4x
+X-Received: by 2002:a63:7d12:: with SMTP id y18mr6334211pgc.130.1622165175921;
+        Thu, 27 May 2021 18:26:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1622165175; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nkr3Jsf4U+oaOHmbtTdogo/IBMZOZj+RkJhjq0VcZtYmpyDM1FvlZNspxDg4XhEKbP
+         +ty0T/BS5KOba0jj7MKXKmeOAieEqgsek//EdJiPA2fiK4xlXETMVkkVYGOckoTrFzTW
+         aMnCIZ5WmW2JF3tYURX2YHyg7zH8fY0AWXHgl1DiKK+Hvk6CQOUVWNItb6kJYZKOQ37F
+         34nx9wsGabTcy8coEeImtH5zBBAUb30eJnmtx9akzmbFG1n9tBvMrY2+eZ9Kv0Iz+uqE
+         XeAz4Zzp6eRDeAPvR49djOzebuQ8D4KIrDHmlHlTWFdWExjg2CT54rW1FGWDJ9Yj6VjA
+         ep6g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:mime-version:from:subject:date:message-id:dkim-signature
+         :dkim-signature;
+        bh=QzwKgr/uL5zfsk6gWcjCEU0GxBaCXinSMep6DewahGs=;
+        b=Z+F0C1zBnrb6muTLX+0prAF71X5LMNqj6csTNQj+9ikq3qf9Y8xdz86EKnGAzQrHNP
+         AAdlo4BtaWBnaWN1xeq21iek3ToEneY2HnhIexlFF8tmNVgB3rN2r0Y5G6wqjtxvrID+
+         UgFetHjXWpmtfPH7rsrkRnLiFoBGXrVv9WWD5xTwaL/stNONhOhJUYxAkd50MseVjre5
+         t1jyyq0fGZz8doc2HInmSBzMsJ4dOb1GOucp4x+NgR9qMPhHXE3sQpZqRJiXm6d1t7g9
+         r87lsfwwJpfSy254286tuss1fC9fFvjkGQNr7iQG2/VzQtWAgJr9swI819b04X4SAU3z
+         N5Og==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@chess.com header.s=s1 header.b=HLfCA6aY;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QcDsS8wd;
+       spf=pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.60.108 as permitted sender)
+ smtp.mailfrom="bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chess.com
+Return-Path: 
+ <bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com>
+Received: from o1.email.chess.com (o1.email.chess.com. [167.89.60.108])
+        by mx.google.com with ESMTPS id 17si4032412pfn.83.2021.05.27.18.26.15
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 27 May 2021 18:26:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.60.108 as permitted sender) client-ip=167.89.60.108;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@chess.com header.s=s1 header.b=HLfCA6aY;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QcDsS8wd;
+       spf=pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.60.108 as permitted sender)
+ smtp.mailfrom="bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chess.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chess.com;
+	h=subject:from:mime-version:x-feedback-id:to:content-type;
+	s=s1; bh=QzwKgr/uL5zfsk6gWcjCEU0GxBaCXinSMep6DewahGs=;
+	b=HLfCA6aYbmPzGL8Mq++XJ/G9+W/207ClHGp9w5IZbP5IJZ3xZ0I/A/kzYvBVF/4XQE8u
+	lo5qoSjt7tl2P4yuH/yUSpgwnjzt37ip4cnJMHiLE4gxyExraC7JaqVuKISrrzHdr6wYqW
+	vmbPLUT2Bxn3+ZoikNIt7QdBxBRVt6Mhg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=subject:from:mime-version:x-feedback-id:to:content-type;
+	s=smtpapi; bh=QzwKgr/uL5zfsk6gWcjCEU0GxBaCXinSMep6DewahGs=;
+	b=QcDsS8wd5a/WDBtifpF6MgIxN6DGPYzn6tuNEYQcUM59D9/x375NW4blnYt8cgIowcJz
+	n61HuJgCXsk16h4QPuIN7mdB1BFIip6bhwYcIKLzb9yIRkJfhMb1tlJEWAUVk8fM3isA0q
+	jApmbByfYsDaCr8jWfkiOgJAXfJ5tVClw=
+Received: by filterdrecv-7965ccd859-5nxnt with SMTP id
+ filterdrecv-7965ccd859-5nxnt-1-60B046B7-B
+        2021-05-28 01:26:15.206983525 +0000 UTC m=+1754207.769567398
+Received: from www.chess.com (unknown)
+	by geopod-ismtpd-2-2 (SG) with ESMTP
+	id Vr5YfAAjSMuM-r1GFxC_8Q
+	for <patriogabrielpatdu@gmail.com>;
+	Fri, 28 May 2021 01:26:15.052 +0000 (UTC)
+Message-ID: <6a1d561f8c4406699d74a392a5691d8f@resque-prod.chess.com>
+Date: Fri, 28 May 2021 01:26:15 +0000 (UTC)
+Subject: Activate Your Account
+From: =?utf-8?b?4pmfQ2hlc3MuY29t?= <alert@chess.com>
+MIME-Version: 1.0
+X-Feedback-ID: 2244315:SG
+X-SG-EID: 
+ =?us-ascii?Q?l=2FUz0Z=2FyZE=2F8gRxr0+OFJVGAAs6qSBgSznrWyZ0+MRazFq=2F9BFKznJu++20zMU?=
+ =?us-ascii?Q?5Q9Hv5VIwaLZ+xtY=2FGKn5+3=2Fxnz8wuu=2FNpG6ock?=
+ =?us-ascii?Q?udbFDrVLxZEyssq79ciclntwVf2MwtsTAsMK3MO?=
+ =?us-ascii?Q?WR99Eeehr2VPGGb+tv86KmIr3+aLqy3eREB0C8c?=
+ =?us-ascii?Q?S2gZf7QXqBoy3jq3Z7PQfOym0HRs5e2IQMCMwhU?=
+ =?us-ascii?Q?Ob3pYNZyJZwNDWQ=2FqWGC7tvJsdFQ94pPgLu8uu?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb=2F8Sh6orsQo=2FUFU1wpY3Z2i7YTzm5NNFoMhxvnSexH?=
+ =?us-ascii?Q?ywmUqZRBds7rIcxI3a5bZkgQ=3D=3D?=
+To: ChewyTzy <patriogabrielpatdu@gmail.com>
+X-Entity-ID: smEwEMy3STNotLzPJ5ZsHg==
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1622165175_66e0cdb8856ae4553439f695a236e3c2_=_"
+
+
+--_=_swift_1622165175_66e0cdb8856ae4553439f695a236e3c2_=_
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+Chess.com - Play. Learn. Share.
+
+
+---------------------------------------------------------------------------=
+-----
+Hello ChewyTzy, don't forget to activate your Chess.com account!
+Before you can login, you must first activate your account by clicking on t=
+he link below:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0OpH5kz-2F43mK=
+R51QI07-2FRyTDC3CT0eD08fmf2rOE0-2BcRT5QY8-2BNdA3w1pLqOIgu4c5xj7j1nKTJjHMRS5=
+DlIDls-3Dd6vv_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2=
+Bf1fGoq3ysdNbuJkEEXTHqsQf5inKVfIq34AHn0AuiE0wxCfe20ytMmNmUC8OW27hzXYd697ASa=
+MxYwD7kC5rOkAt1Z8mQXQl8oOnmDjyLYEXEYZbXc-2FitPp0c-2Fr9I-2BlQlIUaj3FYrWiE2lb=
+bMfof-2FLldcbjp7LBcgSgJ-2FUVLheSVIXYa6-2BT6MTeqMCDXswcGw9bxA9cs-2FNbqvT6OT-=
+2FavX-2BfhafqA-3D-3D
+
+Once you activate your account you can:
+- Connect with Friends and Track their Activity
+- Chat during Games and in our Forums
+- Share in your very own Blog
+- Post Comments, update your Status, and more
+
+---------------------------------------------------------------------------=
+-----
+
+
+Want less email?
+Change your e-mail preferences:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Ida1s5pJJFqK8=
+AAppJIYfANkqhlFxxKYAmCe0jz1KdOfx0SZOqFZfF084m5eAnelQ-3D-3DqMOn_SDrKeVA2pts3=
+JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5=
+inAdSquewb1M4H7Irs7zWJF3wFvbLLiwY99k2OKtSmI5KB5YQDlRIDeevj7ThagHA-2BOob3TIE=
+sxVPLd20CIe1NJP9Iu7hw8ontXQfwECIjrwLPro7sQFZYAlFYYHVUzAY2Icri4fEP6EEKFS2gx9=
+ZnPQXR-2Fy-2FAvZQyJgoa2NXMHIFrImTKJWKtOLwldY383DlOA-3D-3D
+Stop ALL Chess.com e-mail?
+Unsubscribe:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Lj2Xj4j6HCEeS=
+29RhJd8AXa1-2F0uDwVVaVme6XmMUBoePXW5-2Ba18bQJCYmtzHn74TC-2F4yzVEiJyilHnCs-2=
+BZckiY-3D9Qqd_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2=
+Bf1fGoq3ysdNbuJkEEXTHqsQf5inM-2FDRgyRrkOakbHfwKcgIaJg1dAAUqiwOXVrA0nNpBZ7sG=
+5Pke07yXEisGWFsp4Sof78JyRem7LoVHXpfQI2GJjBqjUbvN7ZgewkbqKPo5c04f81Viux5K14R=
+7UJCrWHuFO87JOb6GR0Fkq74UnqP93-2BDhFhK2DeEvQw-2FqnNxvT-2BMGY066dIgHv2-2BJwJ=
+8cF4fw-3D-3D
+
+---------------------------------------------------------------------------=
+-----
+
+Add alert@chess.com to your address book so you don't miss any email from C=
+hess.com
+Please do not reply to this email.
+Need help? Visit Chess.com Customer Support: https://links.chess.com/ls/cli=
+ck?upn=3D-2Fj6rp56rYpMUW3uwwA85mmD8LvzBWSveXhNYwVR-2Fh8RAfZTl6w4KULcL8MXV60=
+hupw30_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq=
+3ysdNbuJkEEXTHqsQf5inG6tYgZBxcte7-2BUi-2FE0HvFWiP0ROoLN4D5RF1GfpfwHz3bRC1yI=
+a2zkmnJtDZDcNn1FmWOBLvUtOkYR52yvbh7p-2BOyehnSuzH8Xv6LGUOMAScm3iq-2BCyj28y9r=
+k-2BUmNF5z5zhi4CyUkBmZW9nDUN8y74NW4NdTBaRkSxA-2FW9eiEbxD-2F3sOAYSRQyvXJrLCr=
+Urw-3D-3D
+This email was sent to: patriogabrielpatdu@gmail.com - Privacy Policy: http=
+s://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0EsKzks2qyRRWiAizL=
+s1qaun8LcHY7F9AfJ48cjlvUJ8RX77_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKi=
+o2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inP2X-2B3xQf2Pd6lOYI-2BHSN5u4IDC=
+Klx0WclShtBtJYFz60EzKIUbWLSBmbU6bPhGAvQjY15OTjXatGDoj-2BoNY0XKY1pLQLB76Ucdf=
+VefyD3j457ukL74adNERioNxrrDL4GrEbXNzEUxtpOnnV3tPRrLw-2BtsKGSul0sIlkVvH-2BsJ=
+ooNdKCRuzzdb5qSgq8qb6Vw-3D-3D
+Chess.com | PO Box 60400. Palo Alto, CA 94306
+
+
+--_=_swift_1622165175_66e0cdb8856ae4553439f695a236e3c2_=_
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" =
+/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge,chrome=3D1">
+  <meta name=3D"format-detection" content=3D"telephone=3Dno" />
+
+  <style type=3D"text/css">
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      width: 100% !important;
+      margin: 0 !important;
+      font-weight: 500;
+      height: 100%;
+      background-color: #312e2b;
+    }
+
+    td {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #26211b;
+    }
+
+    h2, h3 {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    td[class=3D"header-txt"] {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    table[class=3D"btn-box"] a[class=3D"btn"] {
+      display: block !important;
+    }
+
+    @media only screen and (max-width: 660px) {
+      body {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      table[id=3D"emailBody"],
+      table[class=3D"flexibleContainer"] {
+        width: 100% !important;
+      }
+
+      td[class=3D"header-txt"] {
+        padding-left: 15px !important;
+        font-size: 16px;
+      }
+
+      td[class=3D"padding-15"] {
+        padding: 20px 15px !important;
+      }
+
+      td[class=3D"padding-15"] h1 {
+        font-size: 22px !important;
+      }
+
+      td[class=3D"padding-15"] h2 {
+        font-size: 16px !important;
+      }
+
+      a[class=3D"btn"] {
+        display: block !important;
+        line-height: 17px !important;
+        font-size: 14px !important;
+      }
+
+      img[class=3D"img-responsive"] {
+        max-width: 100%;
+        height: auto !important;
+      }
+
+      div[class=3D"text-left-sm"] {
+        text-align: left !important;
+      }
+
+      td[class=3D"social-links"],
+      div[class=3D"social-footer-icons"] {
+        width: 100% !important;
+        text-align: center !important;
+      }
+
+      td[class=3D"footer-logo"] {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      td[class=3D"column"] {
+        display: block;
+        width: 100% !important;
+      }
+
+      td[class=3D"column"] .img-preview {
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+</head>
+<body bgcolor=3D"#312e2b" leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0=
+" marginheight=3D"0" offset=3D"0" style=3D"background-color:#312e2b;">
+
+<table border=3D"0" cellpadding=3D"5" cellspacing=3D"0" height=3D"100%" wid=
+th=3D"100%"  style=3D"border-collapse:collapse;background-color: #312e2b; w=
+idth: 100%">
+  <tr>
+    <td align=3D"center" valign=3D"top" id=3D"bodyCell">
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"650"=
+ id=3D"emailBody">
+        <tr>
+          <td align=3D"center" valign=3D"top">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">
+              <tr>
+                <td valign=3D"top"   style=3D"padding: 15px 0px;">
+                  <img src=3D"https://betacssjs.chesscomfiles.com/bundles/w=
+eb/images/email/chess-logo.c99b6d2f.png" width=3D"119" height=3D"33" alt=3D=
+"Chess.com"
+                    style=3D"width: 100%; max-width: 119px;">
+                </td>
+              </tr>
+
+              <tr>
+                <td align=3D"center" valign=3D"top">
+                  <table bgcolor=3D"#FFFFFF" border=3D"0" cellpadding=3D"30=
+" cellspacing=3D"0" width=3D"650" class=3D"flexibleContainer" style=3D"bord=
+er-radius: 4px">
+
+                      <tr>
+  <td width=3D"662" class=3D"padding-15" style=3D"background-color: #f7f7f7=
+; border-radius: 4px 4px 0px 0px; position: relative; padding: 30px;">
+          <table>
+  <tr style=3D"font-size: 20px; line-height: 24px; font-weight: bold;">
+    <td>                    <img height=3D"70" width=3D"70" src=3D"https://=
+betacssjs.chesscomfiles.com/bundles/web/images/noavatar_l.84a92436.gif"
+    >
+        </td>
+    <td class=3D"header-txt" style=3D"padding-left: 30px;">         =20
+         =20
+          Hello <a style=3D"color: #005e94; text-decoration: none; font-wei=
+ght: bold;" title=3D"ChewyTzy" href=3D"https://links.chess.com/ls/click?upn=
+=3DVHHI-2BYyvOYLuq5kvtWwh0CmtxRpeVgT2YkubNqDlhDgwJ9qdLe0YJDTgnY-2Bor-2B8Pey=
+YJ_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysd=
+NbuJkEEXTHqsQf5inJ2ER3JwsIZtD7epYKzIvsVD0wXxZgvOl3OzEGZ39hNeA6pQt2qvfmdYsKo=
+La7MqmzUQDRHxFxZ9AqSn2rTH7x1RreDwRmhQzaSHmPryTpt3DIlFex62TRAwZgejAzNBCYsCT5=
+XzR-2FPn1bzhcGejtDJiKruRWjw4YsBUEO11i7PlERNZNb9jo-2FFw76signjZHQ-3D-3D">Che=
+wyTzy</a>, don't forget to activate your             <a style=3D"color: #00=
+5e94; text-decoration: none; font-weight: bold;" title=3D"https://www.chess=
+.com/" href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWw=
+h0LmskPSRvZUBPqn8DHAIcUg-3DvP1n_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvK=
+io2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inEmJ-2FHZIeDoqQPlLJNjZlVYb8UjE=
+HUm8GN65uBgB3ad4uevFL8e06C6qm2obQl6q4l26QdZJnBQ0B7GLLcbRK4HTLkhWOLh8eAE2oPq=
+S2TlGcpZJhucpkcHOYeutdwvPkfb4h5iqgp-2FaOjcMwZ83Q8zEbThzO2J89ba9QV5nBxXd6HWr=
+wKwcqSkbhtpJxUtYDA-3D-3D">Chess.com</a>
+           account!
+        </td>
+  </tr>
+</table>
+      </td>
+</tr>
+<tr style=3D"font-size: 14px; line-height: 18px;">
+  <td width=3D"662" class=3D"padding-15" style=3D"background-color: #fff; b=
+order-radius: 0px 0px 4px 4px; position: relative; padding: 30px;">
+          <p style=3D"margin-bottom: 30px;">
+          <a class=3D"btn" style=3D"color: #fff !important;
+    display: inline-block;
+    background: none #e6912c;
+    border-bottom: 1px solid #ad6d21;
+          padding: 4px 12px;
+        font-size: 15px;
+    border-radius: 3px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    margin-bottom: 0;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;"
+    title=3D"https://www.chess.com/home/activate_account?user=3DChewyTzy&am=
+p;key=3Dwm42ne6"
+    href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0O=
+pH5kz-2F43mKR51QI07-2FRyTDC3CT0eD08fmf2rOE0-2BcRT5QY8-2BNdA3w1pLqOIgu4c-2F4=
+pRCyNiHMXqi8J-2BqSusHo-3DCWS6_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio=
+2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inCd5oUsncfS484OnEyPrerMSmFt25Tln=
+KEusB8tiFSstRdL90MpqJNeUyR6D-2B498Ks37MJPn5sagQEXuGeiTGsGVO04XF4LFgw1I2xS-2=
+FRF1niXG5A4FHcx3AfH5tCsVYIxGlyx07iBQ9QfRDuDcg7ObKHrriFQtt7J6AgHhyqyBJ2FMy9k=
+cPKBGJgF6h7oykDg-3D-3D">
+    Activate Your Account
+  </a>
+      </p>
+
+      <p>Once you activate your account you can:</p>
+
+      <ul style=3D"padding-left: 17px; margin-bottom: 30px; font-size: 14px=
+; line-height: 18px;">
+        <li>
+          Connect with friends and track their activity
+        </li>
+        <li>
+          Chat during games and in our forums
+        </li>
+        <li>
+          Share in your very own blog
+        </li>
+        <li>
+          Post comments, update your status, and more
+        </li>
+      </ul>
+
+      <p style=3D"font-size: 11px; line-height: 1.2">
+        Button not working? Copy and paste this link into your browser: <br=
+ />
+        <a style=3D"color: #005e94; text-decoration: none; font-weight: bol=
+d;" title=3D"https://www.chess.com/home/activate_account?user=3DChewyTzy&am=
+p;key=3Dwm42ne6" href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvO=
+YLuq5kvtWwh0OpH5kz-2F43mKR51QI07-2FRyTDC3CT0eD08fmf2rOE0-2BcRT5QY8-2BNdA3w1=
+pLqOIgu4c-2F4pRCyNiHMXqi8J-2BqSusHo-3DgOF5_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2B=
+DQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inLAeFgBByCSI6-2BYo7=
+7-2FJOwIwxOY1EgBPSmr3DKWJ-2FFF05Nj7jXEKMzPcv6E5Kse2O2-2Bya-2FtbyJOeN0tsK0-2=
+FhPeipo6cY-2B04lcot0W2sGPRg6a1PNUD-2BvZLJNIn7BlAL0ym9rwZpSJGBGDqEoriN6Cq5mV=
+8QadBbjR4hJ7tUW14-2FQeLy4NuKjCu1Bh-2BNK-2FoFqIQ-3D-3D">https://www.chess.co=
+m/home/activate_account?user=3DChewyTzy&amp;key=3Dwm42ne6</a>
+      </p>
+      </td>
+</tr>
+
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                                     =20
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%">
+  <tr>
+    <td align=3D"center" valign=3D"top" class=3D"company-footer" style=3D"f=
+ont-size: 9px; padding: 6px; font-family: 'Trebuchet MS', Verdana, Arial, H=
+elvetica, sans-serif; color: #65625f;">
+      <table width=3D"100%">
+        <tr>
+          <td style=3D"width: 30%" class=3D"footer-logo">
+            <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYL=
+uq5kvtWwh0LmskPSRvZUBPqn8DHAIcUg-3DtSh7_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQA=
+SzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inGJc4FfJdQqot24LoOkCUX=
+uA26kLtJi867h6YNDP7qg45NkE3VPap5mJ-2FzQMYKl-2BGOk13dK6GiyQJHwRstOgW02Qyjp5O=
+yq7efKxlB19HmCh3fiYtozUUKAwndXv9XQ5wzVBcB766Qbp2tZxv-2FX36FODDGdNVCiJJgB-2B=
+S8kyM3Ub7AL4rmhb3BCrydMF-2BMLXbQ-3D-3D" style=3D"text-decoration: none;" ti=
+tle=3D"Chess.com">
+              <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/i=
+mages/email/chess-logo_grey.63b08d62.png" alt=3D"Chess.com" width=3D"83" st=
+yle=3D"width: 100%; max-width: 83px;">
+            </a>
+          </td>
+          <td class=3D"social-links" style=3D"width: 70%; text-align: right=
+;">
+            <a href=3D"https://links.chess.com/ls/click?upn=3DlYysWkwDGJaGL=
+fscKK3bbZWRqUB9R3ZYKQTZBdwbD99sRO5zeeOTaY2OAvpELoyVqIILu-2BjEqIAPGuRZDRpzUR=
+yjfim1AluoRnwucaGNcLOqfJtKVj-2FqPgEnGjuK362-2BM1bH_SDrKeVA2pts3JIkQfztFyDwj=
+3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inL7Vb1thdcB=
+9IZpaAOj0bXI7a-2BJbhz9WlQ-2BpCoaoHxWm38yu9nNvRE-2BVT6vTx-2F9r7MyXrfQTmgc15L=
+4Whcn9kibpSgEmuh8lWnNdHIlcMGnGivvfQWQYB1ljXSF8-2Bhy458xABF4qh8ML5wYX9eaAbGy=
+4bNSg5aVYrwGrySJz3fmbQlu9vsVoRwtKsdUFoeMY1w-3D-3D" style=3D"text-decoration=
+: none;">
+              <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/i=
+mages/email/social/apple.d01ce1a2.png"
+                   width=3D"20" alt=3D"ios" style=3D"width: 100%; max-width=
+: 20px;">
+            </a>
+            <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYL=
+uq5kvtWwh0KngMoLdgMGvymWkfJnfYCNIVkXCaeHV-2FvgtTxPkQJswZvfL-2B10fPMo79Iv1Y4=
+gmL0TZbLhVz2Xldcd61fqSHf3FYufCqYtT5g9RuRrMXgULW_Fv_SDrKeVA2pts3JIkQfztFyDwj=
+3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inMNGLkBFzlU=
+i1IGyrKlCw68cmYHXxS1gys2CIvRBE-2BvUVeNMe3CDiaSAwsbe31cyC-2BKIg2qBb1bNodIrLG=
+yXjVvh-2F3iDa7dywquhmT-2BQeN62zpFm1ne-2FwCCZrXwPCls9q2fbQcO9j0lPE7f59Thrm5I=
+mkG6-2Bg9fQg-2FwTmKqQKZWG-2FE5DFmUuRDhc5IxGbMrpkA-3D-3D" style=3D"text-deco=
+ration: none;">
+              <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/i=
+mages/email/social/android.0499cc9d.png"
+                   width=3D"20" alt=3D"android" style=3D"width: 100%; max-w=
+idth: 20px;">
+            </a>
+
+                          <a href=3D"https://links.chess.com/ls/click?upn=
+=3DI8jtKAuLmYBZ5wpAGlWpAlfn3tafVdsk3mBJuAUIgrDe2DnwJt1xx6Vjb7UeZONAwZni_SDr=
+KeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkE=
+EXTHqsQf5inNl7ZBh86wfk9-2FKjXliFjMrYpxPePibFgkZ73SHtWnKSqZCDi7Y6GxWSEotl-2B=
+Gv722XGVtfMWcpS-2BSFlXjLJFtpLn48RBqaXkH-2BZN4rK5zblbuc0segw0ZLmYqZdhbCaf3W7=
+ribVAe-2Fc8LX5XZWfG-2FCd2yZr3mZ0BI8-2Bp7otRpggyz29gmrPWnxWCbgkvNw4Gw-3D-3D"=
+ style=3D"text-decoration: none; margin-left: 15px;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/social/facebook.70b702c2.png"
+                     width=3D"18" alt=3D"facebook" style=3D"width: 100%; ma=
+x-width: 18px;">
+              </a>
+              <a href=3D"https://links.chess.com/ls/click?upn=3DI8jtKAuLmYB=
+Z5wpAGlWpAthSPwhAuXAZNOFDsmLxCnTa-2FJFoZICTY-2BN0d1LqogbnoRdL_SDrKeVA2pts3J=
+IkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5i=
+nDwY-2Fu2ffmwChMy9ejfRmlyPmNdfHKlYcqwF1sXiAg9NIBjAZvzkiQx1v-2F8rv1lyoG-2BvE=
+SUve38YJOpgSgyI-2FFhlZ3hfAYkP9cemfY4hmSiJosp73PCN4dtxXYC5i991BpkWxwQVl1q0dW=
+mXazXlNMEHapoiTgTitFpEVeIsWZZgAxtlrtwIUsSVR3QYpP5W3w-3D-3D" style=3D"text-d=
+ecoration: none;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/social/twitter.46c910b2.png"
+                     width=3D"24" alt=3D"twitter" style=3D"width: 100%; max=
+-width: 24px;">
+              </a>
+              <a href=3D"https://links.chess.com/ls/click?upn=3DKTXf4qtcLlh=
+fNduveWqp0MKVYvqgMi487zOkLMuBYbN9MELn0eRfkTDVE7zTCQF2S96q_SDrKeVA2pts3JIkQf=
+ztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inGDZ=
+KqZjlnZMokkWobwr3VmNbPj03qrqDrSPCgMU0D1rYYU2phMuyqXSSgPsVsoS1Jv0dTRuC0xXE6i=
+Bj2MDryv4Yc5-2Fihi70E6RjkrNUD-2FSYwZQi01x5DggwzAIBqekfCEEh9K19baAJ5LF7tpZhO=
+mQsWKyAAP5EyG1PNkvCv3d6nhUK-2BnjbmzZMDZOUYGgPg-3D-3D" style=3D"text-decorat=
+ion: none;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/social/instagram.761c3445.png"
+                     width=3D"24" alt=3D"instagram" style=3D"width: 100%; m=
+ax-width: 24px;">
+              </a>
+              <a href=3D"https://links.chess.com/ls/click?upn=3DI8jtKAuLmYB=
+Z5wpAGlWpAmmn5K1qq7BHqqkncINB-2BdSZo1xURL22ZOn-2FJaBhdmJZVZhY_SDrKeVA2pts3J=
+IkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5i=
+nNBwsNCWJQ4Ak2AQIIbPFbuAoNhGO99ewKRJObfwHKRXtaYJZmVnfEWBQsEf-2BGrAxMbGFydgU=
+9tMrmN7TLVomFzfeAw8XhFF7f-2FnrAPGQZQHW5vi2grbMTppfKSHvKCBMpVRW9Xr9jyYt0r2hH=
+ICZGR7VvpF6pfPIlxH8BEIySnkaKKBZJLQSLxx5ulfBR93kA-3D-3D" style=3D"text-decor=
+ation: none;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/social/twitch.f81412e9.png"
+                     width=3D"22" alt=3D"twitch" style=3D"width: 100%; max-=
+width: 22px;">
+              </a>
+              <a href=3D"https://links.chess.com/ls/click?upn=3DI8jtKAuLmYB=
+Z5wpAGlWpAmtK1j6Px-2FHyHCdg13wiSiCHzKBPaq-2Fur3Og8gFg5YnESuGV_SDrKeVA2pts3J=
+IkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5i=
+nECzmyRCYfj-2BaEMHI3mt-2FF-2F0SnM1lp3hxu9yjw2Hnid33ySkFdWEKQyH4g-2B6itsosCF=
+1ZA1-2FpnjomvLmzqcUeVlqv5vtQdlM9oI5JAK2DmyDF4K-2F0j1MSzYzCUpmmN88-2FRcZP6gw=
+Y3E6pyzkUZd65VR1wos2QRD-2B8LcQyDxWDpO5da16d-2BnK1ryGbMvyH6zC4g-3D-3D" style=
+=3D"text-decoration: none;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/social/youtube.b8546dbb.png"
+                     width=3D"30" alt=3D"youtube" style=3D"width: 100%; max=
+-width: 30px;">
+              </a>
+                      </td>
+        </tr>
+      </table>
+      <p>
+        Want less email? <a href=3D"https://links.chess.com/ls/click?upn=3D=
+VHHI-2BYyvOYLuq5kvtWwh0Ida1s5pJJFqK8AAppJIYfANkqhlFxxKYAmCe0jz1KdOG-2FyZWmh=
+WLx3YQ1N5QMWFUQ-3D-3Dtyyt_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4I=
+MQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inLhpu9OAVe4MHmO5t06voIEA6yBmDXWNpA9u=
+Z-2BCTKsjbS2RJTslftoef4N7r8Iko4i7vVtb7Po1bbcqTR8Wdh1aCNJp-2BF3isBaIUCkYbNUg=
+Hwcgnm3GDvLlU5WVe0zALuCJ8PbnztyTRok1YoC5oZrYRDc-2FZrwvprL-2B5bGYThA9InVZzif=
+SLQ9f9vhUw7-2BS23Q-3D-3D" style=3D"color: #bebdba"><strong>Change your e-ma=
+il preferences</strong></a>.
+
+        Stop ALL <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BY=
+yvOYLuq5kvtWwh0LmskPSRvZUBPqn8DHAIcUg-3DEiPQ_SDrKeVA2pts3JIkQfztFyDwj3CYmY-=
+2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inCjaiH8zZQ41GJVxH=
+nJLQQ3B7DkfFLVQ12CJsY0jInf7mqodKrVGdWP6O9XzOGzJOKHxPk4O5BrlOfN4p8I-2FfNzQ9h=
+0HfwidlfN3nAphcHh50YCjB4ExT3KFMsNzjGdO-2BJFU7A3eGtP1QSbpeiFaGnBY9w7270wWkDt=
+76OPg-2FWs4AbPI4Eb7Coh4JIRp9YNLFg-3D-3D" style=3D"color: #65625f; text-deco=
+ration: none">Chess.com</a> e-mail? <a href=3D"https://links.chess.com/ls/c=
+lick?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Lj2Xj4j6HCEeS29RhJd8AXa1-2F0uDwVVaVme6XmM=
+UBoePXW5-2Ba18bQJCYmtzHn74TMB6Bi2OlLMnAOaknmPUGVU-3DRQ-S_SDrKeVA2pts3JIkQfz=
+tFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inAv-2=
+F1vSPa5zXKcZ3alq-2By6uBva5971DA9r010P5537WhGaCrKAgjwWIBAZfKgOfs6OHXMZiDAi-2=
+FZ6BwyLLgT2aycX8F5JcYpGWWCyUkjo35XH2O0rnsUCEsE8r9w7U6ClSm172p-2B57eGcF33hG3=
+WnqfYwj1NI-2B7URN6Dc07Mx17-2B-2B2XvX5av2of2Pzvvy4S43A-3D-3D" style=3D"color=
+: #bebdba"><strong>Unsubscribe</strong></a>.
+      </p>
+      Add <strong><a href=3D"mailto: alert@chess.com" style=3D"color: #6562=
+5f; text-decoration: none">alert@chess.com</a></strong> to your address boo=
+k so you don't miss any email from <a href=3D"https://links.chess.com/ls/cl=
+ick?upn=3DVHHI-2BYyvOYLuq5kvtWwh0LmskPSRvZUBPqn8DHAIcUg-3DwtEu_SDrKeVA2pts3=
+JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5=
+inHUUSk11LA46lyY2NHQ1kIPFhy3DKZb3840V7L18f8mdrjD3rpGu1gWjAEgIQ2m1YQEvYqpfQq=
+XxhDhC5lvRuxBF9QAbjsq8-2FcNRqvTSJbQ7exLlxhyOkQxadfHpc-2ByTDIgl7anJcyBbl2ttX=
+yiLepuQIQc8eDFqCpSR000VSJvkbh2GU8CaZ0kqdocOl4HTBQ-3D-3D" style=3D"color: #6=
+5625f; text-decoration: none">Chess.com</a>.
+      <br>
+      Please do not reply to this email.
+
+      Need help? Visit <a href=3D"https://links.chess.com/ls/click?upn=3DVH=
+HI-2BYyvOYLuq5kvtWwh0LmskPSRvZUBPqn8DHAIcUg-3DOVEO_SDrKeVA2pts3JIkQfztFyDwj=
+3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inNBNl9nxzrA=
+i8EroJ3Ab-2BWgKEQufnwDPQrawCuOUBOMIIqDgczS82A4JEOMvFT-2FEv2CkxVkkMyoJ5KfTyN=
+4-2B85RDggh8g8KQ1FRFlEL3Tb-2BV50FPO8tufVo29skdecDUCMS-2BOo-2BCkV0dGnoxPzwhD=
+fCCmr4Uunigk6rRMk8601KR40ZCoPfPCMmPezURXGcwdg-3D-3D" style=3D"color: #65625=
+f; text-decoration: none">Chess.com</a> <a href=3D"https://links.chess.com/=
+ls/click?upn=3D-2Fj6rp56rYpMUW3uwwA85mmD8LvzBWSveXhNYwVR-2Fh8Rl5EWtOaO9Ak3-=
+2BigdKu8UdeGui_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-=
+2Bf1fGoq3ysdNbuJkEEXTHqsQf5inCt4YQ7Ibd9UskAtnaCqjeAs2IGAg7yJtVYVYaAItF2QBl-=
+2FZaExAERr8gjy5sVZnPaEFb70Po8flQWWdgzp5nSr-2BN3FOyAIjB1D3bnp0qSQuahKVDf8T0v=
+QI2d65uWGh2lTCHUsa3TZ7bwNw-2B6AePFpS97jGZJIeLN5p8v0HLnGK0orRqhFCRORFAUyGBLq=
+h1g-3D-3D" style=3D"color: #bebdba">Customer Support</a>.      <br>
+      This email was sent to: <a href=3D"mailto:patriogabrielpatdu@gmail.co=
+m" style=3D"color: #65625f; text-decoration: none">patriogabrielpatdu@gmail=
+.com</a> - <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLu=
+q5kvtWwh0EsKzks2qyRRWiAizLs1qas0U-2BrVzcMnO2f-2B6eCTJtKf1sha_SDrKeVA2pts3JI=
+kQfztFyDwj3CYmY-2BDQASzayBxvKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5in=
+LjL30s-2B4hM-2BnUL2PUtePuSIhWXR5dDV0GCNCR1fLYXG3rflYYClAJCReZs5Vfa2-2B9vL9h=
+P1F9uMKnMr7l7Acryxeia3U85Ca9Bq-2FZKXLBBhSRKPwEqoI8DDXIKWHUxrQV6-2FyUPFJP87l=
+FOpQfC4QEMSSERvOnM9WwGzVNZBJ37umXLNknmp7SedoLFOQAbIng-3D-3D" style=3D"color=
+: #bebdba">Privacy Policy</a>      <br>
+      <br>
+      <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvt=
+Wwh0LmskPSRvZUBPqn8DHAIcUg-3D0uYk_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBx=
+vKio2m4IMQQA8OvIBu-2Bf1fGoq3ysdNbuJkEEXTHqsQf5inP82S775RTG9q0-2B2pdKXZRYkPq=
+uOQqNbfm55VK-2FKDSfSy5N20uJx9RmJAwGZXLBPnDCV8wkglsn-2FMVosu6O7HlBXzR3TPB4eW=
+wxmS0O9IUe0XZi-2BIkt2P7b-2BXQPhL9X81DAlW0TXwXx-2F6B2jGRit-2FMfLOvVM0NuTX4sS=
+wgzZIc8TBuJU-2FrgQGzYTK-2FYw0fWIvg-3D-3D" style=3D"color: #65625f; text-dec=
+oration: none">Chess.com</a> | PO Box 60400. Palo Alto, CA 94306
+      <br>
+      </p>
+    </td>
+  </tr>
+</table>
+                                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<img src=3D"https://links.chess.com/wf/open?upn=3D1utt00i9qzN5trNJrCkyHSOBf=
+7i4EhQ-2FLT63tuhyXUlLYZ4HhHella-2F7sqRE4bb8o4u1CR98hoQc2ebPzkIerCv7Ykh-2FCY=
+eb-2FBRxu74YDJy9x2MviZoPhy7OpshqLu13VXrqtnftMspDRJXXijmucW-2BvVYcqWfF-2FwSB=
+I8K2jAGlZEtrMGpQOkGUfAHTJ4VrLO7nBhNKZcfX8FD-2B1YnE86PUWBCmQgnGrz-2FeuQGCTnz=
+dPFHsqKz-2FpetwKFk43romVtV088Wv-2B2zGTHlTH8Ug0RA-3D-3D" alt=3D"" width=3D"1=
+" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !impor=
+tant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !imp=
+ortant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !im=
+portant;padding-bottom:0 !important;padding-right:0 !important;padding-left=
+:0 !important;"/></body>
+</html>
+
+
+--_=_swift_1622165175_66e0cdb8856ae4553439f695a236e3c2_=_--
+

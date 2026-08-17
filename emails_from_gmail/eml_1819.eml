@@ -1,0 +1,786 @@
+X-GM-THRID: 1811715420753171286
+X-Gmail-Labels: Inbox,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:1e91:b0:213:83fc:b380 with SMTP id z17csp217299eiv;
+        Tue, 1 Oct 2024 05:41:06 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IGljXuMjI23TfZBJIEPOQJnfYZiGOydhaFJDJKeaPaj71aqNTsk/raR9/RQb1+DnLLQqfm3
+X-Received: by 2002:a05:622a:1a1f:b0:458:3d86:9ab with SMTP id
+ d75a77b69052e-45c9f2c3712mr247759081cf.54.1727786465665;
+        Tue, 01 Oct 2024 05:41:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727786465; cv=none;
+        d=google.com; s=arc-20240605;
+        b=OZejeV/wiu32XrOgiGUOLUBCgv6uz+o6ALp690YHOJToF6Ns8MYM+rDsMkM4cNNhq4
+         Mf4mF3GmT9Ilb1KpNVCIstQ5aPn8Lle4X5Eh3AgD0DNAspv1sEBFqY1REYijQXQ/y6Mx
+         iaDPsxh1HcUA22dXxyWHyl63c6Zfzx4Za9zvfvIjbkVy4ht/6NfhTa0a7dEtNKbVEKKF
+         rKhyBQEMrZ98GWRjXq0GprVTpELi+tydDrhrIHGDHH9yPx3qUVJ0N48EMvvvmrDT/A9v
+         yJIfUKYL25tVDiHuvwmw5oIFr0iyxhjAISGQVXRmGCvg4golEsSmg9jVa1JR7NHovWj2
+         blaQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=eiU+prLR4AyE1AB042PlTca8uplap7rST5RrcLkJuaE=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=XYFvS/Y8pphVzDsjhrxsdeESAa2axiLs4eTm8WdhNKCF8or6iNjEMVbddhreJmnvqW
+         8DTV50791BsHx1cmpKbrhRshRO2FmlQVyhECiOrPIdY0QXQQ9wO3vu+7TBkaneHXAfPD
+         4TZ870Rpc5de18yraAGH76uNzvjNK57k2RJBN2AISr3Qtj5uqkfvbuRtZL5n3vTK2Q73
+         aY8u70gsAD8pJc4YrAgS1w+1YGeVZuJODzo1ZczAVX1gFZOuZsBbqb/l62rIUuq1mGGt
+         KwORFjou26TLOYLXR+6IC5ta7KuEi9Q/vS8IU2Pzi7pPkkfXJ0B8i4ZCdo+9ro0djlCK
+         xMag==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sheerid.com header.s=s1 header.b=YFm0g287;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Bc1yw36b;
+       spf=pass (google.com: domain of
+ bounces+7631439-a728-patriogabrielpatdu=gmail.com@em5043.sheerid.com
+ designates 168.245.7.154 as permitted sender)
+ smtp.mailfrom="bounces+7631439-a728-patriogabrielpatdu=gmail.com@em5043.sheerid.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=sheerid.com
+Return-Path: 
+ <bounces+7631439-a728-patriogabrielpatdu=gmail.com@em5043.sheerid.com>
+Received: from o1.verify-smtp.sheerid.com (o1.verify-smtp.sheerid.com.
+ [168.245.7.154])
+        by mx.google.com with ESMTPS id
+ d75a77b69052e-45d77eaf69esi12652661cf.347.2024.10.01.05.41.05
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 01 Oct 2024 05:41:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+7631439-a728-patriogabrielpatdu=gmail.com@em5043.sheerid.com
+ designates 168.245.7.154 as permitted sender) client-ip=168.245.7.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sheerid.com header.s=s1 header.b=YFm0g287;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Bc1yw36b;
+       spf=pass (google.com: domain of
+ bounces+7631439-a728-patriogabrielpatdu=gmail.com@em5043.sheerid.com
+ designates 168.245.7.154 as permitted sender)
+ smtp.mailfrom="bounces+7631439-a728-patriogabrielpatdu=gmail.com@em5043.sheerid.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=sheerid.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sheerid.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=eiU+prLR4AyE1AB042PlTca8uplap7rST5RrcLkJuaE=;
+	b=YFm0g287yAa788W/R6/b+6Zc25qVInx8rF01tp0mFwrw4dyrm1ZMsjS71ogm3dmnMmiJ
+	D5NzFQKWUxudX8hh0lDm7uWon/3Lx2Jb5QzxLCPjhZ8JUAFVOSKaQ3it0BmhFtGkQ84hGG
+	lVkK3sHgUNHxOu34Vv/hKRH3gcZuBbzukS25zG4Vbe/ahTy6KOne1wciMo3YIeKZRjut7F
+	vnToaF9XkdW+d0qeQ09NeB8J3ilmXJQRUnJ9pH9tji9uQEedUpKz0NpNyY2AlDU6z1+2KH
+	GlGiOkZqCLS74QwbqLybe7UKh7Bx6ySMp9yjmWZyOd5+JZ0jf7Pspvf0bWJSMolQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=eiU+prLR4AyE1AB042PlTca8uplap7rST5RrcLkJuaE=;
+	b=Bc1yw36bJGDWhVlZV8nyDhganlw97ImuXMGuTzcUFrriWo3PwNB/YeQTgn8qbxGK3U2R
+	BDAVKWYFLHAwB4avEAXBc70MsgCQiq5H2VDm0IJjSDKSA0MtnK0KXEdOLxFU01t3zgj+iN
+	d5eTjTgkPuNY83D9qsTSDFjaf9WXp9z4I=
+Received: by recvd-5f4bd788df-hcgb6 with SMTP id
+ recvd-5f4bd788df-hcgb6-1-66FBEDE1-21
+	2024-10-01 12:41:05.152268847 +0000 UTC m=+1622631.198284719
+Received: from NzYzMTQzOQ (unknown)
+	by geopod-ismtpd-11 (SG) with HTTP
+	id Ghyqsdp3R0-DS28ZPWhssQ
+	Tue, 01 Oct 2024 12:41:05.143 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=66c868e48fac24246ba428dc960348f9d2630c911b64a6e3bbf0ccab0f74
+Date: Tue, 01 Oct 2024 12:41:05 +0000 (UTC)
+From: SheerID Verification <Verify@SheerID.com>
+Mime-Version: 1.0
+Message-ID: <Ghyqsdp3R0-DS28ZPWhssQ@geopod-ismtpd-11>
+Subject: Get verified for Spotify
+X-Feedback-ID: 7631439:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Eyd7qW3K=2FBBI7Oj8naYQzE8s6PuGP9beOjPQFMOaueGllaVEGsC2wcodyA?=
+ =?us-ascii?Q?JuhYOsAZSY2Fn=2FGrJC9Yp2GLTar26+gnPwkQtrS?=
+ =?us-ascii?Q?vcrc+mzhzDH+fipL0md1+An6I6tFj5jbqwDrhd8?=
+ =?us-ascii?Q?DfWplPnolL=2FzwGBfZF7Cp0gdF3AQFLGTCxUMTjh?=
+ =?us-ascii?Q?7aKM3CvxmmF+kAmI4n19N8dkPbGC22RLcDlN7z7?=
+ =?us-ascii?Q?+RSj15O3+wqkTpRTWtHXSAam+fn3Pas=2FNPy8s2q?=
+ =?us-ascii?Q?NdlEdtBInlwUXXWf7psU1gOUQA=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprAHbvUuIyeL+Yxnh?=
+ =?us-ascii?Q?evD9L2UROIdfN7c0bbEKB+F5DkW7KzK+N5o2ZZb?=
+ =?us-ascii?Q?P6FePcDHXA1K93qup=2FlyCGOMrU1E4NHcc3JkA9C?=
+ =?us-ascii?Q?PF=2FfRiInAbIPpnw=3D=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.k0rrcXjtZXZhkJ8vJCIEaQ==
+
+--66c868e48fac24246ba428dc960348f9d2630c911b64a6e3bbf0ccab0f74
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+                                                                    96     =
+                                                                           =
+                         =20
+                               =20
+                                                   =20
+                               =20
+                                                 =20
+                                                                       =20
+                                                                           =
+      (${logoDestination})                                         =20
+                                                           =20
+                                       =20
+                       =20
+                                           =20
+                             =20
+                   =20
+                               =20
+                                                   =20
+                               =20
+                                                                        &#8=
+202;                                 =20
+                                        &#8202;                            =
+     =20
+                                        Hi Patrio Gabriel                  =
+               =20
+                                        &#8202;                            =
+     =20
+                                        Thank you for starting the Student =
+verification process. Let's get you across the finish line!                =
+                 =20
+                                        &#8202;                            =
+     =20
+                                       =20
+                                                            Finish Verifyin=
+g               (https://services.sheerid.com/verify/63fd266996552d469aea40=
+e1/?country=3DPH&locale=3Den-US&verificationId=3D66fbea0fde72c075db75d110&r=
+r=3DRR-169E0643#_gl=3D1*17bl8a1*_gcl_au*MTkxMjIzNjY4OS4xNzI3Nzg1NDg3)      =
+                             =20
+                                 =20
+                                        &#8202;                            =
+     =20
+                                        Have questions about the verificati=
+on process? Get help (https://offers.sheerid.com/sheerid/help-center/?pid=
+=3D63fd266996552d469aea40e1&locale=3Den_US)                                =
+ =20
+                                        &#8202;                            =
+     =20
+                                        Kind Regards,
+Spotify                                 =20
+                                        &#8202;                            =
+                               =20
+                       =20
+                                           =20
+                             =20
+
+                               =20
+                                                   =20
+                               =20
+                                                                        Ver=
+ification services powered by SheerID                                 =20
+                                        &#8202;                            =
+     =20
+                                        You are receiving this email becaus=
+e you submitted a verification request with Spotify and its verification se=
+rvice provider, SheerID.                                 =20
+                                        &#8202;                            =
+     =20
+                                        SheerID will only contact you in re=
+gard to confirming your verification status. Your email address will not be=
+ added to any mailing list without your explicit request.                  =
+               =20
+                                        &#8202;                            =
+     =20
+                                        Click here for more info about Shee=
+rID (https://offers.sheerid.com/sheerid/help-center/?pid=3D63fd266996552d46=
+9aea40e1&locale=3Den_US)                                 =20
+                                        &#8202;                            =
+                               =20
+                       =20
+                                           =20
+                             =20
+                     =20=
+
+--66c868e48fac24246ba428dc960348f9d2630c911b64a6e3bbf0ccab0f74
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+  <head>
+    <title>
+     =20
+    </title>
+    <!--[if !mso]><!-->
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <!--<![endif]-->
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <style type=3D"text/css">
+      #outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }
+    </style>
+    <!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]-->
+    <!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]-->
+   =20
+   =20
+    <style type=3D"text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-px-210 { width:210px !important; max-width: 210px; }
+.mj-column-per-100 { width:100% !important; max-width: 100%; }
+      }
+    </style>
+    <style media=3D"screen and (min-width:480px)">
+      .moz-text-html .mj-column-px-210 { width:210px !important; max-width:=
+ 210px; }
+.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%;=
+ }
+    </style>
+   =20
+ =20
+    <style type=3D"text/css">
+   =20
+   =20
+
+    @media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+ =20
+    </style>
+    <style type=3D"text/css">
+   =20
+    </style>
+            </head>
+  <body style=3D"word-spacing:normal;background-color:${backdropColor};">
+   =20
+   =20
+      <div
+         style=3D"background-color:${backdropColor};"
+      >
+             =20
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" bgcolor=3D"#ffffff" ><tr><td style=3D"line-height:0px;font=
+-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+   =20
+     =20
+      <div  style=3D"background:#ffffff;background-color:#ffffff;margin:0px=
+ auto;max-width:600px;">
+       =20
+        <table
+           align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"background:#ffffff;background-color:#fffff=
+f;width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style=3D"direction:ltr;font-size:0px;padding:0 20px;text-a=
+lign:center;"
+              >
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:210px;" ><![endif]-->
+           =20
+      <div
+         class=3D"mj-column-px-210 mj-outlook-group-fix" style=3D"font-size=
+:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;=
+width:100%;"
+      >
+       =20
+      <table
+         border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"
+      >
+        <tbody>
+          <tr>
+            <td  style=3D"vertical-align:top;padding-top:25px;padding-botto=
+m:25px;">
+             =20
+      <table
+         border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"" width=3D"100%"
+      >
+        <tbody>
+         =20
+              <tr>
+                <td
+                   align=3D"center" style=3D"font-size:0px;padding:10px 25p=
+x;padding-right:0;padding-left:0;word-break:break-word;"
+                >
+                 =20
+      <table
+         border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"border-collapse:collapse;border-spacing:0px;"
+      >
+        <tbody>
+          <tr>
+            <td  style=3D"width:210px;">
+             =20
+        <a
+           href=3D"${logoDestination}" target=3D"_blank"
+        >
+         =20
+      <img
+         alt=3D"" height=3D"auto" src=3D"https://assets-resources.sheerid.c=
+om/spotify/img/Spotify_Logo_RGB_Black.png" style=3D"border:0;display:block;=
+outline:none;text-decoration:none;height:auto;width:100%;font-size:15px;" w=
+idth=3D"210"
+      />
+   =20
+        </a>
+     =20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+                </td>
+              </tr>
+           =20
+        </tbody>
+      </table>
+   =20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+      </div>
+   =20
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+   =20
+     =20
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+   =20
+         =20
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" bgcolor=3D"#ffffff" ><tr><td style=3D"line-height:0px;font=
+-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+   =20
+     =20
+      <div  style=3D"background:#ffffff;background-color:#ffffff;margin:0px=
+ auto;max-width:600px;">
+       =20
+        <table
+           align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"background:#ffffff;background-color:#fffff=
+f;width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style=3D"direction:ltr;font-size:0px;padding:0 20px;text-a=
+lign:center;"
+              >
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:560px;" ><![endif]-->
+           =20
+      <div
+         class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-siz=
+e:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top=
+;width:100%;"
+      >
+       =20
+      <table
+         border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"vertical-align:top;" width=3D"100%"
+      >
+        <tbody>
+         =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:10px;line-height:10px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:15px;lin=
+e-height:20px;text-align:justify;color:#000000;"
+      >Hi Patrio Gabriel</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:15px;lin=
+e-height:20px;text-align:justify;color:#000000;"
+      >Thank you for starting the Student verification process. Let's get y=
+ou across the finish line!</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"center" vertical-align=3D"middle" style=3D"font=
+-size:0px;padding:10px 25px;word-break:break-word;"
+                >
+                 =20
+      <table
+         border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"border-collapse:separate;line-height:100%;"
+      >
+        <tbody>
+          <tr>
+            <td
+               align=3D"center" bgcolor=3D"#1ed760" role=3D"presentation" s=
+tyle=3D"border:none;border-radius:25px;cursor:auto;mso-padding-alt:10px 25p=
+x;background:#1ed760;" valign=3D"middle"
+            >
+              <a
+                 href=3D"https://services.sheerid.com/verify/63fd266996552d=
+469aea40e1/?country=3DPH&locale=3Den-US&verificationId=3D66fbea0fde72c075db=
+75d110&rr=3DRR-169E0643#_gl=3D1*17bl8a1*_gcl_au*MTkxMjIzNjY4OS4xNzI3Nzg1NDg=
+3" style=3D"display:inline-block;background:#1ed760;color:#000000;font-fami=
+ly:arial,helvetica,sans-serif;font-size:15px;font-weight:normal;line-height=
+:20px;margin:0;text-decoration:none;text-transform:capitalize;padding:10px =
+25px;mso-padding-alt:0px;border-radius:25px;" target=3D"_blank"
+              >
+                Finish Verifying
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:15px;lin=
+e-height:20px;text-align:justify;color:#000000;"
+      >Have questions about the verification process? <a href=3D"https://of=
+fers.sheerid.com/sheerid/help-center/?pid=3D63fd266996552d469aea40e1&locale=
+=3Den_US" target=3D'_blank' mj-class=3D"link" style=3D"color: #1ed760;">Get=
+ help</a></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:15px;lin=
+e-height:20px;text-align:justify;color:#000000;"
+      >Kind Regards,<br />Spotify</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+        </tbody>
+      </table>
+   =20
+      </div>
+   =20
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+   =20
+     =20
+      <!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:600px;" width=3D"600" bgcolor=3D"#ffffff" ><tr><td style=3D"li=
+ne-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+   =20
+     =20
+      <div  style=3D"background:#ffffff;background-color:#ffffff;margin:0px=
+ auto;max-width:600px;">
+       =20
+        <table
+           align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"background:#ffffff;background-color:#fffff=
+f;width:100%;"
+        >
+          <tbody>
+            <tr>
+              <td
+                 style=3D"direction:ltr;font-size:0px;padding:0 20px;text-a=
+lign:center;"
+              >
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-a=
+lign:top;width:560px;" ><![endif]-->
+           =20
+      <div
+         class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-siz=
+e:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top=
+;width:100%;"
+      >
+       =20
+      <table
+         border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"vertical-align:top;" width=3D"100%"
+      >
+        <tbody>
+         =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:12px;lin=
+e-height:15px;text-align:justify;color:#000000;"
+      >Verification services powered by SheerID</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:10px;line-height:10px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:12px;lin=
+e-height:15px;text-align:justify;color:#000000;"
+      >You are receiving this email because you submitted a verification re=
+quest with Spotify and its verification service provider, SheerID.</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:10px;line-height:10px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:12px;lin=
+e-height:15px;text-align:justify;color:#000000;"
+      >SheerID will only contact you in regard to confirming your verificat=
+ion status. Your email address will not be added to any mailing list withou=
+t your explicit request.</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:10px;line-height:10px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   align=3D"justify" style=3D"font-size:0px;padding:0;word-=
+break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"font-family:arial,helvetica,sans-serif;font-size:12px;lin=
+e-height:15px;text-align:justify;color:#000000;"
+      ><a href=3D"https://offers.sheerid.com/sheerid/help-center/?pid=3D63f=
+d266996552d469aea40e1&locale=3Den_US" target=3D'_blank' mj-class=3D"link" s=
+tyle=3D"color: #1ed760;">Click here for more info about SheerID</a></div>
+   =20
+                </td>
+              </tr>
+           =20
+              <tr>
+                <td
+                   style=3D"font-size:0px;word-break:break-word;"
+                >
+                 =20
+      <div
+         style=3D"height:20px;line-height:20px;"
+      >&#8202;</div>
+   =20
+                </td>
+              </tr>
+           =20
+        </tbody>
+      </table>
+   =20
+      </div>
+   =20
+          <!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+   =20
+     =20
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+   =20
+   =20
+      </div>
+   =20
+  <img src=3D"http://url4221.sheerid.com/wf/open?upn=3Du001.mRvjWa6a2tdi7Ug=
+UZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszXKcO8n6i6Y8hzhvFp-2Fjj8-=
+2BZc9hUidXQ-2F-2FLjV0XLOdHLAz3QoE-2BhNXzLdj8hbE2KDlAtdgkLMBpGTN8trLLJS1m4y-=
+2F4qTezfpbksauqYoy7e6ml5x-2F9atk7QONUeFzJeG6VPr5EoyRgNN4aPuNv4tghfoyn7mFSXs=
+NZw0QC7L3-2FmCSck35mcixWY6yRE5Xhn0YhmY1EbgAj6tZHRe3-2FoStrZ7VyErgSjR3pw5hOb=
+gH11absx5m3WuVvstOrD6dqNPbTx0pnkNsq22Kunu9ctHGQ-3D-3D" alt=3D"" width=3D"1"=
+ height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !import=
+ant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impo=
+rtant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !imp=
+ortant;padding-bottom:0 !important;padding-right:0 !important;padding-left:=
+0 !important;"/></body>
+</html>
+ =20=
+
+--66c868e48fac24246ba428dc960348f9d2630c911b64a6e3bbf0ccab0f74--

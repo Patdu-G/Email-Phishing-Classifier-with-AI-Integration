@@ -1,0 +1,922 @@
+X-GM-THRID: 1860869387664051306
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:170c:b0:285:8d04:7e19 with SMTP id d12csp132640rwj;
+        Fri, 27 Mar 2026 19:02:21 -0700 (PDT)
+X-Received: by 2002:a05:690c:e345:b0:79a:c98d:2b9a with SMTP id
+ 00721157ae682-79bde1046c8mr50381897b3.52.1774663341464;
+        Fri, 27 Mar 2026 19:02:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1774663341; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Ekx4NzOMyB4i7IfeBF8H0uIiwvt4SeAwNYAGNC4su72NwTAbmNSJ2a2951UBNZSmBx
+         HqB7y4990cyQPjKOV0p/L746dtekHzTN/7oL0G6kUCPmTumO8sEl1nGlcvsc14VKnt23
+         kEl/gEZZABBXFPOADbZPECBCnE79ATc2dAzcsAtzeNKv34eCKbcRw1jkD2uRHzEVQlOw
+         NRHSaINFm9SvswO/WEbgkMvX2Ue47j8Y97DmSJytdgtVZyVCvP0QBqMTJ+xwW+vhXUwO
+         ARYlaBcTIHv1II3Xme63mPvxYbceR6y5yxXutdN03uFQxTkaBQWwhbWE3WkrJRA+PZ4R
+         qmSA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=feedback-id:from:subject:list-unsubscribe-post:reply-to
+         :list-unsubscribe:mime-version:date:message-id:to:dkim-signature;
+        bh=44+/Ti9TUKonhIyIQSObl0v1UbSPWYTyTx9Z7R7F7kM=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=CNG8uZf4co40AXN/m4xX+7Skm4mLYvaOGmyY7Ae78E5y6R6d7UjDmJJsyHJPpGGeDS
+         0zHj8cboJGTZdq4tv2PuLOylDdhd7CnwlQjOQfRuRYl9AWiWK4DDFuO6bc99mwl0tMRw
+         X7C6NJDU/QkHZDvRFL0kB5Tu7+idlg9BH4GTCDldSJKpVSAe+vv8U7zp5u7zWfn3qKt4
+         /QzBWz6dh3RkcRGzWZJXLQUxVwS4JMW3OIqw/GwutMDM+nXw8EUAdxbDnL8yWv4LnoGn
+         +LvwS2GHbKOw6tpL1MeAP2OKZMdpxbl9etecv0BFKJ97MjBTZrYSShN0X0tbHCLBmwy7
+         H4CA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@update.strava.com header.s=scph1118
+ header.b=RMdbS5aZ;
+       spf=pass (google.com: domain of
+ msprvs1=20547cshxtci2=bounces-244190@bounce.strava.com designates
+ 147.253.211.47 as permitted sender)
+ smtp.mailfrom="msprvs1=20547CsHXTCI2=bounces-244190@bounce.strava.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=strava.com
+Return-Path: <msprvs1=20547CsHXTCI2=bounces-244190@bounce.strava.com>
+Received: from mta-211-47.sparkpostmail.com (mta-211-47.sparkpostmail.com.
+ [147.253.211.47])
+        by mx.google.com with ESMTPS id
+ 00721157ae682-79cba56b8b4si8075817b3.94.2026.03.27.19.02.21
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 27 Mar 2026 19:02:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ msprvs1=20547cshxtci2=bounces-244190@bounce.strava.com designates
+ 147.253.211.47 as permitted sender) client-ip=147.253.211.47;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@update.strava.com header.s=scph1118
+ header.b=RMdbS5aZ;
+       spf=pass (google.com: domain of
+ msprvs1=20547cshxtci2=bounces-244190@bounce.strava.com designates
+ 147.253.211.47 as permitted sender)
+ smtp.mailfrom="msprvs1=20547CsHXTCI2=bounces-244190@bounce.strava.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=strava.com
+Return-Path: <msprvs1=20547CsHXTCI2=bounces-244190@bounce.strava.com>
+X-MSFBL: GgRWOOzcsQzn1zQh8ghntXNAgTxJeBPhIrcSfrglu64=|eyJtZXNzYWdlX2lkIjo
+	iNjljN2FkMzZjNzY5M2QxMzUyYzMiLCJjdXN0b21lcl9pZCI6IjI0NDE5MCIsInR
+	lbmFudF9pZCI6InNwYyIsInIiOiJwYXRyaW9nYWJyaWVscGF0ZHVAZ21haWwuY29
+	tIiwic3ViYWNjb3VudF9pZCI6IjAifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=update.strava.com;
+	s=scph1118; t=1774663341; i=@update.strava.com;
+	bh=44+/Ti9TUKonhIyIQSObl0v1UbSPWYTyTx9Z7R7F7kM=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=RMdbS5aZ+nd8NGD166tOIRaFRPPtIjvt2pC5nvDlizUUIHXtEy2dKS8EowQGxGoTh
+	 ZjRcG5ifpLH8BykdJka0I8Z1Q/YMuBhygg6FL6TxIRNG3311e6rboPpl1/iMduO+lP
+	 1R355fIXgfR8eGCxix8mpF+59S68mheTuNGVnhQU=
+Received: from [10.90.1.60] ([10.90.1.60])
+	by i-0e3b50f4686f94104.mta1vrest.sd.prd.sparkpost (ecelerity 5.2.0.75378
+ r(msys-ecelerity:tags/5.2.0.13)) with REST
+	id 3C/2D-42317-DA637C96; Sat, 28 Mar 2026 02:02:21 +0000
+To: patriogabrielpatdu@gmail.com
+Message-ID: 
+ <3C.2D.42317.DA637C96@i-0e3b50f4686f94104.mta1vrest.sd.prd.sparkpost>
+Date: Sat, 28 Mar 2026 02:02:21 +0000
+Content-Type: multipart/alternative;
+ boundary="_----vO8TkKj74d9mtSgB8mB0lg===_EB/2D-42317-DA637C96"
+MIME-Version: 1.0
+X-Campaign-ID: 17406364
+List-Unsubscribe: 
+ <https://links.iterable.com/s/uh/1_dvCsXNxLDjlB7YZqIlK8-y_ExXLH2ke1Ex_iTzG6Etn2yiXt7dY-mX4S82bFzhu77Y8DcDZqhNqD21x_Vd1lOaH283R7mPrFD3VrnR6w9DBIgFi-iRwwiA9UAulG4e6xNMKqd_pcSoRztiE2In_hsAKtIx1oHWsNEX2rDm09xaqYLmSwqsBdxYcKcQ_5rgWzExxQzpW3SYXStn/v30tafI1OGCYTH8Si6NB5_aMsP74hDi5/19>,<mailto:unsubscribe+17406364+22661638@unsubscribe.iterable.com>
+X-Message-ID: 07ba7e42f3e74b4f93ff8c55054ac809
+X-Feedback-ID: 22661638:17406364:16054:iterable
+Reply-To: no-reply@strava.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: =?utf-8?B?U3Vic2NyaWJlIG5vdyBvciBtaXNzIG91dCDwn5GA?=
+From: "Strava" <mail@update.strava.com>
+Feedback-ID: 22661638:17406364:16054:iterable
+
+--_----vO8TkKj74d9mtSgB8mB0lg===_EB/2D-42317-DA637C96
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Strava Last chance to save 50% =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =0A=E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =0A=0A=0A =0A<https://www.strava.com/subscribe/checkout=3F=
+email=3D7b3091df393823c6b67a8259eaf1d7f5b0dfaba0&userId=3D183877872&origin=
+=3Dmarketing-promotions_email_sub-upsell-march-markets_discount-email&code=
+=3Ddc0496e28d&$web_only=3Dtrue>=0A <> =0A=0A =0A<https://www.strava.com/sub=
+scribe/checkout=3Femail=3D7b3091df393823c6b67a8259eaf1d7f5b0dfaba0&userId=
+=3D183877872&origin=3Dmarketing-promotions_email_sub-upsell-march-markets_d=
+iscount-email&code=3Ddc0496e28d&$web_only=3Dtrue>=0A=0A Get 50% off now or =
+miss out =0A=0A=0A Last chance to snag the offer. Subscribe now and save 50=
+% on the features =0Athat help you level up, while you still can.=0A=0AOffe=
+r valid for web annual subscriptions only. Terms apply*. =0A=0A=0A Hurry! S=
+ave 50%  =0A<https://www.strava.com/subscribe/checkout=3Femail=3D7b3091df39=
+3823c6b67a8259eaf1d7f5b0dfaba0&userId=3D183877872&origin=3Dmarketing-promot=
+ions_email_sub-upsell-march-markets_discount-email&code=3Ddc0496e28d&$web_o=
+nly=3Dtrue>=0A =0A<https://www.strava.com/subscribe/checkout=3Femail=3D7b30=
+91df393823c6b67a8259eaf1d7f5b0dfaba0&userId=3D183877872&origin=3Dmarketing-=
+promotions_email_sub-upsell-march-markets_discount-email&code=3Ddc0496e28d&=
+$web_only=3Dtrue>=0A=0A Wait longer, pay more for our best features =0A=0A=
+=0A FEATURES  FREE  SUBSCRIPTION =0A Record your activities =0A Connect wit=
+h community =0A Set and track custom Goals =0A Train smarter with personali=
+zed insights =0A View your full training history =0A Find, build and save R=
+outes =0A See your progress and fitness over time =0A Join and create Chall=
+enges with friends =0A Compete on Segment Leaderboards =0A Year in Sport =
+=E2=80=94 Your personalized recap =0A And so much more! =0A=0A Limited time=
+ offer valid at strava.com =0A<https://www.strava.com/subscribe/checkout=3F=
+email=3D7b3091df393823c6b67a8259eaf1d7f5b0dfaba0&userId=3D183877872&origin=
+=3Dmarketing-promotions_email_sub-upsell-march-markets_discount-email&code=
+=3Ddc0496e28d&$web_only=3Dtrue>=0A. Offer cannot be combined with other pro=
+motional offers. Offer cannot be =0Aredeemed for cash or gift cards and is =
+not valid on prior purchases. Valid only =0Ain countries where the Strava s=
+ubscription is available. Void where prohibited. =0AOffer terms are subject=
+ to change. For questions, please contact Strava support.=0A=0A=0AGet the S=
+trava App=0A=0A =0A<https://itunes.apple.com/us/app/strava-running-and-cycl=
+ing-gps/id426826309=3Fmt=3D8&origin=3Demail&source=3Dfooter&$web_only=3Dtru=
+e>=0A =0A<https://play.google.com/store/apps/details=3Fid=3Dcom.strava&orig=
+in=3Demail&source=3Dfooter&$web_only=3Dtrue>=0A Please do not reply to this=
+ email. You are receiving this email because you =0Acreated a Strava accoun=
+t atwww.strava.com <http://www.strava.com=3F$web_only=3Dtrue>=0A or from ou=
+r mobile app. If you no longer wish to receive emails please update =0Ayour=
+ Stravaemail settings <https://www.strava.com/settings/email=3F$web_only=3D=
+true>=0A orunsubscribe =0A<http://links.strava.com/s/eh/KcJd-mjaGzULcUrDZY1=
+c96l2UJx09ZNW8dImeBOiT4jfHMiTvn3a1I84H4ftZhvMyg8c1eCrn4Zwa3mCkvdOK2hofwn42K=
+OueVw3cDM4L4LfZWXTDLzsIbLpUmUWJ1wY_OnNtV28lJ8D1oblGQGbKwUPo7MusXwxf7xcpIKMh=
+rR_7zc4LNkM8hypgG2l20oEShZiGhoYmg2P3vX9XAmHhwW74GBPS9XHXC4bNHKehyEX90drRIGB=
+ZeDP9kWs8yEw-edqBKyBH2SSrFJ9otgJdwLe7j9ol6C9r66mV7yeAztWI0iipqovvREQD5vXMMc=
+yk90wobo56-vdmvD4UFwS1tACdf9n8FZdL7Nd9rhsY7rRtckkis6DqCtBuhkT2xyh97hC98V1Ml=
+NLImDvLBgqU2ry2r1RIM5j56VqrnsOFsf7g2OlYV5u7UPhWDI2bDNJafsfqo3-zOenCHS3b1Ces=
+vuMObUR9Em9pw/It36w5ETILMtyZRLQPdP22uUYeVcjIu3/19>=0A. =0A=0A=C2=A9 2026 St=
+rava. 181 Fremont St, Fl 27, San Francisco, CA 94105 <>
+--_----vO8TkKj74d9mtSgB8mB0lg===_EB/2D-42317-DA637C96
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html lang=3D"en" dir=3D"ltr=
+" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsof=
+t-com:office:office" style=3D"opacity: 1; -ms-text-size-adjust: 100% !impor=
+tant;" xmlns=3D"http://www.w3.org/1999/xhtml"> <head> <title>Strava</title>=
+ <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"> =
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <meta name=3D"v=
+iewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"> <meta http-=
+equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge,chrome=3D1"> <meta name=3D"c=
+olor-scheme" content=3D"light dark"> <meta name=3D"supported-color-schemes"=
+ content=3D"light dark"> <meta name=3D"format-detection" content=3D"telepho=
+ne=3Dno, date=3Dno, address=3Dno, email=3Dno, url=3Dno"> <meta name=3D"x-ap=
+ple-disable-message-reformatting"> <!-- Font Family --> <!--[if !mso]><!-->=
+ <style type=3D"text/css">@font-face{font-family:'Book';font-style:normal;s=
+rc:url('https://s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse=
+-Regular.woff2') format('woff2'),url('https://s3.amazonaws.com/strava.stati=
+c/webfonts/boathouse/Boathouse-Regular.ttf') format('ttf')}@font-face{font-=
+family:'XBold';font-style:normal;src:url('https://s3.amazonaws.com/strava.s=
+tatic/webfonts/boathouse/Boathouse-Extended-Bold.woff2') format('woff2'),ur=
+l('https://s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse-Exte=
+nded-Bold.ttf') format('ttf')}@font-face{font-family:'Demi';font-style:norm=
+al;src:url('https://s3.amazonaws.com/strava.static/webfonts/boathouse/Boath=
+ouse-Medium.woff2') format('woff2'),url('https://s3.amazonaws.com/strava.st=
+atic/webfonts/boathouse/Boathouse-Medium.ttf') format('ttf')}@font-face{fon=
+t-family:'Bold';font-style:normal;src:url('https://s3.amazonaws.com/strava.=
+static/webfonts/boathouse/Boathouse-Bold.woff2') format('woff2'),url('https=
+://s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse-Bold.ttf') f=
+ormat('ttf')}@font-face{font-family:'Reg';font-style:normal;src:url('https:=
+//s3.amazonaws.com/strava.static/webfonts/boathouse/Boathouse-Regular.woff2=
+') format('woff2'),url('https://s3.amazonaws.com/strava.static/webfonts/boa=
+thouse/Boathouse-Regular.ttf') format('ttf')}</style> <!--<![endif]--> <!--=
+ // Font Family --> <style type=3D"text/css">:root{Color-scheme:light dark;=
+supported-color-schemes:light dark}body{margin:0;padding:0;-webkit-text-siz=
+e-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-sm=
+oothing:antialiased!important;font-family:'Book',Helvetica,Arial,sans-serif=
+!important}*{-ms-text-size-adjust:100%!important}a,body,table,td,th{-webkit=
+-text-size-adjust:100%;-ms-text-size-adjust:100%;box-sizing:border-box!impo=
+rtant}img{border:0!important;outline:none!important}table{border-collapse:c=
+ollapse!important;mso-table-lspace:0!important;mso-table-rspace:0!important=
+}td,a,span{border-collapse:collapse;mso-line-height-rule:exactly;mso-table-=
+lspace:0!important;mso-table-rspace:0!important}table{table-layout:fixed}su=
+p{font-size:60%;line-height:0}.footer a{color:#fff!important}a[x-apple-data=
+-detectors]{color:inherit!important;font-size:inherit!important;font-family=
+:inherit!important;font-weight:inherit!important;line-height:inherit!import=
+ant}u+#body a{color:inherit!important;font-size:inherit!important;font-fami=
+ly:inherit!important;font-weight:inherit!important;line-height:inherit!impo=
+rtant}#MessageViewBody a{color:inherit!important;font-size:inherit!importan=
+t;font-family:inherit!important;font-weight:inherit!important;line-height:i=
+nherit!important}u+.body .gmail-blend-screen{background:#000!important;mix-=
+blend-mode:screen!important}u+.body .gmail-blend-difference{background:#000=
+!important;mix-blend-mode:difference!important}.custom p{font-family:'Helve=
+tica Neue',Helvetica,Helvetica,Arial,sans-serif;font-weight:400;font-size:1=
+7px;line-height:24px;margin:8px 0 0;color:#000}.margin-auto{margin:0 auto!i=
+mportant}@media all and (max-width:500px){u+.body .em_full_wrap{width:100%!=
+important;width:100vw!important}.row{display:block!important}.padding-no-to=
+p{padding:0 25px 48px!important}.width-full{width:100%!important}.width-aut=
+o{width:auto!important}.background-img{background:url('https://library.iter=
+able.com/1468/4637/76af936fc2d148acbc391fef8f6a77a9-hero_mb.png');backgroun=
+d-size:cover;background-repeat:no-repeat;background-position:center bottom;=
+vertical-align:top;width:100%!important;height:570px!important}.full{width:=
+100%!important}.padding{padding:0!important}.hide{display:none!important}.c=
+enter{text-align:center!important}.margin-auto{margin:0 auto!important}.sho=
+w{display:block!important}.p-15{padding-left:15px!important;padding-right:1=
+5px!important}.p-25,.padding-sides{padding-left:25px!important;padding-righ=
+t:25px!important}.pt-15{padding-top:15px!important}.pt-24{padding-top:24px!=
+important}.pt-36{padding-top:36px!important}.pt-48{padding-top:48px!importa=
+nt}.pb-36{padding-bottom:36px!important}.pb-48{padding-bottom:48px!importan=
+t}.p-35{padding-left:35px!important;padding-right:35px!important}h1{font-si=
+ze:34px!important;line-height:38px!important}h2{font-size:28px!important;li=
+ne-height:34px!important}h3{font-size:26px!important;line-height:30px!impor=
+tant}.eyebrow{font-size:14px!important;line-height:21px!important}.mobile-i=
+mg{width:260px!important;max-width:260px!important}.margin-auto{margin:0 au=
+to!important}}</style> <style>@media(prefers-color-scheme:dark){u+.body .gm=
+ail-blend-screen{background:#000!important;mix-blend-mode:screen!important}=
+u+.body .gmail-blend-difference{background:#000!important;mix-blend-mode:di=
+fference!important}}</style> <!--[if (gte mso 9)|(IE)]><style type=3D"text/=
+css">table{border-collapse:collapse;border-spacing:0}</style><![endif]--> <=
+!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsP=
+erInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xFreeml><![endif]=
+--> </head> <!-- --> <body class=3D"body vsc-initialized" style=3D"margin: =
+0px auto; padding: 0px; font-family: 'Book', Helvetica, Arial, sans-serif !=
+important; box-sizing: border-box !important; -webkit-text-size-adjust: 100=
+% !important; -ms-text-size-adjust: 100% !important; -webkit-font-smoothing=
+: antialiased !important;">=0D=0A<div style=3D"color:transparent;visibility=
+:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0p=
+x;padding:0px;border-width:0px!important;display:none!important;line-height=
+:0px!important;"><img border=3D"0" width=3D"1" height=3D"1" src=3D"http://l=
+inks1.strava.com/q/B6x6Obw56xsg5bEIzWpqVQ~~/AAO53hA~/h4qCHLbZcu43n8QOTl5wnY=
+Tt7jUaNZNjSQXD34Ycny0LPi2fxJG4JNlZ1Fqx072sv2fAhBsNJfX_x-jp7mh4DQ~~" alt=3D"=
+"/></div>=0D=0A<span style=3D"color:transparent;visibility:hidden;display:n=
+one;opacity:0;height:0;width:0;font-size:0;">Last chance to save 50%</span>=
+<img src=3D"http://links.strava.com/s/eo/d4qhbfismnhunF7HKmWe3XDn6XQy1SCbS6=
+iM_TlJ0t1sC7DVRmbiAAETSbcS2SldNtAnQwctXL49287W4vnI36Aj0svicmJgLL81XUUHztxlO=
+JzY-59RHVF_FJoV7zehDTg8U8FgP_j0L65hdeWj7HuuwuemKhYK7z2AtBzsK3HmYBYwyLNGATz-=
+KDwb-L0P-J8gRz28D_eHHhUlZX7yQgpJH7Iu8e8UWzck/5Xxvd_zYy-Q2TBv-L7foig7eIznApG=
+6z/19" style=3D"border:0;width:1px;height:1px;border-width:0px!important;di=
+splay:none!important;line-height:0!important;" width=3D"1" height=3D"1"/> <=
+div style=3D"display: none !important; font-size: 1px; line-height: 1px; ma=
+x-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;=
+">&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy=
+; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#=
+847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &=
+#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847=
+; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#81=
+99; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &=
+shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199;=
+ &#847; &shy; &#8199; &#847; &shy;</div> <table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"-webkit-text-size-adju=
+st: 100%; table-layout: fixed; -ms-text-size-adjust: 100% !important; box-s=
+izing: border-box !important; border-collapse: collapse !important; mso-tab=
+le-lspace: 0px !important; mso-table-rspace: 0px !important;" width=3D"100%=
+"> <tr style=3D"-ms-text-size-adjust: 100% !important;"> <td align=3D"cente=
+r" valign=3D"top" style=3D"-webkit-text-size-adjust: 100%; border-collapse:=
+ collapse; mso-line-height-rule: exactly; -ms-text-size-adjust: 100% !impor=
+tant; box-sizing: border-box !important; mso-table-lspace: 0pt !important; =
+mso-table-rspace: 0pt !important;"> <table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" class=3D"wrap" style=3D"-webkit-text-size-a=
+djust: 100%; table-layout: fixed; background-color: #E5E8EB; width: 100%; -=
+ms-text-size-adjust: 100% !important; box-sizing: border-box !important; bo=
+rder-collapse: collapse !important; mso-table-lspace: 0px !important; mso-t=
+able-rspace: 0px !important;" role=3D"presentation" bgcolor=3D"#E5E8EB"> <t=
+r style=3D"-ms-text-size-adjust: 100% !important;"> <td align=3D"center" va=
+lign=3D"top" style=3D"-webkit-text-size-adjust: 100%; border-collapse: coll=
+apse; mso-line-height-rule: exactly; -ms-text-size-adjust: 100% !important;=
+ box-sizing: border-box !important; mso-table-lspace: 0pt !important; mso-t=
+able-rspace: 0pt !important;"> <table align=3D"center" bgcolor=3D"#F2F2ED" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"full" role=3D"pre=
+sentation" style=3D"-webkit-text-size-adjust: 100%; table-layout: fixed; wi=
+dth: 640px; background-color: #F2F2ED; -ms-text-size-adjust: 100% !importan=
+t; box-sizing: border-box !important; border-collapse: collapse !important;=
+ mso-table-lspace: 0px !important; mso-table-rspace: 0px !important;" width=
+=3D"640"> <!-- ticker tape --> <tr style=3D"-ms-text-size-adjust: 100% !imp=
+ortant;"> <td class=3D"hide" style=3D"-webkit-text-size-adjust: 100%; borde=
+r-collapse: collapse; mso-line-height-rule: exactly; -ms-text-size-adjust: =
+100% !important; box-sizing: border-box !important; mso-table-lspace: 0pt !=
+important; mso-table-rspace: 0pt !important;"> <a href=3D"http://links.stra=
+va.com/s/c/zzUy731XuxoQ2uYyVD4OlIzynYPRBgI4n665KLUczkX4Ldd3MdAu6_2KaTFYYNT5=
+99xih4t1O3Nagxjydg05QQWnkMXTkSaIzvgJmDIimDLF8KLuJpc4yEurr4xYdqQG-NwN1x8qmC_=
+edjDQki2y0vysYt6m2lvV6ePN7VdUukv2v5_cqVdnzGIeTpzHD3QsBzO2_qH_jmuAalSd3CE9BV=
+Uw0TFjb5xaD5ZXkUTVOI5C2xAd1YiCiDQnbrr5b6rBeDMPU4Aa3p2GAiq5vuaXGeEXmwBUysose=
+WNuspdBBIASQazE3N39s4CpxX7aIiD-r-RHUzMEjFE3zH8QSqdJvTChxeUSeW1bB897qME38mQn=
+BGgohnYh28FcDmAbWJTPinilWCgBg1Abyvd-ELTyPSWfDqEEjcqDJKpXJRbtvKUx7yrv95kDoR6=
+Qgyhjiuj6-LUQD0ktBsXSkuT6ktXP6aNfLOD6dLnQkribA7iwEsFmwgXQPBp8gHbyxvFV6aobga=
+pUGXLRM-11zzBQPC5o8gO6zM6otkaMJOpFkoF_kBMEOOEGwlse8O074IP9brokh_2vdZB2C6HfD=
+QNXz1yDIdHWoIDCIvDnoTxlvJ1AVnnIAK5SOYXv5M8kg4kLwYU78ft9Jq-0RNJRos5UoJ5WLEqD=
+42xtzO5l-Clye9qPld0vc_-Xc7C3TxSnj8wUZFBqNnhqhnGwPMsHYMhp2L2kuvIRAbpTYaggVwL=
+0RgVilu6KLOiwdwcRkQQOIW_dpl7BhNf3O2lYyL5932t8nGSpkmJCwFgbmJN3Gr0vRfBTIZt6WQ=
+WrrsbLJXAtM-7PJQuC-ZPQTp3ME38-sUrJmYRL2tT5SUmxEi2oxSlvgwtZ2_nypWtZsYYUtQCLX=
+f0VY-oPzjXz/xK3ZtB1hYXJdzcuDtnTgtepL4uoTzbdv/19" style=3D"-webkit-text-size=
+-adjust: 100%; border-collapse: collapse; mso-line-height-rule: exactly; -m=
+s-text-size-adjust: 100% !important; box-sizing: border-box !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; text-decor=
+ation: none !important;"> <img height=3D"36" src=3D"https://library.iterabl=
+e.com/1468/4637/7642add9a216479abef87525a79254a5-cyberweekend-email-tickert=
+ape-flashsale-desktop-en-us.jpg" style=3D"display: block; height: 36px; wid=
+th: 640px; -ms-text-size-adjust: 100% !important; border: 0 !important; out=
+line: none !important;" width=3D"640"> </a> </td> </tr> <tr style=3D"-ms-te=
+xt-size-adjust: 100% !important;"> <td class=3D"row" style=3D"-webkit-text-=
+size-adjust: 100%; border-collapse: collapse; mso-line-height-rule: exactly=
+; display: none; -ms-text-size-adjust: 100% !important; box-sizing: border-=
+box !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !im=
+portant;"> <a data-itr=3D"87048496-2" data-template-url=3D"" href=3D"" styl=
+e=3D"-webkit-text-size-adjust: 100%; border-collapse: collapse; mso-line-he=
+ight-rule: exactly; -ms-text-size-adjust: 100% !important; box-sizing: bord=
+er-box !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; text-decoration: none !important;"> <img src=3D"https://library=
+.iterable.com/1468/4637/c0534473241c4e2db0e7ce00d6e8af96-cyberweekend-emai=
+l-tickertape-flashsale-mobile-en-us.jpg" style=3D"display: block; height: a=
+uto; width: 100%; -ms-text-size-adjust: 100% !important; border: 0 !importa=
+nt; outline: none !important;" width=3D"100"> </a> </td> </tr> </table> <!-=
+- // new component table --> <!-- header --> <!-- if using a dark, Strava b=
+randed color, use a dark mode optimization (color block image) as backgroun=
+d that won't invert logo color --> <table align=3D"center" bgcolor=3D"#0000=
+00" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"full width-fu=
+ll" role=3D"presentation" style=3D"max-width:640px;width:100%;background-co=
+lor:#000000;background:url('https://library.iterable.com/1468/4637/df1c3772=
+f1ed46489bba5b755332d20d-black-bg.png');"> <tr> <td align=3D"center" valign=
+=3D"top" class=3D"p-25 center" style=3D"padding: 29px 32px; text-align:cent=
+er"> <img alt=3D"Strava" class=3D"center margin-auto" border=3D"0" src=3D"h=
+ttps://library.iterable.com/1468/4637/7d9d01406df647ada17ee566e3fed25e-blac=
+k_header_1.png" style=3D"width: 90px; max-width: 90px;display: block;" widt=
+h=3D"90"> </td> </tr> </table> <!-- // header --> <!-- new component table =
+--> <!-- sub logo --> <table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"full" role=3D"presentation" style=3D"-webkit-t=
+ext-size-adjust: 100%; table-layout: fixed; max-width: 640px; background-co=
+lor: #000000; -ms-text-size-adjust: 100% !important; box-sizing: border-box=
+ !important; border-collapse: collapse !important; mso-table-lspace: 0px !i=
+mportant; mso-table-rspace: 0px !important;" bgcolor=3D"#000000"> <!-- desk=
+top and mobile image --> <tr style=3D"-ms-text-size-adjust: 100% !important=
+;"> <td align=3D"center" valign=3D"top" style=3D"-webkit-text-size-adjust: =
+100%; border-collapse: collapse; mso-line-height-rule: exactly; -ms-text-si=
+ze-adjust: 100% !important; box-sizing: border-box !important; mso-table-ls=
+pace: 0pt !important; mso-table-rspace: 0pt !important;"> <a href=3D"http:/=
+/links.strava.com/s/c/gGaCEZFmqwGTtEp5lyu6uPZca-hNVRTgT0lJkq5fA6DG752uzl41j=
+BUM-AxrMKTGLvSA6ZIkEESrWOWOfLBWgI-SjeF_KZbmyXgUhc2kGJPLzy91oxZx1rPR4EBaFhh3=
+M26VNUArB_zr5F3KqD8g3vgswotiGiCahoRFk21IlQZ4PdL2fVlUlKkc4xiFW4feUv5XgZ0Y6jE=
+0JFa64R2Pwlj5jSDCBG3TAPwyy-HFRiNt6WgC9EnKV4uKzbmMFWcxEUK1Vx4WnuQ_s0utBeL8Kk=
+fYMeCZfzWtbh4WNc4nvywBOpsFfwqcRAnxdaLYYI9ApFJggRhbrYSwXy9GuMDYMZ89dySUGJr20=
+ruc0AmGU5O1QL44ZkBUh_5X_laQENlXMfarHlwyFU-4qsdG4OFdXIVDfZwUujbUgn5L-Vd4ys74=
+jES4Ua-CmBlw3CNABIpqO4NxnhuJ8gcWXRyNNKcfI4Yk8r5mA1xzrCJN_fS2Olwx1euOxzU4SfX=
+fFLVJfK5KmzUUkUB3GArpw4vCxtRJ020McTLD_jK6oTt2jW8NDHZ6OrhpxcIzHbKL9sbsd5byVG=
+WBW0GJt5wnlBo0g5adSzYufUJPhjy7CrKeKXYCOTO6xyOoQ3KW1EbZ_056ohVIx9VL1JCCBvdcx=
+sxFT4BsqWejJvH4pl1ullqwICxq9MKDaubosJ5WMu1YROdiac_Kvw1NY1Ld8s_6CzXn6g3mhqGa=
+uXs5Rk3z61LzCdCXuI5LvuEnw7lSFV_NBQp0SwATIqHgn18TtwIVbt_xZ4vShyxS22c10sOipGT=
+FcFHvpT9sk6I103Fvkj-gBbSGLWGfpCAcH6c0NPZF7TRmoRdvzOi5pcEBzkcAH53leqLA4oFfdr=
+GOwxUcuJpgqS_yCpnO3bD1/kxxkb9CuDpDGT4fHToMdaIqxTB0J5yD6/19" target=3D"_blan=
+k" rel=3D"noopener" style=3D"-webkit-text-size-adjust: 100%; border-collaps=
+e: collapse; mso-line-height-rule: exactly; text-decoration: none; color: #=
+000000; -ms-text-size-adjust: 100% !important; box-sizing: border-box !impo=
+rtant; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+> <!-- desktop image --> <img alt=3D"FLASH SALE" src=3D"https://library.ite=
+rable.com/1468/4637/1047ef6b797d4407ae60fc5b2e52f4a6-cyberweekend-phase2-em=
+ail-1-headline-desktop-en-us.jpg" style=3D"max-width: 640px; width: 100%; d=
+isplay: block; -ms-text-size-adjust: 100% !important; border: 0 !important;=
+ outline: none !important;" width=3D"640" class=3D"hide" border=3D"0"> <!--=
+ mobile image --> <!--[if !mso]><!--> <img alt=3D"FLASH SALE" src=3D"https:=
+//library.iterable.com/1468/4637/1047ef6b797d4407ae60fc5b2e52f4a6-cyberweek=
+end-phase2-email-1-headline-desktop-en-us.jpg" style=3D"min-width: 260px; w=
+idth: 100%; display: none; -ms-text-size-adjust: 100% !important; border: 0=
+ !important; outline: none !important;" width=3D"260" class=3D"show" border=
+=3D"0"> <!--<![endif]--> </a> </td> </tr> <!-- // desktop and mobile image =
+--> </table> <!-- // new component table --> <!-- top module --> <table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"ful=
+l" role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; table-lay=
+out: fixed; max-width: 640px; background-color: #000000; -ms-text-size-adju=
+st: 100% !important; box-sizing: border-box !important; border-collapse: co=
+llapse !important; mso-table-lspace: 0px !important; mso-table-rspace: 0px =
+!important;" bgcolor=3D"#000000"> <!-- h2 --> <tr style=3D"-ms-text-size-ad=
+just: 100% !important;"> <td align=3D"center" valign=3D"top" class=3D"p-25"=
+ style=3D"-webkit-text-size-adjust: 100%; border-collapse: collapse; mso-li=
+ne-height-rule: exactly; padding: 12px 25px 15px; background: #000; backgro=
+und-image: linear-gradient(#000,#000); -ms-text-size-adjust: 100% !importan=
+t; box-sizing: border-box !important; mso-table-lspace: 0pt !important; mso=
+-table-rspace: 0pt !important;"> <div class=3D"gmail-blend-screen" style=3D=
+"-ms-text-size-adjust: 100% !important;"> <div class=3D"gmail-blend-differe=
+nce" style=3D"-ms-text-size-adjust: 100% !important;"> <h2 align=3D"center"=
+ style=3D"color: #feffff; font-family: 'Helvetica Neue', Helvetica, Helveti=
+ca, Arial, sans-serif; font-weight: 700; font-size: 48px; line-height: 52px=
+; margin: 0; -ms-text-size-adjust: 100% !important;"> Get 50% off now or mi=
+ss&nbsp;out </h2> </div> </div> </td> </tr> <!-- // h2 --> <!-- pargraph --=
+> <tr style=3D"-ms-text-size-adjust: 100% !important;"> <td align=3D"center=
+" valign=3D"top" class=3D"p-35" style=3D"-webkit-text-size-adjust: 100%; bo=
+rder-collapse: collapse; mso-line-height-rule: exactly; padding: 9px 32px 0=
+; background: #000; background-image: linear-gradient(#000,#000); -ms-text-=
+size-adjust: 100% !important; box-sizing: border-box !important; mso-table-=
+lspace: 0pt !important; mso-table-rspace: 0pt !important;"> <div class=3D"g=
+mail-blend-screen" style=3D"-ms-text-size-adjust: 100% !important;"> <div c=
+lass=3D"gmail-blend-difference" style=3D"-ms-text-size-adjust: 100% !import=
+ant;"> <p align=3D"center" style=3D"color: #feffff; font-family: 'Helvetica=
+ Neue', Helvetica, Helvetica, Arial, sans-serif; font-weight: 400; font-siz=
+e: 17px; line-height: 24px; margin: 0; -ms-text-size-adjust: 100% !importan=
+t;"> Last chance to snag the offer. Subscribe now and save 50% on the featu=
+res that help you level up, while you still&nbsp;can. <br><br><i>Offer vali=
+d for web annual subscriptions only. Terms&nbsp;apply*.</i> </p> </div> </d=
+iv> </td> </tr> <!-- // pargraph --> <tr style=3D"-ms-text-size-adjust: 100=
+% !important;"> <td align=3D"center" valign=3D"top" style=3D"-webkit-text-s=
+ize-adjust: 100%; border-collapse: collapse; mso-line-height-rule: exactly;=
+ padding: 30px 15px 30px; background: #000000; background-image: linear-gra=
+dient(#000000,#000000); -ms-text-size-adjust: 100% !important; box-sizing: =
+border-box !important; mso-table-lspace: 0pt !important; mso-table-rspace: =
+0pt !important;"> <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" r=
+ole=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; table-layout:=
+ fixed; -ms-text-size-adjust: 100% !important; box-sizing: border-box !impo=
+rtant; border-collapse: collapse !important; mso-table-lspace: 0px !importa=
+nt; mso-table-rspace: 0px !important;"> <tr style=3D"-ms-text-size-adjust: =
+100% !important;"> <td align=3D"center" style=3D"-webkit-text-size-adjust: =
+100%; border-collapse: collapse; mso-line-height-rule: exactly; border-radi=
+us: 8px; -ms-text-size-adjust: 100% !important; box-sizing: border-box !imp=
+ortant; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;=
+"> <a href=3D"http://links.strava.com/s/c/xmI9wLvD-MyOXJWEGvrEzgzMUPCjvy_LD=
+m6BISTrG-a2LaAR1GaU8ZGVrTVZe-0Ka-9yUzCjyQ3AfDVnW_BNEFGPYKuzr76rC5Ff-e4tg7Pf=
+f9j0aLrSay-7OYMGU2nCR4_1-JyunTbpQH7fQOaZQg3Gp_BtC6WHyBcbxn1KSPHY_rXkqR3Vtyl=
+kiWt24U9HPGu3vQnl5Do2OpPP73IWbXUqEpiubAaG-Ivid9Mr6kXW4HA3UMDhHpVCfjOWj3ItJv=
+wWFcqjqUNruJTazXW7_ALE3BsKHhBfWQQ0BA_lK437vwaRpVFLARq0Dwk3YZfyBfKsqOFU5f-1O=
+Dze7nMFrGd10PHRTAjFVuCD21lDV6vgCxxnyst_VLsHmCNgGgP9XWN1UF7uM2UMUeC6m9iPsFEz=
+gfAtNOuIUnS2HaRTtbNN-2nw67VG0iLTv0PomaI4fbjukgekpx6fdgyWGaFjfMorSIYhZyt3oT8=
+TkPhFAIOCehoTkVVjKxNt8Uo6fijWT_yCXDp8GsfnFsIQlodAixdYxO4nfsyyweE5iIo0Joqvsy=
+B12j8ov81U5hdNqxeUjHbmUN3zrIfFjLc37uPysHmhwL-tSIR_ftTjfq0qpFWAPHn3tkzdzcx-S=
+bQJ9bV4NTQUA2Cf1n5WeXHG6_ufWOpcV9WcgrxAN0rIE-3S3WUhMyMOVL4dbsi8Xxz9DJVKUTYi=
+Uyz1qxHguLSsUErzF-WAKrCGLA9obXt_VU3rnPezjpgcNLwFW6p6jhoNtXLO-RVCi_qhNVPioB5=
+bOtM7CL7QiLC7ieyy-TEzA0ah_RKvbUzDpZ7O0iRw6K439Q5M11TQslgN4dz0lBum3MHVItf2Jv=
+C-Ds0TT1msqCVfJzRmsG5xT2v7RYlx2GoOtk7sznAr/Ymy0mmUufOyN2t_hOx9cA0lEVE5Nqgfl=
+/19" style=3D"-webkit-text-size-adjust: 100%; border-collapse: collapse; ms=
+o-line-height-rule: exactly; background-color: #FC5200; font-size: 17px; fo=
+nt-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-=
+weight: 500; text-decoration: none; padding: 12px 4px; color: #ffffff; disp=
+lay: block; border-radius: 8px; min-width: 220px; width: auto; mso-padding-=
+alt: 0; -ms-text-size-adjust: 100% !important; box-sizing: border-box !impo=
+rtant; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+> <!--[if mso]><i style=3D"mso-font-width:100%;mso-text-raise:150%" hidden=
+=3D"">=E2=80=83=E2=80=8B</i><![endif]--> <span style=3D"border-collapse: co=
+llapse; mso-line-height-rule: exactly; mso-text-raise: 75%; -ms-text-size-a=
+djust: 100% !important; mso-table-lspace: 0pt !important; mso-table-rspace:=
+ 0pt !important;"> Hurry! Save 50% <!--[if mso]><i style=3D"mso-font-width:=
+100%" hidden=3D"">=E2=80=83=E2=80=8B</i><![endif]--> </span> </a> </td> </t=
+r> </table> </td> </tr> </table> <!-- // top module --> <!-- // initial tab=
+le --> <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"full" role=3D"presentation" style=3D"-webkit-text-size-adju=
+st: 100%; table-layout: fixed; max-width: 640px; width: 100%; -ms-text-size=
+-adjust: 100% !important; box-sizing: border-box !important; border-collaps=
+e: collapse !important; mso-table-lspace: 0px !important; mso-table-rspace:=
+ 0px !important;" width=3D"100%"> <tr style=3D"-ms-text-size-adjust: 100% !=
+important;"> <td align=3D"center" valign=3D"top" style=3D"-webkit-text-size=
+-adjust: 100%; border-collapse: collapse; mso-line-height-rule: exactly; -m=
+s-text-size-adjust: 100% !important; box-sizing: border-box !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"> <a href=
+=3D"http://links.strava.com/s/c/-_Qs0FR5123-HL0e61RP1bjDogQJ0FDNppw69AJZJcR=
+svvM2YuJgGVDG8ckPO1UxOli5KbjzlSYBFQWwd0de-_Lq1nzi5p-FALRfVyI513hEI_sZDDbplf=
+MaeRXxUTkQsOgoFnSFfVQX5BwcpAD93pGxRCnQT6NTJDUx0mpXi3mV58l3nOgY9WxCLANFdA_r8=
+hONOFOlYU2Y1lCesp8Rl004rlg1oCvxMSLY4tn9AzAU_Hie5pXwahNEBzk0aPPTXHMul_yiFoV6=
+gu_ZXLtda-RJ794sYzGx0mewGqrwEPAS7FTSwGrROxoW08mCwqrjnTKryoe5NcDRSBN3LjzP5mY=
+B5RQ3mE0o_ZiEKcRJRFKhOA7oCf4kikBEUPJSOdgZksWAfZeNvPZ2Np64mtm0uL5T0P_S-jO94X=
+lBBaxePkqIs2RwNHfQ6NSeT678rXuDvbNL-PvsUyG4owkONOui3XBITu3gqyXDoJf8wmQ1Ez6KA=
+vM39f8YlA2v6hQnUCPrwMEU77B1mNHc8rWSG6CUVsLURnTmbzyDe7grNDv9IRrt9Dlp2m65a-bt=
+p2vcMh9rbZpycjwEjz1rrFj0B5qgRMQwos9KxMhUMbmLutJxAZnYSQ1RulEBRqLAFmVKcs3qV7I=
+6zJwZsKPZMZ9pUkZoE2aJk3XT8zJ17ZXoXhqHgu1h3mzqGX1VTglUhF-lQ2pR6US2onOYAIx46Y=
+qbv7LIIH3yHUW-GMG3bx4W3oAMaaw8UVhilKSquJsc6X5jzK2G6fZc-4IouUkpaJmNXRv17lp47=
+R7mKidNXjQloHZFoijz9DSz54_lsSTrl-kwWCUOwv04gynFKj9z3zHTyTI1-PtbBRbgqDdNoCie=
+3SeBXknvMJ8TXUIff0OMqM-4kpqAQ1NG/KgnoPCCsrskUgxC1RV9KHe3Q-9jfEAqg/19" targe=
+t=3D"_blank" rel=3D"noopener" style=3D"-webkit-text-size-adjust: 100%; bord=
+er-collapse: collapse; mso-line-height-rule: exactly; text-decoration: none=
+; color: #000000; -ms-text-size-adjust: 100% !important; box-sizing: border=
+-box !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !i=
+mportant;"> <!-- desktop image --> <img alt=3D"A person running" src=3D"htt=
+ps://library.iterable.com/1468/4637/cdab4eedcf7d4fbe9907f8f7d67db3b1-cyberw=
+eekend-phase2-email-1-hero-desktop-en-us.jpg" style=3D"max-width: 640px; wi=
+dth: 100%; display: block; -ms-text-size-adjust: 100% !important; border: 0=
+ !important; outline: none !important;" width=3D"640" class=3D"hide" border=
+=3D"0"> <!-- mobile image --> <!--[if !mso]><!--> <img alt=3D"A person runn=
+ing" src=3D"https://library.iterable.com/1468/4637/49ef69ee07e5458495f4d1b9=
+9ad16cc4-cyberweekend-phase2-email-1-hero-mobile-en-us.jpg" style=3D"min-wi=
+dth: 260px; width: 100%; display: none; -ms-text-size-adjust: 100% !importa=
+nt; border: 0 !important; outline: none !important;" width=3D"260" class=3D=
+"show" border=3D"0"> <!--<![endif]--> </a> </td> </tr> </table> <!-- // des=
+ktop and mobile image --> <!-- PADDING LOGIC --> <table align=3D"center" bg=
+color=3D"#F3F2ED" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"width-full" role=3D"presentation" style=3D"max-width: 640px; width: 100%;"=
+ width=3D"640"> <tr> <td align=3D"center" class=3D"padding-full" style=3D"c=
+olor: #000000; font-family: Helvetica Neue, Arial, sans-serif !important; f=
+ont-size: 16px; line-height: 1.5; padding: 48px 32px 32px;" valign=3D"top">=
+ <h2 class=3D"margin-null" style=3D"font-size: 34px; font-weight: 700; line=
+-height: 38px; margin: 0;"> Wait longer, pay more for our best&nbsp;feature=
+s </h2> </td> </tr> <tr> <td align=3D"left" class=3D"padding-sides" style=
+=3D"padding: 0 32px 24px;" valign=3D"top"> <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ackground:#F3F2ED; color:#000000;width:100%;max-width:640px;" width=3D"100%=
+"> <!--header row--> <tr> <td style=3D"color: ; font-family: Helvetica Neue=
+, Arial, sans-serif !important; font-size: 14px; font-weight: 400; line-hei=
+ght: 21px; padding: 0 0 16px; text-align: left; text-transform: uppercase;"=
+ width=3D"50%"> FEATURES </td> <td align=3D"center" style=3D"color: ; font-=
+family: Helvetica Neue, Arial, sans-serif !important; font-size: 14px; font=
+-weight: 400; line-height: 21px; padding: 0 0 16px; text-align: center; tex=
+t-transform: uppercase;" width=3D"25%"> FREE </td> <td align=3D"center" cla=
+ss=3D"hide" style=3D"color: ; font-family: Helvetica Neue, Arial, sans-seri=
+f !important; font-size: 14px; font-weight: 400; line-height: 21px; padding=
+: 0 0 16px; text-align: center; text-transform: uppercase;" width=3D"25%"> =
+SUBSCRIPTION </td> <td align=3D"center" class=3D"row" style=3D"display: non=
+e; margin: 0 auto; padding-bottom: 16px;"> <img src=3D"https://library.iter=
+able.com/1468/4637/4298bda4809b4c5d954599ea14fdb35c-subscription-logo-1.png=
+" alt=3D"SUBSCRIPTION" height=3D"30" style=3D"border: 0; display: block; he=
+ight: 30px; width: 30px;" width=3D"30"> </td> </tr> <!--//header row--> <!-=
+-feature list --> <tr> <td style=3D"border-top: 1px solid #E0E1DC; color: #=
+000000; font-family: Helvetica Neue, Arial, sans-serif !important; font-siz=
+e: 16px; font-weight: normal; line-height: 22px; padding: 16px 0; text-alig=
+n: left;"> Record your activities </td> <td align=3D"center" style=3D"borde=
+r-top: 1px solid #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvq=
+mdvx.cloudfront.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.p=
+ng" alt=3D"checked" height=3D"25" width=3D"25"/> </td> <td align=3D"center"=
+ style=3D"border-top: 1px solid #E0E1DC; padding: 16px 0;"> <img src=3D"htt=
+ps://d2axdqolvqmdvx.cloudfront.net/9b565efd-5d38-4995-8413-e233b78083ec/che=
+ckmark_orange.png" alt=3D"checked" height=3D"25" width=3D"25"/> </td> </tr>=
+ <tr> <td style=3D"border-top: 1px solid #E0E1DC; color:#000000; font-famil=
+y: Helvetica Neue, Arial, sans-serif !important; font-size: 16px; font-weig=
+ht: normal; line-height: 22px; padding: 16px 0; text-align: left;"> Connect=
+ with community </td> <td align=3D"center" style=3D"border-top: 1px solid #=
+E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfront.ne=
+t/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"checked=
+" height=3D"25" width=3D"25"/> </td> <td align=3D"center" style=3D"border-t=
+op: 1px solid #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdv=
+x.cloudfront.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png"=
+ alt=3D"checked" height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D=
+"border-top: 1px solid #E0E1DC; color: #000000; font-family: Helvetica Neue=
+, Arial, sans-serif !important; font-size: 16px; font-weight: normal; line-=
+height: 22px; padding: 16px 0; text-align: left;"> Set and track custom Goa=
+ls </td> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; paddi=
+ng: 16px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1px so=
+lid #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfro=
+nt.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"ch=
+ecked" height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"border-to=
+p: 1px solid #E0E1DC; color: #000000; font-family: Helvetica Neue, Arial, s=
+ans-serif !important; font-size: 16px; font-weight: normal; line-height: 22=
+px; padding: 16px 0; text-align: left;"> Train smarter with personalized in=
+sights </td> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; p=
+adding: 16px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1p=
+x solid #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.clou=
+dfront.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=
+=3D"checked" height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"bor=
+der-top: 1px solid #E0E1DC; color: #000000; font-family: Helvetica Neue, Ar=
+ial, sans-serif !important; font-size: 16px; font-weight: normal; line-heig=
+ht: 22px; padding: 16px 0; text-align: left;"> View your full training hist=
+ory </td> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; padd=
+ing: 16px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1px s=
+olid #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfr=
+ont.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"c=
+hecked" height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"border-t=
+op: 1px solid #E0E1DC; color: #000000; font-family: Helvetica Neue, Arial, =
+sans-serif !important; font-size: 16px; font-weight: normal; line-height: 2=
+2px; padding: 16px 0; text-align: left;"> Find, build and save Routes </td>=
+ <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; padding: 16px=
+ 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1px solid #E0E=
+1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfront.net/9=
+b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"checked" h=
+eight=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"border-top: 1px s=
+olid #E0E1DC; color: #000000; font-family: Helvetica Neue, Arial, sans-seri=
+f !important; font-size: 16px; font-weight: normal; line-height: 22px; padd=
+ing: 16px 0; text-align: left;"> See your progress and fitness over time </=
+td> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; padding: 1=
+6px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1px solid #=
+E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfront.ne=
+t/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"checked=
+" height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"border-top: 1p=
+x solid #E0E1DC; color: #000000; font-family: Helvetica Neue, Arial, sans-s=
+erif !important; font-size: 16px; font-weight: normal; line-height: 22px; p=
+adding: 16px 0; text-align: left;"> Join and create Challenges with friends=
+ </td> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; padding=
+: 16px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1px soli=
+d #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfront=
+.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"che=
+cked" height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"border-top=
+: 1px solid #E0E1DC; color: #000000; font-family: Helvetica Neue, Arial, sa=
+ns-serif !important; font-size: 16px; font-weight: normal; line-height: 22p=
+x; padding: 16px 0; text-align: left;"> Compete on Segment Leaderboards </t=
+d> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; padding: 16=
+px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1px solid #E=
+0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.cloudfront.net=
+/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=3D"checked"=
+ height=3D"25" width=3D"25"/> </td> </tr> <tr> <td style=3D"border-top: 1px=
+ solid #E0E1DC; color: #000000; font-family: Helvetica Neue, Arial, sans-se=
+rif !important; font-size: 16px; font-weight: normal; line-height: 22px; pa=
+dding: 16px 0; text-align: left;"> Year in Sport =E2=80=94 Your personalize=
+d recap </td> <td align=3D"center" style=3D"border-top: 1px solid #E0E1DC; =
+padding: 16px 0;"> &nbsp; </td> <td align=3D"center" style=3D"border-top: 1=
+px solid #E0E1DC; padding: 16px 0;"> <img src=3D"https://d2axdqolvqmdvx.clo=
+udfront.net/9b565efd-5d38-4995-8413-e233b78083ec/checkmark_orange.png" alt=
+=3D"checked" height=3D"25" width=3D"25"/> </td> </tr> <!--//feature list-->=
+ <!-- and more text--> <tr> <td style=3D"border-top: 1px solid #E0E1DC; col=
+or: #000000; font-family: Helvetica Neue, Arial, sans-serif !important; fon=
+t-size: 16px; font-weight: 700; line-height: 16px; padding: 16px 0; text-al=
+ign: left;"> And so much more! </td> <td align=3D"center" style=3D"border-t=
+op: 1px solid #E0E1DC; padding: 16px 0;"> &nbsp; </td> <td align=3D"center"=
+ style=3D"border-top: 1px solid #E0E1DC; padding: 16px 0;"> &nbsp; </td> </=
+tr> <!-- //and more text--> </table> </td> </tr> </table> <table align=3D"c=
+enter" bgcolor=3D"#F3F2ED" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"width-full" role=3D"presentation" style=3D"max-width: 640px; widt=
+h: 100%;" width=3D"640"> <!-- pargraph --> <tr> <td align=3D"center" valign=
+=3D"top" class=3D"p-35" style=3D"padding: 12px 35px 36px;"> <p align=3D"cen=
+ter" style=3D"color:#000000; font-family: 'Helvetica Neue', Helvetica, Helv=
+etica, Arial, sans-serif; font-weight: 400; font-size: 12px; line-height: 1=
+6px; margin: 0;"> Limited time offer valid at <a href=3D"http://links.strav=
+a.com/s/c/BePm66fd0Yd6tIqc2YzpGDAy5sRQby9MjBrVRTj8gOkYcmD7okHSkdCkAUIf-itba=
+VBwnWoy6BMlBNAXGmlgHlqR0FjOTLmm4aFwJvOJ6VWNEdTv-9896Rck7We-sxn5FuSNCFMKKD6D=
+k64rw6GxD3Gf2RXO_8o9X2-ts18CMYGFlvMudUcb67eWP6ppSvMNQePqM2l8Hv1iUolBcunmy9Q=
+cJIZpO5izWcR-VynYZR37Vj-oX9B384LbESK6DvKGMio2l593kd4hmKCB7siqNkIxZH55OlgAzt=
+mRG9pWKGQHlT78nRyz5zkHeM03ZNJLrlHmYj4MAk-oIqYWY_fsGPZAjNsHmk4TeJDd7Oz2UbN9M=
+id0WU2RV2hVl36aSQnsdyY4sznR_gpgnjYDjIYeqqU4NxdTHc8GzWdNhBX28U_jMgTW1nMVQmWF=
+cN0xjs-q7II2qsm7UVZVKZDiym_8eomPRjRn7kT11qfCbuWK7nnZgC72SupDcaScXXj8E3ukFLj=
+ySYQ5_ZlBDtFmpMwh/SZqDH_KOAuCvfSGyfjUYqakr_T_M6WLS/19" style=3D"color: #000=
+000; text-decoration: underline !important;">strava.com</a>. Offer cannot b=
+e combined with other promotional offers. Offer cannot be redeemed for cash=
+ or gift cards and is not valid on prior purchases. Valid only in countries=
+ where the Strava subscription is available. Void where prohibited. Offer t=
+erms are subject to change. For questions, please contact Strava support. <=
+/p> </td> </tr> <!-- // pargraph --> </table> <!-- footer --> <!-- URLs -->=
+ <table align=3D"center" bgcolor=3D"#f3f2ed" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"width-full" role=3D"presentation" style=3D"bord=
+er-top: 8px solid #FC5200; width: 640px;" width=3D"640"> <tr> <td align=3D"=
+left" class=3D"row padding-sides width-auto" style=3D"color: #000000; font-=
+family: Helvetica, Arial, sans-serif !important; line-height: 1; padding: 4=
+8px 0 24px 32px; width: 320px;" width=3D"320" valign=3D"top"> <p style=3D"f=
+ont-size: 24px; font-weight: normal; margin: 0 0 16px;">Get the Strava App<=
+/p> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"width: 240px;" width=3D"240"> <tr> <td align=3D"left" class=
+=3D"width-auto" style=3D"padding-bottom: 16px;" width=3D"50%"> <a href=3D"h=
+ttp://links.strava.com/s/c/8zg7LGuAyCJ4MTKmczvutaf3msn39Ndwi9fsDPOt05UyUQVo=
+jdBCXQ3pDPo1RK8e04ffAyQA6_myMIC7NRXWigIB5bisNTlz4j_gwFYOWfcD6TDCDzUGjRDVpGV=
+yaOG9pQ32QaAcQo1uHAwCqb_sa90-Dh9-CwfRDNXN7dSubEAzjEn7IPnn9q7FIT375-1rlVw3_F=
+-1ygk9Ou-iFMOXjA2zc-UA7PeFyaPr0ozYee-us1V_Ctl6AM_iolqH_Kqo8-xL0Nfu_H_i7MjuQ=
+pqLXdorjO2CDJBKjCshCuAqM9l8zVRhrHYgf8bPiBvQQzAH9dGDOhlHzdUoB8sDd0R8zferkzIb=
+fYccv0ekpxsIQZmc3SdcJbAbIls0h3tnNneIGT_a7pRE_IA2FCyLY-c5upijSW_Y3VUpMU8UN1H=
+A7KlCo6_COE0JRiVQrxEjM7VYY0yZhcGqiEmKUq-AetG6i-18GSnUQa_Wpj_LiTrFFDI9xhiDUU=
+1wXXX-8EfGTcieUqKsbjnYTD_LO0uTUU6Vw5aUHDosG74DNzhRk6QMQFSAWR4ZG5U0KmkqyLYJZ=
+JXGx0VhtKb532k7L36mVxvikAf6vCZGBnLkXM18MNx4WXKi_xMRpE9Zw1m_5eB7FJo/BpbgpoKF=
+MFD5EnseNVnnGVVLWK1pHt6x/19" style=3D"border: 0 !important; text-decoration=
+: none !important;"> <img alt=3D"" height=3D"35" src=3D"https://d2axdqolvqm=
+dvx.cloudfront.net/c0465982-357f-477e-b913-9cfb9973410c/app_store_badge_en.=
+png" style=3D"border: 0; height: 35px; width: 105px;" width=3D"105"/> </a> =
+</td> <td align=3D"left" class=3D"width-auto" style=3D"padding-bottom: 16px=
+;" width=3D"50%"> <a href=3D"http://links.strava.com/s/c/s8-UIXfiOQDZBqz9iJ=
+PeufjM1dJpvMTds2seTHOyjbE8UjI5Dba9bxUfaLQsEoCKWeKueT0vQ_YVWeoAzQUQ60RZmuiH1=
+04z-qIQ_csBGMnbIF6_b31iBZEVvL9FJAlcgsqbWvBovvSaw9yKJBAF6KHAOV8X-3Qph8xB-dH-=
+GRznOL0MoNBoyKLClxTPNewb_7VRYgHLOHpUrI8UC3rXC8HPVD_Ymik13bUyJrN0e0REQwar83l=
+beNtaxU5NXSgQT8sWBhoS11LMGBLFVtl03RgfOWtMw5dlOo5Rs8awdTbuOdnem_vWbvUyp5BvRB=
+GJzmxEBiJDN050WK9ci61NMkZXJcAdbzU7VS1JSPTuVg6XhNmPtsD2ppvn5Sapa4MR4lntH3zaX=
+_-snJSEwr3q_qLZPjQp6sabjskodXtw-10I4JHVIyoo58Q6y0DhjqesG_qZraB_n4bnGYwLLeZp=
+W-x1ZMK4I2X7QkvIw6U9Qff5jdVYjATVjiGlJeAHNt7ybxG8eYZHKKZKBs44CaG8TKGzafhi3UN=
+NulqmPhZzmemn7_geZ04Mo3D0qJIQ-F2fbA/ScTbdCbLJ_TJ5Mr8633Yv36C8sy4xiyB/19" st=
+yle=3D"border: 0 !important; text-decoration: none !important;"> <img alt=
+=3D"" height=3D"35" src=3D"https://d2axdqolvqmdvx.cloudfront.net/0603160c-1=
+648-414f-93f1-f9f0a047be86/google_play_badge_en.png" style=3D"border: 0; he=
+ight: 35px; width: 118px;" width=3D"118"/> </a> </td> </tr> </table> </td> =
+<td align=3D"left" class=3D"row padding-no-top width-auto footer" style=3D"=
+color: #000000; font-family: Helvetica, Arial, sans-serif !important; font-=
+size: 12px; font-weight: normal; line-height: 1.4; margin: 0; padding: 48px=
+ 32px 48px 0;"> <p style=3D"color: #000000; margin: 0 0 16px;"> <!-- Challe=
+nge Invite --> <!-- Kudos --> <!-- Marketing --> Please do not reply to thi=
+s email. You are receiving this email because you created a Strava account =
+at <a href=3D"http://links.strava.com/s/c/ftOXPkpI3W1AxtQ0F2EmxzKb97KLno-vC=
+aBW91bSeX3qpL2s4n9ng2T097rew3vxB4MY0p4lmCjJ5gg0Loo1SZQq-rVLwZSjx-O2EOHREriZ=
+m6GOsIQXRHVki2WD2IzpjlPTocqSpBVUxfcIAOaVsDtBBmmTiOsFALf2nf6eY7yriqpkxZITto1=
+Tf1Erg57nMES3sN-34bqjVYsvvW76o5pbieQ5aW8BKHMwXPFiY6fUP--ziPVGUXc2Fstnj1fdiV=
+ZmL0FBcQd-wELrL3ZegMf1IyrilWzmczZa1CZHSTKC/qbKoVC7zEFcu-0MEJ8cP9k3PQPHRZr1M=
+/19" style=3D"color: inherit !important; text-decoration: underline !import=
+ant;">www.strava.com</a> or from our mobile app. If you no longer wish to r=
+eceive emails please update your Strava <a href=3D"http://links.strava.com/=
+s/c/w2ZF7T48knHx24P3D19qXn_nXIHPYeQT96ORvl6DZ5XBJMR1GQUBIslpCNFgzzqyipdIZeV=
+Eb1Hb46BVq32lz00XRp3RvLnbGZ2P8ohXuTEz2bdU9oh_ZlC-USSBwVwl3fNINABQVMSY0dibOz=
+EHg4sLox1qkaByABTmZxUeT03ZKjvhtpW4AW_2xqA56QTyAs7cldytHtXMFOAVhoZKHKzulC4Ex=
+9O7XDZDopbtpHWf4eoGWDhGhHF0HWsdS9WLry8MgfGdWLrsz60C7jDgfel5OrWUlVZMSsikhimD=
+Izceu1k1eU7aw5D3nZLK7w3Lpw/o1HeUNYseG_NWPNZpnsEZvaukoZuMSQe/19" style=3D"co=
+lor: inherit !important; text-decoration: underline !important;">email sett=
+ings</a> or&nbsp;<a href=3D"http://links.strava.com/s/eh/edb7EP2V_o0peX9Jee=
+bKOVUTfuEH1u0Bc5sJNoSEjgvv5CGoaYSvD9gMgKZ_S9dB63miwEhqf6g1nb9c924M7ErU0lYV5=
+rUff775xTtiDaBV3O2dDn9UJ0J7lSM87R9PodVbVp6Y7w4A1Z8PHnVPZzpJygVdLqutBCJ4rWqI=
+zlJsxfNYGD6hTKy-I9kgMO0e0Dvh-4vpKd_VSANche__j0iac5liNEEp6fjXEMXzmPfS_iqO5TH=
+5vDqFIsfrf5pcpQizyDCBfJ8-8XfGsZnD2_qDzoLtCzErhn25t5hCWjTEtTxUwh0rCvjDct7_GG=
+7CYRygJotH_vgLaL6Rqm2LWaxE2us32LtrbQB1xoQ3f_t5Dk1-gAXg1o8Kj5ynAHBcyOIlwjR3c=
+DYxljIiD6pt2Nm0MuB8IjUvT-ESWGBhG7zLmNYzjrQgd1JMYbenzxu2rLzpxBf0IQhb-bMGSfFa=
+AyBKI7FpfQ9WdQ/ncTvBJcdWzQktJ8QgM6w9bkm4cCrIZkk/19" style=3D"color: inherit=
+ !important; text-decoration: underline !important;">unsubscribe</a>. <!-- =
+Research --> <!-- Transactional --> </p> <p id=3D"body" style=3D"margin: 0;=
+color: inherit !important;">&copy; 2026 Strava. <a style=3D"color: inherit =
+!important; text-decoration: none !important;">181&nbsp;Fremont&nbsp;St,&nb=
+sp;Fl&nbsp;27<span class=3D"hide">,</span> San&nbsp;Francisco,&nbsp;CA&nbsp=
+;94105</a> </p> <!-- http://links.strava.com/s/u/My-wMsl-es_2E17b1c5Xf6SzeI=
+WYx7TCmzE3N7E7JTua-ilegAWzvMVF9GX38UNaK0XuNIlj70p_dzTPRKFH4xRi_5mMgigTLpP4c=
+hPQYSvvlrLRrwUKHVeFPQahSjS630FY64dXt4S_lUa5MZa1clW837wYUfCmBbuvz_ybYym0k5G0=
+lVgER4gDPvT5Z9SglyVBpSS4KftKIaPq/HJ3fxAT8YBhu-OSiXVvWV5DUOcVpN9Zh/19 --> </=
+td> </tr> </table> <!-- // footer --> </td> </tr> </table> </td> </tr> </ta=
+ble> =0D=0A<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http:=
+//links1.strava.com/q/cjvmodM6t97Jh8evUqJ7OQ~~/AAO53hA~/WcW0W0aUWsDOkF1jVkS=
+Q80_7xRZt2mm6JoPLupi3BNTQffs1o7V9t3D3y-mqrz-Gn7jDivc8WTGvvz2E4Z8ZlQ~~">=0D=
+=0A</body> </html>
+--_----vO8TkKj74d9mtSgB8mB0lg===_EB/2D-42317-DA637C96--
+

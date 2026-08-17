@@ -1,0 +1,1573 @@
+X-GM-THRID: 1740230149701773066
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a59:c9cf:0:b0:2da:399f:145e with SMTP id o15csp279243vqt;
+        Thu, 4 Aug 2022 04:33:18 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AA6agR7yZsKCUvrJtBOadH1aUTNgiL9lz8oybrVOe5PA1zbSPtOB/Rvlx66IZG5n1bOnUademPAC
+X-Received: by 2002:a63:698a:0:b0:41c:8dfb:29cb with SMTP id
+ e132-20020a63698a000000b0041c8dfb29cbmr1278088pgc.170.1659612798316;
+        Thu, 04 Aug 2022 04:33:18 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1659612798; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=nnZ/vdWPjMg5HXegPSBDnXqwIjzxEhenapF6qw2xlEjz63agFaz2xbjPhNUTL116oa
+         yXHOn2N+ct4rcuo9PKAbzSnRC3WOp3jjzLo/o5IFKwL03PWVv+0D2t4x3o70a0WFFsB1
+         PjlKhRm+cpoTArNwtF8Fap3+sHv+bRY3Ufydh4vgKalbjirLWKCfpTkUwEFk1FlikWpk
+         9W5JaZzGskSURwDYkJYXwsOF7fs8ttGIGgs/UFVGpQMHJmtju40R0v3KbqUmGneAPToL
+         2tGDtoOxQRdB7kcgTGIyAIBiOQ/lL6lUHdrDPsdtGHcctKemYaZtMEX+bYy8tXQP+eBe
+         67eg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=PfngG4ZxX11FB4Vs9RrESGucrmUfZct+3/jnnqQifdA=;
+        b=khAOTblOeO2seSpajb+zYOEjy0itTX59Cti2xEeMpPgCvHn3K5ZI0ijMmLeA61Wrvk
+         d6qnslC8UpIvlfiWy1O6jk5UmqT4qT/gt5ShSa8j0zIrjLN88fNi9xx3Pkh+Hntzs5Q9
+         cAjgIJiMjEpLJvpHtTVTvpMaPCIZJm2HhXVwQsEf9nLCCz3hb9n7mlxbWoq+1rMta70Z
+         +vUO8/oOmHzteN3dKh7VWMFDAn53CNojL7ohREp4hspoNWdViHZEYeZiGgERBHDrlULN
+         smG8nropHPkwYxiM1x91PVPYGHFiFCD2TrXwOe/R6MkWtBCb7XTs1yRSvJhIT3geVwno
+         tGpw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@stiedu.onmicrosoft.com
+ header.s=selector2-stiedu-onmicrosoft-com header.b=PU4zpcGM;
+       arc=pass (i=1 spf=pass spfdomain=sti.edu dkim=pass dkdomain=sti.edu
+ dmarc=pass fromdomain=sti.edu);
+       spf=pass (google.com: domain of donotreply@sti.edu designates
+ 40.107.117.70 as permitted sender) smtp.mailfrom=donotreply@sti.edu
+Return-Path: <donotreply@sti.edu>
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com
+ (mail-tyzapc01on2070.outbound.protection.outlook.com. [40.107.117.70])
+        by mx.google.com with ESMTPS id
+ a3-20020a170902ecc300b0016ef52684f8si654256plh.323.2022.08.04.04.33.17
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 Aug 2022 04:33:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of donotreply@sti.edu designates
+ 40.107.117.70 as permitted sender) client-ip=40.107.117.70;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@stiedu.onmicrosoft.com
+ header.s=selector2-stiedu-onmicrosoft-com header.b=PU4zpcGM;
+       arc=pass (i=1 spf=pass spfdomain=sti.edu dkim=pass dkdomain=sti.edu
+ dmarc=pass fromdomain=sti.edu);
+       spf=pass (google.com: domain of donotreply@sti.edu designates
+ 40.107.117.70 as permitted sender) smtp.mailfrom=donotreply@sti.edu
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KUT/pwG5IYkDA4Rdm+iQM7JSIJj1RC/9ZjUGO8k1sQB29ILRAtUyppPAWUna0UH7o0r0WLkqP3zrToxYt4+tmNEXzp+oIaMRIf4JTKZ41iIdcWLS/yU3wgVw7hWV2VIgs5NwWRU5QjzkdTzeaubOdPookus5caVo9/SNduDyJLk0rvQwerz+RjJWfLHfc558XPt5SOahk834rtS0O0jSxXZ+E1IkjxHl/QP5SdC9u+nDDzEq4cP5/if4I8TIqa7rUmGmFuIH5r3VQbPzZ3hvKKi1EK10NRuxGltL82RihisxF4z2fESv/9wvxdgHT6CAk6LIKoAGEKcX2JaQ2CH1MA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=PfngG4ZxX11FB4Vs9RrESGucrmUfZct+3/jnnqQifdA=;
+ b=BLgdctwNV74UpU0h0qD1NCojEruP9BWnf+V8f1gzfpvVr8LVK4JzVguGvoSuMoujqrTJotRx3CHp7vYNNiZKi/SxYVFWNJGHl8UyqT75CYG8Jv/An2ntD4MYTf5g0xB3AX+pooz8WJMiRUZeivWZ0XLJMx1rKu7TitouUnuZeqVHp+/PcHtZ4ItQtP9+UR/HmLG+j7rMW0LNvKHKgXTZIzQTI07dq2/JdGKDSPR/iF1YSoQI8wHad0Vfrjk39zB9J/tS+jQkyrY1I7HrejZFiGUEuzZ4FBeb1YxVpt2XY+nKd3jZnLF1CpwOzOSZNrd2hqGdk1Hq6WNtlAWxShTxhQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sti.edu; dmarc=pass action=none header.from=sti.edu; dkim=pass
+ header.d=sti.edu; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=stiedu.onmicrosoft.com; s=selector2-stiedu-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PfngG4ZxX11FB4Vs9RrESGucrmUfZct+3/jnnqQifdA=;
+ b=PU4zpcGMaYYHgVjkhSK2gVzbVXus2sJwcMQfqAnWmYwXdef8BdB98ix/kPCqO3qxbadW8ICDkccgKROl5g1BBuKACCgaz55vJF2rhuQhXG3b5ntqgbpf3/f5hFnFgwJVNF6RbZ6HKlwbaTFMw8g4ykf9NwZB7Dg2NRcI3nb4uz4=
+Received: from TY0PR03MB6798.apcprd03.prod.outlook.com (2603:1096:400:218::14)
+ by SG2PR03MB2943.apcprd03.prod.outlook.com (2603:1096:3:1f::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5504.15; Thu, 4 Aug
+ 2022 11:33:14 +0000
+Received: from TY0PR03MB6798.apcprd03.prod.outlook.com
+ ([fe80::30a2:692a:f63f:6f71]) by TY0PR03MB6798.apcprd03.prod.outlook.com
+ ([fe80::30a2:692a:f63f:6f71%4]) with mapi id 15.20.5504.014; Thu, 4 Aug 2022
+ 11:33:14 +0000
+From: STI College <donotreply@sti.edu>
+To: "patriogabrielpatdu@gmail.com" <patriogabrielpatdu@gmail.com>
+Subject: Read this Before You Choose a SHS Track
+Thread-Topic: Read this Before You Choose a SHS Track
+Thread-Index: AQHYp/SOnvI/ZucvQECtAVBdb9ngPQ==
+Date: Thu, 4 Aug 2022 11:23:00 +0000
+Message-ID: 
+ <TY0PR03MB6798D17F6EDE83E0C8BF3443C29F9@TY0PR03MB6798.apcprd03.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sti.edu;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d1dad4cd-7541-4698-348d-08da760d1ea5
+x-ms-traffictypediagnostic: SG2PR03MB2943:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 
+ vuw3RFX6DV3FGQwPQgxHamxuG1XS9wIvNZYWrtpYuIbIQk/Sjjky/EoTYJRCcFEiwNkzHoZ56Pw9innblvn5Gi3cvqyWLvGwgJpChhF1ov10wIQO7PVEJaI/28VMHBWk24RIH0cuWgiSJ14kjipnhsiupAv5w6Av0LRZcfOiwgyGecXHjtFUW8ivWRVyG+Xaf+AQdLv9G0WlWcR4/JIrnUPreivq68L8Kcipfra1cavzKNjSSFwBXLbTzh656yUO4SNwpPeXFG6rQSNIZi0swIJfqm53Lv0eF2ts7JgoNTlmiA8mS9Ary3dBqMuJ4qrA3R7DXakzX6qWXeHuEdYDelWyWWMJaa6E0BUldlt+08mL/MN3AV2npb34UpeOKhPfKdqicFmMNsB286Ds0fltfJYUDiZD78sya7nTfAngnkDyNG5G7lIYPDPENFG47a0FgXfREatSB5XoeLnGj9K+dQFZbAdA8hZYwQiDDEyDp/c0SCGn+NRU5/lkX8SB1pRa6U6UY+GiSYuPRzpTJp9rAhz633Y1tSh1g5rQGDKyyJyBMd/msH6PVriGv5ZzscuP4xy5Aey6PpsmT9h6MQTBVV4Re0wGWyXqX0NPcOTwPGb1c5Q+Cj8DIZkkdgE2wjNaSbn41f8AxpM6Ie4Lg3GwvkBw8fK41j8aeIIG4yoaedRoDs9RAaBUgr8xbAUPqKXl7n39f1nmxeg/SLIQW8G9jAGyYpN+Fawo/cqEFLYhiSBvZh4MJgWHuQR05S4v/3QBFYi+d7Ud2N9Vc5Xo95YpbgKyB5skb2QvRZHV0VJjr/zNftEsRn8WhUWWdfZxG897x9DIve+8pw0FzURunNNgghlCMSGIAAptHdQLrkNjWnXdpRdCYigujkNQ8nNmbUcsPrFs9KeH4hr/TF6ps1KXVl3sLitS1BLHM+uLhxGJt/K2xTriW1N6Tu+4cyHAE+ea
+x-forefront-antispam-report: 
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY0PR03MB6798.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(366004)(346002)(136003)(396003)(39860400002)(376002)(478600001)(38070700005)(83380400001)(71200400001)(66556008)(66446008)(76116006)(64756008)(66476007)(91956017)(66946007)(41320700001)(8676002)(786003)(316002)(6916009)(75432002)(186003)(122000001)(76236003)(6666004)(41300700001)(166002)(8936002)(26005)(6506007)(7696005)(9686003)(38100700002)(19627405001)(5660300002)(40140700001)(33656002)(52536014)(84970400001)(55016003)(86362001)(2906002)(559001)(579004)(19627315001)(19625255004);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: 
+ =?windows-1256?Q?rBHl4KcCTknTKU3pyRGzAoQqsgvsDBXQx/dS1Zz1PGOCIwoUJO/ozLCI?=
+ =?windows-1256?Q?tXqks90/HDdU6G3gb5Lvxyf2YJw05WFLtgEYItQGzoac4P0WaLHchw+w?=
+ =?windows-1256?Q?2BIggG5cy/RZyqvShb3JC3Qzc28yc4/+Dwt8GK++MhzuLTWvcFZf5muU?=
+ =?windows-1256?Q?aiKtZuBR+MJLvLBBoqcQcYuEzULI9qS6hfpHfsJEq0hcGItpudd4yArW?=
+ =?windows-1256?Q?IuS+AL6thDETziEtccvtS3LouBMwL3/dR/83E8ZB79EsbH1uBKEdJiv2?=
+ =?windows-1256?Q?OUdETEk/crNkbHuXsxx23sqhOPbcoO9AuTrxq34EJO9YHdgZQOii9gm+?=
+ =?windows-1256?Q?FnWdKh4etLaVwhTDYDJCIahwIYhncQLD75RTA89LSrrWuHurS9RnXKMp?=
+ =?windows-1256?Q?ZiPCaFqZa1WB2cX18FiXOCU1ZgTkd4elpYkSWTzboE52nkCPKjuIW1F1?=
+ =?windows-1256?Q?7bE/2zWa8IuHuUvbJt4Yc5l3Gm94f/8RBYr21m9rxq2Oip21r8BZHg3W?=
+ =?windows-1256?Q?03bNpZVRW91DipZ9C2fP++lXgamlNtdfuwGoXH9iajpe/CJ1k+S4DKUE?=
+ =?windows-1256?Q?ZRQ+zsMC/30UDaG6bQ4AmKo/OidqE5Gi+3UX7vDysD53l99CgV27wtPi?=
+ =?windows-1256?Q?N0mIwpEzWvIhWbt2S/m/Mk10Hp33TY8BRqNj481FM4T8ddllXvpjG0+v?=
+ =?windows-1256?Q?/bRSFLGDmfaw/QD403Cnbvw3EamkVqkpz8Ko2NeTdoY86tOfwYgMUnYQ?=
+ =?windows-1256?Q?8oPDkFfsSVlztUQ8ds188LqDQ9lzcsW6eq0MGBJf0tdRLbB57kzYRz0j?=
+ =?windows-1256?Q?Xqr1pMu3k6uFjQrhAZCDFRP8AwNN6eyckDYRaHoYKdwylsaWBgP//9jr?=
+ =?windows-1256?Q?eiN4fxMUx+Eq6GpKuBJDjHxJpdI1LxCWp/dn2pUd7BDvze4C8L5sCVeh?=
+ =?windows-1256?Q?F2/hKi2fVpzmWGIujad061FAfijd1KUCzu/dSjeSIYKcVbzFdstAOWMN?=
+ =?windows-1256?Q?VSoJ3sXD27NorR9Hcs+zdZVQKWzqTebapLOmsllMRV+bmD5ArEMCPw2P?=
+ =?windows-1256?Q?OzHV8Iws52KyLZb6lLKU5+8W0K//fpCEQFYqr4EhyLRzcD61WUKMbQUl?=
+ =?windows-1256?Q?erN+e9j9OSB6r91g+X5x1iFHb3oOQC8gANvVC85Uac0E6qy324WLEdaG?=
+ =?windows-1256?Q?CEbU6yGVMf1M0aM4he1uM0hrnI9nhHex2LG7jD8UgDEUMiaDEvH2hJcM?=
+ =?windows-1256?Q?n1TGaVDMx0114Zu354DDCcmeeJMAjVCO7HKger0kSf/NfTy92yIswxLI?=
+ =?windows-1256?Q?jVYQkA3W46ChuNznvsl6r8fl1TDt8HcQhPWScqHT8hitNjNBI93mLQsA?=
+ =?windows-1256?Q?Rda1x/Xw607tPi3z9nqAFSRhPK8b7xVDdYOa7Rny6jcyGh93C9FhC/W6?=
+ =?windows-1256?Q?6ajcwoXV4j8JyEKVSvnwEqxLDFXoJixdda40wuPYzDSSA/HC23nsG29f?=
+ =?windows-1256?Q?781py5nbRlMCEz+dJ1SrubYZujNyjgN+P+vYovHLYkvWEqKqvUKS2Njq?=
+ =?windows-1256?Q?QLFHYAx22SlpA8jmt1LGZ+MEXwmwGmPrvZADMR5D6eSvAtJPTKxNwwzG?=
+ =?windows-1256?Q?hv3wrz2KA6p55wmdjsrxnNylJk/fwTsrkNgHTkC5LQZs0nbaqNe5auGb?=
+ =?windows-1256?Q?rYRsQH4J+FIebMT4sxVtIEGTEbUyYHtd8tu9Fneg4MFU70MJ+flB2w?=
+ =?windows-1256?Q?=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_TY0PR03MB6798D17F6EDE83E0C8BF3443C29F9TY0PR03MB6798apcp_"
+MIME-Version: 1.0
+X-OriginatorOrg: sti.edu
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY0PR03MB6798.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 
+ d1dad4cd-7541-4698-348d-08da760d1ea5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Aug 2022 11:23:00.9090
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 96c62f5f-3c65-48a8-9dd3-868be91bdce3
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 
+ +v3sF/9jz3XSHJx5fw4PnUuflRUYvlN9EJJRftCeJF/vD1Ilw1MEsvwI1hK6G4ktrnI9Kgmt8Ij6pamWdQbTuQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SG2PR03MB2943
+
+--_000_TY0PR03MB6798D17F6EDE83E0C8BF3443C29F9TY0PR03MB6798apcp_
+Content-Type: text/plain; charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+Are you making the right choice for Senior High? =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D=
+ =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =9D =
+=9D =9D =9D =9D =9D =9D =9D =9D =9D =9D
+
+[https://scope.sti.edu/img/mailer/mail1_1_img7_2.png] <https://www.sti.edu>
+[https://scope.sti.edu/img/mailer/mail1_1_img1_5.png]
+
+
+Congratulations, B12!
+
+You got an exciting journey ahead of you.
+
+Completing your Grade 10 is an end to a chapter. Next school year, you need=
+ to make a big decision that will take you one step closer to your career g=
+oals.
+
+Have you decided on your Senior High track yet?
+
+Is it based on your personality, interests, and skills? Is it according to =
+your parents=92 wishes?
+
+Or is it based on the track that your friends are also taking?
+
+No matter how you made that important decision, you must choose what is bes=
+t for you.
+
+Here is a list of STI College San Fernando, Pampanga' programs/tracks to he=
+lp guide you in making your decision: Click here<https://www.sti.edu/campus=
+es-details.asp?campus_id=3DSFE>
+
+Choosing the right path will make you happier, more passionate, and more pr=
+oductive. This is your stepping stone to the person you dream of becoming =
+=97 someone who is job-ready and life-ready.
+
+
+If you have already made your mind up on who you want to be, it=92s time to=
+ take action.
+
+APPLY ONLINE <https://www.sti.edu/admissions_registration.asp>
+
+If you are still torn between your choices or unsure, don't worry.
+
+Talk to us on our Official Facebook Page at STI College San Fernando, Pampa=
+nga<https://www.facebook.com/sanfernando.sti.edu> Page or thru Messenger at=
+ m.me/sanfernando.sti.edu<https://m.me/sanfernando.sti.edu> or give us a ca=
+ll at (045) 963-5126 / 961-1423<tel:(045)%20963-5126%20/%20961-1423>.
+
+What will be your next move, B12?
+
+We, at STI, will be here to help you make the right moves. Looking forward =
+to hearing from you.
+
+Stay safe!
+
+
+
+
+
+
+[https://scope.sti.edu/img/mailer/mail1_1_img3_2.png]<https://scope.sti.edu=
+/virtualcareercamp>
+
+Better yet, you can sign up for the Virtual STI Career Camp<https://scope.s=
+ti.edu/virtualcareercamp> where you can experience and explore your options=
+ in our Photographer=92s Camp, Baker=92s Camp, Game Developer=92s Camp, and=
+ Entrepreneur=92s Camp, or Flight Attendant=92s Camp for FREE!
+
+
+
+
+
+Connect with us
+
+[sti college facebook]<https://www.facebook.com/sti.edu>                [st=
+i college twitter] <https://twitter.com/sticollege>          [sti college i=
+nstragram] <https://www.instagram.com/sti_college/>               [sti coll=
+ege youtube] <https://www.youtube.com/channel/UClwI5kKZkrUGSdyKaXCyacQ>    =
+            [sti college tiktok] <https://www.tiktok.com/@sti.edu>
+
+PRIVACY POLICY<https://www.sti.edu/dataprivacy/>
+
+You are receiving this email because you took the STI SCOPE. You may unsubs=
+cribe here.
+
+--_000_TY0PR03MB6798D17F6EDE83E0C8BF3443C29F9TY0PR03MB6798apcp_
+Content-Type: text/html; charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dwindows-1=
+256">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<link rel=3D"shortcut icon" href=3D"https://www.sti.edu/images/favicon.ico"=
+>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D9; IE=3D8; IE=3D7; IE=
+=3DEDGE">
+<title></title>
+</head>
+<body style=3D"width: 100% !important;min-width: 100%;-webkit-text-size-adj=
+ust: 100%;-ms-text-size-adjust: 100% !important;margin: 0;padding: 0;backgr=
+ound-color: #ffffff">
+<style>.preheader{display:none !important;visibility:hidden;opacity:0;color=
+:transparent;height:0;width:0}</style><span class=3D"preheader" style=3D"di=
+splay: none !important; visibility: hidden; opacity: 0; color: transparent;=
+ height: 0; width: 0;">Are you making
+ the right choice for Senior High?&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp=
+;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=
+=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D=
+&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nb=
+sp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D&nbsp;=9D</span=
+><style id=3D"media-query">#outlook a{padding:0}.ExternalClass{width:100%}.=
+ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, =
+.ExternalClass td, .ExternalClass div{line-height:100%}#backgroundTable{mar=
+gin:0;padding:0;width:100% !important;line-height:100% !important}.button a=
+{display:inline-block;text-decoration:none;-webkit-text-size-adjust:none;te=
+xt-align:center}.button a div{text-align:center !important}body.outlook p{d=
+isplay:inline !important}@media only screen and (max-width: 570px){table[cl=
+ass=3D'body'] img{height:auto !important;width:100% !important}table[class=
+=3D'body'] img.fullwidth{max-width:100% !important}table[class=3D'body'] ce=
+nter{min-width:0 !important}table[class=3D'body'] .container{width:95% !imp=
+ortant}table[class=3D'body'] .row{width:100% !important;display:block !impo=
+rtant}table[class=3D'body'] .wrapper{display:block !important;padding-right=
+:0 !important}table[class=3D'body'] .columns, table[class=3D'body'] .column=
+{table-layout:fixed !important;float:none !important;width:100% !important;=
+padding-right:0px !important;padding-left:0px !important;display:block !imp=
+ortant}table[class=3D'body'] .wrapper.first .columns, table[class=3D'body']=
+ .wrapper.first .column{display:table !important}table[class=3D'body'] tabl=
+e.columns td, table[class=3D'body'] table.column td,.col{width:100% !import=
+ant}table[class=3D'body'] table.columns td.expander{width:1px !important}ta=
+ble[class=3D'body'] .right-text-pad, table[class=3D'body'] .text-pad-right{=
+padding-left:10px !important}table[class=3D'body'] .left-text-pad, table[cl=
+ass=3D'body'] .text-pad-left{padding-right:10px !important}table[class=3D'b=
+ody'] .hide-for-small, table[class=3D'body'] .show-for-desktop{display:none=
+ !important}table[class=3D'body'] .show-for-small, table[class=3D'body'] .h=
+ide-for-desktop{display:inherit !important}.mixed-two-up .col{width:100% !i=
+mportant}}@media screen and (max-width: 570px){div[class=3D'col']{width:100=
+% !important}}@media screen and (min-width: 571px){table[class=3D'container=
+']{width:570px !important}}</style>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"body" bo=
+rder=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-al=
+ign: top;height: 100%;width: 100%;table-layout: fixed">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td class=3D"center" align=3D"center" valign=3D"top" style=3D"word-break: b=
+reak-word;border-collapse: collapse !important;vertical-align: top;text-ali=
+gn: center;background-color: #ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #086bbe;padding-top: 0px;padding-right:=
+ 0px;padding-bottom: 0px;padding-left: 0px;border-top: 0px solid transparen=
+t;border-right: 0px solid transparent;border-bottom: 0px solid transparent;=
+border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;p=
+adding-left: 0px">
+<div style=3D"color:#FEFF00;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;color:#FEFF00;font-family:Ver=
+dana, Geneva, sans-serif;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: center"=
+><span style=3D"font-size: 8px; line-height: 9px;display: none !important;"=
+></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #FEFF00">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #FEFF00">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200;background-image=
+:url(https://www.sti.edu/images/2022/2022-banner-shs-bg2.png);background-po=
+sition: center;">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #333;backgro=
+und-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 0px;padding-ri=
+ght: 0px;padding-bottom: 0px;padding-left: 0px;border-top: 0px solid transp=
+arent;border-right: 0px solid transparent;border-bottom: 0px solid transpar=
+ent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td align=3D"center" style=3D"word-break: break-word;border-collapse: colla=
+pse !important;vertical-align: top;width: 100%;padding-top: 0px;padding-rig=
+ht: 0px;padding-bottom: 0px;padding-left: 0px">
+<div align=3D"center" style=3D"font-size:12px"><a href=3D"https://www.sti.e=
+du" target=3D"_blank"><img class=3D"center fullwidth" align=3D"center" bord=
+er=3D"0" alt=3D"" title=3D"" style=3D"outline: none;text-decoration: none;-=
+ms-interpolation-mode: bicubic;clear: both;display: block;border: none;heig=
+ht: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !importan=
+t;max-width: 570px;" width=3D"570" src=3D"https://scope.sti.edu/img/mailer/=
+mail1_1_img7_2.png">
+</a></div>
+<div align=3D"center" style=3D"font-size:12px"><img class=3D"center fullwid=
+th" align=3D"center" border=3D"0" alt=3D"" title=3D"" style=3D"outline: non=
+e;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display=
+: block;border: 0;height: auto;line-height: 100%;margin: 0 auto;float: none=
+;width: 100% !important;max-width: 500px" width=3D"500" src=3D"https://scop=
+e.sti.edu/img/mailer/mail1_1_img1_5.png"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color:#ededed;">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: collap=
+se;vertical-align: top;width: 100%;max-width: 570px;color: #000000;backgrou=
+nd-color: #ffffff">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;text-align: center;font-size: 0=
+">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe;background-color=
+: #ededed;">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #086bbe;background-color=
+: #ededed;">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: collap=
+se;vertical-align: top;width: 100%;max-width: 570px;color: #000000;backgrou=
+nd-color: #ffffff">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;text-align: center;font-size: 0=
+">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 25px;padding-r=
+ight: 25px;padding-bottom: 0px;padding-left: 25px;border-top: 1px solid #D2=
+D2D2;border-right: 1px solid #D2D2D2;border-bottom: 0px solid #ffffff;borde=
+r-left: 1px solid #D2D2D2">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;padding-top: 10px;padding-right=
+: 25px;padding-bottom: 30px;padding-left: 25px;border-top: 0px solid #fffff=
+f;border-right: 1px solid #D2D2D2;border-bottom: 1px solid #D2D2D2;border-l=
+eft: 1px solid #D2D2D2">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 15px;padding-right: 10px;padding-bottom: 0px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: left"><=
+span style=3D"font-size: 20px; line-height: 24px;"><strong>Congratulations,=
+ B12!</strong></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 5px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">You got an exciting jour=
+ney ahead of you.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">Completing your Grade 10=
+ is an end to a chapter. Next school year, you need to make a big decision =
+that will take you one step closer to
+ your career goals.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:28px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 28px;text-align: left"><=
+span style=3D"line-height: 28px; font-size: 26px;"><strong>Have you decided=
+ on your Senior High track yet?</strong></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">Is it based on your pers=
+onality, interests, and skills? Is it according to your parents=92 wishes?
+</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">Or is it based on the tr=
+ack that your friends are also taking?</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 15p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"line-height: 21px; font-size: 14px;">No matter how you made t=
+hat important decision, you must choose what is best for you.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td height=3D"" style=3D"word-break: break-word;border-collapse: collapse !=
+important;vertical-align: top;padding-top: 0px;padding-right: 10px;padding-=
+bottom: 20px;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">Here is a list of
+<strong>STI College San Fernando, Pampanga' </strong>programs/tracks to hel=
+p guide you in making your decision:
+<a href=3D"https://www.sti.edu/campuses-details.asp?campus_id=3DSFE">Click =
+here</a></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 20px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">Choosing the right path =
+will make you happier, more passionate, and more productive. This is your s=
+tepping stone to the person you dream
+ of becoming =97 someone who is job-ready and life-ready. </span></p>
+<br>
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">If you have already made=
+ your mind up on who you want to be, it=92s time to take action.</p>
+</div>
+</div>
+</span></td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td class=3D"button-container" align=3D"center" style=3D"word-break: break-=
+word;border-collapse: collapse !important;vertical-align: top;padding-top: =
+10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" class=3D"button" align=3D"center" valign=3D"middle" styl=
+e=3D"word-break: break-word;border-collapse: collapse !important;vertical-a=
+lign: top">
+<div align=3D"center" style=3D"display: inline-block; border-radius: 0px; -=
+webkit-border-radius: 0px; -moz-border-radius: 0px; max-width: 100%; width:=
+ 100%; border-top: 1px solid #FEFF00; border-right: 1px solid #FEFF00; bord=
+er-bottom: 1px solid #FEFF00; border-left: 1px solid #FEFF00;">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top;height=
+: 46">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td valign=3D"middle" style=3D"word-break: break-word;border-collapse: coll=
+apse !important;vertical-align: top;border-radius: 0px;-webkit-border-radiu=
+s: 0px;-moz-border-radius: 0px;color: #000000;background-color: #fff200;pad=
+ding-top: 10px;padding-right: 5px;padding-bottom: 10px;padding-left: 5px;fo=
+nt-family: Verdana, Geneva, sans-serif;text-align: center">
+<a href=3D"https://www.sti.edu/admissions_registration.asp" target=3D"_blan=
+k" style=3D"display: inline-block;text-decoration: none;-webkit-text-size-a=
+djust: none;text-align: center;background-color: #Fff200;color: #000000"><s=
+pan style=3D"font-size:22px;line-height:24px;"><strong>APPLY
+ ONLINE</strong></span> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 20px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;margin-top:20px;font-size: 14px;line-height: 21px;tex=
+t-align: left">
+<span style=3D"font-size: 14px; line-height: 21px;">If you are still torn b=
+etween your choices or unsure, don't worry.<br>
+<br>
+Talk to us on our Official Facebook Page at <strong><a href=3D"https://www.=
+facebook.com/sanfernando.sti.edu">STI College San Fernando, Pampanga</a></s=
+trong> Page or thru Messenger at
+<strong><a href=3D"https://m.me/sanfernando.sti.edu">m.me/sanfernando.sti.e=
+du</a></strong> or give us a call at
+<strong><a href=3D"tel:(045) 963-5126 / 961-1423">(045) 963-5126 / 961-1423=
+</a></strong>.<br>
+<br>
+What will be your next move, B12?<br>
+<br>
+We, at STI, will be here to help you make the right moves. Looking forward =
+to hearing from you.<br>
+<br>
+Stay safe!</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 20px=
+;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left">&=
+nbsp;</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 25px;padding-bottom: 10px;padding-left: 25px;border-top: 0px solid tr=
+ansparent;border-right: 0px solid transparent;border-bottom: 0px solid tran=
+sparent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 5px;=
+padding-left: 10px">
+<div style=3D"color:#E5E5E5;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#E5E5E5;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: center"=
+><span style=3D"font-size: 14px; line-height: 21px;">&nbsp;</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200;">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 25px;padding-bottom: 10px;padding-left: 25px;border-top: 0px solid tr=
+ansparent;border-right: 0px solid transparent;border-bottom: 0px solid tran=
+sparent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 10px;padding-bottom: 5px;=
+padding-left: 10px">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: #ffffff;padding-top: 5px;padding-right:=
+ 25px;padding-bottom: 30px;padding-left: 25px;border-top: 0px solid transpa=
+rent;border-right: 0px solid transparent;border-bottom: 0px solid transpare=
+nt;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 20p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<div align=3D"center"><a href=3D"https://scope.sti.edu/virtualcareercamp"><=
+img class=3D"center fullwidth" align=3D"center" border=3D"0" width=3D"500" =
+style=3D"margin-top:10px;" src=3D"https://scope.sti.edu/img/mailer/mail1_1_=
+img3_2.png"></a></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 20p=
+x;padding-left: 10px">
+<div style=3D"color:#000000;line-height:150%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:18px;font-family:Verdana, Geneva, =
+sans-serif;color:#000000;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 21px;text-align: left"><=
+span style=3D"font-size: 14px; line-height: 21px;">Better yet, you can sign=
+ up for the
+<a href=3D"https://scope.sti.edu/virtualcareercamp"><strong>Virtual STI Car=
+eer Camp</strong></a> where you can experience and explore your options in =
+our Photographer=92s Camp, Baker=92s Camp, Game Developer=92s Camp, and Ent=
+repreneur=92s Camp, or Flight Attendant=92s
+ Camp for FREE! </span><br>
+</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-spacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td class=3D"button-container" align=3D"center" style=3D"word-break: break-=
+word;border-collapse: collapse !important;vertical-align: top;padding-top: =
+10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #fff200">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 0px;padding-bottom: 10px;padding-left: 0px;border-top: 0px solid tran=
+sparent;border-right: 0px solid transparent;border-bottom: 0px solid transp=
+arent;border-left: 0px solid transparent">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #BE00FF">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #ededed">
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #333333">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top;background-color: #0D0D0D">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" class=3D"container" style=3D"border-spacing: 0;border-collapse=
+: collapse;vertical-align: top;max-width: 570px;margin: 0 auto;text-align: =
+inherit">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td width=3D"100%" style=3D"word-break: break-word;border-collapse: collaps=
+e !important;vertical-align: top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"transp=
+arent" class=3D"block-grid " style=3D"border-spacing: 0;border-collapse: co=
+llapse;vertical-align: top;width: 100%;max-width: 570px;color: #000000;back=
+ground-color: transparent">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;text-align: center;font-siz=
+e: 0">
+<div class=3D"col num12" style=3D"display: inline-block;vertical-align: top=
+;width: 100%">
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+border=3D"0" style=3D"border-spacing: 0;border-collapse: collapse;vertical-=
+align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;background-color: transparent;padding-top: 10px;padding-r=
+ight: 0px;padding-bottom: 30px;padding-left: 0px;border-top: 0px solid tran=
+sparent;border-right: 0px solid transparent;border-bottom: 0px solid transp=
+arent;border-left: 0px solid transparent">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 25px;padding-right: 10px;padding-bottom: 10p=
+x;padding-left: 10px">
+<div style=3D"color:#CDCDCD;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;font-family:Verdana, Geneva, =
+sans-serif;color:#CDCDCD;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: center"=
+><span style=3D"font-size: 14px; line-height: 16px;">Connect with us</span>=
+</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;font-size: 16px;font-family: Verdana, Geneva, sans-serif"=
+>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.facebook.com/sti.edu"><img width=3D"24" height=3D"24" alt=3D"sti c=
+ollege facebook " src=3D"https://scope.sti.edu/img/socials/facebook.png"></=
+a></td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://twitter.com/sticollege"><img width=3D"24" height=3D"24" alt=3D"sti col=
+lege twitter " src=3D"https://scope.sti.edu/img/socials/twitter.png"></a></=
+td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.instagram.com/sti_college/"><img width=3D"24" height=3D"24" alt=3D=
+"sti college instragram " src=3D"https://scope.sti.edu/img/socials/instagra=
+m.png"></a></td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.youtube.com/channel/UClwI5kKZkrUGSdyKaXCyacQ"><img width=3D"24" he=
+ight=3D"24" alt=3D"sti college youtube" src=3D"https://scope.sti.edu/img/so=
+cials/youtube.png"></a></td>
+<td valign=3D"top" align=3D"left" width=3D"8"><img width=3D"1" height=3D"1"=
+ alt=3D" " src=3D"http://discover.deakin.edu.au/rs/209-INQ-367/images/blank=
+.gif"></td>
+<td valign=3D"top" align=3D"left" width=3D"24" height=3D"24"><a href=3D"htt=
+ps://www.tiktok.com/@sti.edu"><img width=3D"24" height=3D"24" alt=3D"sti co=
+llege tiktok" src=3D"https://scope.sti.edu/img/socials/tiktok.png"></a></td=
+>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 20px;padding-right: 10px;padding-bottom: 5px=
+;padding-left: 10px">
+<div style=3D"color:#555555;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;color:#555555;font-family:Ver=
+dana, Geneva, sans-serif;text-align:left;">
+<p style=3D"margin: 0;font-size: 11px;line-height: 14px;text-align: center"=
+><span style=3D"font-size: 11px; line-height: 13px;"><a style=3D"color:#6D6=
+D6D;text-decoration: underline; font-size: 11px; line-height: 13px;" href=
+=3D"https://www.sti.edu/dataprivacy/" target=3D"_blank">PRIVACY
+ POLICY</a></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-s=
+pacing: 0;border-collapse: collapse;vertical-align: top">
+<tbody>
+<tr style=3D"vertical-align: top">
+<td style=3D"word-break: break-word;border-collapse: collapse !important;ve=
+rtical-align: top;padding-top: 0px;padding-right: 25px;padding-bottom: 0px;=
+padding-left: 25px">
+<div style=3D"color:#CDCDCD;line-height:120%;font-family:Verdana, Geneva, s=
+ans-serif;">
+<div style=3D"font-size:12px;line-height:14px;font-family:Verdana, Geneva, =
+sans-serif;color:#CDCDCD;text-align:left;">
+<p style=3D"margin: 0;font-size: 14px;line-height: 17px;text-align: center"=
+><span style=3D"line-height: 12px; font-size: 7px;">You are receiving this =
+email because you took the STI SCOPE. You may unsubscribe here.</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+
+--_000_TY0PR03MB6798D17F6EDE83E0C8BF3443C29F9TY0PR03MB6798apcp_--

@@ -1,0 +1,735 @@
+X-GM-THRID: 1842071991144196444
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:a08e:10b0:23e:5997:2fa8 with SMTP id
+ em14-n1csp1338996eib;
+        Mon, 1 Sep 2025 07:25:46 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IH0XZY/kkMYU2sYvlsqWPtEt3qXbcV6gk1811HDmBWDhwXuUFWv4m29PZ8gV7cIdipBzwjy
+X-Received: by 2002:a05:6214:76a:b0:70f:5a6d:a24c with SMTP id
+ 6a1803df08f44-70fac6f78c0mr88347916d6.3.1756736746623;
+        Mon, 01 Sep 2025 07:25:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1756736746; cv=none;
+        d=google.com; s=arc-20240605;
+        b=irttcTB+RMTZ/MyZyo4+4NmHl1ziONOWtwT64/LYBUj57psZmd7p+gC6t2j5fTTZpx
+         jJWN5jaI1PiTpQi8thyVmhDN7MbhILBK6h8qhB2FASjAIAXdGVGFL+gR8MBlalIouuVB
+         QRkXEgwRak696gTysYPJldbD1pSwhxJ1Uxodgk7eWYKMUnyyfhXdS7J6Y6KYkpNNTWH+
+         rrEXoGfiwcQN+Ilb+PXStU/fbm39iP+1EvlsD01O09tmgg57j/AuGo/BWpv93GSK6CD7
+         RZYL3WOhWLFQKwKEFrk4gqy6Pp64oZS6wkGjD2vwAesvYThgVg180rbxmy5X3IRsaILs
+         Sxnw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=CX0/oC5xfRUh2LMOtcB3oAk5e9jZ3bDFj/X4zZmCMn4=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=gbsv1zKsiM5yTlNY6SL4gH9FpRQnTWJ/Czov+4axtFKGYtrcRf8Jp7XWbfhJpeuqL5
+         I6E/vJ2sSnh0246oqgx/fbM7+ubglG91CytI0oG+yKsomT8rVJlUszMXhQFd+rA/oEQq
+         MOGUVakD7OhGzblmYQzY+0cn/6wRwEvPJQExPON1vjbtaN4YDnxI09bQBRC6Hig+DEwm
+         Atz4QBQXKz79f5/KQ1AB3TKZMOT2u7/N9Bep1NtfsM2mcKmPHAs0iezEG4X3/l6IgtJ8
+         wbym0y7TJH+RLJCo+1lEjTzHf2l6VZEgn2m4jt0Bej7tRkLoRHT2jMcpkaNGBOW9U+gP
+         4d4w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b="LSKNN7p/";
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=SnZvtdGe;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from m241-138.mailgun.net (m241-138.mailgun.net. [159.112.241.138])
+        by mx.google.com with UTF8SMTPS id
+ 6a1803df08f44-70fb23de1a0si18638416d6.40.2025.09.01.07.25.46
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 01 Sep 2025 07:25:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender) client-ip=159.112.241.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b="LSKNN7p/";
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=SnZvtdGe;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1756736746; x=1756743946;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=CX0/oC5xfRUh2LMOtcB3oAk5e9jZ3bDFj/X4zZmCMn4=;
+ b=LSKNN7p/j+2Cv/9j7VhrWaKKGmiPpC5dRYjlpl8uH9GwBY7lak9TxtqzA88ePEp8GJcTp7G9j/vBIFTr+KVxCXvjk8xzfltQqryU6nGSMFA9iaOuJtX/m5uxDJ45d3kpWAen/Ko8Sp6o4kV+26cZpoMJa4FETXI9mrTxMYpDPOk=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1756736746; x=1756743946;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=CX0/oC5xfRUh2LMOtcB3oAk5e9jZ3bDFj/X4zZmCMn4=;
+ b=SnZvtdGedbVnMMaod9QAxCFZK/75QLB9oesG0CjK3Qu1Te9kVf/yWufAu0GXTOArep10RkMHnfwcriCk1MELFsSN1+yb1RkfZ43whclCsSYn2vV+lwsU02zqc9VvFFHvTQx9ZKvDHlMHSrXfC5nYzscU/UGv3WNDjqi4Sf+POhY=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by 9bc3031e2a3627e27915204165b1585091ab5652ae1052ad998bb43e0d469e13
+ with HTTP
+ id 68b5acea9ea703ead78f0e24; Mon, 01 Sep 2025 14:25:46 GMT
+X-Mailgun-Sending-Ip: 159.112.241.138
+Date: Mon, 01 Sep 2025 14:25:46 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="d48a87ee8a145cb62586fc640635e5f2a0e83de1bbd11d79ccc8264bb5f1"
+Subject: 
+ =?UTF-8?q?Hack2Win_is_now_live,_$40,000_prizes_up_for_grabs_=F0=9F=8E=9F?=
+ =?UTF-8?q?=EF=B8=8F?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNGWRTRKVSDCNRNKF5HEN2YKAZXKOLDI5TT2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZkFqUd16-Qzr7XP3u9cGg==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZkFqUd16-Qzr7XP3u9cGg==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZkFqUd16-Qzr7XP3u9cGg=="}
+Message-Id: <20250901142546.1cb0facafb1f3048@cio56239.tryhackme.com>
+
+--d48a87ee8a145cb62586fc640635e5f2a0e83de1bbd11d79ccc8264bb5f1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+TryHackMe Logo ( https://tryhackme.com/hack2win?utm_source=3Dcio&utm_medium=
+=3Demail&utm_campaign=3Dhack2win250901 )
+
+Banner ( https://tryhackme.com/hack2win?utm_source=3Dcio&utm_medium=3Demail=
+&utm_campaign=3Dhack2win250901 )
+
+******************************************
+Hack2Win starts now, and you have the edge
+******************************************
+
+Hack2Win has officially begun, and as a Premium user, you are already ahead=
+ of the game. Every room you complete earns you double tickets, giving you =
+twice the chances to fill stamp cards and win.
+
+-------------------------------
+Here's how you can get started:
+-------------------------------
+
+* Complete any room on TryHackMe to earn raffle tickets
+* Collect tickets to fill Bronze, Silver, and Gold stamp cards
+* Full stamp cards enter you in raffles for instant digital rewards, exclus=
+ive swag, and major prizes
+
+With prizes worth over $40,000 to be won, your Premium advantage makes a re=
+al difference. The more rooms you complete, the faster you collect tickets,=
+ and the greater your chances of claiming rewards.
+
+Hack2Win is live. Take advantage of your Premium edge today.
+
+Start earning tickets ( https://tryhackme.com/hack2win?utm_source=3Dcio&utm=
+_medium=3Demail&utm_campaign=3Dhack2win250901 )
+
+-----------------------------------
+Want extra tickets? Refer a friend!
+-----------------------------------
+
+* Refer a friend to TryHackMe with your unique link: tryhackme.com/invite/p=
+atriogabrielpatdu
+* Your friend signs up & verifies their email
+* You win extra tickets! Your friends win discounts on Premium
+
+Win extra tickets ( https://tryhackme.com/room/hack2win?utm_source=3Dcio&ut=
+m_medium=3Demail&utm_campaign=3Dhack2win250901 )
+
+( https://tryhackme.com/room/hack2win?utm_source=3Dcio&utm_medium=3Demail&u=
+tm_campaign=3Dhack2win250901 )
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/realtryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) |
+Unsubscribe ( http://track.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZkF=
+qUd16-Qzr7XP3u9cGg=3D=3D )
+
+=C2=A9 2025 TryHackMe. All rights reserved.
+--d48a87ee8a145cb62586fc640635e5f2a0e83de1bbd11d79ccc8264bb5f1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en" style=3D"background-color: #151d2b;"><head=
+>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <title>TryHackMe =E2=80=93 Modular Email</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=3DUbuntu:wght@400=
+;700&display=3Dswap');
+    body {
+      margin: 0;
+      padding: 0;
+      background: #151d2b;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #151d2b;
+    }
+    h1 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin-top: 0;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin-top: 0;
+    }
+    p {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 15px;
+    }
+    ul {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      padding-left: 20px;
+    }
+    .section {
+      background-color: #1c2538;
+      border-radius: 10px;
+      padding: 25px 40px;
+      margin-bottom: 20px;
+     =20
+    }
+    .feature-block {
+      display: flex;
+      border: 2px solid #a3ea2a;   /* green border all around */
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-top: 40px;
+  color: #ffffff;
+  background-color: #232f48;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
+    .feature-text {
+      flex: 1;
+    }
+    .feature-img {
+      flex: 0 0 auto;
+    }
+    .feature-img img {
+      display: block;
+      border-radius: 6px;
+      height: auto;
+    }
+    .cta {
+      display: inline-block;
+      background-color: #a3ea2a;
+      color: #151d2b;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #f9f9fb;
+      font-size: 14px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: auto;
+      margin: 0 5px;
+      margin-bottom: 30px;
+    }
+    .legal a {
+      color: #ffffff;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .feature-block,
+      .feature-block.reverse {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .feature-text,
+      .feature-img {
+        width: 100% !important;
+        flex: 0 0 100%;
+      }
+      .feature-img {
+        text-align: center;
+        order: -1; /* This moves the image to the top */
+        margin-bottom: 5px; /* Further reduced spacing after image */
+      }
+      .feature-img img {
+        margin: 0 auto 0; /* Remove bottom margin from image */
+      }
+      .feature-text {
+        order: 1; /* This ensures text content comes after image */
+        text-align: left; /* Keep text left-aligned */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the CTA */
+        margin-top: 0; /* Remove any top margin */
+      }
+      .feature-text h2 {
+        align-self: flex-start; /* Keep header left-aligned */
+        width: 100%;
+        margin-top: 0; /* Remove top margin from header */
+      }
+      .feature-text ul {
+        align-self: flex-start; /* Keep list left-aligned */
+        width: 100%;
+      }
+      .cta {
+        padding: 10px 20px;
+        align-self: center; /* Center the CTA within the flex container */
+        margin-top: 15px;
+      }
+      .social-icons img {
+        margin: 0 5px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .email-body {
+        background-color: #121212 !important;
+        color: #e6e6e6 !important;
+      }
+    }
+  </style>
+<link href=3D"https://fonts.googleapis.com/css?family=3DUbuntu:100,100i,200=
+,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" as=3D=
+"style" rel=3D"preload" media=3D"screen"/><link media=3D"screen" rel=3D"sty=
+lesheet" href=3D"https://fonts.googleapis.com/css?family=3DUbuntu%3A100%2C1=
+00i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%=
+2C700i%2C800%2C800i%2C900%2C900i"/><style>.c1x30091{max-width:100% !importa=
+nt;}@media screen and (min-width: 600px) { .cqoe92k{display:table;} .c11j6c=
+dn{display:table-row;} .c1uw7jhe{display:table-cell;width:70%;} .c1sn7t8n{d=
+isplay:table-cell;} .cp4al7q{display:table-cell;width:30%;} }</style><style=
+ data-isolated=3D"thunderbird" media=3D"min-width: 600px">
+=2Emoz-text-html .cqoe92k{display:table;}
+=2Emoz-text-html .c11j6cdn{display:tab=
+le-row;}</style><style data-isolated=3D=
+"outlook-web">
+[class~=3D"x_c11j6cdn"]{display:flex !important;flex-wrap:wrap;gap:8px;colu=
+mn-gap:8px;}
+[class~=3D"x_c1uw7jhe"]{flex-grow:1;box-sizing:border-box;flex-basis:414px;=
+}[class~=3D"x_c1sn7t8n"]{display:none !important;}
+[class~=3D"x_cp4al7q"]{flex-grow:1;box-sizing:border-box;flex-basis:178px;}=
+[class~=3D"x_c1sn7t8n"]{display:none !important;}</style></head>
+<body style=3D"background-color: #151d2b; margin: 0; padding: 0;"><div styl=
+e=3D"display: none; max-height: 0px; overflow: hidden; mso-hide:all;">Compl=
+ete rooms and earn raffle tickets now=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=A0</div>
+  <div class=3D"wrapper">
+
+    <!-- Logo -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"text-align: center; margin-bottom: 20px;">
+       =20
+  <div style=3D"text-align: center;"><a href=3D"https://e.customeriomail.co=
+m/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1O=
+WNHZz09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9oYWNrMndpbj91dG1fc291cmNl=
+PWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249aGFjazJ3aW4yNTA=
+5MDEiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNj=
+UyfQ/23ca8cae7ca95d7bd863891a21fa2a6270d61e0be9a489d2ae325da628e6aa79" styl=
+e=3D"text-decoration: none; display: inline-block;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-bee.customeriomail.c=
+om/images/client-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe Logo" w=
+idth=3D"118" style=3D"vertical-align: middle; max-width: 100%; width: 118px=
+;height:auto;"/>
+      </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Banner -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"margin-bottom: 20px;">
+       =20
+  <div style=3D"text-align: center;"><a href=3D"https://e.customeriomail.co=
+m/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1O=
+WNHZz09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9oYWNrMndpbj91dG1fc291cmNl=
+PWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249aGFjazJ3aW4yNTA=
+5MDEiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNj=
+UyfQ/23ca8cae7ca95d7bd863891a21fa2a6270d61e0be9a489d2ae325da628e6aa79" styl=
+e=3D"text-decoration: none; display: inline-block;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-assets.customeriomai=
+l.com/images/client-env-92874/Hack2Win%20Starts%20Now-02_01K42KZ9JBS1FXZPTN=
+19SC4TJR.png" alt=3D"Banner" width=3D"600" style=3D"vertical-align: middle;=
+ max-width: 100%; width: auto;height:auto;"/>
+      </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Main Section -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div class=3D"section">
+       =20
+ =20
+  <h1 style=3D"font-size: 28px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 21px 0;">Hack2Win starts now, and you have the edge</h1>
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">Hack2Win has officially begun, and as a Prem=
+ium user, you are already ahead of the game. Every room you complete earns =
+you double tickets, giving you twice the chances to fill stamp cards and wi=
+n.</p>
+ =20
+       =20
+ =20
+  <h2 style=3D"font-size: 24px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 20px 0px 0px;">Here&#39;s how you can get started:</h2>
+ =20
+
+ =20
+    <div style=3D"width: 100%; mso-para-margin: 0;" class=3D"cqoe92k">
+    <!--[if true]><table role=3D"none" class=3D"mso"  style=3D"width: 100%;=
+ border-collapse: collapse;">
+      <tr>
+        <![endif]--><div class=3D"c11j6cdn">
+        <!--[if true]><td style=3D"width: 70%; vertical-align: top;">
+  <![endif]--><div style=3D"vertical-align: top; overflow: auto;" class=3D"=
+c1uw7jhe">
+   =20
+ =20
+    <ul>
+      <li>Complete any room on TryHackMe to earn raffle tickets</li><li>Col=
+lect tickets to fill Bronze, Silver, and Gold stamp cards</li><li>Full stam=
+p cards enter you in raffles for instant digital rewards, exclusive swag, a=
+nd major prizes</li>
+    </ul>
+ =20
+ =20
+  </div>
+  <!--[if true]></td>
+  <td style=3D"padding-left:8px;width:8px;"></td><![endif]--><div style=3D"=
+min-width: 8px; width: 8px; height: 8px; mso-hide: all;" class=3D"c1sn7t8n"=
+></div><!--[if true]><td style=3D"width: 30%; vertical-align: top;">
+  <![endif]--><div style=3D"vertical-align: top; overflow: auto;" class=3D"=
+cp4al7q">
+   =20
+  <div style=3D"margin: 0px 0px 5px; text-align: center;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-assets.customeriomai=
+l.com/images/client-env-92874/Frame%2041759_01K3931K5Z2HJY5CT6JKXC3QEF.png"=
+ alt=3D"" width=3D"177" style=3D"vertical-align: middle; max-width: 100%;"/=
+>
+      </div>
+ =20
+  </div>
+  <!--[if true]></td>
+  <![endif]-->
+      </div>
+      <!--[if true]></tr>
+      </table>
+    <![endif]--></div>
+ =20
+  <div style=3D"line-height:1;font-size:0;display:none;mso-hide:none;">
+    <br clear=3D"all"/>
+  </div>
+ =20
+  <p style=3D"margin: 0px 0px 16px;">With prizes worth over $40,000 to be w=
+on, your Premium advantage makes a real difference. The more rooms you comp=
+lete, the faster you collect tickets, and the greater your chances of claim=
+ing rewards.</p>
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">Hack2Win is live. Take advantage of your Pre=
+mium edge today.</p>
+ =20
+       =20
+  <div style=3D"text-align: center; margin: 8px 0; font-size: 16px;">
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS9oYWNrMndpbj91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1=
+haWxcdTAwMjZ1dG1fY2FtcGFpZ249aGFjazJ3aW4yNTA5MDEiLCJpbnRlcm5hbCI6ImNhZDUwNT=
+gzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNjUyfQ/23ca8cae7ca95d7bd863891a21=
+fa2a6270d61e0be9a489d2ae325da628e6aa79" style=3D"display: inline-block; mso=
+-padding-alt: 0; color: #151d2b; font-family: &#39;Ubuntu&#39;, sans-serif;=
+ font-weight: 700; text-decoration: none; text-align: center; opacity: 1; b=
+ackground: #a3ea2a; border-radius: 4px; text-underline-color: #a3ea2a;"><!-=
+-[if mso]><i
+            hidden
+            style=3D"mso-font-width: 125%; mso-text-raise: 125%;"
+            >=E2=80=8B=E2=80=83</i
+          ><![endif]--><span style=3D"mso-text-raise: 62.5%; padding: 10px =
+20px; display: block;">Start earning tickets</span><!--[if mso]><i hidden s=
+tyle=3D"mso-font-width: 125%;"
+            >=E2=80=83=E2=80=8B</i
+          ><![endif]--></a></div>
+ =20
+     =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+
+    <!-- Feature 3 (bulletproof for Gmail) -->
+
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+  <!--[if mso]><table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0"><tr><td><![endif]-->
+  <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%" style=3D"border:2px solid #a3ea2a; border-radius:10px=
+; background-color:#232f48;">
+    <tbody><tr>
+      <td style=3D"padding:20px 30px;">
+        <!-- two-column layout -->
+        <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0" width=3D"100%">
+          <tbody><tr>
+            <!-- Text column -->
+            <td valign=3D"top" style=3D"padding-right:20px;">
+             =20
+ =20
+  <h2 style=3D"font-size: 24px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 10px 0 0;">Want extra tickets? Refer a friend!</h2>
+ =20
+             =20
+ =20
+    <ul>
+      <li>Refer a friend to TryHackMe with your unique link: <u><span style=
+=3D"color: #ffffff">tryhackme.com/invite/patriogabrielpatdu</span></u></li>
+                <li>Your friend signs up &amp; verifies their email</li>
+                <li>You win extra tickets! Your friends win discounts on Pr=
+emium</li>
+    </ul>
+ =20
+ =20
+             =20
+  <div style=3D"text-align: left; margin: 8px 0; font-size: 16px;">
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS9yb29tL2hhY2syd2luP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl=
+1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj1oYWNrMndpbjI1MDkwMSIsImludGVybmFsIjoiY2=
+FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZCI6MjI2NTN9/1fa9f7cd1729ebc524b5=
+284a07d6bdfaa7e107a907fa428913bcdbdd8f80eba9" style=3D"display: inline-bloc=
+k; mso-padding-alt: 0; color: #151d2b; font-family: &#39;Ubuntu&#39;, sans-=
+serif; font-weight: 700; text-decoration: none; text-align: center; opacity=
+: 1; background: #a3ea2a; border-radius: 4px; text-underline-color: #a3ea2a=
+;" class=3D"c1tuz7x0"><!--[if mso]><i
+            hidden
+            style=3D"mso-font-width: 125%; mso-text-raise: 125%;"
+            >=E2=80=8B=E2=80=83</i
+          ><![endif]--><span style=3D"mso-text-raise: 62.5%; padding: 10px =
+20px; display: block;">Win extra tickets</span><!--[if mso]><i hidden style=
+=3D"mso-font-width: 125%;"
+            >=E2=80=83=E2=80=8B</i
+          ><![endif]--></a></div>
+ =20
+            </td>
+
+            <!-- Image column (LOCKED WIDTH) -->
+            <td valign=3D"middle" width=3D"200" style=3D"width:200px;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9yb29tL2hhY2syd2luP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXR=
+tX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj1oYWNrMndpbjI1MDkwMSIsImludGVybm=
+FsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZCI6MjI2NTN9/1fa9f7cd1729=
+ebc524b5284a07d6bdfaa7e107a907fa428913bcdbdd8f80eba9"><img src=3D"https://u=
+serimg-assets.customeriomail.com/images/client-env-92874/Ticketing%20illust=
+ration%20option%202-06%201_01K42DKZYG31RE8DJF2NTAWNR9.png" alt=3D"" width=
+=3D"200" style=3D"display:block; width:200px !important; max-width:200px !i=
+mportant; height:auto !important; border:0; outline:0; text-decoration:none=
+; -ms-interpolation-mode:bicubic;"/></a>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+
+    <!-- Fixed Footer -->
+    <div class=3D"footer">
+      <!-- SOCIAL ICONS -->
+  =20
+      <div class=3D"social-icons">
+        <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEs=
+xUVVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi=
+8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZ=
+GIwMyIsImxpbmtfaWQiOjIyMzQxfQ/3ef9330362ad1c3167fbc70458666bf646db63d187f83=
+8f6af8c2d4b252235ab" style=3D"margin: 0 8px; text-decoration:none; display:=
+inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" width=3D"3=
+2"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHdpdHRlci5jb20vcmVhbHRyeWhhY2ttZSIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWF=
+jZTBkYjAzIiwibGlua19pZCI6Mn0/1c332b04f3812dcc583869c91e8eb92ba22022eaa33877=
+67636d9aaef7796ca5" style=3D"margin: 0 8px; text-decoration:none; display:i=
+nline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=3D"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+aW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTA=
+xYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/740d73a6e55f081d2a25ca5f2a0c2e7d8bf688f0798=
+2c870a0e32ba7bf830a0d" style=3D"margin: 0 8px; text-decoration:none; displa=
+y:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Instagram" width=
+=3D"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+bGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJ=
+jMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5OX0/2b0896d1938420f0b72920d5ebb996d847=
+c1a609d89a6b8da23871d2f7d05016" style=3D"margin: 0 8px; text-decoration:non=
+e; display:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=3D"LinkedIn" width=3D=
+"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi8v=
+eW91dHViZS5jb20vQHJlYWx0cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDF=
+hY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxfQ/9308fc36eee4a63af1caad515ab2c6c18545763=
+7416d1f3fedda120e6cde14be" style=3D"margin: 0 8px; text-decoration:none; di=
+splay:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"YouTube" width=3D"3=
+2"/>
+      </a>
+      </div>
+      <div class=3D"legal" style=3D"margin-bottom:10px;">
+        <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEs=
+xUVVMQUt6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09IiwiaHJlZiI6Imh0dHBzOi=
+8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkY=
+jAzIiwibGlua19pZCI6MTB9/bf7e43d1739e7b86593c574d81d5157edd84e3c1b2046e1bcd8=
+869b5dc22f1f3">Terms</a> |
+        <a href=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wO=
+r4NsDAZkFqUd16-Qzr7XP3u9cGg=3D=3D">Unsubscribe</a>
+      </div>
+      <div>=C2=A9 2025 TryHackMe. All rights reserved.</div>
+    </div>
+
+  </div>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVprRnFVZDE2LVF6cjdYUDN1OWNHZz09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--d48a87ee8a145cb62586fc640635e5f2a0e83de1bbd11d79ccc8264bb5f1--

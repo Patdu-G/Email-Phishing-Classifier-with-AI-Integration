@@ -1,0 +1,584 @@
+X-GM-THRID: 1865895553411474827
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:594:b0:298:94eb:e200 with SMTP id h20csp1025654rwj;
+        Fri, 22 May 2026 06:31:06 -0700 (PDT)
+X-Received: by 2002:a05:622a:4085:b0:516:dbf6:f8ea with SMTP id
+ d75a77b69052e-516dbf6fa7emr22191581cf.19.1779456666526;
+        Fri, 22 May 2026 06:31:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1779456666; cv=none;
+        d=google.com; s=arc-20240605;
+        b=kyWaoNJyvb6pYj98zcjbmKR4it+2gQg5iP9g3T8TqgPc+grt4gbbLVpW8b+HpluGLN
+         VJY46pku2EzpAvF5hw80TMiYjNhC82cIsN1Q5k3jxfE0BxfqJWrR3KhUSayFNROytvcv
+         ajpRr1TZfTicG8FejfLF+XNRKXdHsbZytn/cfAK3VWBCJbYtcVYbxeuXDEHmbstxmtT+
+         9sM+5hff7Kqjr3NWs6kInWnolioGWYUfAMdwzZ7dkdRQPvAqJ+QFz34NROqfV0XKi7Eu
+         6GDmh84VFY0JPsy0OeWEz6mRB0+CfJydwS0Uhx9ilaRswQVRNk8TvsbYanlaHvq2XhT/
+         ZozA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=cAsCdnqO+9+/aqJ1e9eiFcOA4X2Xl3uTCfaTniruXfg=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=L7eIFWVJk8ZDjA/AjuRwPSqt+9tK/44LYeSZ6xMCAiLWq3rgk8QZLmHh9xQmD1FlOj
+         lstJqdpboLZbeYsuEgmLppvBSpMmBGJs644ucDPdwZa3T/X75C64dvCGIgPvQQScncMo
+         yG+gXeHwkbZ45/yFHgnEGHLHErgwbQrPWPgGCzIONkQjEOfFiqV4cAjpqyaIDsvuL6Mc
+         GwjV8LNCqbDglDN8v32TqucAGQsOGW+3wu0ORb8ji0Go4xKVzXX3LzrZBZ59xRYwcI9O
+         QBdf5qOYCmbwcvDgRWGAf3JVUF4xsRndG3OWepI6JUmHd24tE8lc3jy1XnwvmDLsdnL9
+         NP7Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=Ms8a4CVY;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=mvHg7fRD;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5136.v5c4dda55.use4.send.mailgun.net
+ (v5136.v5c4dda55.use4.send.mailgun.net. [159.112.241.136])
+        by mx.google.com with UTF8SMTPS id
+ d75a77b69052e-516d8d1e55dsi15511611cf.232.2026.05.22.06.31.06
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 22 May 2026 06:31:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender) client-ip=159.112.241.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=Ms8a4CVY;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=mvHg7fRD;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1779456665; x=1779463865;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=cAsCdnqO+9+/aqJ1e9eiFcOA4X2Xl3uTCfaTniruXfg=;
+ b=Ms8a4CVYH4G4FwbksWbvJfCsRFRgTyLj/jsH8SmvgAsW8b08vFAo9dPJdhLRkp7mDZyzpdlCaqhHr0Lc2IR/VNu+uHYida0O9/vKYDSxis+mfxkgdZbzDG2g9IzPwTRqGvrl6Le/cWyqw69+UgmKLOyEkwJX227sLei0XFDqtHQ=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1779456665; x=1779463865;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=cAsCdnqO+9+/aqJ1e9eiFcOA4X2Xl3uTCfaTniruXfg=;
+ b=mvHg7fRD8ENlFmiLp7rB2vtx2vih2RmO9LDYr/RfoPXNZ84rHXNNtV6zOWgLrpoJwW4ovOwS7QQQoXo3FhZQGv0FcgJIjojD/BGk5tRLgJmJSiyjtXIfMpeCP2I4Gz6FxKSbwonX0kxBU7mke0IgZnB785AJVjZHKEkI4cYiVrc=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by 112635e03442564c5d45e5215d0b5709875811d9b3a2e2a95f4a0e96e5ec933b
+ with HTTP
+ id 6a105a99248a36f3e6d369e1; Fri, 22 May 2026 13:31:05 GMT
+X-Mailgun-Sending-Ip: 159.112.241.136
+Date: Fri, 22 May 2026 13:31:05 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="748f07c060b9640ed45cf3cde35780daf27950d71c548a26ca650b10100e"
+Subject: =?UTF-8?q?You=E2=80=99ve_got_one_mission:_earn_your_first_badge_?=
+ =?UTF-8?q?=F0=9F=8F=85?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ5P4egYzJcXRK_-CCGMRw==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNDKUBUMVTVS6SKMNMFES27FVBUGR2NKJ3T2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ5P4egYzJcXRK_-CCGMRw==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ5P4egYzJcXRK_-CCGMRw=="}
+Message-Id: <20260522133105.cf7e082f6abf218e@cio56239.tryhackme.com>
+
+--748f07c060b9640ed45cf3cde35780daf27950d71c548a26ca650b10100e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+One room. One win. 25% off Premium waiting for you. =C2=A0
+
+TryHackMe Logo
+
+TryHackMe Motivation Banner ( https://tryhackme.com/hacktivities?utm_source=
+=3Dcio&utm_medium=3Demail&utm_campaign=3Dengstalestep5playfulnongold )
+
+Hey patriogabrielpatdu,
+
+=C2=A0
+
+Badges > excuses. =F0=9F=98=8E
+
+=C2=A0
+
+Finish your first room this week and start stacking wins:
+
+=C2=A0
+
+=F0=9F=8F=86
+
+Unlock your first badge
+
+=C2=A0
+
+=F0=9F=94=A5
+
+Keep your learning streak going
+
+=C2=A0
+
+=F0=9F=8E=81
+
+Earn 25% off Premium
+
+=C2=A0
+
+Ready to make your profile shine?
+
+=C2=A0
+
+=F0=9F=8E=AF Earn My First Badge ( https://tryhackme.com/hacktivities?utm_s=
+ource=3Dcio&utm_medium=3Demail&utm_campaign=3Dengstalestep5playfulnongold )
+
+=C2=A0
+
+Why Premium rocks:
+
+=C2=A0
+
+=F0=9F=92=BB Unlimited practice rooms
+
+=E2=9A=A1 Exclusive hacker challenges
+
+=F0=9F=93=88 Track your progress & rank
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms )
+| Unsubscribe ( https://track.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDA=
+Z5P4egYzJcXRK_-CCGMRw=3D=3D )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--748f07c060b9640ed45cf3cde35780daf27950d71c548a26ca650b10100e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1=
+"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"format-detection" content=3D"telephone=3Dno,address=3Dno,em=
+ail=3Dno,date=3Dno,url=3Dno"/>
+  <title>TryHackMe =E2=80=93 Stale Signup Motivation</title>
+
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      <o:AllowPNG/>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+
+  <style>
+    @media screen and (max-width: 600px) {
+      .container { width: 100% !important; }
+      .px { padding-left: 16px !important; padding-right: 16px !important; =
+}
+      .btn a { padding: 14px 18px !important; }
+    }
+  </style>
+</head>
+
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">One room. One win. 25% off Premium waiting for you. =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=C2=A0</div>
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b; margin:0; padding:0;=
+">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding:20px 12px;">
+
+        <table role=3D"presentation" class=3D"container" width=3D"600" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:600px; max-widt=
+h:600px; margin:0 auto;">
+
+          <!-- Logo -->
+          <tbody><tr>
+            <td align=3D"center" style=3D"padding:10px 0 20px;">
+              <img src=3D"https://userimg-bee.customeriomail.com/images/cli=
+ent-env-92874/THMlogo-gray_scale.png" width=3D"118" alt=3D"TryHackMe Logo" =
+border=3D"0" style=3D"display:block; width:118px; height:auto; border:0; ou=
+tline:none; text-decoration:none;"/>
+            </td>
+          </tr>
+
+          <!-- Banner -->
+          <tr>
+            <td align=3D"center" style=3D"padding:0 0 20px;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6SmNYUktfLUNDR01Sdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9oYWNrdGl2aXRpZXM_dXRtX3NvdXJjZT1jaW9cdTAwMjZ1dG1=
+fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPWVuZ3N0YWxlc3RlcDVwbGF5ZnVsbm9uZ2=
+9sZCIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZCI6Mjk0M=
+TJ9/ae9b4dc9dbfea1082979ecc44e74599e69fbd3429a28dde3c7ef451a1fa2f5f5" style=
+=3D"text-decoration:none;">
+                <img src=3D"https://userimg-assets.customeriomail.com/image=
+s/client-env-92874/Playful%20-%205_01KCPHZ7CC2HTVDY29EAK6Z6VX.png" width=3D=
+"600" alt=3D"TryHackMe Motivation Banner" border=3D"0" style=3D"display:blo=
+ck; width:100%; max-width:600px; height:auto; border:0; outline:none; text-=
+decoration:none;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- Main card -->
+          <tr>
+            <td style=3D"padding:0;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0">
+                <tbody><tr>
+                  <td class=3D"px" style=3D"background-color:#1c2538; borde=
+r-radius:12px; padding:28px 28px;">
+
+                    <!-- Heading (ENTIRE greeting green) -->
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:34px; line-height:40px; font-weight:800; color:#a3ea2a; margin:0=
+;">
+                      Hey patriogabrielpatdu,
+                    </div>
+
+                    <div style=3D"height:12px; line-height:12px; font-size:=
+12px;">=C2=A0</div>
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:16px; line-height:24px; color:#ffffff; text-align:left;">
+                      <strong>Badges &gt; excuses.</strong> =F0=9F=98=8E
+                    </div>
+
+                    <div style=3D"height:8px; line-height:8px; font-size:8p=
+x;">=C2=A0</div>
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:16px; line-height:24px; color:#ffffff; text-align:left;">
+                      Finish your first room this week and start stacking w=
+ins:
+                    </div>
+
+                    <div style=3D"height:16px; line-height:16px; font-size:=
+16px;">=C2=A0</div>
+
+                    <!-- Rewards box (table-based list) -->
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#0f1622; bo=
+rder-radius:12px;">
+                      <tbody><tr>
+                        <td style=3D"padding:16px 16px;">
+
+                          <!-- Item 1 -->
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#111a=
+28; border-radius:8px;">
+                            <tbody><tr>
+                              <td width=3D"36" align=3D"center" valign=3D"t=
+op" style=3D"padding:12px 10px;">
+                                <div style=3D"font-family:Helvetica, Arial,=
+ sans-serif; font-size:20px; line-height:20px;">=F0=9F=8F=86</div>
+                              </td>
+                              <td valign=3D"middle" style=3D"padding:12px 1=
+2px 12px 0;">
+                                <div style=3D"font-family:Helvetica, Arial,=
+ sans-serif; font-size:15px; line-height:22px; color:#ffffff;">
+                                  Unlock your first badge
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody></table>
+
+                          <div style=3D"height:10px; line-height:10px; font=
+-size:10px;">=C2=A0</div>
+
+                          <!-- Item 2 -->
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#111a=
+28; border-radius:8px;">
+                            <tbody><tr>
+                              <td width=3D"36" align=3D"center" valign=3D"t=
+op" style=3D"padding:12px 10px;">
+                                <div style=3D"font-family:Helvetica, Arial,=
+ sans-serif; font-size:20px; line-height:20px;">=F0=9F=94=A5</div>
+                              </td>
+                              <td valign=3D"middle" style=3D"padding:12px 1=
+2px 12px 0;">
+                                <div style=3D"font-family:Helvetica, Arial,=
+ sans-serif; font-size:15px; line-height:22px; color:#ffffff;">
+                                  Keep your learning streak going
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody></table>
+
+                          <div style=3D"height:10px; line-height:10px; font=
+-size:10px;">=C2=A0</div>
+
+                          <!-- Item 3 -->
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#111a=
+28; border-radius:8px;">
+                            <tbody><tr>
+                              <td width=3D"36" align=3D"center" valign=3D"t=
+op" style=3D"padding:12px 10px;">
+                                <div style=3D"font-family:Helvetica, Arial,=
+ sans-serif; font-size:20px; line-height:20px;">=F0=9F=8E=81</div>
+                              </td>
+                              <td valign=3D"middle" style=3D"padding:12px 1=
+2px 12px 0;">
+                                <div style=3D"font-family:Helvetica, Arial,=
+ sans-serif; font-size:15px; line-height:22px; color:#ffffff;">
+                                  Earn 25% off Premium
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody></table>
+
+                        </td>
+                      </tr>
+                    </tbody></table>
+                    <!-- /Rewards box -->
+
+                    <div style=3D"height:14px; line-height:14px; font-size:=
+14px;">=C2=A0</div>
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:16px; line-height:24px; color:#ffffff; text-align:left;">
+                      Ready to make your profile shine?
+                    </div>
+
+                    <div style=3D"height:18px; line-height:18px; font-size:=
+18px;">=C2=A0</div>
+
+                    <!-- CTA button -->
+                    <table role=3D"presentation" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" align=3D"center" class=3D"btn">
+                      <tbody><tr>
+                        <td align=3D"center" bgcolor=3D"#a3ea2a" style=3D"b=
+order-radius:6px;">
+                          <a href=3D"https://e.customeriomail.com/e/c/eyJlb=
+WFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6SmNYUktfLUNDR01Sdz09Iiwi=
+aHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9oYWNrdGl2aXRpZXM_dXRtX3NvdXJjZT1jaW9=
+cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPWVuZ3N0YWxlc3RlcDVwbG=
+F5ZnVsbm9uZ29sZCIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua=
+19pZCI6Mjk0MTJ9/ae9b4dc9dbfea1082979ecc44e74599e69fbd3429a28dde3c7ef451a1fa=
+2f5f5" style=3D"display:inline-block; font-family:Helvetica, Arial, sans-se=
+rif; font-size:16px; line-height:20px; font-weight:800; color:#151d2b; text=
+-decoration:none; padding:14px 22px; border-radius:6px;">
+                            =F0=9F=8E=AF Earn My First Badge
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody></table>
+
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Spacer -->
+          <tr><td style=3D"height:18px; line-height:18px; font-size:18px;">=
+=C2=A0</td></tr>
+
+          <!-- Premium (Yahoo-safe) -->
+          <tr>
+            <td style=3D"padding:0;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"background-color:#111a28; border-r=
+adius:12px;">
+                <tbody><tr>
+                  <td class=3D"px" style=3D"padding:22px 22px; border-left:=
+4px solid #a3ea2a; border-right:4px solid #a3ea2a; text-align:center; borde=
+r-radius:12px;">
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ color:#a3ea2a; font-size:22px; line-height:28px; font-weight:800; margin:0=
+;">
+                      Why Premium rocks:
+                    </div>
+
+                    <div style=3D"height:12px; line-height:12px; font-size:=
+12px;">=C2=A0</div>
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:17px; line-height:24px; color:#ffffff; margin:10px 0;">
+                      =F0=9F=92=BB <strong>Unlimited practice rooms</strong=
+>
+                    </div>
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:17px; line-height:24px; color:#ffffff; margin:10px 0;">
+                      =E2=9A=A1 <strong>Exclusive hacker challenges</strong=
+>
+                    </div>
+
+                    <div style=3D"font-family:Helvetica, Arial, sans-serif;=
+ font-size:17px; line-height:24px; color:#ffffff; margin:10px 0 0;">
+                      =F0=9F=93=88 <strong>Track your progress &amp; rank</=
+strong>
+                    </div>
+
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align=3D"center" style=3D"padding:26px 10px 10px;">
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" align=3D"center" style=3D"margin:0 auto 18px;">
+                <tbody><tr>
+                  <td style=3D"padding:0 10px;"><a href=3D"https://e.custom=
+eriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6Sm=
+NYUktfLUNDR01Sdz09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpb=
+nRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/19e00=
+89aac61776843a72fb64aef4a927b912a819c526c3afc55626bc662d04c" style=3D"text-=
+decoration:none;">
+                    <img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-only-logo-white/discord@2x.png" width=3D"28" a=
+lt=3D"Discord" border=3D"0" style=3D"display:block; border:0; height:auto;"=
+/></a></td>
+                  <td style=3D"padding:0 10px;"><a href=3D"https://e.custom=
+eriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6Sm=
+NYUktfLUNDR01Sdz09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwia=
+W50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/ae62=
+cb7898c41d792cd70974be53a5199263855b7586442a071038f37bf9a39f" style=3D"text=
+-decoration:none;">
+                    <img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-only-logo-white/twitter@2x.png" width=3D"28" a=
+lt=3D"X" border=3D"0" style=3D"display:block; border:0; height:auto;"/></a>=
+</td>
+                  <td style=3D"padding:0 10px;"><a href=3D"https://e.custom=
+eriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6Sm=
+NYUktfLUNDR01Sdz09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja=
+21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/5=
+25622c3d34d3e0dab8052869ebdc29aa3d370cb4e2f74330205e065eac22489" style=3D"t=
+ext-decoration:none;">
+                    <img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" width=3D"28"=
+ alt=3D"Instagram" border=3D"0" style=3D"display:block; border:0; height:au=
+to;"/></a></td>
+                  <td style=3D"padding:0 10px;"><a href=3D"https://e.custom=
+eriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6Sm=
+NYUktfLUNDR01Sdz09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5a=
+GFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoy=
+MjE5OX0/a98aaa16f8a55316f33f20fada3f42eb0c6c39836f19df57639008ee38f9ef67" s=
+tyle=3D"text-decoration:none;">
+                    <img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" width=3D"28" =
+alt=3D"LinkedIn" border=3D"0" style=3D"display:block; border:0; height:auto=
+;"/></a></td>
+                  <td style=3D"padding:0 10px;"><a href=3D"https://e.custom=
+eriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6Sm=
+NYUktfLUNDR01Sdz09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrb=
+WUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMx=
+fQ/9a4558f63c1783aeb007330350d6ec4dea3d925b8b41dff66f9c7f4d8f192c77" style=
+=3D"text-decoration:none;">
+                    <img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" width=3D"28" a=
+lt=3D"YouTube" border=3D"0" style=3D"display:block; border:0; height:auto;"=
+/></a></td>
+                </tr>
+              </tbody></table>
+
+              <div style=3D"font-family:Helvetica, Arial, sans-serif; margi=
+n:0 auto 8px; font-size:14px; line-height:20px; text-align:center;">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo1UDRlZ1l6SmNYUktfLUNDR01Sdz09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/64a647983820288d1745a0a502a75a4e2e8564119e7=
+514f9f2d3614e60812fc2" style=3D"color:#ffffff; text-decoration:underline; m=
+argin:0 8px;">Terms</a>
+                <span style=3D"color:#ffffff;">|</span>
+                <a href=3D"https://e.customeriomail.com/unsubscribe/dgTK1QU=
+LAKzg2wOr4NsDAZ5P4egYzJcXRK_-CCGMRw=3D=3D" style=3D"color:#ffffff; text-dec=
+oration:underline; margin:0 8px;">Unsubscribe</a>
+              </div>
+
+              <div style=3D"font-family:Helvetica, Arial, sans-serif; font-=
+size:14px; line-height:20px; color:#ffffff; text-align:center;">
+                =C2=A9 2026 TryHackMe. All rights reserved.
+              </div>
+            </td>
+          </tr>
+
+        </tbody></table>
+
+      </td>
+    </tr>
+  </tbody></table>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVo1UDRlZ1l6SmNYUktfLUNDR01Sdz09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--748f07c060b9640ed45cf3cde35780daf27950d71c548a26ca650b10100e--

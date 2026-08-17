@@ -1,0 +1,580 @@
+X-GM-THRID: 1863181322369076773
+X-Gmail-Labels: Inbox,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:2182:b0:289:d514:b724 with SMTP id v2csp3148629rwb;
+        Wed, 22 Apr 2026 07:29:34 -0700 (PDT)
+X-Received: by 2002:a05:620a:17a3:b0:8cd:93b7:ebf3 with SMTP id
+ af79cd13be357-8e791d8728bmr3189350385a.43.1776868174255;
+        Wed, 22 Apr 2026 07:29:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1776868174; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Bb0Bz1zKiRPbuIIteqEDGOkigdMtIpFEntdhbkI1dESRd0FJuzzNHnGP8YyPF6JJju
+         R0fnZQf96P8DDC4BF8lfGVUoHsTo6IQ2s/kyThbwL+E3Ujed9/Lnn/j3cpZ8LtoWqYmx
+         +F/flQu4+qzGSmdk9fN0CMFu9FoRKSbtyvZJPLmt4zbK/0abxYcf+ObREqgnm0XA9oZq
+         hPDlh9cIaYM9AkChEwARbEysFia/Pd92tOVUmZeFMDJWKeZpHBxlB63L56ZR8umRdBU+
+         XVaHW01XgJDz4pdDDUU+VHDvsv2xyLSVH6rBI654V43oXQ9Xpbz9UxHRtT9xllCkItMi
+         Vmdg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe:list-unsubscribe-post:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=js4DLq8/0Jv61J1ytl8EeEVE1MIOrgFTwCy6eA065GI=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=bp3j1GTgJ7D+5nAiXatuxs3Ty8m6VirPCb3MGcSE/1sKH8e0UmDR0hPKWHRUlXetzx
+         FWm6nh/JuY8GsUX9TtuDV0EwAlUBSYM4QI87obKhYhcXU9YrQ5SlD+xcSw5eyrhvVXWB
+         q86woq586wx96JhRDbsVdB8m+7hT2tz1B8VqDMlULS1gvSy62Sdq0hwzv0gbCQetEkr6
+         hBQfF11xwABJyxNyzn4wagSPqx8JKYTmGXZwo54t4yujcw7sFCd07NftPzkD4+OSHGwl
+         X5CVRKUTWfsmqu0HmtC3nhJXS61EAwNGK4RNy+emOWIyWE//IXRIiiJONr/wzJmFlo0t
+         HEpQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=bVkZJJgK;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=hmAcWMkc;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5138.v5c4dda55.use4.send.mailgun.net
+ (v5138.v5c4dda55.use4.send.mailgun.net. [159.112.241.138])
+        by mx.google.com with UTF8SMTPS id
+ af79cd13be357-8ebc4c07e37si894151285a.368.2026.04.22.07.29.33
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 22 Apr 2026 07:29:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender) client-ip=159.112.241.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=bVkZJJgK;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=hmAcWMkc;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1776868173; x=1776875373;
+ h=Message-Id: List-Unsubscribe: List-Unsubscribe-Post: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=js4DLq8/0Jv61J1ytl8EeEVE1MIOrgFTwCy6eA065GI=;
+ b=bVkZJJgKwgDLnlPAolCwL2PP2ag8dK4c+phh/E2ujeLIKUfdDrgQIqrPDGh5jB55YKnUfQWH1yCpdz1oThyp0EM4BH4DmIF7cjkBBN8aAf8utCMDGzUKamcEcUeb1ia2Fwl1djVfRc32AkASrfQY4get0V7yzlbC7FC7UVQJRzY=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1776868173; x=1776875373;
+ h=Message-Id: List-Unsubscribe: List-Unsubscribe-Post: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=js4DLq8/0Jv61J1ytl8EeEVE1MIOrgFTwCy6eA065GI=;
+ b=hmAcWMkcOkt5U8qs8TuQKArAyQL6y9XRNpIG4pxqWMMdKsW7tvL+S1hMP5Zq6avJan1NJ7l4zRh3uBMoDXMQph0KVdp1e6lMuMvbjh+VmYNvMcF0POfCRpH2NanqVDFLq3WKGO9V9GZL4ng5YlLepAaVYs/pn5J/mzQoUr2jqN4=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by f53ef8cf6f2e4db9ff5ef1a7f501842e1979374bf97d6ce8a485e41c775a3baa
+ with HTTP
+ id 69e8db4d9517f767cff590e3; Wed, 22 Apr 2026 14:29:33 GMT
+X-Mailgun-Sending-Ip: 159.112.241.138
+Date: Wed, 22 Apr 2026 14:29:33 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="43c6d96d33c1adb59b6248198f9a54d4dc67e8a7a24642227b88fae3a0fa"
+Subject: =?UTF-8?q?=E2=8F=B3_You=E2=80=99ve_still_got_time_for_this?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ21mJ_mmDa3_FMNV7z4Sw==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNDEMLNJJPW23KEMEZV6RSNJZLDO6RUKN3T2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ21mJ_mmDa3_FMNV7z4Sw==>
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ21mJ_mmDa3_FMNV7z4Sw=="}
+Message-Id: <20260422142933.f7d344a45ca7bc08@cio56239.tryhackme.com>
+
+--43c6d96d33c1adb59b6248198f9a54d4dc67e8a7a24642227b88fae3a0fa
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Last chance to earn tickets before it closes. =C2=A0
+
+The AI Security Ticketing Event wraps up tomorrow. Don't leave your tickets=
+ on the table.
+
+TryHackMe ( https://tryhackme.com/dashboard )
+
+AI Security Learning Path ( https://tryhackme.com/path/outline/aisecurity?u=
+tm_source=3Dcio&utm_medium=3Demail&utm_campaign=3D2026aiticketsreminder )
+
+**************
+One more day.
+Make it count.
+**************
+
+Quick heads up:
+
+The AI Security Ticketing Event wraps up today.
+
+=C2=A0
+
+If you've been meaning to start,
+or left a few rooms unfinished,
+this is a good time to jump back in.
+
+Complete rooms in the AI Security Learning Path
+
+and earn raffle tickets as you go.
+
+Here's where things stand:
+
+=F0=9F=8E=9F=EF=B8=8F
+
+12 ticketed rooms
+
+=F0=9F=8E=81
+
+250 prizes
+
+=E2=8F=B3
+
+Ends today
+
+=C2=A0
+
+And remember:
+
+Even one completed room =3D one ticket.
+
+You've already seen what's inside the path.
+
+Now's your chance to actually get something out of it.
+
+Start earning tickets ( https://tryhackme.com/path/outline/aisecurity?utm_s=
+ource=3Dcio&utm_medium=3Demail&utm_campaign=3D2026aiticketsreminder )
+
+The AI threat landscape expanded.
+
+There's still time to act on it.
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) =C2=A0|=C2=A0 Unsubscribe ( https://t=
+rack.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ21mJ_mmDa3_FMNV7z4Sw=3D=
+=3D )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--43c6d96d33c1adb59b6248198f9a54d4dc67e8a7a24642227b88fae3a0fa
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"color-scheme" content=3D"light only"/>
+  <meta name=3D"supported-color-schemes" content=3D"light"/>
+  <title>TryHackMe =E2=80=93 AI Security Ticketing Event Reminder</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #151d2b; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-spacing: 0; border-collapse: collapse; }
+    img { border: 0; display: block; max-width: 100%; height: auto; }
+    .wrap { width: 100%; max-width: 600px; }
+    .body-p { font-family: Arial, Helvetica, sans-serif; font-size: 15px; l=
+ine-height: 1.7; color: #d7e1f0; margin: 0; }
+    .headline { font-family: Arial, Helvetica, sans-serif; font-size: 26px;=
+ line-height: 1.25; font-weight: 700; color: #ffffff; margin: 0; }
+    .cta-a { font-family: Arial, Helvetica, sans-serif; font-size: 15px; li=
+ne-height: 1; font-weight: 700; color: #151d2b !important; text-decoration:=
+ none; }
+    .footer-link { color: #ffffff !important; text-decoration: underline; }
+    @media screen and (max-width: 620px) {
+      .wrap { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad { padding-left: 20px !important; padding-right: 20px !imp=
+ortant; }
+      .headline { font-size: 22px !important; }
+      .cta-td { width: 100% !important; border-radius: 10px !important; }
+    }
+  </style>
+</head>
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">Last chance to earn tickets before it closes. =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD=C2=A0</div>
+
+  <div style=3D"display:none; max-height:0; overflow:hidden; opacity:0; mso=
+-hide:all;">
+    The AI Security Ticketing Event wraps up tomorrow. Don't leave your tic=
+kets on the table.
+  </div>
+
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b;">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding: 24px 16px;">
+        <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" class=3D"wrap">
+
+          <!-- Logo -->
+          <tbody><tr>
+            <td align=3D"center" style=3D"padding: 0 0 22px 0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGEzX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmM=
+xMDFhY2UwZGIwMyIsImxpbmtfaWQiOjEyMX0/5eb171d266e77042ac2e7a8f27634afd9a9a43=
+8f1d9f7a3f4449696ea30c720e" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-bee.customeriomail.com/images/c=
+lient-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe" width=3D"118" sty=
+le=3D"width:118px; height:auto;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD TOP: Banner -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:16px 16px =
+0 0; padding:16px 16px 0; font-size:0; line-height:0;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGEzX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9wYXRoL291dGxpbmUvYWlzZWN1cml0eT91dG1fc291cmNlPWN=
+pb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249MjAyNmFpdGlja2V0c3=
+JlbWluZGVyIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkI=
+jozMjI5MH0/93da532f3357df6cbe24cbd910831430803f18a0cb01f36ebdfc68f74075dbad=
+" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-assets.customeriomail.com/image=
+s/client-env-92874/01KP37R2ZF0PAJA60Z0E1DDADP.png" alt=3D"AI Security Learn=
+ing Path" width=3D"568" style=3D"width:100%; max-width:568px; height:auto; =
+display:block; border-radius:10px;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD BOTTOM: Content -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:0 0 16px 1=
+6px;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0">
+                <tbody><tr>
+                  <td class=3D"mobile-pad" style=3D"padding: 32px 40px 36px=
+ 40px;">
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+
+                      <!-- Headline -->
+                      <tbody><tr>
+                        <td align=3D"center" style=3D"padding-bottom: 20px;=
+">
+                          <h1 class=3D"headline" style=3D"text-align:center=
+;">One more day.<br/>Make it count.</h1>
+                        </td>
+                      </tr>
+
+                      <!-- Opener -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 14px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Quick heads up:<br/>
+                            The AI Security Ticketing Event wraps up today.=
+</p>
+                        </td>
+                      </tr>
+
+                      <!-- Framed nudge -->
+                      <tr>
+                        <td style=3D"padding-bottom: 14px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0">
+                            <tbody><tr>
+                              <td width=3D"4" style=3D"width:4px; backgroun=
+d-color:#a3ea2a;">=C2=A0</td>
+                              <td style=3D"background-color:#1a2840; paddin=
+g: 14px 18px; text-align:center;">
+                                <p style=3D"margin:0; font-family:Arial, He=
+lvetica, sans-serif; font-size:15px; color:#d7e1f0; line-height:1.7;">If yo=
+u've been meaning to start,<br/>or left a few rooms unfinished,<br/>this is=
+ a good time to jump back in.</p>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 20px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            Complete rooms in the AI Security Learning Path=
+<br/>
+                            and earn raffle tickets as you go.<br/></p>
+                        </td>
+                      </tr>
+
+                      <!-- Divider -->
+                      <tr><td style=3D"border-top:1px solid #2a3650; paddin=
+g-bottom: 22px;"></td></tr>
+
+                      <!-- Quick stats box -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 10px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">=
+Here's where things stand:</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 20px;=
+">
+                          <table role=3D"presentation" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"background-color:#222d43; border:1px =
+solid #30415f; border-radius:12px;">
+                            <tbody><tr>
+                              <td style=3D"padding: 14px 28px;">
+                                <table role=3D"presentation" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0">
+                                  <tbody><tr>
+                                    <td width=3D"28" valign=3D"middle" alig=
+n=3D"center" style=3D"padding:0 10px 10px 0;"><p style=3D"margin:0; font-si=
+ze:18px; line-height:1;">=F0=9F=8E=9F=EF=B8=8F</p></td>
+                                    <td valign=3D"middle" style=3D"font-fam=
+ily:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.6; color:#e=
+8eef8; white-space:nowrap; padding:0 0 10px 0;">12 ticketed rooms</td>
+                                  </tr>
+                                  <tr>
+                                    <td width=3D"28" valign=3D"middle" alig=
+n=3D"center" style=3D"padding:0 10px 10px 0;"><p style=3D"margin:0; font-si=
+ze:18px; line-height:1;">=F0=9F=8E=81</p></td>
+                                    <td valign=3D"middle" style=3D"font-fam=
+ily:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.6; color:#e=
+8eef8; white-space:nowrap; padding:0 0 10px 0;">250 prizes</td>
+                                  </tr>
+                                  <tr>
+                                    <td width=3D"28" valign=3D"middle" alig=
+n=3D"center" style=3D"padding:0 10px 0 0;"><p style=3D"margin:0; font-size:=
+18px; line-height:1;">=E2=8F=B3</p></td>
+                                    <td valign=3D"middle" style=3D"font-fam=
+ily:Arial, Helvetica, sans-serif; font-size:14px; line-height:1.6; color:#e=
+8eef8; white-space:nowrap;">Ends today</td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- And remember callout -->
+                      <tr>
+                        <td style=3D"padding-bottom: 20px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0">
+                            <tbody><tr>
+                              <td width=3D"4" style=3D"width:4px; backgroun=
+d-color:#a3ea2a;">=C2=A0</td>
+                              <td style=3D"background-color:#1a2840; paddin=
+g: 14px 18px; text-align:center;">
+                                <p style=3D"margin:0 0 4px 0; font-family:A=
+rial, Helvetica, sans-serif; font-size:13px; font-weight:700; color:#a3ea2a=
+; text-transform:uppercase; letter-spacing:.6px; line-height:1.4;">And reme=
+mber:</p>
+                                <p style=3D"margin:0; font-family:Arial, He=
+lvetica, sans-serif; font-size:15px; color:#ffffff; font-weight:700; line-h=
+eight:1.6;">Even one completed room =3D one ticket.</p>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Body closing -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 22px;=
+">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            You've already seen what's inside the path.<br/=
+>
+                            Now's your chance to actually get something out=
+ of it.
+                          </p>
+                        </td>
+                      </tr>
+
+                      <!-- CTA -->
+                      <tr>
+                        <td align=3D"center" style=3D"padding-bottom: 22px;=
+">
+                          <table role=3D"presentation" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"margin:0 auto;">
+                            <tbody><tr>
+                              <td class=3D"cta-td" align=3D"center" bgcolor=
+=3D"#a3ea2a" style=3D"background-color:#a3ea2a; border-radius:10px; padding=
+:15px 28px;">
+                                <a href=3D"https://e.customeriomail.com/e/c=
+/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGEzX0ZNTlY3ejRTdz=
+09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9wYXRoL291dGxpbmUvYWlzZWN1cml0e=
+T91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249=
+MjAyNmFpdGlja2V0c3JlbWluZGVyIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGR=
+iMDMiLCJsaW5rX2lkIjozMjI5MH0/93da532f3357df6cbe24cbd910831430803f18a0cb01f3=
+6ebdfc68f74075dbad" class=3D"cta-a" style=3D"font-family:Arial, Helvetica, =
+sans-serif; font-size:15px; font-weight:700; color:#151d2b; text-decoration=
+:none; white-space:nowrap;">Start earning tickets</a>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Divider -->
+                      <tr><td style=3D"border-top:1px solid #2a3650; paddin=
+g-bottom: 22px;"></td></tr>
+
+                      <!-- Closing -->
+                      <tr>
+                        <td align=3D"center">
+                          <p class=3D"body-p" style=3D"text-align:center;">
+                            The AI threat landscape expanded.<br/>
+                            There's still time to act on it.
+                          </p>
+                        </td>
+                      </tr>
+
+                    </tbody></table>
+                  </td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align=3D"center" style=3D"padding: 28px 20px 10px 20px;">
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"margin:0 auto 24px auto;">
+                <tbody><tr>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGE=
+zX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/731975=
+44942dc73ddf7772a0d6b11003623d19f1c8e5847571a8d6dfddb15752" style=3D"text-d=
+ecoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/so=
+cial-networks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" w=
+idth=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGE=
+zX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW=
+50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/2204b=
+f614f4169c3748bce39776ab8f20fed00df15d4e287d43c9d5b08f6201d" style=3D"text-=
+decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/s=
+ocial-networks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=
+=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGE=
+zX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja2=
+1lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/8e=
+cdb0788c925a205c12006094d849c70d7da62bca2291db406626cc0ad9fbee" style=3D"te=
+xt-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resource=
+s/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Inst=
+agram" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGE=
+zX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aG=
+Fja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyM=
+jE5OX0/966ca03d63a1e26e089cd6c4b33f642b2d1e59e645cce25885ac08433368c445" st=
+yle=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public=
+/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=
+=3D"LinkedIn" width=3D"30"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGE=
+zX0ZNTlY3ejRTdz09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrbW=
+UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxf=
+Q/9d6fe948ae948b2b53f2a745ac91fe509f2326920ee9213eea615a57bcedd2d0" style=
+=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"=
+YouTube" width=3D"30"/></a></td>
+                </tr>
+              </tbody></table>
+              <p style=3D"margin:0 0 10px 0; font-family:Arial, Helvetica, =
+sans-serif; font-size:14px; line-height:1.6; color:#ffffff; text-align:cent=
+er;">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVoyMW1KX21tRGEzX0ZNTlY3ejRTdz09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/0ec5ef319beccb8bf5128bd08df85ffa1c7c1c11cc6=
+c71c27bd67b76b05787f8" class=3D"footer-link">Terms</a> =C2=A0|=C2=A0 <a hre=
+f=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZ21mJ_mm=
+Da3_FMNV7z4Sw=3D=3D" class=3D"footer-link">Unsubscribe</a>
+              </p>
+              <p style=3D"margin:0; font-family:Arial, Helvetica, sans-seri=
+f; font-size:14px; line-height:1.6; color:#ffffff; text-align:center;">=C2=
+=A9 2026 TryHackMe. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVoyMW1KX21tRGEzX0ZNTlY3ejRTdz09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--43c6d96d33c1adb59b6248198f9a54d4dc67e8a7a24642227b88fae3a0fa--

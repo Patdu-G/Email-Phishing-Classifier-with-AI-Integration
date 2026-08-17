@@ -1,0 +1,1344 @@
+X-GM-THRID: 1685012232927970773
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a02:6f4e:0:0:0:0:0 with SMTP id b14csp68018jae;
+        Wed, 2 Dec 2020 15:48:09 -0800 (PST)
+X-Google-Smtp-Source: 
+ ABdhPJxhbTxIt47jEK0uM2ACVM541pPBmvVyxcoUGKr4iXk730uQD6Vpzvu4Dpm1WE9SM5xb1s/u
+X-Received: by 2002:a05:6402:22ea:: with SMTP id
+ dn10mr426173edb.67.1606952889582;
+        Wed, 02 Dec 2020 15:48:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1606952889; cv=none;
+        d=google.com; s=arc-20160816;
+        b=w4LhsuPDMZW42egmJpwGHRd9yIg3ZQHuhCjmszoSh/pO9xYJT3lRWF/Q4TqWSFDRLD
+         vzWsAqJbiKEVjw2Y0L2SDcA+ZVf/TCAQ9X0fc7lDsfx907hOkpchqK4Nyj1VDl3UffUX
+         JlWk5jUoNcgHfEKc65UsAEIyeQRxIkT4uZ/zJslih2fxk3FDVCP71zrinAn/9lFjeo5I
+         KpN2FF2jxHkRIe+PEScsIhP+oqq/16yPNpOISRbCI3lX1x3/ZWou1JUjeHZJPNeJ36QE
+         fb6JrbCzSyIGRt6G91AWlzfTxEyFmXRcsJP6EIm64oG9ujBo+vupFUBxzGGWv7GmbqJb
+         bJhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=auto-submitted:subject:message-id:to:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=pZ8VrY9SkWVQ25qJTDSshta2LcZci/sEZk8N3Avh98w=;
+        b=KqA9fM60qXaibXJyRRc9zbS6sjhwb56rAEeoLrLslexLH/PxeXRNRxKlS5dnjYRvvF
+         rFuiPygir4VdboHP6VjVTgOppl4Oq+2slCvAo5HIUMjP38Nfr4ydbn++gUj/PSz3a7JC
+         2BqtMVodEPBy9mgMeXGnl8kz6qmTgYlzE5DK9k0qd50QQTRkLeYoicdv8xxFkqm2gs/O
+         KGoMP8DTPX4w+wdw5NUC01jkXJgFYX1ARrrsySS2dsE+ycyfx2S0CQj++iBZpxUOhEKf
+         9oRotiznbOTCTRYeYBH8QRN2t2nxIIu79AAv0EuGKJg8WNoBZkUx3IeuhS0/oorAz+A3
+         HUZg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@todoist.com header.s=s1 header.b=mG8F+Xsa;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=tSMYwncd;
+       spf=pass (google.com: domain of
+ bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com designates
+ 167.89.38.33 as permitted sender)
+ smtp.mailfrom="bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com"
+Return-Path: 
+ <bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com>
+Received: from o1.em.todoist.com (o1.em.todoist.com. [167.89.38.33])
+        by mx.google.com with ESMTPS id 89si206304edc.413.2020.12.02.15.48.08
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 02 Dec 2020 15:48:09 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com designates
+ 167.89.38.33 as permitted sender) client-ip=167.89.38.33;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@todoist.com header.s=s1 header.b=mG8F+Xsa;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=tSMYwncd;
+       spf=pass (google.com: domain of
+ bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com designates
+ 167.89.38.33 as permitted sender)
+ smtp.mailfrom="bounces+1623921-be3d-patriogabrielpatdu=gmail.com@em.todoist.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=todoist.com;
+	h=content-type:from:mime-version:to:subject; s=s1;
+	bh=pZ8VrY9SkWVQ25qJTDSshta2LcZci/sEZk8N3Avh98w=; b=mG8F+XsaqKUE1
+	w3AKyZEde8WGZic9FenSQGRGkrHLSIMIDlUxsMIZkYBrfZj+sQbymatUB9jYADu8
+	/+NdQVhld+j2DLRRewNwc3f/K+uJjCIsyJiL/XfvXxLMQrGaxG3YNWzzsEhj96QY
+	Bc42r+aNcEbs6SEEdt/EUcld499fBc=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=sendgrid.info;
+	h=content-type:from:mime-version:to:subject:x-feedback-id;
+	s=smtpapi; bh=pZ8VrY9SkWVQ25qJTDSshta2LcZci/sEZk8N3Avh98w=; b=tS
+	MYwncdm6X/cufFZboGG5MK9m6IRzC1p5fcmfxipYMaOAHlkLHmjWRTczhrJfj3kE
+	UFjXT7qYQ+6lSG1NoVMIjSq8bJnDftcP+MmCXTU6Y3KAfZHcCy4zMzOBZ44UWMs5
+	G7qaFuUwSZtzrjHl2iIFQaGu30MJHVHQMkZ1Fv+cE=
+Received: by filter1692p1iad2.sendgrid.net with SMTP id
+ filter1692p1iad2-21886-5FC827B7-2A
+        2020-12-02 23:48:08.010504184 +0000 UTC m=+864.650595472
+Received: from MTYyMzkyMQ (unknown)
+	by ismtpd0051p1mdw1.sendgrid.net (SG) with HTTP id BzKZXgnHQTKB6QvJnok2jA
+	Wed, 02 Dec 2020 23:48:07.976 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=0431fd69365f8b4ae16c5ff0ba838027a1868fcb772176d2c5cf24414415
+Date: Wed, 02 Dec 2020 23:48:08 +0000 (UTC)
+From: "Todoist" <no-reply@todoist.com>
+Mime-Version: 1.0
+To: patriogabrielpatdu@gmail.com
+Message-ID: <BzKZXgnHQTKB6QvJnok2jA@ismtpd0051p1mdw1.sendgrid.net>
+Subject: =?UTF-8?B?U3Ryb25r4oCZcyB0YXNrKHMpIGZvciAzIERlYyDihpIgNiBvdmVyZHVl?=
+Auto-Submitted: auto-generated
+X-SG-EID: 
+ ubBKEx5SET+PgNNYwA5FRCuskqrgzs/2BVbf3bZvDzzR/lW6uUp0iUOSSHUNoQm9lXgLJaRrqxAW3n
+ 1wqLrBiJo4a1dkdGArw6IoKDJA/9g3uO+9H6VDgBvNK8BUUQ2hfkGaH4TYg7/22fwyaWxIHOXP3shh
+ 78UC+Gn1EtUJVT3G0S4D5Ur97XvdRKpNOi2o2etfgxGqdPSX+qIgdi453JsgyVKmPrYQGnChoxi7wo
+ M=
+X-SG-ID: 6wKSZO7SBfQ87GwMXPTctS9+a0wDI1r0YjkKrgTMH58=
+X-Entity-ID: lUZj5e7txwqbCdqzFBtiLw==
+X-Feedback-ID: 
+ 1623921:XQU8BFYKQRyPREwcSuSMX6jqDsKl4EOCW8Gd/INF3uQ=:TcUZG2jO+sABam1vBPHdXUqKKtkFVKnPqS53IefaKos=:SG
+
+--0431fd69365f8b4ae16c5ff0ba838027a1868fcb772176d2c5cf24414415
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Start the day feeling calm and in control.
+
+Hi Stronk,You have 6 tasks waiting to be tackled. Let=E2=80=99s do this =F0=
+=9F=92=AA
+
+Overdue=20
+[https://todoist.com/showTask?id=3D4374803767&utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]
+TLE assignment (storing)=E2=AC=A4Inbox
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#project/2247375474]=20
+[https://todoist.com/showTask?id=3D4378080340&utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]
+Filipino=E2=AC=A4Inbox
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#project/2247375474]=20
+[https://todoist.com/showTask?id=3D4374820959&utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]
+Homeroom Activities (quarterly)=E2=AC=A4Inbox
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#project/2247375474]=20
+[https://todoist.com/showTask?id=3D4342427040&utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]
+Science edit and record (video)=E2=AC=A4Inbox
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#project/2247375474]=20
+[https://todoist.com/showTask?id=3D4381250230&utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]
+Mapeh (health)=E2=AC=A4Inbox
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#project/2247375474]=20
+[https://todoist.com/showTask?id=3D4342428087&utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]
+TLE edit and record (cooking and voiceover)=E2=AC=A4Inbox
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#project/2247375474]
+Reschedule your tasks
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#agenda/overdue]
+[https://todoist.com?utm_source=3Dlc&utm_medium=3Demail&utm_campaign=3Ddail=
+yDigest#agenda/overdue]
+Or=E2=80=A6 give yourself the liberty to declare to-do list bankruptcy
+[https://blog.doist.com/todo-list-bankruptcy/?utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3DdailyDigest]=20
+and start from scratch!
+
+Stronk=E2=80=99s Productivity Stats0Tasks completed yesterday6Tasks complet=
+ed to date0
+Days of Daily Goal StreakThe right productivity method can make a huge
+difference in the way you work. Discover your ideal system with this 2-minu=
+te
+quiz:Take the quiz
+[https://doist.typeform.com/to/nqf2kj?utm_source=3Dlc&utm_medium=3Demail&ut=
+m_campaign=3DdailyDigest]
+[https://doist.typeform.com/to/nqf2kj?utm_source=3Dlc&utm_medium=3Demail&ut=
+m_campaign=3DdailyDigest]
+Todoist tip of the day[Android] Todoist has 2 home screen widgets: add task=
+ and
+task view.Learn more
+[https://get.todoist.help/hc/articles/206408179?utm_source=3Dlc&utm_medium=
+=3Demail&utm_campaign=3DdailyDigest]
+[https://get.todoist.help/hc/articles/206408179?utm_source=3Dlc&utm_medium=
+=3Demail&utm_campaign=3DdailyDigest]
+Todoist tip of the day[Android] Todoist has 2 home screen widgets: add task=
+ and
+task view.Learn more
+[https://get.todoist.help/hc/articles/206408179?utm_source=3Dlc&utm_medium=
+=3Demail&utm_campaign=3DdailyDigest]
+[https://get.todoist.help/hc/articles/206408179?utm_source=3Dlc&utm_medium=
+=3Demail&utm_campaign=3DdailyDigest]
+Step-by-Step Templates for All Your 2021 GoalsRead on the Doist blog
+[https://blog.doist.com/2021-goals-templates/?utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3Ddaily_digest]
+[https://blog.doist.com/2021-goals-templates/?utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3Ddaily_digest]
+[https://blog.doist.com/2021-goals-templates/?utm_source=3Dlc&utm_medium=3D=
+email&utm_campaign=3Ddaily_digest]
+More features =3D more peace of mind. Todoist Premium is only $3/month
+[https://todoist.com/premium?utm_source=3Dlc&utm_medium=3Demail&utm_campaig=
+n=3DdailyDigest]
+.
+
+[https://twitter.com/todoist] [https://www.facebook.com/Todoist/]=20
+[https://www.youtube.com/channel/UCQ_61yRKscCnkIJBPoR15EA]Blog
+[https://blog.doist.com/]|Download Apps [https://todoist.com/downloads]|Help
+Center [https://get.todoist.help/hc]Unsubscribe from future emails
+[https://todoist.com/unsubscribe?m_type=3D3&token=3DeyJ0eXAiOiJKV1QiLCJhbGc=
+iOiJIUzI1NiJ9.eyJ1aWQiOjMwNDY5NzA3LCJqdGkiOiJiWG13SlpRRCIsImV4cCI6MTYwNzU1N=
+zY4Nn0.raxc8GpJisTe-7OrGjt39zftKysNPyM1o3I1rXhxQvM]
+Doist Inc. 2100 Geng Road, Suite 210 Palo Alto, CA94303 USSent to=20
+patriogabrielpatdu@gmail.com=
+
+--0431fd69365f8b4ae16c5ff0ba838027a1868fcb772176d2c5cf24414415
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html lang=3D"en"><head><meta data-react-helmet=3D"true" nam=
+e=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"/><style =
+data-react-helmet=3D"true" data-component=3D"Layout">body {
+  line-height: 1;
+  color: #202020;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body,
+td,
+input,
+textarea,
+select {
+  font-family: Helvetica, Arial, sans-serif;
+}
+table,
+td {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+#outlook a {
+  padding: 0;
+}
+.ReadMsgBody {
+  width: 100%;
+}
+.ExternalClass {
+  width: 100%;
+}
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+  line-height: 100%;
+}
+img {
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+}
+.ios-links a {
+  color: #e44232 !important;
+  text-decoration: none !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 601px) {
+  .nonFullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .fullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 600px) {
+  .fullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .nonFullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+/* < 480px */
+/* < 768 px */
+/* < 1120px px */
+@media (max-width: 1120px) {
+  .heading3Xl {
+    font-size: 76px !important;
+    line-height: 79.8px !important;
+  }
+  .heading2Xl {
+    font-size: 52px !important;
+    line-height: 57.2px !important;
+  }
+  .headingXl {
+    font-size: 40px !important;
+    line-height: 46px !important;
+  }
+  .headingLg {
+    font-size: 30px !important;
+    line-height: 34.5px !important;
+  }
+}
+@media (max-width: 768px) {
+  .heading3Xl {
+    font-size: 60px !important;
+    line-height: 63px !important;
+  }
+  .heading2Xl {
+    font-size: 44px !important;
+    line-height: 48.4px !important;
+  }
+  .headingXl {
+    font-size: 32px !important;
+    line-height: 36.8px !important;
+  }
+  .headingLg {
+    font-size: 26px !important;
+    line-height: 29.9px !important;
+  }
+  .headingMd {
+    font-size: 22px !important;
+    line-height: 29.7 !important;
+  }
+  .headingSm {
+    font-size: 19px !important;
+    line-height: 25.65px !important;
+  }
+}
+@media (max-width: 480px) {
+  .heading3Xl {
+    font-size: 44px !important;
+    line-height: 50.6px !important;
+  }
+  .heading2Xl {
+    font-size: 32px !important;
+    line-height: 36.8px !important;
+  }
+  .headingXl {
+    font-size: 28px !important;
+    line-height: 32.2px !important;
+  }
+  .headingLg {
+    font-size: 24px !important;
+    line-height: 27.6px !important;
+  }
+  .headingMd {
+    font-size: 20px !important;
+    line-height: 27px !important;
+  }
+  .headingSm {
+    font-size: 18px !important;
+    line-height: 24.3px !important;
+  }
+}
+@media (max-width: 768px) {
+  .bodyLg {
+    font-size: 18px !important;
+    line-height: 27px !important;
+  }
+  .bodyProse {
+    font-size: 17px !important;
+    line-height: 29.75px !important;
+  }
+}
+@media (max-width: 480px) {
+  .bodyLg {
+    font-size: 17px !important;
+    line-height: 25.5px !important;
+  }
+  .bodyMd {
+    font-size: 15px !important;
+    line-height: 22.5px !important;
+  }
+  .bodyProse {
+    font-size: 16px !important;
+    line-height: 28px !important;
+  }
+}
+@media (max-width: 768px) {
+  .blockquoteLg {
+    font-size: 21px !important;
+    line-height: 33.6px !important;
+  }
+}
+html {
+  background-color: #f5f5f5;
+}
+</style><style data-react-helmet=3D"true" data-component=3D"TableDiv">
+                            @media (max-width: 480px) {
+                                #headerSpacing {
+                                    padding: 0 !important;
+                                    mso-padding-alt: 0 !important;
+                                }
+                            }
+                        </style><style data-react-helmet=3D"true" data-comp=
+onent=3D"TableDiv">
+                            @media (max-width: 480px) {
+                                #layoutTdLogo {
+                                    padding: 24px 24px 48px !important;
+                                    mso-padding-alt: 24px 24px 48px !import=
+ant;
+                                }
+                            }
+                        </style><style data-react-helmet=3D"true" data-comp=
+onent=3D"ProductivityStats">@media (min-width: 601px) {
+  .nonFullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .fullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 600px) {
+  .fullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .nonFullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+#statsColumn > tbody > tr > td.withDivider {
+  border-right: 1px solid #cccccc;
+}
+@media (max-width: 480px) {
+  #statsColumn > thead {
+    display: none;
+  }
+  #statsColumn > tbody > tr > td {
+    width: 100% !important;
+    padding: 12px 0 0 !important;
+  }
+  #statsColumn > tbody > tr > td.withDivider {
+    border-right: none;
+  }
+  #statsColumn > tbody > tr > td.withDivider:after {
+    width: 90px;
+    height: 1px;
+    content: '';
+    display: inline-block;
+    border-bottom: 1px solid #cccccc;
+  }
+}
+</style><style data-react-helmet=3D"true" data-component=3D"TipOfDay">@medi=
+a (min-width: 601px) {
+  .nonFullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .fullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 600px) {
+  .fullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .nonFullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 480px) {
+  #tipCopy {
+    padding-top: 32px;
+  }
+}
+</style><style data-react-helmet=3D"true" data-component=3D"BeigeCTA">@medi=
+a (min-width: 601px) {
+  .nonFullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .fullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 600px) {
+  .fullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .nonFullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 480px) {
+  .beigeCTA td {
+    text-align: left;
+  }
+}
+</style><style data-react-helmet=3D"true" data-component=3D"TableDiv">
+                            @media (max-width: 480px) {
+                                #layoutPaddingsContainer {
+                                    padding: 0 24px 24px !important;
+                                    mso-padding-alt: 0 24px 24px !important;
+                                }
+                            }
+                        </style><style data-react-helmet=3D"true" data-comp=
+onent=3D"Columns">@media (min-width: 601px) {
+  .nonFullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .fullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 600px) {
+  .fullwidthOnly {
+    msohide: all !important;
+    display: none !important;
+  }
+  .nonFullwidthOnly {
+    msohide: none !important;
+    display: block !important;
+  }
+}
+@media (max-width: 480px) {
+  .tableColumnsLayout.responsive > tbody > tr > td {
+    display: block !important;
+  }
+}
+@media (max-width: 480px) {
+  .tableColumnsLayout.responsiveReverse > tbody > tr.rowNormal {
+    display: none !important;
+  }
+  .tableColumnsLayout.responsiveReverse > tbody > tr.rowReversed {
+    display: block !important;
+  }
+  .tableColumnsLayout.responsiveReverse > tbody > tr.rowReversed > td {
+    display: block !important;
+  }
+}
+</style><title data-react-helmet=3D"true">Stronk=E2=80=99s task(s) for 3 De=
+c =E2=86=92 6 overdue</title></head><body><div id=3D"__next"><p style=3D"co=
+lor:transparent;display:none;height:0;max-height:0;max-width:0;opacity:0;ov=
+erflow:hidden;mso-hide:all;visibility:hidden;width:0">Start the day feeling=
+ calm and in control.</p><table cellPadding=3D"0" cellSpacing=3D"0" style=
+=3D"border:0;width:100%;margin-left:auto;margin-right:auto"><tbody><tr><td =
+align=3D"center" class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sa=
+ns-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-=
+weight:400;color:#202020;background-color:#f5f5f5"><table cellPadding=3D"0"=
+ cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td id=3D"headerSpacing" c=
+lass=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:body=
+Md;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#=
+202020;padding:48px 0 0;mso-padding-alt:48px 0 0"></td></tr></tbody></table=
+><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;background-co=
+lor:#ffffff;border-radius:4px"><tbody><tr><td class=3D"bodyMd" style=3D"fon=
+t-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-heigh=
+t:24px;letter-spacing:0;font-weight:400;width:600px;color:#202020"><table c=
+ellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td id=3D"=
+layoutTdLogo" class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-=
+serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-wei=
+ght:400;color:#202020;padding:24px 32px 48px;mso-padding-alt:24px 32px 48px=
+"><img width=3D"112" src=3D"https://todoist.doist-emails.com/_next/static/i=
+mages/logo@2x_7b7f62e1d367ee08c9aceec94c3b9db3.jpg"/></td></tr></tbody></ta=
+ble><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:100%=
+"><tbody><tr><td id=3D"layoutPaddingsContainer" class=3D"bodyMd" style=3D"f=
+ont-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-hei=
+ght:24px;letter-spacing:0;font-weight:400;color:#202020;padding:0 32px 32px=
+;mso-padding-alt:0 32px 32px"><table cellPadding=3D"0" cellSpacing=3D"0" st=
+yle=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helve=
+tica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-=
+spacing:0;font-weight:400;color:#202020"><table cellPadding=3D"0" cellSpaci=
+ng=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-f=
+amily:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:2=
+4px;letter-spacing:0;font-weight:400;color:#202020">Hi Stronk,</td></tr></t=
+body></table><p style=3D"name:bodyMd;font-size:16px;line-height:24px;letter=
+-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;color:#=
+202020" class=3D"bodyMd">You have <span style=3D"font-weight:bold">6</span>=
+ tasks waiting to be tackled. Let=E2=80=99s do this =F0=9F=92=AA</p></td></=
+tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"bord=
+er:0;width:100%"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helve=
+tica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-=
+spacing:0;font-weight:400;color:#202020;padding:32px 0 0;mso-padding-alt:32=
+px 0 0"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbod=
+y><tr><td class=3D"headingSm" style=3D"font-family:Helvetica, Arial, sans-s=
+erif;name:headingSm;font-size:20px;line-height:27px;letter-spacing:0;font-w=
+eight:600;color:#202020">Overdue</td></tr></tbody></table><table cellPaddin=
+g=3D"0" cellSpacing=3D"0" style=3D"border:0;width:100%"><tbody><tr><td clas=
+s=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;=
+font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202=
+020;padding:24px 0 0;mso-padding-alt:24px 0 0"><table cellPadding=3D"0" cel=
+lSpacing=3D"0" style=3D"border:0;width:100%;border-bottom:1px solid #d8d8d8=
+"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sa=
+ns-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-=
+weight:400;color:#202020"><table cellPadding=3D"0" cellSpacing=3D"0" style=
+=3D"border:0;width:100%;border-top:1px solid #d8d8d8"><tbody><tr><td class=
+=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;f=
+ont-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#2020=
+20;padding:12px 0;mso-padding-alt:12px 0"><table class=3D"tableColumnsLayou=
+t"><tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;l=
+ine-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Ari=
+al, sans-serif;padding:3px 8px 0 0;mso-padding-alt:3px 8px 0 0;color:#20202=
+0;vertical-align:top" class=3D"bodyMd"><a href=3D"https://em.todoist.net/ls=
+/click?upn=3DakgJ9u081up1QQ8ur5g8jCqDTw2VG7XseYuXHW3qfIJ8NLi7ARpaWM8VthcJJ8=
+2vQmsIH-2BDWTQf-2FhwhP-2B9tRqIeFfZ7B7XiGctBRQFAmsgU8mFan7q-2Frh3-2ButWTDQLZ=
+x9l4re1vGghyKW2lmuUXDkw-3D-3D8NDA_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBx=
+vKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG1XW66vhbBoOQLzm-2BZR4K6dG-2=
+F-2FHvNHBVEOpmRapndFbd-2BHHw7QkgkidlnEqv9JC7PLXecD1n-2BrgYIqB-2BGWMNUp6b4UH=
+PhSz7SBj2IkT5cSwImXc8TQOSZqABLTFS26gB-2FJ0oBPlk2yc0E75RqhUwEVKw0xnwb5kM-2B7=
+9VA82IuQ1VT8XGSMUgruJOPMsbqoef2A-3D-3D"><img width=3D"19" src=3D"https://to=
+doist.doist-emails.com/_next/static/images/checkbox-p1_9745cfbb250632d70027=
+e56781c34def.jpg"/></a></td><td style=3D"name:bodyMd;font-size:16px;line-he=
+ight:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sa=
+ns-serif;color:#202020;vertical-align:middle" class=3D"bodyMd"><table cellP=
+adding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"b=
+odyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-s=
+ize:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202020"><=
+table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td=
+ class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bo=
+dyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color=
+:#202020">TLE assignment (storing)</td></tr></tbody></table><table cellPadd=
+ing=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"body=
+Md" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size=
+:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202020;paddi=
+ng:4px 0 0;mso-padding-alt:4px 0 0"><a href=3D"https://em.todoist.net/ls/cl=
+ick?upn=3DakgJ9u081up1QQ8ur5g8jGIfJEQ424MwvEHJ0t7Bp4w9X91Y-2BiQomGZQtkvrCNE=
+jeJzmLrKZGg0jLJ9zk-2FIYuEMXevry0vm-2BbOpGuzIieHlOfjdCs230SrsfDxJgXvjVGqZFTf=
+GSKSdICUddP7RWnQ-3D-3DsNXA_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370=
+tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG-2F90DQHcJ0gN6DoAi1esMN2AjacTwcqKl=
+cD7o-2BhMpwWPplHWFPlw3eXOyizYt7q7LnQ-2F4VEZkyE3uHCESP8ZgPtD7bmTNbq9RFQUi-2F=
+mN2fHeoO5j8F73O09rZBJfDymGWgMctb0M0n9Y1Zckl3J-2BA5AkIcII4RGkVQOSn7HCl-2F-2F=
+CE3cWqsw8L3FogMQGxathUQ-3D-3D" style=3D"text-decoration:none"><table class=
+=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td style=3D"font-si=
+ze:12px;color:#b8b8b8;padding:0 4px 2px 0;mso-padding-alt:0 4px 2px 0" clas=
+s=3D"">=E2=AC=A4</td><td style=3D"name:bodySm;font-size:12px;line-height:16=
+.2px;letter-spacing:0.02em;font-weight:400;font-family:Helvetica, Arial, sa=
+ns-serif;color:#616161;vertical-align:middle" class=3D"bodySm">Inbox</td></=
+tr></tbody></table></a></td></tr></tbody></table></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table><table cellPadding=3D"0=
+" cellSpacing=3D"0" style=3D"border:0;width:100%;border-top:1px solid #d8d8=
+d8"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, =
+sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;fon=
+t-weight:400;color:#202020;padding:12px 0;mso-padding-alt:12px 0"><table cl=
+ass=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td style=3D"name=
+:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;fo=
+nt-family:Helvetica, Arial, sans-serif;padding:3px 8px 0 0;mso-padding-alt:=
+3px 8px 0 0;color:#202020;vertical-align:top" class=3D"bodyMd"><a href=3D"h=
+ttps://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jCqDTw2VG7XseYuXHW=
+3qfIJwZbYVq2i98Ra4XJd7ZH-2BxCVC3RcFYbWo11aYpCBMEoJyGvjaJ8rmBdO5rXg8JdauLtwb=
+piE-2B0AIm9txrzgafLdqkXxaUSXpXTy-2FzCO-2FbR-2Bw-3D-3Duz4U_SDrKeVA2pts3JIkQf=
+ztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG2xQ=
+7LPktoVNKRWHvON8Uh7lJe0dKg-2FqjKvCFjdlpZtJJCmhAF5Jesa-2FWfzkEwpCvixrqgBHX9M=
+3KUfA8RmnTCJ0FF6ZyqqJqToPfa-2FqLuhoUUOB-2FUCJPfdjmI-2Bujr-2BFCFzNE-2FgxJ0q3=
+0paxopuOADAeYeXs1CxhXIz8-2BKPOlvORSg4f9BO8GNyGWA9NqOQ8vw-3D-3D"><img width=
+=3D"19" src=3D"https://todoist.doist-emails.com/_next/static/images/checkbo=
+x-p1_9745cfbb250632d70027e56781c34def.jpg"/></a></td><td style=3D"name:body=
+Md;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-fa=
+mily:Helvetica, Arial, sans-serif;color:#202020;vertical-align:middle" clas=
+s=3D"bodyMd"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0">=
+<tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans=
+-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-we=
+ight:400;color:#202020"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D=
+"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, =
+Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacin=
+g:0;font-weight:400;color:#202020">Filipino</td></tr></tbody></table><table=
+ cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td clas=
+s=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;=
+font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202=
+020;padding:4px 0 0;mso-padding-alt:4px 0 0"><a href=3D"https://em.todoist.=
+net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jGIfJEQ424MwvEHJ0t7Bp4w9X91Y-2BiQomG=
+ZQtkvrCNEjeJzmLrKZGg0jLJ9zk-2FIYuEMXevry0vm-2BbOpGuzIieHlOfjdCs230SrsfDxJgX=
+vjVGqZFTfGSKSdICUddP7RWnQ-3D-3DgBvh_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzay=
+BxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG0Lu5s0ItY5Y5vRzTychdYmd89=
+WMOg2qR2-2FOfPz92kkNVI0zT6RiPJUIWGR8VAkMOJJDT0wkMqF6-2FNLKq-2FyCdnXtm4EURW2=
+hlKQJ2WGcjP9mDBFL-2FUKhWA-2F-2FnorOUnz5o1yNUHR1b-2FjkB1VrO9PB3z8kdPOn9mDOl5=
+qDtf-2BbBTwANC-2FZLgTg302KLF-2Fh1-2B5DpQ-3D-3D" style=3D"text-decoration:no=
+ne"><table class=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td =
+style=3D"font-size:12px;color:#b8b8b8;padding:0 4px 2px 0;mso-padding-alt:0=
+ 4px 2px 0" class=3D"">=E2=AC=A4</td><td style=3D"name:bodySm;font-size:12p=
+x;line-height:16.2px;letter-spacing:0.02em;font-weight:400;font-family:Helv=
+etica, Arial, sans-serif;color:#616161;vertical-align:middle" class=3D"body=
+Sm">Inbox</td></tr></tbody></table></a></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table><table =
+cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:100%;border-top=
+:1px solid #d8d8d8"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:He=
+lvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;lett=
+er-spacing:0;font-weight:400;color:#202020;padding:12px 0;mso-padding-alt:1=
+2px 0"><table class=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><=
+td style=3D"name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;fo=
+nt-weight:400;font-family:Helvetica, Arial, sans-serif;padding:3px 8px 0 0;=
+mso-padding-alt:3px 8px 0 0;color:#202020;vertical-align:top" class=3D"body=
+Md"><a href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jC=
+qDTw2VG7XseYuXHW3qfIJgQpJdyX2NPiudeiZgiEXjWtQCo8YfUFW0kVklm-2BEsTL2Ysfc4z6E=
+R0C1Lt7YSLnXKdFK1nmVbWBEPyxXVE9xlJyo06kqLoRCuT02vHQ50Ug-3D-3DMkID_SDrKeVA2p=
+ts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkj=
+Q4ctG9hEFZq7r97zqfaxyvDQ3SY40SUt4SIIB3t4RxVjYlNPIjQuv3uhsSidxm8W8LQtm9LBoYw=
+J4-2BAlCzkKE0NSz7h-2BtrN8b6Swp2u1YsiCYCf8IDR3qgsC1VwChqN2hilgZl0SbcJpjyF6QK=
+NbQoAd0WhKKCwT7o8QepDc9tvIV4jE6-2BKJD2k5AtjLWf9ALh62Ww-3D-3D"><img width=3D=
+"19" src=3D"https://todoist.doist-emails.com/_next/static/images/checkbox-p=
+1_9745cfbb250632d70027e56781c34def.jpg"/></a></td><td style=3D"name:bodyMd;=
+font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-famil=
+y:Helvetica, Arial, sans-serif;color:#202020;vertical-align:middle" class=
+=3D"bodyMd"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><=
+tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-=
+serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-wei=
+ght:400;color:#202020"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"=
+border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, A=
+rial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing=
+:0;font-weight:400;color:#202020">Homeroom Activities (quarterly)</td></tr>=
+</tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:=
+0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, s=
+ans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font=
+-weight:400;color:#202020;padding:4px 0 0;mso-padding-alt:4px 0 0"><a href=
+=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jGIfJEQ424Mwv=
+EHJ0t7Bp4w9X91Y-2BiQomGZQtkvrCNEjeJzmLrKZGg0jLJ9zk-2FIYuEMXevry0vm-2BbOpGuz=
+IieHlOfjdCs230SrsfDxJgXvjVGqZFTfGSKSdICUddP7RWnQ-3D-3DRt4i_SDrKeVA2pts3JIkQ=
+fztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG7W=
+bm-2Bo3KHv7LVUeZuwkiY-2FqW5EInRMFyze5yLHLfiO78L6R-2FB8iBlQ66M1WrMGfqEJlsLPw=
+bQNCGhAqhQnfrUkNqyfiJA6ZKCdjilA2T6oswPxWQDIZ-2FnwxhlBXUxmYaZropiNBXyyup73vT=
+Fz1RtV6nvkAK-2FesOrzONAd-2Bodi0BZYat0wfCIMw8xjkmpxufw-3D-3D" style=3D"text-=
+decoration:none"><table class=3D"tableColumnsLayout"><tbody><tr class=3D"ro=
+wNormal"><td style=3D"font-size:12px;color:#b8b8b8;padding:0 4px 2px 0;mso-=
+padding-alt:0 4px 2px 0" class=3D"">=E2=AC=A4</td><td style=3D"name:bodySm;=
+font-size:12px;line-height:16.2px;letter-spacing:0.02em;font-weight:400;fon=
+t-family:Helvetica, Arial, sans-serif;color:#616161;vertical-align:middle" =
+class=3D"bodySm">Inbox</td></tr></tbody></table></a></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:10=
+0%;border-top:1px solid #d8d8d8"><tbody><tr><td class=3D"bodyMd" style=3D"f=
+ont-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-hei=
+ght:24px;letter-spacing:0;font-weight:400;color:#202020;padding:12px 0;mso-=
+padding-alt:12px 0"><table class=3D"tableColumnsLayout"><tbody><tr class=3D=
+"rowNormal"><td style=3D"name:bodyMd;font-size:16px;line-height:24px;letter=
+-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;padding=
+:3px 8px 0 0;mso-padding-alt:3px 8px 0 0;color:#202020;vertical-align:top" =
+class=3D"bodyMd"><a href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081=
+up1QQ8ur5g8jCqDTw2VG7XseYuXHW3qfILoDrc73DiUJg2xjw6Y8zpTWKqeWsI2VcXYFC5jNEEz=
+WtsYcOn6azFd9rmIF2h59B0Jx3gglcD526k3dI1-2Fd-2ByQpCry5QTXxcDFqqMAd8WstA-3D-3=
+D0sH8_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oR=
+mG3lvN5Im4lRmkjQ4ctGxw5s-2BJ-2F2VVQxwmKtkFYND27WYCtvJpKtfq5dWhfWX8FkjKO-2FV=
+IvhZfcJmEpf7PdHwlsFwOMtBhH-2FRQRgpBofEV89I0ggQerOI87u987H0fVvfXxkEDZW7BB6ff=
+SQ-2FlJZRokzHY-2FaUJvZmwk-2ByTEiKOgTBjbgMOFS-2BH4BZ22GY-2BnNhJ99e55XzZ8-2FR=
+8Dz8qH1Q-3D-3D"><img width=3D"19" src=3D"https://todoist.doist-emails.com/_=
+next/static/images/checkbox-p1_9745cfbb250632d70027e56781c34def.jpg"/></a><=
+/td><td style=3D"name:bodyMd;font-size:16px;line-height:24px;letter-spacing=
+:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;color:#202020;v=
+ertical-align:middle" class=3D"bodyMd"><table cellPadding=3D"0" cellSpacing=
+=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-fam=
+ily:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24p=
+x;letter-spacing:0;font-weight:400;color:#202020"><table cellPadding=3D"0" =
+cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=
+=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;lin=
+e-height:24px;letter-spacing:0;font-weight:400;color:#202020">Science edit =
+and record (video)</td></tr></tbody></table><table cellPadding=3D"0" cellSp=
+acing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"fon=
+t-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-heigh=
+t:24px;letter-spacing:0;font-weight:400;color:#202020;padding:4px 0 0;mso-p=
+adding-alt:4px 0 0"><a href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u=
+081up1QQ8ur5g8jGIfJEQ424MwvEHJ0t7Bp4w9X91Y-2BiQomGZQtkvrCNEjeJzmLrKZGg0jLJ9=
+zk-2FIYuEMXevry0vm-2BbOpGuzIieHlOfjdCs230SrsfDxJgXvjVGqZFTfGSKSdICUddP7RWnQ=
+-3D-3DO1Rr_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5=
+YJ2oRmG3lvN5Im4lRmkjQ4ctG8RQFMFnQtZBWms5ELTzMlumeCbsGz9g8n8VAzF9rS4L6ZstsaV=
+tqDDlaoqujDBfvhl0RKwfr5IveMEMh7KfKL-2FuLenJgw95qLSVqdp52JL6Bw1szIQZpAN2MH1J=
+6c3MApA-2BrnTYRfK5hel0nglFtu-2BbX8oHTZXPdnfk8-2FyTPx6BsOepz3NeDJ5y646tuhf5B=
+g-3D-3D" style=3D"text-decoration:none"><table class=3D"tableColumnsLayout"=
+><tbody><tr class=3D"rowNormal"><td style=3D"font-size:12px;color:#b8b8b8;p=
+adding:0 4px 2px 0;mso-padding-alt:0 4px 2px 0" class=3D"">=E2=AC=A4</td><t=
+d style=3D"name:bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.0=
+2em;font-weight:400;font-family:Helvetica, Arial, sans-serif;color:#616161;=
+vertical-align:middle" class=3D"bodySm">Inbox</td></tr></tbody></table></a>=
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" sty=
+le=3D"border:0;width:100%;border-top:1px solid #d8d8d8"><tbody><tr><td clas=
+s=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;=
+font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202=
+020;padding:12px 0;mso-padding-alt:12px 0"><table class=3D"tableColumnsLayo=
+ut"><tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;=
+line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Ar=
+ial, sans-serif;padding:3px 8px 0 0;mso-padding-alt:3px 8px 0 0;color:#2020=
+20;vertical-align:top" class=3D"bodyMd"><a href=3D"https://em.todoist.net/l=
+s/click?upn=3DakgJ9u081up1QQ8ur5g8jCqDTw2VG7XseYuXHW3qfILAYESiDyeFMK1k60K30=
+beAKwa0N8kibcx8be-2Fw6VlGrBkJ4fOv9Sb3Jw9iQC2OxcZUbVoMgWrqxfx7slRhuBhT7sRFU2=
+QbgC5wS54PVTwSyQ-3D-3Dllif_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370=
+tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctGxuMUuXmCfEhL5gtWkxndgdPnNSasXmzEXD=
+bwga6W6pb6Ar4Sb6AuL33ywxjBMZ1vIPIHvh1X7WvF0knZLzwkuTQkza8vwNebbyGzFijQDcD-2=
+Fk-2BotwM3wrZ3eEyCBqptNfz-2BD20wXsjp4pEhAaTYRA3LMrLM-2F4FZHojn0AhhirJrwauU7=
+iYyVzKqSJFztznhUQ-3D-3D"><img width=3D"19" src=3D"https://todoist.doist-ema=
+ils.com/_next/static/images/checkbox-p1_9745cfbb250632d70027e56781c34def.jp=
+g"/></a></td><td style=3D"name:bodyMd;font-size:16px;line-height:24px;lette=
+r-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;color:=
+#202020;vertical-align:middle" class=3D"bodyMd"><table cellPadding=3D"0" ce=
+llSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D=
+"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-h=
+eight:24px;letter-spacing:0;font-weight:400;color:#202020"><table cellPaddi=
+ng=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyM=
+d" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:=
+16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202020">Mapeh=
+ (health)</td></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"=
+0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:=
+Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;le=
+tter-spacing:0;font-weight:400;color:#202020;padding:4px 0 0;mso-padding-al=
+t:4px 0 0"><a href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8=
+ur5g8jGIfJEQ424MwvEHJ0t7Bp4w9X91Y-2BiQomGZQtkvrCNEjeJzmLrKZGg0jLJ9zk-2FIYuE=
+MXevry0vm-2BbOpGuzIieHlOfjdCs230SrsfDxJgXvjVGqZFTfGSKSdICUddP7RWnQ-3D-3D1vt=
+g_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3l=
+vN5Im4lRmkjQ4ctG86IQbJNBXiZwgFcj8PcKsLphYQ8PKn0eDF0mSisZ6K6Kjzq93pg5nDH9s8b=
+DRTNkfuuKHAVJlwL-2B2El0d6p8mNKRGIdnv8gT5TRrw1Zu9o0QXbJK9pIDFFLIy-2BtyN-2B4-=
+2FrLSmU-2BPaUVMQlcSIgd88-2BKb8oBHOzGINtl4CWTAHTFzghz7iSu99e4BuonAHQvoDw-3D-=
+3D" style=3D"text-decoration:none"><table class=3D"tableColumnsLayout"><tbo=
+dy><tr class=3D"rowNormal"><td style=3D"font-size:12px;color:#b8b8b8;paddin=
+g:0 4px 2px 0;mso-padding-alt:0 4px 2px 0" class=3D"">=E2=AC=A4</td><td sty=
+le=3D"name:bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.02em;f=
+ont-weight:400;font-family:Helvetica, Arial, sans-serif;color:#616161;verti=
+cal-align:middle" class=3D"bodySm">Inbox</td></tr></tbody></table></a></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D=
+"border:0;width:100%;border-top:1px solid #d8d8d8"><tbody><tr><td class=3D"=
+bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-=
+size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202020;p=
+adding:12px 0;mso-padding-alt:12px 0"><table class=3D"tableColumnsLayout"><=
+tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;line-=
+height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, =
+sans-serif;padding:3px 8px 0 0;mso-padding-alt:3px 8px 0 0;color:#202020;ve=
+rtical-align:top" class=3D"bodyMd"><a href=3D"https://em.todoist.net/ls/cli=
+ck?upn=3DakgJ9u081up1QQ8ur5g8jCqDTw2VG7XseYuXHW3qfIJyreS-2Bk5EbVHlqqc6qwnKd=
+kylaMRETQklcdeDohcY8x0Dmrp2h2uAYqxk3q1l1jgEtGUH50bjekeGqfqEAvw7DXxyRJZBhjmL=
+gytxQAozfBg-3D-3DeT1l_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-=
+2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG0u-2F-2FsI8PTYWKRT2sT8v-2BhyxD-2B6T8vuT=
+KwH62VorppBMivUhs2vKoeJGOeOSG-2BpTwrS3Dtjgfk4IkiXSFxO1r9gBzyRw8zsvNQHc0OtvF=
+VE4e5avCHAxl4yCqgBk3ghxVVA5KOhR-2FF-2FN88g34V-2BncOlcm0yHGqFPoxVcuqg1Gs9MoE=
+ztEyJUCtCTKxrDYaJGcA-3D-3D"><img width=3D"19" src=3D"https://todoist.doist-=
+emails.com/_next/static/images/checkbox-p1_9745cfbb250632d70027e56781c34def=
+.jpg"/></a></td><td style=3D"name:bodyMd;font-size:16px;line-height:24px;le=
+tter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;col=
+or:#202020;vertical-align:middle" class=3D"bodyMd"><table cellPadding=3D"0"=
+ cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=
+=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;lin=
+e-height:24px;letter-spacing:0;font-weight:400;color:#202020"><table cellPa=
+dding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bo=
+dyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-si=
+ze:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#202020">TL=
+E edit and record (cooking and voiceover)</td></tr></tbody></table><table c=
+ellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=
+=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;f=
+ont-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#2020=
+20;padding:4px 0 0;mso-padding-alt:4px 0 0"><a href=3D"https://em.todoist.n=
+et/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jGIfJEQ424MwvEHJ0t7Bp4w9X91Y-2BiQomGZ=
+QtkvrCNEjeJzmLrKZGg0jLJ9zk-2FIYuEMXevry0vm-2BbOpGuzIieHlOfjdCs230SrsfDxJgXv=
+jVGqZFTfGSKSdICUddP7RWnQ-3D-3D0Diz_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayB=
+xvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG2lNyDm5N-2FwIhKCYPv7j8ZyNW=
+su1381UopcdM1nCHEiXP-2FtRpfPqe-2BSA-2B6AR2HFIa72cqrS5CxXht9qF9IiM-2FoqwxjLd=
+Eq1IujKzo0Jx3uDW1kEJfUESuIvh7b6MX6evtuS7VapIR-2B8lMlUNvAesIoKQJ-2FoY69EQnNh=
+R0aXLox7FDA1NpnddBG0cPwf1DU-2BNNw-3D-3D" style=3D"text-decoration:none"><ta=
+ble class=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td style=
+=3D"font-size:12px;color:#b8b8b8;padding:0 4px 2px 0;mso-padding-alt:0 4px =
+2px 0" class=3D"">=E2=AC=A4</td><td style=3D"name:bodySm;font-size:12px;lin=
+e-height:16.2px;letter-spacing:0.02em;font-weight:400;font-family:Helvetica=
+, Arial, sans-serif;color:#616161;vertical-align:middle" class=3D"bodySm">I=
+nbox</td></tr></tbody></table></a></td></tr></tbody></table></td></tr></tbo=
+dy></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></=
+tbody></table></td></tr></tbody></table><table cellPadding=3D"0" cellSpacin=
+g=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-fa=
+mily:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24=
+px;letter-spacing:0;font-weight:400;color:#202020;padding:24px 0 0;mso-padd=
+ing-alt:24px 0 0"></td></tr></tbody></table><a rel=3D"noopener noreferrer" =
+target=3D"_blank" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up=
+1QQ8ur5g8jGIfJEQ424MwvEHJ0t7Bp4w9X91Y-2BiQomGZQtkvrCNEjeJzmLrKZGg0jLJ9zk-2F=
+IYuEMXevry0vm-2BbOpGuzIieHnHJhS63bcyamAl31dB-2BgxvEcZoIzbihsELyZUQNfQO6Q-3D=
+-3DdZps_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2=
+oRmG3lvN5Im4lRmkjQ4ctG9axBLafLRBGjv2SlzOA9MRmzB8XNuVFILGXFea5Az5iLm0lK917sc=
+3tj2kg8ne0WjxC6KDxZtxbmiAf-2BeS2AR6lCKSU37fcVSwtd2mgg-2Br7U1KE41MKQWIgqC8sl=
+D3-2FZ-2FXjnEyEDJP5GMCq9khBhA8lexFBONV6h4ud-2B-2B0g4kGV10CFOizAJyvj-2FFHF7N=
+Y87w-3D-3D" style=3D"text-decoration:none;name:bodyMd;font-size:16px;line-h=
+eight:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, s=
+ans-serif;display:block"><span class=3D"bodyMd" style=3D"color:#316fea;text=
+-decoration:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing=
+:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;display:block">=
+<table class=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td styl=
+e=3D"name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weig=
+ht:400;font-family:Helvetica, Arial, sans-serif;padding:0 8px 0 0;mso-paddi=
+ng-alt:0 8px 0 0;color:#202020;vertical-align:middle" class=3D"bodyMd"><img=
+ width=3D"14" src=3D"https://todoist.doist-emails.com/_next/static/images/a=
+rrow@2x_c89c79312bbeca7d2b1f2145be4d5672.jpg"/></td><td style=3D"name:bodyM=
+d;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-fam=
+ily:Helvetica, Arial, sans-serif;color:#316fea;vertical-align:middle" class=
+=3D"bodyMd"><a rel=3D"noopener noreferrer" target=3D"_blank" href=3D"https:=
+//em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jGIfJEQ424MwvEHJ0t7Bp4w=
+9X91Y-2BiQomGZQtkvrCNEjeJzmLrKZGg0jLJ9zk-2FIYuEMXevry0vm-2BbOpGuzIieHnHJhS6=
+3bcyamAl31dB-2BgxvEcZoIzbihsELyZUQNfQO6Q-3D-3DI96M_SDrKeVA2pts3JIkQfztFyDwj=
+3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG6MFnfjRPNU=
+PuTcH0hjMqxl9bF543n5GFLTENK90CXMKkIY6pzDdy1gSTWz-2BrTmbX9L1wjdu5E9GbHiYvpTL=
+920h7Zu-2BHs9kBVDOneNf-2F2xRh5Hh525GntX1MioYVZPRX-2BVIBQnXUumg5T6IjemkWBu4p=
+IJDfDG0OhnhG-2FBF7BRJ0p5jeYjn5z-2F9WCr2NCYOUw-3D-3D" style=3D"text-decorati=
+on:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-w=
+eight:400;font-family:Helvetica, Arial, sans-serif"><span class=3D"bodyMd" =
+style=3D"color:#316fea;text-decoration:none;name:bodyMd;font-size:16px;line=
+-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial,=
+ sans-serif">Reschedule your tasks</span></a></td></tr></tbody></table></sp=
+an></a></td></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0"=
+ style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:He=
+lvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;lett=
+er-spacing:0;font-weight:400;color:#202020;padding:16px 0 0;mso-padding-alt=
+:16px 0 0"><p style=3D"name:bodySm;font-size:12px;line-height:16.2px;letter=
+-spacing:0.02em;font-weight:400;font-family:Helvetica, Arial, sans-serif;co=
+lor:#202020" class=3D"bodySm">Or=E2=80=A6 give yourself the liberty to=20
+        <a href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5=
+g8jMDKbl4TtrgP-2FwUwHxQsnHV2BILT69dWHeduvlAYshwyKzvKsWXrkJv74OgzxEUFGf2yV89=
+OR5Y1yR-2B20pxkxQx6M7LUwugKCKaps5AmXvQ3oUeLX73O16u36qywYFZOdA-3D-3D0Vpf_SDr=
+KeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im=
+4lRmkjQ4ctG0SzARSjPNYZRT9nWKxcJGIjGirvGxWqZXGjY-2BXvY8M5U-2FepoX-2BvQvBe2WW=
+AjvEeabwTquT9alYrUAkQW8Qn6bGQrf-2FT6XULg6mryGfVH-2F-2FUlVEitVmow92jKi0FLzNt=
+l139zDRJBro7JV-2FzSlyv5cCxwlxh6UfniTFuzRayj2anmsPP8qAMtaC27IZbHFF3rQ-3D-3D"=
+ style=3D"text-decoration:none">
+            <span style=3D"color:#316fea">
+    declare to-do list bankruptcy</span></a> and start from scratch!</p></t=
+d></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"=
+border:0;width:100%"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:H=
+elvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;let=
+ter-spacing:0;font-weight:400;color:#202020;padding:48px 0 0;mso-padding-al=
+t:48px 0 0"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><=
+tbody><tr><td class=3D"headingSm" style=3D"font-family:Helvetica, Arial, sa=
+ns-serif;name:headingSm;font-size:20px;line-height:27px;letter-spacing:0;fo=
+nt-weight:600;color:#202020">Stronk=E2=80=99s Productivity Stats</td></tr><=
+/tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0=
+;width:100%;margin-left:auto;margin-right:auto"><tbody><tr><td align=3D"cen=
+ter" class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;nam=
+e:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;c=
+olor:#202020;padding:48px 0;mso-padding-alt:48px 0"><table class=3D"tableCo=
+lumnsLayout responsive" id=3D"statsColumn" style=3D"width:100%;text-align:c=
+enter"><thead style=3D"visibility:collapse"><tr><th style=3D"width:33.3%"><=
+/th><th style=3D"width:33.3%"></th><th style=3D"width:33.3%"></th></tr></th=
+ead><tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;=
+line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Ar=
+ial, sans-serif;vertical-align:middle;padding:0 42px;mso-padding-alt:0 42px=
+;color:#202020" class=3D"bodyMd withDivider"><img width=3D"26" src=3D"https=
+://todoist.doist-emails.com/_next/static/images/yesterday@2x_8b9597f6fe7ab5=
+76134c8e1c067d4ef7.jpg"/><table cellPadding=3D"0" cellSpacing=3D"0" style=
+=3D"border:0;width:100%;margin-left:auto;margin-right:auto"><tbody><tr><td =
+align=3D"center" class=3D"headingLg" style=3D"font-family:Helvetica, Arial,=
+ sans-serif;name:headingLg;font-size:30px;line-height:37px;letter-spacing:-=
+0.01em;font-weight:600;color:#202020;padding:8px 0;mso-padding-alt:8px 0">0=
+</td></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=
+=3D"border:0;width:100%;margin-left:auto;margin-right:auto"><tbody><tr><td =
+align=3D"center" class=3D"bodySm" style=3D"font-family:Helvetica, Arial, sa=
+ns-serif;name:bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.02e=
+m;font-weight:400;color:#616161">Tasks completed yesterday</td></tr></tbody=
+></table></td><td style=3D"name:bodyMd;font-size:16px;line-height:24px;lett=
+er-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;verti=
+cal-align:middle;padding:0 42px;mso-padding-alt:0 42px;color:#202020" class=
+=3D"bodyMd withDivider"><img width=3D"23" src=3D"https://todoist.doist-emai=
+ls.com/_next/static/images/todate@2x_501057b961e4a618ec21134f1e03196a.jpg"/=
+><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:100%;ma=
+rgin-left:auto;margin-right:auto"><tbody><tr><td align=3D"center" class=3D"=
+headingLg" style=3D"font-family:Helvetica, Arial, sans-serif;name:headingLg=
+;font-size:30px;line-height:37px;letter-spacing:-0.01em;font-weight:600;col=
+or:#202020;padding:8px 0;mso-padding-alt:8px 0">6</td></tr></tbody></table>=
+<table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:100%;mar=
+gin-left:auto;margin-right:auto"><tbody><tr><td align=3D"center" class=3D"b=
+odySm" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodySm;font-s=
+ize:12px;line-height:16.2px;letter-spacing:0.02em;font-weight:400;color:#61=
+6161">Tasks completed to date</td></tr></tbody></table></td><td style=3D"na=
+me:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;=
+font-family:Helvetica, Arial, sans-serif;vertical-align:middle;padding:0 42=
+px;mso-padding-alt:0 42px;color:#202020" class=3D"bodyMd"><img width=3D"26"=
+ src=3D"https://todoist.doist-emails.com/_next/static/images/streak@2x_e7b6=
+ab96a7378a97b8cd9ba7ff67063a.jpg"/><table cellPadding=3D"0" cellSpacing=3D"=
+0" style=3D"border:0;width:100%;margin-left:auto;margin-right:auto"><tbody>=
+<tr><td align=3D"center" class=3D"headingLg" style=3D"font-family:Helvetica=
+, Arial, sans-serif;name:headingLg;font-size:30px;line-height:37px;letter-s=
+pacing:-0.01em;font-weight:600;color:#202020;padding:8px 0;mso-padding-alt:=
+8px 0">0</td></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0=
+" style=3D"border:0;width:100%;margin-left:auto;margin-right:auto"><tbody><=
+tr><td align=3D"center" class=3D"bodySm" style=3D"font-family:Helvetica, Ar=
+ial, sans-serif;name:bodySm;font-size:12px;line-height:16.2px;letter-spacin=
+g:0.02em;font-weight:400;color:#616161">Days of Daily Goal Streak</td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"bord=
+er:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helvetica, Arial=
+, sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;f=
+ont-weight:400;color:#202020"><table cellPadding=3D"0" cellSpacing=3D"0" st=
+yle=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:Helve=
+tica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;letter-=
+spacing:0;font-weight:400;color:#202020">The right productivity method can =
+make a huge difference in the way you work. Discover your ideal system with=
+ this 2-minute quiz:</td></tr></tbody></table><table cellPadding=3D"0" cell=
+Spacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"f=
+ont-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-hei=
+ght:24px;letter-spacing:0;font-weight:400;color:#202020;padding:12px 0 0;ms=
+o-padding-alt:12px 0 0"><a target=3D"__blank" href=3D"https://em.todoist.ne=
+t/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jK6q9MtHoy2NDA9SvFv0Z3ErWevpheGxd4yBdk=
+eZK58a2gcsBGtwUS-2BlJgxV2jQ8FgHDF4MeDbYEDoindFn0saUJLBXp3go9vLHPKoBxy-2F6F8=
+2Z5DiSINMjy-2BupMG4mBdw-3D-3DkRN6_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBx=
+vKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctGwgCA7QsYu6CBRYGy3g-2BC88MEf=
+fWmxrf3SZKdZ3eWZyb3J23v3FmkaOraJ7XyZ2ih1OvbF2uRkNhtdWvO2FuyerT8ra-2Fo-2FQXy=
+SBLJgna0CeayRx4e25SbbHwyQknG68KKT1ehJ7lTFmP4R8l8i0c0xJ5Gm-2Bcs8Wpg4Ks-2FIk3=
+USZ3NTBJJ5EL8SP3VJZvJOdE5Q-3D-3D" style=3D"text-decoration:none;name:bodyMd=
+;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-fami=
+ly:Helvetica, Arial, sans-serif;display:block"><span class=3D"bodyMd" style=
+=3D"color:#316fea;text-decoration:none;name:bodyMd;font-size:16px;line-heig=
+ht:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans=
+-serif;display:block"><table class=3D"tableColumnsLayout"><tbody><tr class=
+=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;line-height:24px;let=
+ter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;padd=
+ing:0 8px 0 0;mso-padding-alt:0 8px 0 0;color:#202020;vertical-align:middle=
+" class=3D"bodyMd"><img width=3D"14" src=3D"https://todoist.doist-emails.co=
+m/_next/static/images/arrow@2x_c89c79312bbeca7d2b1f2145be4d5672.jpg"/></td>=
+<td style=3D"name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;f=
+ont-weight:400;font-family:Helvetica, Arial, sans-serif;color:#316fea;verti=
+cal-align:middle" class=3D"bodyMd"><a target=3D"__blank" href=3D"https://em=
+.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jK6q9MtHoy2NDA9SvFv0Z3ErWev=
+pheGxd4yBdkeZK58a2gcsBGtwUS-2BlJgxV2jQ8FgHDF4MeDbYEDoindFn0saUJLBXp3go9vLHP=
+KoBxy-2F6F82Z5DiSINMjy-2BupMG4mBdw-3D-3DA8VT_SDrKeVA2pts3JIkQfztFyDwj3CYmY-=
+2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG6-2Buapk25HOoZF8=
+V5bpzVaeJzvmlpRhFbU6YJFFEO7ydeIrwh2al-2FEHKN9ZAg8aUOB0YZt-2FMKJ7yUvidJwfpEV=
+Z9OuxKiIBJxz0ToeOuXVyDkluUtlvtEUEiqSP5J-2BOBNWKH4741pJppRCX85XGlM3pBgMcLymG=
+Va0d2HKPJ8BqOZQiR004GFLKt7WEoHl2-2BUQ-3D-3D" style=3D"text-decoration:none;=
+name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:40=
+0;font-family:Helvetica, Arial, sans-serif"><span class=3D"bodyMd" style=3D=
+"color:#316fea;text-decoration:none;name:bodyMd;font-size:16px;line-height:=
+24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-se=
+rif">Take the quiz</span></a></td></tr></tbody></table></span></a></td></tr=
+></tbody></table></td></tr></tbody></table><table cellPadding=3D"0" cellSpa=
+cing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyMd" style=3D"font=
+-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height=
+:24px;letter-spacing:0;font-weight:400;color:#202020;padding:32px 0 0;mso-p=
+adding-alt:32px 0 0"><table class=3D"tableColumnsLayout responsiveReverse">=
+<tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;line=
+-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial,=
+ sans-serif;color:#202020;vertical-align:middle" class=3D"bodyMd" id=3D"tip=
+Copy"><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody>=
+<tr><td class=3D"headingSm" style=3D"font-family:Helvetica, Arial, sans-ser=
+if;name:headingSm;font-size:20px;line-height:27px;letter-spacing:0;font-wei=
+ght:600;color:#202020">Todoist tip of the day</td></tr></tbody></table><tab=
+le cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td cl=
+ass=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyM=
+d;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#2=
+02020;padding:8px 0;mso-padding-alt:8px 0">[Android] Todoist has 2 home scr=
+een widgets: add task and task view.</td></tr></tbody></table><a target=3D"=
+__blank" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8=
+jBEhCZ33Z8IqL78wkIIkQqiOtBct01u9DvkfR1pbfsdejkZB7CWdHjAIeHeICT40lDIFCdMNyHA=
+5Mt3MhFUUMo3AtRdZAiCsTw-2FJTL-2FHgBoNRYF-2BVIpnFSa8xSMLEw-2FJgw-3D-3Dm75l_S=
+DrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5=
+Im4lRmkjQ4ctG5-2FC1-2Fc-2Bl-2BBsuB2hTPvg5UMk8X6SRjQY1Upwn2ru-2BHru10jKyIzGx=
+E2YxY8CzfTgfFOEL2qiFa9L0yCmuXv0XHnMBM-2BlB6oozHxDCv1PPVmsaDIlCtX-2BWbMpkacb=
+1X50VGsAcAC95l4d6ajOuL5k9zmWiXtZtdWcq5s537C1-2FwWzjX9LkaLVmuY7F8y5FhxuRg-3D=
+-3D" style=3D"text-decoration:none;name:bodyMd;font-size:16px;line-height:2=
+4px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-ser=
+if;display:block"><span class=3D"bodyMd" style=3D"color:#316fea;text-decora=
+tion:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font=
+-weight:400;font-family:Helvetica, Arial, sans-serif;display:block"><table =
+class=3D"tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td style=3D"na=
+me:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;=
+font-family:Helvetica, Arial, sans-serif;padding:0 8px 0 0;mso-padding-alt:=
+0 8px 0 0;color:#202020;vertical-align:middle" class=3D"bodyMd"><img width=
+=3D"14" src=3D"https://todoist.doist-emails.com/_next/static/images/arrow@2=
+x_c89c79312bbeca7d2b1f2145be4d5672.jpg"/></td><td style=3D"name:bodyMd;font=
+-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-family:He=
+lvetica, Arial, sans-serif;color:#316fea;vertical-align:middle" class=3D"bo=
+dyMd"><a target=3D"__blank" href=3D"https://em.todoist.net/ls/click?upn=3Da=
+kgJ9u081up1QQ8ur5g8jBEhCZ33Z8IqL78wkIIkQqiOtBct01u9DvkfR1pbfsdejkZB7CWdHjAI=
+eHeICT40lDIFCdMNyHA5Mt3MhFUUMo3AtRdZAiCsTw-2FJTL-2FHgBoNRYF-2BVIpnFSa8xSMLE=
+w-2FJgw-3D-3D2wyD_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE=
+9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctGwikhnEm12skP4vWecChxbYGDZDTl0dpLTMrrUud-2FN=
+Tix1SIXnKeXRzuQxyJvKQx7vT8W-2BjtKFLZGz-2FCc7AVZK2a32FBhMuIDpEx9BAZWMATWo8gL=
+ACOAgXaFrNt-2BQRPjwwv-2BQ8WV9qnhNyQCfHhsm4pkYNFEzPJLS66Zid3g7xcYs1eUZ5W-2Fn=
+unNgeV3DLZDg-3D-3D" style=3D"text-decoration:none;name:bodyMd;font-size:16p=
+x;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, =
+Arial, sans-serif"><span class=3D"bodyMd" style=3D"color:#316fea;text-decor=
+ation:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;fon=
+t-weight:400;font-family:Helvetica, Arial, sans-serif">Learn more</span></a=
+></td></tr></tbody></table></span></a></td><td style=3D"name:bodyMd;font-si=
+ze:16px;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helve=
+tica, Arial, sans-serif;padding:0 32px;mso-padding-alt:0 32px;color:#202020=
+;vertical-align:middle" class=3D"bodyMd" align=3D"center"><img width=3D"219=
+" src=3D"https://todoist.doist-emails.com/_next/static/images/tip@2x_715abe=
+72f1dde4a70c6789a0637dde72.jpg"/></td></tr><tr class=3D"rowReversed" style=
+=3D"display:none;mso-hide:all"><td style=3D"name:bodyMd;font-size:16px;line=
+-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial,=
+ sans-serif;mso-hide:all;padding:0 32px;mso-padding-alt:0 32px;color:#20202=
+0;vertical-align:middle" class=3D"bodyMd" align=3D"center"><img width=3D"21=
+9" src=3D"https://todoist.doist-emails.com/_next/static/images/tip@2x_715ab=
+e72f1dde4a70c6789a0637dde72.jpg" style=3D"mso-hide:all"/></td><td style=3D"=
+name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:40=
+0;font-family:Helvetica, Arial, sans-serif;mso-hide:all;color:#202020;verti=
+cal-align:middle" class=3D"bodyMd" id=3D"tipCopy"><table cellPadding=3D"0" =
+cellSpacing=3D"0" style=3D"border:0;mso-hide:all"><tbody><tr><td class=3D"h=
+eadingSm" style=3D"font-family:Helvetica, Arial, sans-serif;name:headingSm;=
+font-size:20px;line-height:27px;letter-spacing:0;font-weight:600;color:#202=
+020">Todoist tip of the day</td></tr></tbody></table><table cellPadding=3D"=
+0" cellSpacing=3D"0" style=3D"border:0;mso-hide:all"><tbody><tr><td class=
+=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;f=
+ont-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#2020=
+20;padding:8px 0;mso-padding-alt:8px 0">[Android] Todoist has 2 home screen=
+ widgets: add task and task view.</td></tr></tbody></table><a target=3D"__b=
+lank" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jBE=
+hCZ33Z8IqL78wkIIkQqiOtBct01u9DvkfR1pbfsdejkZB7CWdHjAIeHeICT40lDIFCdMNyHA5Mt=
+3MhFUUMo3AtRdZAiCsTw-2FJTL-2FHgBoNRYF-2BVIpnFSa8xSMLEw-2FJgw-3D-3Dk8Gl_SDrK=
+eVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4=
+lRmkjQ4ctG0qBC0j6BDCQxeOY6Rok-2FBRdOk4dmtov5dEsz7auDFbf-2BrNvuYheAPp6XZWGG1=
+7u5PvTrPVWnU7IGLAeZVbbKGLI1ooUn4pj6cAM5dMgIhAEhkenHmXsAE0d0QSnDwdvMnC1tqmqS=
+cjdxCcEGyaax6DFCHiN0y9rRvMAIC5g22eszadBj5uPQh6pvma0mil-2FOw-3D-3D" style=3D=
+"text-decoration:none;name:bodyMd;font-size:16px;line-height:24px;letter-sp=
+acing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;display:bl=
+ock;mso-hide:all"><span class=3D"bodyMd" style=3D"color:#316fea;text-decora=
+tion:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font=
+-weight:400;font-family:Helvetica, Arial, sans-serif;display:block;mso-hide=
+:all"><table class=3D"tableColumnsLayout" style=3D"mso-hide:all"><tbody><tr=
+ class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;line-height:24=
+px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-seri=
+f;mso-hide:all;padding:0 8px 0 0;mso-padding-alt:0 8px 0 0;color:#202020;ve=
+rtical-align:middle" class=3D"bodyMd"><img width=3D"14" style=3D"mso-hide:a=
+ll" src=3D"https://todoist.doist-emails.com/_next/static/images/arrow@2x_c8=
+9c79312bbeca7d2b1f2145be4d5672.jpg"/></td><td style=3D"name:bodyMd;font-siz=
+e:16px;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvet=
+ica, Arial, sans-serif;mso-hide:all;color:#316fea;vertical-align:middle" cl=
+ass=3D"bodyMd"><a target=3D"__blank" href=3D"https://em.todoist.net/ls/clic=
+k?upn=3DakgJ9u081up1QQ8ur5g8jBEhCZ33Z8IqL78wkIIkQqiOtBct01u9DvkfR1pbfsdejkZ=
+B7CWdHjAIeHeICT40lDIFCdMNyHA5Mt3MhFUUMo3AtRdZAiCsTw-2FJTL-2FHgBoNRYF-2BVIpn=
+FSa8xSMLEw-2FJgw-3D-3Degf9_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370=
+tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG4YEW6nrQFxAj-2BORrIT-2BmGNAQZ2TSBD=
+72Bc7R4Bxi3UxOMNJvumXfyl6ea-2B9ixsvlOxWhthHgFmRFWjQ81JceYA4btgI7IY0Rm65CKqJ=
+YK8PD5WrkuC26BSrtpAJjwYATCvCoK6Mu-2F9VXwtkVVPV11g-2FsiXbxPTiZdNvMIOegqKSfz6=
+bErqAftFU1ugTJohdmA-3D-3D" style=3D"text-decoration:none;name:bodyMd;font-s=
+ize:16px;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helv=
+etica, Arial, sans-serif"><span class=3D"bodyMd" style=3D"color:#316fea;tex=
+t-decoration:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacin=
+g:0;font-weight:400;font-family:Helvetica, Arial, sans-serif">Learn more</s=
+pan></a></td></tr></tbody></table></span></a></td></tr></tbody></table></td=
+></tr></tbody></table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"b=
+order:0;width:100%"><tbody><tr><td class=3D"bodyMd" style=3D"font-family:He=
+lvetica, Arial, sans-serif;name:bodyMd;font-size:16px;line-height:24px;lett=
+er-spacing:0;font-weight:400;color:#202020;padding:32px 0 0;mso-padding-alt=
+:32px 0 0"><a target=3D"__blank" href=3D"https://em.todoist.net/ls/click?up=
+n=3DakgJ9u081up1QQ8ur5g8jC4-2Bb1BJ-2BiX0u3EbzIa8wvTIZuWPKjH3IzHOF8np2M7T57G=
+KzXeD0Sbb5FV3mQVSAV1LJBVBNJ0f63mSAVQhV57CeqrubN4rXxgevQn9BvPxs6sPgC62gP8oQn=
+R6qoCSww-3D-3DMf6G_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2Fc=
+E9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG4387qF1bHV6ZgRhGJjMJzMbHTuElUxfCGGYOWM8xR1=
+CqSQ9W4ymRIDr-2Fj-2FxcvWqUyKWfKNtUN5YP6S4F7-2F247wQAiDhLctT23375dt70m0Xo9x7=
+q9uboyNnqQddei0ZxGdstrG6zqcQICNaHP87jrAmuj79zNAr2c9xR9hHV-2FQ59iHXT3e8-2FP0=
+D5eG9PmzOGw-3D-3D" style=3D"text-decoration:none;name:bodyMd;font-size:16px=
+;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, A=
+rial, sans-serif"><span class=3D"bodyMd" style=3D"color:#316fea;text-decora=
+tion:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font=
+-weight:400;font-family:Helvetica, Arial, sans-serif"><img id=3D"blogIllus"=
+ width=3D"100%" src=3D"https://blog.doist.com/wp-content/uploads/2020/12/1_=
+2021Goals_thumbnail.png" style=3D"border-radius:4px"/><table cellPadding=3D=
+"0" cellSpacing=3D"0" style=3D"border:0"><tbody><tr><td class=3D"bodyLg" st=
+yle=3D"font-family:Helvetica, Arial, sans-serif;name:bodyLg;font-size:21px;=
+line-height:31.5px;letter-spacing:-0.01em;font-weight:400;color:#202020;pad=
+ding:16px 0 12px;mso-padding-alt:16px 0 12px">Step-by-Step Templates for Al=
+l Your 2021 Goals</td></tr></tbody></table><a target=3D"__blank" href=3D"ht=
+tps://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jC4-2Bb1BJ-2BiX0u3E=
+bzIa8wvTIZuWPKjH3IzHOF8np2M7T57GKzXeD0Sbb5FV3mQVSAV1LJBVBNJ0f63mSAVQhV57Ceq=
+rubN4rXxgevQn9BvPxs6sPgC62gP8oQnR6qoCSww-3D-3DrKCF_SDrKeVA2pts3JIkQfztFyDwj=
+3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG-2Fj5NaIh3=
+pI29cA-2FjteO3ako4KSNfEbdp4c3KOQFqocu-2Fjoe5bFRtZVMz6QDsks4P9grEXzFo2-2F7Oz=
+PBGkIwfdndBLgp2CZCci-2B1jlGEsP-2BN8pt4S0a8tE4gL7Y29FueFjhSH20RfKL9ZE69OgHrH=
+HNz69T7Vw3BkF2J-2FGoTdbdT-2FMu54vMcYQNOO19BJvVKPA-3D-3D" style=3D"text-deco=
+ration:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;fo=
+nt-weight:400;font-family:Helvetica, Arial, sans-serif;display:block"><span=
+ class=3D"bodyMd" style=3D"color:#316fea;text-decoration:none;name:bodyMd;f=
+ont-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-family=
+:Helvetica, Arial, sans-serif;display:block"><table class=3D"tableColumnsLa=
+yout"><tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16p=
+x;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, =
+Arial, sans-serif;padding:0 8px 0 0;mso-padding-alt:0 8px 0 0;color:#202020=
+;vertical-align:middle" class=3D"bodyMd"><img width=3D"14" src=3D"https://t=
+odoist.doist-emails.com/_next/static/images/arrow@2x_c89c79312bbeca7d2b1f21=
+45be4d5672.jpg"/></td><td style=3D"name:bodyMd;font-size:16px;line-height:2=
+4px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-ser=
+if;color:#316fea;vertical-align:middle" class=3D"bodyMd"><a target=3D"__bla=
+nk" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jC4-2=
+Bb1BJ-2BiX0u3EbzIa8wvTIZuWPKjH3IzHOF8np2M7T57GKzXeD0Sbb5FV3mQVSAV1LJBVBNJ0f=
+63mSAVQhV57CeqrubN4rXxgevQn9BvPxs6sPgC62gP8oQnR6qoCSww-3D-3Dzneq_SDrKeVA2pt=
+s3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ=
+4ctG-2BEJ3-2F2VUOoCjr-2Bivw0Qu3WIWS0rfB4ondI0wfiivPbMgcdue7KP-2BiICzqNWlaRH=
+zb5O4BjWW4uIOm5rCY8NmFSIes2ocoWHHp-2FahS39cw28Airw0ilEGX7Mzyhqu21zxhd1FjtJw=
+XIbLqZfZ8zrwgUh-2BbXiecUtP9yV3yWOxe2aBEG0Gp2vCiln-2BHIl63kcuw-3D-3D" style=
+=3D"text-decoration:none;name:bodyMd;font-size:16px;line-height:24px;letter=
+-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif"><span =
+class=3D"bodyMd" style=3D"color:#316fea;text-decoration:none;name:bodyMd;fo=
+nt-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-family:=
+Helvetica, Arial, sans-serif">Read on the Doist blog</span></a></td></tr></=
+tbody></table></span></a></span></a></td></tr></tbody></table><table cellPa=
+dding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:100%"><tbody><tr><td =
+class=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bod=
+yMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:=
+#202020;padding:32px 0 0;mso-padding-alt:32px 0 0"><table cellPadding=3D"0"=
+ cellSpacing=3D"0" style=3D"border:0;width:100%;margin-left:auto;margin-rig=
+ht:auto" class=3D"beigeCTA"><tbody><tr><td align=3D"center" class=3D"bodyMd=
+" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;font-size:1=
+6px;line-height:24px;letter-spacing:0;font-weight:400;color:#202020;backgro=
+und-color:#fcf8f3;border-radius:4px;padding:16px;mso-padding-alt:16px"><p c=
+lass=3D"bodyMd" style=3D"name:bodyMd;font-size:16px;line-height:24px;letter=
+-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;color:#=
+616161">More features =3D more peace of mind.=20
+        <a href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5=
+g8jFmJJeba-2B5YT8gMSZrFu9dk1kDC-2FIuLAtQHi7vL6isSZvPfaLKE3PXlkCP7c54R47h6DU=
+FvkKe7jerq2hqYlQjWn9Lt8vbR0C6We2YoGfNKeLgDq_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2=
+BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG9R3Dq0WWq65FtN7G4=
+yZWoMC-2Fm3S1z2t1Ddc2cFDQ-2FfJZVYUqJomqnoVsVPpnhNrhxyDOs-2Bm9Odmev2QoWEvQXK=
+XZrgJjWyZkHRIty8oB00C-2FC5q1bgV0HDMV4EmX03knmbnYI8B6Z-2FcqbhLNMLD-2FoUw7PW8=
+PjlJKGkV4f-2BGz1eOMzyC2BP6KP2oQRFhqp-2BN6w-3D-3D" style=3D"text-decoration:=
+none">
+            <span style=3D"color:#e44232">
+    Todoist Premium is only $3/month</span></a>.</p></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;width:10=
+0%;margin-left:auto;margin-right:auto"><tbody><tr><td align=3D"center" clas=
+s=3D"bodyMd" style=3D"font-family:Helvetica, Arial, sans-serif;name:bodyMd;=
+font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;color:#616=
+161;padding:16px 16px 48px;mso-padding-alt:16px 16px 48px"><table class=3D"=
+tableColumnsLayout"><tbody><tr class=3D"rowNormal"><td style=3D"name:bodyMd=
+;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-fami=
+ly:Helvetica, Arial, sans-serif;color:#202020;vertical-align:middle" class=
+=3D"bodyMd"><a target=3D"__blank" href=3D"https://em.todoist.net/ls/click?u=
+pn=3DakgJ9u081up1QQ8ur5g8jGmPDIyMKDw9yfv-2BtQPZykWmzTayfqwLlKqo62Qzac2WRT3x=
+_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lv=
+N5Im4lRmkjQ4ctG4uggNpr-2FXXWQ-2FICOnxo-2BRch6-2FS2yEdTePwsI2Szi1UztoCtbAp2X=
+j9EA4PxuwQe8Pf3A5a6dbVxnXEM7RMJMFhEdvU3CypPeDFwKKjxxS-2FJ0X4cRKvQVC8Bq0m21m=
+Nnu3xOo-2B3d9GShiDSVMQSM8Sge6vORRLFrQn2p8gZTes0WYBmpQlotc6wBAfAX54geNA-3D-3=
+D" style=3D"text-decoration:none;name:bodyMd;font-size:16px;line-height:24p=
+x;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif=
+"><span class=3D"bodyMd" style=3D"color:#316fea;text-decoration:none;name:b=
+odyMd;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font=
+-family:Helvetica, Arial, sans-serif"><img width=3D"31.17" src=3D"https://t=
+odoist.doist-emails.com/_next/static/images/twitter@2x_763aa6f86f3a0c688900=
+e290c5a4d6d9.png"/></span></a></td><td style=3D"name:bodyMd;font-size:16px;=
+line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Ar=
+ial, sans-serif;padding:0 24px;mso-padding-alt:0 24px;color:#202020;vertica=
+l-align:middle" class=3D"bodyMd"><a target=3D"__blank" href=3D"https://em.t=
+odoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jHA-2BM-2FVmc4W2spJEku-2B9qLI=
+rlIfHpXITJdRW1ArZ0Kli9i3x_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370t=
+OlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG-2BQ-2BslJM6K7YU-2Fdk8nELN2sBnXXBk-=
+2FS7N9M5ai-2Fjmwc0EhKjTEQr-2BTjQP6uABt-2B1QCzBKYrS2Pnm-2BoHgrDdDjTe2-2BLRXR=
+BZGOq-2BVKAiTZycdUJrxpRhq9OGp8EAkgqRMZIchrOfHjsJzPmDEq8X7PdHnWAxacg60oWXeq6=
+Fmvw8Ayl0yjesfQoAVM87vcmfLOw-3D-3D" style=3D"text-decoration:none;name:body=
+Md;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;font-fa=
+mily:Helvetica, Arial, sans-serif"><span class=3D"bodyMd" style=3D"color:#3=
+16fea;text-decoration:none;name:bodyMd;font-size:16px;line-height:24px;lett=
+er-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif"><img=
+ width=3D"27.13" src=3D"https://todoist.doist-emails.com/_next/static/image=
+s/facebook@2x_f5d764a8a4dd0fdf4165cda03b60cd74.png"/></span></a></td><td st=
+yle=3D"name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;font-we=
+ight:400;font-family:Helvetica, Arial, sans-serif;color:#202020;vertical-al=
+ign:middle" class=3D"bodyMd"><a target=3D"__blank" href=3D"https://em.todoi=
+st.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jMRtBztkqR5NpHi7jFQgPeJL9wn0jbDln=
+zVsNGaFDT-2F8z0Gv0t8VNohCKpF6MHG-2BYQ-3D-3DXeTJ_SDrKeVA2pts3JIkQfztFyDwj3CY=
+mY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctGwBGznt0QdPhGE=
+Q-2Fn-2FkeLXAbIz0A-2FBS5KvlslhpcWkLD5X1y8UVxfJLks-2BFAm95uIdTszlqDumwLWU7O9=
+qhI9-2FMQBAsY51miDgHp-2Fd1xQlDuuY8zlbKg8ClgJc7LFYOlEmX-2BU3HJclxARXEHTg0-2B=
+XBNPrcEzIc2pNE8s1dYUL-2BPK6I7IvYbHmxMNUhfzMntaag-3D-3D" style=3D"text-decor=
+ation:none;name:bodyMd;font-size:16px;line-height:24px;letter-spacing:0;fon=
+t-weight:400;font-family:Helvetica, Arial, sans-serif"><span class=3D"bodyM=
+d" style=3D"color:#316fea;text-decoration:none;name:bodyMd;font-size:16px;l=
+ine-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Ari=
+al, sans-serif"><img width=3D"34" src=3D"https://todoist.doist-emails.com/_=
+next/static/images/youtube@2x_d1f5c5959b3ff9074d782c9afb4e968c.png"/></span=
+></a></td></tr></tbody></table><table class=3D"tableColumnsLayout"><tbody><=
+tr class=3D"rowNormal"><td style=3D"name:bodyMd;font-size:16px;line-height:=
+24px;letter-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-se=
+rif;color:#202020;vertical-align:middle" class=3D"bodyMd"><a target=3D"__bl=
+ank" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jGzp=
+2sn0ea6u4HbQheVJ8YU-3DsOGu_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir370=
+tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG-2BFQUh9DYBvXJwoxxF0tf3AchP6cM9tML=
+U7-2FEcm7CuOdqKiBPXWwVmaATz1xBHTjsbCMEaUn1iEFx7Ze-2FQzN-2FcdJXrwdCF3eg0scf9=
+mQFmgkONY9mYB1xkJ-2F7naeWKms0etlWhgwj6zwd8dgQIfLEutz-2BwFsDC7k5tmZg6cIbsD5O=
+CXqR0l6Ipo4u0orwpZ9oQ-3D-3D" style=3D"text-decoration:none;name:bodySm;font=
+-size:12px;line-height:16.2px;letter-spacing:0.02em;font-weight:400;font-fa=
+mily:Helvetica, Arial, sans-serif"><span class=3D"bodySm" style=3D"color:#6=
+16161;text-decoration:none;name:bodySm;font-size:12px;line-height:16.2px;le=
+tter-spacing:0.02em;font-weight:400;font-family:Helvetica, Arial, sans-seri=
+f">Blog</span></a></td><td style=3D"name:bodySm;font-size:12px;line-height:=
+16.2px;letter-spacing:0.02em;font-weight:400;font-family:Helvetica, Arial, =
+sans-serif;padding:12px 6px;mso-padding-alt:12px 6px;color:#202020;vertical=
+-align:middle" class=3D"bodySm">|</td><td style=3D"name:bodyMd;font-size:16=
+px;line-height:24px;letter-spacing:0;font-weight:400;font-family:Helvetica,=
+ Arial, sans-serif;color:#202020;vertical-align:middle" class=3D"bodyMd"><a=
+ target=3D"__blank" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081=
+up1QQ8ur5g8jKjXgrMWyFmF64ONeId6SGlJwqYEAtrZoxAhPdiBMiiHXJqn_SDrKeVA2pts3JIk=
+QfztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG2=
+VX0gY3IlDksjJ1feTyZ7zwUn3dCffRrB6iGmrdiQeUzizbnscLAweyuG2G-2FFKgV-2FklrQrNi=
+zhcSVlVATGtQ2SpB3aLq8KsHObD8OhnK-2BN8shgceYmcXFy0Jql5I9NkFq5-2BW-2BRf042Xey=
+3DRHPuaz-2F9-2FtEtteed9InjMGHw1ANfhCCywftdwVv9TjT-2BH-2F2UTw-3D-3D" style=
+=3D"text-decoration:none;name:bodySm;font-size:12px;line-height:16.2px;lett=
+er-spacing:0.02em;font-weight:400;font-family:Helvetica, Arial, sans-serif"=
+><span class=3D"bodySm" style=3D"color:#616161;text-decoration:none;name:bo=
+dySm;font-size:12px;line-height:16.2px;letter-spacing:0.02em;font-weight:40=
+0;font-family:Helvetica, Arial, sans-serif">Download Apps</span></a></td><t=
+d style=3D"name:bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.0=
+2em;font-weight:400;font-family:Helvetica, Arial, sans-serif;padding:12px 6=
+px;mso-padding-alt:12px 6px;color:#202020;vertical-align:middle" class=3D"b=
+odySm">|</td><td style=3D"name:bodyMd;font-size:16px;line-height:24px;lette=
+r-spacing:0;font-weight:400;font-family:Helvetica, Arial, sans-serif;color:=
+#202020;vertical-align:middle" class=3D"bodyMd"><a target=3D"__blank" href=
+=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g8jBEhCZ33Z8IqL=
+78wkIIkQqjeXelKgdvpmFLe4CERBxaHN1hs_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzay=
+BxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG0kY32t03336h1dInatUGuYI2-=
+2BwqSk8VFXx8FVmMrcZX1M1VN22GuaXbRHGa-2Bh8xxdTVtbkyaaAvoMQ-2BezLJ2g2vJnJLZQ4=
+vlZk7LazHX0DgSyyqq12dEJroS9QJZ-2BDq6caGDcdoURRR-2BtADW3LEw9MdLOMtlHc-2B2mTj=
+oCCV5F-2BcIx8XIWzuFUVJSBlIWsmM3A-3D-3D" style=3D"text-decoration:none;name:=
+bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.02em;font-weight:=
+400;font-family:Helvetica, Arial, sans-serif"><span class=3D"bodySm" style=
+=3D"color:#616161;text-decoration:none;name:bodySm;font-size:12px;line-heig=
+ht:16.2px;letter-spacing:0.02em;font-weight:400;font-family:Helvetica, Aria=
+l, sans-serif">Help Center</span></a></td></tr></tbody></table><a target=3D=
+"__blank" href=3D"https://em.todoist.net/ls/click?upn=3DakgJ9u081up1QQ8ur5g=
+8jLeu0VFrUSavKMHuo4p5y902a9a4Il19jaSO8uJvnSyuuck7lGo1c3yU5jIz7c4a8x2YtNBfaH=
+gJLKd5dZEFIU2y22VaaS7Mj3RxVlLrGUbAJqh2EoJvLhmhBYVwJb1hRtx2k-2FdX1KSzB5a-2F0=
+z-2FjsPECK3RiWGgAtcf7DMUXg-2Fa5wmXR0jiuylKnezS3s-2FJlcGMhazPUpeAATbQAqOyhaF=
+nne84-2Fw-2BWtsyEYrYjp53lALdBdG04062awuByYGGxvLQ-3D-3DRvCa_SDrKeVA2pts3JIkQ=
+fztFyDwj3CYmY-2BDQASzayBxvKir370tOlU-2FcE9fPrDH5YJ2oRmG3lvN5Im4lRmkjQ4ctG4Y=
+htfZ98glIF7qNkjxGxgUQMLLUDlHCoxdcLmgz-2FOebsWRYsi-2BCHwzDq6jUk6ttlyNxBYU9Bn=
+6RO0Xu1QSlpgNziY-2BoIhTLaZeliHExNdDbk0g7wcBy5l093Bqps5K4DsvQaQjS1s9feyQGC1k=
+1pZWYOyRe07ShkXH4k8iLTWVfP151Cn24YvC1S75GKblcWA-3D-3D" style=3D"text-decora=
+tion:none;name:bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.02=
+em;font-weight:400;font-family:Helvetica, Arial, sans-serif"><span class=3D=
+"bodySm" style=3D"color:#616161;text-decoration:none;name:bodySm;font-size:=
+12px;line-height:16.2px;letter-spacing:0.02em;font-weight:400;font-family:H=
+elvetica, Arial, sans-serif">Unsubscribe from future emails</span></a><tabl=
+e cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;text-align:center">=
+<tbody><tr><td class=3D"bodySm" style=3D"font-family:Helvetica, Arial, sans=
+-serif;name:bodySm;font-size:12px;line-height:16.2px;letter-spacing:0.02em;=
+font-weight:400;color:#616161;padding:12px 0 0;mso-padding-alt:12px 0 0">Do=
+ist Inc. 2100 Geng Road, Suite 210 Palo Alto, CA94303 US</td></tr></tbody><=
+/table><table cellPadding=3D"0" cellSpacing=3D"0" style=3D"border:0;text-al=
+ign:center"><tbody><tr><td class=3D"bodySm" style=3D"font-family:Helvetica,=
+ Arial, sans-serif;name:bodySm;font-size:12px;line-height:16.2px;letter-spa=
+cing:0.02em;font-weight:400;color:#616161;padding:12px 0 0;mso-padding-alt:=
+12px 0 0">Sent to <!-- -->patriogabrielpatdu@gmail.com</td></tr></tbody></t=
+able></td></tr></tbody></table></td></tr></tbody></table></div>
+<img src=3D"https://em.todoist.net/wf/open?upn=3D1utt00i9qzN5trNJrCkyHSOBf7=
+i4EhQ-2FLT63tuhyXUlc9utmgstJPtnExePvBBCr0RVrx40gcgToWXdt7eek78rG2Esl6jKmaiP=
+YaX-2F-2BxQJaRRvFEgNCtiS1SiY0Q2zplH28dsHPJRHEcwPdTB-2BXWrsxzUQlq6q00J5hDI-2=
+BCL8BT3R7D3o-2FHv8BjmSFSUL3lLDplxlrF1mytXdThPqz40q12siAz34PFDpNKTevnY-2Bi2b=
+CdMCAOtAZSatG0CYvi-2B6wTcroo7xSnTAiM06-2FEQMA-3D-3D" alt=3D"" width=3D"1" h=
+eight=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !importan=
+t;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !import=
+ant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !impor=
+tant;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 =
+!important;"/>
+</body></html>
+
+--0431fd69365f8b4ae16c5ff0ba838027a1868fcb772176d2c5cf24414415--

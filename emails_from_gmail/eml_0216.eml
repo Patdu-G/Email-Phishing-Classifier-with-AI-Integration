@@ -1,0 +1,87 @@
+X-GM-THRID: 1868575167379538526
+X-Gmail-Labels: Inbox,Important,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:5e09:b0:29b:179e:1f84 with SMTP id q9csp4915513rwn;
+        Sat, 20 Jun 2026 20:22:25 -0700 (PDT)
+X-Received: by 2002:a05:622a:c6:b0:509:23ee:b9a5 with SMTP id
+ d75a77b69052e-519f01a338cmr121567531cf.5.1782012145574;
+        Sat, 20 Jun 2026 20:22:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1782012145; cv=none;
+        d=google.com; s=arc-20260327;
+        b=H1g4Sz8gp43mLNyKYlnLjZTCkdB6ghLM7cJYV7sJ6XIhiSc1y2dEgd50JHAPTmvQoy
+         xQrLVYruIUeDbJawfNPNVBz6zlfpB2VwHvyRlbCA44La2gUT1uQiBFvYrpE+ydtByoi6
+         8rS3Iw9dUFE+WfamBeG+2TvzcnuQ+w5Zp+Nv8KdOIZPB6bcM6qxMYClYbbJho+EvrvGp
+         W8SnH2/dfxMv3hLrSLsyHsB/E+zT/xQGi0dnDJD1DZgyOOwj7mIWDCmtPJbslaTUOxzN
+         tK4DsWd5L5Q1CkW4fjOcE2AUrIZeAUOXcO6w14f0AwPoV56I2j1VniNtsgf0DmAiXzhE
+         q6qw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=RAtSClZC2lYsevbSgcX9n8kEyD8TZRihkG/U/mEaRX0=;
+        fh=1VtsGqZcdNJlo0nqDzzujvlBUuas7of3PwKPAsQABRQ=;
+        b=D08Fqxqy3cbKffO2WTI1+xnpSP/sJAiisn78rHUO52sB+sXYFnOZHUd/11MR4Q45w3
+         UctoEpUzJ91HOruC0SCZPkb1h8MoPtshWFM9cNp8eQ3sR4/a3+6p5qQem5KQ2CgibQgg
+         yxADW3l/weojOgv3lQJ83WoQDlo5f+7CF7Hgdc1a1n+GcTIcfMle9p6aWXdcxNgsGSTY
+         Kex9EiaFYdLj22L/DSkiqmVSF/Cy3YJU4SC9G5yz1PVj+p8AxF6KbMVdhzKNOIaW286X
+         4jap9owX+knREVlz4I0l11mxtcDo5DCmRKtcyferJF5ueEqmZTXzH3eSDsQuGIvQb0Qr
+         +RYA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2023 header.b=JJ+6D1OL;
+       spf=pass (google.com: domain of noreply@github.com designates
+ 192.30.252.200 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <noreply@github.com>
+Received: from out-17.smtp.github.com (out-17.smtp.github.com.
+ [192.30.252.200])
+        by mx.google.com with ESMTPS id
+ d75a77b69052e-51a0cfc670asi35930331cf.412.2026.06.20.20.22.25
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 20 Jun 2026 20:22:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@github.com designates
+ 192.30.252.200 as permitted sender) client-ip=192.30.252.200;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2023 header.b=JJ+6D1OL;
+       spf=pass (google.com: domain of noreply@github.com designates
+ 192.30.252.200 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=github.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2023; t=1782012145;
+	bh=RAtSClZC2lYsevbSgcX9n8kEyD8TZRihkG/U/mEaRX0=;
+	h=Date:From:To:Subject:From;
+	b=JJ+6D1OLvwUacEgFfLYJpbT3DK6g/RSD64XzYWSdS1tE+oHfEFVIYFtIasHZ/o37N
+	 +R28BlL0WJrFWbd5Q29OlfiWo0quSifDIN1Av6UWPh1XLH2ijXkmj5os1U6tXB1fPh
+	 2kY5jJkzJXdNBPcB/N15S2dJQTLslk/I72dTtkvI=
+Received: from github.com (hubbernetes-node-d0e3317.va3-iad.github.net
+ [10.48.14.31])
+	by smtp.github.com (Postfix) with ESMTPA id 5331D500C1D
+	for <patriogabrielpatdu@gmail.com>; Sat, 20 Jun 2026 20:22:25 -0700 (PDT)
+Date: Sat, 20 Jun 2026 20:22:25 -0700
+From: GitHub <noreply@github.com>
+To: Patrio Gabriel Patdu <patriogabrielpatdu@gmail.com>
+Message-ID: 
+ <6a3758f150a9b_b81108130455@accountsecurityworker-d87d74487-7przz.mail>
+Subject: [GitHub] Please verify your device
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All
+
+Hey Patdu-G!
+
+A sign in attempt requires further verification because we did not recognize your device. To complete the sign in, enter the verification code on the unrecognized device.
+
+Device: Chrome on Android
+Verification code: 178947
+
+If you did not attempt to sign in to your account, your password may be compromised. Visit https://github.com/settings/security to create a new, strong password for your GitHub account.
+
+If you'd like to automatically verify devices in the future, consider enabling two-factor authentication on your account. Visit https://docs.github.com/articles/configuring-two-factor-authentication to learn about two-factor authentication.
+
+If you decide to enable two-factor authentication, ensure you retain access to one or more account recovery methods. See https://docs.github.com/articles/configuring-two-factor-authentication-recovery-methods in the GitHub Help.
+
+Thanks,
+The GitHub Team

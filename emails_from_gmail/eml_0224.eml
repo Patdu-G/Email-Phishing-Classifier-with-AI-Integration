@@ -1,0 +1,1351 @@
+X-GM-THRID: 1868868611524767255
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:7a92:b0:29b:179e:1f84 with SMTP id f18csp589246rwg;
+        Wed, 24 Jun 2026 02:06:35 -0700 (PDT)
+X-Received: by 2002:a05:622a:4:b0:517:5b79:c109 with SMTP id
+ d75a77b69052e-51a548c4f5fmr87898911cf.56.1782291995600;
+        Wed, 24 Jun 2026 02:06:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1782291995; cv=none;
+        d=google.com; s=arc-20260327;
+        b=hLSNkXLiCoWMpY29AhsThP/WVOBMOFb/P0kAF0LMlBLwgxpbqKLTbn0sTdXfcUpF4w
+         LGI68HKmEw4+7is00WoLnELhWnoGWjQYmaMDyaCuhca/sudPLQLG9xbSd7dQL8W8nEcD
+         OHmyxMMGHCs7gxEkaCyZaTP8kJHaCfdTgaWE6KoxtJHB+ZtYOsCJEuXWEWhgdxOu+Qt2
+         wm5A3m+EgllQwX73ootzTe1+xTzUbj16OUNadlMG0za/QyYfuYMozr9Uqtosumqr/Aak
+         wTan0mEQBzXlzYkjmj08XeZFNKRKor6jMYgh7dhVNVRYqNA+uujcFpyo5bE/PXmssydD
+         GWhw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=list-unsubscribe-post:list-unsubscribe:to:subject:message-id
+         :mime-version:from:date:content-transfer-encoding:dkim-signature
+         :dkim-signature;
+        bh=pDDkpKeVnQ8aR/3yiS+yJo/4B9VPWVeYXygJ6f8tJE8=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=UWdnyxF0F5CuHHDoddv8ridEAi0HwqbqwUVnQz/FUSGCZZV5UseslqOW/Lc2MAm7bv
+         4a/ruow5HpbQi/3bcT62ppJ8Xn/O2J7SUgHvJK3gm+XRoJ+hhR2VME/U1vPyEqDCA+o+
+         XzoW1UxGwxHrTEXIY4aaasyA2o44Ji8FHU7aD3ipu1P4+0XHMI26Id5pIh237BltcQxN
+         2GHvc+GlbHl46j1kPNg7BvT5E3eGw0PX1RvKM3Y0tI9hGSCUMPkRR7Fdkx9Ud9chQD+J
+         72nM4uI6+0AP1wnSh5fJhjUzHkQIVxdBtQHKimFAbgE9pwc8u0RBJeRRMu6diwWHCGrW
+         0aEw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b=tCHS7noQ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Q3Af57BJ;
+       spf=pass (google.com: domain of
+ bounces+108370056-6eab-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 159.183.13.29 as permitted sender)
+ smtp.mailfrom="bounces+108370056-6eab-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+Return-Path: 
+ <bounces+108370056-6eab-patriogabrielpatdu=gmail.com@em6623.email.openai.com>
+Received: from o24.ptr7616.openai.com (o24.ptr7616.openai.com.
+ [159.183.13.29])
+        by mx.google.com with ESMTPS id
+ d75a77b69052e-51a51b5d63fsi59891051cf.274.2026.06.24.02.06.35
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 24 Jun 2026 02:06:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+108370056-6eab-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 159.183.13.29 as permitted sender) client-ip=159.183.13.29;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b=tCHS7noQ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Q3Af57BJ;
+       spf=pass (google.com: domain of
+ bounces+108370056-6eab-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 159.183.13.29 as permitted sender)
+ smtp.mailfrom="bounces+108370056-6eab-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.openai.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=s1; t=1782291994;
+	bh=pDDkpKeVnQ8aR/3yiS+yJo/4B9VPWVeYXygJ6f8tJE8=;
+	b=tCHS7noQ8u2Oz6xoeEKXFaB9QwBiiDNyp1JLObMBff3olUlfsXJY5J9bodAfvcGaDKE0
+	1w12PiDdhS3hqOlhEiYmF1FdgTzN/vQv71oEwmLAM4Zo7t7clM6XX5kMqCW8sn/dNTCm4d
+	FytgjYTTrjux0k7W4rVvLvtV8wwQlDnuJMAWOlIldYfbf8BsICa6bDb3cMiovctDidaqdd
+	pd+c1RLzsqO9gNdD6Fa4orYOmeDh/ox0dSrLES4j4KtelnAvxpFL19MvpZaiWDAhklQM4u
+	eprKwZPmgHcKpBoclW6euDSultVn3tcbq4bLTzeHpC5wsr7YSPWCQyFVr5eDl8Ug==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=smtpapi; t=1782291994;
+	bh=pDDkpKeVnQ8aR/3yiS+yJo/4B9VPWVeYXygJ6f8tJE8=;
+	b=Q3Af57BJP7h1SQU4mvwhyHhFRgLI/C9wP7/srgqyScAk2PsdHA63koeZaJDLuWVhjwXR
+	8XWsQCxbd6ayHCswy0CkoAm4d1nmwD343DxEhb93jGZ5htRpDtZ9qqy80CfkEqzkDKvtne
+	25kQ1XoyZZpVQ+FThQwZB5pMOiIdlNMow=
+Received: by recvd-9ff9d4df5-w5k4k with SMTP id
+ recvd-9ff9d4df5-w5k4k-1-6A3B9E1A-50
+	2026-06-24 09:06:34.545888456 +0000 UTC m=+123156.315586687
+Received: from MTA4MzcwMDU2 (unknown)
+	by geopod-ismtpd-16 (SG) with HTTP
+	id unYKlvo-RKmRl4uurm3aNA
+	Wed, 24 Jun 2026 09:06:34.514 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Wed, 24 Jun 2026 09:06:34 +0000 (UTC)
+From: ChatGPT <noreply@email.openai.com>
+Mime-Version: 1.0
+Message-ID: <unYKlvo-RKmRl4uurm3aNA@geopod-ismtpd-16>
+Subject: Compare book picks before you buy
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E2cVJOEP6rValQfJKwZO1ZPPp2yIilXnDhherIW4DlfmwSM5DUph+QZwre?=
+ =?us-ascii?Q?qLMgSI4FMsfC5+p8Cia8sKY9FC7+lBpKXbiBFwW?=
+ =?us-ascii?Q?N9YrvGUL4iJxbPyRfvWzIldbnmYoG8fQwgRF6+0?=
+ =?us-ascii?Q?Edr7wCllE1oGA1iXrPHlSwYpQSsMZlzNLkvWDqZ?=
+ =?us-ascii?Q?ebN5x52H2GJsxPfWbxHHYxSoHGTojzP1xFO1bwE?=
+ =?us-ascii?Q?uDsqVOCPAQkPmS5dAyvnvh3ZvVjtLltgJjSImAW?= =?us-ascii?Q?1s3T?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCfzdk8Q6weRGnug?=
+ =?us-ascii?Q?VdQiDX=2FU0pK0LJZKA6OKPO78qpMpyKHy969xQ3r?=
+ =?us-ascii?Q?5mZsJ4WrHzdF+4wKAO64zLIGNrj3p9HeQ2nP6Rg?=
+ =?us-ascii?Q?DkHRSif8M=2F6w+=2FQ=2FDnfZrtAQA5ogyuY+618J6D1?=
+ =?us-ascii?Q?bunue3SKt2xAP68WK=2Fuh4skQPwCWEEUOCSYaKAF?=
+ =?us-ascii?Q?DBhWEQNZxwQbA+T6PjMj1g5gExhwidK9VxvUkk3?=
+ =?us-ascii?Q?ILOfxQWQddEXvGrpO=2FUX8Ewdmktq1zvX8tWBfPF?=
+ =?us-ascii?Q?Ng2JxAT3TREybpUoGmH5mDozNPI3rS=2FepUGbgGq?=
+ =?us-ascii?Q?QfDhBUroC4d3y62Qdm5MiPlk2eOc6Da8Uz+dQ1m?=
+ =?us-ascii?Q?mzlaC64K53JjxCVWsojpGiy3E7tSmiNPf2yd8kw?=
+ =?us-ascii?Q?PpOehmvBgUhzrJ3OitRLFQ15rXU4lxx7UvJtcu0?=
+ =?us-ascii?Q?aSkExKzNvI55TBGpavJWuFTLbhWD+IO+4xgmSR9?=
+ =?us-ascii?Q?Qo3mU=2FrLF2TqnLSgBPcOUckBAJpilrzsZNVHqNE?=
+ =?us-ascii?Q?8xIYpcL9ROm5uO+Imu2ydbmuNe9jE=2FaAeOK2oYD?=
+ =?us-ascii?Q?D5oKD7J0iRVh7KEH3+mFY6lHjZlR=2Fi=2FSZSUvDV0?=
+ =?us-ascii?Q?z7IXEkrdqcrI0tPsNACUz2Cy5eiYTegTQlj6m+Y?=
+ =?us-ascii?Q?=2F=2FgEoZ1HMA80bJCc=2FboDk4KSeyakx2XTyf2LS8+?=
+ =?us-ascii?Q?KzUyJKEcuegLC9scNZoka04cyo5nsbbJtusDQOZ?=
+ =?us-ascii?Q?nPBjBxh8IxACAnp45FcRV0JjuEVml0xeeLa+3gs?=
+ =?us-ascii?Q?=2FrqgLLpwPeXD33UzaNlgK8frlMptWiQgyadcdlA?=
+ =?us-ascii?Q?PYdemGrv9ZBbnVeRFkab2VyTDusC341YKCmcOVd?=
+ =?us-ascii?Q?6WDyRZh3yVVBEZEaNF0AxUaKT417TDgv9ViKhAz?=
+ =?us-ascii?Q?yHoH0y87WEuc6KfaN7uMz7QyPFgT980KeuW6Ylz?=
+ =?us-ascii?Q?jGGk32tLndLllrrl+D+E8BppEfofkcBHCaYRI0i?=
+ =?us-ascii?Q?NjqKHq3QdWQH3k2LQzqNuuAyL1TnsuSi4AOnm4x?=
+ =?us-ascii?Q?kV+JF3YbRA=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.fuLTjbbFNnHmPBmC2XyIBw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Furl3243=2Eemail=2Eopenai=2Ecom=2Flu=2Funsubscribe=3Foc=3Du001=2EX7s6L?=
+ =?us-ascii?Q?gCNnpM02BH5M6DI2SVVBmt=5Fxz7CaKMexOAPuONw?=
+ =?us-ascii?Q?s-LQeKwm-=5Ffd-ddLjo9=5F3Zutf9TJJ0ScRdKRwff?=
+ =?us-ascii?Q?kb=5FlIbc7rDxmLPWlEUxfxhHDgJ7FXaYSP6jPe8D?=
+ =?us-ascii?Q?3ozVaBKEgAD=5FdmHBzTPoZ=5FSEfOjW7jxQZQzTaLH?=
+ =?us-ascii?Q?NCrhOgzJrGITBpzgF9LwiJAz8JeYXu7W6nwePq2?=
+ =?us-ascii?Q?VFAvLc8URMZV4fz2=5FGuq3D1U3xd641jGeQr=5FJ7Z?=
+ =?us-ascii?Q?jj6BrJfHuDVxHVWvbQXLxAVTOv1tEMwqfMI3Edc?=
+ =?us-ascii?Q?EIioYbd0dzJaYt71CxW=5Fm7Aobv4BDKueUqbqSHN?=
+ =?us-ascii?Q?asjR-9ZBLJK6DMJuJxiYmn-B9tf1XTxWOrq=5FZZ-?=
+ =?us-ascii?Q?VxwvZdnVhVkgeKd-H1auljH0Dr96O=5FqBUFai1FD?=
+ =?us-ascii?Q?nMxKa4ztZLeiWWSHMlLP99mMSOIeYTY538ZC53K?=
+ =?us-ascii?Q?MODR9RReGv37OUnbEsl6KHbKyNlFDRMe2pnny1h?=
+ =?us-ascii?Q?jtCIsZ=5Fahp9lNWBaqHIxvR6s3rFXn2M0Fu0pfZk?=
+ =?us-ascii?Q?hjwDJ3thV=5FFDbzo=5FDHJGQp6M5zclhV=5FsOrNiBXb?=
+ =?us-ascii?Q?rhc01fYHf1v9vBiwIwXmo-ja4AffK917tb1Cw=5FY?=
+ =?us-ascii?Q?iRP7kJ4Q1l9kEggDG-=5FcuL=5FrRt4G-ncKocHWYOe?=
+ =?us-ascii?Q?hLUaxL=5FbkHlY1Cs-LcgPczDrSshQjxtJkE4DRic?=
+ =?us-ascii?Q?-h-o2tMgFehx9Ivadu6-naIsqSnmA1IZzufm=5FFB?=
+ =?us-ascii?Q?di4K7d-tkOiocDsGj1hRAD6cmAhmekc8JuTkuNb?=
+ =?us-ascii?Q?w91ge57aoSWTf27gfp57--XnvlWuvtwwRiPm3st?=
+ =?us-ascii?Q?CyGU5WXpD67488JBlPyflLn6o1MD5b6q30xXnmX?=
+ =?us-ascii?Q?8=5FCkj36Ys0C4HvhFNvhi3RFensPIku8OS96FuQE?=
+ =?us-ascii?Q?1OY7uNGA0IsHyJifYXtvOlamPiie4kyKWIzyPnE?=
+ =?us-ascii?Q?3kJlf3Mict3=5FW3tnVDP4omCB9XK5vVO5gQueZtf?=
+ =?us-ascii?Q?IO7TaOGxE9K-YjVv3RyX0yrKiVpqoHJtgi=5FCNbd?=
+ =?us-ascii?Q?1c1NdGD0mfdrArU3sDYIX1VveyPLt6WBKHIrX7-?=
+ =?us-ascii?Q?nwapADxj4GUgIh3zJeMFzPdHqvtvPKpvrZWjln0?=
+ =?us-ascii?Q?pOYCHfiC7c1lCUpawPuWtzjLQfTxfA27cjaLBND?=
+ =?us-ascii?Q?MjU-7q85f0SuOPcjWz6rIDSovfk1QnXajES01F3?=
+ =?us-ascii?Q?6zrHuZkogT=5FixWv0e2IL5AsmDtRLXkQgbCZwRRO?=
+ =?us-ascii?Q?qgsQiMFY-6yvEmpNqOFNVdVTXjv8Ksuzgn=5F438-?=
+ =?us-ascii?Q?NQ9Vx8ZrDdRUxW1QsQ7B0Q=5F9pgDOWwnjj=5FC=5Fc5h?=
+ =?us-ascii?Q?n0UQ4PafBWVfePQ72hrPOjnnPuhuyqWr68e1DoE?=
+ =?us-ascii?Q?e-87BS5GB963YrgIn-syNEaqP1HpirNMaPhlltP?=
+ =?us-ascii?Q?0QnkRXjWpoG=5FRk=5FinH1aZVydQBEFA6y6=5FFs8FH6?=
+ =?us-ascii?Q?-O2mY0AvDn7Lp2sm2Ahti6lv6f2mW0TN2echrsS?=
+ =?us-ascii?Q?NAyIbt7nV4FxQSsFvU9c=5FkO5T2xZxPn1bSV3OZT?=
+ =?us-ascii?Q?3o3GIO38nOc2IBjwO9WVbD6jak8UaZbIcB=5FnIvp?=
+ =?us-ascii?Q?vg9N8Lp8pZBN3uRfSaPC9gJJPBSLAJvjeN2K2bR?=
+ =?us-ascii?Q?pR0LHlGjXD4xduQuAC9gAd1PXEeKiScDKSbLN=5Fz?=
+ =?us-ascii?Q?ieUZrqmkgs0g5Y9iMrqX1PE7-8Fb8IkAGYB585f?=
+ =?us-ascii?Q?WPCOu=5FdT5-qrZhBJ=5FeeP236Qc30WwQ=5FipaKuWyy?=
+ =?us-ascii?Q?aRQmqh7Wz83uWUhxdXdnj7=5FRqXt5m-3hMWvlX8I?=
+ =?us-ascii?Q?oRtBJfar0DAZsbfrYJuusX6IUo1YF3k18X81Kss?=
+ =?us-ascii?Q?AftNy7=5FZfVHP=5FD88ZZxPu1Q=5FE8KHPnwYgaV2v6o?=
+ =?us-ascii?Q?6k1bfCdNcA84S3zv88V7qkGlKeIsKY5pqYRyOmU?=
+ =?us-ascii?Q?MNQS7al0tF1rCTow-aDK9q1a1r5bxz7abuPtyzk?=
+ =?us-ascii?Q?HG2eSK5PZU0Q2gyjceVw3AlCXFuWWPzUKhw1ybV?=
+ =?us-ascii?Q?zZp=5FGqDD6RbVVgQXl7sfR37botjQyhWqe0sYPGd?=
+ =?us-ascii?Q?90=5F7LlLJs2bQ=5Fn0d9GmHWUEaGPkT3GWi9=5F7XMOk?=
+ =?us-ascii?Q?-81MQDWIcFGs5HDQT7LlfbDhZAEFtY6dEAciXy4?=
+ =?us-ascii?Q?z=5FVspnNeBX1O1TfxYLjMOYwYBlax0uv1eghFHu2?=
+ =?us-ascii?Q?i8DBhIOn2qfv2XGwjds4OuO=5F0vKlgb=5Fvu7wVw=3E=2C?=
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em6623=2Eemail=2Eopenai?=
+ =?us-ascii?Q?=2Ecom=3Fsubject=3D108370056=2EfGGcZ7TELYWhMLAD?=
+ =?us-ascii?Q?Hw7w0KcIDYgN9tPopiZT3-I8v-JoMDAwdTAwMN2?=
+ =?us-ascii?Q?H8h41FX7fdBtImQNiG3We-8ZJk2bE2CKoenEUyr?=
+ =?us-ascii?Q?5FhzQAWosfksMsUNbSsUlWzjqsIHHNAI8Xi8ZK8?=
+ =?us-ascii?Q?lUhDKqqXeVx5uN4Z3SPdHGeDkwyx-QysvErsGqj?=
+ =?us-ascii?Q?d9dmScepbg=3D=3D=2E3C=5F6XVRVwVfSI9lXhGBRgMEKBk?=
+ =?us-ascii?Q?V3wHaWnQC-HYsefhloMDAwdTAwMK0UHLZ1zV4OH?=
+ =?us-ascii?Q?fZpZ-ixTcsmfVmPJzBJmHetMBRUMP0qyGggSVSQ?=
+ =?us-ascii?Q?DPGOU=5FOxCRqZUb16OT-OmcQnh7NELpUt1VxjXre?=
+ =?us-ascii?Q?zeeNH6AmPWkvZRLYbP0QjDhls7lozh53-5NB5mh?=
+ =?us-ascii?Q?Kgavt7-v0fh8fjzenbV3G7uu9vpkpvPkXq5d5zs?=
+ =?us-ascii?Q?1OTXGXHew2IvlhVatjJAAIB2-QgDzZInlcFg46V?=
+ =?us-ascii?Q?2Hi199fTjAQu-98iODpyTMk5CGLhwGFZe6RCvoK?=
+ =?us-ascii?Q?twI5p2z7Mye=5Fqg9pxVtmOsPYOt0=5FkTBDpPMX3q0?=
+ =?us-ascii?Q?QdlliPJJw2tsXWHQ8IQGHeOB9P8a1b5zc6gz0l5?=
+ =?us-ascii?Q?3SpTvuWpxzQy3O41EKU5v6OyS3WEuwzUs5FfhHg?=
+ =?us-ascii?Q?Ulo3Tfe7qGEdndx21AdffVNSi4SbU9E6CoTIZvb?=
+ =?us-ascii?Q?0UlPxbtQ0=5F-lQYla9vGO4T1nGGomMeucybFvzlR?=
+ =?us-ascii?Q?6AtjcSj8RqPeWlM9is53WjUk7O6JBFgQ=5FlLl9T0?=
+ =?us-ascii?Q?63sD3E1CFO95=5FH2WMMHvdyA5x-kBEkT7loaOGIu?=
+ =?us-ascii?Q?R6DBtYMhJVuQDEGd=5F9JiuV8RS38mU5V5f8yWAfm?=
+ =?us-ascii?Q?PA-BXPDeKlcpXdWewiIdjp-4SPELdSqvSGc4I7A?=
+ =?us-ascii?Q?fgB2=5F=5FvAyYy8VFz1BzYOpDw5=5FON3ejsrP6F0sXn?=
+ =?us-ascii?Q?t6AA3wd5ZnNXYRWEhoGULJrRAOZ9mJv5sjFypBz?=
+ =?us-ascii?Q?3tb=5Fj6Yr6xSMP3OB6VLODz-6Fm2hVeW641cHdH2?=
+ =?us-ascii?Q?X-PG6EGu8FczwQxv=5F8fHOjQ1gbdRSRCHtcZUL9=5F?=
+ =?us-ascii?Q?BJQH62SddoyVSMwWeYTd-Sr0RHkNiLVBl-FatAd?=
+ =?us-ascii?Q?VP7aU34UZjgJuCKwU6VKOq5pDtjEWXHX0CtnMeY?=
+ =?us-ascii?Q?xCV7sWR7Y6VM10F10S=5FYRODJOVXQgc2g4a72bi1?=
+ =?us-ascii?Q?EiMaDXWRk1Qy8vLapZvQH40KrIlJDHFMZfBfnp0?=
+ =?us-ascii?Q?0D6ymALZnvUGyaGiHFjlEJRwyC-tK0dEjPVIHu0?=
+ =?us-ascii?Q?WqXUHnrkVeMO5UNzqBWXrGOZXkIFd-oUANZyi4n?=
+ =?us-ascii?Q?vFV=5FS1lYaPAs8f1aW6PWDMOKq4wSOBnRITEVkBu?=
+ =?us-ascii?Q?2RlT-8Ph4fojxiz9FwR9F76yhhDSOphww3of0AF?=
+ =?us-ascii?Q?Df7anFlbIZLkI=5FKy1=5FXmXxpSTba3tEqPBWkc1ta?=
+ =?us-ascii?Q?fFjha7lRZbwANge-WrQIzRVfata05eQFGmbInuX?=
+ =?us-ascii?Q?o2AV6C8sVgfFCKe6t7HSYMRF0iDrk6U=3D=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+<!DOCTYPE html>
+<html dir=3D"ltr">
+<head>
+  <meta charset=3D"utf-8">
+  <meta http-equiv=3D"x-ua-compatible" content=3D"ie=3Dedge">
+  <title></title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <!-- Hint clients that we explicitly support light/dark rendering. -->
+  <meta name=3D"color-scheme" content=3D"light dark only">
+  <meta name=3D"supported-color-schemes" content=3D"light dark only">
+ =20
+  <style type=3D"text/css">
+  /**
+   * Google webfonts. Recommended to include the .woff version for cross-cl=
+ient compatibility.
+   */
+  @media screen {
+    /* OpenAI Sans font family */
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 500;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Medium.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 600;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Semibold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 700;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Bold.woff2") format("woff2");
+    }
+  }
+
+  :root {
+    color-scheme: light dark only;
+    supported-color-schemes: light dark only;
+  }
+
+  /**
+   * Avoid browser level font resizing.
+   * 1. Windows Mobile
+   * 2. iOS / OSX
+   */
+  body,
+  table,
+  td,
+  a {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: 'OpenAI Sans', Helvetica, Arial, sans-serif;
+  }
+
+  /**
+   * Remove extra space added to tables and cells in Outlook.
+   */
+  table,
+  td {
+    mso-table-rspace: 0pt;
+    mso-table-lspace: 0pt;
+    vertical-align: top; /* Align content to the top of table cells */
+  }
+
+  /**
+   * Better fluid images in Internet Explorer.
+   */
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /**
+   * Remove blue links for iOS devices.
+   */
+  a[x-apple-data-detectors] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /**
+   * Fix centering issues in Android 4.4.
+   */
+  div[style*=3D"margin: 16px 0;"] {
+    margin: 0 !important;
+  }
+
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Collapse table borders to avoid space between cells.
+   */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  a {
+    color: #898A8D;
+  }
+
+  .image-reset-bullets,
+  .image-reset-bullets .email-bullet-link {
+      color: #000000;
+  }
+
+  /* Give the ChatGPT logo pill consistent breathing room in light mode. */
+  .email-logo-pill {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 13px;
+      display: inline-block;
+  }
+
+  img {
+    height: auto;
+    line-height: 100%;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+  }
+
+  /* Composer image sizing (mobile default) */
+  .composer-img {
+      width: 83px !important;
+      height: auto !important;
+      padding: 16px !important;
+  }
+
+  h1 {
+      font-size: 34px;
+      line-height: 41px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      margin: 0;
+  }
+  h2 {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 150%;
+      letter-spacing: -0.2px;
+  }
+  p {
+      font-size: 16px;
+      line-height: 130%;
+      font-weight: 500;
+      margin: 0;
+  }
+  p + p {
+      margin-top: 16px;
+  }
+  /* Intro blocks (H1/H2) sizing */
+  .intro-block {
+      width: 345px !important;
+      max-width: 345px !important;
+  }
+  /* Composer card sizing */
+  .composer-card {
+      width: 377px !important;
+      max-width: 377px !important;
+  }
+  /* Button styling */
+  a.button {
+      background-color: #000000 !important; /* default black */
+      border-radius: 24px !important; /* make button curvy */
+      padding: 11.5px 24px 11.5px !important; /* bigger size */
+      font-size: 16px !important; /* revert text size */
+      line-height: 24px !important;
+  }
+
+  a.button:active {
+      background-color: #414141 !important; /* dark gray on click */
+      border-radius: 36px !important;
+  }
+  /* CTA button hover state (supported clients only) */
+  a.button-invert:hover,
+  a.button-invert:focus {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+      border-color: #FFFFFF !important;
+  }
+  a.button-invert:hover span,
+  a.button-invert:focus span {
+      color: #FFFFFF !important;
+  }
+  @media (prefers-color-scheme: dark) {
+      a.button-invert {
+          background-color: #FFFFFF !important;
+          color: #000000 !important;
+          border-color: #FFFFFF !important;
+          -webkit-text-fill-color: #000000 !important;
+      }
+      a.button-invert span {
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+      }
+  }
+  [data-ogsc] a.button-invert,
+  [data-ogsb] a.button-invert {
+      background-color: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      -webkit-text-fill-color: #000000 !important;
+  }
+  [data-ogsc] a.button-invert span,
+  [data-ogsb] a.button-invert span {
+      color: #000000 !important;
+      -webkit-text-fill-color: #000000 !important;
+  }
+  /* Ensure hover keeps text legible even with dark-mode overrides. */
+  a.button-invert:hover,
+  a.button-invert:focus {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  a.button-invert:hover span,
+  a.button-invert:focus span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  /* Badges: use real rows so the stacked layout survives across email clie=
+nts */
+  .badges {
+      width: 100% !important;
+      max-width: 128px !important;
+  }
+  .badges .badge {
+      width: 100% !important;
+      vertical-align: bottom !important;
+  }
+  .badges .badge img {
+      width: 120px !important;
+      max-width: 120px !important;
+      height: auto !important;
+      margin: 0 auto !important;
+  }
+
+  /* Desktop: larger typography */
+  @media screen and (min-width:480px) {
+      h1 {
+          font-size: 34px !important;
+          line-height: 41px !important;
+          letter-spacing: 0.4px;
+          font-weight: 400 !important;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        line-height: 150%;
+        letter-spacing: -0.2px;
+      }
+      /* Header cell: increase side padding on desktop only */
+      td.header-td {
+          padding-left: 57px !important;
+          padding-right: 57px !important;
+      }
+      /* Composer image sizing for desktop */
+      .composer-img {
+          width: 98px !important;
+      }
+      /* Body content cells: increase side padding on desktop */
+      td.content-td {
+          padding-left: 60px !important;
+          padding-right: 60px !important;
+      }
+      td.footer-td {
+          padding-left: 56px !important;
+          padding-right: 56px !important;
+      }
+      p {
+          font-size: 16px !important;
+          line-height: 130% !important;
+          font-weight: 400;
+      }
+      td {
+          font-size: 10px !important;
+          line-height: 16px !important;
+          font-weight: 400;
+      }
+      a.button {
+          font-size: 16px !important;
+          line-height: 24px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 0 !important;
+      }
+      /* Composer card width on desktop */
+      .composer-card {
+          width: 400px !important;
+          max-width: 400px !important;
+      }
+      /* Intro blocks width on desktop */
+      .intro-block {
+          width: 360px !important;
+          max-width: 360px !important;
+      }
+  }
+  /* Mobile stacking helper for columns */
+  @media screen and (max-width:480px) {
+      /* Ensure footer badges bottom-align with copyright on mobile */
+      td.header-td {
+          padding-left: 21px !important;
+          padding-right: 21px !important;
+      }
+      /* Body content cells: smaller side padding on mobile */
+      td.content-td {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+      }
+      td.footer-td {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 0 !important;
+      }
+  }
+
+  /* Dark mode: render the email on a true-black canvas with high-contrast =
+cards */
+  @media (prefers-color-scheme: dark) {
+      body.generic,
+      .wrapperMod,
+      .heroMod03 {
+          background-color: #000000 !important;
+      }
+      body {
+          background-color: #000000 !important;
+          color: #ffffff !important;
+      }
+      .email-shell {
+          background-color: #000000 !important;
+      }
+      .content-td {
+          background-color: #000000 !important;
+      }
+      h1, h2, p {
+          color: #ffffff !important;
+      }
+      .heroMod03 h1,
+      .heroMod03 h2,
+      .heroMod03 p,
+      .box h1,
+      .box h2,
+      .box p,
+      .box a {
+          color: #FFFFFF !important;
+          -webkit-text-fill-color: #FFFFFF !important;
+      }
+      .prompt-card-table {
+          background: #000000 !important;
+          box-shadow: none !important;
+      }
+      .prompt-card-border {
+          border-color: #FFFFFF !important;
+      }
+      .prompt-card-text,
+      .prompt-card-text h2 {
+          color: #FFFFFF !important;
+      }
+      .email-header-td {
+          background-color: #000000 !important;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+      }
+      .email-header-inner {
+          padding-top: 16px !important;
+          padding-bottom: 16px !important;
+      }
+      .email-footer-surface {
+          background-color: #1f1f1f !important;
+          border-radius: 16px !important;
+          padding: 24px !important;
+      }
+      .email-footer-row {
+          background-color: #000000 !important;
+      }
+      .email-footer-logo-cell {
+          padding-bottom: 12px !important;
+      }
+      .email-logo-pill {
+          background-color: #ffffff !important;
+          border-radius: 12px !important;
+          padding: 4px !important;
+          display: inline-block !important;
+      }
+      .email-header-logo-pill {
+          border-radius: 16px !important;
+          padding: 12px !important;
+      }
+      .email-logo-pill img {
+          background-color: transparent !important;
+      }
+      .email-footer-logo-img {
+          width: 90px !important;
+          height: auto !important;
+      }
+      .email-footer-copy {
+          color: #ffffff !important;
+          padding-left: 0 !important;
+      }
+      .email-footer-copy a {
+          color: #ffffff !important;
+      }
+      .email-footer-copy .email-footer-copyright {
+          color: #a0a0a0 !important;
+      }
+      .image-reset-bullets,
+      .image-reset-bullets .email-bullet-link,
+      .image-reset-bullets .email-bullet-link strong {
+          color: #FFFFFF !important;
+          -webkit-text-fill-color: #FFFFFF !important;
+      }
+  }
+
+  /* Dark mode fallback for clients that use data-ogsc/data-ogsb */
+  [data-ogsc] body,
+  [data-ogsb] body {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+  }
+  [data-ogsc] body.generic,
+  [data-ogsb] body.generic,
+  [data-ogsc] .wrapperMod,
+  [data-ogsb] .wrapperMod,
+  [data-ogsc] .heroMod03,
+  [data-ogsb] .heroMod03 {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] .email-shell,
+  [data-ogsb] .email-shell {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] .content-td,
+  [data-ogsb] .content-td {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] h1,
+  [data-ogsb] h1,
+  [data-ogsc] h2,
+  [data-ogsb] h2,
+  [data-ogsc] p,
+  [data-ogsb] p {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  [data-ogsc] .heroMod03 h1,
+  [data-ogsb] .heroMod03 h1,
+  [data-ogsc] .heroMod03 h2,
+  [data-ogsb] .heroMod03 h2,
+  [data-ogsc] .heroMod03 p,
+  [data-ogsb] .heroMod03 p,
+  [data-ogsc] .box h1,
+  [data-ogsb] .box h1,
+  [data-ogsc] .box h2,
+  [data-ogsb] .box h2,
+  [data-ogsc] .box p,
+  [data-ogsb] .box p,
+  [data-ogsc] .box a,
+  [data-ogsb] .box a {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  [data-ogsc] .prompt-card-table,
+  [data-ogsb] .prompt-card-table {
+      background: #000000 !important;
+      box-shadow: none !important;
+  }
+  [data-ogsc] .prompt-card-border,
+  [data-ogsb] .prompt-card-border {
+      border-color: #FFFFFF !important;
+  }
+  [data-ogsc] .prompt-card-text,
+  [data-ogsb] .prompt-card-text,
+  [data-ogsc] .prompt-card-text h2,
+  [data-ogsb] .prompt-card-text h2 {
+      color: #FFFFFF !important;
+  }
+  [data-ogsc] .email-header-td,
+  [data-ogsb] .email-header-td {
+      background-color: #000000 !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+  }
+  [data-ogsc] .email-footer-surface,
+  [data-ogsb] .email-footer-surface {
+      background-color: #1f1f1f !important;
+      border-radius: 16px !important;
+      padding: 24px !important;
+  }
+  [data-ogsc] .email-footer-row,
+  [data-ogsb] .email-footer-row {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] .email-header-inner,
+  [data-ogsb] .email-header-inner {
+      padding-top: 16px !important;
+      padding-bottom: 16px !important;
+  }
+  [data-ogsc] .email-footer-logo-cell,
+  [data-ogsb] .email-footer-logo-cell {
+      padding-bottom: 12px !important;
+  }
+  [data-ogsc] .email-logo-pill,
+  [data-ogsb] .email-logo-pill {
+      background-color: #ffffff !important;
+      border-radius: 12px !important;
+      padding: 4px !important;
+      display: inline-block !important;
+  }
+  [data-ogsc] .email-header-logo-pill,
+  [data-ogsb] .email-header-logo-pill {
+      border-radius: 16px !important;
+      padding: 12px !important;
+  }
+  [data-ogsc] .email-logo-pill img,
+  [data-ogsb] .email-logo-pill img {
+      background-color: transparent !important;
+  }
+  [data-ogsc] .email-footer-logo-img,
+  [data-ogsb] .email-footer-logo-img {
+      width: 90px !important;
+      height: auto !important;
+  }
+  [data-ogsc] .email-footer-copy,
+  [data-ogsb] .email-footer-copy {
+      color: #ffffff !important;
+      padding-left: 0 !important;
+  }
+  [data-ogsc] .email-footer-copy a,
+  [data-ogsb] .email-footer-copy a {
+      color: #ffffff !important;
+  }
+  [data-ogsc] .email-footer-copy .email-footer-copyright,
+  [data-ogsb] .email-footer-copy .email-footer-copyright {
+      color: #a0a0a0 !important;
+  }
+  [data-ogsc] .image-reset-bullets,
+  [data-ogsb] .image-reset-bullets,
+  [data-ogsc] .image-reset-bullets .email-bullet-link,
+  [data-ogsb] .image-reset-bullets .email-bullet-link,
+  [data-ogsc] .image-reset-bullets .email-bullet-link strong,
+  [data-ogsb] .image-reset-bullets .email-bullet-link strong {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+
+
+  /* RTL mirroring */
+  [dir=3D"rtl"] body,
+  [dir=3D"rtl"] table,
+  [dir=3D"rtl"] td,
+  [dir=3D"rtl"] a {
+      direction: rtl !important;
+  }
+  [dir=3D"rtl"] h1,
+  [dir=3D"rtl"] h2,
+  [dir=3D"rtl"] p {
+      text-align: right !important;
+  }
+ =20
+
+  </style>
+
+
+
+</head>
+<body dir=3D"ltr" class=3D"generic" bgcolor=3D"#FFFFFF">
+
+  <div class=3D"preheader" style=3D"display: none; max-width: 0; max-height=
+: 600; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opa=
+city: 0;">
+    Get a shortlist with clear tradeoffs.
+  </div>
+
+  <!-- start body -->
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" di=
+r=3D"ltr" class=3D"wrapperMod">
+    <!-- start body block -->
+    <tr>
+      <td align=3D"center">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"360">
+        <tr>
+        <td align=3D"center" valign=3D"top" width=3D"360">
+        <![endif]-->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" class=3D"email-shell heroMod03" style=3D"width: 100%; max-width: 600px;=
+">
+         =20
+                        <!-- header image -->
+           =20
+           =20
+            <tr>
+                <td valign=3D"top" class=3D"header-td email-header-td" styl=
+e=3D"padding: 42px 24px 42px 24px;">
+                    <table align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"email-header-surface" style=3D"mi=
+n-width:100%; background-color:transparent;">
+                        <tbody><tr>
+                            <td valign=3D"top" align=3D"center" class=3D"em=
+ail-header-inner" style=3D"padding-top: 0; padding-bottom: 0;">
+	                                <a href=3D"https://url3243.email.openai.co=
+m/ls/click?upn=3Du001.I-2FaYIbqhsKngReUOKrmuweHw7Fh75qLKlFhai32cOrsCDQ7KSWX=
+TmC4XT0mH2ZOZe-2BM7ury788FN1DkD5ukhFa6mTzcl8lxkrzednm-2Fg-2BZ71ioVSktJZxw94=
+LABiREOOGbGDLkjdIb9mXdByM1oQYR-2Bo1fYhRw29dkvQBiLcoKsj2jHTSpsoQ6fRxhXP2rWjH=
+Kpq-2B9nmBd5u5CscljvzXrccF8MJ496efH1rYzAML-2FXG5Tcc78F58lv-2FDs06SiHkXHAqPD=
+bWqqV6OuKW3W1AxZbvkAfgmLWq6PWCjY96hdIb4KPAfYaQeiBipf4D69c-2FY1Umo2GYrVPl-2B=
+6Tclv5ULA-3D-3DAd-5_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW0=
+4U1Sd3ReEa76YtpvQe6W5vYfyNfenhduHlKWNQQpNaYNg8153hoR-2BmON0bQw7FGIm4ryTo1TG=
+-2FgOtRHWWvMqvUZvcbAeAaPH8Wn2oWrCxrGDjsvOI1bKdbjhmPtqYr5YQKnq-2BR1rXc4nqIIq=
+CSgaencr5q2X-2BOwrjzORbAOMD8GbHGD53elSZCwTiD2i7KJTG201xoEmkyWdU5txKOCyHMBgE=
+4NfKImHiYgM-2B459CtQK9-2BTIKUA7V6nDZMlDbqg3wcph3sba7PdWHrc0eBgRGDmLejfKsSny=
+W-2B58TJVGzzMlIPezxSmMZHggQnBznqqcHarkzjW5XH5rXZ-2FwxXddoz-2Bj8qdg7LNZULqXK=
+gtsjE9-2Ff-2FknlIoABlQ9C-2FklqaYkKllaOuXS7yTwPcJuggu72fS1-2B-2F-2BSoZ0sSmkv=
+-2FhYKoqPtwIEOOFkvUXaFnutnvphpZgtQZeNVQbf2lOmGNWM6r0ymcBR8tVDYrUwr0hwYOI-2F=
+NpXaWxZG5hYJYtYLa3kIgQuIIAFdbaWnZOb3kYbbcPlMbH39rbeK0qwKf7sE4enqm-2F7TfsEFv=
+VM33L8OsNbbGjO7fFmukK7O88dGMTKZWw0sOcV9dmpExfyK-2BOeQyfdfzDkpfveO27Naey6g-2=
+Fo6UBwhBzACewJsyX7RvDX07ay2QqaFa0I-2BAiCV6uMU-2BMs0LYy7Qe-2FWIIHoi-2FZsy5dE=
+GisyVGZoYzWBNa4nfH50LmEojSade3lEzj07NGXSvo1-2BKpE-2B-2FtN5HgZzhK-2Bv1oJO-2F=
+sMgZAcDPvVxDny9DdnpM565nsxqpN0oX7j4UpyYR50DdQif8MweC1Izv9G3895ddTJIrlq6rUHR=
+Yf9bgNkhugy9MTA97mAXlAgLzEAzO-2FVRWo5LlnL0KVlDmmP3PJRodH4t-2FS0zSOj1Z5dK6vs=
+f254Df0jj25YDJVSADtB4nf8L4ku0wJRG3Gb1-2FI8wV6gM-2Fm5IUD-2F9lMvo-2B5mg8A-2BP=
+EjyNg7zTXrPdVuaLOi1fdtuuR1RdMUxcar7AovaOg25cKoAA5eCFoERPr1YkU3cNtkIG2fncdiG=
+cpZdoYyBa-2BMSMr29nAKVRoaAblA1mbjlb05xGtihmgVyErD3v3F0D-2Bh9-2FRY1V-2BU57K5=
+vrLa-2BddFGABXScFRfiMhok-3D" target=3D"_blank" class=3D"email-logo-pill ema=
+il-header-logo-pill" style=3D"display:inline-block; background-color:#fffff=
+f; background-image:linear-gradient(#ffffff,#ffffff); border-radius:12px; p=
+adding:4px;">
+                                  <img alt=3D"" src=3D"https://persistent.o=
+aistatic.com/chatgpt/icons/chatgpt_logo.png" width=3D"103" style=3D"display=
+:block; margin:0 auto; width:103px; height:auto; max-width:100%; border:0; =
+background-color:#ffffff; background-image:linear-gradient(#ffffff,#ffffff)=
+; border-radius:10px;">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+         =20
+
+         =20
+ =20
+  <tr>
+    <td align=3D"center" class=3D"content-td" style=3D"padding: 6px 24px 0p=
+x 24px;">
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 552px; width: =
+100%;">
+        <tr>
+          <td align=3D"center" style=3D"padding:0;">
+            <h1 style=3D"margin:0; text-align:center; color:#000000; font-f=
+amily:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:34px; line-hei=
+ght:41px; font-weight:400; letter-spacing:0.4px;">
+                Choose the book that fits
+            </h1>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+ =20
+ =20
+ =20
+   =20
+      <tr>
+        <td align=3D"center" class=3D"content-td" style=3D"padding: 24px 24=
+px 0 24px;">
+          <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 552px; wid=
+th: 100%;">
+            <tr>
+             =20
+              <td align=3D"center" style=3D"padding:0;">
+                <p style=3D"text-align: center;">Share your goal and book o=
+ptions, then get a shortlist with tradeoffs.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+   =20
+   =20
+ =20
+   =20
+     =20
+     =20
+       =20
+     =20
+     =20
+
+
+
+
+
+
+
+<tr>
+  <td align=3D"center" style=3D"">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+      <tr>
+        <td align=3D"center" class=3D"content-td" style=3D"padding: 24px 24=
+px 28px 24px;">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" role=3D"presentation">
+            <tr>
+              <td align=3D"center">
+                <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-=
+com:vml" href=3D"https://chatgpt.com/?q=3DIn%20a%20few%20words%2C%20teach%2=
+0me%20how%20to%20use%20ChatGPT%20to%20compare%20book%20recommendations%20be=
+fore%20I%20buy.%20Then%2C%20help%20me%20compare%20popular%20children%27s%20=
+books%20for%20a%204th-grade%20reading%20unit%2C%20including%20audiobook%20a=
+nd%20ebook%20options%2C%20and%20give%20me%20a%20shortlist%20with%20a%20trad=
+eoff%20table%20for%20reviews%2C%20reading%20level%2C%20and%20classroom%20fi=
+t." style=3D"height:44px;v-text-anchor:middle;width:200px;" arcsize=3D"50%"=
+ stroke=3D"t" strokecolor=3D"#000000" strokeweight=3D"1px" fillcolor=3D"#00=
+0000"><w:anchorlock/><center style=3D"color:#FFFFFF;font-family:Helvetica,A=
+rial,sans-serif;font-size:16px;font-weight:400;letter-spacing:-0.32px;">Sta=
+rt comparing</center></v:roundrect><![endif]-->
+                <!--[if !mso]><!-- --><a href=3D"https://url3243.email.open=
+ai.com/uni/ls/click?upn=3Du001.I-2FaYIbqhsKngReUOKrmuwfHBkpmmsVm9KasrCP-2Be=
+XLClhIq5a4tzvvC4hK-2F8iT68CEzmupXXiJUvccaaWVoHFH3EPP3ngqEecuQOsEfqbMUFYpF3M=
+DBDiTWuTKWLwlGiF7Vgh1nWBmvTMOFpPh1HfZLINd3EKzqtzT71XeJeqtyBH6I02iDhgY7YSnLm=
+NTgXMFWCMEFnvSvOpPklossLL-2F-2FfRs5iw1K-2F2qjE3oHokxHWlYBSqAhUGlSjfThsct-2F=
+-2FPdyf3MZNEnOibvmVYvd6zhkrviJMiV-2FwbRgeo-2B5fxD7dcaRWcLKjm3J1PGsHozLhxxIS=
+35X4aRbbvXwYTnJCuM5MynpP2XlSutPan77XS-2FCq2H4-2F02fz7xbPtdautv2-2B-2FukFA-2=
+BrrpWlbpvuJafYgjNT64vcPpK-2B24z3xh-2Bq2cux4orNoeHONOQhuWAHdSEtXteAWBYfenZpw=
+FZAkhUliNsbjGTBAtVTlorpWJiox0C7mRNbNoyl81n661laOnnbIWSvI-2BqJCdZgwnu52wRqxN=
+selQkjwmgaufV9wXM7mfGWIxmaqfOIItjj17iUdXFQllVIfq-2BXFL8Cco5-2F9wHKobmaSVNlq=
+xXOPxe6Z77aSEYP0Pe3iSJsbi0IN1oOebjFuVEhUxyHBsWpQQwOPaKcrTEBOQLcABx7H5wC-2Fs=
+BW-2FKFnIFSqoxvfJxGbzMmyMRnYAEjM9kUZweJ2SfMswqIqDbvGnZuZpjGy-2BC5KlRUrL07Lj=
+krcmrsIdI39ZFrOC1VrqSO35_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd=
+6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduHlKWNQQpNaYNg8153hoR-2BmON0bQw7FGIm4ry=
+To1TG-2FgOtRHWWvMqvUZvcbAeAaPH8Wn2oWrCxrGDjsvOI1bKdbjhmPtqYr5YQKnq-2BR1rXc4=
+nqIIqCSgaencr5q2X-2BOwrjzORbAOMD8GbHGD53elSZCwTiD2i7KJTG201xoEmkyWdU5txKOCy=
+HMBgE4NfKImHiYgM-2B459CtQK9-2BTIKUA7V6nDZMlDbqg3wcph3sba7PdWHrc0eBgRGDmLejf=
+KsSnyW-2B58TJVGzzMlIPezxSmMZHggQnBznqqcHarkzjW5XH5rXZ-2FwxXddoz-2Bj8qdg7LNZ=
+ULqXKgtsjE9-2Ff-2FknlIoABlQ9C-2FklqaYkKllaOuXS7yTwPcJuggu72fS1-2B-2F-2BSoZ0=
+sSmkv-2FhYKoqPtwIEOOFkvUXaFnutnvphpZgtQZeNVQbf2lOmGNWM6r0ymcBR8tVDYrUwr0hwY=
+OI-2FNpXaWxZG5hYJYtYLa3kIgQuIIAFdbaWnZOb3kYbbcPlMbH39rbeK0qwKf7sE4enqm-2F7T=
+fsEFvVM33L8OsNbbGjO7fFmukK7O88dGMTKZWw0sOcV9dmpExfyK-2BOeQyfdfzDkpfveO27Nae=
+y6g-2Fo6UBwhBzACewJsyX7RvDX07ay2QqaFa0I-2BAiCV6uMU-2BMs0LYy7Qe-2FWIIHoi-2FZ=
+sy5dEGisyVGZoYzWBNa4nfH50LmEojSade3lEzj07NGXSvo1-2BKpE-2B-2FtN5HgZzhK-2Bv1o=
+JO-2FsMgZAcDPvVxDny9DdnpM565nsxqpN0oX7j4UpyYR50DdQif8MweC1Izv9G3895ddTJIrlq=
+6rUHRYf9bgNkhugy9MTA97mAXlAgLzEAzO-2FVRWo5LlnL0KVlDmmP3PJRodH4t-2FS0zSOj1Z5=
+dK6vsf254Df0jj25YDJVSADtB4nf8L4ku0wJRG3Gb1-2FI8wV6gM-2Fm5IUD-2F9lMvo-2BBXR1=
+WLNtEgBRjKr7cAiyZH-2BEjcTOgp2-2FjjIoOkZoJvb7FH6RDAVMIt2uctAKeFEMLsDeikKK0bg=
+6lf-2BaTMQaCeCmMpLZSX6k3E7zDIEPNrbMbFB9aiRK2y29SZ-2FFwBha-2FSBE8tKtnESoJOr3=
+x3J-2BrYXKORVFrK1IF7tFEqTyOB0-3D" target=3D"_blank" universal=3D"true" bgco=
+lor=3D"#000000" class=3D"button-invert" style=3D"font-size:16px; line-heigh=
+t:20px; font-family: Helvetica, Arial, sans-serif, 'OpenAI Sans'; font-weig=
+ht:400; background-color:#000000; text-decoration:none; padding:12px 24px; =
+color:#FFFFFF; border:1px solid #000000; border-radius:24px; display:inline=
+-block; mso-padding-alt:0;"><span style=3D"mso-text-raise:10pt;">Start comp=
+aring</span></a><!--<![endif]-->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+   =20
+ =20
+   =20
+      <tr>
+        <td align=3D"center" class=3D"content-td" style=3D"padding: 16px 24=
+px 0 24px;">
+          <img
+            src=3D"https://persistent.oaistatic.com/notifications/email_con=
+tent/l2-usecase-emails-global-creative/email_l3_non_wau_us_compare_book_pic=
+ks_before_you_buy_20260520__email_image.png"
+            alt=3D"A laptop on a desk shows unbranded children&#39;s book l=
+istings with review stars and audiobook or ebook details, next to a noteboo=
+k with classroom lesson notes, suggesting comparing book options before buy=
+ing."
+            width=3D"468"
+            style=3D"display:block; width:100%; max-width:468px; height:aut=
+o; border-radius:24px;"
+          />
+        </td>
+      </tr>
+   =20
+   =20
+ =20
+   =20
+      <tr>
+        <td align=3D"center" class=3D"content-td" style=3D"padding: 24px 24=
+px 32px 24px;">
+          <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 552px; wid=
+th: 100%;">
+            <tr>
+             =20
+              <td align=3D"left" style=3D"padding:0;">
+                <p style=3D"text-align: left;">Ask ChatGPT to weigh each bo=
+ok against what matters now, like reading level, reviews, and access. You&#=
+x27;ll get a clearer shortlist before you spend.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+   =20
+   =20
+ =20
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end body block -->
+
+        <!-- start footer -->
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+   =20
+    <tr>
+      <td align=3D"center" class=3D"email-footer-row" style=3D"padding:12px=
+ 0;">
+        <!--[if mso]>
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"600"><tr><td>
+        <![endif]-->
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" style=3D"max-width:600px;">
+          <tr>
+            <td align=3D"center" class=3D"footer-td email-footer-surface" s=
+tyle=3D"background-color:#ededed; border-radius:12px; padding:24px;">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%">
+                <tr>
+                 =20
+                    <td align=3D"left" class=3D"email-footer-logo-cell" sty=
+le=3D"padding-bottom:12px;">
+	                      <a href=3D"https://url3243.email.openai.com/ls/click=
+?upn=3Du001.I-2FaYIbqhsKngReUOKrmuweHw7Fh75qLKlFhai32cOrsCDQ7KSWXTmC4XT0mH2=
+ZOZe-2BM7ury788FN1DkD5ukhFa6mTzcl8lxkrzednm-2Fg-2BZ49mGuYG8GKH3754je6MSW7LO=
+lpy1ol8lkS5s-2B0jNUQSqCrDCOfQ714LcX6fvSkCnMWvA83fdShVzKsiy-2FtHIm3uvUvVnrVK=
+vKa0ggKbzVwIGaFAtGH4FdVs85c9D7CQLOkA62Nm-2BVPH2TmUPiKuRy-2FKzHYNFFQv5FQQbSH=
+ljPpf6w0KfGtYxp-2BjB2T4NvnM7NxNXhEQxTHllxc5mcPZdPLvzaChbcnMCuQ3d2TIT3liA-3D=
+-3Dixyl_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76=
+YtpvQe6W5vYfyNfenhduHlKWNQQpNaYNg8153hoR-2BmON0bQw7FGIm4ryTo1TG-2FgOtRHWWvM=
+qvUZvcbAeAaPH8Wn2oWrCxrGDjsvOI1bKdbjhmPtqYr5YQKnq-2BR1rXc4nqIIqCSgaencr5q2X=
+-2BOwrjzORbAOMD8GbHGD53elSZCwTiD2i7KJTG201xoEmkyWdU5txKOCyHMBgE4NfKImHiYgM-=
+2B459CtQK9-2BTIKUA7V6nDZMlDbqg3wcph3sba7PdWHrc0eBgRGDmLejfKsSnyW-2B58TJVGzz=
+MlIPezxSmMZHggQnBznqqcHarkzjW5XH5rXZ-2FwxXddoz-2Bj8qdg7LNZULqXKgtsjE9-2Ff-2=
+FknlIoABlQ9C-2FklqaYkKllaOuXS7yTwPcJuggu72fS1-2B-2F-2BSoZ0sSmkv-2FhYKoqPtwI=
+EOOFkvUXaFnutnvphpZgtQZeNVQbf2lOmGNWM6r0ymcBR8tVDYrUwr0hwYOI-2FNpXaWxZG5hYJ=
+YtYLa3kIgQuIIAFdbaWnZOb3kYbbcPlMbH39rbeK0qwKf7sE4enqm-2F7TfsEFvVM33L8OsNbbG=
+jO7fFmukK7O88dGMTKZWw0sOcV9dmpExfyK-2BOeQyfdfzDkpfveO27Naey6g-2Fo6UBwhBzACe=
+wJsyX7RvDX07ay2QqaFa0I-2BAiCV6uMU-2BMs0LYy7Qe-2FWIIHoi-2FZsy5dEGisyVGZoYzWB=
+Na4nfH50LmEojSade3lEzj07NGXSvo1-2BKpE-2B-2FtN5HgZzhK-2Bv1oJO-2FsMgZAcDPvVxD=
+ny9DdnpM565nsxqpN0oX7j4UpyYR50DdQif8MweC1Izv9G3895ddTJIrlq6rUHRYf9bgNkhugy9=
+MTA97mAXlAgLzEAzO-2FVRWo5LlnL0KVlDmmP3PJRodH4t-2FS0zSOj1Z5dK6vsf254Df0jj25Y=
+DJVSADtB4nf8L4ku0wJRG3Gb1-2FI8wV6gM-2Fm5IUD-2F9lMvo-2Bv-2FauwIsRtqRh9ubGUhG=
+bJoCZwyTtQtvaBa8saH-2BMGwzgzabMhQ5UO5nYMfMRJmDqNBpej8WP6Y4FbvzUQuSwtcYp-2Fu=
+4yC0UKlxZ42VyJBCGFN2G9Ybv-2F-2BHS0U8WpokGhsaEhdYK-2B9jwL0zJaP5PvqB-2FBtCn-2=
+FH1VIhDkapZPn0pg-3D" target=3D"_blank" style=3D"display:inline-block;">
+                        <img src=3D"https://cdn.mcauto-images-production.se=
+ndgrid.net/d4ef4a73d51fe844/23791e46-5717-4e4f-a33c-0cc5ba7cf5aa/176x45.png=
+" width=3D"88" height=3D"23" alt=3D"ChatGPT Logo" class=3D"email-footer-log=
+o-img" style=3D"display:block;border:0;">
+                      </a>
+                    </td>
+                 =20
+                </tr>
+                <tr>
+                  <td>
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%">
+                      <tr class=3D"footer-row">
+                        <td valign=3D"bottom" align=3D"left" class=3D"email=
+-footer-copy" style=3D"font-size:10px; line-height:1.8; color:#000; width:6=
+0%; padding-right:12px; vertical-align: bottom; padding-left: 0;">
+                          OpenAI<br/>
+                         =20
+                            1455 3rd Street<br/>San Francisco, CA 94158<br/=
+>
+                         =20
+                         =20
+                            <a href=3D"https://url3243.email.openai.com/asm=
+/unsubscribe/?user_id=3D108370056&amp;data=3Dyv6uhRW2S9VcxnKtmmVahSliDDvP0j=
+XVpyrr_SaCbBpoMDAwdTAwMCqiVfvckbvBENHFlixYLXD8oyjGFN3vDs7kyQF1Pj-152pzkF_sh=
+S1tGQpOwk1A9zHx1PL-bcO6zDgC1BsFkYNNRIwZBCaps4OaqsfGS6P74sufoBOuERX6O64XrOAy=
+GPk9UdDnMKEMJgvrAXddWik5p6hoQuPjNVT76EyNs0F2pjQV1d_v2JaU5j0z0bCpuoHmfrtaIe9=
+TzmOoOcGS7mDurEG2uMvnbbP5PIY-wHhTLwh7-hcgOjsr6V0Gx35Tk_7hBu3KStUu4Nx5vuW7DA=
+Pa70f5KaQBbMsYXyqL9cvRZKFLFMOpABfjbQeCglaNP8dJPkxMs3YKdkl63iYNXsbV8NIfST-yu=
+JBI86XhLkUz3qYhKqH9WB-n2dJdnxSmZSd-B32nCT4F5K36is17irVNbxcouEIx19RcUbDkpQ5X=
+_uFlqozW2QIRp_jx2RnCZ13TOYpvokY74Ca6TcX-n9kkqAyw9H56y0fLev3d8LO3CYPHPDzvZiA=
+-gEEH61kt84f0Ag8J_mkTKkF5shMvRUp0NHtIfW64v1wbJcNqS-BoOMLTIQsjmtVy32xGnnqwNR=
+fJOyJpOjE6jdFa6n7T_njPjNAEC4UcZgLNU5r1N2HvsRaIoQpEXh-Sbn3hquJsX624nwSbRNRk2=
+sdZskZLZvIbKBWwczm3_KD2C7mmQaLpRHMzZZ8wR5ACJFFb461B0XfH-1Tq1hsjb-up8zLi6EKE=
+XAj0VsQ8Z4qLqKYVFdBwFoB986tCzD_DPqmnrwoXTNgBPLBjZA55zNWJU4iIAZnPscQZYi0EioC=
+RfgIdg-sOGVFcrt5wgegwWhaimgUVNtoo3KOFyvswuuxvn-dfE5EGJdyzGK6SLfN9ASvclouom8=
+winveQ7gEI2dn3rPD228NGPG8WZ1Y8Gp9MDuEEdC8IFIF8FJ1U6BZjetw685zX7EKXhMDAvE-LN=
+Ox8RaOv7W9wCYYNYgWx33eUrGESL5CBuMiNgmL5cFalt9LUzSHZFxYopUhEfjqsdCXriCAa2jG3=
+SmEBGt_EbeLdZ2pBM6HuLa3eMG5_DTYmdzY287n8YM_020YYkMg9uGI5EZahqNEfkWxunfiyU-y=
+QV9l9Y_M6cnGoXhkjlt9_c4fF_AvqBiLohrOEVMGz-UR21VNPDc2avwR0qXn3giUV6nlfzm6iBC=
+sLGE3uVmelkuDrkbd7GiUNGjCzsuLGH6MCcmtGIi6toWh5l6otUfKOxWbvg60MuADdLbqdh7THk=
+cpZouRBP5j76U52G64hqMgR66bq9Z6-pTMMUw0fQUXfauNud9f7vN1j3LyfwsDU7gQx6qzyQ815=
+16zdLVHcOmGCYft9UvuN9UD5jzbsLt8c-C6ctpBK9mmV1h3LmC4Qf2W-IUE-" target=3D"_bl=
+ank" style=3D"color:#898A8D; text-decoration:underline;">Unsubscribe</a><br=
+/>
+                         =20
+                          <a href=3D"https://url3243.email.openai.com/ls/cl=
+ick?upn=3Du001.I-2FaYIbqhsKngReUOKrmuwdFPmDaqS0juGoYmsKbfgYfwqExqW26D5AgK66=
+Z85ve44Wnp0Hw3nl7gYerZVcyzc0QNKtR-2FiuWH4vkucseVGNRYh-2B8koyUo0m-2F5N1LKNRA=
+Yz56tKAb0kaRIM2dOG3JnnEeAvanQO9S0EUSg4OQrarZNjTJ2dwAtl74vN-2BWM2loIctPKEZc0=
+bVq80AmO4Np95UHYXVcCNgsbTN-2FN-2BJc7Zgo-3DxxcU_ifpdZN5Unwyz9jUhBw0jKiHiXszP=
+B84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduHlKWNQQpNaYNg815=
+3hoR-2BmON0bQw7FGIm4ryTo1TG-2FgOtRHWWvMqvUZvcbAeAaPH8Wn2oWrCxrGDjsvOI1bKdbj=
+hmPtqYr5YQKnq-2BR1rXc4nqIIqCSgaencr5q2X-2BOwrjzORbAOMD8GbHGD53elSZCwTiD2i7K=
+JTG201xoEmkyWdU5txKOCyHMBgE4NfKImHiYgM-2B459CtQK9-2BTIKUA7V6nDZMlDbqg3wcph3=
+sba7PdWHrc0eBgRGDmLejfKsSnyW-2B58TJVGzzMlIPezxSmMZHggQnBznqqcHarkzjW5XH5rXZ=
+-2FwxXddoz-2Bj8qdg7LNZULqXKgtsjE9-2Ff-2FknlIoABlQ9C-2FklqaYkKllaOuXS7yTwPcJ=
+uggu72fS1-2B-2F-2BSoZ0sSmkv-2FhYKoqPtwIEOOFkvUXaFnutnvphpZgtQZeNVQbf2lOmGNW=
+M6r0ymcBR8tVDYrUwr0hwYOI-2FNpXaWxZG5hYJYtYLa3kIgQuIIAFdbaWnZOb3kYbbcPlMbH39=
+rbeK0qwKf7sE4enqm-2F7TfsEFvVM33L8OsNbbGjO7fFmukK7O88dGMTKZWw0sOcV9dmpExfyK-=
+2BOeQyfdfzDkpfveO27Naey6g-2Fo6UBwhBzACewJsyX7RvDX07ay2QqaFa0I-2BAiCV6uMU-2B=
+Ms0LYy7Qe-2FWIIHoi-2FZsy5dEGisyVGZoYzWBNa4nfH50LmEojSade3lEzj07NGXSvo1-2BKp=
+E-2B-2FtN5HgZzhK-2Bv1oJO-2FsMgZAcDPvVxDny9DdnpM565nsxqpN0oX7j4UpyYR50DdQif8=
+MweC1Izv9G3895ddTJIrlq6rUHRYf9bgNkhugy9MTA97mAXlAgLzEAzO-2FVRWo5LlnL0KVlDmm=
+P3PJRodH4t-2FS0zSOj1Z5dK6vsf254Df0jj25YDJVSADtB4nf8L4ku0wJRG3Gb1-2FI8wV6gM-=
+2Fm5IUD-2F9lMvo-2BffuYQ2sYCXzrrgjlHx1gakOjvKrr7-2Fb-2F4x2B1SuEnVmeWbk93XWzy=
+wZDMsqmsHFlwWeFda4z39HjEYP-2BrytbeaayQUEmUVOtpaReJwpOC2JAWiFc3TRAzrU2eov3xn=
+3RLLrRsWcPxcfwpGIe0v1cVMqnqwVNPGlUgaXximPrSmc-3D" target=3D"_blank" style=
+=3D"color:#898A8D; text-decoration:underline;">Privacy</a> &middot; <a href=
+=3D"https://url3243.email.openai.com/ls/click?upn=3Du001.I-2FaYIbqhsKngReUO=
+KrmuwYaDqPngOSPu6GkRbe5tnRM9OIAhQskX37vJyi-2FSYhQOMPcjhPTG0XvT-2FjgARYqaEZV=
+IV8tRosZLtGix-2Fq8RF7vbRBLOdCTVmIvNyFiEZqQkHSVSIsbsdkdwPE3dqgVGdwaVn1z8Zba8=
+yv3Lc4lJoeYFs6jcwLP2w3SUm1FQVrZd6GN2pQiOsxDRBFfK-2BQZKCg-3D-3D-b7f_ifpdZN5U=
+nwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfe=
+nhduHlKWNQQpNaYNg8153hoR-2BmON0bQw7FGIm4ryTo1TG-2FgOtRHWWvMqvUZvcbAeAaPH8Wn=
+2oWrCxrGDjsvOI1bKdbjhmPtqYr5YQKnq-2BR1rXc4nqIIqCSgaencr5q2X-2BOwrjzORbAOMD8=
+GbHGD53elSZCwTiD2i7KJTG201xoEmkyWdU5txKOCyHMBgE4NfKImHiYgM-2B459CtQK9-2BTIK=
+UA7V6nDZMlDbqg3wcph3sba7PdWHrc0eBgRGDmLejfKsSnyW-2B58TJVGzzMlIPezxSmMZHggQn=
+BznqqcHarkzjW5XH5rXZ-2FwxXddoz-2Bj8qdg7LNZULqXKgtsjE9-2Ff-2FknlIoABlQ9C-2Fk=
+lqaYkKllaOuXS7yTwPcJuggu72fS1-2B-2F-2BSoZ0sSmkv-2FhYKoqPtwIEOOFkvUXaFnutnvp=
+hpZgtQZeNVQbf2lOmGNWM6r0ymcBR8tVDYrUwr0hwYOI-2FNpXaWxZG5hYJYtYLa3kIgQuIIAFd=
+baWnZOb3kYbbcPlMbH39rbeK0qwKf7sE4enqm-2F7TfsEFvVM33L8OsNbbGjO7fFmukK7O88dGM=
+TKZWw0sOcV9dmpExfyK-2BOeQyfdfzDkpfveO27Naey6g-2Fo6UBwhBzACewJsyX7RvDX07ay2Q=
+qaFa0I-2BAiCV6uMU-2BMs0LYy7Qe-2FWIIHoi-2FZsy5dEGisyVGZoYzWBNa4nfH50LmEojSad=
+e3lEzj07NGXSvo1-2BKpE-2B-2FtN5HgZzhK-2Bv1oJO-2FsMgZAcDPvVxDny9DdnpM565nsxqp=
+N0oX7j4UpyYR50DdQif8MweC1Izv9G3895ddTJIrlq6rUHRYf9bgNkhugy9MTA97mAXlAgLzEAz=
+O-2FVRWo5LlnL0KVlDmmP3PJRodH4t-2FS0zSOj1Z5dK6vsf254Df0jj25YDJVSADtB4nf8L4ku=
+0wJRG3Gb1-2FI8wV6gM-2Fm5IUD-2F9lMvo-2BQ4JImyWXFfKOlYKsUYXQICvfF36WV10fCijk4=
+SmGAWA8nqnoTwNvvFxF6-2BFw9GpCq7BUgs4PW81JfhBp1uJfEtbLHkncUh1rAcr9YuPt6iPnZ-=
+2BMQ4XjeidLWM41gxfZR1vPxmZQhCJG0948danM-2FSSQK23UEYoJ1UwFuaO9slHU-3D" targe=
+t=3D"_blank" style=3D"color:#898A8D; text-decoration:underline;">Terms</a><=
+br/>
+                          <span class=3D"email-footer-copyright" style=3D"c=
+olor:#888; display:block; margin-top: 1.8em;">OpenAI =C2=A9 2015=E2=80=9320=
+26</span>
+                        </td>
+                       =20
+                          <td valign=3D"bottom" width=3D"40%" style=3D"widt=
+h:40%; text-align:center; vertical-align: bottom;">
+                           =20
+                              <table role=3D"presentation" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"badges" style=3D"width:100%; max-=
+width:128px;">
+                                <tr>
+                                  <td class=3D"badge" style=3D"text-align:c=
+enter; padding:0 4px 8px 4px;">
+                                    <a href=3D"https://url3243.email.openai=
+.com/ls/click?upn=3Du001.I-2FaYIbqhsKngReUOKrmuwYBa-2BGFcXGeGbwcZIhpg-2FH1p=
+c6X2duY0-2Fz3LF-2BpeGLeWmkTfxpouE7rs0nUGSMQpqUhry-2FFbVqtt-2F2iMOVVLfE-2BB8=
+Rd-2FEm1jvc0cer3MMzSamrNKRkB2cBC4cNmdghgUm4-2B-2FylOBrUwdVEFvmnjv2V9Qa-2BM6=
+sfHvJzetg4BnXTOGGapsUj7xle9n5gr8xlbCaGw4dtnawIqMMu67Knf51PEV3l-2FtGKJHpwQ1Z=
+b25GO-2B-2Bx0fx9XieeBcyIHHg1deNstV7I-2BaC8xI0cbnPTNIkNai56e31XQrtd3aotqeSkY=
+DRS3wAT2tjWf9MwpVw1eMavJgWMEmN1BrEm0dQVx-2B4Lqs-3DqqA5_ifpdZN5Unwyz9jUhBw0j=
+KiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduHlKWNQQp=
+NaYNg8153hoR-2BmON0bQw7FGIm4ryTo1TG-2FgOtRHWWvMqvUZvcbAeAaPH8Wn2oWrCxrGDjsv=
+OI1bKdbjhmPtqYr5YQKnq-2BR1rXc4nqIIqCSgaencr5q2X-2BOwrjzORbAOMD8GbHGD53elSZC=
+wTiD2i7KJTG201xoEmkyWdU5txKOCyHMBgE4NfKImHiYgM-2B459CtQK9-2BTIKUA7V6nDZMlDb=
+qg3wcph3sba7PdWHrc0eBgRGDmLejfKsSnyW-2B58TJVGzzMlIPezxSmMZHggQnBznqqcHarkzj=
+W5XH5rXZ-2FwxXddoz-2Bj8qdg7LNZULqXKgtsjE9-2Ff-2FknlIoABlQ9C-2FklqaYkKllaOuX=
+S7yTwPcJuggu72fS1-2B-2F-2BSoZ0sSmkv-2FhYKoqPtwIEOOFkvUXaFnutnvphpZgtQZeNVQb=
+f2lOmGNWM6r0ymcBR8tVDYrUwr0hwYOI-2FNpXaWxZG5hYJYtYLa3kIgQuIIAFdbaWnZOb3kYbb=
+cPlMbH39rbeK0qwKf7sE4enqm-2F7TfsEFvVM33L8OsNbbGjO7fFmukK7O88dGMTKZWw0sOcV9d=
+mpExfyK-2BOeQyfdfzDkpfveO27Naey6g-2Fo6UBwhBzACewJsyX7RvDX07ay2QqaFa0I-2BAiC=
+V6uMU-2BMs0LYy7Qe-2FWIIHoi-2FZsy5dEGisyVGZoYzWBNa4nfH50LmEojSade3lEzj07NGXS=
+vo1-2BKpE-2B-2FtN5HgZzhK-2Bv1oJO-2FsMgZAcDPvVxDny9DdnpM565nsxqpN0oX7j4UpyYR=
+50DdQif8MweC1Izv9G3895ddTJIrlq6rUHRYf9bgNkhugy9MTA97mAXlAgLzEAzO-2FVRWo5Lln=
+L0KVlDmmP3PJRodH4t-2FS0zSOj1Z5dK6vsf254Df0jj25YDJVSADtB4nf8L4ku0wJRG3Gb1-2F=
+I8wV6gM-2Fm5IUD-2F9lMvo-2B6hYeExjByn-2FVZI7FbNgRnKQ8mriL3WmI-2F6urAuDxq8jWF=
+I9vjqkYDAVg-2BdYByIb955tea0s-2FSfxXkS3NvQ8KNeq8u2WlC5BDSQ3xm4IvqRjTS2IehpO3=
+NiyYEkYEw7IO103A031u8TDx1UX-2Fbs3e9CsfQ8rjtYjDv7pYzTpNM0E-3D" target=3D"_bl=
+ank" style=3D"display:inline-block;">
+                                      <img src=3D"http://cdn.mcauto-images-=
+production.sendgrid.net/d4ef4a73d51fe844/f0bb62f0-5199-4600-a341-38aa871bde=
+57/240x80.png" width=3D"120" alt=3D"Get it on Google Play" style=3D"display=
+:block; border:0; width:120px; height:auto;">
+                                    </a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class=3D"badge" style=3D"text-align:c=
+enter; padding:0 4px;">
+                                    <a href=3D"https://url3243.email.openai=
+.com/ls/click?upn=3Du001.I-2FaYIbqhsKngReUOKrmuwYWte-2BeK-2FyKj-2FOqgK2UtFo=
+GAaO7eBUt8soQ5BGC2EfVtC95MFGma9I8358veyKD4ktYKawjBtcLA-2FOnLUTbdoJuTknazAK-=
+2BQ-2FB8O9F7U4NaAHYKa-2F9eKDs6lw-2FIJQejR3iApyqrT-2Ff3-2FZiRPjvrpdc1rkjrC8T=
+siC550XcUmbTn7-2FGUspD7jxHatHfGiObk2mkyvjMBIUPXAkM0xKPcrnFUlzjm6RXC4GE7ijF7=
+2nhnVqluA_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa=
+76YtpvQe6W5vYfyNfenhduHlKWNQQpNaYNg8153hoR-2BmON0bQw7FGIm4ryTo1TG-2FgOtRHWW=
+vMqvUZvcbAeAaPH8Wn2oWrCxrGDjsvOI1bKdbjhmPtqYr5YQKnq-2BR1rXc4nqIIqCSgaencr5q=
+2X-2BOwrjzORbAOMD8GbHGD53elSZCwTiD2i7KJTG201xoEmkyWdU5txKOCyHMBgE4NfKImHiYg=
+M-2B459CtQK9-2BTIKUA7V6nDZMlDbqg3wcph3sba7PdWHrc0eBgRGDmLejfKsSnyW-2B58TJVG=
+zzMlIPezxSmMZHggQnBznqqcHarkzjW5XH5rXZ-2FwxXddoz-2Bj8qdg7LNZULqXKgtsjE9-2Ff=
+-2FknlIoABlQ9C-2FklqaYkKllaOuXS7yTwPcJuggu72fS1-2B-2F-2BSoZ0sSmkv-2FhYKoqPt=
+wIEOOFkvUXaFnutnvphpZgtQZeNVQbf2lOmGNWM6r0ymcBR8tVDYrUwr0hwYOI-2FNpXaWxZG5h=
+YJYtYLa3kIgQuIIAFdbaWnZOb3kYbbcPlMbH39rbeK0qwKf7sE4enqm-2F7TfsEFvVM33L8OsNb=
+bGjO7fFmukK7O88dGMTKZWw0sOcV9dmpExfyK-2BOeQyfdfzDkpfveO27Naey6g-2Fo6UBwhBzA=
+CewJsyX7RvDX07ay2QqaFa0I-2BAiCV6uMU-2BMs0LYy7Qe-2FWIIHoi-2FZsy5dEGisyVGZoYz=
+WBNa4nfH50LmEojSade3lEzj07NGXSvo1-2BKpE-2B-2FtN5HgZzhK-2Bv1oJO-2FsMgZAcDPvV=
+xDny9DdnpM565nsxqpN0oX7j4UpyYR50DdQif8MweC1Izv9G3895ddTJIrlq6rUHRYf9bgNkhug=
+y9MTA97mAXlAgLzEAzO-2FVRWo5LlnL0KVlDmmP3PJRodH4t-2FS0zSOj1Z5dK6vsf254Df0jj2=
+5YDJVSADtB4nf8L4ku0wJRG3Gb1-2FI8wV6gM-2Fm5IUD-2F9lMvo-2B3XQHzEOtS3k4i30WZKR=
+JkoQ4Ptpcs2KlNsvzyyM0-2B-2B6QvsPM1c0fJFomMs9a2mO-2FwYgWU1I-2Bqu8vGMlXokNULL=
+KOOgUUEd0t5b92Z2Q-2B-2FGXNv6HLhTpJMILjmPtcOCgxyG6Qy9kQkux2dlw4HyKb0Ye6GKt9I=
+qxIqFrBMbqL6d8-3D" target=3D"_blank" style=3D"display:inline-block;">
+                                      <img src=3D"http://cdn.mcauto-images-=
+production.sendgrid.net/d4ef4a73d51fe844/7556e4e9-fd26-44ce-b5db-098b33274c=
+20/240x80.png" width=3D"120" alt=3D"Download on the App Store" style=3D"dis=
+play:block; border:0; width:120px; height:auto;">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                           =20
+                          </td>
+                       =20
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]></td></tr></table><![endif]-->
+      </td>
+    </tr>
+    <!-- end footer -->
+
+  </table>
+  <!-- end body -->
+
+<img src=3D"https://url3243.email.openai.com/wf/open?upn=3Du001.mRvjWa6a2td=
+i7UgUZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszauk-2FtLuX3qTpWitWor=
+4DA3aMfI0O8HBhMPLCSQxCEAXmjpSI5i9n7kScTnUFp5VQq2xyI8G19rIudfM8BTN8V5q38g7tm=
+l0yhmGNZgiqraf46pVl1qYQAqCae6JEi-2FzdhL1-2Fpp38hfHCTyYB0MI2AZsHh5xHIJtfkOK2=
+Rakj0Evksm5tD1dubJEBgJTYzs0O9ub3VvlmgL-2FYo8qGlxVyQ2HwH8AK1ql5MVvSM-2FB8TYf=
+4KUW1mzhS90pZ535RLz-2BybTzJwbsM99ylwlmJiSd1I80lLtv3zwI4wpJYAYgRIDadL-2Bu9xI=
+UGSMHpK2eBg-2BtUsOpPdh49TZVebqwZOTCR22XL-2F5NnKykfjrMT4PIa6OHxFFpYge6TeUjak=
+sl11M4q3JN0qDPf-2Fjm3TmuphRq279-2B4NYsGTYI0BMGRnoz36ICJsutxW0c9c3z3DL-2FF32=
+JnvCEa3g-2Bglq2eg6IkyLqpXD1UGVqbe9lStzzJqABWa9noJbMuGIKq6SFK643SN6bmqP3o2Jt=
+NyV-2FTT-2BT0jrRnLzsPWF3l9oB0y91eSpgRTKsZjKwSk9F-2FKkS-2BAyJdNec-2B4-2ByiQ4=
+QH40K-2B5sRMH9sAba3nfApw5nkPHTQdSkUsduKyRb0Iiyxr-2Fpl19u-2FyUuQK7YwaSlfwx9m=
+1uRW5fBUZvuRLw3lmVpXJDbSuSLJ6Lq5-2FsBtIQYTb2ugv81fP5JWJ7uqDV3-2FTw0ZgqH363S=
+e9QUiJ5QdyoNCIzoArWeaVg-2Fi1KK4-2FptOWOOFIrLw80sR4fQ5IG-2F9kfvnnyiciNf1bPMM=
+BAjtJOShzFJ7bh4B-2BpyalBNFVaq6TnHGEgMzAwrpma2QZG63RpCk9r4LViX-2FBNLu0Xmo9js=
+tUH-2BA7eRgZ9LnkoNjh1wfqtLGFGJkSmDnuCP90WlTOTV8YQoI8alMV-2FwSpZafXxonwHKIcT=
+mGwd-2BfBPMv2Wh71OQ9-2FR-2B-2Frt2pPCTuF3TgdD905PAijzZuM9QjaQHaRx8e36Q-2BPSg=
+oozJUU-2B1IuLf4fdnIEIkArDgHGiS4qOcWTphymJdoNGXm9cLlmLf0LCNCEca-2BAhgiB3JCum=
+Fz6-2BrvBh-2F6Rbn5QTw1oTdui11XGiAuyT5uIv61Ys6y65BOIAXnAXP5XA0noMKiGFRwU8pTs=
+6DMRf6KPUBw4" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"heigh=
+t:1px !important;width:1px !important;border-width:0 !important;margin-top:=
+0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-le=
+ft:0 !important;padding-top:0 !important;padding-bottom:0 !important;paddin=
+g-right:0 !important;padding-left:0 !important;"/></body>
+</html>

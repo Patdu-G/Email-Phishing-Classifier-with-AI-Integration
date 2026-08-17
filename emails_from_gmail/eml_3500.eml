@@ -1,0 +1,1227 @@
+X-GM-THRID: 1703325367011767519
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:ab4:a32c:0:0:0:0:0 with SMTP id eh12csp1289798ecb;
+        Tue, 22 Jun 2021 20:07:35 -0700 (PDT)
+X-Google-Smtp-Source: 
+ ABdhPJxmFy0PdFSuB3ebeWvxIgSt6fni6DagA69yKFmLzMSIZS2uzyi+51jzVbDNYAWk4KtGCbQt
+X-Received: by 2002:a5b:649:: with SMTP id o9mr6063401ybq.399.1624417654927;
+        Tue, 22 Jun 2021 20:07:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1624417654; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qIIck2vTTkobffPuOYhAA91J82vPNsJ6+hnxt4AU8MMk7Pkt9/9ZEscvg1tituYofg
+         NvCn81pxicPNOxK/ytONqzH3k+VYL5jgyBO5joESe1NK7qOTPi4wqPT3WWljPNVAxBn4
+         U/+0wDIecWzxFT6ftPasGgUBgcTSHaadsyYCv9psLscYOKZqY2hdut54q8Z17c3kqzh2
+         WW1JF5KTuTHONW62XBLbNmYprlR0uoh35pP7EtyGum7nyIkaNtT+CVh31QpCQkHqAlfr
+         ccEOxbFL4sDWGbMKOPdfT6W36PP/75bymKt2AwtNs71p3hNQtVgKxKovVsJ/5S9ouyfh
+         D6aA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=date:to:from:subject:reply-to:feedback-id:mime-version:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=jFgp1HR0/1GzC3paSaTOB4ME8kWQEtMLhpULPRUcOWg=;
+        b=GHRsNlVkBypzfMDvK+hDx9vnhCMaWBzL1sEaffr8t1v4yjjHJ/mA1rXIaGX/vz+4yS
+         02nHvIHkToTzafRUoo0dfNP2xhg0hj/vZfmS/h4FfYQw8saCaMq5xkuf13m/9RV3hmPR
+         9Rsps0QDO0vA/TMr1xx4I9DfVYjG/EtVOD2/PgkewpkSVHFDAAVmrs8cpTEEP7bhYGyU
+         ikcxeI1XU+POxhFoiX/qEPWbpfN2Vhp6oLr5fsiOjOVjR65kvQl7UxVKaiuFUVTmtIW8
+         uCT6UhhGtoNwrvRVWY4iKapla3VyLfihWpTpbRkE2rD82rac6G9PwHZoSiQbnl4Omc/g
+         EZ2w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.epicgames.com header.s=ep1 header.b=IhFIg3X9;
+       spf=pass (google.com: domain of bounce@mail.epicgames.com designates
+ 142.54.246.228 as permitted sender) smtp.mailfrom=bounce@mail.epicgames.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=epicgames.com
+Return-Path: <bounce@mail.epicgames.com>
+Received: from mta228b.pmx13.epsl1.com (mta228b.pmx13.epsl1.com.
+ [142.54.246.228])
+        by mx.google.com with ESMTPS id
+ e127si3772021ybb.206.2021.06.22.20.07.34
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 22 Jun 2021 20:07:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce@mail.epicgames.com designates
+ 142.54.246.228 as permitted sender) client-ip=142.54.246.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.epicgames.com header.s=ep1 header.b=IhFIg3X9;
+       spf=pass (google.com: domain of bounce@mail.epicgames.com designates
+ 142.54.246.228 as permitted sender) smtp.mailfrom=bounce@mail.epicgames.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=epicgames.com
+Return-Path: <bounce@mail.epicgames.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=mail.epicgames.com;
+	s=ep1; t=1624417652;
+	bh=VuaxjzxS+EbXorDUiIx+hkv6ECWj9es041jdyhV1c3o=;
+	h=MIME-Version:Subject:From:To:Date:Content-Type;
+	b=IhFIg3X9MMEohSMYQTy+uIDZVvy15gUke6k7fAK+qUh9Sc/+fDCxg9gqLaCvCIalS
+	 kZ4GShNM4XaCrfbgmugYzOzc07zBxc/1BnWV46ejeQhrz74/2BZur425OeJbPsCxIQ
+	 zdKBegcJAyC/DzHGG7b2Vj7f7eSeo6lwj+/SKH9Q=
+Received: from [10.233.19.184] ([10.233.19.184:40174])
+	by fe1udsmtn9n16 (envelope-from <bounce@mail.epicgames.com>)
+	(ecelerity 4.2.38.62370 r(:)) with ECSTREAM
+	id 36/8E-11614-475A2D06; Wed, 23 Jun 2021 03:07:32 +0000
+List-Unsubscribe: 
+ <mailto:bounce-HP2v60000017a36d64dd6a2c2e4f4bbe5c898027@mail.epicgames.com?subject=list-unsubscribe>
+Message-ID: <HP2v60000017a36d64dd6a2c2e4f4bbe5c898027@mail.epicgames.com>
+MIME-Version: 1.0
+Feedback-ID: 
+ 2f5bd151-734c-459a-93ac-43e0557339ed:6527a719-de1b-489b-ab7d-48cfff3474b3:email:epslh1
+X-NSS: 2f5bd151-734c-459a-93ac-43e0557339ed
+Reply-To: "fortnite@mail.epicgames.com" <fortnite@mail.epicgames.com>
+Subject: =?UTF-8?B?RGl2ZSBpbnRvIEZvcnRuaXRl4oCZcyBDb3NtaWMgU3VtbWVy?=
+From: Epic Games  <fortnite@mail.epicgames.com>
+To: patriogabrielpatdu@gmail.com
+Date: Wed, 23 Jun 2021 03:07:32 +0000
+Content-Type: multipart/alternative;
+ boundary="-=Part.3bb35f.cedaddc02a831ca5.17a36d64eee.f91cdae9e261989=-"
+
+---=Part.3bb35f.cedaddc02a831ca5.17a36d64eee.f91cdae9e261989=-
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=3D"utf-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1=2E0">
+    <title>Fortnite</title>
+      <link href=3D"https://fonts=2Egoogleapis=2Ecom/css?family=3DOpen+San=
+s:600,800&display=3Dswap" rel=3D"stylesheet">
+      <link href=3D"https://fonts=2Egoogleapis=2Ecom/css?family=3DFrancois=
++One" rel=3D"stylesheet">
+      <link href=3D"https://fonts=2Egoogle=2Ecom/specimen/Raleway" rel=3D"=
+stylesheet">
+      <link href=3D"https://fonts=2Egoogleapis=2Ecom/css?family=3DRoboto" =
+rel=3D"stylesheet"> =20
+      <link href=3D"https://fonts=2Egoogleapis=2Ecom/css?family=3DNoto+San=
+s:400,700&display=3Dswap" rel=3D"stylesheet">
+
+<style type=3D"text/css">
+
+  body {
+    width:100% !important;
+    min-width:100% !important;
+    margin:0;
+    padding:0;
+  }
+
+  table,td,a {
+    margin:0;
+    padding:0;
+  }
+
+  img {
+    outline:none;
+    text-decoration:none;
+    border:none;
+    height:auto;
+    line-height:100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  table {
+    width: 100%;
+  }
+
+ =20
+  table,table td {
+    border-collapse:collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  img {
+    outline:none;
+    text-decoration:none;
+    border:none;
+    height:auto;
+    line-height:100%;
+  }
+
+  =2Eheader {
+      font-size: 40px !important;
+      font-family: 'Noto Sans' !important;
+      text-transform: uppercase;
+      letter-spacing: -=2E5px;
+      line-height: 42px;
+      font-weight: 600 !important;
+      margin: 1=2E5% 0%;
+      padding: 5%;
+  }
+      =2Ekorean {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 25px;
+      padding: 0% 1% 0% 1% !important;=20
+      word-wrap: break-word;
+      word-break:keep-all;
+  }
+  =2Estat {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 32px;
+      color: #000000;
+      padding: 0% 9% 0% 9% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+      =2Etight {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 32px;
+      color: #000000;
+      padding: 0% 20% 0% 20% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+      =2Etightpad {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 32px;
+      color: #000000;
+      padding: 0% 20% 2% 20% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+    =2Esmall {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 12px;
+      line-height: 18px;
+      color: #cccccc;
+      padding: 0% 18% 0% 18% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+      =2Edetailssmall {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 12px;
+      line-height: 18px;
+      color: #cccccc;
+      padding: 8% 18% 0% 18% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+
+
+ =20
+
+
+        =2Ebutton {
+      width: 30%;
+        }
+        =2Ebutton_border {
+      width: 35%;
+        }
+
+
+
+@media only screen and (max-width: 768px) {
+   =20
+
+
+  =2Eheader {
+      font-size: 40px !important;
+      font-family: 'Noto Sans' !important;
+      text-transform: uppercase;
+      letter-spacing: -=2E5px;
+      line-height: 42px;
+      font-weight: 600 !important;
+      margin: 1=2E5% 0%;
+      padding: 5%;
+  }
+  =2Estat {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 32px;
+      color: #000000;
+      padding: 0% 9% 0% 9% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+    =2Etight {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 32px;
+      color: #000000;
+      padding: 0% 20% 0% 20% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+      =2Etightpad {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 32px;
+      color: #000000;
+      padding: 0% 20% 2% 20% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+      =2Ekorean {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 16px;
+      line-height: 25px;
+      padding: 0% 1% 0% 1% !important;=20
+      word-wrap: break-word;
+      word-break:keep-all;
+  }
+    =2Esmall {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 12px;
+      line-height: 18px;
+      color: #cccccc;
+      padding: 0% 18% 0% 18% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+        =2Edetailssmall {
+      font-family: 'Open Sans', arial;
+      font-weight: 600 !important;
+      font-size: 12px;
+      line-height: 18px;
+      color: #cccccc;
+      padding: 8% 18% 0% 18% !important;=20
+      word-wrap: break-word;
+     =20
+  }
+
+
+
+        =2Ebutton {
+      width: 30%;
+        }
+        =2Ebutton_border {
+      width: 35%;
+        }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    u~div {
+        min-width: 95vw;
+        margin: 0 auto !important;
+    }
+   =20
+       =2Eheader {
+        font-size: 25px !important;
+        line-height: 40px;
+        font-weight: 900 !important;
+    }
+            =2Etight {
+      font-family: 'Open Sans', arial;
+      font-weight: 600;
+      font-size: 11px;
+      color: #000000;
+      padding: 1% 4% 1% 4% !important;=20
+                  word-wrap: break-word;
+     =20
+  }
+          =2Etightpad {
+      font-family: 'Open Sans', arial;
+      font-weight: 600;
+      font-size: 11px;
+      color: #000000;
+      padding: 1% 4% 3% 4% !important;=20
+                  word-wrap: break-word;
+     =20
+  }
+      =2Estat {
+      font-family: 'Open Sans', arial;
+      font-weight: 600;
+      font-size: 11px;
+      color: #000000;
+      padding: 1% 4% 1% 4% !important;=20
+                  word-wrap: break-word;
+     =20
+  }
+
+        =2Esmall {
+      font-family: 'Open Sans', arial;
+      font-weight: 600;
+      font-size: 10px;
+      color: #cccccc;
+      padding: 1% 4% 1% 4% !important;=20
+                  word-wrap: break-word;
+     =20
+  }
+          =2Edetailssmall {
+      font-family: 'Open Sans', arial;
+      font-weight: 600;
+      font-size: 10px;
+      color: #cccccc;
+      padding: 5% 4% 1% 4% !important;=20
+                  word-wrap: break-word;
+     =20
+  }
+
+
+         =2Ebutton {
+      width: 40%;
+        }
+        =2Ebutton_border {
+      width: 30%;
+        }
+
+    =2Ecenter {
+      margin-left:auto;
+      margin-right:auto;
+    }
+}
+
+
+  </style>
+   =20
+    <!-- HEADER-->
+</head>
+<body class=3D"body" align=3D"center" style=3D"background-color: #F8F8F8; =
+border: 1px solid #fff; -webkit-font-smoothing: antialiased; margin:0 auto;=
+ padding:0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"width:100%; margin: 0 auto; padding: 0; text-align:center;">
+      <tr>
+        <td><td></td>
+        <td class=3D"body-padding" style=3D"margin: 0 auto !important; max=
+-width: 800px; width: 800px;">
+          <div style=3D"display: block; margin: 0 auto !important; max-wid=
+th: 800px; padding: 2%;">
+            <center>
+             =20
+    <!--Cosmic HEADER -->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #ffffff;">
+                 =20
+<a href =3D "https://mail=2Eepicgames=2Ecom/T/v60000017a36d64dd6a2c2e4f4bb=
+e5c898/2f5bd151734c459a0000021ef3a0bcc2/2f5bd151-734c-459a-93ac-43e0557339e=
+d?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvj=
+HMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_3eBdf9FwQgU_lC_O4v6bObK_lg5flk2S5X0dZz=
+SA2Xzy8s8AYXRVndtPZs8zhxON9MR9thmGSU3lXEAF5YBRC4i675hs5woNgNquA4GH6GjRiCn59=
+TaOaHxi38qTo1e0qXPt9ZoQlFpNwL-RHLEH_j1F3VgU_UQGkk7p8NrjVckjFHDdVksz8ini3-yO=
+kxR6B_PCWM0whNslGYghAudrlsrd8l9v_WrAI4WHPcPmFejaIsymc3P5Ws1rVNQewrmuQ=3D"><=
+img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?id=
+=3D8d85a78f-f814-4a4c-a479-214424b28001" border=3D"0" style=3D"display:bloc=
+k; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/></a>
+            =20
+          =20
+          </td>
+        </tr>
+  </table>
+
+ =20
+    <!--Make A Splash TITLE-->
+  <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; w=
+idth: 100% !important; margin: 0; padding: 0;  background-color: #ffffff; "=
+>
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+                 =20
+<img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3D425674d9-b49b-41a3-ba95-77d002979d6c" border=3D"0" style=3D"display:bl=
+ock; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/>
+                 =20
+            </td>
+        </tr>
+  </table>
+       <!--Enjoy fan favorite Body-->         =20
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+        <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"background-color: #ffffff;">
+              <p class=3D"fallback-font tightpad" style=3D" color: #000000=
+; text-align: center; margin: 0; word-wrap: break-word !important; word-bre=
+ak: keep-all !important;">
+
+Enjoy fan-favorite Creative LTMs, unlock summer-themed rewards and put on =
+your best beach attire with new and returning Outfits - now through July 5=
+=2E
+            =20
+              </p> =20
+          </td>
+      </tr>
+     </table>
+
+
+             =20
+    <!--DIVE IN BUTTON-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 0%; =
+background-color: #ffffff;">
+          </td>
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+
+
+<a href =3D "https://mail=2Eepicgames=2Ecom/T/v60000017a36d64dd6a2c2e4f4bb=
+e5c898/2f5bd151734c459a0000021ef3a0bcc3/2f5bd151-734c-459a-93ac-43e0557339e=
+d?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvj=
+HMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxpCXPQI=
+F-jwwOJe7NEraaoTy0J5Dbz7K0IjVX_B4m-gmc9T8tE8KlVigZuB_hQz-Hx6eOT4fkbdWOlcODH=
+9XE1O6L60GiDgwa2YPJiGWpr3_1S5OopWoNzHBS5o8DWw7zVwUJFyBZFHNhLc4pq_680mmMO7-r=
+cptg-Gaf9wmRzz9xgROk3siURqj7drBut5GMaWk_bdZMloV8tbO0p0IuS3ErIw7eScsY5VEOTO8=
+N0lPuWMqZqiWRRiuzDWxdtpoifilCoBUTgaWjkhCUTGOdaPoVnzjuVygssa5Bcp4_pvtcEBNWH4=
+2b2r4NAjdPX6D6cvlzaMFjj3ohoyImT4S32_"><img src=3D"http://images=2Eharmony=
+=2Eepsilon=2Ecom/ContentHandler/images?id=3D57fecdbc-26a8-4c11-8d76-4f644d2=
+ae693" border=3D"0" style=3D"display:block; max-width: 800px; width: 100%; =
+margin: 0; padding: 0%;"/></a>
+
+          </td>
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 0%; =
+background-color: #ffffff;">
+          </td>
+        </tr>
+  </table>
+
+    <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>              =20
+             =20
+        <!--Rewards IMAGE-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #ffffff;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3Daa8afccd-4d13-4b17-b61e-1dce5e8aac71" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+
+     =20
+             =20
+    <!-- A Wave of Rewards Title-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+                 =20
+<img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3D3988f671-c7ca-456d-9dcc-f2482d8e17da" border=3D"0" style=3D"display:bl=
+ock; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/>
+                 =20
+          </td>
+        </tr>
+  </table>         =20
+     =20
+
+  <!--Popular Creative BODY-->         =20
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+        <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"background-color: #ffffff;">
+              <p class=3D"fallback-font stat" style=3D" color: #000000; te=
+xt-align: center; margin: 0; word-wrap: break-word !important; word-break: =
+keep-all !important;">
+
+Popular Creative LTMs are returning with themed rewards=2E <br>Complete Co=
+smic Summer Quests to unlock the Brain Freeze Back Bling, Cloud Llama Board=
+ Glider, Believer Beach Loading Screen and much more!
+            =20
+              </p>
+          </td>
+      </tr>
+     </table>
+
+   =20
+    <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>=20
+
+        <!-- Summer Outfits IMAGE-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #ffffff;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3D8b55753a-7324-4c30-9721-a7c4b9ab4ae1" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+
+   =20
+
+        <!--Break out your summer Title-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+                 =20
+<img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3D5cb7cf4a-196f-42a0-a03f-2902ffa1bbf6" border=3D"0" style=3D"display:bl=
+ock; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/>
+                 =20
+          </td>
+        </tr>
+  </table>         =20
+   =20
+       =20
+  <!--Heat up BODY-->         =20
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+        <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"background-color: #ffffff;">
+              <p class=3D"fallback-font stat" style=3D" color: #000000; te=
+xt-align: center; margin: 0; word-wrap: break-word !important; word-break: =
+keep-all !important;">
+
+Heat up the Cosmic Summer with beach-ready Outfits=2E<br>Midsummer Midas, =
+Boardwalk Ruby, Summer Jules and more are hitting the Item Shop=2E Plus, ge=
+t returning fan favorites like Summer Drift!
+            =20
+              </p>
+          </td>
+      </tr>
+     </table>
+
+           <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+       =20
+
+  <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+
+              <!-- Spaceship Top IMAGE-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #ffffff;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3D1b7e7f3e-e182-417c-aec6-2a7f12fff405" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+                <!-- Spaceship Bottom IMAGE-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #b758f0;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #b758f0;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #b758f0;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3D335b4f10-6d24-4885-9dcb-a09ac00c2940" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+          <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #b758f0;">
+      <tr>
+          <td style=3D"background-color: #b758f0;">&nbsp;</td>
+        </tr>
+    </table>
+     =20
+   =20
+   <!-- UFO Title-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #b758f0;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #b758f0;">
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #b758f0;">
+                 =20
+<img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3Decb30c2e-db11-40f1-a2dd-a0995dce5401" border=3D"0" style=3D"display:bl=
+ock; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/>
+                 =20
+          </td>
+        </tr>
+  </table>         =20
+ =20
+
+       <!--Keep the party BODY-->         =20
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #b758f0;=
+ ">
+        <tr style=3D"margin: 0; padding: 0;  background-color: #b758f0;">
+          <td style=3D"background-color: #b758f0;">
+              <p class=3D"fallback-font stat" style=3D" color: #000000; te=
+xt-align: center; margin: 0; word-wrap: break-word !important; word-break: =
+keep-all !important;">
+
+Keep the party going and take a trip to the Mothership=2E<br>Abductors are=
+ making their first visit to the Island and taking beach-goers with them to=
+ play a mission on the ship!
+            =20
+              </p>
+          </td>
+      </tr>
+     </table>
+          <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #b758f0;">
+      <tr>
+          <td style=3D"background-color: #b758f0;">&nbsp;</td>
+        </tr>
+    </table>
+
+                   <!-- TV Top IMAGE-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #b758f0;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #b758f0;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #b758f0;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3D59a9863a-8198-4fe7-8d5f-e357968ad4ea" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+                     <!-- TV Bottom IMAGE-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #ffffff;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3Daf5af763-5904-43af-8133-6ebc72d186ec" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+
+         <!--Easy Life TITLE-->
+  <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; w=
+idth: 100% !important; margin: 0; padding: 0;  background-color: #ffffff; "=
+>
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+                 =20
+<img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3D9a0e939f-2a12-44eb-8530-76b755d358f5" border=3D"0" style=3D"display:bl=
+ock; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/>
+                 =20
+            </td>
+        </tr>
+  </table>
+       <!--Jump into the Body-->         =20
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+        <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"background-color: #ffffff;">
+              <p class=3D"fallback-font stat" style=3D" color: #000000; te=
+xt-align: center; margin: 0; word-wrap: break-word !important; word-break: =
+keep-all !important;">
+
+Jump into The O2 in Fortnite Creative! <br>Enjoy an interactive musical ad=
+venture with easy life from June 24-27=2E<br> Plus, unlock the Squeezy Life=
+ Spray and UFOs & Aliens Lobby Track=2E
+            =20
+              </p> =20
+          </td>
+      </tr>
+     </table>
+
+
+             =20
+    <!--CHECK IT OUT BUTTON-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 0%; =
+background-color: #ffffff;">
+          </td>
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+
+
+<a href =3D "https://mail=2Eepicgames=2Ecom/T/v60000017a36d64dd6a2c2e4f4bb=
+e5c898/2f5bd151734c459a0000021ef3a0bcc4/2f5bd151-734c-459a-93ac-43e0557339e=
+d?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvj=
+HMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxpCXPQI=
+F-jwwOJe7NEraaoTKkmkcRDRhxV5wpmMZ0D2loRTxPtOb6NPV9P8TnQfENNtWhxlU0I_bLNXx2y=
+TgVYKOO0_4H3WdFofqOFBMfpZErAaRpwxzUKvtYRRkgVh6PEUSCq2qtXddYPkc2v9vHGo2bPOE6=
+MRoz3D-0Mk0SUJAx03q0ISgkLv20fBDMYKCkX-Y3gX9SVPDFui9XOGdmclC63ZMw90HkvQdk73F=
+efvTFE6gUMGGtRRmvo7d6ZXJIj6HrcN2GNnBUXb2ru28nqZ_-uVEres_AQcFyJ4cVgL9DIDcvaz=
+pTbuasaUlaZ7IAcalUmfzBLHdJoP7bRhbdJzt6BVEHCaO-Rw1q-6knW5rHoLrdl53HMugSZ3IWs=
+8QGs=3D"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler=
+/images?id=3D8dedc7e8-b88a-4ed4-8004-0e85e5ac51f5" border=3D"0" style=3D"di=
+splay:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/></a>
+
+          </td>
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 0%; =
+background-color: #ffffff;">
+          </td>
+        </tr>
+  </table>
+
+
+      <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+                       <!-- FNCS IMAGE-->
+                           <table  cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"max-width: 800px; width: 100% !important; margin: 0; padding: 0;  bac=
+kground-color: #ffffff; ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 100%=
+; background-color: #ffffff;">
+              <img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentH=
+andler/images?id=3D23543efa-3a6d-404b-b3f0-f6e1da401939" border=3D"0" style=
+=3D"display:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/=
+>
+              </td>
+        </tr>
+  </table>
+
+         <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+
+         <!--FNCS TITLE-->
+  <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; w=
+idth: 100% !important; margin: 0; padding: 0;  background-color: #ffffff; "=
+>
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+                 =20
+<img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images?=
+id=3Db84979b2-bb93-4609-b2f3-f17fa10d8e60" border=3D"0" style=3D"display:bl=
+ock; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/>
+                 =20
+            </td>
+        </tr>
+  </table>
+
+       <!--Watch Body-->         =20
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+        <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td style=3D"background-color: #ffffff;">
+              <p class=3D"fallback-font stat" style=3D" color: #000000; te=
+xt-align: center; margin: 0; word-wrap: break-word !important; word-break: =
+keep-all !important;">
+Watch the official broadcasts starting on June 23 to catch all the action!=
+ <br>Tune into the <a href =3D "https://mail=2Eepicgames=2Ecom/T/v60000017a=
+36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcc5/2f5bd151-734c-459=
+a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=
+=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF7zvyOSL4=
+FQF50PWb3tBgg0E3imr5APXeB03q0ISgkLv20fBDMYKCkX-Y3gX9SVPDFui9XOGdmclC63ZMw90=
+HkvQdk73FefvTFE6gUMGGtRRmvo7d6ZXJIj6HrcN2GNnBUXb2ru28nqZ_-uVEres_AQcFyJ4cVg=
+L9DIDcvazpTbuasaUlaZ7IAeamf53ZXQEf6KJovYcihlNU5LuZ_ShHFYigcUnIjiy5CNCPj1m6f=
+AFgSZ3IWs8QGs=3D"style=3D"color: #000000; text-decoration:underline;">Offic=
+ial Live Stream</a>, <a href =3D "https://mail=2Eepicgames=2Ecom/T/v6000001=
+7a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcc6/2f5bd151-734c-4=
+59a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT=
+0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF3l0BCq7=
+aLnRWEU6op3gqVDd0BcDoeqbH9rJCPHQU8K_e_VCRD7ZRr16g_r6WZ5AMEcx8fuNwfef4EwWfHA=
+IpuHDgxp-9Y5iO-w9PazwSdfafBTiDGGRxdry-nXERnaFja_5vNWsv4X9PhciHZxtYannsW7ZBg=
+r65-jONbqmCmXvLLh2mo6cefqUQubC0L7_yqaxRXMo6WBNEDw7vYE58yQyDO4RP9yJd6dBihcjJ=
+ca3AAZNW3YTzkh4ExT7Xm-f7Q=3D=3D"style=3D"color: #000000; text-decoration:un=
+derline;">Youtube</a> or <a href =3D "https://mail=2Eepicgames=2Ecom/T/v600=
+00017a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcc7/2f5bd151-73=
+4c-459a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4=
+UbJT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF0yc=
+nO7EIVe4oFDMCgelSthK4Cg73xNf32nOwu5dXydU9rqAh0afaDUgPXSGH60jOuzQrdL0Ccv7Vbc=
+sACjP8NuC0qENFnpphHOeaMRioRSuLgUuS1lmE6Oa-HfayCIR2Qp_RnZkp0o6XHJHNebbDydUAc=
+I13aFpj3_YJAKlUa9YGpCzPlo0-vtvP6CM5LUqCCuoX9duXH9Af26YWFUEvrCfVZg6zDDinZZmH=
+KibxhFpmdnJJLNMVlm_YB8WxqopKg=3D=3D"style=3D"color: #000000; text-decoratio=
+n:underline;">Twitch</a> where you can also earn Twitch Drops=2E
+
+              </p> =20
+          </td>
+      </tr>
+     </table>
+
+         <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+             =20
+    <!--Learn More BUTTON-->
+    <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px;=
+ width: 100% !important; margin: 0; padding: 0;  background-color: #ffffff;=
+ ">
+      <tr style=3D"margin: 0; padding: 0;  background-color: #ffffff;">
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 0%; =
+background-color: #ffffff;">
+          </td>
+          <td style=3D"margin: 0; padding: 0; width: 100%; background-colo=
+r: #ffffff;">
+
+
+<a href =3D "https://mail=2Eepicgames=2Ecom/T/v60000017a36d64dd6a2c2e4f4bb=
+e5c898/2f5bd151734c459a0000021ef3a0bcc8/2f5bd151-734c-459a-93ac-43e0557339e=
+d?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D&__F__=3Dv0fUYvj=
+HMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vkwo_mga2JAbIShxpCXPQI=
+F-jwwN4Kb9YQg37ycaOc-RW2TgH_pz7XtCVuY-eIMGSZI5jwf5akwV_tRRhXzErzAOvMp-69al7=
+34BFtK62egPLDnLLmsZJ7ZFHz3RjC8Kq9XQ0cHLKx-WDMgE_ASh9n74766B2Jta7wb8qb36dO8m=
+VOUkkakLM-WjT6-xUBitVDvO2h3cI-Hz_ZCyoefIlOFPQJgx1eOlSwcGMzI5uvfFzt1RBUfoijR=
+egy6zzCEKk86tTzw7IFFMDUvOeoqa7iaNhaPuwQJxFQ4bqX2ATt4SJ3wURT5ZoTMmutwR9z_neZ=
+hd5H"><img src=3D"http://images=2Eharmony=2Eepsilon=2Ecom/ContentHandler/im=
+ages?id=3D5dd18174-5c34-4888-a41c-d181c50d0c2c" border=3D"0" style=3D"displ=
+ay:block; max-width: 800px; width: 100%; margin: 0; padding: 0%;"/></a>
+
+          </td>
+          <td align=3D"center" style=3D"margin: 0; padding: 0; width: 0%; =
+background-color: #ffffff;">
+          </td>
+        </tr>
+  </table>
+           <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+               <!--BLANK SPACE-->
+    <table cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 800px; =
+width: 100% !important; margin-top: -2px; border-spacing: 0px !important; b=
+ackground-color: #ffffff;">
+      <tr>
+          <td style=3D"background-color: #ffffff;">&nbsp;</td>
+        </tr>
+    </table>
+
+
+
+             =20
+     <!--SAC Section-->         =20
+=20
+
+             =20
+   <!-- FOOTER -->
+            <table  cellpadding=3D"0" cellspacing=3D"0" style=3D"max-width=
+: 800px; width: 100% !important; background-color: #2e2e2e !important;">
+                <tr>
+                <td width:"40px" style=3D"background-color: #2e2e2e !impor=
+tant;">&nbsp;</td>
+                <td align=3D"center">
+                  <a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000017a36=
+d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcc9/2f5bd151-734c-459a-=
+93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D=
+&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF9OJQbzKjWJq=
+jvxdDSaKpQahffI6XFY5xPPR20nRKhHdac7C7l1fJ1T2uoCHRp9oNSA9dIYfrSM67NCt0vQJy_t=
+VtywAKM_w24LSoQ0WemmEc55oxGKhFK4uBS5LWWYTo5r4d9rIIhHZCn9GdmSnSjpcckc15tsPJ1=
+QBwjXdoWmPf9gkAqVRr1gakLM-WjT6-28_oIzktSoIoUH6fDa_GGDGcB_vHVzpRyJPJ1_H-9MVq=
+p7h6fjehEOZ2ckks0xWWb9gHxbGqikq"><img src=3D"http://images=2Eharmony=2Eepsi=
+lon=2Ecom/ContentHandler/images?id=3D5645cf68-852f-4df5-9c34-ba9274680cfb" =
+alt=3D"Facebook" class=3D"social" style=3D"width:6%; margin: 3px; padding: =
+4% 0% 2% 0%"></a>
+                  <a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000017a36=
+d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcca/2f5bd151-734c-459a-=
+93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D=
+&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF4zau-oFBc2T=
+NlTq7z8LKg1CXPQIF-jwwGaBblNvaRSSHTerQhKCQu_bR8EMxgoKRf5jeBf1JU8MW6L1c4Z2ZyU=
+LrdkzD3QeS9B2TvcV5-9MUTqBQwYa1FGa-jt3plckiPoetw3YY2cFRdvau7byepn_65USt6z8BB=
+wXInhxWAv0MgNy9rOlNu5qxpSVpnsgB4tgJzjolqdAlm1FKuP8pmXyj31Ls7hH65WFsrcQVh3Rq=
+S1oBkpR2ouBJnchazxAaw=3D=3D"><img src=3D"http://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images?id=3Db20c983c-4565-4c20-9cab-59e58230ced6" alt=
+=3D"Instagram" class=3D"social"  style=3D"width:6%; margin: 3px; padding: 4=
+% 0% 2% 0%"></a>
+                  <a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000017a36=
+d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bccb/2f5bd151-734c-459a-=
+93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D=
+&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_1P8SSwvgaM7Bj1wKVct32A=
+u2d-XmVb1rsjzBTau9VeZiutnoDyw5yy5rGSe2RR890YwvCqvV0NHByysflgzIBPwEofZ--O-ug=
+dibWu8G_Km9-nTvJlTlJJGpCzPlo0-vsVAYrVQ7ztod3CPh8_2QsqHnyJThT0CYMdXjpUsHBjMy=
+Obr3xc7dUQVH6Io0XoMus8whCpPOrU8yr5zBA1XkKH5EX9lYjXWcXTJfbuBXZKU_Ikvgy8ut5L8=
+6wf6slgI5Mfc_53mYXeRw=3D=3D"><img src=3D"http://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images?id=3D3778488f-3251-492b-aa9a-d74f4e0b377f" alt=
+=3D"Twitter" class=3D"social" style=3D"width:6%; margin: 3px; padding: 4% 0=
+% 2% 0%"></a>
+                  <a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000017a36=
+d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bccc/2f5bd151-734c-459a-=
+93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D=
+&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF0ycnO7EIVe4=
+oFDMCgelStj8br1dGF0ZY9rJCPHQU8K_e_VCRD7ZRr16g_r6WZ5AMEcx8fuNwfef4EwWfHAIpuH=
+Dgxp-9Y5iO-w9PazwSdfafBTiDGGRxdry-nXERnaFja_5vNWsv4X9PhciHZxtYannsW7ZBgr65-=
+jONbqmCmXvLLh2mo6cefqUQubC0L7_ykCJFihMQTo93fQ9pYqfsurKLJkcm2dLlRJkTAY-lxO8S=
+FIvJhs9Kpx4ExT7Xm-f7Q=3D=3D"><img src=3D"http://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images?id=3D963fa8b7-c952-4233-94b6-7e0d1762f664" alt=
+=3D"Twitch" class=3D"social" style=3D"width:6%; margin: 3px; padding: 4% 0%=
+ 2% 0%"></a>
+                  <a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000017a36=
+d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bccd/2f5bd151-734c-459a-=
+93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D=
+&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF3l0BCq7aLnR=
+7SVpbbrokzGzMsgZoL2N2rWEUZIFYejxBS5o8DWw7zVwUJFyBZFHNhLc4pq_680mmMO7-rcptg-=
+Gaf9wmRzz9xgROk3siURqj7drBut5GMaWk_bdZMloV8tbO0p0IuS3ErIw7eScsY5VEOTO8N0lPu=
+WMqZqiWRRiuzDWxdtpoifilCoBUTgaWjkhCUTGOdaPKf432nx7vsABxNU0qxvY9_X0xZQyQVuHi=
+-m0YT6FlD5vQmdX9qLZKBoyImT4S32_"><img src=3D"http://images=2Eharmony=2Eepsi=
+lon=2Ecom/ContentHandler/images?id=3D2d2c9987-e4ff-40bd-96ed-1c93004e5c3b" =
+alt=3D"Youtube" class=3D"social" style=3D"width:6%; margin: 3px; padding: 4=
+% 0% 2% 0%"></a>
+                  <a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000017a36=
+d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcce/2f5bd151-734c-459a-=
+93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT0=3D=
+&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_3g3dRD1DWLuAI6bbaeloQX=
+-1EAOE9pYy75sNUG-juaSF2u0nEbUBUVHTerQhKCQu_bR8EMxgoKRf5jeBf1JU8MW6L1c4Z2ZyU=
+LrdkzD3QeS9B2TvcV5-9MUTqBQwYa1FGa-jt3plckiPoetw3YY2cFRdvau7byepn_65USt6z8BB=
+wXInhxWAv0MgNy9rOlNu5qxpSVpnsgB_6bGEdV3xs1AF7Ot7FtVE-flxAi2120rE4OqwgMCjQSJ=
+IT75pv1OiGBJnchazxAaw=3D=3D"><img src=3D"http://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images?id=3D8b4f3579-de01-49b3-ad18-7e8f9c38d3f8" alt=
+=3D"Discord" class=3D"social" style=3D"width:6%; margin: 3px; padding: 4% 0=
+% 2% 0%"></a>
+                </td>
+                <td width:"40px" style=3D"background-color: #2e2e2e !impor=
+tant;">&nbsp;</td>
+              </tr>
+            </table>
+            <table border=3D"0" align=3D"center" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"max-width: 800px; width: 100% !important; margin: 0; pa=
+dding: 0; background-color: #2e2e2e;">
+              <tr style=3D"background-color: #2e2e2e;">
+                <td width=3D"40px"></td>
+                <td>=C2=A0</td>
+                <td width=3D"40px"></td>
+              </tr>
+              <tr style=3D"background-color: #2e2e2e !important;">
+                <td width=3D"40px"></td>
+                <td align=3D"center"><img src=3D"http://images=2Eharmony=
+=2Eepsilon=2Ecom/ContentHandler/images?id=3Df596963b-255a-4644-9bcb-31b85f3=
+00e56" alt=3D"" width=3D"100px">
+                </td>
+                <td style=3D"width:40px;"></td>
+              </tr>
+              <tr style=3D"background-color: #2e2e2e;">
+                <td width=3D"40px"></td>
+                <td>
+              =20
+
+            =20
+            =20
+<!-- BEGIN LEGAL -->
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" s=
+tyle=3D"max-width: 800px; width: 100% !important; margin: 0; padding: 0; ba=
+ckground-color: #2e2e2e;">
+<tr style=3D"background-color: #2e2e2e;">
+<td>&nbsp;</td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+<td width:"40px"></td>
+
+<!-- help -->
+<td align=3D"center;"><p style=3D"font-size: 10px !important; color: #09b7=
+df; text-align: center;"><a href=3D"https://mail=2Eepicgames=2Ecom/T/v60000=
+017a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bccf/2f5bd151-734c=
+-459a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4Ub=
+JT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9=
+vkwo_mga2JAbIShxr_H-GX5Z2QstgEsjiVM9W4LyzwBhdFWd209mzzOHE430xH22GYZJTeVcQAX=
+lgFELiLrvmGznCg2A2q4DgYfoaNGIKfn1No5ofGLfypOjV7Spc-31mhCUWk3Av5EcsQf-PUXdWB=
+T9RAaSTunw2uNVySMUcN1WSzPyKeLf7I6TFHoFcKniEUiOA58eZpj_edbKPxr08NtgyyfSQjjwa=
+pP8EZpCYyLob6EZLWtU1B7Cua5A=3D=3D" style=3D"color: #09b7df; font-size: 10px=
+; text-align: center;">Need Help?</a></p>
+</td>
+
+<!-- End help -->
+
+<!-- help -->
+
+<td style=3D"width:40px;"></td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+<td width:"40px"></td>
+<td align=3D"center">&nbsp;</td>
+<td style=3D"width:40px;"></td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+<td style=3D"width:40px;"></td>
+<td style=3D"text-align:center;font-size:10px;padding:0px;color:#fff;">
+
+<!-- legal -->
+<!-- Start legal --> =20
+&#169; 2021, Epic Games, Inc=2E All rights reserved=2E Epic, Epic Games, t=
+he Epic Games logo, Unreal, Unreal Engine, the Unreal Engine logo, Epic Gam=
+es Store, and the Epic Games Store logo are trademarks or registered tradem=
+arks of Epic Games, Inc=2E in the USA and elsewhere=2E All other trademarks=
+ are the property of their respective owners=2E
+
+<!-- End legal --> =20
+<!-- legal -->
+
+</td>
+<td style=3D"width:40px;"></td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+                          <td width:"40px"></td>
+                          <td align=3D"center">&nbsp;</td>
+                          <td style=3D"width:40px;"></td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+                          <td style=3D"width:40px;"></td>
+                          <td style=3D"font-size:10px;color:#fff; text-ali=
+gn: center;">
+
+<!-- TOS -->
+<!-- Start TOS -->=20
+<a style=3D"color:#fff;" href=3D"https://mail=2Eepicgames=2Ecom/T/v6000001=
+7a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcd0/2f5bd151-734c-4=
+59a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT=
+0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vk=
+wo_mga2JAbIShxprPa-JJdz0Wq68mnO8WjEyYdO1zArbGCH-P6-8higaEzyEmnas7gSQt6i1tbg=
+1zMPc-_DaacJ2rIKDavBtCdOtvJz1YIXf_nUQrkt5S0TEheE321wKO5JIxOQXx7PycQHDKfpFA1=
+RiKt6BEsxhmLo_PoVHFAMpSUiaXYQ5CtimR_sc0-WC1v5gGxRCJYTQ-Li3ovp_mJPBD_Ep78oRG=
+KXJb5H9f7cP4X5O5idML7XOwA=3D=3D">Terms of Service</a>
+
+<!-- End TOS--> =20
+<!-- TOS -->
+|
+<!-- privacy -->
+<!-- Start Privacy Policy -->
+<a style=3D"color:#fff;" href=3D"https://mail=2Eepicgames=2Ecom/T/v6000001=
+7a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcd1/2f5bd151-734c-4=
+59a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4UbJT=
+0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF2Skw9vk=
+wo_mga2JAbIShxp7JLvxiLMEAzZjdsyV3hB6TsAY9yft30VKcvHhEDXDOveUvk0qGNwsx7X2B7x=
+wy3Ob8daAiuWnzVNnBdsZiCU4XtHtv3Sw9Ck-hUcUAylJSMYqr5Eyidlrwiw0adyEalnebm28J2=
+K9iGw7zKCclextGaAkhQZMGLsexVoP2n7282W9urXPubpPww8y92ffObRY2ukGNyBBk2hJCJYja=
+Wadw8wzJsk6Y22Rtpi_RmfmyUWnQHl0YpjL">Privacy Policy</a>
+
+<!-- End Privacy Policy -->
+<!-- privacy -->
+|
+<!-- website -->
+<!-- Start Website -->
+<a style=3D"color:#ffffff;" href=3D"https://mail=2Eepicgames=2Ecom/T/v6000=
+0017a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcd2/2f5bd151-734=
+c-459a-93ac-43e0557339ed?__dU__=3Dv0G4RBKTXg2GsSUKeCIT0ZsixpTu2oNAqvl6X7t4U=
+bJT0=3D&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_3eaFHlkq5FQ6dK1=
+9a0R43FAeCQoFliPfkdJ8N4qu4OrK68mnO8WjEyYdO1zArbGCH-P6-8higaEzyEmnas7gSQt6i1=
+tbg1zMPc-_DaacJ2rIKDavBtCdOtvJz1YIXf_nUQrkt5S0TEheE321wKO5JIxOQXx7PycQHDKfp=
+FA1RiKt6BEsxhmLo_PoVHFAMpSUgvJFnhkn0tJBKVr_UxtQAk2vHSZo_7JvzWc3cxXMZe9g4O-P=
+6Y-ksqb5H9f7cP4X5O5idML7XOwA=3D=3D">Website</a>
+
+<!-- End Website -->
+<!-- website -->
+|
+<!-- unsub -->
+<a style=3D"color:#fff;" href=3D"https://mail=2Eepicgames=2Ecom/U/v6000001=
+7a36d64dd6a2c2e4f4bbe5c898/2f5bd151734c459a0000021ef3a0bcd3">Unsubscribe</a=
+>
+
+<!-- unsub -->
+
+
+                          </td>
+                          <td style=3D"width:40px;"></td>
+                        </tr>
+                        <tr style=3D"background-color: #2e2e2e;">
+                          <td style=3D"width: 40px;"></td>
+                          <td>&nbsp;</td>
+                          <td style=3D"width: 40px;"></td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+                          <td style=3D"width: 40px;"></td>
+                          <td style=3D"font-size:10px;color:#fff; text-ali=
+gn: center;">Box 254, 2474 Walnut Street, Cary, North Carolina, 27518</td>
+                          <td style=3D"width: 40px;"></td>
+</tr>
+<tr style=3D"background-color: #2e2e2e;">
+                          <td style=3D"width: 40px;"></td>
+                          <td>&nbsp;</td>
+                          <td style=3D"width: 40px;"></td>
+</tr>
+</table>
+  =20
+
+<!-- END -->
+   </td>
+     </tr>
+     </table>
+      </center>
+        </div>
+<!--[if mso]>
+</td></tr></table>
+<![endif]-->
+  <td>
+     </td>
+     <td></td>
+<tr>
+   </tr>
+ </table>
+
+<img src=3D'https://mail=2Eepicgames=2Ecom/O/v60000017a36d64dd6a2c2e4f4bbe=
+5c898/2f5bd151734c459a00004c5a42963aa1' style=3D"display:none; max-height: =
+0px; font-size: 0px; overflow: hidden; mso-hide: all"/></body>
+</html>                  
+---=Part.3bb35f.cedaddc02a831ca5.17a36d64eee.f91cdae9e261989=---
+

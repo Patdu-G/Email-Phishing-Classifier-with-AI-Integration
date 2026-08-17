@@ -1,0 +1,1224 @@
+X-GM-THRID: 1812182223205983135
+X-Gmail-Labels: Inbox,Important,Opened,Category Updates
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:554:b0:213:83fc:b380 with SMTP id d20csp1510073eip;
+        Sun, 6 Oct 2024 09:20:43 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IHzQVoCEp26m7HnW1QFV/JnsCHc1ZRJEg4FR2cB35dAFSgmFJs8sE2eksueJWyibHoxeQjU
+X-Received: by 2002:a05:620a:1925:b0:7a9:aeb3:4b22 with SMTP id
+ af79cd13be357-7ae6f421d78mr1665154885a.6.1728231642823;
+        Sun, 06 Oct 2024 09:20:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1728231642; cv=none;
+        d=google.com; s=arc-20240605;
+        b=NwZkHgc4hQC/REx8feVDp1EKVA6/gH6b6JGFxTmCSPAtMBq3/VBgboW9OBwjwgrCQw
+         o8JIusw1pmhLT/d5FziTR38FqpMp4I4Bie/CrifTOPliGGeZjUtoRSUHT1Q8GiYAyN+M
+         v2ZodpMUANEJkoVzHhehgzvgsGu//W/hUQCFoj3R3ec+RYWI8tv1Rw9EbZcGAf+egqqf
+         a5evyjdS/4ZluoDzhZh/ZA+h0nQM/TpSTwj/zJeLscsmYPgXBFHHQBf+GI5VgRMSRvBt
+         LSp0RMgcukHaMb8/Kuv6mZqUFwn0B3rsFVDPsbanSCoYRBcIglgr5BzKyo8CbKzSYDa5
+         f/Dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=feedback-id:message-id:mime-version:subject:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=N3VzAa5I/sjydFI39w0NYtRvo7JDfQ8xxSMfb5Bt8IU=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=fmytEePQFs3DqPvZwZDPo1CPHsFpIfClKZ5n0Q/3tLgkN2zfLrTpzMjEmAUw/35e2s
+         diKEPnzIk4ZO4/8O//QYDgTE5tAa5yq1v/SbKg20u8x3JdYeVEUJpKCzhGSUejYrxopy
+         SSuk8lHqpv7PBr4LIH5on3RzJPUwjqWD1+s0dzrzAdbbFrJz+St+7wKJHChAFxqccPjJ
+         PqbPsGv/ydTiLQQfmL85L4GVrrXIcF5DhZeA6Bz9aE/Dsc8du1vVdWUCs2DjvbwaPGfR
+         TNrqPGV8HFfG68B5IlC875K3/prmMq07aNk/ct29DC3dQoFX1O3bSfTNkLRmQuSSko+U
+         q++Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nvidia.com
+ header.s=gvlaxbbdvce7uxotvd6tlh6j5oecslr6 header.b=nLmMbF4T;
+       dkim=pass header.i=@amazonses.com
+ header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=kAzLFxXc;
+       spf=pass (google.com: domain of
+ 0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@idm.nvidia.com
+ designates 54.240.9.32 as permitted sender)
+ smtp.mailfrom=0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@idm.nvidia.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=nvidia.com
+Return-Path: 
+ <0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@idm.nvidia.com>
+Received: from a9-32.smtp-out.amazonses.com (a9-32.smtp-out.amazonses.com.
+ [54.240.9.32])
+        by mx.google.com with ESMTPS id
+ af79cd13be357-7ae756629bcsi416078585a.318.2024.10.06.09.20.42
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 06 Oct 2024 09:20:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ 0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@idm.nvidia.com
+ designates 54.240.9.32 as permitted sender) client-ip=54.240.9.32;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nvidia.com
+ header.s=gvlaxbbdvce7uxotvd6tlh6j5oecslr6 header.b=nLmMbF4T;
+       dkim=pass header.i=@amazonses.com
+ header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=kAzLFxXc;
+       spf=pass (google.com: domain of
+ 0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@idm.nvidia.com
+ designates 54.240.9.32 as permitted sender)
+ smtp.mailfrom=0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@idm.nvidia.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=nvidia.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gvlaxbbdvce7uxotvd6tlh6j5oecslr6; d=nvidia.com; t=1728231642;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:Message-ID;
+	bh=n0ormHuhgOXyfO5gFvF7Nhe5T+XyARe9nqB0HmtfS/Q=;
+	b=nLmMbF4TJjEZVhX/cDKjmBQWw04/ehFuNAAeneDYjMtuGWRwfvLzjzEBKubzmHeY
+	nmJ1ZSI6y0o8pK4bXsAyGfaqdoxHu1MDzY5r5yhZDxT3LoS0W2LuSezorexpsFluTGE
+	pBoEvxnn0f+1QtCyuczUhR0GmkvFDboo1IfTYnv75tooguzXGC2RNruf0k3cigsYpuk
+	qSf+lKXNaCe6N+/1wSNx8lUo5OhE/vNlRVfn7FK5x7aDgPWeP6K132q7c0v4cmV0avO
+	xPbUpyw458deuAV23MGNrb3b9x4zV77jIwPsDOrNx73vgHqcmCLttfy77afa66h8Qjw
+	ZvD5RKbTnQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1728231642;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:Message-ID:Feedback-ID;
+	bh=n0ormHuhgOXyfO5gFvF7Nhe5T+XyARe9nqB0HmtfS/Q=;
+	b=kAzLFxXcGTl31v3DWxUTSMuQRM5D50DhgJy9O8COAv+ooJ0fB9xC3jGdxvwOdbX1
+	VaxS3mpey2a4bwSS9ZecD/6JJJpRW0DS13fiMISouShf7z9ylN3HahJ0zvscCLV4Z8j
+	FFOlKpi6KHI5eYB6peSMQx3kGCmmQfF57n7jusuI=
+Date: Sun, 6 Oct 2024 16:20:42 +0000
+From: NVIDIA Accounts <account@nvidia.com>
+To: patriogabrielpatdu@gmail.com
+Subject: NVIDIA email verification
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_Part_4657377_1795577083.1728231642335"
+Message-ID: 
+ <0100019262a21481-3d8488ac-ea91-440f-8307-1855d269c066-000000@email.amazonses.com>
+Feedback-ID: 
+ ::1.us-east-1.ImT16AK9i7eGXLUgi6vqqz40XK2xXpvhC8O+O0DQcPY=:AmazonSES
+X-SES-Outgoing: 2024.10.06-54.240.9.32
+
+------=_Part_4657377_1795577083.1728231642335
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+NVIDIA
+
+NVIDIA Account
+
+
+
+Click the link below to verify this email address.
+
+https://accounts.nvgs.nvidia.com/api/1/message/VerifyEmail?q=3DeyJyZWRpcmVj=
+dFVybCI6Imh0dHBzOi8vbG9naW4ubnZncy5udmlkaWEuY29tL3Byb2ZpbGUtbWFuYWdlbWVudC9=
+2ZXJpZnktZW1haWw%2FY29kZT1leUpoYkdjaU9pSklVekkxTmlKOS5leUp5WldScGNtVmpkQ0k2=
+ZXlKamJHbGxiblJKWkNJNmJuVnNiQ3dpY21RaU9tNTFiR3dzSW5OMFlYUmxJanB1ZFd4c2ZTd2l=
+kSFFpT2lKRGIyNW1hWEp0UlcxaGFXd2lMQ0p6WlNJNklqZDBkWHBoZURWalpqZERjWGxaTjBSNl=
+V6WXdWRUZ6WVZOdU5rbGFaemRZZG1wTWNETkJiVVpKT1RSS1ZsUlpPWEJ6VFdaelJITjJaRkkzZ=
+UZWT2NVSWlMQ0pwWkNJNklqRXlPVEkxTWpFNE9EQTFOVE00TXpZMU5EUWlMQ0psZUhBaU9qRTNN=
+amc0TXpZME5ERXNJbXAwYVNJNklqbGpabVE1WVdGakxUazJZak10TkRGbE5TMWhZVGt6TFRNd1p=
+qWXhPV0psWVRabU5pSXNJbVZ0WVdsc0lqb2ljR0YwY21sdloyRmljbWxsYkhCaGRHUjFRR2R0WV=
+dsc0xtTnZiU0lzSW5Seklqb2lSR1ZtWVhWc2RDSjkueU1lVmlVUkxtVkppQ04xNl8tZ1NERF9Ie=
+DJRSF9BWTZlcmlQaWwwZWp3cyZsb2NhbGU9ZW4tVVMiLCJtZXNzYWdlSWQiOiIxMjkyNTIxOTI4=
+ODI5MDQ2Nzg0In0%3D
+
+
+
+
+
+You requested to use this email address to access your NVIDIA account.
+
+FOLLOW NVIDIA: https://www.facebook.com/NVIDIA   https://twitter.com/nvidia=
+   http://www.nvidia.com/object/rss_home.html
+Please note that this message was sent to the following email address: (pat=
+riogabrielpatdu@gmail.com (mailto:patriogabrielpatdu@gmail.com) )
+=C2=A9 2024 NVIDIA Corporation. All rights reserved. NVIDIA, and the NVIDIA=
+ logo are trademarks and/or registered trademarks of NVIDIA Corporation in =
+the United States and other countries. All other company and product names =
+are trademarks or registered trademarks of the respective owners with which=
+ they are associated.
+
+NVIDIA Corporation, 2701 San Tomas Expressway, Santa Clara, CA 95050.
+------=_Part_4657377_1795577083.1728231642335
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/x=
+html1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" >
+
+    <head>
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8"/>
+        <title></title>
+        <!--[if gte mso 9]>
+    <style>
+    .em_font {font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-weig=
+ht: 400;  !important;}
+    </style>
+    <![endif]-->
+        <!--[if !mso]><!-->
+        <!--<![endif]-->
+        <style type=3D"text/css">
+            body {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            .text-center,
+            .btn,
+            .remove,
+            .blockRight {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            table {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            td {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            sup {
+                font-size: 100% !important;
+            }
+            .text-block {
+                text-align: left;
+            }
+            [dir=3D"rtl"] .text-block{
+                text-align: right;
+            }
+            .primary-btn:hover, .primary-btn:active {
+                background-color: #91c733;
+                transition: all .2s ease-out;
+            }
+           =20
+
+           =20
+        </style>
+        <!--[endif]-->
+    <!--[if gte mso 12]>
+        <style type=3D"text/css">
+            body {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            .text-center,
+            .btn,
+            .remove,
+            .blockRight {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            table {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            td {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            sup {
+                font-size: 100% !important;
+            }
+        </style>
+        <![endif]-->
+    <!--[if gte mso 14]>
+        <style type=3D"text/css">
+            body {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            .text-center,
+            .btn,
+            .remove,
+            .blockRight {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            table {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            td {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            sup {
+                font-size: 100% !important;
+            }
+        </style>
+        <![endif]-->
+    <!--[if gte mso 15]>
+        <style type=3D"text/css">
+            body {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            .text-center,
+            .btn,
+            .remove,
+            .blockRight {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            table {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            td {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            sup {
+                font-size: 100% !important;
+            }
+        </style>
+        <![endif]-->
+    <!--[if gte mso 16]>
+        <style type=3D"text/css">
+            body {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            .text-center,
+            .btn,
+            .remove,
+            .blockRight {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            table {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            td {
+                font-family: 'NVIDIA', Arial, Helvetica, sans-serif;font-we=
+ight: 400;!important;
+            }
+
+            sup {
+                font-size: 100% !important;
+            }
+        </style>
+        <![endif]-->
+
+    <style type=3D"text/css">
+
+        .show {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline solid #76b900;
+            text-decoration-thickness: 2px;
+            text-underline-offset: .3125em;
+        }
+       =20
+        a:hover, a:active {
+            text-decoration-color: #000!important;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        @supports not(font-variation-settings: normal) {
+            @font-face {
+                font-family: 'NVIDIA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/GLOBAL/NVIDIASans_W_Lt.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/GLOBAL/NVIDIASans_W_Lt.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/GLOBAL/NVIDIASans_W_Rg.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/GLOBAL/NVIDIASans_W_Rg.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/GLOBAL/NVIDIASans_W_Md.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/GLOBAL/NVIDIASans_W_Md.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/GLOBAL/NVIDIASans_W_Bd.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/GLOBAL/NVIDIASans_W_Bd.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-NALA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Lt.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Lt.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-NALA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Rg.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Rg.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-NALA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Md.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Md.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-NALA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Bd.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/NALA/NVIDIASans_NALA_W_Bd.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-EMEA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Lt.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Lt.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-EMEA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Rg.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Rg.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-EMEA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Md.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Md.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-EMEA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Bd.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/EMEA/NVIDIASans_EMEA_W_Bd.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-RU';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/RU/NVIDIASans_CYR_W_Lt.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/RU/NVIDIASans_CYR_W_Lt.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-RU';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/RU/NVIDIASans_CYR_W_Rg.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/RU/NVIDIASans_CYR_W_Rg.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-RU';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/RU/NVIDIASans_CYR_W_Md.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/RU/NVIDIASans_CYR_W_Md.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-RU';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/RU/NVIDIASans_CYR_W_Bd.woff') format('woff=
+'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/fon=
+ts/nvidia-sans/RU/NVIDIASans_CYR_W_Bd.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-APAC';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Lt.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Lt.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-APAC';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Rg.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Rg.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-APAC';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Md.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Md.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-APAC';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Bd.woff') format('w=
+off'),url('https://images.nvidia.com/etc/designs/nvidiaGDC/clientlibs_base/=
+fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Bd.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-CN';
+                src: url('https://images.nvidia.cn/etc/designs/nvidiaGDC/cl=
+ientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Lt.woff') format('wo=
+ff'),url('https://images.nvidia.cn/etc/designs/nvidiaGDC/clientlibs_base/fo=
+nts/nvidia-sans/APAC/NVIDIASans_APAC_W_Lt.woff2') format('woff2');
+                font-weight: 300;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-CN';
+                src: url('https://images.nvidia.cn/etc/designs/nvidiaGDC/cl=
+ientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Rg.woff') format('wo=
+ff'),url('https://images.nvidia.cn/etc/designs/nvidiaGDC/clientlibs_base/fo=
+nts/nvidia-sans/APAC/NVIDIASans_APAC_W_Rg.woff2') format('woff2');
+                font-weight: 400;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-CN';
+                src: url('https://images.nvidia.cn/etc/designs/nvidiaGDC/cl=
+ientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Md.woff') format('wo=
+ff'),url('https://images.nvidia.cn/etc/designs/nvidiaGDC/clientlibs_base/fo=
+nts/nvidia-sans/APAC/NVIDIASans_APAC_W_Md.woff2') format('woff2');
+                font-weight: 500;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-CN';
+                src: url('https://images.nvidia.cn/etc/designs/nvidiaGDC/cl=
+ientlibs_base/fonts/nvidia-sans/APAC/NVIDIASans_APAC_W_Bd.woff') format('wo=
+ff'),url('https://images.nvidia.cn/etc/designs/nvidiaGDC/clientlibs_base/fo=
+nts/nvidia-sans/APAC/NVIDIASans_APAC_W_Bd.woff2') format('woff2');
+                font-weight: 700;
+                font-style: normal
+            }
+          }
+         =20
+          @supports(font-variation-settings: normal) {
+            @font-face {
+                font-family: 'NVIDIA-NALA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/NALA/var/NVIDIASansVF_NALA_W_Wght.woff2') =
+format('woff2 supports variations'),url('https://images.nvidia.com/etc/desi=
+gns/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/NALA/var/NVIDIASansVF_NALA_=
+W_Wght.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-NALA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/NALA/var/NVIDIASansVF_Wght_NALA_W_Italic.w=
+off2') format('woff2 supports variations'),url('https://images.nvidia.com/e=
+tc/designs/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/NALA/var/NVIDIASansV=
+F_Wght_NALA_W_Italic.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: italic
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-EMEA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/EMEA/var/NVIDIASansVF_EMEA_W_Wght.woff2') =
+format('woff2 supports variations'),url('https://images.nvidia.com/etc/desi=
+gns/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/EMEA/var/NVIDIASansVF_EMEA_=
+W_Wght.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-EMEA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/EMEA/var/NVIDIASansVF_Wght_EMEA_W_Italic.w=
+off2') format('woff2 supports variations'),url('https://images.nvidia.com/e=
+tc/designs/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/EMEA/var/NVIDIASansV=
+F_Wght_EMEA_W_Italic.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: italic
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-RU';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/RU/var/NVIDIASansVF_CYR_W_Wght.woff2') for=
+mat('woff2 supports variations'),url('https://images.nvidia.com/etc/designs=
+/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/RU/var/NVIDIASansVF_CYR_W_Wght=
+.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-RU';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/RU/var/NVIDIASansVF_Wght_CYR_W_Italic.woff=
+2') format('woff2 supports variations'),url('https://images.nvidia.com/etc/=
+designs/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/RU/var/NVIDIASansVF_Wgh=
+t_CYR_W_Italic.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: italic
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-APAC';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_APAC_W_Wght.woff2') =
+format('woff2 supports variations'),url('https://images.nvidia.com/etc/desi=
+gns/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_APAC_=
+W_Wght.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-APAC';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_Wght_APAC_W_Italic.w=
+off2') format('woff2 supports variations'),url('https://images.nvidia.com/e=
+tc/designs/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansV=
+F_Wght_APAC_W_Italic.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: italic
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-CN';
+                src: url('https://images.nvidia.cn/etc/designs/nvidiaGDC/cl=
+ientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_APAC_W_Wght.woff2') f=
+ormat('woff2 supports variations'),url('https://images.nvidia.cn/etc/design=
+s/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_APAC_W_=
+Wght.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA-CN';
+                src: url('https://images.nvidia.cn/etc/designs/nvidiaGDC/cl=
+ientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_Wght_APAC_W_Italic.wo=
+ff2') format('woff2 supports variations'),url('https://images.nvidia.cn/etc=
+/designs/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/APAC/var/NVIDIASansVF_=
+Wght_APAC_W_Italic.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: italic
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/GLOBAL/var/NVIDIASansVF_W_Wght.woff2') for=
+mat('woff2 supports variations'),url('https://images.nvidia.com/etc/designs=
+/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/GLOBAL/var/NVIDIASansVF_W_Wght=
+.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: normal
+            }
+         =20
+            @font-face {
+                font-family: 'NVIDIA';
+                src: url('https://images.nvidia.com/etc/designs/nvidiaGDC/c=
+lientlibs_base/fonts/nvidia-sans/GLOBAL/var/NVIDIASansVF_Wght_W_Italic.woff=
+2') format('woff2 supports variations'),url('https://images.nvidia.com/etc/=
+designs/nvidiaGDC/clientlibs_base/fonts/nvidia-sans/GLOBAL/var/NVIDIASansVF=
+_Wght_W_Italic.woff2') format('woff2-variations');
+                font-weight: 100 1000;
+                font-stretch: 25% 151%;
+                font-style: italic
+            }
+          }         =20
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            -webkit-text-size-adjust: none !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+
+        img {
+            border: 0 !important;
+            outline: none !important;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+
+        td, a, span {
+            border-collapse: collapse;
+            mso-line-height-rule: exactly;
+        }
+
+        .ExternalClass * {
+            line-height: 100%;
+        }
+       =20
+       =20
+        table.status-summary {
+          border-collapse: collapse;
+          border: 1px solid black;
+        }
+       =20
+        table.status-summary th {
+          border: 1px solid black;
+        }
+
+        table.status-summary td {
+          border: 1px solid black;
+          padding-left: 4px;
+          padding-right: 4px;
+        }
+       =20
+        td.num-type {
+            text-align: right;
+        }
+
+        .em_defaultlink a {
+            color: inherit !important;
+        }
+
+        span.MsoHyperlink {
+            mso-style-priority: 99;
+            color: inherit;
+        }
+
+        span.MsoHyperlinkFollowed {
+            mso-style-priority: 99;
+            color: inherit;
+        }
+
+        @media only screen and (min-width:481px) and (max-width:650px) {
+            .em_main_table {
+                width: 100% !important;
+            }
+
+            span[class=3Dem_divhide] {
+                display: none !important;
+            }
+
+            .em_wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            img[class=3D"image-100-percent"] {
+                width: 100% !important;
+                height: auto;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            .em_aside {
+                padding: 30px 15px !important; /*Update the values as requi=
+red*/
+                Margin-left: 15px !important;
+                Margin-right: 15px !important;
+            }
+
+            .em_aside1 {
+                padding: 30px 15px !important; /*Update the values as requi=
+red*/
+                Margin-left: 15px !important;
+                Margin-right: 15px !important;
+            }
+
+            .em_hide {
+                display: none !important;
+            }
+
+            .em_full_img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+                min-width: 100vw !important;
+            }
+
+            .em_align_cent {
+                text-align: center !important;
+            }
+
+            .em_spc_20 {
+                height: 30px !important;
+            }
+
+            .em_side {
+                width: 10px !important;
+            }
+
+            .em_top {
+                padding-top: 20px !important;
+            }
+
+            .em_top1 {
+                padding-top: 15px !important;
+            }
+
+            .em_auto {
+                height: auto !important;
+            }
+
+            .em_height_fixed {
+                height: 320px !important;
+            }
+
+            .em_border {
+                border-right: none !important;
+                border-bottom: 1px solid #ffffff !important;
+            }
+        }
+
+        @media only screen and (max-width:480px) {
+
+            .em_main_table {
+                width: 100% !important;
+            }
+
+            span[class=3Dem_divhide] {
+                display: none !important;
+            }
+
+            .em_wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            img[class=3D"image-100-percent"] {
+                width: 100% !important;
+                height: auto;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            .em_aside {
+                padding: 30px 15px !important; /*Update the values as requi=
+red*/
+                Margin-left: 15px !important;
+                Margin-right: 15px !important;
+            }
+
+            .em_aside1 {
+                padding: 30px 15px !important; /*Update the values as requi=
+red*/
+                Margin-left: 15px !important;
+                Margin-right: 15px !important;
+            }
+
+            .em_hide {
+                display: none !important;
+            }
+
+            .em_full_img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .em_align_cent {
+                text-align: center !important;
+            }
+
+            .em_spc_20 {
+                height: 30px !important;
+            }
+
+            .em_side {
+                width: 10px !important;
+            }
+
+            .em_top {
+                padding-top: 20px !important;
+            }
+
+            .em_auto {
+                height: auto !important;
+            }
+
+            .em_height_fixed {
+                height: 320px !important;
+            }
+
+            .em_margin_10 {
+                Margin-left: 15px !important;
+                Margin-right: 15px !important;
+            }
+
+            .em_top1 {
+                padding-top: 15px !important;
+            }
+
+            .em_border {
+                border-right: none !important;
+                border-bottom: 1px solid #ffffff !important;
+            }
+        }
+
+        .MsoNormal {
+            font-family: 'NVIDIA', Arial, Helvetica, sans-serif !important;
+            font-weight: lighter;
+        }
+    </style>
+    <!--[if gte mso 9]>
+
+
+
+
+
+
+        <![endif]-->
+</head>
+<body style=3D"margin:0px; padding:0px;" >
+    <!--Full width outer table start--> <!-- Preheader Copy Start -->
+    <table class=3D"show" width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" style=3D"display: none; width: 0px; height: 0px; max-width: =
+0px; max-height: 0px; overflow: hidden; opacity: 0; mso-hide: all;">
+        <tbody>
+            <tr>
+                <td class=3D"mktoText" id=3D"Preheadertext" style=3D"font-s=
+ize: 1px; font-family: 'NVIDIA', Arial, Helvetica, sans-serif; color: #ffff=
+ff; font-weight: normal; text-align: center;"></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Preheader Copy End -->=20
+    <!-- Header Logo Start -->
+    <table align=3D"center" width=3D"520" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" style=3D"position: relative;top: -11px;padding-bottom: 16px=
+;">
+        <tr>
+            <td width=3D"520" style=3D"padding-top: 16px;padding-left: 16px=
+;padding-right:16px;">
+                <a href=3D"http://www.nvidia.com/" style=3D"color: #666666;=
+ text-decoration: none;" target=3D"_blank" rel=3D"noopener noreferrer" titl=
+e=3D"NVIDIA"><img src=3D"http://info.nvidia.com/rs/156-OFN-742/images/nvidi=
+a-logo-150x50.png" alt=3D"NVIDIA" style=3D"margin: 0; padding: 0; border: 0=
+;" id=3D"nvidia-logo" constrain=3D"true" imagepreview=3D"false" width=3D"12=
+8" height=3D"42.67"/></a>
+            </td>
+        </tr>
+    </table>
+    <!-- Header Logo End -->=20
+    <!-- Sub Icon STARTS -->
+    <!-- Sub Icon ENDS -->
+    <table align=3D"center" width=3D"520" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0">
+        <tr>
+            <td valign=3D"top" style=3D"padding-left:16px;padding-right:16p=
+x;">
+                <div><table style=3D"width: 100%;" cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td class=3D"mktoContainer" id=3D"MainContainer">
+<table class=3D"mktoModule" id=3D"Module12FullWidthTextNoCTAdcbef793-fe4f-4=
+0cf-ae8d-d7aa4b718808" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"background-color: #ffffff;" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" data-nl-format=3D"datetime">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" style=3D"table-layout: fixed;" class=3D"em_main_table">
+<tbody>
+<tr>
+<td class=3D"em_aside1" style=3D"padding: 0;" align=3D"center" valign=3D"to=
+p">
+<table width=3D"488" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"em_wrapper" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" class=3D"mktoText" id=3D"Module12FullWi=
+dthTextNoCTACopyBlockdcbef793-fe4f-40cf-ae8d-d7aa4b718808">
+<table width=3D"488" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" style=3D"width: 100%;" class=3D"em_wrapper">
+<tbody>
+<tr>
+<td class=3D"text-block" class=3D"em_font" style=3D"color: #000000; 'NVIDIA=
+', Arial, Helvetica, sans-serif;font-weight: 400; font-size: 15px; line-hei=
+ght: 25px;">
+    <h2 style=3D"margin:-10px 0 22px 0;">NVIDIA Account</h2><br />
+
+<div>Click the link below to verify this email address.</div>
+<br />
+<!--BUTTON START-->=20
+<table class=3D"text-block primary-btn" border=3D"0" bgcolor=3D"#76b900" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"border:none;">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" class=3D"em_font" valign=3D"middle" style=3D"color: #f=
+fffff; font-family: 'NVIDIA', Arial, Helvetica, sans-serif; font-weight: 40=
+0; font-size: 14px; font-weight: bold; line-height:100%; padding:.75em .875=
+em; text-transform: capitalize; letter-spacing: 1px;"><a href=3D"https://ac=
+counts.nvgs.nvidia.com/api/1/message/VerifyEmail?q=3DeyJyZWRpcmVjdFVybCI6Im=
+h0dHBzOi8vbG9naW4ubnZncy5udmlkaWEuY29tL3Byb2ZpbGUtbWFuYWdlbWVudC92ZXJpZnktZ=
+W1haWw%2FY29kZT1leUpoYkdjaU9pSklVekkxTmlKOS5leUp5WldScGNtVmpkQ0k2ZXlKamJHbG=
+xiblJKWkNJNmJuVnNiQ3dpY21RaU9tNTFiR3dzSW5OMFlYUmxJanB1ZFd4c2ZTd2lkSFFpT2lKR=
+GIyNW1hWEp0UlcxaGFXd2lMQ0p6WlNJNklqZDBkWHBoZURWalpqZERjWGxaTjBSNlV6WXdWRUZ6=
+WVZOdU5rbGFaemRZZG1wTWNETkJiVVpKT1RSS1ZsUlpPWEJ6VFdaelJITjJaRkkzZUZWT2NVSWl=
+MQ0pwWkNJNklqRXlPVEkxTWpFNE9EQTFOVE00TXpZMU5EUWlMQ0psZUhBaU9qRTNNamc0TXpZME=
+5ERXNJbXAwYVNJNklqbGpabVE1WVdGakxUazJZak10TkRGbE5TMWhZVGt6TFRNd1pqWXhPV0psW=
+VRabU5pSXNJbVZ0WVdsc0lqb2ljR0YwY21sdloyRmljbWxsYkhCaGRHUjFRR2R0WVdsc0xtTnZi=
+U0lzSW5Seklqb2lSR1ZtWVhWc2RDSjkueU1lVmlVUkxtVkppQ04xNl8tZ1NERF9IeDJRSF9BWTZ=
+lcmlQaWwwZWp3cyZsb2NhbGU9ZW4tVVMiLCJtZXNzYWdlSWQiOiIxMjkyNTIxOTI4ODI5MDQ2Nz=
+g0In0%3D" style=3D"text-decoration: none; color: #000000; display: block;">=
+Verify Email Address</a></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<br />
+<!--BUTTON END-->
+
+
+
+
+
+</td>
+</tr>
+<tr>
+    <td class=3D"text-block" style=3D"padding: 20px 0;">
+        <hr>
+    </td>
+</tr>
+<tr>
+    <td class=3D"em_font text-block" align=3D"start" style=3D"color: #00000=
+0; 'NVIDIA', Arial, Helvetica, sans-serif;font-weight: 400; font-size: 15px=
+; line-height: 25px;padding-top: 0;" data-nl-format=3D"datetime">You reques=
+ted to use this email address to access your NVIDIA account. </td>
+</tr>
+<tr>=20
+<td class=3D"text-block">=20
+    </td>=20
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--Full width table End-->=20
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#f0f0f0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" style=3D"table-layout: fixed;" class=3D"em_main_table">
+<tbody>
+<tr>
+<td class=3D"em_aside1" style=3D"padding: 0;" align=3D"center" valign=3D"to=
+p">
+<table width=3D"488" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"em_wrapper" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top"><!--snippet-->
+<div class=3D"mktoSnippet" id=3D"NvidiaSubheading">
+<div>
+<table width=3D"488" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"text-block" class=3D"em_wrapper" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td class=3D"em_font" align=3D"center" style=3D"color: #000000; font-family=
+: 'NVIDIA', Arial, Helvetica, sans-serif; font-weight: 400; font-size: 11px=
+; line-height: 15.4px; text-align: start;" data-nl-format=3D"datetime"> <a =
+href=3D"" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"text-decor=
+ation: underline solid #76b900;text-decoration-thickness: 2px;text-underlin=
+e-offset: .3125em;"></a> </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--end snippet--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<img src=3D"https://accounts.nvgs.nvidia.com/api/1/message/logo/12925219288=
+29046784">
+
+</div>
+            </td>
+        </tr>
+    </table>
+   =20
+    <!-- Footer Start -->
+    <table align=3D"center" width=3D"520" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" bgcolor=3D"#ffffff" style=3D"margin: 0 auto;">
+        <tbody>
+            <tr>
+                <td  valign=3D"top" style=3D"padding-left:16px;padding-righ=
+t:16px;padding-bottom:16px;padding-top:32px;">
+                    <!--snippet-->
+                    <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"start" class=3D"em_wrapper em_font" style=3D"width: 100%;">
+                        <tbody class=3D"em_wrapper em_font">
+                            <tr>
+                                <td cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" class=3D"em_font" style=3D"color: #666666; 'NVIDIA', Arial, Helve=
+tica, sans-serif;font-weight: 400; font-size: 11px; line-height: 15.4px; le=
+tter-spacing: 1px; text-decoration: none; display: block;">
+                                    <a href=3D"https://www.nvidia.com/en-us=
+/preferences/have-account/" class=3D"em_font" style=3D"color: #666666; text=
+-decoration: underline solid #76b900;text-decoration-thickness: 2px;text-un=
+derline-offset: .3125em;" target=3D"_blank" rel=3D"noopener noreferrer">Man=
+age Preferences</a> | <a href=3D"https://www.nvidia.com/contact/" target=3D=
+"_blank" rel=3D"noopener noreferrer" class=3D"em_font" style=3D"color: #666=
+666; text-decoration: underline solid #76b900;text-decoration-thickness: 2p=
+x;text-underline-offset: .3125em;">Contact Us</a> | <a href=3D"http://priva=
+cy.nvidia.com/" style=3D"color: #666666; text-decoration: underline solid #=
+76b900;text-decoration-thickness: 2px;text-underline-offset: .3125em;" targ=
+et=3D"_blank" rel=3D"noopener noreferrer" class=3D"em_font">Privacy Center<=
+/a></td>
+                            </tr>
+                            <tr>
+                                <td align=3D"start" class=3D"em_font" style=
+=3D"color: #666666; font-family:'NVIDIA', Arial, Helvetica, sans-serif;font=
+-weight: 400; font-size: 11px; line-height: 15.4px; letter-spacing: 1px;">=
+=C2=A9 2024 NVIDIA Corporation. All rights reserved.</td>
+                            </tr>
+                            <tr cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0">
+                                <td align=3D"start" class=3D"em_font" style=
+=3D"color: #666666; font-family:'NVIDIA', Arial, Helvetica, sans-serif;font=
+-weight: 400; font-size: 11px; line-height: 15.4px; letter-spacing: 1px;">N=
+VIDIA Corporation, 2788 San Tomas Expressway, Santa Clara, CA 95051.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--end snippet-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Footer End -->
+</body>
+</html>
+------=_Part_4657377_1795577083.1728231642335--

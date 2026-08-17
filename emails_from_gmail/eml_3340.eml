@@ -1,0 +1,1938 @@
+X-GM-THRID: 1709449572675779884
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a54:2410:0:0:0:0:0 with SMTP id j16csp3071970eco;
+        Sun, 29 Aug 2021 10:29:13 -0700 (PDT)
+X-Google-Smtp-Source: 
+ ABdhPJxyvq/u497POLf6oMsfju7LmrDVgwnZyaxahspenZMm4zXWMEmV1UCQ0vYAGBI3ZIb2uWex
+X-Received: by 2002:a05:6402:445:: with SMTP id
+ p5mr20362085edw.208.1630258152849;
+        Sun, 29 Aug 2021 10:29:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1630258152; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qSMPZtMAc3FKecWiN/9jLecLgMz3Ly0T5FsHAIR+XkLrOAMorZ7f2/HCu1VDHKz9Pd
+         AsMyIw334PHgn+CQxhO68gV/F2yRN9IIgkBWi0gqmOBWgMl8A0mM43MV5joV1iUQJZ0d
+         TOpMubpJ40c2aj8zG7rDFDGukmfrO0ojyilcLmBYkJFgCEVY8g7Y4gYva9ZCLhIDKSw8
+         okejX4KrkeXFjFezjQ90PqHmUsKMwr2qzeBjO40Kc/gjgW0qj+Crvv9nW5xAo9CtQipO
+         YflbTTbkG5KCNtDix/TknnKBJoDihPOWIkncGGEawuIrpWM5aLCc5Vqk2hhJJIvY65Z5
+         +pbQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:mime-version:from:subject:date:message-id:dkim-signature
+         :dkim-signature;
+        bh=AuHDs4j+/8NsSyKuKt7APseyvEckSIexFeZPhde/UJE=;
+        b=Fygf8LXiTEDFOOyyUE9VKzsSZdwc3mdcEUcnbvr5wTXvxYf/gKp0P3Mw6f7s+jF4K6
+         OpRc/1QXSJhSCqcJVN8SOmJto6gNKANxcSwB7Urxsh+iC5nHnHF1jDrjY6w2XvlkKdnT
+         +4BceNPOgWCjEkNxonGeJ6zWdyqXfbFIEJJPhUWKMhLdKWkLRr95j0zypHpxI5b4w+fs
+         QUyP3jvaOe+HXrs1ctNjMkY7fa5sKS2WXVhHx9wQRlWWxYK99IaniNXYGjNZtgGwDGgp
+         uL7IVQ+NkdFozT3410PhpYM9lrIrsQGvdSeLjdYVFD3dzRGAeEKcTf8BPW73dm3cz4Ja
+         yErg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@chess.com header.s=s1 header.b=ZVoBJxdF;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="zsngc/ut";
+       spf=pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.16.117 as permitted sender)
+ smtp.mailfrom="bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chess.com
+Return-Path: 
+ <bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com>
+Received: from o8.email.chess.com (o8.email.chess.com. [167.89.16.117])
+        by mx.google.com with ESMTPS id
+ aq21si13064590ejc.637.2021.08.29.10.29.12
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 29 Aug 2021 10:29:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.16.117 as permitted sender) client-ip=167.89.16.117;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@chess.com header.s=s1 header.b=ZVoBJxdF;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="zsngc/ut";
+       spf=pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.16.117 as permitted sender)
+ smtp.mailfrom="bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chess.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chess.com;
+	h=subject:from:mime-version:x-feedback-id:to:content-type;
+	s=s1; bh=AuHDs4j+/8NsSyKuKt7APseyvEckSIexFeZPhde/UJE=;
+	b=ZVoBJxdF2XYi85ozEQuip1DfZaWUX2F5LYiAmsYvzXo7jnZUv69Qig0RoPLq2bsYnlyc
+	2hl1l11JKMi13pW20HNGlts3pOCPnSXK+IgG92F5TXNZfcY4LuoX6CqrFwskGrBGP3CgH5
+	hwUJmqFwTU+US6sUQtVxUQZcFt9St5q6K2xY8rG+7MEfeIzZBpObmzKxr4MR3JC+/uIB2j
+	qRavRuBAvKYBglzt4JlqvdokGpxNhyRwfrB2CitGEJ2LrT0la6bgOE3iIp00CPCPTz772Z
+	aMxlrglF79LLSQi0Knnpa7DhLEvkCTTzVLwadJ1nDYdBYf8ry8Az+wYYd4ey6yqw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=subject:from:mime-version:x-feedback-id:to:content-type;
+	s=smtpapi; bh=AuHDs4j+/8NsSyKuKt7APseyvEckSIexFeZPhde/UJE=;
+	b=zsngc/uta+IRAr8EwhKlEumoEcSoz27Ttppvug7zZHxqz2VUxxEbBhCIw9zxoAzKB5gl
+	9nveKe+vn6hAj2OJstqiHmpD2T524ECOQCDKEQYM+A6msexuijf38/KwnEVtm2iYBbT3rS
+	ZTiQzqskfQGN1ntIpmny9XQYOvce6TW64=
+Received: by filterdrecv-b445d8b9-jkk44 with SMTP id
+ filterdrecv-b445d8b9-jkk44-1-612BC3E7-1C
+        2021-08-29 17:29:11.246242286 +0000 UTC m=+1365652.409582225
+Received: from www.chess.com (unknown)
+	by ismtpd0149p1iad2.sendgrid.net (SG)
+	with ESMTP id MhcMbthhQ9GM-4ov-h3VaA
+	for <patriogabrielpatdu@gmail.com>;
+	Sun, 29 Aug 2021 17:29:11.226 +0000 (UTC)
+Message-ID: <674333735bb1daa84229dfa613f31330@resque-prod.chess.com>
+Date: Sun, 29 Aug 2021 17:29:11 +0000 (UTC)
+Subject: PogChamps Returns! Featuring Ludwig, MrBeast, Harry Mack And More
+ Incredible Creators
+From: =?utf-8?b?4pmfQ2hlc3MuY29t?= <alert@chess.com>
+MIME-Version: 1.0
+X-Feedback-ID: 2244315:SG
+X-SG-EID: 
+ =?us-ascii?Q?l=2FUz0Z=2FyZE=2F8gRxr0+OFJVGAAs6qSBgSznrWyZ0+MRazFq=2F9BFKznJu++20zMU?=
+ =?us-ascii?Q?5Q9Hv5VIwaLZ+xtY=2FGKn5+39p7FemzGqONrZAK0?=
+ =?us-ascii?Q?W34ya75gukQ9O8Uon7wThqkH0I93Sd1qHt9H3g7?=
+ =?us-ascii?Q?2NRklrMXZAS4j5aBdCzmitl0pt1=2Fb4Ozx9b67mg?=
+ =?us-ascii?Q?G0IpjvTiSFWadRnhI0SYzQnv6a4fwcM=2FbmrbZJb?=
+ =?us-ascii?Q?0eWCerjZDh+yD4SGR4RI97JTyX=2FOuhRUt5BTrM?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8aEZsz5jC5hqnvyvn5O4kPEHxeNdOQDA3VzW5FMY=2F?=
+ =?us-ascii?Q?YItmppE2aCfWbcneCZW8qLJucg0h147kNq6G946?=
+ =?us-ascii?Q?7t7=2FQ0=3D?=
+To: ChewyTzy <patriogabrielpatdu@gmail.com>
+X-Entity-ID: smEwEMy3STNotLzPJ5ZsHg==
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1630258151_2939823f023d07ca8da37bb141a3f8ad_=_"
+
+
+--_=_swift_1630258151_2939823f023d07ca8da37bb141a3f8ad_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Chess.com - Play. Learn. Share.
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+*** Pogchamps Returns! ***
+
+
+The most fun chess tournament on the planet is back on August 29 as PogCham=
+ps 4 kicks off! Don=E2=80=99t miss your favorite stars from the first three=
+ PogChamps, including Ludwig, MrBeast, Rubius, and QTCinderella, as well as=
+ exciting new players like Harry Mack, IAmCristinini, Fundy, Sapnap, and mo=
+re! Tune in and experience chess like never before!
+
+
+** Here's How It Works
+---------------------------------------------------------------------------=
+----------
+- Players are paired with coaches and grouped into four initial groups. The=
+ top two finishers from each group advance to the championship bracket for =
+a final, dramatic matchup!
+
+
+** Tune In To Some Familiar Faces
+---------------------------------------------------------------------------=
+----------
+- Creators from the worlds of rap, Minecraft, Among Us, League of Legends, =
+and more mix it up.
+
+
+*   Ludwig
+-   Variety
+>>> twitch.tv/ludwig
+
+*   MrBeast
+-   Variety
+>>> twitch.tv/mrbeast
+
+*   Harry Mack
+-   Freestyle Rapper
+>>> youtube.com/hmckenzie217
+
+*   Rubius
+-   Variety
+>>> youtube.com/elrubiusOMG
+
+*   IAmCristinini
+-   Variety
+>>> twitch.tv/IamCristinini
+
+*   Sapnap
+-   Minecraft
+>>> youtube.com/sapnap
+
+*   5up
+-   Among Us
+>>> twitch.tv/5uppp
+
+
+
+** Help Chess Give Back
+---------------------------------------------------------------------------=
+----------
+- Chess has been experiencing historic growth and with your help, we can ch=
+annel this momentum to help grow the game further and give back to charity.
+
+
+** Chess.com Match
+---------------------------------------------------------------------------=
+----------
+- $100,000 in donations to Rise Against The Disorder, a 501(c)(3) dedicated=
+ to making mental health care more affordable and accessible.
+
+
+** Pogchamps will be broadcast across multiple platforms including Twitch, =
+YouTube, Facebook, Twitter, and will once again be broadcast live on Chess.=
+com/tv with the final set to take place on September 12.**
+
+>>> Learn More
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0G06017vB90-2F=
+LgHra-2Bm0-2BLGGVJXV4Iu7ziBHYGhgaBnEWydzO0UT1HHxZpqfVyqzuNS-2B7P7KbuSIEVSuO=
+e39kIIEy-2FCk8sMr6HR5KJny6A7TgpauY6ohvLM0Hl-2Fv8q8OcUwKgzQyBPYFKHh1uaSJJRyi=
+xyZ62CJUkBE9X6msQxDjQkt-2Burz2-2FjQwHV4JNSKIjA-3D-3DY_7a_SDrKeVA2pts3JIkQfz=
+tFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJgXp5cTF=
+GCj4XRWVWQBkmeu5wSP5xc-2BcjuCZOTw2OWkBa6RB9mPXcdgf2sK55LItVgGMMLjKv7GNxQUGP=
+t9OPHsY5uekcYWe5eCGJeWj-2FZHPEGmHge6jFkNmOdR4LUaCbWKVomDBK6YrDAtD8fVBzAvjMS=
+m7x1AA0hS9627OFr8ztEwA38jBTHIxvuPyQTD-2BX3QVA-3D-3D
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+Want less email?
+Change your e-mail preferences:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Ida1s5pJJFqK8=
+AAppJIYfANkqhlFxxKYAmCe0jz1KdOfx0SZOqFZfF084m5eAnelQ-3D-3Dp1ou_SDrKeVA2pts3=
+JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJg=
+Xp716t5Q9KU7I-2BoletMMFsE9yoFNln7dDaLLs6tEibfdpOeRCHiIysA1DYreHWWjDA05gTjAc=
+pTU-2B4u0HX3pIRRIlfCjlQ-2Bm2OJWcxQ6d0NDZ5Ao2p8IyIYP520xdfbN5LEGfiSTv-2F5W4Q=
+PQMJQPJSAuT-2BLBTr-2BgL1zF5jF3CInKsfxLrdJiSrwlw8W-2FQ1sKl2w-3D-3D
+Stop ALL Chess.com e-mail?
+Unsubscribe:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Lj2Xj4j6HCEeS=
+29RhJd8AXa1-2F0uDwVVaVme6XmMUBoePXW5-2Ba18bQJCYmtzHn74TC-2F4yzVEiJyilHnCs-2=
+BZckiY-3DQDBM_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRN=
+DlxVaLWp-2FkPCCimkrCfwQQJgXp5fUh2vytSoojPoWt-2BlY8Dvoly2oTmRbXFz3sROOaz6YUi=
+87bip-2FRvAkC5MSg8K2vaSI48hWU8sDozxbwuDYjR7UyZ6B7mNMUhGWfMg2IDFEv3LhKctgVb4=
+LzAbPO4seIAwASB6BHzDYeX48A0GyJRmoa2dlgIOADhyQHIByfyi3IIEdwToAzMbEUDdEBuPoUQ=
+-3D-3D
+
+---------------------------------------------------------------------------=
+----------
+
+Add alert@chess.com to your address book so you don't miss any email from C=
+hess.com
+Please do not reply to this email.
+Need help? Visit Chess.com Customer Support: https://links.chess.com/ls/cli=
+ck?upn=3D-2Fj6rp56rYpMUW3uwwA85mmD8LvzBWSveXhNYwVR-2Fh8RAfZTl6w4KULcL8MXV60=
+hu6Icy_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLW=
+p-2FkPCCimkrCfwQQJgXpxZA6mc3TnGN5prDyCjF0NcWB04NJOnaFkhEoNCtmLbVtXeG92aRVxZ=
+cJvrSZYce-2BwYcCBv6rXwTvtifOP-2BBlp7lihb8sClmQXM4E-2Bl3WUlwQE2DZ-2Fpz-2BbQA=
+8-2Fuj9X3PkD83FAb-2FmuZsh8iKIME36UdVSdfJy3S4XCIyij2pfa4pfPFC6NG5nCJK-2FvtnM=
+PYLwQ-3D-3D
+This email was sent to: patriogabrielpatdu@gmail.com - Privacy Policy: http=
+s://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0EsKzks2qyRRWiAizL=
+s1qaun8LcHY7F9AfJ48cjlvUJ84OjC_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKi=
+rBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJgXp9JLxhcH57ncQRLsKDLUDasg-2Fi4uT=
+1byMBykwlDrT83bbBWxmEWOjBBMqOo54odHqFJOQV94wEhf1aUVF8xbEtKdP-2B5CVAsuXRSYBv=
+1AU-2FEbuLoJwp38RQCAP6-2BtID8JLSE0oWVMd5GabxQXDTosjrQxUboYnNJzhJu-2FV-2FaKQ=
+xPpqBQfDPqvUk3QHf5imm-2F4pw-3D-3D
+Chess.com | PO Box 60400. Palo Alto, CA 94306
+
+
+--_=_swift_1630258151_2939823f023d07ca8da37bb141a3f8ad_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "https://www.w3=
+.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <!--[if !mso]><!-->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <!--<![endif]-->
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+
+  <title>
+  Pogchamps 4
+</title>
+    <meta name=3D=E2=80=9Dcolor-scheme=E2=80=9D content=3D=E2=80=9Dlight da=
+rk=E2=80=9D>
+  <meta name=3D=E2=80=9Dsupported-color-schemes=E2=80=9D content=3D=E2=80=
+=9Dlight dark=E2=80=9D>
+
+    <style>
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #f6f6f6;
+    }
+
+    .link {
+      display: flex;
+      justify-content: center;
+      background-color: #f6f6f6;
+      padding-top: 10px;
+    }
+
+    a:link,
+    span.MsoHyperlink {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    table {
+      border-spacing: 0;
+      font-family: sans-serif;
+      color: #312e2b;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    img {
+      border: 0;
+    }
+
+    div[style*=3D"margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+
+      background-color: #f6f6f6;
+    }
+
+    .webkit {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .outer {
+      Margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    #chess-logo {
+      padding-top: 17px;
+      padding-bottom: 9px;
+    }
+
+    .no-link {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-weight: inherit !important;
+    }
+
+      .email a {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+  </style>
+
+  <style>
+  :root {
+    color-scheme: light dark;
+    supported-color-schemes: light dark;
+   }
+
+  @media (prefers-color-scheme: dark) {
+    .dm-background {
+      background-color: #202124 !important;
+    }
+
+    .dm-box-background {
+      background-color: #121212 !important;
+    }
+
+    .dm-light-text {
+      color: #dfdfdf !important;
+    }
+
+    .button {
+      background-color: #603996 !important;
+      color: #bff9ff !important;
+    }
+
+    .header {
+      color: #4eb1bf !important;
+    }
+
+    .player-header {
+      color: #865bc1 !important;
+    }
+
+    .dm-footer-chesscom {
+      color: #dfdfdf !important;
+    }
+  }
+
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .contents {
+    width: 100%;
+  }
+
+  p {
+    Margin: 0;
+  }
+
+  .two-column {
+    text-align: center;
+    font-size: 0;
+  }
+
+  .two-column .column1 {
+    width: 100%;
+    max-width: 265px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .two-column .column2 {
+    width: 100%;
+    max-width: 335px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .two-column .contents {
+    text-align: left;
+  }
+
+  .two-column img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-wrapper {
+    padding-bottom: 20px;
+  }
+
+  .full-logo {
+    width: 30%;
+    max-width: 180px;
+  }
+
+  .full-social {
+    width: 70%;
+    max-width: 420px;
+  }
+
+  .footer-text {
+    color: #65625f;
+    font-size: 11px;
+    line-height: 12px;
+    padding: 10px 0 0;
+  }
+
+  #footer a {
+    color: #3a729c;
+    text-decoration: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  @media screen and (min-width: 400px) {
+    .max-400 {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .mobile-only {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .contents p {
+      text-align: center !important;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .mobile-padding {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+
+    .mobile-remove-padding-top {
+      padding-top: 0 !important;
+    }
+
+    .mobile-remove-padding-left {
+      padding-left: 0 !important;
+    }
+
+    .mobile-remove-padding-right {
+      padding-right: 0 !important;
+    }
+
+    .mobile-remove-padding-bottom {
+      padding-bottom: 0 !important;
+    }
+
+    .mobile-hidden {
+      display: none !important;
+    }
+
+    .mobile-img-padding {
+      padding-top:40px !important;
+      padding-bottom: 5px !important;
+    }
+
+    .one-column .inner {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .mobile-center {
+      text-align: center !important;
+    }
+
+    .mobile-header {
+      font-size: 34px !important;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .mobile-display {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 401px) and (max-width: 599px) {
+    .contents p {
+      text-align: center !important;
+    }
+
+    .align-right {
+      text-align: right !important;
+    }
+
+    .align-left {
+      text-align: left !important;
+    }
+
+    .tablet-display {
+      display: inline-block !important;
+    }
+  }
+
+</style>
+
+  <!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+  table {border-collapse: collapse !important;}
+  </style>
+  <![endif]-->
+</head>
+
+<body class=3D"body dm-background"
+  style=3D"margin-top:0 !important;margin-bottom:0 !important;margin-right:=
+0 !important;margin-left:0 !important;padding-top:0;padding-bottom:0;paddin=
+g-right:0;padding-left:0;background-color:#f6f6f6;">
+  <center class=3D"wrapper dm-background"
+    style=3D"width:100%;table-layout:fixed;-webkit-text-size-adjust:100%;-m=
+s-text-size-adjust:100%;background-color:#f6f6f6;">
+
+    <div style=3D"display: none; max-height: 0px; overflow: hidden;">
+  The most fun chess tournament on the planet is back on August 29 as PogCh=
+amps 4 kicks off! Don=E2=80=99t miss your favorite stars as well as excitin=
+g new players!
+</div>
+
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+  &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+
+    <!--[if (gte mso 9)|(IE)]>
+      <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-=
+family:sans-serif;color:#312e2b;" >
+      <tr>
+      <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-l=
+eft:0;" >
+      <![endif]-->
+    <table role=3D"presentation" class=3D"outer dm-background" align=3D"cen=
+ter"
+      style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;max-=
+width:600px;font-family:Arial, sans-serif;background-color:#f6f6f6;border-r=
+adius:5px">
+      <tr>
+        <td align=3D"center" valign=3D"top" id=3D"chess-logo"
+          style=3D"padding-bottom:21px !important;padding-top:17px;-webkit-=
+text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso=
+-table-rspace: 0pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-se=
+rif;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/chess-logo-darkmode.b3ee420c.png"
+            alt=3D"chess.com header logo"
+            style=3D"border-width:0;width:150px!important;height:41.7px!imp=
+ortant;font-size:18px;line-height:45px;"
+            width=3D"150" height=3D"41.7">
+        </td>
+      </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:0;margin-bott=
+om:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table role=3D"presentation" class=3D"outer dm-box-background" align=3D=
+"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;m=
+ax-width:600px;font-family:Arial,sans-serif;background-color:#ffffff;">
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:4px;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/pogchamps/pogchamps-4-banner@2x.png"  width=3D"600" alt=3D"Pogch=
+amps 4 banner image" style=3D"width:100%;max-width:600px;display:block;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding" style=3D"text-align:cen=
+ter;padding-top:47px;">
+          <p class=3D"header mobile-header" style=3D"font-size:50px;line-he=
+ight:1.2;color:#551e9a;font-weight:900;">
+            Pogchamps Returns!
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding" style=3D"text-align:cen=
+ter;padding-top:24px;padding-right:50px;padding-bottom:61px;padding-left:50=
+px;">
+          <p class=3D"dm-light-text" style=3D"font-size:18px;line-height:1.=
+56;color:#8b8987;">
+            The most fun chess tournament on the planet is back on August 2=
+9 as PogChamps 4 kicks off! Don=E2=80=99t miss your favorite stars from the=
+ first three PogChamps, including Ludwig, MrBeast, Rubius, and QTCinderella=
+, as well as exciting new players like Harry Mack, IAmCristinini, Fundy, Sa=
+pnap, and more! Tune in and experience chess like never before!
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:10px;margin-b=
+ottom:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table role=3D"presentation" class=3D"outer dm-box-background" align=3D=
+"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;m=
+ax-width:600px;font-family:Arial,sans-serif;background-color:#ecfdff;">
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:54px;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/pogchamps/icon-1@2x.png"  width=3D"58" alt=3D"bracket icon" styl=
+e=3D"width:58px;display:inline-block;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:26px;">
+          <p class=3D"dm-light-text" style=3D"font-size:24px;line-height:1.=
+2;color:#010101;font-weight:semi-bold;">
+            Here's How It Works
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding" style=3D"text-align:cen=
+ter;padding-top:24px;padding-right:50px;padding-left:50px;">
+          <p class=3D"dm-light-text" style=3D"font-size:18px;line-height:1.=
+56;color:#312e2b;">
+            Players are paired with coaches and grouped into four initial g=
+roups. The top two finishers from each group advance to the championship br=
+acket for a final, dramatic matchup!
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding" style=3D"text-align:cen=
+ter;padding-top:34px;">
+          <p class=3D"header mobile-header" style=3D"font-size:50px;line-he=
+ight:1.2;color:#551e9a;font-weight:900;">
+            Meet The Coaches
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:4px;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/pogchamps/pogchamps-4-hosts@2x.png"  width=3D"600" alt=3D"Coache=
+s" style=3D"width:100%;max-width:600px;display:block;" />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:10px;margin-b=
+ottom:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table class=3D"dm-box-background" role=3D"presentation" class=3D"outer=
+" align=3D"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;wi=
+dth:100%;max-width:600px;font-family:Arial,sans-serif;background-color:#fff=
+fff;">
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:48px;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/pogchamps/icon-2@2x.png"  width=3D"58" alt=3D"network icon" styl=
+e=3D"width:58px;display:inline-block;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding" style=3D"text-align:cen=
+ter;padding-top:26px;">
+          <p class=3D"dm-light-text" style=3D"font-size:24px;line-height:1.=
+2;color:#010101;font-weight:semi-bold;">
+            Tune In To Some Familiar Faces
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding mobile-remove-padding-bo=
+ttom" style=3D"text-align:center;padding-top:24px;padding-right:90px;paddin=
+g-bottom:25px;padding-left:90px;">
+          <p class=3D"dm-light-text" style=3D"font-size:18px;line-height:1.=
+56;color:#8b8987;">
+            Creators from the worlds of rap, Minecraft, Among Us, League of=
+ Legends, and more mix it up.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/ludwig@2x.png" width=3D"165" alt=3D"Ludw=
+ig" style=3D"width:100%;max-width:165px;display:inline-block;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          Ludwig
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Variety
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          twitch.tv/ludwig
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/mrbeast@2x.png" width=3D"165" alt=3D"Mr =
+Beast" style=3D"width:100%;max-width:165px;display:inline-block;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          MrBeast
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Variety
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          twitch.tv/mrbeast
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/harrymack@2x.png" width=3D"165" alt=3D"H=
+arry Mack" style=3D"width:100%;max-width:165px;display:inline-block;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          Harry Mack
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Freestyle Rapper
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          youtube.com/hmckenzie217
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/rubius@2x.png" width=3D"165" alt=3D"Rubi=
+us" style=3D"width:100%;max-width:165px;display:inline-block;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          Rubius
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Variety
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          youtube.com/elrubiusOMG
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/iamcristinini@2x.png" width=3D"165" alt=
+=3D"IAmCristinini" style=3D"width:100%;max-width:165px;display:inline-block=
+;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          IAmCristinini
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Variety
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          twitch.tv/IamCristinini
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/sapnap@2x.png" width=3D"165" alt=3D"Sapn=
+ap" style=3D"width:100%;max-width:165px;display:inline-block;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          Sapnap
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Minecraft
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          youtube.com/sapnap
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:32px;padding-bottom:80px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/5up@2x.png" width=3D"165" alt=3D"5up" st=
+yle=3D"width:100%;max-width:165px;display:inline-block;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;">
+                        <p class=3D"player-header" style=3D"font-size:35px;=
+font-weight:bold;color:#551e9a;line-height:1.2;">
+                          5up
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-right:50px;">
+                        <p class=3D"player-header" style=3D"font-size:24px;=
+color:#551e9a;line-height:1.17;">
+                          Among Us
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"inner contents mobile-center" style=3D"t=
+ext-align:left;padding-top:8px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/gray-line@2x.png"  width=3D"274" alt=3D"=
+gray line" style=3D"width:274px;display:inline-block;" />
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:8px;padding-right:50px;">
+                        <p style=3D"font-size:24px;color:#4eb1bf;line-heigh=
+t:1.17;">
+                          twitch.tv/5uppp
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:10px;margin-b=
+ottom:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table role=3D"presentation" class=3D"outer dm-box-background" align=3D=
+"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;m=
+ax-width:600px;font-family:Arial,sans-serif;background-color:#ebefff;">
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:36px;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/pogchamps/icon-3@2x.png"  width=3D"58" alt=3D"heart icon" style=
+=3D"width:58px;display:inline-block;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents" style=3D"text-align:center;padding-top=
+:9px;">
+          <p class=3D"dm-light-text" style=3D"font-size:24px;line-height:2.=
+5;color:#010101;font-weight:semi-bold;">
+            Help Chess Give Back
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"inner contents mobile-padding mobile-remove-padding-bo=
+ttom" style=3D"text-align:center;padding-top:2px;padding-right:55px;padding=
+-bottom:25px;padding-left:55px;">
+          <p class=3D"dm-light-text" style=3D"font-size:18px;line-height:1.=
+56;color:#312e2b;">
+            Chess has been experiencing historic growth and with your help,=
+ we can channel this momentum to help grow the game further and give back t=
+o charity.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding mobile-remove-padding-top" d=
+ir=3D"ltr" style=3D"padding-top:27px;padding-bottom:86px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"44%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-img-padding mobile-center mobile-=
+remove-padding-left" style=3D"padding-left:59px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/pogchamps/prize-fund@2x.png" width=3D"165" alt=3D"=
+prize fund amount" style=3D"width:100%;max-width:165px;display:inline-block=
+;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"56%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-right mobile-remov=
+e-padding-top" style=3D"padding-right:0;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-top"  style=3D"padding-top:23px;padding-right:10px;">
+                        <p class=3D"dm-light-text" style=3D"font-size:28px;=
+font-weight:bold;color:#212121;line-height:2.14;">
+                          Chess.com Match
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-padding mobile-remove-padding-rig=
+ht" style=3D"padding-top:8px;padding-right:40px;">
+                        <p class=3D"dm-light-text" style=3D"font-size:18px;=
+color:#373737;line-height:1.22;">
+                          $100,000 in donations to Rise Against The Disorde=
+r, a 501(c)(3) dedicated to making mental health care more affordable and a=
+ccessible.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:0;margin-bott=
+om:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table role=3D"presentation" class=3D"outer dm-box-background" align=3D=
+"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;m=
+ax-width:600px;font-family:Arial,sans-serif;background-color:#ffffff;">
+      <tr>
+        <td class=3D"inner contents mobile-padding" style=3D"text-align:cen=
+ter;padding-top:62px;padding-right:55px;padding-bottom:14px;padding-left:55=
+px;">
+          <p class=3D"dm-light-text" style=3D"font-size:18px;line-height:1.=
+56;color:#312e2b;">
+            Pogchamps will be broadcast across multiple platforms including=
+ Twitch, YouTube, Facebook, Twitter, and will once again be broadcast live =
+on Chess.com/tv with the final set to take place on September 12.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"contents" style=3D"padding-bottom:66px;padding-right:0=
+;padding-left:0;padding-top:26px;">
+          <table role=3D"presentation" align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0"
+            style=3D"border-spacing:0;font-family:sans-serif;color:#312e2b;=
+">
+            <tr>
+              <td>
+                <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYy=
+vOYLuq5kvtWwh0G06017vB90-2FLgHra-2Bm0-2BLGGVJXV4Iu7ziBHYGhgaBnEWydzO0UT1HHx=
+ZpqfVyqzuNS-2B7P7KbuSIEVSuOe39kIIEy-2FCk8sMr6HR5KJny6A7TgpauY6ohvLM0Hl-2Fv8=
+q8OcUwKgzQyBPYFKHh1uaSJJRyixyZ62CJUkBE9X6msQxDjsM3mwx4TMS21tz2iNxKfYg-3D-3D=
+sBSp_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-=
+2FkPCCimkrCfwQQJgXpyv8-2F7Anu7hwtoimTjAQIb1I358uBC35dFF1PaxB-2FjdEFQqH2WJeR=
+SvE5-2FrOI8o7jCrA7iPWTDvV7RfVBMqhty26IQUVqWbeQh6B85Tqy3BkW3l43nti6zMgKXODWl=
+NMyJyMGnFS0SK-2FOrTOWQ1gBI1pvC26XF47NSgen3aVtaKsxe-2BoYsuUbDhBbLmrBQXlXQ-3D=
+-3D"
+                target=3D"_blank" rel=3D"noopener" style=3D"color:#ffffff;d=
+isplay:block;text-decoration:none;">
+                  <table role=3D"presentation" style=3D"width:100%;">
+                    <td align=3D"center" valign=3D"top" class=3D"button"
+                    style=3D"background-color:#603996;color:#bff9ff;font-si=
+ze:18px;font-weight:bold;padding-top:15px;padding-bottom:15px;padding-right=
+:69px;padding-left:69px;display:block;">
+                      Learn More
+                    </td>
+                  </table>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+       =20
+        <!--[if (gte mso 9)|(IE)]>
+<table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-family=
+:sans-serif;color:#333333;" >
+<tr>
+<td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;=
+" >
+<![endif]-->
+<table role=3D"presentation" class=3D"outer" align=3D"center"
+  style=3D"border-spacing:0;color:#333333;Margin:0 auto;width:100%;max-widt=
+h:600px;font-family:Arial, sans-serif;background-color:#ffffff;border-radiu=
+s:5px">
+  <tr class=3D"dm-background" id=3D"footer" bgcolor=3D"#f9f9f9">
+    <td align=3D"center" valign=3D"top" class=3D"footer-wrapper"
+      style=3D"padding-top:16px;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, '=
+Helvetica Neue', Helvetica, sans-serif;padding-right:0;padding-left:0;paddi=
+ng-bottom:20px;">
+      <table role=3D"presentation" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%"
+        style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;ms=
+o-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important=
+;border-spacing:0;font-family:sans-serif;color:#333333;">
+        <tr>
+          <td class=3D"mobile-padding" align=3D"center" valign=3D"top"
+            style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helvetica N=
+eue', Helvetica, sans-serif;padding-top:10px;padding-bottom:10px;padding-ri=
+ght:0;padding-left:0;">
+            <!--[if mso]>
+            <table role=3D"presentation" align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"-webkit-text-size-a=
+djust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:=
+0pt;border-collapse:collapse !important;border-spacing:0;font-family:sans-s=
+erif;color:#333333;" >
+						<tr>
+						<td width=3D"330" valign=3D"top" style=3D"-webkit-text-size-adjust:10=
+0%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padd=
+ing-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+						<![endif]-->
+            <table role=3D"presentation" align=3D"left" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"180"
+              class=3D"full-logo"
+              style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:1=
+00%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !imp=
+ortant;border-spacing:0;font-family:sans-serif;color:#333333;width:30%;max-=
+width:180px;">
+              <tr>
+                <td align=3D"left" valign=3D"top" class=3D"logo-footer"
+                  style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adju=
+st:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helve=
+tica Neue', Helvetica, sans-serif;padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0;">
+                  <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2B=
+YyvOYLuq5kvtWwh0OpH5kz-2F43mKR51QI07-2FRySA05JrT8lBqcTIJMSSGL68XW0Y_SDrKeVA=
+2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCf=
+wQQJgXp1wRiK0vR6voMqzVwaIFbzb1DAsQQvjIdi1JB-2BjS-2FuaINtHtWMYDDxUmfukDBqifJ=
+8ydZGHvPqTXgQCoPU0Ao8QMKhZ40H36PvPt6wjR7Wk2dMq52PFgECYPbznPYdzxACEDxt3wF-2F=
+f2GjQfJ5JN0Jw8oHhMoFi3bphY6ZePAfFay-2BJGPITt6SiZc-2B1b0wdnpQ-3D-3D" target=
+=3D"_blank" rel=3D"noopener"
+                    style=3D"-webkit-text-size-adjust:100%;-ms-text-size-ad=
+just:100%;vertical-align:top;"><img
+                      src=3D"https://betacssjs.chesscomfiles.com/bundles/we=
+b/images/email/v5/footer/footer-logo@2x.png"
+                      style=3D"-ms-interpolation-mode:bicubic;border-width:=
+0;height:auto;line-height:100%;outline-style:none;text-decoration:none;widt=
+h:83px!important;font-size:10px;"
+                      alt=3D"chess.com logo" width=3D"83"></a>
+                </td>
+              </tr>
+            </table>
+            <!--[if mso]>
+						</td>
+						<td width=3D"330" valign=3D"top" style=3D"-webkit-text-size-adjust:10=
+0%;-ms-text-size-adjust:100%;  mso-table-lspace:0pt;mso-table-rspace:0pt;pa=
+dding-top:0;padding-bottom:0;padding-right:0; padding-left:0;" >
+						<![endif]-->
+            <table role=3D"presentation" align=3D"right" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"420"
+              class=3D"full-social"
+              style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:1=
+00%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !imp=
+ortant;border-spacing:0;font-family:sans-serif;color:#333333;width:70%;max-=
+width:420px;">
+              <tr>
+                <td align=3D"right" valign=3D"top" class=3D"social"
+                  style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adju=
+st:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helve=
+tica Neue', Helvetica, sans-serif;padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0;">
+                  <table role=3D"presentation">
+                    <tr>
+                      <td style=3D"padding-right:8px;padding-top:0;padding-=
+bottom:0; padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0MVhWF3kIG9yL8pZ-2Fk72lIDGkdTDODHgDKtl0b5OYLzRUNPs8dkL=
+I-2BHEYjVNk1hAB0FpjE0zEFm6M09uPf0JTcSLdnaaesP9LWrLGzWD7VZaThlc_SDrKeVA2pts3=
+JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJg=
+Xp037b7xkt-2BbCT5q48hRDMKs-2Bv1P96tslyaJjS-2F8g1PHUhwbq4H8uC6UTfB7Bs2-2BtCw=
+-2BjJwMc6mi-2BIk4aSF2FKXCgsz7iALuOkYWv-2FqFKqxuOUkU-2FipaZr7xYbOIAja1A4Ozcq=
+Ia9GcepHUp-2FjnQaLP721VZZojJ-2B-2Fg75ZsJdtQiSgm-2F-2Bb3qrE7Ydtig-2BwklmzA-3=
+D-3D"
+                          target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/ios@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:auto;line-height:100%;outline-style:none;text-decoration:non=
+e;width:18px!important;height:20px!important;font-size:10px;"
+                            alt=3D"iOS" width=3D"18" height=3D"20"></a>
+                      </td>
+                      <td style=3D"padding-right:17px;padding-top:0;padding=
+-bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0JSJFgvUBJy-2BrbnNuqLTeV6n-2F9h0Z780R-2F2HrFf7pwjg25b0=
+Dk9pLw3hHldp6kO6BuEd-2B7GaZ7vWxTfwBCbYiyoBOeTqToD6ny4sIhfPbvRrIN9O_SDrKeVA2=
+pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfw=
+QQJgXpzG2YMvFt-2BcYGQRrAFFowciWA2-2Fcu6qaZW-2BhyamShCjNfP2VMv2mrbK-2FEF-2Fw=
+QLsd-2FYjzk5eVC9HKhRO68gV48qOEclGT1fdmk7tJZP8VPi0m2FUNuSWvRk0ExkxacVOB0w5-2=
+Bb2vHkOR9J2XsHrXqdVN9C1BNB1xM9bOrxboM4KOBxTGZ-2Fg-2FI-2FQHHWUKPyL-2BUQQ-3D-=
+3D"
+                          rel=3D"noopener" target=3D"_blank"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/android@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:19px!important;width:17px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:19px;font-size:10px;"
+                            alt=3D"Google Play" width=3D"17" height=3D"19">=
+</a>
+                      </td>
+                      <td style=3D"padding-right:8px;padding-top:0;padding-=
+bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0I-2Fj2DnvTED9WZin-2FOt72DOYwloYEaRTCMl3VnuiF6aaQ2U3_S=
+DrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCC=
+imkrCfwQQJgXp3Yw9JEmDHK5FvXy-2ByGHCW-2FFrNiDwAWWCtN7jHw2F6ULfsE3PeLTNIwjnGO=
+ywBETHx-2BnhwJmAZEkjiUlmWadGklqZf2bLMtD3X9XaqrMYklNd3eYamymvvmb-2F7w-2FYRWw=
+hVQh3-2FSrcxqMLnvAyO3ECSuqzm0gJZQuL0zutARgZfgYf5lYbnqbbDqkVVxK5hkRkg-3D-3D"=
+ target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/facebook@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:19px!important;width:11px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:19px;font-size:10px;"
+                            alt=3D"Facebook" width=3D"11" height=3D"19"></a=
+>
+                      </td>
+                      <td style=3D"padding-right:6px;padding-top:0;padding-=
+bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0B8HxcotemcGo5B13h64XGwc9jr2UxwPV146P3uWogU8gub5_SDrKe=
+VA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkr=
+CfwQQJgXp4qHEaG6qKwc3g30QTYonltJhYhpEbzmG-2BVh7In3XDK85DD8mIp4gmYBPfGI1pI7F=
+-2FGDhaGCn37noSj4dQXiN8F7ENnI8AgpK7ffbv1FUa8BdPXzQGJ8PjHXNFtoIv3-2FJZEr0AOO=
+r5dLKoEEaidbm7YGtm1-2BoKijHD-2FYSkHd2AjXxFUYvuC09AUab4gLeErHDQ-3D-3D" rel=
+=3D"noopener" target=3D"_blank"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/twitter@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:17px!important;width:20px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:17px;font-size:10px;"
+                            alt=3D"Twitter" width=3D"20" height=3D"17"></a>
+                      </td>
+                      <td style=3D"padding-right:16px;padding-top:0;padding=
+-bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0IQrG118pjRCbcH5SDhYnjNy-2BHhFypThgj-2B-2Fnh49N7tKC2Q1=
+_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkP=
+CCimkrCfwQQJgXp33y-2BfTNIsw2uxbSb3h-2BiiaSg8MQsk-2FTUa2-2Beg07gS8AdPSJHz7PU=
+BvN5WKgwncPuvcFpSt-2BjeJ3xNZiJ3T9P-2B87aTEXRZ3BtFDi41PMKB0-2F7gtw8RA774bF-2=
+FQyP6Bn77YgaP6dEtxNYeippWHucUOkoQG-2BnwY1omgIJcZee-2FMZ0YzOQDhLiUDpbUSSnbIy=
+n5g-3D-3D" target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/instagram@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:20px!important;width:20px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:20px;font-size:10px;"
+                            alt=3D"Instagram" width=3D"20" height=3D"20"></=
+a>
+                      </td>
+                      <td style=3D"padding-right:5px;padding-top:0;padding-=
+bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0Dud-2FgB-2FMzCn6GDL2inrJ-2FeEI6FCCqO8AnMecrxkEAZPjgjm=
+_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkP=
+CCimkrCfwQQJgXp9t3UyUA-2FDUno7tfdWOcJJBGT9U3ko9w0v0udVgRlSOs4exqh0vh6-2BNsu=
+yIZVH4JE9AwAj1qDYTm170Y7I9Ae6OtSdGxktV13ej9VHM-2FEBsM5AZS-2BxcUSS8nU2eJlPf8=
+etsbqe9dyQIBB4q8u5r4XbTUN79Uag6A55EjHVWxwauF9oM6TkHO8FFaxHIp-2BhRPkA-3D-3D"=
+ rel=3D"noopener" target=3D"_blank"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/twitch@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:21px!important;width:20px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:21px;font-size:10px;"
+                            alt=3D"Twitch" width=3D"20" height=3D"21"></a>
+                      </td>
+                      <td style=3D"">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0Ano9BdBmfk0BJjYmv1KpdwxhdqpP5Si6VwUMzzO-2F8A2n85N_SDr=
+KeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCim=
+krCfwQQJgXp44ZPMB462j2Aghl8fcRN9hAfl2y7vqSXuz9tXSpkkkOO1jv3JRQ-2Bth0KuJcxRW=
+Bot5Ua4F8AfIkdGA3qY-2BZol0enkr-2B-2B8sL3TUeHmae2hiLEY5qqzleEbkVHXa-2FTrwb5D=
+lDX6ooESH4VaU5g98MYxVvjd0pqjJVxc-2B-2Fj7wjQu2C-2FDvYqxGEAXdwWB5yhNKVCg-3D-3=
+D" target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/youtube@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:16px!important;width:22px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:16px;font-size:10px;"
+                            alt=3D"YouTube" width=3D"22" height=3D"16"></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+          </td>
+        </tr>
+        <tr>
+          <td align=3D"center" valign=3D"top" class=3D"footer-text"
+            style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helvetica N=
+eue', Helvetica, sans-serif;color:#65625f;font-size:11px;font-weight:normal=
+;font-style:normal;line-height:12px;padding-top:10px;padding-bottom:10px;pa=
+dding-right:0;padding-left:0;">
+
+            Want less email? <a href=3D"https://links.chess.com/ls/click?up=
+n=3DVHHI-2BYyvOYLuq5kvtWwh0Ida1s5pJJFqK8AAppJIYfANkqhlFxxKYAmCe0jz1KdOG-2Fy=
+ZWmhWLx3YQ1N5QMWFUQ-3D-3Da7sh_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir=
+BPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJgXpzfR4-2FYqoTGSnBcq0cht2kP0jN9osk=
+VzXIIGV2t-2FPUjVRRQsd5w6OJafspM7-2BIVFU4XimJGIxynLQOVVljoFEXl12Lus3VsESIKLu=
+jF-2BBnmlOY5-2B8q7RlYW9AJK-2FGoYsdsVvihbGWmKNBF2BsqWAP5wd6TuKiLQSiGARzY-2FZ=
+BSY7OP9E5Uav-2BTI0qZ8iavloeA-3D-3D" style=3D"color: #3a729c">Change your e-=
+mail preferences</a>.
+
+            <!--[if !mso]><!--><br class=3D"mobile-only">
+            <!--<![endif]-->
+
+            Stop ALL Chess.com e-mail? <a href=3D"https://links.chess.com/l=
+s/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Lj2Xj4j6HCEeS29RhJd8AXa1-2F0uDwVVaVme6=
+XmMUBoePXW5-2Ba18bQJCYmtzHn74TMB6Bi2OlLMnAOaknmPUGVU-3DQxhK_SDrKeVA2pts3JIk=
+QfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJgXp-=
+2F5D6c5vgpSKt46BgaUUg-2BbxtMP8KvAsX47dQH91TkfHTZPBFRB7xGlX6L-2BHz3TVcUXpKvX=
+XDvJ0B7Jo4n6BofQU6nWZjpBxAPHoIugYUXhHPjBB-2BA46AMj1HwvQsQHTn-2FQvWpe5Vi-2Bb=
+yyJiftjK9t8KzGJwOOcoCKbSbObTObjeiKjCMINXOe9-2B4FGWx-2ByWEg-3D-3D" style=3D"=
+color: #3a729c">Unsubscribe</a>.
+            <br><br>
+
+            Add alert@&zwnj;chess.&zwnj;com to your address book so you don=
+'t <!--[if !mso]><!--><br class=3D"mobile-only"><!--<![endif]--> miss any e=
+mail from Chess.com.
+
+            <br><br>
+            Please do not reply to this email.
+
+            <!--[if !mso]><!--><br class=3D"max-400">
+            <!--<![endif]-->
+
+            Need
+            help? Visit Chess.com <a href=3D"https://links.chess.com/ls/cli=
+ck?upn=3D-2Fj6rp56rYpMUW3uwwA85mmD8LvzBWSveXhNYwVR-2Fh8Rl5EWtOaO9Ak3-2BigdK=
+u8UdLDba_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirBPkLeViU7OqNKWRNDlxVa=
+LWp-2FkPCCimkrCfwQQJgXpwHqhIGlgK64kUcowHPCspSjpVDkEQtk1HufY1B-2BxqfjyYgJSpy=
+-2FdTnJNip4-2FWzAq42ze5I-2BPjL6aBDL600p8Q2i2ZeLMW5NkSYOkY9XG-2BrSrU0eTEvimN=
+Y4RAVHdILKWhRtBwyDzVvmyhwYBMzdmZyiOj39u1JB1r8BGcUCeBdr8kE75WubkogKM-2Ff-2Fn=
+sLJQw-3D-3D" style=3D"color: #3a729c">Customer Support</a>.            <br>
+            This
+            email was sent to: patriogabrielpatdu@gmail.com - <a href=3D"ht=
+tps://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0EsKzks2qyRRWiAi=
+zLs1qas0U-2BrVzcMnO2f-2B6eCTJtKfKHPk_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASza=
+yBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJgXpzUYXep-2B3wI0U1JYXsKPiqB=
+hKALRgPpQ2r74OyWbqtSQxW4nrOayBsuL61L8oSiE7eS2kWRio9cbnM4KOfI-2FEJ7qu88t5BIa=
+V-2FVzdCMCgOcOtltNRSOkeyt4vQGtDZEKqMlsf2qErNi8nZwTuDzOBqOJqPnHLp288sghAhSw2=
+IFvB89dQAqPU2BjzcEGlzT4DA-3D-3D" style=3D"color: #3a729c">Privacy Policy</a=
+>            <br>
+            <br>
+            <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYL=
+uq5kvtWwh0LmskPSRvZUBPqn8DHAIcUg-3DoIcw_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQA=
+SzayBxvKirBPkLeViU7OqNKWRNDlxVaLWp-2FkPCCimkrCfwQQJgXp2zdFaoT4QXosBgCR4LMm-=
+2BbxmZX2pWKKcgXm5-2FOFeOmfmHVqGpTfWzoWcdj-2FZvZ6zPOJXxIlY8EsLkRvFL1Ph8qU4-2=
+FtUtu9BMqtPyhnjlfW1py8QUTfOh0DQw6d8U9Qd34Kl-2BkLTPWcdHNhGLhnxqkuvGO5uGXtwGN=
+v5Fpoll-2B8UAZwGVDEn8WuNf7NZvPi0jQ-3D-3D" class=3D"dm-footer-chesscom" styl=
+e=3D"color: #65625f; text-decoration: none">Chess.com</a> | PO Box 60400. P=
+alo Alto, CA 94306
+            <br>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+   =20
+  </center>
+<img src=3D"https://links.chess.com/wf/open?upn=3D1utt00i9qzN5trNJrCkyHSOBf=
+7i4EhQ-2FLT63tuhyXUlz36pQLTwa1Ef0iRwfVlI2MCyb6UKJfLMvIV3NvftIUQuCN0b2WcK8N0=
+yXRJO-2B-2B1-2ByeTEtBGdIXMsm-2Bk1MJ-2F8Ww-2FAljuPIrktWgo8LDGAyC70lnwJpkrEHp=
+ZeZ69XE2Aq913JgmPF1-2FE-2FpRnaEj6ng2YjQEjp-2BTMsg2p6RjxWY40SlF0HLNslyUm0vFW=
+XVRyQuph3YovCIQRdAg1NP7m-2BFeutiApredlKC-2BVj5jDq1itlM8CTCYQYBoZIhmHptbic-3=
+D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !impo=
+rtant;width:1px !important;border-width:0 !important;margin-top:0 !importan=
+t;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !impor=
+tant;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !=
+important;padding-left:0 !important;"/></body>
+
+</html>
+
+
+--_=_swift_1630258151_2939823f023d07ca8da37bb141a3f8ad_=_--
+

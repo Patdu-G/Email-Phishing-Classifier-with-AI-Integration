@@ -1,0 +1,638 @@
+X-GM-THRID: 1785793195048047372
+X-Gmail-Labels: Inbox,Important,Opened,Category Personal
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:8d88:0:b0:1eb:babb:f4fc with SMTP id q8csp7398905eig;
+        Wed, 3 Jan 2024 22:18:21 -0800 (PST)
+X-Received: by 2002:a05:6808:1389:b0:3bb:7bde:3bcb with SMTP id
+ c9-20020a056808138900b003bb7bde3bcbmr193809oiw.36.1704349101138;
+        Wed, 03 Jan 2024 22:18:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704349101; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LmRF5wm5Qwh2wWlbtmjNgP2b2Zuoa2peim1GqHARAn5G5qTzhyi7ezzVK9N1SS890e
+         Gaxlr4E7Bz3edD26g/AgeOBv/SN0oYZ6LTbyQJaLtf8T5PD+NM/YqQ48xv03A06gmK4a
+         nv5VYJfVEg1VuTJNGKfB043hfgc/WA0EXtbyfJNlMPC9UPHcXQhHEglW7cE9REoMGMpx
+         1IYKWKFhRyn05zOYdw0vTz3pSxWF8/QaWWalncOAdx6CQ75JtHN9YXmzqo6w+FMFaZxd
+         781jXM4Wh8Pp2kRZysqwz/RuIxJpvTx6aASMr3okAOIHNITxgGfzsg87htV4omPUa/vo
+         8Mww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=s4FbHWCt/xQ/q38jgkY7VIHHE4uY+Xb/uvK2l3y1t+4=;
+        fh=C3/Aec3xE30aIos8MPML7q6jmjRJ9sINcC+L6LAS82s=;
+        b=f/QPIWc7Uet+UDsiWrDv2hFYiIACEobyQo0sDr2Hi3J4/PTi+BH25owcIBubs8GtqD
+         aSCbQ+Vlr35x9Sw897EU/+y28zN5zfc7Ueih+ciuPeHbBPJJMBNXv5OqcIfxM8E0aIju
+         5L3rUdA66uVAv0SBAMknNvRTV8c9jNxxmjkwiGoWhGre/695AUXd8/snsEnOOm12ccnx
+         h0J2wEic/Fg0Kgk5AXQ5aikIdPeZrFRieqX//TH1WBLqQG43gg3i0XhiiZF1zx17J44j
+         AoCHhSoPL0rpvmf5OPCQXkPqZTxJdDheXzK234jX6x8LZQtgDpMD6ELZGGWII3b0eONq
+         GMdg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dost.gov.ph header.s=google header.b=mCkQgFCS;
+       spf=pass (google.com: domain of ptritestinglab@ptri.dost.gov.ph
+ designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=ptritestinglab@ptri.dost.gov.ph;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=dost.gov.ph
+Return-Path: <ptritestinglab@ptri.dost.gov.ph>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com.
+ [209.85.220.41])
+        by mx.google.com with SMTPS id
+ dj2-20020a056808418200b003bc105f3900sor1287372oib.9.2024.01.03.22.18.20
+        for <patriogabrielpatdu@gmail.com>
+        (Google Transport Security);
+        Wed, 03 Jan 2024 22:18:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of ptritestinglab@ptri.dost.gov.ph
+ designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dost.gov.ph header.s=google header.b=mCkQgFCS;
+       spf=pass (google.com: domain of ptritestinglab@ptri.dost.gov.ph
+ designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=ptritestinglab@ptri.dost.gov.ph;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=dost.gov.ph
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=dost.gov.ph; s=google; t=1704349100; x=1704953900; dara=google.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=s4FbHWCt/xQ/q38jgkY7VIHHE4uY+Xb/uvK2l3y1t+4=;
+        b=mCkQgFCSHSytfr5NNcDcdTL1sJOSe/RdJdgKDpD/j4pOW7dnfYNT9ecI2LC8tf5z1x
+         NmqaPLcV1t8Yw1uFDJE1XePwLLou9KlZlQvYsTy38BvbhPfSWw4MN+4TA4XlVLk5u/QY
+         +mDliqRM6LvLxPOQ8wbvBUZ7OjSNyMlfUTq6rdXzOvLrDVLn7PdOeSHHedsEeKpd/NB2
+         8qE5ff2ENY2IrhqYwKhQBuzhiUqpmbPROwXTXBaVbLGo+HD5zDe6bINjfjnVVlJJqWLU
+         Nl7lAoSv45plK61+Gb+Qn4fiv0eaIPn1ytjACRYDMAMsz5zlWwvK0QBAb+LxxBA+HhU8
+         KMEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1704349100; x=1704953900;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=s4FbHWCt/xQ/q38jgkY7VIHHE4uY+Xb/uvK2l3y1t+4=;
+        b=sapZjnP2GNTwMIweAkiRwXuoeHvGwriDCTZc5VtLmjp5V4TCwJug1T3K3eDVUzyFM+
+         XPJKgCowzqzp1EOYyPutwoM160C/tyMw1oeRT3BMw16KaIpOthjQqrrXRCrz4jZC3bjj
+         +zssUw4yoLD1zdsXx/RGnS96ApYrP5gmrBQBQ+5l4l2+jdCen3hGN0VneA/pIxMYrNLV
+         Nwj6TGf15lYiv1EZ8BATgAJsbdTFoeBbOnD2YXH83ZcWlJuM6x8038B9XgaAo2EAVvbM
+         S83+uCgwUIQXs0/NwwGplSqAZvdMRjiC+33ULSrTNzsIP2kY7BWqKcxdLFeEN7v6zgTF
+         xiLQ==
+X-Gm-Message-State: AOJu0YzeW6m8pWJctr0sFmEhpltVJXasO1aXjp6EJ5eB9yIxdoNvx4JJ
+	jwpLSieO8AvBWW6l63Svf87tXzwFBFbznNz0KomApwv/zRZgJ9SZKZ3HHd7Sd0l4Ng==
+X-Google-Smtp-Source: 
+ AGHT+IHxnx6SoYIp4ecag3SJIoh1IMS0qK9NFiYhbm3X8h7TzKYm8KAheE6OEva4m+0VGNidG9rE9tGmYuKg8OCMOkw=
+X-Received: by 2002:a05:6358:6f99:b0:170:da5a:d24e with SMTP id
+ s25-20020a0563586f9900b00170da5ad24emr130759rwn.51.1704349099690; Wed, 03 Jan
+ 2024 22:18:19 -0800 (PST)
+MIME-Version: 1.0
+References: 
+ <CAC0992fPdJrGD_TG9A9euuPpHESMFz56jE_Bg_NteSPJCbVX5w@mail.gmail.com>
+ <CAJt8z04_WWEU4Z7x15h2+xRDkUyT5jPwfOE4gGU0CzHbjC8AEQ@mail.gmail.com>
+ <CALqOurbVkvrLOh6ZeSEMUsFap9-N7H5arFYEekLkqP_D6-Q5Eg@mail.gmail.com>
+ <CAC0992f2s3fss98KZ1yf6iqR9sKzhOK4ZgAhUjjtU63qN+Fs4g@mail.gmail.com>
+ <CALqOurZQddL1e-zHUQ9pC0hHxh=ANqcVdf6FFn_zXV5i3LNaXg@mail.gmail.com>
+ <CAC0992d6C6mDHSe7rqixqnYLpRYWZiHby7eRZKU40cPwxPJ5ig@mail.gmail.com>
+In-Reply-To: 
+ <CAC0992d6C6mDHSe7rqixqnYLpRYWZiHby7eRZKU40cPwxPJ5ig@mail.gmail.com>
+From: PTRI Testing Laboratories <ptritestinglab@ptri.dost.gov.ph>
+Date: Thu, 4 Jan 2024 14:18:07 +0800
+Message-ID: 
+ <CALqOurbNAcoK9DT3pyg74Eex=x+b9WruHc1kSNyhQqCi3W4kEA@mail.gmail.com>
+Subject: Re: Inquiry Regarding Processing and Testing Fees for Textile
+ Production
+To: "B6 PATDU, Patrio Gabriel A." <patriogabrielpatdu@gmail.com>
+Content-Type: multipart/mixed; boundary="000000000000aa4c69060e18b2ea"
+
+--000000000000aa4c69060e18b2ea
+Content-Type: multipart/alternative; boundary="000000000000aa4c67060e18b2e8"
+
+--000000000000aa4c67060e18b2e8
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Mr. Patrio,
+
+Good day.
+
+See below my response regarding your inquiry:
+
+
+1. ) To provide you with a formal quotation please accomplish link below:
+
+*Please send your request through this link
+https://services.dost-ptri.com/pages/index.php
+<https://services.dost-ptri.com/pages/index.php>. Under the "Choose a
+Service" dropdown options, select TSD Lab Services then click Proceed*
+
+
+2.) Please see attached guide on how to do the sampling for tensile
+strength, single strand:
+
+
+note po dapat dry sample nyo.
+
+
+
+Tensile Strength (Single Strand)
+
+
+ paki dikit ang c-template sa folder bago i cut isa isa, pag nadikit na sa
+folder at na cut na dikitan ang isa isang c-template ng isang strand of
+fiber (straight ang fiber pag dinikit).
+
+
+Note: 35pcs  c-template gawin.
+
+
+
+pero wag po masking tape gamitin nyo po kundi glue nalang kasi dumidikit po
+sa machine ang masking tape.
+
+
+
+3. Additionally, we would also like to specify our previous inquiry
+regarding the textile product. We would like to know if it is possible to
+create a piece of cloth or fabric (no specific size or dimensions required)
+made out of the fibers to be produced.    - *to create a fabric or cloth
+the fibers must process into yarns then yarn into fabric. With this you may
+inquire it to our processing services you may contact them thru  8837-1157
+and look for Sir Alexander Argame. *
+
+
+
+
+
+Warm Regards,
+
+Christy
+
+
+
+
+You may contact us for further queries. Thank you for trusting DOST-PTRI
+for your testing and analysis needs.
+
+We are looking forward to our next transaction.
+
+Christy Jane S. Tizon / Angelica Rose S. Lallo
+*PTRI Testing Laboratory Receiving and Releasing Office*
+Department of Science and Technology
+*Philippine Textile Research Institute *
+General Santos Ave. Bicutan Taguig City
+Tel: 8837-1158
+Cp No. 09166389760
+
+*Advisory:*
+
+*DOST PTRI is open from Monday to Friday **with office hours from 8:00 am
+to 5:00 pm. *
+*We are closed on Weekends and Public Holidays.*
+
+NOTE:
+
+*To claim the Test Report - Bring the Test Request.  *
+
+DISCLAIMER: This email (including any attachment/s) is confidential and/or
+may also be legally privileged. If you are not the intended recipient,
+please delete immediately; do not use it for any purpose, nor disclose its
+contents to anyone. Please notify the sender immediately via email if you
+received this email by mistake and delete it from your system. The sender
+cannot guarantee that email transmissions are secure or error-free as
+information may be corrupted, arrive late, or incomplete, or contain
+viruses, and therefore does not accept any liability for any errors or
+omissions in the content of this message. Views and opinions expressed
+herein are those of the sender and does not necessarily reflect the views
+of DOST-PTRI.
+
+
+
+On Thu, Jan 4, 2024 at 8:41=E2=80=AFAM B6 PATDU, Patrio Gabriel A. <
+patriogabrielpatdu@gmail.com> wrote:
+
+> Subject: Inquiry Regarding Fiber Testing
+>
+> Good day!
+>
+> We would like to know the testing fees, format, and prerequisites needed
+> prior to submitting our samples of cogon grass fibers for TENSILE STRENGT=
+H
+> SINGLE STRAND. In relation to this, how long would it take for the
+> processing/testing to be completed?
+>
+> Additionally, we would also like to specify our previous inquiry regardin=
+g
+> the textile product. We would like to know if it is possible to create a
+> piece of cloth or fabric (no specific size or dimensions required) made o=
+ut
+> of the fibers to be produced.
+>
+> Thank you for your time and consideration. We are looking forward to your
+> response.
+>
+> Respectfully,
+> Patrio Gabriel Patdu
+> 09057505096
+>
+
+--000000000000aa4c67060e18b2e8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Dear Mr. Patrio,<div><br></div><div>Good day.</div><div><b=
+r></div><div>See below my response=C2=A0regarding your inquiry:</div><div><=
+br></div><div><br></div><div><span id=3D"gmail-docs-internal-guid-f8d14ddf-=
+7fff-7ebb-54d9-e03c03af28a4" style=3D""><p dir=3D"ltr" style=3D"line-height=
+:1.2;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-f=
+amily:Calibri,sans-serif;background-color:transparent;font-variant-numeric:=
+normal;font-variant-east-asian:normal;vertical-align:baseline;white-space:p=
+re-wrap">1. ) T</span><span style=3D"font-family:Calibri,sans-serif;backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;vertical-align:baseline;white-space:pre-wrap">o provide you with a fo=
+rmal quotation please accomplish link below:</span></p><br><b><span style=
+=3D"font-family:Calibri,sans-serif;background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;whi=
+te-space:pre-wrap">Please send your request through this link </span><a hre=
+f=3D"https://services.dost-ptri.com/pages/index.php" style=3D"text-decorati=
+on-line:none"><span style=3D"font-family:Calibri,sans-serif;background-colo=
+r:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;te=
+xt-decoration-line:underline;vertical-align:baseline;white-space:pre-wrap">=
+https://services.dost-ptri.com/pages/index.php</span></a><span style=3D"fon=
+t-family:Calibri,sans-serif;background-color:transparent;font-variant-numer=
+ic:normal;font-variant-east-asian:normal;vertical-align:baseline;white-spac=
+e:pre-wrap">. Under the &quot;Choose a Service&quot; dropdown options, sele=
+ct TSD Lab Services then click Proceed</span></b></span><b>=C2=A0</b></div>=
+<div><br></div><div><br></div><div><span id=3D"gmail-docs-internal-guid-019=
+600e0-7fff-b6da-66f3-97ae2c862c59"><p dir=3D"ltr" style=3D"line-height:1.2;=
+margin-top:0pt;margin-bottom:0pt"><span style=3D"font-family:Arial,sans-ser=
+if;background-color:transparent;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;vertical-align:baseline;white-space:pre-wrap">2.) Please se=
+e attached guide on how to do the sampling for tensile strength, single str=
+and:</span></p><p dir=3D"ltr" style=3D"line-height:1.2;margin-top:0pt;margi=
+n-bottom:0pt"><span style=3D"font-family:Arial,sans-serif;background-color:=
+transparent;font-variant-numeric:normal;font-variant-east-asian:normal;vert=
+ical-align:baseline;white-space:pre-wrap"><br></span></p><p dir=3D"ltr" sty=
+le=3D"line-height:1.2;margin-top:0pt;margin-bottom:0pt"><span style=3D"font=
+-family:Arial,sans-serif;background-color:transparent;font-variant-numeric:=
+normal;font-variant-east-asian:normal;vertical-align:baseline;white-space:p=
+re-wrap">note po dapat dry sample nyo.</span></p><p dir=3D"ltr" style=3D"li=
+ne-height:1.2;margin-top:0pt;margin-bottom:0pt"><br></p><p dir=3D"ltr" styl=
+e=3D"line-height:1.2;margin-top:0pt;margin-bottom:0pt"><br></p><p dir=3D"lt=
+r" style=3D"line-height:1.2;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-family:Arial,sans-serif;background-color:transparent;font-variant-=
+numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;white=
+-space:pre-wrap">Tensile Strength (Single Strand)</span></p><p dir=3D"ltr" =
+style=3D"line-height:1.2;margin-top:0pt;margin-bottom:0pt"><br></p><p dir=
+=3D"ltr" style=3D"line-height:1.2;margin-top:0pt;margin-bottom:0pt"><span s=
+tyle=3D"font-family:Arial,sans-serif;background-color:transparent;font-vari=
+ant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;w=
+hite-space:pre-wrap">=C2=A0paki dikit ang c-template sa folder bago i cut i=
+sa isa, pag nadikit na sa folder at na cut na dikitan ang isa isang c-templ=
+ate ng isang strand of fiber </span><span style=3D"font-family:Arial,sans-s=
+erif;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-al=
+ign:baseline;white-space:pre-wrap">(straight ang fiber pag dinikit).=C2=A0<=
+/span></p><p dir=3D"ltr" style=3D"line-height:1.2;margin-top:0pt;margin-bot=
+tom:0pt"><br></p><p dir=3D"ltr" style=3D"line-height:1.2;margin-top:0pt;mar=
+gin-bottom:0pt"><span style=3D"font-family:Arial,sans-serif;background-colo=
+r:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;ve=
+rtical-align:baseline;white-space:pre-wrap">Note: 35pcs=C2=A0 c-template ga=
+win.=C2=A0=C2=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.2;margin-t=
+op:0pt;margin-bottom:0pt"><br></p><p dir=3D"ltr" style=3D"line-height:1.2;m=
+argin-top:0pt;margin-bottom:0pt"><br></p><p dir=3D"ltr" style=3D"line-heigh=
+t:1.2;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-family:Arial,sa=
+ns-serif;background-color:transparent;font-variant-numeric:normal;font-vari=
+ant-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">pero wa=
+g po masking tape gamitin nyo po kundi glue nalang kasi dumidikit po sa mac=
+hine ang masking tape.</span><span style=3D"font-size:11pt;font-family:Aria=
+l,sans-serif;background-color:transparent;font-variant-numeric:normal;font-=
+variant-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">=C2=
+=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.2;margin-top:0pt;margin=
+-bottom:0pt"><br></p><p dir=3D"ltr" style=3D"line-height:1.2;margin-top:0pt=
+;margin-bottom:0pt"><span id=3D"gmail-docs-internal-guid-11a21fa4-7fff-530d=
+-eb80-a93ef7f09731"><span style=3D"font-size:11pt;font-family:Arial,sans-se=
+rif;background-color:transparent;font-style:italic;font-variant-numeric:nor=
+mal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre-=
+wrap"><span style=3D"border:none;display:inline-block;overflow:hidden;width=
+:307px;height:303px"><img src=3D"https://lh7-us.googleusercontent.com/AiDOn=
+EfKATrIpv3k5X87JwiODfTgjBvtFbwSP8urY62XJchkBjxcSEK01aIaKk2mgj2WbU8HwD-ue_9j=
+9pZRX0eFKosk13Cg4MyxUEGB3JlaBwqvYFucy3RZd7K8M053Nxb6IJHWhH4u" width=3D"231"=
+ height=3D"228" style=3D"margin-left: 0px; margin-top: 0px; margin-right: 0=
+px;"></span></span></span></p><p dir=3D"ltr" style=3D"line-height:1.2;margi=
+n-top:0pt;margin-bottom:0pt">=C2=A0=C2=A0<br></p></span>3. Additionally, we=
+ would also like to specify our previous inquiry regarding the textile prod=
+uct. We would like to know if it is possible to create a piece of cloth or =
+fabric (no specific size or dimensions required) made out of the fibers to =
+be produced.=C2=A0 =C2=A0 - <b>to create a fabric or cloth the fibers must =
+process into yarns then yarn into fabric. With this you may inquire it to o=
+ur processing services you may contact them thru=C2=A0 8837-1157=C2=A0 and =
+look for Sir Alexander Argame.=C2=A0</b><br class=3D"gmail-Apple-interchang=
+e-newline"></div><div><b><br></b></div><div><b><br></b></div><div><b><br></=
+b></div><div><b><br></b></div><div><b><br></b></div><div>Warm Regards,</div=
+><div><br></div><div>Christy</div><div><b><br></b></div><div><b><br></b></d=
+iv><div><br></div><div>=C2=A0<br clear=3D"all"><div><div dir=3D"ltr" class=
+=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><d=
+iv><font color=3D"#000000" face=3D"tahoma, sans-serif">You may contact us f=
+or further queries. Thank you for trusting DOST-PTRI=C2=A0 for your testing=
+ and analysis needs.</font></div><div><font color=3D"#000000" face=3D"tahom=
+a, sans-serif"><br></font></div><div><font color=3D"#000000" face=3D"tahoma=
+, sans-serif">We are looking forward to our next transaction.</font></div><=
+div><font color=3D"#000000" face=3D"tahoma, sans-serif"><br></font></div><d=
+iv><font color=3D"#000000" face=3D"tahoma, sans-serif">Christy Jane S. Tizo=
+n / Angelica Rose S. Lallo=C2=A0</font></div><div><font color=3D"#000000" f=
+ace=3D"tahoma, sans-serif"><b>PTRI Testing Laboratory Receiving and Releasi=
+ng Office</b></font></div><div><font color=3D"#000000" face=3D"tahoma, sans=
+-serif">Department of Science and Technology</font></div><div><font color=
+=3D"#000000" face=3D"tahoma, sans-serif"><b>Philippine Textile Research Ins=
+titute=C2=A0</b></font></div><div><font color=3D"#000000" face=3D"tahoma, s=
+ans-serif">General Santos Ave. Bicutan Taguig City=C2=A0</font></div><div><=
+font color=3D"#000000" face=3D"tahoma, sans-serif">Tel: 8837-1158</font></d=
+iv><div><font color=3D"#000000" face=3D"tahoma, sans-serif">Cp No. 09166389=
+760</font></div><div><font color=3D"#000000" face=3D"tahoma, sans-serif"><b=
+r></font></div><div><div style=3D"font-weight:bold;line-height:normal"><fon=
+t color=3D"#000000" face=3D"tahoma, sans-serif"><b style=3D"text-align:cent=
+er"><u>Advisory:</u></b></font></div><div style=3D"font-weight:bold;line-he=
+ight:normal"><font color=3D"#000000" face=3D"tahoma, sans-serif"><b style=
+=3D"text-align:center">=C2=A0</b></font></div><div style=3D"line-height:nor=
+mal"><div><div style=3D"font-weight:bold;color:rgb(34,34,34);line-height:no=
+rmal"><font face=3D"tahoma, sans-serif"><b style=3D"text-align:center"><fon=
+t color=3D"#000000">DOST PTRI is open from Monday to Friday=C2=A0</font></b=
+><b style=3D"text-align:center"><font color=3D"#000000">with office hours f=
+rom 8:00 am to 5:00 pm.=C2=A0</font></b></font></div><div style=3D"font-wei=
+ght:bold;color:rgb(34,34,34);line-height:normal"><font face=3D"tahoma, sans=
+-serif"><b style=3D"text-align:center"><font color=3D"#000000">We are close=
+d on Weekends and Public Holidays.</font></b></font></div><div style=3D"fon=
+t-weight:bold;color:rgb(34,34,34);line-height:normal"><font face=3D"tahoma,=
+ sans-serif"><b style=3D"text-align:center"><font color=3D"#000000"><br></f=
+ont></b></font></div><div style=3D"font-weight:bold;text-align:left;line-he=
+ight:normal"><font color=3D"#000000" face=3D"tahoma, sans-serif">NOTE:</fon=
+t></div><div style=3D"font-weight:bold;text-align:left;line-height:normal">=
+<br></div><div style=3D"text-align:left;line-height:normal"><font color=3D"=
+#000000" face=3D"tahoma, sans-serif"><b>To claim=C2=A0the Test Report - Bri=
+ng the Test Request.=C2=A0=C2=A0</b></font></div><div style=3D"font-weight:=
+bold;color:rgb(34,34,34);line-height:normal"><font face=3D"tahoma, sans-ser=
+if"><b style=3D"text-align:center"><font color=3D"#000000"><br></font></b><=
+/font></div><div style=3D"font-weight:bold;color:rgb(34,34,34);line-height:=
+normal"><span style=3D"font-size:8pt;font-family:Arial;color:rgb(38,38,38);=
+vertical-align:baseline;white-space:pre-wrap">DISCLAIMER: </span><span styl=
+e=3D"font-weight:400;font-size:8pt;font-family:Arial;color:rgb(38,38,38);ve=
+rtical-align:baseline;white-space:pre-wrap">This email (including any attac=
+hment/s) is confidential and/or may also be legally privileged. If you are =
+not the intended recipient, please delete immediately; do not use it for an=
+y purpose, nor disclose its contents to anyone. Please notify the sender im=
+mediately via email if you received this email by mistake and delete it fro=
+m your system. The sender cannot guarantee that email transmissions are sec=
+ure or error-free as information may be corrupted, arrive late, or incomple=
+te, or contain viruses, and therefore does not accept any liability for any=
+ errors or omissions in the content of this message. Views and opinions exp=
+ressed herein are those of the sender and does not necessarily reflect the =
+views of DOST-PTRI.</span><font face=3D"tahoma, sans-serif"><b style=3D"tex=
+t-align:center"><font color=3D"#000000"><br></font></b></font></div><div st=
+yle=3D"font-weight:400;color:rgb(34,34,34)"><b style=3D"text-align:center">=
+<font face=3D"times new roman, serif" color=3D"#000000"><br></font></b></di=
+v></div></div></div></div></div></div><br></div></div><br><div class=3D"gma=
+il_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Thu, Jan 4, 2024 at 8:41=
+=E2=80=AFAM B6 PATDU, Patrio Gabriel A. &lt;<a href=3D"mailto:patriogabriel=
+patdu@gmail.com">patriogabrielpatdu@gmail.com</a>&gt; wrote:<br></div><bloc=
+kquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:=
+1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"auto"><div dir=3D"=
+auto">Subject: Inquiry Regarding Fiber Testing</div><div dir=3D"auto"><br><=
+/div><div dir=3D"auto">Good day!</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">We would like to know the testing fees, format, and prerequisites=
+ needed prior to submitting our samples of cogon grass fibers for TENSILE S=
+TRENGTH SINGLE STRAND. In relation to this, how long would it take for the =
+processing/testing to be completed?</div><div dir=3D"auto"><br></div><div d=
+ir=3D"auto">Additionally, we would also like to specify our previous inquir=
+y regarding the textile product. We would like to know if it is possible to=
+ create a piece of cloth or fabric (no specific size or dimensions required=
+) made out of the fibers to be produced.=C2=A0</div><div dir=3D"auto"><br><=
+/div><div dir=3D"auto">Thank you for your time and consideration. We are lo=
+oking forward to your response.</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Respectfully,</div><div dir=3D"auto">Patrio Gabriel Patdu</div><d=
+iv dir=3D"auto">09057505096</div></div>
+</blockquote></div>
+
+--000000000000aa4c67060e18b2e8--
+
+--000000000000aa4c69060e18b2ea
+Content-Type: 
+ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;
+	name="C template (tensile strength).xlsx"
+Content-Disposition: attachment;
+	filename="C template (tensile strength).xlsx"
+Content-Transfer-Encoding: base64
+Content-ID: <f_lqyt2g2y0>
+X-Attachment-Id: f_lqyt2g2y0
+
+UEsDBBQABgAIAAAAIQAP/DksegEAACgFAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAAC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACs
+VMluwjAQvVfqP0S+Vomhh6qqCBy6HFuk0g8w8QQs4kUeA+HvOzaBA2IRgku28bz35mVmBqNWN9kK
+PCprStYveiwDU1mpzKxkf5Ov/JVlGISRorEGSrYBZKPh48NgsnGAGWUbLNk8BPfGOVZz0AIL68BQ
+pLZei0CvfsadqBZiBvy513vhlTUBTMhDxGDDwQfUYtmE7LOlz1slU2VY9r49F6lKJpxrVCUCCeUr
+Iw9IclvXqgJpq6Um6AKdByFxDhB0UziviNH/QghUGDJ+lBN0fcCpdNTc5jFyPMdDg9cJ7ZwoKDMV
+g3Pl8InsOsEQI6ed6PJ+6Bd6JSEbCx++hSa/eNvwtfWLqbWL4jzItXYmWwstlNnpPsOfDiNPt/6d
+hcT6EvAFHYH6Eni63i4hwVwgxLBpAO9tewK9wCy9WMce593D7fV2QOd4aezG3jqkyfZwfdW7kYjZ
+uSMg8EHBfiiONdeekdbCzTZD3DsS5BFunvbc8B8AAP//AwBQSwMEFAAGAAgAAAAhALVVMCP0AAAA
+TAIAAAsACAJfcmVscy8ucmVscyCiBAIooAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACskk1PwzAMhu9I/IfI99XdkBBCS3dBSLshVH6ASdwP
+tY2jJBvdvyccEFQagwNHf71+/Mrb3TyN6sgh9uI0rIsSFDsjtnethpf6cXUHKiZylkZxrOHEEXbV
+9dX2mUdKeSh2vY8qq7iooUvJ3yNG0/FEsRDPLlcaCROlHIYWPZmBWsZNWd5i+K4B1UJT7a2GsLc3
+oOqTz5t/15am6Q0/iDlM7NKZFchzYmfZrnzIbCH1+RpVU2g5abBinnI6InlfZGzA80SbvxP9fC1O
+nMhSIjQS+DLPR8cloPV/WrQ08cudecQ3CcOryPDJgosfqN4BAAD//wMAUEsDBBQABgAIAAAAIQCN
+h9pw4AAAAC0CAAAaAAgBeGwvX3JlbHMvd29ya2Jvb2sueG1sLnJlbHMgogQBKKAAAQAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAACskctqwzAQRfeF/oOYfT12CqWUyNmUQrbF/QAhjx/EloRmktZ/
+X+GC3UBINtkIrgbdcyRtdz/joE4UufdOQ5HloMhZX/eu1fBVfTy9gmIxrjaDd6RhIoZd+fiw/aTB
+SDrEXR9YpRbHGjqR8IbItqPRcOYDuTRpfByNpBhbDMYeTEu4yfMXjP87oDzrVPtaQ9zXz6CqKSTy
+7W7fNL2ld2+PIzm5gECWaUgXUJWJLYmGv5wlR8DL+M098ZKehVb6HHFei2sOxT0dvn08cEckq8ey
+xThPFhk8++TyFwAA//8DAFBLAwQUAAYACAAAACEARN7/z3QCAAAHBQAADwAAAHhsL3dvcmtib29r
+LnhtbKyUyW7bMBCG7wX6Dizhq63FUuIIkgLHdlAXRRGkWS4GApqiLMIUqZJ07KDou3coRa3TXFK0
+F3H/ZuafGaXnh1qgR6YNVzLDwcjHiEmqCi43Gb69uRxOMDKWyIIIJVmGn5jB5/n7d+le6e1aqS0C
+gDQZrqxtEs8ztGI1MSPVMAknpdI1sbDUG880mpHCVIzZWnih7594NeESd4REv4WhypJTNld0VzNp
+O4hmglhw31S8MT2tpm/B1URvd82QqroBxJoLbp9aKEY1TZYbqTRZCwj7EMQ9Gaav0DWnWhlV2hGg
+vM7JV/EGvhcEXch5WnLB7jrZEWmaL6R2VgRGghi7KLhlRYZPYKn27MWG3jUXOy7gNIii0Mde/isV
+VxoVrCQ7YW8gCT0eLsbjMAzdTQhqKizTklg2U9KChs/q/6teLXtWKcgOumbfdlwzKAonW57Cl9CE
+rM0VsRXaaZHhWbK6NRD+qrGar+bMbK1qVteMMv4IpYcuoW7M6khy8jqffyE6oS56D8LvXOzmf0qR
+p66g7zjbm9+iuiU63HNZqH2GoT2ejub7dvueF7bKcBj5Ppx3ex8Z31Q2w2fBOG5tH6HbFgAT7Yhk
+m/qvri0C6DU3Ll12MdIJh4leFkFL6J9BjrlkhSsZgBytnlEPByHr0ZXm0j5MoeVcEVEiWguO7OO8
+s/ZhMB0EyeDTIJqk3hEH1HlpA15TKC43tK7FYRy0PrGD/WxsnsIIeeUZ/h5E/vTUP4uG/mIcD6PJ
+WTicRONwOIvm4SI+XcwXF/GP/9tKUF5J/zdyXlZE2xtN6BYK6ZqVF8RAa3USgp8QXO+117/KfwIA
+AP//AwBQSwMEFAAGAAgAAAAhAIuCbliTBgAAjhoAABMAAAB4bC90aGVtZS90aGVtZTEueG1s7FnP
+ixs3FL4X+j8Mc3f8a2ZsL/EGe2xn2+wmIeuk5Ki1ZY+ympEZybsxIVCSY6FQmpZeCr31UNoGEugl
+/Wu2TWlTyL/QJ83YI63lbppuIC1ZwzKj+fT06b0335M0Fy/djalzhFNOWNJ2qxcqroOTERuTZNp2
+bw4HpabrcIGSMaIswW13gbl7afv99y6iLRHhGDvQP+FbqO1GQsy2ymU+gmbEL7AZTuDZhKUxEnCb
+TsvjFB2D3ZiWa5VKUI4RSVwnQTGYvTaZkBF2htKku7003qdwmwguG0Y03ZemsdFDYceHVYngCx7S
+1DlCtO3COGN2PMR3hetQxAU8aLsV9eeWty+W0VbeiYoNfbV+A/WX98s7jA9rasx0erAa1PN8L+is
+7CsAFeu4fqMf9IOVPQVAoxHMNOOi2/S7rW7Pz7EaKLu02O41evWqgdfs19c4d3z5M/AKlNn31vCD
+QQheNPAKlOF9i08atdAz8AqU4YM1fKPS6XkNA69AESXJ4Rq64gf1cDnbFWTC6I4V3vK9QaOWGy9Q
+kA2r7JJDTFgiNuVajO6wdAAACaRIkMQRixmeoBFkcYgoOUiJs0umESTeDCWMQ3OlVhlU6vBf/jx1
+pTyCtjDSektewISvNUk+Dh+lZCba7odg1dUgL599//LZE+fls8cnD56ePPjp5OHDkwc/ZraMjjso
+meodX3z72Z9ff+z88eSbF4++sOO5jv/1h09++flzOxAmW3jh+ZePf3v6+PlXn/7+3SMLvJOiAx0+
+JDHmzlV87NxgMcxNecFkjg/Sf9ZjGCFi9EAR2LaY7ovIAF5dIGrDdbHpvFspCIwNeHl+x+C6H6Vz
+QSwjX4liA7jHGO2y1OqAK3IszcPDeTK1D57OddwNhI5sY4coMULbn89AWYnNZBhhg+Z1ihKBpjjB
+wpHP2CHGltndJsTw6x4ZpYyziXBuE6eLiNUlQ3JgJFLRaYfEEJeFjSCE2vDN3i2ny6ht1j18ZCLh
+hUDUQn6IqeHGy2guUGwzOUQx1R2+i0RkI7m/SEc6rs8FRHqKKXP6Y8y5rc+1FOarBf0KiIs97Ht0
+EZvIVJBDm81dxJiO7LHDMELxzMqZJJGO/YAfQooi5zoTNvgeM98QeQ9xQMnGcN8i2Aj32UJwE3RV
+p1QkiHwyTy2xvIyZ+T4u6ARhpTIg+4aaxyQ5U9pPibr/TtSzqnRa1Dspsb5aO6ekfBPuPyjgPTRP
+rmN4Z9YL2Dv9fqff7v9evze9y+ev2oVQg4YXq3W1do83Lt0nhNJ9saB4l6vVO4fyNB5Ao9pWqL3l
+ais3i+Ay3ygYuGmKVB8nZeIjIqL9CM1giV9VG9Epz01PuTNjHFb+qlltifEp22r/MI/32DjbsVar
+cneaiQdHomiv+Kt22G2IDB00il3Yyrza107VbnlJQPb9JyS0wUwSdQuJxrIRovB3JNTMzoVFy8Ki
+Kc0vQ7WM4soVQG0VFVg/ObDqaru+l50EwKYKUTyWccoOBZbRlcE510hvcibVMwAWE8sMKCLdklw3
+Tk/OLku1V4i0QUJLN5OEloYRGuM8O/Wjk/OMdasIqUFPumL5NhQ0Gs03EWspIqe0gSa6UtDEOW67
+Qd2H07ERmrXdCez84TKeQe5wue5FdArHZyORZi/86yjLLOWih3iUOVyJTqYGMRE4dSiJ266c/iob
+aKI0RHGr1kAQ3lpyLZCVt40cBN0MMp5M8EjoYddapKezW1D4TCusT1X31wfLnmwO4d6PxsfOAZ2n
+NxCkmN+oSgeOCYcDoGrmzTGBE82VkBX5d6ow5bKrHymqHMraEZ1FKK8ouphncCWiKzrqbuUD7S6f
+Mzh03YUHU1lg/3XVPbtUS89polnUTENVZNW0i+mbK/Iaq6KIGqwy6VbbBl5oXWupdZCo1ipxRtV9
+hYKgUSsGM6hJxusyLDU7bzWpneOCQPNEsMFvqxph9cTrVn7odzprZYFYritV4qtPH/rXCXZwB8Sj
+B+fAcyq4CiV8e0gRLPqyk+RMNuAVuSvyNSJcOfOUtN17Fb/jhTU/LFWafr/k1b1Kqel36qWO79er
+fb9a6XVr96GwiCiu+tlnlwGcR9FF/vFFta99gImXR24XRiwuM/WBpayIqw8w1drmDzAOAdG5F9QG
+rXqrG5Ra9c6g5PW6zVIrDLqlXhA2eoNe6Ddbg/uuc6TAXqceekG/WQqqYVjygoqk32yVGl6t1vEa
+nWbf69zPlzEw80w+cl+AexWv7b8AAAD//wMAUEsDBBQABgAIAAAAIQAVvtwumAIAAP8FAAANAAAA
+eGwvc3R5bGVzLnhtbKRUbW+bMBD+Pmn/wfJ3aqAhSyKgWpoiVeqmSe2kfXXAJFb9gmzTJZv233cG
+Qqg67a1f8N1xfvzcc2enVwcp0BMzlmuV4egixIipUldc7TL8+aEIFhhZR1VFhVYsw0dm8VX+9k1q
+3VGw+z1jDgGEshneO9esCLHlnklqL3TDFPyptZHUgWt2xDaG0cr6TVKQOAznRFKucI+wkuXfgEhq
+HtsmKLVsqONbLrg7dlgYyXJ1u1Pa0K0AqodoRssTdue8gJe8NNrq2l0AHNF1zUv2kuWSLAkg5Wmt
+lbOo1K1yoBVA+xNWj0p/VYX/5YN9Vp7ab+iJCohEmORpqYU2yIEyQKyLKCpZn3FNBd8a7tNqKrk4
+9uHYBzoxhzzJoTQfJJ7HsFjYxIUYWcWeAATyFNRxzKgCHDTYD8cGjlfQyB6my/tD9s7QYxQnkw2k
+OzBPt9pUMDhnPU6hPBWsdkDU8N3er0438N1q50DlPK043WlFhS+lBxkNKKdkQtz74fpSP8M+1Ei1
+spDutsowjKkX4WRCIYPZ4/WOx5+i9dgTWC/Wv8OiQz3iv2I3ok0jjutOxGEmOrbAbyLCMwnGYpCf
+ngx/9HdLwBwOhNC25cJx9YvyAbM6nAUNfT+dvyed1OMpoGvFatoK9zD+zPDZ/sAq3sp4zPrEn7Tr
+IDJ8tu9836O5P4Md3J2FYYUVtYZn+PvN+t1yc1PEwSJcL4LZJUuCZbLeBMnser3ZFMswDq9/TK7t
+Ky5t97hAi6PZygq42mYodijx/hzL8MTp6XcTD7Sn3JfxPHyfRGFQXIZRMJvTRbCYXyZBkUTxZj5b
+3yRFMuGe/B/3KCRR1L+MnnyyclwywdWpV6cOTaPQJHB/UwQ5dYKcX+78JwAAAP//AwBQSwMEFAAG
+AAgAAAAhAKkQNbekAgAAHgYAABgAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWyMVF1P2zAUfZ+0
+/2D5nXytaUvUFMEQGg9MaN3Hs+s4rdU4zmyXAr+eY6dkrZigL7F9c++5H8fHs4tH1ZAHYazUbUnT
+KKFEtFxXsl2V9NfPm7MpJdaxtmKNbkVJn4SlF/PPn2Y7bTZ2LYQjQGhtSdfOdUUcW74WitlId6LF
+n1obxRyOZhXbzghWhSDVxFmSjGPFZEt7hMKcgqHrWnJxrflWidb1IEY0zKF+u5adfUVT/BQ4xcxm
+251xrTpALGUj3VMApUTx4nbVasOWDfp+TEeMv2KHwxt4JbnRVtcuAlzcF/q25/P4PAbSfFZJdODH
+ToyoS3qZFVc5jeezMJ/fUuzswZ44tlyIRnAnKtBEyQMcStqxlbjCUDf3RngLJc9aqwVnvuQxuByO
+3z0PTUnznBJP3VLrjU9yC7gE1dgA7qth3MkH8VU08L7LzkH/31Cg36O8eKjvcP9a602g+96QStRs
+27gfevdNyNXaoWhkDoMrqqdrYTnoQ+ooC01z3QACX6Kkv4cYP3sM605Wbl3SLJrm+Wg8nQCFb63T
+6k//I/VFDYHZPhDrPjAdRdk0T/MxEr0XOdpHYt1HTqNRlk+m6QeB430g1iEwHSUf5YOuQotY92GT
+01pMQWs/HGyGjO/1GPfTDcRdM8fmM6N3BHLDlGzHvHjTAvv/s4Ppet9L7+wZ8eP2hqsDQwzAAfXL
+MarnfgLfnrXhNnyUzqMcpTswHKUDYac34Z2PUA8MR6i4LIeovgkQfGIPg0z6aXuV3jGzkq0ljajD
+tR8jsemFkUQpenO6C3KAfakd7rc/ec2s8WYKzDuJ4FVr7fpDGtTooRfCbTvSsU6YhXyG8KFZbST0
+FV5FvBLaOMOkQ8ZCQu/mtgo0Vobt8M7/s2ZB4MPLPn8BAAD//wMAUEsDBBQABgAIAAAAIQALKPQ0
+vgAAACQBAAAjAAAAeGwvZHJhd2luZ3MvX3JlbHMvZHJhd2luZzEueG1sLnJlbHOEj8tqwzAQRfeF
+/oOYfTV2FqEUS9mUQLbB+YBBGtui1gNJCcnfR5BNDYUu517uOcxwuPtV3DgXF4OCXnYgOJhoXZgV
+XMbjxyeIUilYWmNgBQ8ucNDvb8OZV6ptVBaXimiUUBQstaYvxGIW9lRkTBxaM8XsqbYzz5jI/NDM
+uOu6PebfDNAbpjhZBflkexDjIzXz/+w4Tc7wdzRXz6H+oUDnm7sBKc9cFUiJnq2jV95L9hOgHnDz
+m34CAAD//wMAUEsDBBQABgAIAAAAIQBiF1T0JwMAADwTAAATAAAAeGwvbWVkaWEvaW1hZ2UxLmVt
+ZtSYu4oUURCGay57UVQGbyjKuLOsF1wDETEStlHcRIV9AEEDMTLzEndgoL6Bke/gEwgmPsBkJoYG
+Br6B1tdz/umymR4a7Ub3QNFVfarq/FV16kzP6ZnZUyeN5868DvKTQ2brR8w27tzfNevZzWNmn3x+
+JejAZqtmrwZmH3pm3ytze+9X7eu7gbkDu+K04eTutntZz846P3Lqjz5+cVN7lAjdB057SXczG5pD
+KcY4OzDnt9yH3l/N+oWvYaGV70yytfncMLM5P/H5dadNJ2x/+lj07qDPjdKaPKRzPtkdNstPJZ75
+06U/O5r4vj9PBp3jpa3Jz5r7Ee/T+d2wLnlehDOuFTGMXR9Z44Uzb5y68PknuKgxJFz72Uc1xxdT
+7omPMZ1Oi6dqy3vVijnVEP6Cz9EL7Jc4mJM9c9LzViuG1kKQHnP3nB4HR+xxhl7JbmI/gla+UwqR
+/x2TpIirydrsfUYbayvXs14v8QkH7+t685LP0fcxn9W84zHGd8blUcB+I8ns46gbc684OVMZUYZv
+I/f4UTwx5ur+ahJzda81qWk1tr+J6V/WlL0Za4q8KH7yzRxx84xyWzVlL2q/sQ5+hQ35RA026Qqb
+ZGFsq9djL7BGzBtyXd6YE4Ep8v97L8R6kP9Yj7qYVSuez1K82BL7Q6f92CsOuxiKH4Hvi2VnBTrx
+m5L4sWl7P6ofhQ25DlvsXbBJBhtyF72C39gryHW9whz7hqcwqZ/bxoZffsfinq7Lm3SFTXKbZ0yX
+v2nqY/YkMcZ9/LamHugy4jcUtuDs4szXvo37uCk22XaFjXrHvCE3xSbbrrDpW0x5e5nq1uQ7RrZd
+YqM2ERtyU2zxfGq7/4md2kRsyE2x6VzqohfAFs9Nalp3bqZyz/tUtm3UtMm36bL/snxbx/9++p8u
+bGClr+re7/pc5nTdibuTyy5sOY9PvzLgf1s+o5Ifuo7uRrCfOn1O9ueyQbhDKfUW+C1WSGsU/Hbw
+O/aLH60xyVbm/DXX0d3OzBZc3275zcvteH/TZL26e5xldxrES67439M0X9gIMzb9EKdfgRXfCCRg
+lPhfAAAA//8DAFBLAwQUAAYACAAAACEAhAL3eNUHAACMqgAAGAAAAHhsL2RyYXdpbmdzL2RyYXdp
+bmcxLnhtbOyda4+jNhSGv1fqf0B8zwYbc4s2s5omM1WlXlZV+wMYQiaoCUTATGZV9b/3mMsQ4rCd
+4CXTxGc/MYGAY5tnj/2e1/746WWz1p7DNIuSeKqTD4auhXGQLKL4car/+cf9yNW1LPfjhb9O4nCq
+fwkz/dPN9999fFmkk102TzW4QZxN4M+pvsrz7WQ8zoJVuPGzD8k2jOHsMkk3fg5/po/jRerv4Nab
+9Zgahj3OtmnoL7JVGObz8oxe3c/vcbeNH8X6TVGyfJfMwvX6Ng5WSaqFiyi/zaY6/AL+aXXNMk02
+5dVBsr4xPo75T+KHxR3g4Lflcu9j/ldxJk12N6y8mh/Wn/HzFvGs5lTxjeKuzaPypHkkOf5Ijzqm
+672eaz2XVN85fDBhzDac10I1T66ft42C8sHx8+co+JxWpfj1+XOqRYupTnUt9jfQwHA2f0pDjejj
+5pryG/4E7vJzEvyVaXEyW/nxY3ibbcMgh44DX68/SqFwK96s/GO4SVmv8KTyLsWfrVI8rKPtfbSG
+ivcn/LjqAm/qUMlyGQXhPAmeNmGcl70qDdd+Dv05W0XbTNfSSbh5COE3pj8tCLS9Pwlf8p+zvDrS
+ntJoqv9N3VvD8OgPo5llzEbMcO5Gtx5zRo5x5zCDuWRGZv/wbxM2ecpCqAZ/Pd9GdXclTOiwmyhI
+kyxZ5h+CZDMuC1q/AFBQYoyLDqs9++upbhQ1VRQNaqwpIhzyKuFlzdLgd6hsqFE4ztMwD1b8cAk1
+V30OF7+eKKq5qVnet7MtNPbD7pdkAe3sP+VJURkvyxReA38CBdReeEG0L9BwFiMmcXmhirJoAZwi
+hDiu6+lawK8wDeZRqyp2fZNtmuU/hslG4wdQ41De4iH+M1Q47wvQh6pL+J3jhLd7/RChTTzDu3Pv
+XDZi1L6DNpnPR7f3Mzay74ljzc35bDYndZusosUijPnt5JukqOFkHS3qXpmljw+zdVo21X3xr/rh
+WXPZmHeNphh1M7abs26H6rV4fS2DdQT9d+7nfv3GtBB2HqoRehxrFRvhvR4Cae7xhxKbQP+SQJp5
+iDSKSFMYaSbg3TMKzraQxhhQDJEGULtKpFWB1GHANCjS9rDVCg+lkcYOkWYi0hRGGqPUI4g0xaI0
+ar9DlGZ2hIbSSIP/e9sDT4ZIUxhplmVTG5GmGNJM8z2Q1hEaSiPNPkRaMUtSzC6+zoLhXJoyc2m2
+69kYpV3+XFoVAb1RIeiYqH/7uLNC4uHjLJiLrseXlUbxX6qEZ0nNozmHOLMxQlMyQiMEpvwhNisE
+As+wMEy7+DDtNKY1s/Gtaa1BmdapeMrKAyBstweeDmINsQbDT4zVlIvVpHXPHsEaGUr3BIG+DbZC
+xsfhp3KpHPvxGnU9C+fVlAObtPrZA2yDqZ8Ehh5tsnkYsikfsqEIupeDxrMELzRV7bShqLwI2oNs
+g4mghOfPttNvi0QlDNqUDtpQDFURbfJiaB+0DSWGEtFZgNYCNa0F++NRFEWvA22V2+lcomilQLy/
+KEoEdwGADh1TKjqmqEkZ1wxQFuXGtKuwTXUFUOCKcxvXZsuZ2aGNEgdsdEdMTMcdoV/DW0PatzlC
+HY+yJq3udEcoEcwGwDwknJqEc6jl1c5QxwKTs+AMNTwbIn10hl6KjaoLcQ6BvJ4O87m0TNrFN0Lt
+mpKHOW2DyaREcB4A8ZBvavLNBWso6ObgawehlBKzSHFs2USRb1P9kpzvJw5MpYXSHiPT4YRSwYEA
+sEO0KTo4NWzAGUcbKKUWPz5c1APRds1ok1dKe6BtOKVUcCMQtCOoKSfAvNsr2izL8jBqu/z0ttOi
+ti6l9NtNujXoa026mV1qqfSkm+BKIGhLUBVvhsmXYOORmw2jU5x0u3y8VSt3nEstrRaE/AZqqW3Y
+jaG1h5YgeBLKtQUxv025/DbTMmk910aOm0hxPHpZ49HTqCZtIu1BtcFMpFSwJBD0JKgZr7XAZlku
+zrQpF69J66N90DaUjZQKngSAHYoIKooI+2hDffQ6UtxOHIpK66M90DaYPkoFTwLADtGmOtpQH1UR
+bfL6aA+0DaaPUnHXA/Ql4IAU9VEV0SbvJO2DtqGcpFQwJADsMGpTPWoDJynFubbLn2ur5rHOpY02
+G+y19vsrltdtxsZv2fRPUhvluw+11/4A0CHWVMQac5hFXJic4PvroTZ6DRvwnUY1aW20B9WG00YF
+F0K5XSQmfSiX9NECG2qjV+GRPzFek9ZG+6BtMG1UcCFQdCGoOcu2jzbURq9jlu1EtElroz3QNpw2
+KjgQKDoQEG2ojaqINnlttAfahtNGBRcCxa0REG2ojaqINnlttA/ahtJGTcGHQNGHgGhDbfQ60NYs
+yNYSK7vWaXuHzZQr436a7FpbA0pqo6aQqGtioq6aWPvq+rqO60Jsj4tPXsrik6fxjDUbjPbcd7RZ
+s7fFT486ptuEce1kjyoJ5JBo0rvDm0KGLlAO8z1UzPcomeZSWP30yLJsCLXLssGftoGVPNS6VvAl
+xLGac2eCmpCbC5hDqKkINUKYaVTbISDaVNzlRR5tneuEA9oazJ4JbUJ+ron5ubgkG6JNRUeVPNq6
+HFU8ajs72oQMXRPXCVfULMqYXa82iWhTURCVR1uXIPouA1IhQ7ecYUHzgXrmA8uhOCD1o1i/+R9u
+0Dfmb+Qum6c3/wIAAP//AwBQSwMEFAAGAAgAAAAhADkxtZHbAAAA0AEAACMAAAB4bC93b3Jrc2hl
+ZXRzL19yZWxzL3NoZWV0MS54bWwucmVsc6yRzWrDMAyA74O+g9G9dtLDGKNOL2PQ69o9gGcriVki
+G0tb17efdygspbDLbvpBnz6h7e5rntQnFo6JLLS6AYXkU4g0WHg9Pq8fQLE4Cm5KhBbOyLDrVnfb
+F5yc1CEeY2ZVKcQWRpH8aAz7EWfHOmWk2ulTmZ3UtAwmO//uBjSbprk35TcDugVT7YOFsg8bUMdz
+rpv/Zqe+jx6fkv+YkeTGChOKO9XLKtKVAcWC1pcaX4JWV2Uwt23a/7TJJZJgOaBIleKF1VXPXOWt
+fov0I2kWf+i+AQAA//8DAFBLAwQUAAYACAAAACEABM6dPlkBAABsBAAAJwAAAHhsL3ByaW50ZXJT
+ZXR0aW5ncy9wcmludGVyU2V0dGluZ3MxLmJpbuxTy0rDQBQ9aXy0rlwW7ELcFxIa27qsJimxeZSZ
+tHQb2xECIQnpRKziP/g3/oxf4EeoN0VQwQriUs9wJ+fekzk33CEjrJBhDoECEQ5hg6MNHRq6FCZ8
+qg0xwyYoW+rOI+5V9QE1BQ087WX1BRTsYka5QrtKu0v+klbV5fdQ3iyqZ42iReSFMHS48dHddPzJ
+EZqKVFs46NSev+vc+CRuU1Z9/T/+0gR+ct9Nepl74Xk1n33UlVss0MMx/TkCBi4p2uhT1lkzAyek
+9ql2QXpE1Urt0RmDoktM0NLpnI47cnTSvJSncQo7YB4PJuzMArO46bqYpHEhlhULilikMpJxlmIc
+sJANnBBmmSfiGn7gW/DEIo7CVS4wKGXGRSLmEuMoFwWPbwRcKwwtBiaWWVKuXd5pV9NwliVJJAUC
+28ZozN2pKJZVrytNJ3UDWlSfGqb31SxfAQAA//8DAFBLAwQUAAYACAAAACEAEp/CGKoBAACaAwAA
+EAAIAWRvY1Byb3BzL2FwcC54bWwgogQBKKAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACs
+U01v1DAQvSPxH4LvXWdLQWjluKq2oB74WHW35YgGZ7Kx6tiWPY12+fU4MU1TijggbjPzRs9v3ozF
++aEzRY8hamcrtlyUrECrXK3tvmI3uw8n71gRCWwNxlms2BEjO5cvX4hNcB4DaYxForCxYi2RX3Ee
+VYsdxEWCbUIaFzqglIY9d02jFV46dd+hJX5alm85HghtjfWJnwhZZlz19K+ktVODvni7O/okWIoL
+741WQGlK+Umr4KJrqHh/UGgEn4Miqduiug+ajrIUfJ6KrQKD60QsGzARBX8siCuEwbQN6BCl6GnV
+oyIXiqh/JNvOWPEdIg5yKtZD0GApyRracjLGxkcK8qsLd7FFpCh4asjFMZz3zmN9JpdjQwr+2pi5
+PkOHdXENdo//4YlBY541vf3UhZ0mg/FLs4FAfzDldG7KKC1bklVuBwvyWL8smMzI0KtN0Ja+XQSE
+Z0aN3ic9vylYu86DPSZgij5qexdv/M5dAuHDXp8WxbaFgHU6hWnvU0FcpZUGM5Cs28HR+qHnOTBc
+4W3+anL5ZlG+LtOBzWqCP34q+RMAAP//AwBQSwMEFAAGAAgAAAAhADt58u1gAQAAjgIAABEACAFk
+b2NQcm9wcy9jb3JlLnhtbCCiBAEooAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHySX0vD
+MBTF3wW/Q8l7mjQdc4auA5U9ORCsKL6F5G4LtmlIotu+vWnXzfoHIS+599xfzrmkWOybOvkA53Vr
+5ihLKUrAyFZps5mjp2qJZyjxQRgl6tbAHB3Ao0V5eVFIy2Xr4MG1FlzQ4JNIMp5LO0fbECwnxMst
+NMKnUWFic926RoR4dRtihXwTGyCM0ilpIAglgiAdENszEQ1IJc9I++7qHqAkgRoaMMGTLM3IlzaA
+a/yfA31npGx0ONiYabA7Zit5bJ7Ve6/Pwt1ul+7y3kb0n5GX1f1jHxVr0+1KAioLJbl0IELrShuc
+Lsio0C2vFj6s4p7XGtTNYdD8rp+kD06bAKpkNLvGdIrZtKIZn0w5o68FGeZOovh4n/XoAFQS3fNj
+1lPnOb+9q5ao480wneFsUlHK84yzPPJ+zHdpjsBmcPwvkeWYMkyvKpbzSTxsRDwByt709x9UfgIA
+AP//AwBQSwECLQAUAAYACAAAACEAD/w5LHoBAAAoBQAAEwAAAAAAAAAAAAAAAAAAAAAAW0NvbnRl
+bnRfVHlwZXNdLnhtbFBLAQItABQABgAIAAAAIQC1VTAj9AAAAEwCAAALAAAAAAAAAAAAAAAAALMD
+AABfcmVscy8ucmVsc1BLAQItABQABgAIAAAAIQCNh9pw4AAAAC0CAAAaAAAAAAAAAAAAAAAAANgG
+AAB4bC9fcmVscy93b3JrYm9vay54bWwucmVsc1BLAQItABQABgAIAAAAIQBE3v/PdAIAAAcFAAAP
+AAAAAAAAAAAAAAAAAPgIAAB4bC93b3JrYm9vay54bWxQSwECLQAUAAYACAAAACEAi4JuWJMGAACO
+GgAAEwAAAAAAAAAAAAAAAACZCwAAeGwvdGhlbWUvdGhlbWUxLnhtbFBLAQItABQABgAIAAAAIQAV
+vtwumAIAAP8FAAANAAAAAAAAAAAAAAAAAF0SAAB4bC9zdHlsZXMueG1sUEsBAi0AFAAGAAgAAAAh
+AKkQNbekAgAAHgYAABgAAAAAAAAAAAAAAAAAIBUAAHhsL3dvcmtzaGVldHMvc2hlZXQxLnhtbFBL
+AQItABQABgAIAAAAIQALKPQ0vgAAACQBAAAjAAAAAAAAAAAAAAAAAPoXAAB4bC9kcmF3aW5ncy9f
+cmVscy9kcmF3aW5nMS54bWwucmVsc1BLAQItABQABgAIAAAAIQBiF1T0JwMAADwTAAATAAAAAAAA
+AAAAAAAAAPkYAAB4bC9tZWRpYS9pbWFnZTEuZW1mUEsBAi0AFAAGAAgAAAAhAIQC93jVBwAAjKoA
+ABgAAAAAAAAAAAAAAAAAURwAAHhsL2RyYXdpbmdzL2RyYXdpbmcxLnhtbFBLAQItABQABgAIAAAA
+IQA5MbWR2wAAANABAAAjAAAAAAAAAAAAAAAAAFwkAAB4bC93b3Jrc2hlZXRzL19yZWxzL3NoZWV0
+MS54bWwucmVsc1BLAQItABQABgAIAAAAIQAEzp0+WQEAAGwEAAAnAAAAAAAAAAAAAAAAAHglAAB4
+bC9wcmludGVyU2V0dGluZ3MvcHJpbnRlclNldHRpbmdzMS5iaW5QSwECLQAUAAYACAAAACEAEp/C
+GKoBAACaAwAAEAAAAAAAAAAAAAAAAAAWJwAAZG9jUHJvcHMvYXBwLnhtbFBLAQItABQABgAIAAAA
+IQA7efLtYAEAAI4CAAARAAAAAAAAAAAAAAAAAPYpAABkb2NQcm9wcy9jb3JlLnhtbFBLBQYAAAAA
+DgAOALwDAACNLAAAAAA=
+--000000000000aa4c69060e18b2ea--

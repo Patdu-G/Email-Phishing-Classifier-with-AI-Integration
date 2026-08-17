@@ -1,0 +1,1424 @@
+X-GM-THRID: 1704455494537880384
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a54:388c:0:0:0:0:0 with SMTP id n12csp3831259ecs;
+        Mon, 5 Jul 2021 07:30:28 -0700 (PDT)
+X-Google-Smtp-Source: 
+ ABdhPJzdBPUQu82qhpI1fPDnu2DlFlwp8uZx/vqH01fxddcaVBOEBYDhYd/iPnil6tjlKaDVJic8
+X-Received: by 2002:a9d:39e3:: with SMTP id
+ y90mr11283560otb.257.1625495428271;
+        Mon, 05 Jul 2021 07:30:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1625495428; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PBVhWa/Q0zsEBRzYQCmOXO6bM3JWlEUk5R7fA2rWc8Aq/iJzmSFmDiAmQzXMEHBqe9
+         XDh/uUngu1afDwNgVngpu8vqXjbkuHeadVo+XZ/Lsf2o5w5uSGRthWERHHW4YPWPQ5xE
+         zrjFX3c/0W0I+CX3VIE88EGPi79LI+Joky6vHBc1c5y1rDYxGL6lmNEZxy22fFqYdA/D
+         PXF8CD+cmAo6+ufRDyt3cfSuZ5vTDYeM4OftY9NOLaYF0sOvRlt3WEVM3X1YrvnaYUUb
+         fgVGiZFwshrEQLUWFq8I/2YChJLnMnwO6P04rA1VgWrBR/A9DGuhXl9wH2Ebw0hqNzWt
+         dQtg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:mime-version:from:subject:date:message-id:dkim-signature
+         :dkim-signature;
+        bh=lvyHdrMyOrFpCZI6QRJr+G3Yvvnm0myv1pW923vQsoU=;
+        b=I5uPCPzkjOWHUNSdrGzkUMvbd7gtndXKd0Pc6yIgHmGgU8VKE++hhviLEve0LYepdt
+         YGzHClwa62c/ODS6ifpXFqzJ26VEL1XP3dAj6FAkpB4nKl1V1hyhAj9a5xK4wwu62v6A
+         sC7zIxD2SUrdT5OLhw2AxY8GpVaQYpeUIf7cPL6YAvXx/3E0Tsk+lH/ReJwgCHlocPU+
+         xGieIPELDKfvKUMNAu/+FswYoPqyr7qlvNC6wGifa1fGh6uUfcSjS5iScIHw1zTKLpTO
+         HL7v47qXV8Kqb/csb9Tjn6nEVMMZABIO4Wa1PTlPc3NkPCpGojuyulmyKeE5EYRwdqir
+         eXnQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@chess.com header.s=s1 header.b=GTYCzuVI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fGmltRd7;
+       spf=pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.60.108 as permitted sender)
+ smtp.mailfrom="bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chess.com
+Return-Path: 
+ <bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com>
+Received: from o1.email.chess.com (o1.email.chess.com. [167.89.60.108])
+        by mx.google.com with ESMTPS id
+ f3si12970973oiw.270.2021.07.05.07.30.27
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 Jul 2021 07:30:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.60.108 as permitted sender) client-ip=167.89.60.108;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@chess.com header.s=s1 header.b=GTYCzuVI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fGmltRd7;
+       spf=pass (google.com: domain of
+ bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com designates
+ 167.89.60.108 as permitted sender)
+ smtp.mailfrom="bounces+2244315-bf36-patriogabrielpatdu=gmail.com@email.chess.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=chess.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chess.com;
+	h=subject:from:mime-version:x-feedback-id:to:content-type;
+	s=s1; bh=lvyHdrMyOrFpCZI6QRJr+G3Yvvnm0myv1pW923vQsoU=;
+	b=GTYCzuVILkNBYAz/TqSGNSDWzcabm4Dpl7esT21MQCkqheUraiRINsSIQpEmyszw9MAl
+	fQAeW3Q9ERxx9oUx3loXswXWxGpRwB7C+A7rEunpYf4+hkm4/u0YcCduLiE/kzynfEf5ih
+	aHTMStbq9VcA7gLmLvsmgmCcr3GYQ0Sio=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=subject:from:mime-version:x-feedback-id:to:content-type;
+	s=smtpapi; bh=lvyHdrMyOrFpCZI6QRJr+G3Yvvnm0myv1pW923vQsoU=;
+	b=fGmltRd7ZRq/56CzVi+6VkC2aYqjfQhlSdNBWv3yzkw+2DPgc4bSKL95Ktl546fKXHB+
+	YDXeGujhL5Xv+Xbp4lf3mg/pVdExJFurfhOoxROBifkc7z1/xmcl+1JKPY9NfoTwoypfNl
+	ho1dwiWh8g8P29+1PHRkTQx4r4dI1UOZ4=
+Received: by filterdrecv-canary-6b65579d5f-v2gw5 with SMTP id
+ filterdrecv-canary-6b65579d5f-v2gw5-1-60E31783-7B
+        2021-07-05 14:30:27.439435392 +0000 UTC m=+409670.564327528
+Received: from www.chess.com (unknown)
+	by geopod-ismtpd-canary-0 (SG)
+	with ESMTP id k00w7hbpSFOqcfCpeUjkQg
+	for <patriogabrielpatdu@gmail.com>;
+	Mon, 05 Jul 2021 14:30:27.258 +0000 (UTC)
+Message-ID: <545eef5dacc34a2f808afc30dc28c2b5@resque-prod.chess.com>
+Date: Mon, 05 Jul 2021 14:30:27 +0000 (UTC)
+Subject: Now Live: Train and Level Up Your Endgame Skills!
+From: =?utf-8?b?4pmfQ2hlc3MuY29t?= <alert@chess.com>
+MIME-Version: 1.0
+X-Feedback-ID: 2244315:SG
+X-SG-EID: 
+ =?us-ascii?Q?l=2FUz0Z=2FyZE=2F8gRxr0+OFJVGAAs6qSBgSznrWyZ0+MRazFq=2F9BFKznJu++20zMU?=
+ =?us-ascii?Q?5Q9Hv5VIwaLZ+xtY=2FGKn5+3xMGwsv2tlTh9+gIq?=
+ =?us-ascii?Q?WEs8jGyhUUTwJRLlJmvoyrnxGRNI8A0zm0D6gxR?=
+ =?us-ascii?Q?831fAh=2Fu5B7RKM3KwwBRWVAnGumwBeWmWO776RE?=
+ =?us-ascii?Q?DR2X7FBc4qcLUYf6oHeNk44EgzKlt5pCAxAyzR8?=
+ =?us-ascii?Q?0LFuTJPc19wVKSqYvd6zbYZvCkagqXzx0d0NUAE?=
+ =?us-ascii?Q?KYMi2AuaBherBvcgRUIEQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsbz60Emg0hhOjEMFwv60+pP5JI2TZkOkP3IE0Cl69Cd?=
+ =?us-ascii?Q?HqYT52qulkjRsKOQFMdjyC+w=3D=3D?=
+To: ChewyTzy <patriogabrielpatdu@gmail.com>
+X-Entity-ID: smEwEMy3STNotLzPJ5ZsHg==
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1625495427_b9fceae7e6d97028825f75af15fa9b0a_=_"
+
+
+--_=_swift_1625495427_b9fceae7e6d97028825f75af15fa9b0a_=_
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+
+Chess.com - Play. Learn. Share.
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+*** Now Live: Endgames! ***
+
+
+Train and Level Up Your Endgame Skills
+
+>>> Explore Endgames Now
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0DpL1qlDPF-2F-=
+2B-2Fo7phzgX29xpP2QDzhtFwR1PNtQdJxT2ud9rfKKJX9nRbVoOPOg-2BVvS34Gx1xXiGHSaLN=
+8Y0UhOiMDEDGyhils-2BBOP9eQP5N-2F-2FyiDRwYVw5FYoXC8FLKWyfHvtTpWFmrvoRe7xM2s7=
+v1xzrcVSxgSp5V5qDSzrNHyNbV_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETy=
+ikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZpNtuBzceWOhNTSay2Pm2tY33ZIjr9gcT=
+mj2xGKceM99VlG8oXBaX7icXeOwl5Dux9I3UpRn5YGcp5ync-2Fy9W4jr9-2BTr49pPJgfeBfib=
+ktjsYOwNf7S2a9Bwf-2B5uzecrHAPohfAbvRFd7BkP5ffrXK3ZARTnTAJtKh2ZuPA2PMtZuYZJ8=
+3I3SSdUylV4BiS-2Fq1-2B8wbbDcBY1bQQwlrYcNC8-3D
+
+
+What Can You Do in Endgames?
+
+** 1. Explore Themes
+---------------------------------------------------------------------------=
+----------
+- Focus on checkmate patterns or learn how to deal with various endgame sce=
+narios.
+
+
+** 2. Challenge Yourself
+---------------------------------------------------------------------------=
+----------
+- Solve endgame puzzles fast and get on the global leaderboard.
+
+
+** 3. Practice
+---------------------------------------------------------------------------=
+----------
+- Practice moves on any endgame challenge before trying to solve it with a =
+timer.
+
+
+Start Improving Your Endgames.
+Start Winning More Chess Games.
+
+>>> Create Your First Collection
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0DpL1qlDPF-2F-=
+2B-2Fo7phzgX29xpP2QDzhtFwR1PNtQdJxT2ud9rfKKJX9nRbVoOPOg-2BVvS34Gx1xXiGHSaLN=
+8Y0UhOiMDEDGyhils-2BBOP9eQP5N-2F-2FyiDRwYVw5FYoXC8FLKWyfHvtTpWFmrvoRe7xM2s7=
+v1xzrcVSxgSp5V5qDSzrNHFd_M_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETy=
+ikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZqwBJmpbWFjw2UN8aFnONTVJALQMVeWVf=
+aAPLMPOEd6VTfF1XeJQcUKm-2FNepJjAv5L1ctvh8I19ZSjjNuJpa7n8GGIHoBFTcCHa6S9B6Dh=
+nNWXdTJnlFiTQ74tvAwKPUWpqccpaqGo3oPXqvbN9hn5KpzndiX9uZcOZtsLpILQBTBU2q2Z9JY=
+ML57lHuHoFAMQKcWvpoD1iq-2FSM3aZ8EE0I-3D
+
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+Want less email?
+Change your e-mail preferences:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Ida1s5pJJFqK8=
+AAppJIYfANkqhlFxxKYAmCe0jz1KdOfx0SZOqFZfF084m5eAnelQ-3D-3D9VZv_SDrKeVA2pts3=
+JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWO=
+E8XZvO4m-2FNDywPyTzhHe3Vz8pGQh7ABhxbLKtPebpR1ualSpPkmRv1xhHVXeDLfvHeJNzpl1d=
+MG4mRwwplFGeLcrJxCKx7oqjBye4F-2BAZAlfvxXDCNBxymagvF0am2Q6eQvlCgjmk9NSQMVUIe=
+gFZEppHFcDZb-2BQPQv7HcRW7dIwsys5u0iQTgF8YK3jrJEaUcUfLZ7n9tAeTmNtXC-2FcmKKeE=
+U-3D
+Stop ALL Chess.com e-mail?
+Unsubscribe:
+https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Lj2Xj4j6HCEeS=
+29RhJd8AXa1-2F0uDwVVaVme6XmMUBoePXW5-2Ba18bQJCYmtzHn74TC-2F4yzVEiJyilHnCs-2=
+BZckiY-3D-Kc3_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0h=
+Wn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZhITi-2BU9Sb38W-2BIyEF57V-2B-2B986xwAWeeyCRtXa=
+d9X1zgoxhio7b8vGArXA9NYlbZY78LYTmL9-2Blh-2FllRils0slrJkt5x-2B4kqKxga-2B1pgh=
+3goYzC0uMZ-2Bx228uEAkyqHS4SzyNTCQZYEwTtpGyS-2Fz-2BkoXkaHJXJBa79sxH0TlyB0LJW=
+2-2F1Ni0PSkehiFexvx222yghwN3O9rzBpCf46QIApw-3D
+
+---------------------------------------------------------------------------=
+----------
+
+Add alert@chess.com to your address book so you don't miss any email from C=
+hess.com
+Please do not reply to this email.
+Need help? Visit Chess.com Customer Support: https://links.chess.com/ls/cli=
+ck?upn=3D-2Fj6rp56rYpMUW3uwwA85mmD8LvzBWSveXhNYwVR-2Fh8RAfZTl6w4KULcL8MXV60=
+huI6ok_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvW=
+JBm6-2Fv8r9mVSnZCWOE8XZpsHNInivbchaLMMUdaL32CgyAegsbimq-2BYVN-2BAjPKrnw9DAu=
+jGI4G7EElIgtmi8fFKUzZQUz2yUPHAadYrGA25SdNWrPDozDcY4U2zsqfDzGkuLjeJfsKf2kKpm=
+dwzyNSgX-2BUFoYRSfEY26iPtGfC7aJWsvaZH8fMwb0XWqmj0-2FiKs55ok7E-2FKUnfkR7V4nT=
+xn0s-2BfD6fu76GqEU1eUpGc-3D
+This email was sent to: patriogabrielpatdu@gmail.com - Privacy Policy: http=
+s://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0EsKzks2qyRRWiAizL=
+s1qaun8LcHY7F9AfJ48cjlvUJ8jSKq_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKi=
+rETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZptBNJzUXN3MRbmpGODsMObmSKPd6=
+329v39Lq-2Bx0D8xyrqJ0VIK4y4rFoCtFS3T937mTyfwNL-2ForPmFoWdGFqla80ocMWuUTuYBD=
+tg3wRaXh88zpYPCaAFhLUxi7rgNLRgsFnERyxqFu6Q2WD9TX6f9-2FlIPVMEAAiweiVgKd8z1-2=
+B04SIF9MrGudsYaAIekDkZmt1lO-2FirouSSoivtNgaeG0-3D
+Chess.com | PO Box 60400. Palo Alto, CA 94306
+
+
+--_=_swift_1625495427_b9fceae7e6d97028825f75af15fa9b0a_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "https://www.w3=
+.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <!--[if !mso]><!-->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <!--<![endif]-->
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+
+  <title>
+  New Feature: Endgames!</title>
+    <meta name=3D=E2=80=9Dcolor-scheme=E2=80=9D content=3D=E2=80=9Dlight da=
+rk=E2=80=9D>
+  <meta name=3D=E2=80=9Dsupported-color-schemes=E2=80=9D content=3D=E2=80=
+=9Dlight dark=E2=80=9D>
+
+    <style>
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #f9f9f9;
+    }
+
+    .link {
+      display: flex;
+      justify-content: center;
+      background-color: #f9f9f9;
+      padding-top: 10px;
+    }
+
+    a:link,
+    span.MsoHyperlink {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    table {
+      border-spacing: 0;
+      font-family: sans-serif;
+      color: #312e2b;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    img {
+      border: 0;
+    }
+
+    div[style*=3D"margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    .wrapper {
+      width: 100%;
+      table-layout: fixed;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+
+      background-color: #f9f9f9;
+    }
+
+    .webkit {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .outer {
+      Margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    #chess-logo {
+      padding-top: 17px;
+      padding-bottom: 9px;
+    }
+
+    .no-link {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-weight: inherit !important;
+    }
+
+      .email a {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+  </style>
+
+  <style>
+  :root {
+    color-scheme: light dark;
+    supported-color-schemes: light dark;
+   }
+
+  @media (prefers-color-scheme: dark) {
+    .dm-background {
+      background-color: #202124 !important;
+    }
+
+    .dm-box-background {
+      background-color: #121212 !important;
+    }
+
+    .dm-gray-background {
+      background-color: #202124 !important;
+    }
+
+    .dm-lightgray-background {
+      background-color: #d2d5da !important;
+    }
+
+    .dm-gray-padding {
+      padding-right: 30px !important;
+      padding-left: 30px !important;
+    }
+
+    .dm-border {
+      border-color: #202124 !important;
+    }
+
+    td, p {
+      color: #dfdfdf !important;
+    }
+
+    .dm-button {
+      background-color: #6c9d41 !important;
+      color: #fbfbfb !important;
+    }
+
+    .dm-dark-text {
+      color: #312e2b !important;
+    }
+
+    .dm-light-text {
+      color: #fbfbfb !important;
+    }
+
+    .dm-number {
+      background-color:#759753 !important;
+      color: #ffffff !important;
+    }
+
+    .dm-footer-chesscom {
+      color: #dfdfdf !important;
+    }
+  }
+
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .contents {
+    width: 100%;
+  }
+
+  p {
+    Margin: 0;
+  }
+
+  .two-column {
+    text-align: center;
+    font-size: 0;
+  }
+
+  .two-column .column1 {
+    width: 100%;
+    max-width: 206px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .two-column .column2 {
+    width: 100%;
+    max-width: 394px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .two-column .contents {
+    text-align: left;
+  }
+
+  .two-column img {
+    width: 100%;
+    height: auto;
+  }
+
+  .number {
+    border-radius: 50% !important;
+    width: 47px !important;
+    height: 47px !important;
+  }
+
+  .footer-wrapper {
+    padding-bottom: 20px;
+  }
+
+  .full-logo {
+    width: 30%;
+    max-width: 180px;
+  }
+
+  .full-social {
+    width: 70%;
+    max-width: 420px;
+  }
+
+  .footer-text {
+    color: #65625f;
+    font-size: 11px;
+    line-height: 12px;
+    padding: 10px 0 0;
+  }
+
+  #footer a {
+    color: #3a729c;
+    text-decoration: none;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  @media screen and (min-width: 400px) {
+    .max-400 {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .mobile-only {
+      display: none !important;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .contents p {
+      text-align: center !important;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .mobile-padding {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+
+    .mobile-remove-padding-top {
+      padding-top: 0 !important;
+    }
+
+    .mobile-remove-padding-left {
+      padding-left: 0 !important;
+    }
+
+    .mobile-remove-padding-right {
+      padding-right: 0 !important;
+    }
+
+    .mobile-hidden {
+      display: none !important;
+    }
+
+    .one-column .inner {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .header {
+      font-size: 30px !important;
+    }
+
+    .text-center {
+      text-align: center !important;
+    }
+
+    .inline-block {
+      display: inline-block !important;
+    }
+
+    .mobile-bottom-text {
+      font-size: 18px !important;
+    }
+
+  }
+
+  @media screen and (min-width: 600px) {
+    .mobile-display {
+      display: none !important;
+    }
+  }
+
+  @media screen and (min-width: 401px) and (max-width: 599px) {
+    .contents p {
+      text-align: center !important;
+    }
+
+    .align-right {
+      text-align: right !important;
+    }
+
+    .align-left {
+      text-align: left !important;
+    }
+
+    .tablet-display {
+      display: inline-block !important;
+    }
+  }
+
+</style>
+
+  <!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+  table {border-collapse: collapse !important;}
+  </style>
+  <![endif]-->
+</head>
+
+<body class=3D"body dm-background"
+  style=3D"margin-top:0 !important;margin-bottom:0 !important;margin-right:=
+0 !important;margin-left:0 !important;padding-top:0;padding-bottom:0;paddin=
+g-right:0;padding-left:0;background-color:#f9f9f9;">
+  <center class=3D"wrapper dm-background"
+    style=3D"width:100%;table-layout:fixed;-webkit-text-size-adjust:100%;-m=
+s-text-size-adjust:100%;background-color:#f9f9f9;">
+
+    <div style=3D"display: none; max-height: 0px; overflow: hidden;">
+  Explore various endgame scenarios and challenge yourself to solve them fa=
+st to get on the global leaderboard</div>
+
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+  &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+
+    <!--[if (gte mso 9)|(IE)]>
+      <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-=
+family:sans-serif;color:#312e2b;" >
+      <tr>
+      <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-l=
+eft:0;" >
+      <![endif]-->
+    <table role=3D"presentation" class=3D"outer dm-background" align=3D"cen=
+ter"
+      style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;max-=
+width:600px;font-family:Arial, sans-serif;background-color:#f9f9f9;border-r=
+adius:5px">
+      <tr>
+        <td align=3D"center" valign=3D"top" id=3D"chess-logo"
+          style=3D"padding-bottom:21px !important;padding-top:17px;-webkit-=
+text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso=
+-table-rspace: 0pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-se=
+rif;">
+          <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web/image=
+s/email/v5/chess-logo-darkmode.b3ee420c.png"
+            alt=3D"chess.com header logo"
+            style=3D"border-width:0;width:150px!important;height:41.7px!imp=
+ortant;font-size:18px;line-height:45px;"
+            width=3D"150" height=3D"41.7">
+        </td>
+      </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:0;margin-bott=
+om:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table role=3D"presentation" class=3D"outer dm-box-background" align=3D=
+"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;width:100%;m=
+ax-width:600px;font-family:Arial,sans-serif;background-color:#759753;">
+      <tr>
+        <td class=3D"one-column mobile-padding dm-gray-padding" style=3D"pa=
+dding-top:37px;padding-bottom:38px;">
+          <table width=3D"100%">
+            <tr>
+              <td class=3D"inner contents" style=3D"text-align:center;">
+                <p class=3D"header" style=3D"font-size:36px;font-weight:bol=
+d;line-height:1.11;color:#ffffff;">
+                  Now Live: Endgames!                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class=3D"inner contents" style=3D"text-align:center;paddi=
+ng-top:9px;padding-right:100px;padding-left:100px;padding-bottom:38px;">
+                <p style=3D"font-size:16px;line-height:1.25;color:#ffffff;"=
+>
+                  Train and Level Up Your Endgame Skills                </p=
+>
+              </td>
+            </tr>
+
+            <tr>
+              <td class=3D"inner contents dm-gray-background" style=3D"text=
+-align:center;padding-top:15px;padding-bottom:15px;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/v5/announcements/endgames-top@2x.png"  width=3D"512" alt=3D"d=
+esktop computer" style=3D"width:100%;max-width:512px;display:inline-block;"=
+ />
+              </td>
+            </tr>
+
+            <tr>
+              <td class=3D"contents" style=3D"padding-bottom:7px;padding-ri=
+ght:0;padding-left:0;padding-top:26px;">
+                <table role=3D"presentation" align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0"
+                  style=3D"border-spacing:0;font-family:sans-serif;color:#3=
+12e2b;">
+                  <tr>
+                    <td>
+                      <a href=3D"https://links.chess.com/ls/click?upn=3DVHH=
+I-2BYyvOYLuq5kvtWwh0DpL1qlDPF-2F-2B-2Fo7phzgX29xpP2QDzhtFwR1PNtQdJxT2ud9rfK=
+KJX9nRbVoOPOg-2BVvS34Gx1xXiGHSaLN8Y0UhOiMDEDGyhils-2BBOP9eQP5N-2F-2FyiDRwYV=
+w5FYoXC8FLKWyfHvtTpWFmrvoRe7xM2s7s5af8itZtw-2FRy4GEDquSxl9DPw_SDrKeVA2pts3J=
+IkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE=
+8XZiOIx8T92d00gtWAxuLcpf1aaY9ySQ-2FZCOgGQSVUnHvTRVa8hBCTQ3JfMFkm7d5YdZ1Lcjj=
+OPXwVWZnsjWTkCadXjFTPu9-2BaGY2Su7KikgFsKibh92H6DaDM50GHY1Ikt6B0NpP7E51rGT7C=
+BxW2q5gWOw5pMkAHLQr-2FqaUVy8edh0Sk3dsWVy0w7Mhum5izuCDaNKDMdsdUkxa2L7xqYhw-3=
+D"
+                      target=3D"_blank" rel=3D"noopener" style=3D"color:#ff=
+ffff;display:block;text-decoration:none;">
+                        <table role=3D"presentation" style=3D"width:100%;">
+                          <td align=3D"center" valign=3D"top" class=3D"butt=
+on dm-button"
+                          style=3D"border-radius:10px;border-bottom: 4px so=
+lid #537037;background-color:#ffffff;color:#4c4848;font-size:18px;font-weig=
+ht:bold;padding-top:15px;padding-bottom:15px;padding-right:17px;padding-lef=
+t:17px;display:block;">
+                            Explore Endgames Now                          <=
+/td>
+                        </table>
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:10px;margin-b=
+ottom:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table class=3D"dm-box-background" role=3D"presentation" class=3D"outer=
+" align=3D"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;wi=
+dth:100%;max-width:600px;font-family:Arial,sans-serif;background-color:#fff=
+fff;">
+      <tr>
+        <td id=3D"box2-top" class=3D"one-column mobile-padding" style=3D"pa=
+dding-top:22px;padding-bottom:61px;">
+          <table width=3D"100%">
+            <tr>
+              <td class=3D"inner contents" style=3D"text-align:center;paddi=
+ng-top:18px;padding-right:60px;padding-left:60px;">
+                <p class=3D"header" style=3D"font-size:28px;font-weight:bol=
+d;line-height:1.11;">
+                  What Can You Do in Endgames?                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class=3D"inner contents" style=3D"text-align:center;paddi=
+ng-top:18px;padding-right:60px;padding-left:60px;">
+                <img src=3D"https://betacssjs.chesscomfiles.com/bundles/web=
+/images/email/v5/announcements/green-line@2x.png"  width=3D"94" alt=3D"gree=
+n line" style=3D"width:100%;max-width:95px;display:inline-block;" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding dm-lightgray-background" sty=
+le=3D"background-color:#eaedf3;padding-top:32px;padding-bottom:47px;" dir=
+=3D"rtl">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"34%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-left mobile-remove=
+-padding-top" style=3D"padding-left:6px;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"text-center">
+                        <table class=3D"inline-block">
+                          <tr>
+                            <td class=3D"number dm-number" style=3D"backgro=
+und-color:#ffffff;border-radius:50%;width:47px;height:47px;color:#759753;fo=
+nt-size:30px;font-weight:bold;text-align:center;" width=3D"47">
+                              1
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right"  style=3D"p=
+adding-top:11px;padding-right:10px;">
+                        <p class=3D"dm-dark-text" style=3D"font-size:28px;f=
+ont-weight:bold;line-height:1.07;">
+                          Explore Themes                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:14px;padding-right:40px;">
+                        <p class=3D"dm-dark-text" style=3D"font-size:16px;l=
+ine-height:1.25;">
+                          Focus on checkmate patterns or learn how to deal =
+with various endgame scenarios.                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"66%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents" style=3D"text-align:center;">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:32px;padding-right:16px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/announcements/endgames-screenshot-1@2x.png" width=
+=3D"349" alt=3D"laptop" style=3D"width:100%;max-width:349px;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding dm-box-background" style=3D"=
+background-color:#ffffff;padding-top:32px;padding-bottom:47px;">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"34%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-left mobile-remove=
+-padding-top">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-left text-center" =
+style=3D"padding-left:37px;">
+                        <table class=3D"inline-block">
+                          <tr>
+                            <td class=3D"number dm-light-text" style=3D"bac=
+kground-color:#759753;border-radius:50%;width:47px;height:47px;color:#fffff=
+f;font-size:30px;font-weight:bold;text-align:center;" width=3D"47">
+                              2
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right mobile-remov=
+e-padding-left"  style=3D"padding-top:11px;padding-right:10px;padding-left:=
+37px;">
+                        <p style=3D"font-size:28px;font-weight:bold;line-he=
+ight:1.07;">
+                          Challenge Yourself                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-left" style=3D"pad=
+ding-top:14px;padding-left:37px;">
+                        <p style=3D"font-size:16px;line-height:1.25;">
+                          Solve endgame puzzles fast and get on the global =
+leaderboard.                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"66%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents" style=3D"text-align:center;">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:32px;padding-right:14px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/announcements/endgames-screenshot-2@2x.png" width=
+=3D"349" alt=3D"laptop" style=3D"width:100%;max-width:349px;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+
+      <tr>
+        <td class=3D"two-column mobile-padding dm-lightgray-background" sty=
+le=3D"background-color:#eaedf3;padding-top:32px;padding-bottom:47px;" dir=
+=3D"rtl">
+          <!--[if (gte mso 9)|(IE)]>
+          <table width=3D"100%">
+          <tr>
+          <td width=3D"34%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column1" dir=3D"ltr">
+            <table width=3D"100%">
+              <tr>
+                <td class=3D"inner mobile-remove-padding-left mobile-remove=
+-padding-top" style=3D"padding-left:6px;">
+                  <table class=3D"contents">
+                    <tr>
+                      <td class=3D"text-center">
+                        <table class=3D"inline-block">
+                          <tr>
+                            <td class=3D"number dm-number" style=3D"backgro=
+und-color:#ffffff;border-radius:50%;width:47px;height:47px;color:#759753;fo=
+nt-size:30px;font-weight:bold;text-align:center;" width=3D"47">
+                              3
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right"  style=3D"p=
+adding-top:11px;padding-right:10px;">
+                        <p class=3D"dm-dark-text" style=3D"font-size:28px;f=
+ont-weight:bold;line-height:1.07;">
+                          Practice                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:14px;padding-right:35px;">
+                        <p class=3D"dm-dark-text" style=3D"font-size:16px;l=
+ine-height:1.25;">
+                          Practice moves on any endgame challenge before tr=
+ying to solve it with a timer.                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td><td width=3D"66%" valign=3D"top">
+          <![endif]-->
+          <div class=3D"column2" dir=3D"ltr">
+            <table width=3D"100%" align=3D"center">
+              <tr>
+                <td class=3D"inner">
+                  <table class=3D"contents" style=3D"text-align:center;">
+                    <tr>
+                      <td class=3D"mobile-remove-padding-right" style=3D"pa=
+dding-top:32px;padding-right:16px;">
+                        <img src=3D"https://betacssjs.chesscomfiles.com/bun=
+dles/web/images/email/v5/announcements/endgames-screenshot-3@2x.png" width=
+=3D"349" alt=3D"laptop" style=3D"width:100%;max-width:349px;"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+    <div class=3D"webkit" style=3D"max-width:602px;margin-top:10px;margin-b=
+ottom:0;margin-right:auto;margin-left:auto;">
+  <!--[if (gte mso 9)|(IE)]>
+  <table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-fami=
+ly:sans-serif;color:#312e2b;" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" >
+  <tr>
+  <td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:=
+0;" >
+  <![endif]-->
+  <div>
+    <table class=3D"dm-box-background" role=3D"presentation" class=3D"outer=
+" align=3D"center" style=3D"border-spacing:0;color:#312e2b;Margin:0 auto;wi=
+dth:100%;max-width:600px;font-family:Arial,sans-serif;background-color:#fff=
+fff;">
+      <tr>
+        <td class=3D"one-column mobile-padding" style=3D"padding-top:22px;p=
+adding-bottom:34px;background-color:#759753">
+          <table width=3D"100%">
+            <tr>
+              <td class=3D"inner contents" style=3D"text-align:center;paddi=
+ng-top:12px;padding-right:60px;padding-left:60px;">
+                <p class=3D"dm-light-text mobile-bottom-text" style=3D"font=
+-size:28px;line-height:1.21;color:#ffffff;">
+                  Start Improving Your Endgames                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class=3D"inner contents" style=3D"text-align:center;paddi=
+ng-top:1px;padding-right:60px;padding-left:60px;">
+                <p class=3D"dm-light-text mobile-bottom-text" style=3D"font=
+-size:28px;font-weight:bold;line-height:1.21;color:#ffffff;">
+                  Start Winning More Chess Games                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class=3D"contents" style=3D"padding-bottom:7px;padding-ri=
+ght:0;padding-left:0;padding-top:26px;">
+                <table role=3D"presentation" align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0"
+                  style=3D"border-spacing:0;font-family:sans-serif;color:#3=
+12e2b;">
+                  <tr>
+                    <td>
+                      <a href=3D"https://links.chess.com/ls/click?upn=3DVHH=
+I-2BYyvOYLuq5kvtWwh0DpL1qlDPF-2F-2B-2Fo7phzgX29xpP2QDzhtFwR1PNtQdJxT2ud9rfK=
+KJX9nRbVoOPOg-2BVvS34Gx1xXiGHSaLN8Y0UhOiMDEDGyhils-2BBOP9eQP5N-2F-2FyiDRwYV=
+w5FYoXC8FLKWyfHvtTpWFmrvoRe7xM2s7s5af8itZtw-2FRy4GEDquSxlSS75_SDrKeVA2pts3J=
+IkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE=
+8XZhH3ucgN5iYc19ipOQ19-2B6QRVSTXaL44MMVEU73njvH-2FbJJZDB2iEyJDG2vciIr2-2FMN=
+SuZg4Ppn4TW1gOaFbiZS6queeXZaNTy-2BqC72QuJ2EkUeU3oIdnyn-2Bl1DWqRhVIzr5zg4lO4=
+hEr49P5sCQ6TakeThC58yPVhEeUZCZ0C5l-2F8NRO3-2BqIbfpd1DRkUvfsRoqNpuYtnFlDhJHR=
+-2FBNHfo-3D"
+                      target=3D"_blank" rel=3D"noopener" style=3D"color:#ff=
+ffff;display:block;text-decoration:none;">
+                        <table role=3D"presentation" style=3D"width:100%;">
+                          <td align=3D"center" valign=3D"top" class=3D"butt=
+on dm-dark-text dm-lightgray-background"
+                          style=3D"border-radius:10px;border-bottom: 4px so=
+lid #537037;background-color:#ffffff;color:#4c4848;font-size:18px;font-weig=
+ht:bold;padding-top:15px;padding-bottom:15px;padding-right:17px;padding-lef=
+t:17px;display:block;">
+                            Explore Endgames Now                          <=
+/td>
+                        </table>
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--[if (gte mso 9)|(IE)]>
+  </td>
+  </tr>
+  </table>
+  <![endif]-->
+</div>
+               =20
+        <!--[if (gte mso 9)|(IE)]>
+<table width=3D"600" align=3D"center" style=3D"border-spacing:0;font-family=
+:sans-serif;color:#333333;" >
+<tr>
+<td style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;=
+" >
+<![endif]-->
+<table role=3D"presentation" class=3D"outer" align=3D"center"
+  style=3D"border-spacing:0;color:#333333;Margin:0 auto;width:100%;max-widt=
+h:600px;font-family:Arial, sans-serif;background-color:#ffffff;border-radiu=
+s:5px">
+  <tr class=3D"dm-background" id=3D"footer" bgcolor=3D"#f9f9f9">
+    <td align=3D"center" valign=3D"top" class=3D"footer-wrapper"
+      style=3D"padding-top:16px;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, '=
+Helvetica Neue', Helvetica, sans-serif;padding-right:0;padding-left:0;paddi=
+ng-bottom:20px;">
+      <table role=3D"presentation" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%"
+        style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;ms=
+o-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important=
+;border-spacing:0;font-family:sans-serif;color:#333333;">
+        <tr>
+          <td class=3D"mobile-padding" align=3D"center" valign=3D"top"
+            style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helvetica N=
+eue', Helvetica, sans-serif;padding-top:10px;padding-bottom:10px;padding-ri=
+ght:0;padding-left:0;">
+            <!--[if mso]>
+            <table role=3D"presentation" align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"-webkit-text-size-a=
+djust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:=
+0pt;border-collapse:collapse !important;border-spacing:0;font-family:sans-s=
+erif;color:#333333;" >
+						<tr>
+						<td width=3D"330" valign=3D"top" style=3D"-webkit-text-size-adjust:10=
+0%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padd=
+ing-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+						<![endif]-->
+            <table role=3D"presentation" align=3D"left" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"180"
+              class=3D"full-logo"
+              style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:1=
+00%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !imp=
+ortant;border-spacing:0;font-family:sans-serif;color:#333333;width:30%;max-=
+width:180px;">
+              <tr>
+                <td align=3D"left" valign=3D"top" class=3D"logo-footer"
+                  style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adju=
+st:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helve=
+tica Neue', Helvetica, sans-serif;padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0;">
+                  <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2B=
+YyvOYLuq5kvtWwh0OpH5kz-2F43mKR51QI07-2FRySA05JrT8lBqcTIJMSSGL68IRmv_SDrKeVA=
+2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVS=
+nZCWOE8XZiG8Al-2BtIxNdCzIV6lvHKSSVfsjy1t5zxZfIz5fzlr9DRzkizp9tnxTEXnfDwpo-2=
+F1YxaTw0cq2VznLGnNaqVcC8R-2BtrydqE-2BrPKsfnKZ02slZ5SPF9Aceh9kJpVztfEV68V6L1=
+O2y1zf0Jj6Tyw7nGbQ8hX5OOnoQaT3od4Dlc4AHWhh3jVVEafJv4SDokI9WGoM-2BHOFWnWTzCB=
+THbYth-2Fo-3D" target=3D"_blank" rel=3D"noopener"
+                    style=3D"-webkit-text-size-adjust:100%;-ms-text-size-ad=
+just:100%;vertical-align:top;"><img
+                      src=3D"https://betacssjs.chesscomfiles.com/bundles/we=
+b/images/email/v5/footer/footer-logo@2x.png"
+                      style=3D"-ms-interpolation-mode:bicubic;border-width:=
+0;height:auto;line-height:100%;outline-style:none;text-decoration:none;widt=
+h:83px!important;font-size:10px;"
+                      alt=3D"chess.com logo" width=3D"83"></a>
+                </td>
+              </tr>
+            </table>
+            <!--[if mso]>
+						</td>
+						<td width=3D"330" valign=3D"top" style=3D"-webkit-text-size-adjust:10=
+0%;-ms-text-size-adjust:100%;  mso-table-lspace:0pt;mso-table-rspace:0pt;pa=
+dding-top:0;padding-bottom:0;padding-right:0; padding-left:0;" >
+						<![endif]-->
+            <table role=3D"presentation" align=3D"right" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"420"
+              class=3D"full-social"
+              style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:1=
+00%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !imp=
+ortant;border-spacing:0;font-family:sans-serif;color:#333333;width:70%;max-=
+width:420px;">
+              <tr>
+                <td align=3D"right" valign=3D"top" class=3D"social"
+                  style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adju=
+st:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helve=
+tica Neue', Helvetica, sans-serif;padding-top:0;padding-bottom:0;padding-ri=
+ght:0;padding-left:0;">
+                  <table role=3D"presentation">
+                    <tr>
+                      <td style=3D"padding-right:8px;padding-top:0;padding-=
+bottom:0; padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0MVhWF3kIG9yL8pZ-2Fk72lIDGkdTDODHgDKtl0b5OYLzRUNPs8dkL=
+I-2BHEYjVNk1hAB0FpjE0zEFm6M09uPf0JTcSLdnaaesP9LWrLGzWD7VZa4aw2_SDrKeVA2pts3=
+JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWO=
+E8XZsG81TmkBTA8dv7tF1qgqSNROiCuj0EgdU0jfsFRUenQX1MTBlW6niTIAJywy0v8hgECmA-2=
+BLgogvYALNqcYzQuyXZuYBi41u6WZT6pGgGCC4ZyNQSEo-2B0GXPrAxuv5HIIoJ8h621KXMRjwD=
+fJmGfrOe-2BQ-2BsNrXlt6xoboDCm0w0EN5uTaVfgnjROZSM-2Btq-2B6BtEENEm7xh5WU04czv=
+BYhag-3D"
+                          target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/ios@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:auto;line-height:100%;outline-style:none;text-decoration:non=
+e;width:18px!important;height:20px!important;font-size:10px;"
+                            alt=3D"iOS" width=3D"18" height=3D"20"></a>
+                      </td>
+                      <td style=3D"padding-right:17px;padding-top:0;padding=
+-bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0JSJFgvUBJy-2BrbnNuqLTeV6n-2F9h0Z780R-2F2HrFf7pwjg25b0=
+Dk9pLw3hHldp6kO6BuEd-2B7GaZ7vWxTfwBCbYiyoBOeTqToD6ny4sIhfPbvRrBv55_SDrKeVA2=
+pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSn=
+ZCWOE8XZk3TNtRg-2F30PKc11-2BVYQo81AywvCyvNG38rTeD-2FmElojkYcA-2BCpAjXmeDVZO=
+B2HNZOCUXsE2UfwBfL2PHxtEYIudKOl2-2FhDZf-2BHFnxj8E-2Fu8hAtA547uqxPyK4fuie8-2=
+BYAGEmH624u23wAsqUxYvsQdsFL9oh1lMAhMNBXWQ89fy7s9bON-2BrmGvNsH7SaArDamaQtV6Y=
+jnu590R3eTtdT1k-3D"
+                          rel=3D"noopener" target=3D"_blank"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/android@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:19px!important;width:17px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:19px;font-size:10px;"
+                            alt=3D"Google Play" width=3D"17" height=3D"19">=
+</a>
+                      </td>
+                      <td style=3D"padding-right:8px;padding-top:0;padding-=
+bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0I-2Fj2DnvTED9WZin-2FOt72DOYwloYEaRTCMl3VnuiF6aa14r0_S=
+DrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv=
+8r9mVSnZCWOE8XZnjFLl0-2BQL1FzxMNcDk5nwIXBI-2BzO2pNgMaPyvX1QxT5fZXjMTMIi32jy=
+qNfBIES1GnqW5kxfPUFGVIPtHisJYBjZ-2FHBMfFByG62KGgzurgDKS-2BXVChA6aa8X4014PUj=
+yPQPdWT643dHUIFxah82Cn34-2BppY2dDzDpnQk2kKl5Ae0H-2B4EwTq-2FFZ9aRtwIXhlO9bIk=
+vrSxgSq-2BcKHxfwhf4Q-3D" target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/facebook@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:19px!important;width:11px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:19px;font-size:10px;"
+                            alt=3D"Facebook" width=3D"11" height=3D"19"></a=
+>
+                      </td>
+                      <td style=3D"padding-right:6px;padding-top:0;padding-=
+bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0B8HxcotemcGo5B13h64XGwc9jr2UxwPV146P3uWogU87OgA_SDrKe=
+VA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9m=
+VSnZCWOE8XZpLlomAjNu8RJq8S8bBeYN1xixciZCBaQF-2FRdjSPF9VIMw9-2FI-2BCso6pd-2F=
+Mnvre9VaKD3ZPMupyBfLPFqENrQY8lGysBMuC-2BfS85oWf6Bde8WMpXlqo9oWY-2Bd7xf5WOVo=
+-2BCQAZzv07N-2Fl7-2BUa-2Fk-2BN5r-2F-2Bdu5NgtLuCkndFva61HFl9UScMw0l3yAKbvgO0=
+VTKa62YoEd14FFBAz28oczGgKo-3D" rel=3D"noopener" target=3D"_blank"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/twitter@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:17px!important;width:20px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:17px;font-size:10px;"
+                            alt=3D"Twitter" width=3D"20" height=3D"17"></a>
+                      </td>
+                      <td style=3D"padding-right:16px;padding-top:0;padding=
+-bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0IQrG118pjRCbcH5SDhYnjNy-2BHhFypThgj-2B-2Fnh49N7tK0CIW=
+_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2=
+Fv8r9mVSnZCWOE8XZnjwcdyFK3w8q4gu-2FPYd14tmwZ4tSn2LtC2ZpQkLNmc6JrXeXDIhWj1yW=
+UYfaJe11COVQkjj4IQmY7j7L-2FEZqJU5eXaDMYmuxXYZP6h4du7s5N2aDXloJpbOn2pFi6t4OF=
+G1Xx8jjmfKuhOX88wQLN2gqFMCcmp4TL0jarbuwfY2XQfUMLXZp-2FUTO7ml2g-2BmYh7Zo5o5h=
+-2BoiNytfJpFTXCs-3D" target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/instagram@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:20px!important;width:20px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:20px;font-size:10px;"
+                            alt=3D"Instagram" width=3D"20" height=3D"20"></=
+a>
+                      </td>
+                      <td style=3D"padding-right:5px;padding-top:0;padding-=
+bottom:0;padding-left:0;">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0Dud-2FgB-2FMzCn6GDL2inrJ-2FeEI6FCCqO8AnMecrxkEAZPlL8y=
+_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2=
+Fv8r9mVSnZCWOE8XZlH-2B1TRwi-2FzrnbXtQk-2FPRl1NxCOW3oGb38rv6OpqivAIqHAkoNu5g=
+DE-2BR-2F5d-2BYOR6RUQO6ogYQpEAk6WtVZwkv0ZATVgA-2F0pR6NDLjmpMs8JAuW7p-2B5ogH=
+I2zsqJdnT79v7p2e4YuAPHrHtatQzxLUZ4bBVQcQUIGqxPx7MIqlNIqlt8kjsf-2B3GpmiA-2FR=
+9DOmg1wLe6UHq77u2lxmPVGwXM-3D" rel=3D"noopener" target=3D"_blank"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/twitch@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:21px!important;width:20px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:21px;font-size:10px;"
+                            alt=3D"Twitch" width=3D"20" height=3D"21"></a>
+                      </td>
+                      <td style=3D"">
+                        <a href=3D"https://links.chess.com/ls/click?upn=3DV=
+HHI-2BYyvOYLuq5kvtWwh0Ano9BdBmfk0BJjYmv1KpdwxhdqpP5Si6VwUMzzO-2F8A2wf_L_SDr=
+KeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r=
+9mVSnZCWOE8XZg0IP6-2FlP-2F4YcZF9LqTkWJh8LntYzoEAEgXPZcrlCIDd5Xl0wRsHX1bq3y-=
+2BO35PxTnOWy9YLXrfcKMhiG0pzeJsBweHX-2FmWh9OVSFCI33CCmtWeE7YnY5890Ou-2Fs6n61=
+jjwzjOSeb5jsxgiTXnxJGc-2BlN3-2F8Mi4EVnNT98xWSQzUa5VTEjA5MMs4qHzHxvN5eWVghyQ=
+CZi2qGr7vve-2FFho0-3D" target=3D"_blank" rel=3D"noopener"
+                          style=3D"-webkit-text-size-adjust:100%;-ms-text-s=
+ize-adjust:100%;vertical-align:top;"><img
+                            src=3D"https://betacssjs.chesscomfiles.com/bund=
+les/web/images/email/v5/footer/youtube@2x.png"
+                            style=3D"-ms-interpolation-mode:bicubic;border-=
+width:0;height:16px!important;width:22px!important;line-height:100%;outline=
+-style:none;text-decoration:none;height:16px;font-size:10px;"
+                            alt=3D"YouTube" width=3D"22" height=3D"16"></a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+          </td>
+        </tr>
+        <tr>
+          <td align=3D"center" valign=3D"top" class=3D"footer-text"
+            style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial, 'Helvetica N=
+eue', Helvetica, sans-serif;color:#65625f;font-size:11px;font-weight:normal=
+;font-style:normal;line-height:12px;padding-top:10px;padding-bottom:10px;pa=
+dding-right:0;padding-left:0;">
+
+            Want less email? <a href=3D"https://links.chess.com/ls/click?up=
+n=3DVHHI-2BYyvOYLuq5kvtWwh0Ida1s5pJJFqK8AAppJIYfANkqhlFxxKYAmCe0jz1KdOG-2Fy=
+ZWmhWLx3YQ1N5QMWFUQ-3D-3DvlPm_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKir=
+ETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZqv-2F-2FlVqlTwly3gwdwsMzGEjUI=
+pfStVeR2nYxjdBNSMCAHgdTaHNiBssDhG-2B9y-2FuOmFWZguJEUSnJZDaeCGiNzDtgSQ2TuMT0=
+kEVwv8xHRSCGmevFO2TuN0d-2FM-2BL7qKmAXXjbrf-2BQjBCZZS-2BpGf2-2FaSEDj-2FRnA7i=
+H1mtNzQu8nqRPKfHJayV0N5IIt3ZyPOJjPo-2BmHCXKUNg7UM9iFQ7oT8-3D" style=3D"colo=
+r: #3a729c">Change your e-mail preferences</a>.
+
+            <!--[if !mso]><!--><br class=3D"mobile-only">
+            <!--<![endif]-->
+
+            Stop ALL Chess.com e-mail? <a href=3D"https://links.chess.com/l=
+s/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0Lj2Xj4j6HCEeS29RhJd8AXa1-2F0uDwVVaVme6=
+XmMUBoePXW5-2Ba18bQJCYmtzHn74TMB6Bi2OlLMnAOaknmPUGVU-3DccPo_SDrKeVA2pts3JIk=
+QfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8X=
+ZiZqNmfO3mLxAw2x3xIElardDVKW5V-2F3upKl2LVb1cPH5jsvDm8J92zaMMWFoiw0HEohmVttu=
+w7t7fHaNPjvDaeoLnY4PiGrPieqV9I-2BTVDxM0RpdtqZv569EYMTiP-2BuZawW1GSzSwOn1Sm1=
+RBAIb8VkaHY2TNIb3GI0-2F4Tbgs0c5OuKskjfd0J5hzRzfbyR7OVUlq7d8kk27BX7DG-2Fz1nA=
+-3D" style=3D"color: #3a729c">Unsubscribe</a>.
+            <br><br>
+
+            Add alert@&zwnj;chess.&zwnj;com to your address book so you don=
+'t <!--[if !mso]><!--><br class=3D"mobile-only"><!--<![endif]--> miss any e=
+mail from Chess.com.
+
+            <br><br>
+            Please do not reply to this email.
+
+            <!--[if !mso]><!--><br class=3D"max-400">
+            <!--<![endif]-->
+
+            Need
+            help? Visit Chess.com <a href=3D"https://links.chess.com/ls/cli=
+ck?upn=3D-2Fj6rp56rYpMUW3uwwA85mmD8LvzBWSveXhNYwVR-2Fh8Rl5EWtOaO9Ak3-2BigdK=
+u8Udd2iZ_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASzayBxvKirETyikcf4sEwesv0hWn-2B=
+vWJBm6-2Fv8r9mVSnZCWOE8XZuLP0kStq0H0MvX2ReBiUvA-2FtYF8ddP06myc-2BAvuY1j57GB=
+30na679wCBYXtsYUveO5-2Bnxq7wPImbKx4BFGKZ0FxM5aitzOXJD5TelFQjGapQWpuA8luy5Qh=
+Rl82mz2sITvNrmOPpAupGmYv6yc-2Bcy4n0RpqnoNBMdqZxMZDcOF81rVq3mWh6xkp-2BCQPWer=
+URCi5ULmjyv2FYQGSmLhfvsg-3D" style=3D"color: #3a729c">Customer Support</a>.=
+            <br>
+            This
+            email was sent to: patriogabrielpatdu@gmail.com - <a href=3D"ht=
+tps://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYLuq5kvtWwh0EsKzks2qyRRWiAi=
+zLs1qas0U-2BrVzcMnO2f-2B6eCTJtKfKRzw_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQASza=
+yBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZh71yaWW3EUu30KfAHgDNoY=
+OUomksPguc0Tks6V4r0Jcm7Gw2qnHeJjz3UOxiYNLmo9NbBzPqnw9ndbirZankHEs64lsvpFlkL=
+QLlSTZcvqSF8M2V5xiTmos1VtRsR8Vhxfb8Bb7BvpzegZDNe0fGoPs-2FuawIQDwmqKmMvfmi3W=
+BcrFFC7-2FRJXm0vSssNlLglKrYBbBjwtTI9Y-2BYrwZy86A-3D" style=3D"color: #3a729=
+c">Privacy Policy</a>            <br>
+            <br>
+            <a href=3D"https://links.chess.com/ls/click?upn=3DVHHI-2BYyvOYL=
+uq5kvtWwh0LmskPSRvZUBPqn8DHAIcUg-3Dbfn1_SDrKeVA2pts3JIkQfztFyDwj3CYmY-2BDQA=
+SzayBxvKirETyikcf4sEwesv0hWn-2BvWJBm6-2Fv8r9mVSnZCWOE8XZhnk82q9O8JbzePewt6M=
+Y4uLRsdO-2Byvcr2TbwxeEjpobrdKYAYPP7-2FZ8lu4VIEWvkTgXY1Ur-2BLhV2BcvQlz4ip79P=
+QcUxTNBKm7-2FNGnhtJ39EN72YeS3Kn1TK0ceCvf50hpXKIPTYIdSvT8FHVxHNVPfX1T5-2BJIA=
+oR-2FNO8xOPNJT-2FOSKUtvWSjFS76KY976hurGA4u9IimeMiFkL95ssBz8-3D" class=3D"dm=
+-footer-chesscom" style=3D"color: #65625f; text-decoration: none">Chess.com=
+</a> | PO Box 60400. Palo Alto, CA 94306
+            <br>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+   =20
+  </center>
+<img src=3D"https://links.chess.com/wf/open?upn=3D1utt00i9qzN5trNJrCkyHSOBf=
+7i4EhQ-2FLT63tuhyXUnk76dhXRTT7S-2BTgPyKOSgZZynv3k0k1p8pdtbPM6MzY6jBNfvgdMQ6=
+SCxgaR8gU5dYvPLe78kg48MZsqWgP4O-2BNr5R-2FwSbpPicG8hPpODPBEGMdqBfzifku6h2vGU=
+1TbaS83s62bFrNYE0AgcjYN-2BaoAPBz1CSkrvDu3IPLcMsTXewemSGSV8eV8kOIw9cCS0AO7ZM=
+1F8b1Ik8Yu3Rut-2FWoaMh16a57uYVr0xrdMdPTuGXwuEzDUNRutZtAnYbDO0-3D" alt=3D"" =
+width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:=
+1px !important;border-width:0 !important;margin-top:0 !important;margin-bot=
+tom:0 !important;margin-right:0 !important;margin-left:0 !important;padding=
+-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;pa=
+dding-left:0 !important;"/></body>
+
+</html>
+
+
+--_=_swift_1625495427_b9fceae7e6d97028825f75af15fa9b0a_=_--
+

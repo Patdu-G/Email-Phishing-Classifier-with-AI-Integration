@@ -1,0 +1,964 @@
+X-GM-THRID: 1841536474918750840
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:b78c:0:b0:23e:5997:2fa8 with SMTP id b12csp596525eiz;
+        Tue, 26 Aug 2025 09:33:59 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IGZ/77/PL9lZdCT7KzNVuTtqNk4mujtn7wsvxdJufbypjuwtL9d2oX9wlm4H4LH0FpgWMj0
+X-Received: by 2002:a05:6e02:b42:b0:3ef:38e2:14e7 with SMTP id
+ e9e14a558f8ab-3ef38e21688mr21361445ab.24.1756226038822;
+        Tue, 26 Aug 2025 09:33:58 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1756226038; cv=none;
+        d=google.com; s=arc-20240605;
+        b=erQrfH9oZ2NyZfJIwzQXK5p5J4NF5wcmW7BZSslpsUzw8oL9VNyjW4zJ1kZJmPcHAJ
+         cPwA9CngwBxf5SM4MJlNigFpVdrSk+5O28b8eBrzJimRqSOwOR4rdgOeEdK2424Zv0cN
+         1p8fef6irPf2qXlI/Irl9AHBLb2VBzE1z8z9Ba3nDZ6iQ4zLcUSY4EHbohANWyBjWL8x
+         ZnMCCw/5Ime6UzXJ++NPT1Rh3JaMZElZJXPQkcGw5B6azhMcfFo1aa12xSJq3zNJfHHM
+         6ZTdgsfgG7/PF3Y34KfvVehNQ4Z4eKJj/74VE0h3PDd0xWRaoGkw2jc3Wxwr/39kpEyu
+         /C3g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=list-unsubscribe-post:list-unsubscribe:to:subject:message-id
+         :mime-version:from:date:content-transfer-encoding:dkim-signature
+         :dkim-signature;
+        bh=/vP/Q2pTQL080DrYMnSiF8y9+g8bJL72d1Bg0h2ob5Q=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=R6ue3qWbdGBHfbClNzjQ1bX0QpesGRY46snZNvq+J9c2ZMTdG4nlnte2YLq9g3MKks
+         SuWmNthC/j/JR1SOcoEjRPHSeGDtq9/gA4+Qy2XHEg+yQDS8pHam+axwHcKtSTaNzbai
+         sek7mWPuvd54QqDWTwj6WBv6BAGIp23tNCM5mXRxIUn/zWeRyYf5VK+XAvGeOo6weVlA
+         Q0kSUHK3l/q+/HhHBQVQLjq7ApS6RdxHM4Dg3BXZq5URYjIffeB4ag8xkC3LiuhT8nG+
+         tUQqjhwBmbzxYMRLozX4Rr11xM8SLB3ZSulxWJVeB+dEXUftdW8bJo7hOaCcYrdNOQgF
+         u9lg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b=lSVxKGQn;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=uzG5O42T;
+       spf=pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 167.89.61.109 as permitted sender)
+ smtp.mailfrom="bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+Return-Path: 
+ <bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com>
+Received: from o32.ptr2354.openai.com (o32.ptr2354.openai.com.
+ [167.89.61.109])
+        by mx.google.com with ESMTPS id
+ e9e14a558f8ab-3ea4ea2e5b2si144858415ab.150.2025.08.26.09.33.58
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 26 Aug 2025 09:33:58 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 167.89.61.109 as permitted sender) client-ip=167.89.61.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b=lSVxKGQn;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=uzG5O42T;
+       spf=pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 167.89.61.109 as permitted sender)
+ smtp.mailfrom="bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.openai.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=s1; bh=/vP/Q2pTQL080DrYMnSiF8y9+g8bJL72d1Bg0h2ob5Q=;
+	b=lSVxKGQnzd4z8vG5YwQ+Tt8YnxkXWP89uh4yly90p5hxueJ6WhdoJFGkCtPoqAh1XFcq
+	Gmr5vYNQimjLMAfzzQg+vNG5dqgbElm7ZuRe3qrBydCUOZj3nvBv/YQXEBlCBw47R3pX6u
+	j5KATA+NuRUMLM/kq/9UxNYwlddgN//EwQP7nzu9ZQXrhzJ8bS8kJJxF8NqvC92JHfyFLC
+	Jigbn7RzjBIbMLNJmJhfejm486SA4gGV5lJh3Rcku6H66ShP5njCZezJp1DoTuvVDfWT7j
+	ZFJfSjYsI5KwuDdZh4t1XqdZmtWvHJMrQ4nCBjMwky14fXF0WvRjhb9/yOe1RxPQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=smtpapi; bh=/vP/Q2pTQL080DrYMnSiF8y9+g8bJL72d1Bg0h2ob5Q=;
+	b=uzG5O42TrPc9HR0LJoadBRiad35ghMEss781kgJ9eT/+aKCNllOt5W6HHT4oOQvYHlPp
+	CXiqIJwcABMhJObPrlnRGEiy53bd0FGNldno08JKPPcDwQgamUEqVPitr836QMBNsEXXWi
+	OcAqhIO6mqWQdXRLw76ww/fwNq8G22oTw=
+Received: by recvd-85cd49b596-79jpt with SMTP id
+ recvd-85cd49b596-79jpt-1-68ADE1F5-4A
+	2025-08-26 16:33:57.665777853 +0000 UTC m=+7170553.548940835
+Received: from MjAyMTY3MDY (unknown)
+	by geopod-ismtpd-3 (SG) with HTTP
+	id v2aUf7p7TRqavgvZJ66zHQ
+	Tue, 26 Aug 2025 16:33:57.630 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 26 Aug 2025 16:33:57 +0000 (UTC)
+From: ChatGPT <noreply@email.openai.com>
+Mime-Version: 1.0
+Message-ID: <v2aUf7p7TRqavgvZJ66zHQ@geopod-ismtpd-3>
+Subject: Try GPT-5 for free
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E2cVJOEP6rValQfJKwZO1ZPPp2yIilXnDhherIW4DlfmwSM5DUph+QZwre?=
+ =?us-ascii?Q?qLMgSI4FMsfC5+p8Cia8sKY9FC7+vbbamqHkdvc?=
+ =?us-ascii?Q?5hdKVNyHlBv3OYZW2BlYwMaGh5gy700COb0FCXP?=
+ =?us-ascii?Q?DCJ48qjJatPzogV3uz8VogIMvzSAMRGw3t3Orro?=
+ =?us-ascii?Q?Vcu4AJBI64wiLe6EKsXMkA5FdwIqREVcq0ZXeFA?=
+ =?us-ascii?Q?XgZR62NSg5l+3a=2FFgH8vbaU4pXhLpOsFlpHKLm8?= =?us-ascii?Q?O2X2?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCfzdk8Q6weRGnug?=
+ =?us-ascii?Q?VdQiDX=2FdIdnlyb=2FZUvOFOucIDZhhKkaCfSgaG6t?=
+ =?us-ascii?Q?WSIMw0zxVF6eztKBva5mhrvyIAvbcU2edtM6R=2Fy?=
+ =?us-ascii?Q?trb3CtDEdLnoSSzHurctb2=2FLRd3xLJtmm8mRl2y?=
+ =?us-ascii?Q?wwM=2FqVrk8kxyDMWUHE2TW=2F47yuNQ3jzq+C8yVlC?=
+ =?us-ascii?Q?wzQb99StSkp+vqDXMcJfFdX7syEpg6g7BLbSaTD?=
+ =?us-ascii?Q?yVgywBAVQL+85twsIN2Lc8kbQ816Qop0f3LHsFh?=
+ =?us-ascii?Q?rzahWUaM9T9o3wk+XDGwuzwzGiyRhbb8TZy4+dH?=
+ =?us-ascii?Q?7Z6DMjpPFH+A5+xLqEwsEY=2Fo7n5=2FOxHNf8oOC6F?=
+ =?us-ascii?Q?7pByLc4T0C1E3hIvU8=2FLzqOr6pu7hirHdJglQ=3D=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.bVuJR+6WQkYgHBZFem2ybw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fu20216706=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2EWG03?=
+ =?us-ascii?Q?Xv4yQWv26pn8oTu2WyzixVD6DzzEYD3ENvhDdNu?=
+ =?us-ascii?Q?5tNs4L5UZxIrqlr4R2L86zXynFyiHlOD8i8JGMZ?=
+ =?us-ascii?Q?MBds5mclihegfat6VeSYC9ctIjN0mSultndnZ1D?=
+ =?us-ascii?Q?mD3uioA26O-F9A9rnyHcKtygl04Rt2G=5Fll79fh8?=
+ =?us-ascii?Q?qyoAR9JO6flF8RjFgcack9qFLI6XA-7w5OKLGV-?=
+ =?us-ascii?Q?P7TtcYg9c=5FMzEjktkuNEU7D8c9oXJxnrM3ZoIdL?=
+ =?us-ascii?Q?7iI7NcepbXmXyUVyjFXNVQ6U5gQSYD20thBFGsJ?=
+ =?us-ascii?Q?8W5e5xmXMlu=5FnaCsdvaLyrcgYkcREGHpnwnMZts?=
+ =?us-ascii?Q?aGcFM1VMEgCxwKrrYNgcMgm7st4Xou0OatmlMvb?=
+ =?us-ascii?Q?kS8zvLqk39mFVqh6NCid4zyfbUTuUxTfotqDo5g?=
+ =?us-ascii?Q?RuGZ0InjwW=5FqGb=5Fg9dkmLG=5F-N6kzL4HulYQd0mO?=
+ =?us-ascii?Q?OO1AuntNULPSFrt83kV=5FPNEDsRDbXhJ4ImAnCJl?=
+ =?us-ascii?Q?aNtS5XDiC0Gakn0z5uAjWGT7Q-jMlqfQwx8AMO4?=
+ =?us-ascii?Q?Iilv84IwvjIA6Vq7e2DMQV04EesN3z6VmyX9SxG?=
+ =?us-ascii?Q?13sD9eba7NUTQjwThkRnmEXCkp85o9oH81oxzd8?=
+ =?us-ascii?Q?hKr2-ZC3uQ6drpuj-DhjzcZp3JmMglcggEh9734?=
+ =?us-ascii?Q?JUbcsOHsvIAJGTLc7LzSnLMrSxNpxLfpwMe3kjo?=
+ =?us-ascii?Q?tI6WAYlpigh8mzzhTP7zkJ4O4IGgl7TwQSdCD6g?=
+ =?us-ascii?Q?GsAM0DSCzBUKUkhEEOqqWgkOrphbu5P1wirxmqV?=
+ =?us-ascii?Q?eshiR-ZAJ99rKaQDgWxYpTOSAKk=5FpDqYIkvNb6k?=
+ =?us-ascii?Q?xBmCWGNJnksdxG7u0Xs=5F2YEWw1V3YIbrCbt=5F07c?=
+ =?us-ascii?Q?ZDqH7JcrffwMG0cG-q8XMFAP7-bzhrc9YCP0rM5?=
+ =?us-ascii?Q?NSCKOUzL1=5FaqlIRgfdzinnL0bE1rSvR7Cga8FKx?=
+ =?us-ascii?Q?8aE88qPDDiDLk1bUdq7piFRnvxYH9Rv4VMXMl3f?=
+ =?us-ascii?Q?bKh1Il13f96s1m6mkAZCAVs7gUb3fzO83EzX7bN?=
+ =?us-ascii?Q?yVT0uuJxSqE2f1revFlYIjEs6gxokqbz2DJ2nnv?=
+ =?us-ascii?Q?1hdCNaedHLb-ZCoVPMyIn83dQiR-e-X0awQzHE3?=
+ =?us-ascii?Q?t30zYcG02Mv=5FS-AK9P4DMmxtGbglFTmeyQbw2uy?=
+ =?us-ascii?Q?mumFPee2iTIIpcGUPgKumFnuJh7wHMpD9sByIY4?=
+ =?us-ascii?Q?K0bt947cNUR52DFFoyrTI3jcTznxWKm=5FZZcBYtr?=
+ =?us-ascii?Q?7FXSRRvf1vZF5KH7ir9HX22zEpMkGMhIQCxPTX9?=
+ =?us-ascii?Q?Ru4n3krOEHVHZFUuekSrA39tg=3E=2C=3Cmailto=3Aunsu?=
+ =?us-ascii?Q?bscribe=40em6623=2Eemail=2Eopenai=2Ecom=3Fsubject?=
+ =?us-ascii?Q?=3D20216706=2Eo0MvPPQC3u8MRXr2ORAefuq5LbWve?=
+ =?us-ascii?Q?WcCVxH5UmBEiXRoMDAwdTAwMJiNxCwMSTV7V8Nv?=
+ =?us-ascii?Q?36CtiZS=5FU9xh6wesDOZHRthNfs0sNoeN8yzxViz?=
+ =?us-ascii?Q?8zEBL935C2n=5FcjTMIcIwjMxLrc3OGDAJdZQ9kBk?=
+ =?us-ascii?Q?iFpX1mga-ktZQuWSQrYY7RTULXeI-BEyKOVQ=3D=3D=2E?=
+ =?us-ascii?Q?eQyA6tac-PZpABm9MNB5B7Y=5FBBVjn6xHVSkDcGk?=
+ =?us-ascii?Q?xGTloMDAwdTAwMHTQ2MQrpilqOHuHEn3x30gG9-?=
+ =?us-ascii?Q?3oufDxE7JGgTB3ySPLBij0mDch-RnksewGcEh8Z?=
+ =?us-ascii?Q?h9E99oSClrwg0Bum9nfTHyNACu4V9-iRMkSmn56?=
+ =?us-ascii?Q?eaYbosO81uBR28KYlCvqlX4Gpoe1k1OVmi73MGc?=
+ =?us-ascii?Q?O1ZVQMGt=5F0kuHbBaVSmS1plTy9J=5FQ3ctM9bwXBW?=
+ =?us-ascii?Q?uGbVwyAnV9ONWYe6GLWiIM2xTAL8I3oXi3LJ1zZ?=
+ =?us-ascii?Q?YmkdAA5n4jiMXDr7ZBSTKMs7LItFZ8Vn1LQiQjL?=
+ =?us-ascii?Q?d3C-GrLwyx6WefopdadvpGR6wN0X4uvvvPsMl3l?=
+ =?us-ascii?Q?OAZ8xgcVaryY2ujXa9jB8SfW-os0oGacEQNwKyB?=
+ =?us-ascii?Q?Ulmzg6b3OeKpvZZ6kxCl7DjZDT7czN-zDiaVgJC?=
+ =?us-ascii?Q?5ySMa9H=5FCz7WLwKYU2owwQQGbfzU7yVWg1Y2vxl?=
+ =?us-ascii?Q?PIn8wvX4Li8OJEfK4rqNHJ6yWEjhZn4uCsCM56K?=
+ =?us-ascii?Q?e4wMvz6pOd4iuEZZSGe-bnifrfrpgyaLNOLlMFj?=
+ =?us-ascii?Q?32S1mWJF2uaSisp=5Fs-SDAGb6eCBwFqdiyc-Ll6Z?=
+ =?us-ascii?Q?0AkP4mXsiRvw7rzph5Udtkc=5Fs=5FUAvi5Bu9dAbeA?=
+ =?us-ascii?Q?doSCoQ=3D=3D=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+<!DOCTYPE html>
+<html dir=3D"ltr">
+<head>
+  <meta charset=3D"utf-8">
+  <meta http-equiv=3D"x-ua-compatible" content=3D"ie=3Dedge">
+  <title></title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <style type=3D"text/css">
+  /**
+   * Google webfonts. Recommended to include the .woff version for cross-cl=
+ient compatibility.
+   */
+  @media screen {
+    /* OpenAI Sans font family */
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 500;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Medium.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 600;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Semibold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 700;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Bold.woff2") format("woff2");
+    }
+  }
+
+  /**
+   * Avoid browser level font resizing.
+   * 1. Windows Mobile
+   * 2. iOS / OSX
+   */
+  body,
+  table,
+  td,
+  a {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: 'OpenAI Sans', Helvetica, Arial, sans-serif;
+  }
+
+  /**
+   * Remove extra space added to tables and cells in Outlook.
+   */
+  table,
+  td {
+    mso-table-rspace: 0pt;
+    mso-table-lspace: 0pt;
+    vertical-align: top; /* Align content to the top of table cells */
+  }
+
+  /**
+   * Better fluid images in Internet Explorer.
+   */
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /**
+   * Remove blue links for iOS devices.
+   */
+  a[x-apple-data-detectors] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /**
+   * Fix centering issues in Android 4.4.
+   */
+  div[style*=3D"margin: 16px 0;"] {
+    margin: 0 !important;
+  }
+
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Collapse table borders to avoid space between cells.
+   */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  a {
+    color: #898A8D;
+  }
+
+  img {
+    height: auto;
+    line-height: 100%;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+  }
+
+  h1 {
+      font-size: 34px;
+      line-height: 41px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      margin: 0;
+  }
+  h2 {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      margin: 0;
+  }
+  h3 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: -0.2px;
+      margin: 0;
+  }
+  p {
+      font-size: 16px;
+      line-height: 130%;
+      font-weight: 500;
+      margin: 0;
+  }
+  p + p {
+      margin-top: 16px;
+  }
+  /* Button styling */
+  a.button {
+      background-color: #000000 !important; /* default black */
+      border-radius: 24px !important; /* make button curvy */
+      padding: 11.5px 24px 11.5px !important; /* bigger size */
+      font-size: 16px !important; /* revert text size */
+      line-height: 24px !important;
+  }
+
+  a.button:active {
+      background-color: #414141 !important; /* dark gray on click */
+      border-radius: 36px !important;
+  }
+  /* Added responsive column layout */
+  .column:last-child {
+      margin-top: 2em;
+  }
+
+  @media screen and (min-width:480px) {
+      .column {
+          width: 50% !important;
+          display: table-cell !important;
+          padding: .5em !important;
+          vertical-align: top !important;
+      }
+
+      .column:last-child {
+          margin-top: 0 !important;
+      }
+  }
+  /* Badges: stacked by default */
+  .badges .badge {
+      display: block !important;
+      width: 100% !important;
+      margin: 10px 0 0px 0 !important;
+  }
+
+  /* Desktop: 2 columns & bigger badges */
+  @media screen and (min-width:480px) {
+      .badges {
+          width: 300px !important; /* Increase from 300px */
+          max-width: 100% !important;
+          display: table !important;
+      }
+      .badges .badge {
+          display: table-cell !important;
+          width: 50% !important;
+          margin: 0 !important;
+          vertical-align: bottom !important;
+          padding: 0px 6px !important;
+      }
+      .badges .badge img {
+          width: 400px !important; /* bigger on desktop */
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+      }
+  }
+
+  /* Desktop: larger typography */
+  @media screen and (min-width:480px) {
+      h1 {
+          font-size: 34px !important;
+          line-height: 41px !important;
+          letter-spacing: 0.4px;
+          font-weight: 400 !important;
+      }
+      h2 {
+          font-size: 16px !important;
+          font-weight: 400 !important;
+          letter-spacing: 0.4px !important;
+      }
+      h3 {
+          font-size: 16px !important;
+          font-weight: 400 !important;
+          line-height: 150% !important;
+          letter-spacing: -0.2px !important;
+      }
+      /* Header cell: increase side padding on desktop only */
+      td.header-td {
+          padding-left: 57px !important;
+          padding-right: 57px !important;
+      }
+      /* Body content cells: increase side padding on desktop */
+      td.content-td {
+          padding-left: 60px !important;
+          padding-right: 60px !important;
+      }
+      td.footer-td {
+          padding-left: 56px !important;
+          padding-right: 56px !important;
+      }
+      p {
+          font-size: 16px !important;
+          line-height: 130% !important;
+          font-weight: 400;
+      }
+      td {
+          font-size: 10px !important;
+          line-height: 16px !important;
+          font-weight: 400;
+      }
+      a.button {
+          font-size: 16px !important;
+          line-height: 24px !important;
+      }
+      /* Desktop card size */
+      img.prompt-card {
+          width: 400px !important; /* desktop width */
+          border-radius: 24px !important; /* ensure shadow matches rounded =
+corners */
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 4px !important;
+      }
+  }
+  /* Mobile stacking helper for columns */
+  @media screen and (max-width:480px) {
+      /* Two-column layout on mobile */
+      .stack-column {
+          width: 50% !important;
+          display: inline-block !important;
+          vertical-align: top !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+      }
+
+      /* Ensure idea tables inside remain full-width inside each column */
+      .stack-column table {
+          width: 100% !important;
+          display: block !important;
+          max-width: 100% !important;
+      }
+
+      /* Adjust card size for mobile */
+      img.prompt-card {
+          width: 100% !important; /* responsive width */
+          max-width: 377px !important; /* mobile max-width */
+          border-radius: 16px !important; /* ensure shadow matches rounded =
+corners */
+      }
+      /* Ensure footer badges bottom-align with copyright on mobile */
+      td.header-td {
+          padding-left: 21px !important;
+          padding-right: 21px !important;
+      }
+      td.footer-td {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 4px !important;
+      }
+  }
+  /* Consistent horizontal padding and appearance for images */
+  img.prompt-card {
+      /* Center horizontally */
+      margin-left: auto !important;
+      margin-right: auto !important;
+      /* dimensions set in media queries */
+  }
+
+  /* Shadow should wrap the images themselves */
+  img.prompt-card {
+      /* subtle card shadow */
+      box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05) !important;
+
+  }
+
+  /* RTL mirroring */
+  [dir=3D"rtl"] body,
+  [dir=3D"rtl"] table,
+  [dir=3D"rtl"] td,
+  [dir=3D"rtl"] a {
+      direction: rtl !important;
+  }
+  [dir=3D"rtl"] h1,
+  [dir=3D"rtl"] h2,
+  [dir=3D"rtl"] h3,
+  [dir=3D"rtl"] p {
+      text-align: right !important;
+  }
+  [dir=3D"rtl"] ul {
+      margin: 0 18px 0 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+  [dir=3D"rtl"] td[align=3D"left"] {
+      text-align: right !important;
+  }
+
+  /* Card text max-width adjustments */
+  p.card-text {
+      width: 290px !important;
+      max-width: 290px !important;
+  }
+  /* Divider width */
+  table.divider {
+      max-width: 410px !important;
+      margin: 6px auto 6px !important; /* further reduced bottom margin */
+  }
+  @media screen and (max-width:480px) {
+      table.divider {
+          max-width: 350px !important;
+          margin: 8px auto 16px !important; /* further reduced bottom margi=
+n */
+      }
+  }
+  @media screen and (max-width:480px) {
+      p.card-text {
+          width: auto !important; /* allow fluid width on small screens */
+          max-width: 280px !important; /* still cap for consistency */
+          margin-left: auto !important;
+          margin-right: auto !important;
+      }
+  }
+  /* Extra spacing between card text and button on desktop */
+  @media screen and (min-width:480px) {
+      td.card-text-cell {
+          padding-right:48px !important; /* increased from 12px on desktop =
+*/
+      }
+  }
+  </style>
+
+</head>
+<body dir=3D"ltr" style=3D"background-color: #FFFFFF;">
+
+  <div class=3D"preheader" style=3D"display: none; max-width: 0; max-height=
+: 600; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opa=
+city: 0;">
+  ChatGPT is smarter and faster&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj=
+;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&z=
+wnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+
+  <!-- start body -->
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" di=
+r=3D"ltr">
+    <!-- start body block -->
+    <tr>
+      <td align=3D"center">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"360">
+        <tr>
+        <td align=3D"center" valign=3D"top" width=3D"360">
+        <![endif]-->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" style=3D"width: 100%; max-width: 600px; background-color:#fff;">
+            <!-- header image -->
+            <tr>
+                <td valign=3D"top" class=3D"header-td" style=3D"padding: 42=
+px 24px 42px 24px;">
+                    <table align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"min-width:100%; background-color:=
+#ffffff;">
+                        <tbody><tr>
+                            <td valign=3D"top" align=3D"left" style=3D"padd=
+ing-top: 0; padding-bottom: 0;">
+                                <a href=3D"http://url3243.email.openai.com/=
+ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMna-2FvdU3LpcC4-2FNA3wSLoyKmfwc7s=
+VlrwBiXppNE-2ByUJPrOQT2T0urp8-2FmN-2BvK8dtnsjqthAAOhhYN9hygl7BbxZqlyFG-2B2K=
+vQ7FvQWmFgxCbwrsF1HoLGmKp8S3lHoh3JXwj6jDViy-2B5EZrHTaWt6-2BKmLtMt6EjVzz1WNY=
+sgocfXEDkIoAIpV-2FYikPLqVTA67ntIP3Jx1QrYeXBhFvxajQ-3DJ-tV_ifpdZN5Unwyz9jUhB=
+w0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduMGTCI=
+jJ-2BO6d3wqTKk4QyJGezEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06A4O1O0yUQE0iRIaH=
+SPVd-2BAzmP8lAnmqrtiCcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW5rHrqMCHPQGJ22sL=
+8Lr3Arlihapm7-2F6kf4QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftDNqUnbEk8-2FiNQHN=
+vY-2BReFKfbuyXD6NJyjcLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2BTE-2BnuX22HmCPv3=
+eWbf3090ciXuedzocS810B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vYPHhUxU7Fs45krLTG=
+hhaks4-2FRAY0QXC5xUteVVzEgnrmwHAkweHiwAitDK9UY6okgMu50O36BIZQtXmPhyh87DXHYq=
+PM4WZg9d7x3-2FhHf-2Be9j-2FUZf-2Fjd5tUeCdlxPeDS0MqcHbJR-2BNk5wqyei6YdhF6WGLB=
+gxpY2G-2FOk7-2BASJ9S7TR4-2Byoi7q434ImqIim-2BwBWlHU-3D" target=3D"_blank" st=
+yle=3D"display:inline-block;">
+                                  <img alt=3D"" src=3D"http://cdn.mcauto-im=
+ages-production.sendgrid.net/d4ef4a73d51fe844/b7626bee-28ca-4e2f-b25b-7d81a=
+f34e7a1/206x51.png" width=3D"103" style=3D"display:block; margin:0; width:1=
+03px; height:auto; max-width:100%; border:0; background-color:#ffffff;">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        <!-- Heading -->
+        <tr>
+            <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-td" sty=
+le=3D"padding: 12px 24px 0px 24px;">
+                <h1 style=3D"text-align: left;">
+                    GPT-5 is here
+                </h1>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-td" sty=
+le=3D"padding: 12px 24px 0px 24px;">
+                <h2 style=3D"margin: 0 auto; text-align: left;">
+                    Now powering ChatGPT
+                </h2>
+            </td>
+        </tr>
+                <tr>
+            <td align=3D"center" bgcolor=3D"#ffffff">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">
+                <tr>
+                  <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-t=
+d" style=3D"padding: 24px 24px 0px 24px;">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+>
+                      <tr>
+                        <td align=3D"center" bgcolor=3D"#000000" style=3D"b=
+order-radius: 36px; background-color: #ffffff;">
+                          <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-=
+microsoft-com:vml" href=3D"https://chat.openai.com/?mode=3Ddefault" style=
+=3D"height:40px;v-text-anchor:middle;width:160px;" arcsize=3D"50%" stroke=
+=3D"f" fillcolor=3D"#000000"><w:anchorlock/><center style=3D"color:#ffffff;=
+font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;lette=
+r-spacing:-0.32px;">Try it for free</center></v:roundrect><![endif]-->
+                          <!--[if !mso]><!-- --><a href=3D"http://url3243.e=
+mail.openai.com/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMna-2FvdU3LpcC4-2=
+FNA3wSLoyKmfwc7sVlrwBiXppNE-2ByUJPrOQT2T0urp8-2FmN-2BvK8dtnsjqthAAOhhYN9hyg=
+l7BbxZqlyFG-2B2KvQ7FvQWmFgxCbwrsF1HoLGmKp8S3lHoh3JXwj6jDViy-2B5EZrHTaWt6-2B=
+KmLtMt6EjVzz1WNYsgocfXEDkIoAIpV-2FYikPLqVTA67ntIP3Jx1QrYeXBhFvxajQ-3DD3hE_i=
+fpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5=
+vYfyNfenhduMGTCIjJ-2BO6d3wqTKk4QyJGezEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06=
+A4O1O0yUQE0iRIaHSPVd-2BAzmP8lAnmqrtiCcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW=
+5rHrqMCHPQGJ22sL8Lr3Arlihapm7-2F6kf4QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftD=
+NqUnbEk8-2FiNQHNvY-2BReFKfbuyXD6NJyjcLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2B=
+TE-2BnuX22HmCPv3eWbf3090ciXuedzocS810B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vY=
+PHhUxU7Fs45krLTGhhaks4-2FRAf8TqTQjVM7KZ65hZmlC3ZOxzJJhTReodIkz43gQey6Xz88tg=
+NNaDU6V8kXOK6v1-2BuNXnVhzmtUlr-2BGM5xXozax9kHLnOYeOYpxKioW2A1f1Ko5yaBmQL85R=
+ofxR-2FBbCXM0wShVM1tyLgNu9IzExbfqdeKqb-2FzL6lwH4NTsuG098-3D" target=3D"_bla=
+nk" class=3D"button" style=3D"display:inline-block;padding:11px 24px 11px 2=
+4px;font-weight:400;font-size:16px;line-height:24px;letter-spacing:-0.32px;=
+color:#ffffff;text-decoration:none;border-radius:36px;background-color:#000=
+000;  border: 1px solid #ededed; border-style: solid; border-color: #ededed=
+; overflow: hidden;">Try it for free</a><!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Body -->
+                <tr>
+            <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-td" sty=
+le=3D"padding: 24px 24px 24px 24px;">
+                <h3 style=3D"margin: 0 auto; text-align: left;">
+                    Our smartest, fastest, and most useful model yet.
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-td" sty=
+le=3D"padding: 0px 24px 0px 24px;">
+                <ul dir=3D"ltr" style=3D"margin: 0 0 0 18px; padding: 0; te=
+xt-align: left;">
+                    <li><h3 style=3D"text-align: left;">Better everyday cha=
+ts at school, work, and beyond</h3></li>
+                    <li><h3 style=3D"text-align: left;">Reasoning built in =
+for the best answers</h3></li>
+                    <li><h3 style=3D"text-align: left;">Improved writing wi=
+th clear, compelling text</h3></li>
+                    <li><h3 style=3D"text-align: left;">Stronger coding fro=
+m quick to complex builds</h3></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-td" sty=
+le=3D"padding: 24px 24px 8px 24px;">
+                <h3 style=3D"margin: 0 auto; text-align: left;">
+                   =20
+                   =20
+                    Expert intelligence for everyone =E2=80=93 learn more <=
+a href=3D"http://url3243.email.openai.com/ls/click?upn=3Du001.IQLfsj4kk-2BK=
+7JhymNusRMlloU6kUsH27ZkoOKu9du11L3buDk8-2FzlpZWUAY6jjn-2FO5LItH7D65Oyk8qBd3=
+d1H1IhJfY-2FHF-2Bv2xkRn3iT8iYnpuTjPeuaXdvhX9SRfIn82ohBgtWhnSKgPlSNmVudjrDwh=
+SryxBhH6Lk32USG2-2BaixGW5Gjtf7oun7PYOLPXhFXFmCBVrYmGidmvf1PI0Dw-3D-3DK10t_i=
+fpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5=
+vYfyNfenhduMGTCIjJ-2BO6d3wqTKk4QyJGezEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06=
+A4O1O0yUQE0iRIaHSPVd-2BAzmP8lAnmqrtiCcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW=
+5rHrqMCHPQGJ22sL8Lr3Arlihapm7-2F6kf4QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftD=
+NqUnbEk8-2FiNQHNvY-2BReFKfbuyXD6NJyjcLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2B=
+TE-2BnuX22HmCPv3eWbf3090ciXuedzocS810B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vY=
+PHhUxU7Fs45krLTGhhaks4-2FRAmnqykrcbk8NbsF2TY-2FtehZuqL4H0sutNpvWWVnpeiDBdMS=
+Mzh-2FFtOQ4Hak-2Fflh-2BSWKO4MtFL1fj-2FQClPkDo6eAM3N9F8slbZgnIQ-2FSeOT4-2FD9=
+AwrO5qvahF4PnKvqf-2F9-2FqMMAdMYE-2ByiOuESm7JbAQ-2Fq-2FGhw-2BlYimoNblHafou8-=
+3D" target=3D"_blank" style=3D"color: #898A8D; text-decoration: underline;"=
+>here</a>. We can't wait for you to experience it.
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <td align=3D"left" bgcolor=3D"#ffffff" class=3D"content-td" sty=
+le=3D"padding: 24px 24px 48px 24px;">
+                <h3 style=3D"margin: 0 auto; text-align: left;">
+                    Best,
+                </h3>
+                <h3 style=3D"margin: 0 auto; text-align: left;">
+                    The ChatGPT Team
+                </h3>
+            </td>
+        </tr>
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end body block -->
+
+    <!-- start footer -->
+    <tr>
+      <td align=3D"center" style=3D"padding:20px 0;">
+        <!--[if mso]>
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"600"><tr><td>
+        <![endif]-->
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" style=3D"max-width:600px;">
+          <tr>
+            <td align=3D"center" class=3D"footer-td" style=3D"background-co=
+lor:#ededed; border-radius:12px; padding:30px;">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%">
+                <tr>
+                  <td align=3D"left" style=3D"padding-bottom:14px;">
+                    <a href=3D"http://url3243.email.openai.com/ls/click?upn=
+=3Du001.IQLfsj4kk-2BK7JhymNusRMna-2FvdU3LpcC4-2FNA3wSLoyKmfwc7sVlrwBiXppNE-=
+2ByUJPrOQT2T0urp8-2FmN-2BvK8dtnsjqthAAOhhYN9hygl7BbxZqlyFG-2B2KvQ7FvQWmFgxC=
+bwrsF1HoLGmKp8S3lHoh3JXwj6jDViy-2B5EZrHTaWt6-2BKmLtMt6EjVzz1WNYsgocfXEDkIoA=
+IpV-2FYikPLqVTA67ntIP3Jx1QrYeXBhFvxajQ-3DOCUl_ifpdZN5Unwyz9jUhBw0jKiHiXszPB=
+84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduMGTCIjJ-2BO6d3wqT=
+Kk4QyJGezEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06A4O1O0yUQE0iRIaHSPVd-2BAzmP8=
+lAnmqrtiCcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW5rHrqMCHPQGJ22sL8Lr3Arlihapm=
+7-2F6kf4QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftDNqUnbEk8-2FiNQHNvY-2BReFKfbu=
+yXD6NJyjcLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2BTE-2BnuX22HmCPv3eWbf3090ciXu=
+edzocS810B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vYPHhUxU7Fs45krLTGhhaks4-2FRAV=
+-2BVt47y4VEy9fylRnvLunNMd3g0y1t9Kz-2FdUwQRN1ywpd4vAbETkyrBuMeiF2Eo9rPATLbax=
+kJ2zDAkhIom2-2BIn-2FzcKbdkGDqVICV97zm-2FjFEPzTCdBJeDjQ3Q4P5F09xgTQwQfKh4fqM=
+xqdKJRIo2tSp1-2Fd1vip2c3UK9Gt-2B1g-3D" target=3D"_blank" style=3D"display:i=
+nline-block;">
+                      <img src=3D"http://cdn.mcauto-images-production.sendg=
+rid.net/d4ef4a73d51fe844/9565285e-bcf8-4984-9e55-d42c631c25aa/150x58.png" w=
+idth=3D"90" alt=3D"OpenAI" style=3D"display:block;border:0; background-colo=
+r:#ededed;">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%">
+                      <tr class=3D"footer-row">
+                        <td valign=3D"bottom" align=3D"left" style=3D"font-=
+size:10px; line-height:1.8; color:#000; width:60%; padding-right:12px; vert=
+ical-align: bottom; padding-left: 4px;">
+                          1455 3rd Street<br/>San Francisco, CA 94158<br/>
+                          <a href=3D"http://url3243.email.openai.com/asm/un=
+subscribe/?user_id=3D20216706&amp;data=3D3NGAXVjAG5xGrXj5WTCWBWDPgVUQPKykxm=
+q7j8b8-BFoMDAwdTAwMF51KoxUZk7g415ri3ftH4rXjEwVp3o5g8usXAZAVzh2m-qXt1LjNKC1t=
+2tMrLo5DEA9g1qnxeg5uhqcOT8lGxVOeRPERUKoZcZYSxh8Zi0kZG-E_nMsHh9Urvggn-dYoXb3=
+UHeoASoE39dSmLWoOz3J7GcrQboBcbKY2gPViTV8M3cZqE7Uuk87scup2XldRBYC23YlBmprhGK=
+-T3zRCPYxuNxxjK3ZERm3Tauy5CW3Rg0FLcpcFnGxIiUR3FH_lo31JTk9zfGetnmpKzOSo34rHn=
+86GNpyuDhA6B7gLNDo5iIfhG2lAr_dv_FF4HBCFmhZ9VKRhQ7qZJ-Pa7sqBqDLXdf27wsbKFu2G=
+7gZmEC4b07Jpxk35zMOcdXF7SH6TvjNITLRBfg2HK79JaKEHpi5Rf-mgi1iusvcKGdC1SmJ7YDZ=
+fqpckpAxjDmr5frlmTXyT58vwpgqusQNfIFqT9vEmB2KKP_fXaFd0QxOY7OXxCpHuTkkLCQ_AFP=
+cJW5UXaAo0tsGrLxch_EiSxg2qufbE93I1KqtmvC8ReCOFAnpTnu3hCwF_eXkDuj0GdYIm2WHJe=
+UcthU_LD5tEvcKQVivgXacwcVuEZt03m8is_K59nnGDFgwKYLI7ezf8pDi82-aNTZ5eIuZNAEtj=
+PWSEPfnF7vuJvvVBI3CIxZbCMdsgkEnUHPRMxXQE9AvidEFvmSRMvFhXCiLfYXiJ7E0QHDY-D0d=
+SKhwLUpvesipKMrK4PDKAH_W-u5YUvp3StCNIIV5Qfo5GaHkxObyPG6Dj54=3D" target=3D"_=
+blank" style=3D"color:#898A8D; text-decoration:underline;">Unsubscribe</a><=
+br/>
+                          <a href=3D"http://url3243.email.openai.com/ls/cli=
+ck?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMv6jdG9yCHxkB2a9lpeVTM39OSGIX8E6Thna2Hh=
+z9KnndCCZj2dnPQiKphUwNdr99MoTwtXbOOE2g3M-2BFnWdfyrNrJ8Q4GaIlc63IJfV5MEk773J=
+3fUcnw7tqY5vC63hQfn94EPe3-2BCrcIGyhrzMz9jOt61zCsVYkKndSm-2FGVNtvj9sY6yIzSu3=
+fKgN6j8vU-2BA-3D-3D0s85_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6=
+qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduMGTCIjJ-2BO6d3wqTKk4QyJGezEddbfE8MBsTq5=
+9AGLTn-2FoGJkEj9j3s6Wyk06A4O1O0yUQE0iRIaHSPVd-2BAzmP8lAnmqrtiCcyV3AG3m-2Fhq=
+UBymy1kbs-2BUOVYp4ijMwiJW5rHrqMCHPQGJ22sL8Lr3Arlihapm7-2F6kf4QthVk1rZf6ll4k=
+-2Fham9T4c8MDC1sYPCWGpftDNqUnbEk8-2FiNQHNvY-2BReFKfbuyXD6NJyjcLqamDIx646-2F=
+skmaqO1gBjTdsNeSPp6Lna-2BTE-2BnuX22HmCPv3eWbf3090ciXuedzocS810B6ZgQS7LfvEf-=
+2F6lKIt3Slf6ex57uBmQl87vYPHhUxU7Fs45krLTGhhaks4-2FRAR-2BAMjmRD7XrAdzJK1ex3p=
+1AfmY-2FoGWfmRE9DCE-2BuS72Ua9x7jHexkDmspejWB8xaJugbwrKWmzv8dvsjAExcaNatH8K9=
+QKnYLz6n71korTKs8xTsdPkeQrerNlhSK-2Fz-2FOQchzunZb03jV6-2BrZI5QfrC-2FgYnSynw=
+Uoa-2BKIgxsgJs-3D" target=3D"_blank" style=3D"color:#898A8D; text-decoratio=
+n:underline;">Privacy</a> &middot; <a href=3D"http://url3243.email.openai.c=
+om/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMsvdFvmwMTgWtkeYwJPvVy67U0P-2F=
+C-2BUXHl56ySmueHD0qex0N-2B-2B8YoVXD9EqrIyWO2aNe9C6gJyQQfnOzzRMQYnVKPXe0XtFY=
+tthM-2FD-2BI5DjZCFqnwq3b4cEVyvjPM0VlytbXuoLid6nObJrW-2F6P46N-2BEpYVNl0fuBxb=
+Z2jQ95HbH5zwy0c8Z8IevgTsMhu2dw-3D-3DH6An_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmB=
+bBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduMGTCIjJ-2BO6d3wqTKk4Qy=
+JGezEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06A4O1O0yUQE0iRIaHSPVd-2BAzmP8lAnmq=
+rtiCcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW5rHrqMCHPQGJ22sL8Lr3Arlihapm7-2F6=
+kf4QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftDNqUnbEk8-2FiNQHNvY-2BReFKfbuyXD6N=
+JyjcLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2BTE-2BnuX22HmCPv3eWbf3090ciXuedzoc=
+S810B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vYPHhUxU7Fs45krLTGhhaks4-2FRA5WFzFr=
+MVcLq7g-2FiMKbswBdAtk65CkQ7hBuPjXQ5XDxKK4Djqy7F0alGRa394Fst9-2F5iKIrcclTNW9=
+FdoVFknRTyB7u-2F7yZoHmwN9XobP-2BOcbSSjhABLRCH4mpWl9LL6QGaxYWQQMzE2IqhHgh72b=
+OPDoNfLb-2Fgv9A6wJRIp3VPM-3D" target=3D"_blank" style=3D"color:#898A8D; tex=
+t-decoration:underline;">Terms</a><br/>
+                          <span style=3D"color:#888; display:block; margin-=
+top: 1.8em;">OpenAI =C2=A9 2015-2025</span>
+                        </td>
+                        <td valign=3D"bottom" style=3D"width:40%; text-alig=
+n:center; vertical-align: bottom;">
+                          <table role=3D"presentation" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" class=3D"badges" style=3D"width:100%;">
+                            <tr>
+                              <td class=3D"badge" style=3D"text-align:cente=
+r; padding:0 6px;">
+                                <a href=3D"http://url3243.email.openai.com/=
+ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMtD-2BVMO9vVCyWEdp43dehRwKnLcSDId=
+cT8iXDeqHYaFTCnaK2ChDusu4AphrKyq-2Baqa7Tmc6YxYxg4SQlTvXMvamvRJ1NdTvDQb2KVvN=
+7e-2B7zpFzOadNA3d2X0rr7z7F8lSl-2FVJxigrsGzhqZ7B0JjRiHFTNqlC9TymIrRcjSFDKV-2=
+FL0Nnt5zw5nF2-2BzNedR82LAAZ-2BzuT9nQXbVBCDLuMzwOCZr13zkAeG6fXZt-2BgfXUifL35=
+RKx55B01Q-2Fdn5Ak9QBsgLERueOAGbp7RBzs94QLEwdSpzSMKhQ6P3VATna5FBeWoHj4KX1NLG=
+ENeL-2BnEROQoiTzpnShTfkTPbMLCo-3D5LZ6_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBP=
+LJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduMGTCIjJ-2BO6d3wqTKk4QyJGe=
+zEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06A4O1O0yUQE0iRIaHSPVd-2BAzmP8lAnmqrti=
+CcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW5rHrqMCHPQGJ22sL8Lr3Arlihapm7-2F6kf4=
+QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftDNqUnbEk8-2FiNQHNvY-2BReFKfbuyXD6NJyj=
+cLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2BTE-2BnuX22HmCPv3eWbf3090ciXuedzocS81=
+0B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vYPHhUxU7Fs45krLTGhhaks4-2FRAkl-2BMVN4=
+GM3cg5KgmNl02p8NkZfX4ubhPdLlvePTbk6KGGj7tMlcYE6mA0kLr-2FIq7FCEnW9tenFfgFgtf=
+QSRAlxFarWQ-2F8yvI69sQGnFq-2BS1XEZO7NdcX4Rpp3xuvV34oTiCcyUdxmK9ZEhhiifsNL1x=
+JCOsN-2B0fnsCIlD-2BVR5dQ-3D" target=3D"_blank" style=3D"display:inline-bloc=
+k;">
+                                  <img src=3D"http://cdn.mcauto-images-prod=
+uction.sendgrid.net/d4ef4a73d51fe844/f0bb62f0-5199-4600-a341-38aa871bde57/2=
+40x80.png" width=3D"120" alt=3D"Get it on Google Play" style=3D"display:blo=
+ck; border:0; width:120px; height:auto;">
+                                </a>
+                              </td>
+                              <td class=3D"badge" style=3D"text-align:cente=
+r; padding:0 6px;">
+                                <a href=3D"http://url3243.email.openai.com/=
+ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMuAhSqai8qJ-2B1O2-2B81u67QpwNUgJ-=
+2Bd0SCWbzBz1KsXgnWp6TJZGGyYVXyadoVtWOVt3gB3EDqF-2BzZI5fL3GgUg6T5-2B3MTW1fr6=
+rlZYZWEN2zwWSlXB0sHe4hLjzYu-2BL0fiBXfWEOWbgnEf0OAhPXhagHd1COOM3jheqtHPH7E6F=
+wAMX9Sflruxp62c1acV0dQfHfnag11NJtI8upwGZpEHM-3Dis-e_ifpdZN5Unwyz9jUhBw0jKiH=
+iXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduMGTCIjJ-2BO=
+6d3wqTKk4QyJGezEddbfE8MBsTq59AGLTn-2FoGJkEj9j3s6Wyk06A4O1O0yUQE0iRIaHSPVd-2=
+BAzmP8lAnmqrtiCcyV3AG3m-2FhqUBymy1kbs-2BUOVYp4ijMwiJW5rHrqMCHPQGJ22sL8Lr3Ar=
+lihapm7-2F6kf4QthVk1rZf6ll4k-2Fham9T4c8MDC1sYPCWGpftDNqUnbEk8-2FiNQHNvY-2BR=
+eFKfbuyXD6NJyjcLqamDIx646-2FskmaqO1gBjTdsNeSPp6Lna-2BTE-2BnuX22HmCPv3eWbf30=
+90ciXuedzocS810B6ZgQS7LfvEf-2F6lKIt3Slf6ex57uBmQl87vYPHhUxU7Fs45krLTGhhaks4=
+-2FRANvMNRGvCyOuyVhld9XoNooERhTv-2FOp241Q5eY-2Bb-2BmSo-2Bd38xKawLq2drLZz4H8=
+W2X77tZGb1X8xW4kv16as363ev5etx9gGqq0DioMbCVJn6Fu7jQKWM7YKv8wfTyDP-2BJZzRigV=
+BBL6dZqSsLJZmSP-2FuLEEtsB0TGADZDDuK7q4-3D" target=3D"_blank" style=3D"displ=
+ay:inline-block;">
+                                  <img src=3D"http://cdn.mcauto-images-prod=
+uction.sendgrid.net/d4ef4a73d51fe844/7556e4e9-fd26-44ce-b5db-098b33274c20/2=
+40x80.png" width=3D"120" alt=3D"Download on the App Store" style=3D"display=
+:block; border:0; width:120px; height:auto;">
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]></td></tr></table><![endif]-->
+      </td>
+    </tr>
+    <!-- end footer -->
+
+  </table>
+  <!-- end body -->
+  <div class=3D"debug-string" style=3D"display: none; max-width: 0; max-hei=
+ght: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #ececf1;=
+ opacity: 0;">
+  </div>
+
+<img src=3D"http://url3243.email.openai.com/wf/open?upn=3Du001.mRvjWa6a2tdi=
+7UgUZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszauk-2FtLuX3qTpWitWor4=
+DA6eirH8nPdCZiEXhZOvGP0td-2BOQ9Bil29zjj26tkCewxf6Hlt5An7t61k-2BfZtwH2pelN-2=
+BsVLuyfkPkIposf9JvYXBzBQg4W7IcabWgFuif-2FLADr0ECC6cWYXAR8iGfO2h5GOiqjW25viF=
+Xo7AIjNb09Ivk5zP86uJSa2BA8MMLi4zNcHhx2hAH-2BaeG7K5MTSmE3q3-2FmduUn-2Bxdoj-2=
+FtjVzZvmT-2BjDA2GJRHkr-2FY-2BZKiP1Z7Ka-2B4yQpiS7Y9eDhb6ftFp55j1Dx2dHiiyBzr5=
+a2nfFuwHECFjQwpz1amiiPiSWXpd5cX5OUn-2BnWcZobPBWyyXMDVY2PdVV8mWFfooFz2iHDBXw=
+c0oO-2BXgyE79-2F4t1NZ-2BPOwq-2Fpnd-2F1bIoRb-2FurEMl8DXLn97CpXn8MOZi3gg-2Fg2=
+KFJJu03sW0fFGqBuoSlBPLyKIbf-2Bdv55DnmAtFV5BvsCWFKdosXafeEh8yNuIHFueid-2FaRH=
+IkG39JXysf-2Fg0qkbPfFVQlNWOJqlt6fKvjCjnfNKckQWqbhMM-2BWJdQo-3D" alt=3D"" wi=
+dth=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1p=
+x !important;border-width:0 !important;margin-top:0 !important;margin-botto=
+m:0 !important;margin-right:0 !important;margin-left:0 !important;padding-t=
+op:0 !important;padding-bottom:0 !important;padding-right:0 !important;padd=
+ing-left:0 !important;"/></body>
+</html>

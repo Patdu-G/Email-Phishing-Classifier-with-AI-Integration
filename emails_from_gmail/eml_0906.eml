@@ -1,0 +1,618 @@
+X-GM-THRID: 1843341883950626007
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:3709:b0:243:976a:6ae8 with SMTP id f9csp222293eiz;
+        Mon, 15 Sep 2025 07:50:11 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IFYBnIFXMdGA5ZZIxEtlh/6tH18T5J+gVNdSXdIuPGgJt+dExlOZY8BM9UjfART0YK5WP9W
+X-Received: by 2002:a05:6214:1c0c:b0:78c:745d:c055 with SMTP id
+ 6a1803df08f44-78c745dc130mr2719376d6.59.1757947811045;
+        Mon, 15 Sep 2025 07:50:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1757947811; cv=none;
+        d=google.com; s=arc-20240605;
+        b=EQOmv1w8YImJBl5LtIBaC0z1Pw26pOhZsWcIWybymNJlDoCxoLkAzjtNzH7OrruBeu
+         sTCCCMIrHSsFIOvWmmTy4CBZr6UBtTrS6/2ksZN5UdJd1/n1CmohexCT67jX/A0iikxi
+         iKkn2hWXRG+bSHqRfILXRvvUsVUB4rvQMBQ6dfqovb9wVwFmA39bgYucDdR/gv0McJb1
+         5dA4zPCcaV0lOJdmvL5pHAg9moU0o6eQmOWzBqTjGzoTYB2OPBWZzjnXf3ZXcuTR8l0s
+         tt8MfMisI3EuJUPaCVUIZUCpOSYE6TCG6hpFDNQYxeWbeKr12whb8UMw4wSeRIxUhcPp
+         aA9g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=9Uk9Bm0SaRRHeO6e1KMkUzYRiP1CmNYjVwHbdgrv8cc=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=MgM8ZpVxg2TjtSgy7e2pFs2kFlen0iyx1BpRsYwLeTuVMrfVeM3r7XLJ4oBYF5cRPq
+         H2YzW1be0BlUyyEEkM1YzVDhEbI9yN9U/JMjZkNfuYC3NhaXnkMZsgYcQly+GuOEbOdm
+         CoGVPMctdxcxNUbRyWqcx1qq3oa8qO1Mi6CxHnwjINs/G3hw9Zj+G8geSLSNL0AS8t3m
+         nLDSmnN9Xwg021ibXcCLGA1tvKJkPI6IKpthw5TJXU6Jm/8ZfN8vKfUKyNl7F1c2P0o3
+         mpeum1X+NWDWJAaKnPaoUM7ac/Z5um3ps6cfPzAj4D2WPXJtnllteIruvLxiHsgrsBTX
+         Ms/A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b="mzrx2+/E";
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=nmcsRuD+;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from m241-138.mailgun.net (m241-138.mailgun.net. [159.112.241.138])
+        by mx.google.com with UTF8SMTPS id
+ 6a1803df08f44-763b3f412f2si51555276d6.149.2025.09.15.07.50.10
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 15 Sep 2025 07:50:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender) client-ip=159.112.241.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b="mzrx2+/E";
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=nmcsRuD+;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1757947810; x=1757955010;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=9Uk9Bm0SaRRHeO6e1KMkUzYRiP1CmNYjVwHbdgrv8cc=;
+ b=mzrx2+/EWsN8knlDatwITl1EgQ/3+5zyqQkRfSwxNLG+T5h/63NIFBTXZ4/upFdQFNWgZdR6+68zIDsj4VpISWmRMI79nCbJcl8mx2fBuEb8N5I991GsNcQZwng6VWuym2nNjM2UNU1YPdNlJt2eRtlGdLl9F9+Gd5O2XIf0S+A=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1757947810; x=1757955010;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=9Uk9Bm0SaRRHeO6e1KMkUzYRiP1CmNYjVwHbdgrv8cc=;
+ b=nmcsRuD+rVBvtTysXOjL5kWkxSTc4IIcPnMXN+8+2GeGJ55JbaZ3DSy/uf6mkVvQ8rml5AXnSo2fnln6hX7BZxKuvt+/ArncvYzmMyjZfGqVtqPujZKpRRsIHOC7yl6c/aHh5cfUCKBh7w2b7TnbSP3A2hIbJlpyQDcVUtN8eEA=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by 78d3ebb6ae297dca2223fba5d43611e8e805ee103bf093eb47a03dbffd778a77
+ with HTTP
+ id 68c827a24e655990ea2d4b19; Mon, 15 Sep 2025 14:50:10 GMT
+X-Mailgun-Sending-Ip: 159.112.241.138
+Date: Mon, 15 Sep 2025 14:50:10 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="a6680071d291cd1683a1b95901410f652c520542ea3aea9d703de5116e01"
+Subject: 
+ =?UTF-8?q?Meet_Echo_=F0=9F=91=BE_your_personal_tutor_for_cyber_security_l?=
+ =?UTF-8?q?earning?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNGYTRSONLEORSMLBAWYMLEOJDE4ZTWONAT2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZlN2sVGFLXAl1drFNfvsA==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZlN2sVGFLXAl1drFNfvsA==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZlN2sVGFLXAl1drFNfvsA=="}
+Message-Id: <20250915145010.64240489a5385286@cio56239.tryhackme.com>
+
+--a6680071d291cd1683a1b95901410f652c520542ea3aea9d703de5116e01
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+TryHackMe Logo ( https://tryhackme.com/echo?utm_source=3Dcio&utm_medium=3De=
+mail&utm_campaign=3Decho250915 )
+
+Meet Echo ( https://tryhackme.com/echo?utm_source=3Dcio&utm_medium=3Demail&=
+utm_campaign=3Decho250915 )
+
+*************************
+Echo: Your personal tutor
+*************************
+
+We are excited to announce that Echo is now live across the entire TryHackM=
+e platform. Echo is an intelligent assistant built to support your cyber se=
+curity learning journey; making you learn better, faster.
+
+--------------------------------
+With Echo by your side, you can:
+--------------------------------
+
+* Get real time, personalised support as you progress through rooms
+* Receive contextual hints that keep you moving forward without losing mome=
+ntum
+* Understand complex concepts with clear explanations tailored to your leve=
+l
+
+Start learning with Echo ( https://tryhackme.com/echo?utm_source=3Dcio&utm_=
+medium=3Demail&utm_campaign=3Decho250915 )
+
+Echo is designed to help you learn more efficiently, overcome challenges, a=
+nd gain confidence as you build your skills. Whether you are starting out o=
+r working on advanced topics, Echo adapts to your needs and ensures you are=
+ never stuck for long.
+
+Start your next room today and experience how Echo transforms your learning=
+=2E
+
+=E2=96=B6 Watch the Echo demo
+
+Watch Echo video ( https://www.youtube.com/watch?v=3DIeeYTFh6JNU )
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/realtryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) |
+Unsubscribe ( http://track.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZlN=
+2sVGFLXAl1drFNfvsA=3D=3D )
+
+=C2=A9 2025 TryHackMe. All rights reserved.
+--a6680071d291cd1683a1b95901410f652c520542ea3aea9d703de5116e01
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en" style=3D"background-color: #151d2b;"><head=
+>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <title>TryHackMe =E2=80=93 Modular Email</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=3DUbuntu:wght@400=
+;700&display=3Dswap');
+    body {
+      margin: 0;
+      padding: 0;
+      background: #151d2b;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #151d2b;
+    }
+    h1 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin-top: 0;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin-top: 0;
+    }
+    p {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 15px;
+    }
+    ul {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      padding-left: 20px;
+    }
+    .section {
+      background-color: #1c2538;
+      border-radius: 10px;
+      padding: 25px 40px;
+      margin-bottom: 20px;
+    }
+    .feature-block {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
+    .feature-text {
+      flex: 1;
+    }
+    .feature-img {
+      flex: 0 0 auto;
+    }
+    .feature-img img {
+      display: block;
+      border-radius: 6px;
+      height: auto;
+    }
+    .cta {
+      display: inline-block;
+      background-color: #a3ea2a;
+      color: #151d2b;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+@media screen and (max-width: 600px) {
+  .alt-feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .alt-feature-icon {
+    margin: 0 auto 10px auto;
+    width: 180px;
+  }
+
+  .alt-feature-text {
+    padding-top: 0;
+  }
+}
+
+
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #f9f9fb;
+      font-size: 14px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: auto;
+      margin: 0 0px;
+      margin-bottom: 30px;
+    }
+    .legal a {
+      color: #ffffff;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .feature-block,
+      .feature-block.reverse {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .feature-text,
+      .feature-img {
+        width: 100% !important;
+        flex: 0 0 100%;
+      }
+      .feature-img {
+        text-align: center;
+      }
+      .feature-img img {
+        margin: 0 auto 10px;
+      }
+      .cta {
+        padding: 10px 20px;
+      }
+      @media screen and (max-width: 600px) {
+  .social-icons img {
+    margin: 0 5px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .email-body {
+    background-color: #121212 !important;
+    color: #e6e6e6 !important;
+  }
+}
+
+    }
+  </style>
+<link href=3D"https://fonts.googleapis.com/css?family=3DUbuntu:100,100i,200=
+,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" as=3D=
+"style" rel=3D"preload" media=3D"screen"/><link media=3D"screen" rel=3D"sty=
+lesheet" href=3D"https://fonts.googleapis.com/css?family=3DUbuntu%3A100%2C1=
+00i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%=
+2C700i%2C800%2C800i%2C900%2C900i"/><style>.c1x30091{max-width:100% !importa=
+nt;}</style></head>
+<body style=3D"background-color: #151d2b; margin: 0; padding: 0;"><div styl=
+e=3D"display: none; max-height: 0px; overflow: hidden; mso-hide:all;">Get r=
+eal time support as you learn on TryHackMe=E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=A0</div>
+  <div class=3D"wrapper">
+
+    <!-- Logo -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"text-align: center; margin-bottom: 20px;">
+       =20
+  <div style=3D"text-align: center;">
+  <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQ=
+Ut6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5=
+aGFja21lLmNvbS9lY2hvP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl1bT1lbWFpbFx1MDA=
+yNnV0bV9jYW1wYWlnbj1lY2hvMjUwOTE1IiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYW=
+NlMGRiMDMiLCJsaW5rX2lkIjoyMzAyNH0/3948a532d79b0234818dc0fd7ed6d768f6023eebf=
+2b58003d9d2ffd791ab48f9" style=3D"text-decoration: none; display: inline-bl=
+ock;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-bee.customeriomail.c=
+om/images/client-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe Logo" w=
+idth=3D"118" style=3D"vertical-align: middle; max-width: 100%; width: 118px=
+;height:auto;"/>
+      </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Banner -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"margin-bottom: 20px;">
+       =20
+  <div style=3D"text-align: center;">
+  <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQ=
+Ut6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5=
+aGFja21lLmNvbS9lY2hvP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl1bT1lbWFpbFx1MDA=
+yNnV0bV9jYW1wYWlnbj1lY2hvMjUwOTE1IiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYW=
+NlMGRiMDMiLCJsaW5rX2lkIjoyMzAyNH0/3948a532d79b0234818dc0fd7ed6d768f6023eebf=
+2b58003d9d2ffd791ab48f9" style=3D"width: 100%; text-decoration: none; displ=
+ay: inline-block;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-assets.customeriomai=
+l.com/images/client-env-92874/Echo%20Banner%201%20_%2012%20Sept_01K569P0YGJ=
+S76D6KBGJAQ2C2S.png" alt=3D"Meet Echo" width=3D"600" style=3D"vertical-alig=
+n: middle; width: 100%;height:auto;"/>
+      </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Main Section -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div class=3D"section">
+       =20
+ =20
+  <h1 style=3D"font-size: 32px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 21px 0;">Echo: Your personal tutor</h1>
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">We are excited to announce that Echo is now =
+live across the entire TryHackMe platform. Echo is an intelligent assistant=
+ built to support your cyber security learning journey; making you learn be=
+tter, faster.</p>
+ =20
+       =20
+ =20
+  <h2 style=3D"font-size: 24px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 20px 0;">With Echo by your side, you can:</h2>
+ =20
+ =20
+    <ul>
+      <li>Get real time, personalised support as you progress through rooms=
+<br/></li><li>Receive contextual hints that keep you moving forward without=
+ losing momentum</li><li>Understand complex concepts with clear explanation=
+s tailored to your level</li>
+    </ul>
+ =20
+ =20
+       =20
+  <div style=3D"text-align: center; margin: 8px 0; font-size: 16px;">
+   =20
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS9lY2hvP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl1bT1lbWFpbFx=
+1MDAyNnV0bV9jYW1wYWlnbj1lY2hvMjUwOTE1IiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMT=
+AxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMzAyNH0/3948a532d79b0234818dc0fd7ed6d768f6023=
+eebf2b58003d9d2ffd791ab48f9" style=3D"display: inline-block; mso-padding-al=
+t: 0; color: #151d2b; font-family: &#39;Ubuntu&#39;, sans-serif; font-weigh=
+t: 700; text-decoration: none; text-align: center; background: #a3ea2a; bor=
+der-radius: 4px; text-underline-color: #a3ea2a;"><!--[if mso]><i
+            hidden
+            style=3D"mso-font-width: 125%; mso-text-raise: 125%;"
+            >=E2=80=8B=E2=80=83</i
+          ><![endif]--><span style=3D"mso-text-raise: 62.5%; padding: 10px =
+20px; display: block;">Start learning with Echo</span><!--[if mso]><i hidde=
+n style=3D"mso-font-width: 125%;"
+            >=E2=80=83=E2=80=8B</i
+          ><![endif]--></a></div>
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">Echo is designed to help you learn more effi=
+ciently, overcome challenges, and gain confidence as you build your skills.=
+ Whether you are starting out or working on advanced topics, Echo adapts to=
+ your needs and ensures you are never stuck for long.</p>
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">Start your next room today and experience ho=
+w Echo transforms your learning.</p>
+ =20
+     =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+<!-- Main Section -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div class=3D"section">
+
+<center>
+  <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQ=
+Ut6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8vd3d3=
+LnlvdXR1YmUuY29tL3dhdGNoP3Y9SWVlWVRGaDZKTlUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI=
+5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIzMDI1fQ/fac35b00307e56c26268990ec085330=
+334a468648584a2a007b74effe94a8161" target=3D"_blank" style=3D"text-decorati=
+on:none; display:inline-block;">
+    <!-- main thumbnail -->
+    <!-- optional small CTA under image for clients that block images -->
+    <div style=3D"font-family:Ubuntu, Arial, sans-serif; color:#a3ea2a; fon=
+t-weight:700; padding-top:8px;">
+      =E2=96=B6 Watch the Echo demo
+    </div><br/>
+    <img src=3D"https://userimg-assets.customeriomail.com/images/client-env=
+-92874/echogif_01K56Q47367V2F3P15ZNRP7KXD.gif" alt=3D"Watch Echo video" wid=
+th=3D"560" style=3D"width:100%; max-width:560px; height:auto; display:block=
+; border-radius:6px;"/>
+   =20
+  </a>
+</center>
+     =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Fixed Footer -->
+    <div class=3D"footer">
+      <!-- SOCIAL ICONS -->
+  =20
+      <div class=3D"social-icons">
+        <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEs=
+xUVVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi=
+8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZ=
+GIwMyIsImxpbmtfaWQiOjIyMzQxfQ/7d6c0eac0e9260d5c3446620e40dded2fbbc47cd37586=
+5d1846039e88539a88b" style=3D"margin: 0 8px; text-decoration:none; display:=
+inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" width=3D"3=
+2"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHdpdHRlci5jb20vcmVhbHRyeWhhY2ttZSIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWF=
+jZTBkYjAzIiwibGlua19pZCI6Mn0/6dcd054e77857e0a36b5c09af6277096a8b78ef75e8fdc=
+af4fcbcd39cefed905" style=3D"margin: 0 8px; text-decoration:none; display:i=
+nline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=3D"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8v=
+aW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTA=
+xYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/515b8bb3017110df0ef7318c9e35f3ed782a5a27674=
+9bdb0081cf706c9aede3c" style=3D"margin: 0 8px; text-decoration:none; displa=
+y:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Instagram" width=
+=3D"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8v=
+bGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJ=
+jMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5OX0/0b261c1e9bbd01e2b1b8beb8b33acf2f8c=
+3451481d20d55ec05e79ef42114b44" style=3D"margin: 0 8px; text-decoration:non=
+e; display:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=3D"LinkedIn" width=3D=
+"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi8v=
+eW91dHViZS5jb20vQHJlYWx0cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDF=
+hY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxfQ/09e2d19a905dbadbbf8bea39fa00ffd3fdd1a09=
+cfca1b451a87d8b1e309476ae" style=3D"margin: 0 8px; text-decoration:none; di=
+splay:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"YouTube" width=3D"3=
+2"/>
+      </a>
+      </div>
+      <div class=3D"legal" style=3D"margin-bottom:10px;">
+        <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEs=
+xUVVMQUt6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09IiwiaHJlZiI6Imh0dHBzOi=
+8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkY=
+jAzIiwibGlua19pZCI6MTB9/66ff310a6ac96bf87dee972fe6ebea7d5f7c5fcee3c6ed765c2=
+32fcababfe426">Terms</a> |
+        <a href=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wO=
+r4NsDAZlN2sVGFLXAl1drFNfvsA=3D=3D">Unsubscribe</a>
+      </div>
+      <div>=C2=A9 2025 TryHackMe. All rights reserved.</div>
+    </div>
+
+  </div>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVpsTjJzVkdGTFhBbDFkckZOZnZzQT09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--a6680071d291cd1683a1b95901410f652c520542ea3aea9d703de5116e01--

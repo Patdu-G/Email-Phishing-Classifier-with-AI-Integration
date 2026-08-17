@@ -1,0 +1,659 @@
+X-GM-THRID: 1850130960234174647
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a98:a052:0:b0:253:ca7f:f8bf with SMTP id g18csp5896352eic;
+        Sat, 29 Nov 2025 05:19:38 -0800 (PST)
+X-Google-Smtp-Source: 
+ AGHT+IFczJ9wQLnehDYClmPLBIgIuR6I2nngLwS6rBz8CBddkhQRHmg/ObL5a8b/wjXgoXRJFdoA
+X-Received: by 2002:ac8:5e08:0:b0:4ee:1cc2:6240 with SMTP id
+ d75a77b69052e-4efbdafc7eamr263238211cf.68.1764422378635;
+        Sat, 29 Nov 2025 05:19:38 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764422378; cv=none;
+        d=google.com; s=arc-20240605;
+        b=lxxTdcI7lc+Znz4ppYu+tDHvoJOrinyRtKiclEC6YwfXzOuwKtXYxMrlN2oaSfVFTe
+         Yen1Dx5MmxRtXFxOBddwgDX06oPCJMrWUU73AHQrenkVWwphW3mEBkg312Gtf6gjxjhr
+         UXO9t33q8ctnB/V/R/PdZdMl7jpJx5brtRlaBoOJ1YXqke6ZOby0ytNmJRaeEnTiW6mK
+         VKLb/ClhFKR6eTKOMANudjK311mjefHGqWYnIjq3n+Vo8iYqWz36TeRc4hLsAZMgrDbx
+         9m7RS5TTJ+IsejtY1BXrZcZALgv7JKMyztpLmao4QYf3B9/HxWTZ3MRRvGU+mNWt9y92
+         rO0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=BUIZPSCAThtQNNS1f/t1ktdffvYAiH6ETXfXA4aUWV4=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=hkCWsj0r1lFxgugw/iKS5c/TZZv24n3ei4FN1KcqlkckCO5qq030NT7knoXnGecCbj
+         p2jRWZl+GuFnVV2ZHil9g7TARAHGlYnTN4bkdXwzLchQmfEk5iislNQxirqlyY57VIuh
+         Apwh4Se36HSe6CEACG/b6aon/Z26yj+UiChtr9Jq6KXXph2pKGQTl6wPmEnoNg0F8fBN
+         yVjWgzJfKiH2mTu4Moholoi1KaBoWqyp6R1howltBtzj2QCN1jGXCEUHIhvnL6conTGw
+         /qRFLFQgyDvb2Mb/Pj6K9tc1NDz6jqgZssFFccVyFqwbqmPUbLCuRHBt9okkS0/x+/BP
+         T34w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=Um0IkOQ9;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=qgXRgENl;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from m241-136.mailgun.net (m241-136.mailgun.net. [159.112.241.136])
+        by mx.google.com with UTF8SMTPS id
+ d75a77b69052e-4efd2fadeb3si26316291cf.102.2025.11.29.05.19.37
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 29 Nov 2025 05:19:38 -0800 (PST)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender) client-ip=159.112.241.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=Um0IkOQ9;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=qgXRgENl;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1764422377; x=1764429577;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=BUIZPSCAThtQNNS1f/t1ktdffvYAiH6ETXfXA4aUWV4=;
+ b=Um0IkOQ94jDIcLuHZ+nC0mUTlZms3fK7+hB5lnJkpEM/FeGTHmEcBVj7d9JTJ8KxodyxBYKuUGkmj6pRlJCbptCvgbRs2hxJ5wJ/b/xmX8H2+Fxbwf7omhHgPiAbBJOGHSoetUlBLRy90zAtRjrrhtLIPP6EWIWfuy4CvVOXCJE=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1764422377; x=1764429577;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=BUIZPSCAThtQNNS1f/t1ktdffvYAiH6ETXfXA4aUWV4=;
+ b=qgXRgENlRx3asIAiHRGjbUezAg8hxd0YiE4Lgogbfi03Nw0b8Stj4+MTYqgIAvBvrt2MR+xDQ8pSUbg7JDhUa1CQKLyzhzN4dXhqv1cRz110T85i3vAhgDAr7h32WMHbI3mBIdeQ/8GAJhBfbYEENINRqSJNx2X0/4wW304wJ+E=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by cfd6dd4388ca7d974486e3f4acda46c9c4f7c98f567e4942ff45cf2899ebec55
+ with HTTP
+ id 692af2e992080432d87160fe; Sat, 29 Nov 2025 13:19:37 GMT
+X-Mailgun-Sending-Ip: 159.112.241.136
+Date: Sat, 29 Nov 2025 13:19:37 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="12634436caf5de2cc7669ea35b7e1e0a83385d18a8e9e09ac58f33ada1cd"
+Subject: 
+ =?UTF-8?q?Just_Launched:_40%_OFF_Certifications_Cyber_Sale_=F0=9F=9A=80?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNHEUDYJY3DQZ2VN5BVIQTZG43GM6TOKRIT2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZrPxN68gUoCTBy76fznTQ==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZrPxN68gUoCTBy76fznTQ==;
+ +https://whatis.customeriomail.com)
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZrPxN68gUoCTBy76fznTQ=="}
+Message-Id: <20251129131937.6ee615a32083affa@cio56239.tryhackme.com>
+
+--12634436caf5de2cc7669ea35b7e1e0a83385d18a8e9e09ac58f33ada1cd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+TryHackMe Logo ( https://tryhackme.com )
+
+Cyber Sale 40% OFF Certifications ( https://tryhackme.com/certifications?ut=
+m_source=3Dcio&utm_medium=3Demail&utm_campaign=3Dcybersale25launchFreeSSU )
+
+**********************
+Cyber Sale Is Live Now
+**********************
+
+Hey patriogabrielpatdu,
+
+For a limited time, you can save 40% on TryHackMe Certifications and
+show the world what you can do.
+
+PT1 Certification
+
+-------------------------------
+PT1 =E2=80=93 Offensive Certification
+-------------------------------
+
+Build real-world adversarial skills and complete 100+ hands-on labs to stan=
+d out in offensive roles.
+
+=E2=86=92 Get 40% Off PT1 ( https://tryhackme.com/certification/junior-pene=
+tration-tester?utm_source=3Dcio&utm_medium=3Demail&utm_campaign=3Dcybersale=
+25launchFreeSSU )
+
+SAL1 Certification
+
+--------------------------------
+SAL1 =E2=80=93 Defensive Certification
+--------------------------------
+
+Train in a simulated SOC, triage alerts, and prove you=E2=80=99re job-ready=
+ for defensive security roles.
+
+=E2=86=92 Get 40% Off SAL1 ( https://tryhackme.com/certification/security-a=
+nalyst-level-1?utm_source=3Dcio&utm_medium=3Demail&utm_campaign=3Dcybersale=
+25launchFreeSSU )
+
+---------------------
+Here is what you get:
+---------------------
+
+=F0=9F=9A=8040% OFF Certifications
+=F0=9F=8F=85Practical exams to prove your skills
+=F0=9F=93=9AA digital badge for your CV
+=F0=9F=8E=AFBoost for your cyber career
+
+I Want This Deal ( https://tryhackme.com/certifications?utm_source=3Dcio&ut=
+m_medium=3Demail&utm_campaign=3Dcybersale25launchFreeSSU )
+
+And here=E2=80=99s something else...
+
+=F0=9F=94=A5 The 40% OFF Premium Annual sale has been extended
+
+=F0=9F=8E=93 Get access to every room and learning path for less
+
+Get Premium For Less ( https://tryhackme.com/why-subscribe?utm_source=3Dcio=
+&utm_medium=3Demail&utm_campaign=3Dcybersale25launchFreeSSU )
+
+( https://discord.gg/tryhackme )
+( https://twitter.com/tryhackme )
+( https://instagram.com/realtryhackme )
+( https://linkedin.com/company/tryhackme )
+( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) |
+Unsubscribe ( https://track.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZr=
+PxN68gUoCTBy76fznTQ=3D=3D )
+
+=C2=A9 2025 TryHackMe. All rights reserved.
+
+- Certification discount code applies at checkout.
+- Certification discount valid for a limited time only.
+- Certification offer applies exclusively to Professional Certification pur=
+chases
+and cannot be combined with other discounts, including student offers.
+
+- Premium discount valid only for free and monthly Premium members.
+- Premium discount valid for a limited time only.
+- Applies exclusively to annual plan and cannot be combined with other disc=
+ounts, including student offers.
+--12634436caf5de2cc7669ea35b7e1e0a83385d18a8e9e09ac58f33ada1cd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en" style=3D"background-color: #151d2b;"><head=
+>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <title>Cyber Sale =E2=80=93 40% OFF Certifications</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=3DUbuntu:wght@400=
+;700&display=3Dswap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #151d2b;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #151d2b;
+    }
+    h1 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 18px;
+      color: #a3ea2a;
+      margin: 10px 0 6px;
+    }
+    p {
+      color: #ffffff;
+      font-size: 17px;
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+    .section {
+      background-color: #1c2538;
+      border-radius: 10px;
+      padding: 25px 20px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+    .cta {
+      display: inline-block;
+      background-color: #a3ea2a;
+      color: #151d2b !important;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 6px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .cta-ghost {
+      display: inline-block;
+      color: #a3ea2a !important;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    /* Premium Benefits Styled */
+    .benefit-box {
+      background-color: #151d2b;
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 14px auto 0;
+      max-width: 560px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65);
+      border: 1px solid #232d44;
+    }
+    .benefit-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .benefit-row + .benefit-row td {
+      padding-top: 10px;
+      border-top: 1px solid #232d44;
+    }
+    .benefit-icon-cell {
+      width: 34px;
+      vertical-align: top;
+      font-size: 24px;
+      line-height: 1;
+      padding-right: 8px;
+    }
+    .benefit-text-cell {
+      vertical-align: top;
+      font-size: 17px;
+      color: #ffffff;
+    }
+
+    .summary-bar {
+      background: linear-gradient(135deg, #101624 0%, #161f33 100%);
+      border-radius: 12px;
+      padding: 18px 24px;
+      font-size: 17px;
+      color: #e0e4ef;
+      text-align: center;
+      border: 1px solid #a3ea2a;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+      max-width: 580px;
+      margin: 26px auto 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .summary-bar {
+        color: #ffffff !important;
+      }
+    }
+
+=2Efooter {
+  text-align: center;
+  padding: 30px 20px;
+  color: #f9f9fb;
+  font-size: 14px;
+}
+=2Esocial-icons img {
+  width: 32px;
+  height: auto;
+  margin: 0 5px 30px;
+}
+=2Elegal a {
+  color: #ffffff;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+  </style>
+<style>.c1x30091{max-width:100% !important;}.covbl52{mso-ansi-font-size:0;}=
+</style></head>
+
+<body style=3D"background-color:#151d2b; margin:0; padding:0;"><div style=
+=3D"display: none">Unlock 40% OFF Certifications plus more Cyber Sale savin=
+gs inside. =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=
+=C2=A0</div>
+  <div class=3D"wrapper">
+
+    <!-- Logo -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"text-align: center; margin-bottom: 18px;">
+       =20
+  <div style=3D"text-align: center;" class=3D"covbl52">
+  <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQ=
+Ut6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5=
+aGFja21lLmNvbSIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19=
+pZCI6MjJ9/3690ab12419704baba076dc1d9b6b37bd3de7f9302c3f92bbebedaeb8275fdaa"=
+ style=3D"text-decoration: none; display: inline-block;">
+     =20
+     =20
+       =20
+          <img class=3D"c1x30091" src=3D"https://userimg-bee.customeriomail=
+=2Ecom/images/client-env-92874/THMlogo=
+-gray_scale.png" alt=3D"TryHackMe Logo"=
+ width=3D"118" style=3D"vertical-align: middle; max-width: 100%; width: 118=
+;height:auto;"/>
+       =20
+        </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Banner -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"margin-bottom: 16px;">
+       =20
+  <div style=3D"text-align: center;" class=3D"covbl52">
+  <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQ=
+Ut6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5=
+aGFja21lLmNvbS9jZXJ0aWZpY2F0aW9ucz91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWRpdW0=
+9ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249Y3liZXJzYWxlMjVsYXVuY2hGcmVlU1NVIiwiaW50ZX=
+JuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyNTU1OX0/82de618e8=
+1de9281fdb86ce20343d77b91a947db6c95372ddf9a93e52bd2cea9" style=3D"width: 10=
+0%; text-decoration: none; display: inline-block;">
+     =20
+     =20
+       =20
+          <img class=3D"c1x30091" src=3D"https://userimg-assets.customeriom=
+ail.com/images/client-env-92874/cyber%20sale%20Updated%20v1_01KAX9TKMVR3F7T=
+WTPC3DGEG5K.png" alt=3D"Cyber Sale 40% OFF Certifications" width=3D"600" st=
+yle=3D"vertical-align: middle; width: 100%;height:auto;"/>
+       =20
+        </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- HERO Section -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div class=3D"section">
+        <h1>Cyber Sale Is Live Now</h1>
+        <p style=3D"text-align:center;">Hey patriogabrielpatdu,</p>
+        <p style=3D"text-align:center;">
+          For a limited time, you can save <strong>40%</strong> on TryHackM=
+e Certifications and<br/> show the world what you can do.
+        </p>
+
+        <!-- Badge Row -->
+        <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" style=3D"margin: 30px 0;">
+          <tbody><tr>
+            <td style=3D"text-align:center; width:50%; vertical-align:top;"=
+>
+              <img src=3D"https://userimg-assets.customeriomail.com/images/=
+client-env-92874/1747647902888_PT1%20Badge_V4B%202_01JVKYXD837JB80EYNEH5FTE=
+QC.png" alt=3D"PT1 Certification" width=3D"150" class=3D"badge"/>
+              <h2>PT1 =E2=80=93 Offensive Certification</h2>
+              <p>Build real-world adversarial skills and complete 100+ hand=
+s-on labs to stand out in offensive roles.</p>
+              <a class=3D"cta-ghost" href=3D"https://e.customeriomail.com/e=
+/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5U=
+UT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9jZXJ0aWZpY2F0aW9uL2p1bmlvci1=
+wZW5ldHJhdGlvbi10ZXN0ZXI_dXRtX3NvdXJjZT1jaW9cdTAwMjZ1dG1fbWVkaXVtPWVtYWlsXH=
+UwMDI2dXRtX2NhbXBhaWduPWN5YmVyc2FsZTI1bGF1bmNoRnJlZVNTVSIsImludGVybmFsIjoiY=
+2FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZCI6MjU1NjB9/62014aead2bcbf6984d=
+b4809ac22c10d67f90a736fb27583f8fb34c69705a752">
+                =E2=86=92 Get 40% Off PT1
+              </a>
+            </td>
+
+            <td style=3D"text-align:center; width:50%; vertical-align:top;"=
+>
+              <img src=3D"https://userimg-assets.customeriomail.com/images/=
+client-env-92874/1740735683754_SAL1%20Badge%20-%20600x600_01JN5YX7D14F91HY7=
+4K9ZZTB62.png" alt=3D"SAL1 Certification" width=3D"150" class=3D"badge"/>
+              <h2>SAL1 =E2=80=93 Defensive Certification</h2>
+              <p>Train in a simulated SOC, triage alerts, and prove you=E2=
+=80=99re job-ready for defensive security roles.</p>
+              <a class=3D"cta-ghost" href=3D"https://e.customeriomail.com/e=
+/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5U=
+UT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9jZXJ0aWZpY2F0aW9uL3NlY3VyaXR=
+5LWFuYWx5c3QtbGV2ZWwtMT91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdT=
+AwMjZ1dG1fY2FtcGFpZ249Y3liZXJzYWxlMjVsYXVuY2hGcmVlU1NVIiwiaW50ZXJuYWwiOiJjY=
+WQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyNTU2MX0/c32a3ec8e13d239d8b4d=
+d9050d68d90b32c07d58bcdd15945ffb534e21358386">
+                =E2=86=92 Get 40% Off SAL1
+              </a>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <h2 style=3D"text-align:center; margin-bottom:12px;">Here is what y=
+ou get:</h2>
+
+        <div class=3D"benefit-box" style=3D"max-width:440px;">
+          <table class=3D"benefit-table" role=3D"presentation">
+            <tbody><tr class=3D"benefit-row"><td class=3D"benefit-icon-cell=
+">=F0=9F=9A=80</td><td class=3D"benefit-text-cell">40% OFF Certifications</=
+td></tr>
+            <tr class=3D"benefit-row"><td class=3D"benefit-icon-cell">=F0=
+=9F=8F=85</td><td class=3D"benefit-text-cell">Practical exams to prove your=
+ skills</td></tr>
+            <tr class=3D"benefit-row"><td class=3D"benefit-icon-cell">=F0=
+=9F=93=9A</td><td class=3D"benefit-text-cell">A digital badge for your CV</=
+td></tr>
+            <tr class=3D"benefit-row"><td class=3D"benefit-icon-cell">=F0=
+=9F=8E=AF</td><td class=3D"benefit-text-cell">Boost for your cyber career</=
+td></tr>
+          </tbody></table>
+        </div>
+
+        <!-- First CTA -->
+        <div style=3D"text-align:center;">
+          <a class=3D"cta" href=3D"https://e.customeriomail.com/e/c/eyJlbWF=
+pbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaH=
+JlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9jZXJ0aWZpY2F0aW9ucz91dG1fc291cmNlPWNpb=
+1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249Y3liZXJzYWxlMjVsYXVu=
+Y2hGcmVlU1NVIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2l=
+kIjoyNTU1OX0/82de618e81de9281fdb86ce20343d77b91a947db6c95372ddf9a93e52bd2ce=
+a9">
+            I Want This Deal
+          </a>
+        </div>
+
+        <!-- Summary / Callout Bar -->
+        <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"margin: 26px 0 0; background: #1c2538; border-radius:=
+12px; border:1px solid #a3ea2a; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);=
+">
+          <tbody><tr>
+            <td style=3D"padding:18px 24px; font-size:17px; text-align:cent=
+er;">
+              <p style=3D"margin:0; color:#ffffff;"><strong style=3D"color:=
+#ffffff;">And here=E2=80=99s something else...</strong></p>
+              <p style=3D"margin:0; color:#ffffff;">=F0=9F=94=A5 The 40% OF=
+F Premium Annual sale has been extended</p>
+              <p style=3D"margin:0; color:#ffffff;">=F0=9F=8E=93 Get access=
+ to every room and learning path for less</p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <!-- Second CTA (Reduced spacing) -->
+        <div style=3D"text-align:center; margin-top:6px;">
+          <a class=3D"cta" href=3D"https://e.customeriomail.com/e/c/eyJlbWF=
+pbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaH=
+JlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS93aHktc3Vic2NyaWJlP3V0bV9zb3VyY2U9Y2lvX=
+HUwMDI2dXRtX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj1jeWJlcnNhbGUyNWxhdW5j=
+aEZyZWVTU1UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQ=
+iOjI1NTYyfQ/86230664d8946d3ce70ece22ba6ceae269503561822b3579ee9844c6b6e2390=
+4">=C2=A0 Get Premium For Less=C2=A0=C2=A0</a>
+        </div>
+
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+  </div>
+
+  <!-- FOOTER -->
+  <div class=3D"footer">
+    <div class=3D"social-icons">
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+ZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGI=
+wMyIsImxpbmtfaWQiOjIyMzQxfQ/d4bd3312eaefbea8155113f6377fdc26c944a4bc499d1f2=
+490a5a28818c6fa4e"><img src=3D"https://app-rsrc.getbee.io/public/resources/=
+social-networks-icon-sets/t-only-logo-white/discord@2x.png"/></a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGR=
+iMDMiLCJsaW5rX2lkIjoyMjE5N30/6eb08ea533c27d05c261e28f7ee2ee2cf10fa2a2d72e59=
+3ebb2ca355244caf4a"><img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-only-logo-white/twitter@2x.png"/></a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+aW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTA=
+xYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/f7fda3686185aff3eb2065082b0a336d3b7ce6cea01=
+c1fb5e351a5589cb55cc3"><img src=3D"https://app-rsrc.getbee.io/public/resour=
+ces/social-networks-icon-sets/t-only-logo-white/instagram@2x.png"/></a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+bGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJ=
+jMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5OX0/82f3664d23d3bde584c50ae0341a52f129=
+96c845652835420f939a3eeefde4e8"><img src=3D"https://app-rsrc.getbee.io/publ=
+ic/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png"/>=
+</a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+eW91dHViZS5jb20vQHJlYWx0cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDF=
+hY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxfQ/5dcac4cb3708c7e2ee74960c7159ad4bf839adf=
+fe8179e502fff623e06dba33a"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png"/></a>
+    </div>
+
+    <div class=3D"legal" style=3D"margin-bottom:10px;">
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkYjA=
+zIiwibGlua19pZCI6MTB9/7cdac6ec5101bf46662d5347d21595f02b12874d207bb2521a138=
+db6f3bb026f">Terms</a> |
+      <a href=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4=
+NsDAZrPxN68gUoCTBy76fznTQ=3D=3D">Unsubscribe</a>
+    </div>
+
+    <div>=C2=A9 2025 TryHackMe. All rights reserved.</div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div style=3D"text-align: center; padding: 15px 20px 30px; font-size: 12p=
+x; color: #888; line-height: 1.4;">
+    - Certification discount code applies at checkout.<br/> - Certification=
+ discount valid for a limited time only. <br/>- Certification offer applies=
+ exclusively to Professional Certification purchases <br/>and cannot be com=
+bined with other discounts, including student offers. <br/>
+    - Premium discount valid only for free and monthly Premium members.<br/=
+> - Premium discount valid for a limited time only.  <br/>- Applies exclusi=
+vely to annual plan and cannot be combined with other discounts, including =
+student offers.
+  </div>
+
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVpyUHhONjhnVW9DVEJ5NzZmem5UUT09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--12634436caf5de2cc7669ea35b7e1e0a83385d18a8e9e09ac58f33ada1cd--

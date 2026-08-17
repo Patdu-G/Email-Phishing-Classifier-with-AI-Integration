@@ -1,0 +1,771 @@
+X-GM-THRID: 1868477948986621444
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:5e09:b0:29b:179e:1f84 with SMTP id q9csp4367816rwn;
+        Fri, 19 Jun 2026 18:37:11 -0700 (PDT)
+X-Received: by 2002:a05:622a:6101:b0:517:8e3c:efc6 with SMTP id
+ d75a77b69052e-519e4a9304dmr95730951cf.24.1781919430980;
+        Fri, 19 Jun 2026 18:37:10 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1781919430; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Wgc4r3aXoaNzRLDGJKOOfRneHcLzuOhWveKH1fhPmaiqZ6dXhmGavwdsywR6C5zusl
+         EMWtvHlY9bbvbpnCIO6Cm4M86tg6nGs5Np2CfF2muQ6yyV+io8Exud7nXBXhE0OpdTDu
+         5BJTxF8mRxTzFm6b4Z9/8iizKfNDCN7uYJLurzQBHQJN5iHvd+Srh4n459RqtvZc6HLR
+         Zl/wQLCvpSLhlQ1z9f5SylZ8+oulUiww9cPr+7DsMqhNcJd7v0fL3q0iqH19xDbSXwOj
+         1VCpyaMiJrq88Rq7OCzlVvWPGsFzpQXgkOHUpoDq2ecc2rWn1umilcpsNBpR6O8BeqS1
+         /K9Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=feedback-id:mime-version:subject:message-id:to:reply-to:from:date
+         :dkim-signature:dkim-signature;
+        bh=b//hhQ/IniMqAfkAWQXynyJkIxdcIFm350ZjxAnGCyY=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=nKVWPOYiiSaGSiZDIG2YbnrXbdAqVv3kpxtgBNG9EdFeXJtWjAFIym3av7cqHq0eCz
+         +gJnbBSGztIswZEto6B2NskHAShx+AnGOC434Ab9ui2539w8UCAmqdCgyAc956dw0mUR
+         VKn13MPiH7yS6q5QbQ+1N5avmke2g7k7fmymL4Ca7+yT77ZoDAOmbtQnuvKsYix0p1Wp
+         nMG+Y2zPWi1If6yA1mZc64/6Jm5T7nV2Vuw5fjvQnak/yC7rlGxx6YDxH0+Cp0L3H6Nz
+         bpOX3AEqWHu91IuREShIOVSaRw82SZ/th8G3Tc0dT7GEZvBXjNUbs3/QBf6PcAevTmK1
+         LpSQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@anthropic.com
+ header.s=jt5yhtjdvmbae5qz36vxghopegesstgr header.b=fnYa7+KV;
+       dkim=pass header.i=@amazonses.com
+ header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=T+1zoy0e;
+       spf=pass (google.com: domain of
+ 0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@amazonses.com
+ designates 54.240.79.69 as permitted sender)
+ smtp.mailfrom=0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=anthropic.com
+Return-Path: 
+ <0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@amazonses.com>
+Received: from a79-69.smtp-out.amazonses.com (a79-69.smtp-out.amazonses.com.
+ [54.240.79.69])
+        by mx.google.com with ESMTPS id
+ d75a77b69052e-51a09a8035csi11105541cf.243.2026.06.19.18.37.10
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 19 Jun 2026 18:37:10 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ 0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@amazonses.com
+ designates 54.240.79.69 as permitted sender) client-ip=54.240.79.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@anthropic.com
+ header.s=jt5yhtjdvmbae5qz36vxghopegesstgr header.b=fnYa7+KV;
+       dkim=pass header.i=@amazonses.com
+ header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=T+1zoy0e;
+       spf=pass (google.com: domain of
+ 0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@amazonses.com
+ designates 54.240.79.69 as permitted sender)
+ smtp.mailfrom=0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=anthropic.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=jt5yhtjdvmbae5qz36vxghopegesstgr; d=anthropic.com; t=1781919430;
+	i=@email.anthropic.com;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=oGxlyBuYAST05O0QWbXJtphm70SZ+HoMue/UU01I86g=;
+	b=fnYa7+KVstYcQXqkgMRL6WkuyZ2JObR8is8tyNpP+s3QIgPPgVR8A4/9ItynRnJx
+	JBHPpyYBFtEYekN3CigM/rqO1Yf2aQ7gQ2/WgpbzPtyEfHdBwxlQkWtvcqPmdD16qbS
+	xutBAIdl7i36Ebqcp7XvGiCDx3ZAKG7HJtrAJwqaZ10iOROFygLwJYrs0XLsmrufHNS
+	65vj3TMg39W25D/qHQrg4iwxk7WDkdniUSz0pTSCnLNFoqvtwIqMpKm87JryChblaWz
+	Qs9LXqymjAdVMLvL5WRJXgchmodxniuUsRwOIxTdvVgDMUUiJiCDVvrP/0WYNcXXSKt
+	Xem1J9W1kA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1781919430;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=oGxlyBuYAST05O0QWbXJtphm70SZ+HoMue/UU01I86g=;
+	b=T+1zoy0eX93TORIMQ/95uW+BIbeBw50Nypl+ZAZ1ww3mU5J7yYdll3W0aJ3LrOu7
+	PzFbp9u7EJ5U+iZOciEfRpScMZAzRf3bYuRFhyM3ENBOpfnnZn943xTAHWoxyWsGa7u
+	R1CaRsYjDzFhLqO1PCubv0CEDS9ELTGcWCvmdAIQ=
+Date: Sat, 20 Jun 2026 01:37:10 +0000
+From: Anthropic Team <notice@email.anthropic.com>
+Reply-To: notice@email.anthropic.com
+To: patriogabrielpatdu@gmail.com
+Message-ID: 
+ <0100019ee2acb7a3-460ac3cb-4559-46de-a3bb-7a568d903939-000000@email.amazonses.com>
+Subject: We're updating our Privacy Policy
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_Part_1395652_174259241.1781919430552"
+X-Campaign-ID: 18600156
+Feedback-ID: 
+ ::1.us-east-1.lCJVkz6+3S71MtYe1CeGk/9v1Z83C325jnahyIHJIg0=:AmazonSES
+X-Feedback-ID: 24196434:18600156:109690:iterable
+X-Message-ID: b1f768e0081f4567993db08deedcee28
+X-SES-Outgoing: 2026.06.20-54.240.79.69
+
+------=_Part_1395652_174259241.1781919430552
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+We're writing to inform you about some updates to our Privacy Policy  =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=
+=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=
+=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=
+=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87=20
+=CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =E2=80=87 =CD=8F =
+=E2=80=87 =CD=8F=20
+
+
+
+ <https://www.anthropic.com/>=20
+
+
+ Hello,=20
+
+
+ We're writing to inform you about some updates to our Privacy Policy=20
+<https://anthropic.com/privacy>.=20
+
+
+ These changes only affect consumer accounts (Claude Free, Pro, and Max=20
+plans). If you use Claude Team, Claude Enterprise, the Claude Platform, or=
+=20
+other services under our Commercial Terms or other agreements, then these=
+=20
+changes don't apply to you.
+
+
+What's changing?=20
+
+
+ Claude can do more than ever =E2=80=94 taking on bigger tasks and connecti=
+ng with the=20
+apps you use. We've updated our Privacy Policy to be clearer about the data=
+ we=20
+collect and how we use it. We encourage you to read the updated Privacy Pol=
+icy=20
+in full, but we=E2=80=99ve set out a summary of the key changes below:
+
+
+1. Multi-step tasks and connected apps. As Claude takes on more multi-step=
+=20
+tasks and works with third-party apps and services, we've explained the dat=
+a=20
+this involves =E2=80=94 including how data can flow to and from third parti=
+es when you=20
+connect a service or have Claude do tasks on your behalf.
+
+
+2. Verification data. As part of our measures to keep our services safe and=
+=20
+secure we may ask you to verify your age or identity, and we've described w=
+hat=20
+we collect and how.
+
+
+3. Study participation. If you take part in Anthropic studies, surveys, or=
+=20
+interviews, we've explained the information we collect.
+
+
+4. Additional information about our data practices. We=E2=80=99ve provided =
+more detail=20
+about how we communicate with you and promote our services, including provi=
+ding=20
+tailored recommendations about our services that may be of interest to you.=
+=20
+We've also clarified the circumstances under which we may receive or provid=
+e=20
+data to third parties, and the legal bases we rely on when processing your =
+data.
+
+
+ While our products have evolved, our commitments haven't: We don=E2=80=99t=
+ sell your=20
+data, Claude remains ad-free, and you can control whether your chats and co=
+ding=20
+sessions are used to train and improve Anthropic=E2=80=99s AI models.
+
+
+Learn more=20
+
+
+ For detailed information about these changes:=20
+
+
+ *  Review the updated Privacy Policy <https://anthropic.com/privacy>=20
+ *  Visit our Privacy Center=20
+<https://privacy.claude.com/en/collections/10663362-consumers> for more=20
+information about our practices=20
+
+ - The Anthropic Team=20
+
+
+
+ <https://www.anthropic.com/?#footerLogo>=20
+
+ <https://www.linkedin.com/showcase/claude/?#footerLinkedIn> =20
+<https://x.com/claudeai?#footerX> =20
+<https://www.youtube.com/@anthropic-ai?#footerYoutube>=20
+
+
+
+ Anthropic PBC, 54=E2=80=8C8 M=E2=80=8Ca=E2=80=8Cr=E2=80=8Ck=E2=80=8Ce=E2=
+=80=8Ct S=E2=80=8Ct, PMB 9=E2=80=8C0=E2=80=8C3=E2=80=8C7=E2=80=8C5, Sa=E2=
+=80=8Cn F=E2=80=8Cr=E2=80=8Ca=E2=80=8Cn=E2=80=8Cc=E2=80=8Ci=E2=80=8Cs=E2=80=
+=8Cc=E2=80=8Co,=20
+C=E2=80=8CA 9=E2=80=8C4=E2=80=8C1=E2=80=8C0=E2=80=8C4=20
+
+
+ This email was sent to patriogabrielpatdu@gmail.com.=20
+
+------=_Part_1395652_174259241.1781919430552
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:s=
+chemas-microsoft-com:office:office" lang=3D"en" xml:lang=3D"en" style=3D"ma=
+rgin: 0; padding: 0; color-scheme: light dark; supported-color-schemes: lig=
+ht dark;"> <head> <title></title> <meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3DUTF-8"> <meta name=3D"viewport" content=3D"width=
+=3Ddevice-width, initial-scale=3D1"> <meta name=3D"author" content=3D"Anthr=
+opic Email Template"> <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D=
+edge"> <meta name=3D"format-detection" content=3D"telephone=3Dno, date=3Dno=
+, address=3Dno, email=3Dno"> <meta name=3D"x-apple-disable-message-reformat=
+ting"> <meta name=3D"color-scheme" content=3D"light dark"> <meta name=3D"su=
+pported-color-schemes" content=3D"light dark"> <link rel=3D"icon" type=3D"i=
+mage/png" href=3D"https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a=
+52/681d52619fec35886a7f1a70_favicon.png" sizes=3D"32x32"> <!--[if mso]><sty=
+le>li{text-align:-webkit-match-parent;display:list-item!important;text-inde=
+nt:-1em!important}a{text-decoration:none!important}</style> <xml> <o:Office=
+DocumentSettings> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentS=
+ettings> </xml><![endif]--> <style>*{margin:0;padding:0}:root{color-scheme:=
+light dark;supported-color-schemes:light dark}body{width:100%;font-family:G=
+eorgia,'Times New Roman',serif;word-wrap:normal;word-spacing:normal}table{m=
+so-table-lspace:0;mso-table-rspace:0}div[style*=3D'margin: 16px 0']{margin:=
+0!important}#MessageViewBody,#MessageWebViewDiv{min-width:100vw;margin:0!im=
+portant;zoom:1!important;width:100%!important}a[x-apple-data-detectors]{col=
+or:inherit!important;text-decoration:none!important;font-size:inherit!impor=
+tant;font-family:inherit!important;font-weight:inherit!important;line-heigh=
+t:inherit!important}#MessageViewBody a{color:inherit!important;font-size:in=
+herit!important;font-family:inherit!important;font-weight:inherit!important=
+;line-height:inherit!important;text-decoration:none!important}u+.body a{col=
+or:inherit;text-decoration:none;font-size:inherit;font-weight:inherit;line-=
+height:inherit}span.MsoHyperlink{color:inherit!important;mso-style-priority=
+:99!important}span.MsoHyperlinkFollowed{color:inherit!important;mso-style-p=
+riority:99!important}@media only screen and (max-width:619px){.full-width{w=
+idth:100%!important}.pd0{padding:0!important}.hide{display:none!important}.=
+expand{display:block!important;width:100%!important}.center{text-align:cent=
+er!important}.left{text-align:left!important}.block,.show{display:block!imp=
+ortant}.container{padding-left:24px!important;padding-right:24px!important}=
+.container-header{padding:24px 16px!important}h1{font-size:28px!important;l=
+ine-height:34px!important}h2{font-size:24px!important;line-height:30px!impo=
+rtant}h3{font-size:18px!important;line-height:24px!important}.p0{padding:0!=
+important}.maxWidthFull{max-width:570px!important}.marAuto{margin:0 auto!im=
+portant}.padLR0{padding-left:0!important;padding-right:0!important}.padLR16=
+{padding-left:16px!important;padding-right:16px!important}.padT0{padding-to=
+p:0!important}.pt-8{padding-top:8px!important}.pt-16{padding-top:16px!impor=
+tant}.pt-24{padding-top:24px!important}.pt-36{padding-top:36px!important}.p=
+b-24{padding-bottom:24px!important}.mGap-16{height:16px!important}.mGap-24{=
+height:24px!important}.mGap-36{height:36px!important}}@media(prefers-color-=
+scheme:dark){[data-ogsc] .header,.header{background-color:#262624!important=
+}[data-ogsc] .content,.content,.light-bg-primary{background-color:#262624!i=
+mportant}[data-ogsc] .footer,.footer{background-color:#141414!important}h1,=
+h2,h3,h4,p,a,ol,li{color:#fff!important}[data-ogsc] h1,[data-ogsc] h2,[data=
+-ogsc] h3,[data-ogsc] h4,[data-ogsc] p,[data-ogsc] a,[data-ogsc] ol,[data-o=
+gsc] li{color:#fff!important}.primaryColor{color:#262624!important}[data-og=
+sc] .primaryColor{color:#262624!important}.whiteFont{color:#fff!important}[=
+data-ogsc] .whiteFont{color:#fff!important}.orange{color:#c6613f!important}=
+[data-ogsc] .orange{color:#c6613f!important}.footerCopy{color:#b0aea5!impor=
+tant}[data-ogsc] .footerCopy{color:#b0aea5!important}.dark-logo{display:blo=
+ck!important}[data-ogsc] .dark-logo{display:block!important}.light-logo{dis=
+play:none!important}[data-ogsc] .light-logo{display:none!important}.mainCta=
+{background-color:#faf9f5!important}[data-ogsc] .mainCta{background-color:#=
+faf9f5!important}}</style> <!--[if gte mso 16]><style>.keep-white{mso-style=
+-textfill-type:gradient;mso-style-textfill-fill-gradientfill-stoplist:'0 \#=
+FFFFFF 0 100000\,100000 \#FFFFFF 0 100000';color:#000!important}</style><![=
+endif]--> </head> <body style=3D"width: 100%; font-family: Georgia, 'Times =
+New Roman', serif; word-wrap: normal; word-spacing: normal; background: #ff=
+ffff; margin: 0 auto !important; padding: 0 !important;" class=3D"body"><sp=
+an style=3D"color:transparent;visibility:hidden;display:none;opacity:0;heig=
+ht:0;width:0;font-size:0;">We're writing to inform you about some updates t=
+o our Privacy Policy</span><img src=3D"http://links.anthropic.com/s/eo/OE0u=
+nTWN6Yg3LgpEJSlJymDAPyC23KS2qPpBt9sG9lXJBeQmP3y12azcwEqp1bSn3AWrQgtuOgPR3db=
+beYmZMgg-Jqs5PQ16b8MD9DwQyx8n5TxppoiAwKv96unc-8_IjKi_qr4L6KYJOPqRmV26wiPWRN=
+VOivk6BYyz7UGdHaPcl8b_RKGaeqmHHPohSQeeFi_ZAW61Kf1jgPhaxT3R0mODu95RcyIHFwzj/=
+AqVoEbJm4IUS96jgbtbnKzPXrF89QiHV/21" style=3D"border:0;width:1px;height:1px=
+;border-width:0px!important;display:none!important;line-height:0!important;=
+" width=3D"1" height=3D"1"/> <div style=3D"display: none !important; font-s=
+ize: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; ov=
+erflow: hidden; mso-hide: all; font-family:'Inter', Helvetica, Arial;"> &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8=
+199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; =
+&shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199=
+; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &sh=
+y; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &=
+#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; =
+&#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#847; &shy; &#8199; &#84=
+7; &shy; &#8199; &#847; &shy; </div> <table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"padding: 0; mso-table-lspace: 0; =
+mso-table-rspace: 0; margin: 0 auto !important;"> <tr style=3D"margin: 0; p=
+adding: 0;"> <td align=3D"center" valign=3D"top" style=3D"margin: 0; paddin=
+g: 0;"> <div role=3D"article" aria-roledescription=3D"email" aria-label=3D"=
+Email from Anthropic" lang=3D"en" dir=3D"ltr" style=3D"margin: 0; padding: =
+0;"> <table role=3D"none" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+width=3D"100%" style=3D"margin: 0; padding: 0; mso-table-lspace: 0; mso-tab=
+le-rspace: 0;"> <tr style=3D"margin: 0; padding: 0;"> <td align=3D"center" =
+style=3D"margin: 0; padding: 0;"> <!-- header --> <!-- Choose a background:=
+ primary, secondary, or tertiary --> <!-- header --> <table role=3D"none" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640" style=3D"widt=
+h: 640px; background-color: #faf9f5;" class=3D"full-width header"> <tr> <td=
+ align=3D"center" valign=3D"top" class=3D"container-header" style=3D"paddin=
+g: 24px 28px;"> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width:100%;" role=3D"presentation"> <tr> <td align=3D"=
+left" valign=3D"middle" style=3D"text-align: left;"> <a href=3D"http://link=
+s.anthropic.com/s/c/CitioPjK5_mfGMdPrYDPww9gQOf1TkQLhMgK2XpGBaT7I_iajqSgBGS=
+QbQ4sd-NuORGmB-THHCKRvS3qUHYklxBMCTrHk0Lugfy4Lxjf1S--7dt2q9DU9QV1Wmaf1EcZyy=
+ianLEgq6BmuRK4GkIR2uh07-Ue6p4_qzwVPF2ljX28j22n-YZ1040ddMhzwXG8yP-7oGSlkyXo-=
+bk--8YeEJp_S8ywp6Q269SeJMwNOv_LQ2NZGQ48FxRW1dz2ZO6qg_Hl3tCDS6ZuA4fePWyMz4RN=
+7qpYGzLNsGlXPMvUZoYhBxakkc0sffb83Vg-ssZEQ22Yk6SX7JwV2csTWEPfcyYz3MgDCIqybsb=
+x8hP-cyCNDLVJ3K3dvj3psgLDbstkVZL4FeJ8/UAkeaznoLmQus0d2NaPggRB2ipzxuO6m/21" =
+target=3D"_blank" style=3D"text-decoration: none;"> <img src=3D"https://ass=
+ets.claude.ai/lifecycle/851ca73eeb6ad485.png" alt=3D"Anthropic" class=3D"li=
+ght-logo" width=3D"201" style=3D"display: block; border: 0; width: 201px; m=
+ax-width: 201px;"> <!--[if !mso]><!--> <img src=3D"https://assets.claude.ai=
+/lifecycle/c57e6dc4fba0c6bd.png" alt=3D"Anthropic" class=3D"dark-logo" widt=
+h=3D"201" style=3D"display: none; border: 0; width: 201px; max-width: 201px=
+;"> <!--<![endif]--> </a> </td> </tr> </table> </td> </tr> </table> <!-- he=
+ader --> <!-- header --> <!-- content --> <table role=3D"none" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640" style=3D"margin: 0; pad=
+ding: 0; mso-table-lspace: 0; mso-table-rspace: 0; width: 640px; background=
+-color: #faf9f5;" bgcolor=3D"#faf9f5" class=3D"full-width content"> <tr sty=
+le=3D"margin: 0; padding: 0;"> <td align=3D"center" valign=3D"top" class=3D=
+"container" style=3D"margin: 0; padding: 18px 36px 36px;"> <table width=3D"=
+100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 0; =
+padding: 0; mso-table-lspace: 0; mso-table-rspace: 0; width: 100%;" role=3D=
+"presentation"> <!-- p --> <tr style=3D"margin: 0; padding: 0;"> <td align=
+=3D"left" style=3D"margin: 0; padding: 0; text-align: left;" valign=3D"top"=
+> <p style=3D"padding: 0; font-size: 16px; line-height: 22px; font-family: =
+Georgia, 'Times New Roman', serif; margin: 0; color: #262624; font-weight: =
+400;"> Hello, </p> </td> </tr> <!-- p --> <!-- p --> <tr style=3D"margin: 0=
+; padding: 0;"> <td align=3D"left" style=3D"margin: 0; padding: 0; text-ali=
+gn: left; padding-top: 16px;" valign=3D"top"> <p style=3D"padding: 0; font-=
+size: 16px; line-height: 22px; font-family: Georgia, 'Times New Roman', ser=
+if; margin: 0; color: #262624; font-weight: 400;"> We're writing to inform =
+you about some updates to our <a href=3D"http://links.anthropic.com/s/c/27F=
+9frmg418JB7tdwt_GoHqqCDc9odbewr7yZ5jW2ogI0g6uMuRJQncBZPf4APabhq2pn0n4gI5apo=
+o_4oX_TnOyfu129eEjniiQgRq11SuV9TI5u08CUm6Hcr-UrIw56FvSIHNXcPoAK5tgbWjj_6Sc2=
+mi4BK55WFHQm5JCxtVQu4JtGY_Ejq8_9Be6bywpEvZ7brdJYKJVPH7Nf_QNzhqp9yi9wmonUs_S=
+he7ErPqBZbJhJZ2sOP_PvVwGWVYdU3UrGfV37-9dRP-dMSohCbyJVSOOi9whJfa-twSMF66evaI=
+dG7DMi1RfK-i3Fie-09f5sDi4ubO7IJ6LR-KbIoYsXyL3oMpl7IB7xfW5FwQHN1Fq7lwsG-gHTh=
+2lW6vD6p6L2_k/1_ewjYho5lAGKtv4LeUPHJ712ZsXy8bb/21" target=3D"_blank" style=
+=3D"margin: 0; padding: 0; text-decoration: underline; color: #262624; font=
+-weight: 400;">Privacy=C2=A0Policy</a>. </p> </td> </tr> <!-- p --> <!-- p =
+--> <tr style=3D"margin: 0; padding: 0;"> <td align=3D"left" style=3D"margi=
+n: 0; padding: 0; text-align: left; padding-top: 12px;" valign=3D"top"> <p =
+style=3D"padding: 0; font-size: 16px; line-height: 22px; font-family: Georg=
+ia, 'Times New Roman', serif; margin: 0; color: #262624; font-weight: 400;"=
+> These changes only affect consumer accounts (Claude Free, Pro, and Max pl=
+ans). If you use Claude Team, Claude Enterprise, the Claude Platform, or ot=
+her services under our Commercial Terms or other agreements, then these cha=
+nges don't apply to&nbsp;you. </p> </td> </tr> <!-- p --> <!-- h3 --> <tr s=
+tyle=3D"margin: 0; padding: 0;"> <td align=3D"left" style=3D"margin: 0; pad=
+ding: 0; text-align: left; padding-top: 16px;" valign=3D"top"> <h3 style=3D=
+"padding: 0; margin: 0; font-size: 18px; font-family: Georgia, 'Times New R=
+oman', serif; color: #262624; line-height: 24px; font-weight: 400;"> <stron=
+g style=3D"margin: 0; padding: 0;">What's&nbsp;changing?</strong> </h3> </t=
+d> </tr> <!-- h3 --> <!-- p --> <tr style=3D"margin: 0; padding: 0;"> <td a=
+lign=3D"left" style=3D"margin: 0; padding: 0; text-align: left; padding-top=
+: 12px;" valign=3D"top"> <p style=3D"padding: 0; font-size: 16px; line-heig=
+ht: 22px; font-family: Georgia, 'Times New Roman', serif; margin: 0; color:=
+ #262624; font-weight: 400;"> Claude can do more than ever =E2=80=94 taking=
+ on bigger tasks and connecting with the apps you use. We've updated our Pr=
+ivacy Policy to be clearer about the data we collect and how we use it. We =
+encourage you to read the updated Privacy Policy in full, but we=E2=80=99ve=
+ set out a summary of the key changes&nbsp;below: </p> </td> </tr> <!-- p -=
+-> <!-- p --> <tr style=3D"margin: 0; padding: 0;"> <td align=3D"left" styl=
+e=3D"margin: 0; padding: 0; text-align: left; padding-top: 12px;" valign=3D=
+"top"> <p style=3D"padding: 0; font-size: 16px; line-height: 22px; font-fam=
+ily: Georgia, 'Times New Roman', serif; margin: 0; color: #262624; font-wei=
+ght: 400;"> <strong style=3D"margin: 0; padding: 0;">1. Multi-step tasks an=
+d connected apps.</strong> As Claude takes on more multi-step tasks and wor=
+ks with third-party apps and services, we've explained the data this involv=
+es =E2=80=94 including how data can flow to and from third parties when you=
+ connect a service or have Claude do tasks on your&nbsp;behalf. </p> </td> =
+</tr> <!-- p --> <!-- p --> <tr style=3D"margin: 0; padding: 0;"> <td align=
+=3D"left" style=3D"margin: 0; padding: 0; text-align: left; padding-top: 12=
+px;" valign=3D"top"> <p style=3D"padding: 0; font-size: 16px; line-height: =
+22px; font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #26=
+2624; font-weight: 400;"> <strong style=3D"margin: 0; padding: 0;">2. Verif=
+ication data.</strong> As part of our measures to keep our services safe an=
+d secure we may ask you to verify your age or identity, and we've described=
+ what we collect and&nbsp;how. </p> </td> </tr> <!-- p --> <!-- p --> <tr s=
+tyle=3D"margin: 0; padding: 0;"> <td align=3D"left" style=3D"margin: 0; pad=
+ding: 0; text-align: left; padding-top: 12px;" valign=3D"top"> <p style=3D"=
+padding: 0; font-size: 16px; line-height: 22px; font-family: Georgia, 'Time=
+s New Roman', serif; margin: 0; color: #262624; font-weight: 400;"> <strong=
+ style=3D"margin: 0; padding: 0;">3. Study participation.</strong> If you t=
+ake part in Anthropic studies, surveys, or interviews, we've explained the =
+information we&nbsp;collect. </p> </td> </tr> <!-- p --> <!-- p --> <tr sty=
+le=3D"margin: 0; padding: 0;"> <td align=3D"left" style=3D"margin: 0; paddi=
+ng: 0; text-align: left; padding-top: 12px;" valign=3D"top"> <p style=3D"pa=
+dding: 0; font-size: 16px; line-height: 22px; font-family: Georgia, 'Times =
+New Roman', serif; margin: 0; color: #262624; font-weight: 400;"> <strong s=
+tyle=3D"margin: 0; padding: 0;">4. Additional information about our data pr=
+actices.</strong> We=E2=80=99ve provided more detail about how we communica=
+te with you and promote our services, including providing tailored recommen=
+dations about our services that may be of interest to you. We've also clari=
+fied the circumstances under which we may receive or provide data to third =
+parties, and the legal bases we rely on when processing your&nbsp;data. </p=
+> </td> </tr> <!-- p --> <!-- p --> <tr style=3D"margin: 0; padding: 0;"> <=
+td align=3D"left" style=3D"margin: 0; padding: 0; text-align: left; padding=
+-top: 12px;" valign=3D"top"> <p style=3D"padding: 0; font-size: 16px; line-=
+height: 22px; font-family: Georgia, 'Times New Roman', serif; margin: 0; co=
+lor: #262624; font-weight: 400;"> While our products have evolved, our comm=
+itments haven't: We don=E2=80=99t sell your data, Claude remains ad-free, a=
+nd you can control whether your chats and coding sessions are used to train=
+ and improve Anthropic=E2=80=99s AI&nbsp;models. </p> </td> </tr> <!-- p --=
+> <!-- h3 --> <tr style=3D"margin: 0; padding: 0;"> <td align=3D"left" styl=
+e=3D"margin: 0; padding: 0; text-align: left; padding-top: 16px;" valign=3D=
+"top"> <h3 style=3D"padding: 0; margin: 0; font-size: 18px; font-family: Ge=
+orgia, 'Times New Roman', serif; color: #262624; line-height: 24px; font-we=
+ight: 400;"> <strong style=3D"margin: 0; padding: 0;">Learn more </strong> =
+</h3> </td> </tr> <!-- h3 --> <!-- p --> <tr style=3D"margin: 0; padding: 0=
+;"> <td align=3D"left" style=3D"margin: 0; padding: 0; text-align: left; pa=
+dding-top: 12px;" valign=3D"top"> <p style=3D"padding: 0; font-size: 16px; =
+line-height: 22px; font-family: Georgia, 'Times New Roman', serif; margin: =
+0; color: #262624; font-weight: 400;"> For detailed information about these=
+&nbsp;changes: </p> </td> </tr> <!-- p --> <!-- list --> <tr style=3D"margi=
+n: 0; padding: 0;"> <td align=3D"center" valign=3D"top" style=3D"margin: 0;=
+ padding: 0; padding-top: 8px;"> <ul style=3D"padding: 0; margin: 0 0 0 24p=
+x;"> <li style=3D"padding: 0; font-size: 16px; line-height: 24px; font-fami=
+ly: Georgia, 'Times New Roman', serif; margin: 0; color: #262624; font-weig=
+ht: 400; text-align: left;"> Review the updated <a href=3D"http://links.ant=
+hropic.com/s/c/hIrfdxw3uVQkyMC0nJV0oo6Hpkpg52jB-nUfW8PpLOAkjmRSSrgKrXAV9S_p=
+_p5lnnjtoVHs-5d98xebywQsIrywh5GlL62IldCnDYF3RvUvEYL5kbGoPZ3v3Z1GvQ23yu8a2wF=
+uFgxio96jKuuRSl1QHv9l9OC-VT93dBfhrwgLR2bjBv1j0_uD0wZbznsSZrbaumOf2668Z547kH=
+syvYz67P2CqMYQKNRlbtalInaO8Gh2vAoygBP40baOJbQfjQ0Uc3YbK6SqX0DaMToS7zvkg2x9B=
+mP_DojcMUmWl4dISTeKTXLELOfQJGDSz0mAcy6GcdHIa4tCGXox5UThn0AakS3u1_BSaJLoxQPn=
+AtL8lA3X9LsNaTBnDXbaLt3p9k00a7o/u5x9Pj3RlD4lPiUL9Op_3l_6d9PCLTeX/21" target=
+=3D"_blank" style=3D"margin: 0; padding: 0; text-decoration: underline; col=
+or: #262624; font-weight: 400;">Privacy Policy</a> </li> <li style=3D"paddi=
+ng: 0; font-size: 16px; line-height: 24px; font-family: Georgia, 'Times New=
+ Roman', serif; margin: 0; color: #262624; font-weight: 400; text-align: le=
+ft; margin-top: 4px;"> Visit our <a href=3D"http://links.anthropic.com/s/c/=
+98JM6I3bI7g54MLvvXuthtS6Ek6QvaUBu752EMGAmJQrjvr403HVfdtSWEs2W4qOtdgHNlh7GHw=
+k46-OrPwkAJD8CHm6j1Un6SkR6vzULeb9_xBGAoD3P2030Y9XeKPWcNAOXGfCwRPJUkHuS2gaP9=
+opgKTq1zfVOIx-JMZQ72K2-srvWRZOq77UIaQ_rbx3QALdA9ahWoSN3xIx1pVrNXkeIutRYb7zI=
+XMlxpw3mW6OaRr5SZWWZIPgljppUKR7iO_52tTyhzTJnerZxOSD0sLMdwj82VEU3te13suPPRf2=
+vtEeQ8MUhV7P6Yv5DEjJ4L17131h_j7FlmkXjsWBSnQ0l_ClOh1LPnwfVNVbHZIuI0VacEcQfnB=
+dZUOMK9K4OYbxL0VcZqmLD8e-JtRcIm2K0QFaXX22b8pC55nQr1ZVuM-yt1rKUd7i1w1aWduk1n=
+UR1eX8wSqJruw8275t9-A3HE4Yx3k/do3GDf_Cd1OwVMYB4esm_oOBivzoYESE/21" target=
+=3D"_blank" style=3D"margin: 0; padding: 0; text-decoration: underline; col=
+or: #262624; font-weight: 400;">Privacy Center</a> for more information abo=
+ut our practices </li> </ul> </td> </tr> <!-- list --> <!-- h3 --> <tr styl=
+e=3D"margin: 0; padding: 0;"> <td align=3D"left" style=3D"margin: 0; paddin=
+g: 0; text-align: left; padding-top: 36px;" valign=3D"top"> <h3 style=3D"pa=
+dding: 0; margin: 0; font-size: 18px; font-family: Georgia, 'Times New Roma=
+n', serif; color: #262624; line-height: 24px; font-weight: 400;"> - The Ant=
+hropic&nbsp;Team </h3> </td> </tr> <!-- h3 --> </table> </td> </tr> </table=
+> <!-- content --> <!-- footer --> <table role=3D"none" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" width=3D"640" style=3D"width: 640px; backgrou=
+nd-color: #141414;" bgcolor=3D"#141414" class=3D"full-width footer"> <tr> <=
+td align=3D"center" valign=3D"top" class=3D"container" style=3D"padding: 32=
+px 36px;"> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"width:100%;" role=3D"presentation"> <tr> <td align=3D"cente=
+r" valign=3D"top" class=3D"expand"> <table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"width:100%;" role=3D"presentation"=
+> <tr> <td align=3D"center" valign=3D"top" class=3D"center" style=3D"text-a=
+lign: left;"> <a href=3D"http://links.anthropic.com/s/c/dkdAOxRuF3aBARe9JKw=
+6pk3ChI0bDc9WttL2kJ0t6uVnOaTd-npPZoOQXochL6CFeLKldqUQ2iHv3pUmsbSGHLKaUuGBGq=
+s-tHOZJuN8_kU1qx1Z1DecwA5ofWyUZ7fJSzh0YwtA9HIRWRtzIBJH39pdmCBBeZnSy8_nrD4eS=
+Y-QCVxnNELSeUPl--oVlVmACqiTUL9qqGHd4MKLIpUumlMPtyeeQqEGrzAs5fpbIP0_VDsLZEku=
+S-eC6ErQ7lHzy-U-A0CizaDFx5BrbBEUA26ANcTvNyte8XBspGiYJvyLOrtF7E0BTBpHbTRuEdG=
+FV9mU8AcuOgV7XMlZp9UN8ovyZOTOYDw49sjfk7orxi0jWQsUVGN0YRMc27a3Ba2WFA6AgT2ONs=
+BRspq9EGgeZHtVQ3lv9DaP3dZFROOGRQ/UnsvqVsNQku9FvZKNYVf0A7d9IZxOz0N/21" targe=
+t=3D"_blank" style=3D"text-decoration: none;"> <img src=3D"https://assets.c=
+laude.ai/lifecycle/da4e96790241c45c.png" alt=3D"Anthropic" width=3D"201" st=
+yle=3D"border: 0; width: 201px; max-width: 201px;"> </a> </td> </tr> </tabl=
+e> </td> <td align=3D"center" valign=3D"top" class=3D"expand pt-24" style=
+=3D"width: 280px;"> <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" style=3D"width:100%;" role=3D"presentation"> <tr> <td align=
+=3D"center" valign=3D"top"> <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"width:100%;" role=3D"presentation"> <tr> =
+<td align=3D"center" valign=3D"top" class=3D"center" style=3D"text-align: l=
+eft; width: 40px;"> <a href=3D"http://links.anthropic.com/s/c/lpLLsSMgHEbmx=
+5PhROKbx7Bwg__nHNdFrN-pIqa7kpDX8QQQk6lYOYJPLYt7IQ6j3y2RpndB4lC1UwOmR1gQLkg5=
+xdAHr95-0xGE6QLnXkXnC6ybM9KeLoTq8eqIX5npWQlUgg3HPpArhz0rQZOtL89R6dMp6_daob9=
+8MiD8goKQA3j4GcHHHFPJakqw568YDmBLAga5QK4XcioB3OGot1ssA8oreBVyd3s4ZddLeMwP0t=
+vETBSktzKoJjjghgO_5g6F_CX4FTUIC0jvhdCtgV2X-JweowxPtSpBfoYtunrNdbYzCF76J248t=
+8LzERdVIuM1KJG4aHnZxd-tJ4PdGMxfI0lQhy7uMtVoeacNkYGrYXgYugY1uRIljASQ8vNjC6z8=
+WkBSM_d1mSN11qnsiG8sNf0VEiek2FxO_kgZ3Pr7sGPkd-uSQbwFAcW--OQIKPEH_i8fQM566he=
+192Wnwsx4mxSD/IY7K2YVgjkBPzW8dPBwxxw_r292HAPTL/21" target=3D"_blank" style=
+=3D"text-decoration: none;"> <img src=3D"https://emaillove-assets.b-cdn.net=
+/users/1529529854179550899/assets/f16cc02f-ac4d-4602-b82c-af734e153d11.png"=
+ alt=3D"LinkedIn" class=3D"marAuto" width=3D"36" style=3D"display: block; b=
+order: 0; width: 36px; max-width: 36px;"/> </a> </td> <td align=3D"center" =
+valign=3D"top" class=3D"center" style=3D"text-align: left; width: 40px;"> <=
+a href=3D"http://links.anthropic.com/s/c/N2MTkAZWpSf8_sbX2T3A_r4-D53Goj1woe=
+uysBNGieL2aasLgcBY678MIpp5XVoLUQb0PQoyQ_ldyS66h5voDMZK1Gxhgvs8MNKgCwBXBINMi=
+lupXJOt25P9YQbW-i4R4unPTEXvD6K4AgiUc9dYZQUvuq9K0LUtnRigtv4GfUnOX7kzF06c6T5m=
+Wj6nolaYOSDGo15UgwnO6B8InNsJoPCxy55jwEW71wRKzefK3OPRsBZCUr8625pxj2DDnEglmFi=
+bkMdtzeTfvkZ5VnUjVyAqbKd-77mE3z40xMGDGJATw1qp4MZNec8hWz8qdTY8d97ircfV5akxR3=
+06qREzKvubq3EfEEqNd-fxzYKVvph01pyTysI91bjsvnaSq_KyT3LoHqrFeUn9ovfBMwqN/6wdH=
+t2l8vwlT6cB2pIK9eaMBmrQdQWbo/21" target=3D"_blank" style=3D"text-decoration=
+: none;"> <img src=3D"https://emaillove-assets.b-cdn.net/users/152952985417=
+9550899/assets/53b2f2f8-c731-41e8-8319-091e9b17634d.png" alt=3D"X" class=3D=
+"marAuto" width=3D"36" style=3D"display: block; border: 0; width: 36px; max=
+-width: 36px;"/> </a> </td> <td align=3D"center" valign=3D"top" class=3D"ce=
+nter" style=3D"text-align: left; width: 40px;"> <a href=3D"http://links.ant=
+hropic.com/s/c/5a8STIo63QfDLG6Ek_QWKcZAbMDER5XnsfONmQXWXLsMgUMpsH5Hwc8I8vYv=
+p97gHNp-I-4DIhGQ8mHWX-3UkN-6K5soCc32ujsD52iRjm8HNnoGXuDGjH0YO9yfJ_EoghrTpFe=
+y4JMSaCxkdDlebfxjN8wy0zZbWEW7DSW-hM82SIbM2Y-SkH-x44Ss-saWtcou2XeISlFavjWivn=
+S9UEiM0PbM0__Ct7oR88bX511uEzg4sio_eH10RK-GxGNgmMghwPTKUBh1z0t0btWJeh_LB9X4k=
+kZLjjllZnTCUBN0Rl_5X_-LRD9kMxMgZKkO_bXKk5YwSV6Y8fuG6l3dVvb6zKfAjQLbVTNwjCrF=
+Pj26vRHSackGH5YB-BkrY_Pbi62U6R9Kj4qu0yBOqqADYR_FL9KNj-UmJOGePX_x1LpW2-IFhYQ=
+pGO1UqZMmMC2sfuVhxcvmfj3nbBg/LUZriTuT8EWKDRACIjOMUw5FC3v3__nD/21" target=3D=
+"_blank" style=3D"text-decoration: none;"> <img src=3D"https://emaillove-as=
+sets.b-cdn.net/users/1529529854179550899/assets/8ac39ab9-8773-47d7-81c1-991=
+1cb3bb2d0.png" alt=3D"Youtube" class=3D"marAuto" width=3D"36" style=3D"disp=
+lay: block; border: 0; width: 36px; max-width: 36px;"/> </a> </td> </tr> </=
+table> </td> </tr> <tr> <td align=3D"center" valign=3D"top" style=3D"paddin=
+g-top: 24px;"> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"width:100%;" role=3D"presentation"> <tr> <td align=3D"c=
+enter" valign=3D"top" style=3D"background-color: #87867F; height: 1px; font=
+-size: 1px; line-height: 1px;" bgcolor=3D"#87867F"> &nbsp; </td> </tr> </ta=
+ble> </td> </tr> <tr> <td align=3D"center" style=3D"text-align: left; paddi=
+ng-top: 16px;" class=3D"center" valign=3D"top"> <p class=3D"footerCopy" sty=
+le=3D"font-size: 12px; line-height: 16px; font-family: Georgia, 'Times New =
+Roman', serif; margin: 0; color: #B0AEA5"> Anthropic PBC, 54&zwnj;&#8203;8 =
+M&zwnj;&#8203;a&zwnj;&#8203;r&zwnj;&#8203;k&zwnj;&#8203;e&zwnj;&#8203;t S&z=
+wnj;&#8203;t, PMB 9&zwnj;&#8203;0&zwnj;&#8203;3&zwnj;&#8203;7&zwnj;&#8203;5=
+, <span style=3D"white-space: nowrap;">Sa&zwnj;&#8203;n F&zwnj;&#8203;r&zwn=
+j;&#8203;a&zwnj;&#8203;n&zwnj;&#8203;c&zwnj;&#8203;i&zwnj;&#8203;s&zwnj;&#8=
+203;c&zwnj;&#8203;o, C&zwnj;&#8203;A</span> <span style=3D"white-space: now=
+rap;">9&zwnj;&#8203;4&zwnj;&#8203;1&zwnj;&#8203;0&zwnj;&#8203;4</span> </p>=
+ </td> </tr> <tr> <td align=3D"center" style=3D"text-align: left; padding-t=
+op: 16px;" class=3D"center" valign=3D"top"> <p class=3D"footerCopy" style=
+=3D"font-size: 12px; line-height: 16px; font-family: Georgia, 'Times New Ro=
+man', serif; margin: 0; color: #B0AEA5"> This email was sent to patriogabri=
+elpatdu@gmail.com. </p> </td> </tr> </table> </td> </tr> </table> </td> </t=
+r> </table> <!-- footer --> </td> </tr> </table> </div> </td> </tr> </table=
+> </body> </html>
+------=_Part_1395652_174259241.1781919430552--

@@ -1,0 +1,536 @@
+X-GM-THRID: 1730351942953542856
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a54:2348:0:0:0:0:0 with SMTP id e8csp1381572eco;
+        Sun, 17 Apr 2022 03:43:26 -0700 (PDT)
+X-Google-Smtp-Source: 
+ ABdhPJzoNK1WDIeF8sfeGmNM/EAxPrySMNK2QptIXSKBxGFVib2afYIpLx22dUJ2DYowfpouhCp8
+X-Received: by 2002:a25:4094:0:b0:641:2b90:3b1a with SMTP id
+ n142-20020a254094000000b006412b903b1amr5896331yba.8.1650192206412;
+        Sun, 17 Apr 2022 03:43:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1650192206; cv=none;
+        d=google.com; s=arc-20160816;
+        b=leN8ePTknmcQq1D4UrYNvvy/Ive2VlPHF0vbEsZjeJSJYj0OnsIEHG4eAAODLbN52D
+         6YxvVdn4Ey1kjxyBtYd2bqGLvKsRB7XlXzEeJszc0T/s4LgQa4Y8bHNUX1kzKPQtluOs
+         vp+6SGHyaMf2RrqugAH51KPp0n354jEvZg6/pAm53ol5Yv7bG9rdbMChxL/asJbqsnH0
+         ErS1YMWVwJdCbzpHDyVUH3CN5cB6v/9BAPzQxkKgjXzWFvWuVv5Pjg1XOoicZB6Pw9tw
+         MXKnK+6y3fiOyMmSInaVqpYpu/G+OlVJUduaK8vJaN7hfWT+7SA9gokvvAZ4E9D3pdAf
+         pWlg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=07HMkjD0eWlXkYz/69N0Qo2yQGpjYT6X8UUmOjd/hNw=;
+        b=akbEiIgfHNECZllVsGGwo1/6YfDyPE53h0UN7XqyztJpJC0STS8cgIA5+7EGpNGcvx
+         w+QoiTJeUSXFUUH4QGBcl1tiLWI4MbA4p46kRhHmkUG5aCuZEg4cq7CMqEfkn/SPImza
+         WJu0fXiOcscp626w/oIiJ+Bpu0cT8hjjtJYv75P5ow+u+bQcqHBNdIzUkntHw/Sz6v5s
+         FHIyqcuKKP68VcvtQrBzc+WoWZkLnsUkdnQkieT+MomRK4NAXcdRJs58ak5YUMhzjrb9
+         aG5Z+X95oujZpJuRfIO0ofpqYHB6vyobfZGHRpGjzUN63cE/wELZ9OTeS+OJFfcY6q+b
+         Yxxg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@spotify.com header.s=s1 header.b=STga17rh;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Rj+neU9e;
+       spf=pass (google.com: domain of
+ bounces+54769-40c0-patriogabrielpatdu=gmail.com@em.spotify.com designates
+ 208.117.49.194 as permitted sender)
+ smtp.mailfrom="bounces+54769-40c0-patriogabrielpatdu=gmail.com@em.spotify.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=spotify.com
+Return-Path: <bounces+54769-40c0-patriogabrielpatdu=gmail.com@em.spotify.com>
+Received: from o10.em.spotify.com (o10.em.spotify.com. [208.117.49.194])
+        by mx.google.com with ESMTPS id
+ l204-20020a8170d5000000b002e5bb9dcafasi4432295ywc.387.2022.04.17.03.43.26
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 17 Apr 2022 03:43:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+54769-40c0-patriogabrielpatdu=gmail.com@em.spotify.com designates
+ 208.117.49.194 as permitted sender) client-ip=208.117.49.194;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@spotify.com header.s=s1 header.b=STga17rh;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Rj+neU9e;
+       spf=pass (google.com: domain of
+ bounces+54769-40c0-patriogabrielpatdu=gmail.com@em.spotify.com designates
+ 208.117.49.194 as permitted sender)
+ smtp.mailfrom="bounces+54769-40c0-patriogabrielpatdu=gmail.com@em.spotify.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=spotify.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=spotify.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to;
+	s=s1; bh=07HMkjD0eWlXkYz/69N0Qo2yQGpjYT6X8UUmOjd/hNw=;
+	b=STga17rhe3avRLbNSsECXl8xKN+sAIzetQGm2cBf3X0fwhL4cchOnadZM838S/X4QZ9F
+	QuTdWEmkNfiBD+YkV0L3W+OX6Uf39HbfzzU+a3tfuMvBvDEs86NeCm3MX07NsUdZW6fm0e
+	fh72UTjmxv+Xs6SQwEHB5qqYYi7g4atc85Yp+5t0hiQZZ79weF8x4sfYt/9T+E3ZQTGNXg
+	Pv0eExx2iEdaXUWIKW9yes1JRXBsTKqq0rPY84tniN+EnT0j1hN8GNXTW7zZQAuQ6iqMWd
+	zxymnx+iFXWxiZuaxhRukrZFu2w+6X/cHbG4bBjd8EUH9Vi+6SlF8whmvUIZfNSg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to;
+	s=smtpapi; bh=07HMkjD0eWlXkYz/69N0Qo2yQGpjYT6X8UUmOjd/hNw=;
+	b=Rj+neU9eJ7Cif3pgQJMyQsHpIPbh3uJV/Qn73cUlI9TxBc8XsPZUyPz5HefMJ1Qz8B0j
+	ZwqmEKnyaycwCBJby5NI1XpSmuGMzilCJUSmiEhVrTQWLpiKxYewtUl72CBepWlnbdQr/K
+	jC9jFIY18Fx6nrtUennu7x2PugEbi2X/k=
+Received: by filterdrecv-5b9b8d8c7b-n59cd with SMTP id
+ filterdrecv-5b9b8d8c7b-n59cd-1-625BEF4D-58
+        2022-04-17 10:43:25.683830388 +0000 UTC m=+910638.144010075
+Received: from NTQ3Njk (unknown)
+	by geopod-ismtpd-5-3 (SG) with HTTP
+	id SYxKWZGVQPOZ7_jus3O25Q
+	Sun, 17 Apr 2022 10:43:25.643 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=aa11890e3ae5ed49d9b72a4d615dbc081c961d08a35c63b91ba4f6936774
+Date: Sun, 17 Apr 2022 10:43:25 +0000 (UTC)
+From: Spotify <no-reply@spotify.com>
+Mime-Version: 1.0
+Message-ID: <SYxKWZGVQPOZ7_jus3O25Q@geopod-ismtpd-5-3>
+Subject: Shine on with 3 free months of Premium
+X-Feedback-ID: 54769:SG
+X-SG-EID: 
+ =?us-ascii?Q?0C9L=2FeBRtgYa=2FF8y6aOTnwpGIngFWQ11NoR8o2fvCVMN9thUS8ZNdG1JBR+Ynp?=
+ =?us-ascii?Q?5TqR0Hpm2LFUl=2FBnY7BDTNZW4tAu5PiRhP1rCk+?=
+ =?us-ascii?Q?xQsrEvfB4IzdLwtgOd34Zh6UIAZbM53AeLTY2i2?=
+ =?us-ascii?Q?faMCWttS+35UsykOIS=2FPNYseq=2FdfcO2nsWnP4ZT?=
+ =?us-ascii?Q?HsFwYWTtGjh=2FNC58nB88xoL8rO0K=2FD6vfHcdZ5d?=
+ =?us-ascii?Q?xqiMg1ietmaouQxHYIJoOLqMvfFzsYBgGiJk2t?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb39LyFLl2VoxFmF0JeeMQC1icJ2uXYeN3K+J6J7CsS?=
+ =?us-ascii?Q?ALfNtgK74=2FVu6n2OGpkgn1lcQfE23bWm+KkZj=2F7?=
+ =?us-ascii?Q?hnObONLWg74Ele+cmHTn3vnI+Y9LepG+W21aIUw?=
+ =?us-ascii?Q?=2FvukYjr2i9XfWrnfuqo=2Fi0ok7sthe00yBwNXmeV?=
+ =?us-ascii?Q?gCyDkHBlZmSr2FxtbvVKIOh+11j=2FfDduaKWeLGJ?=
+ =?us-ascii?Q?m9vhLHsmNbtcc4VmMacQM5dKBhCz60=2FuBfsUPAJ?=
+ =?us-ascii?Q?YN5ZYp88ViVkfxWG3aLnYA+zv3bDDBn6rG+Ls4O?=
+ =?us-ascii?Q?jEsnl6xYf4vZkvWmSj4ZEhBrOFT4rpsxobnrjxG?=
+ =?us-ascii?Q?QV4W9W4v7zffWTwRHj18NsBk5qQw30QNxrGTib+?=
+ =?us-ascii?Q?kWGBcq8f6NMNFVjam9mgYsPbCoO=2FuBHWR5vl6WL?=
+ =?us-ascii?Q?mvjEvsMqB0x8eZHTS2pTthFhPVHrWN0LOOmV3yZ?=
+ =?us-ascii?Q?6q0GANtLSW+06EmX0cgAXbIMzUE36uzZV4cidBQ?= =?us-ascii?Q?=3D?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: 2vxnRJdGdooKCfSUhf9vyA==
+
+--aa11890e3ae5ed49d9b72a4d615dbc081c961d08a35c63b91ba4f6936774
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+
+
+Let your freak flag fly with Premium.
+
+
+GET 3 MONTHS FREE ( https://www.spotify.com/premium?utm_source=3Dspotify&ut=
+m_medium=3Demail&utm_campaign=3D2022_q2_midyear_intro_email&utm_content=3Dw=
+ave_1_&splot=3DwZ1RsxuXSnCN-KqKSuCmXA )
+
+
+Individual plan only. =E2=82=B1129/month after. Terms and conditions apply.=
+ Open only to users who haven't already tried Premium. Offer ends May 12, 2=
+022. Clicking the button will log you into your Spotify account, where you =
+can choose to accept this offer. Do not forward this email to anyone not au=
+thorized to access your account.
+
+Get Premium https://www.spotify.com/premium?utm_source=3Dspotify&utm_medium=
+=3Demail&utm_campaign=3D2022_q2_midyear_intro_email&utm_content=3Dwave_1_&s=
+plot=3DwZ1RsxuXSnCN-KqKSuCmXA
+
+Vibe out and live proud by listening to the songs you love, nonstop. Premiu=
+m lets you play music without hearing ads =E2=80=93 and it's free for 3 who=
+le months. Cancel anytime.
+
+
+GET 3 MONTHS FREE ( https://www.spotify.com/premium?utm_source=3Dspotify&ut=
+m_medium=3Demail&utm_campaign=3D2022_q2_midyear_intro_email&utm_content=3Dw=
+ave_1_&splot=3DwZ1RsxuXSnCN-KqKSuCmXA )
+
+
+Individual plan only. =E2=82=B1129/month after. Terms and conditions apply.=
+ Open only to users who haven't already tried Premium. Offer ends May 12, 2=
+022. Clicking the button will log you into your Spotify account, where you =
+can choose to accept this offer. Do not forward this email to anyone not au=
+thorized to access your account.
+
+
+-------------
+
+Get Spotify for:
+  * iPhone (https://itunes.apple.com/app/spotify-music/id324684580)
+  * iPad (https://itunes.apple.com/app/spotify-music/id324684580)
+  * Android (https://play.google.com/store/apps/details?id=3Dcom.spotify.mu=
+sic)
+  * Other (https://www.spotify.com/download/)
+
+This message was sent to patriogabrielpatdu@gmail.com.
+If you don't want to receive these emails from Spotify in the future, you c=
+an edit your profile ( https://www.spotify.com/accounts/profile ) or unsubs=
+cribe ( https://www.spotify.com/account/unsubscribe?t=3DBcGJDYAgDADAVVyApGL=
+lGUdoq40GgxqR7b3b16b9yC8kXT%2FYqoYuterThnI%2BKt0UbrdZCplThK97iC7NEbPFiZYQgT=
+zw6MYIOQmSZUDigDb4Hw%3D%3D&a=3Dunsubscribe ).
+
+  * Terms of Use https://www.spotify.com/legal/end-user-agreement/
+  * Privacy Policy https://www.spotify.com/legal/privacy-policy/
+  * Contact Us https://www.spotify.com/about-us/contact/
+
+
+Spotify AB, Regeringsgatan 19, 111 53, Stockholm, Sweden
+
+--aa11890e3ae5ed49d9b72a4d615dbc081c961d08a35c63b91ba4f6936774
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"margin=
+:0;padding:0"><head><meta charset=3D"utf-8"><meta name=3D"viewport" content=
+=3D"width=3Ddevice-width, initial-scale=3D1"><title>Shine on with 3 free mo=
+nths of Premium</title><style type=3D"text/css">@media only screen and (min=
+-device-width: 481px) {div[id=3D"main"] {width: 480px !important;}}</style>=
+<!--[if mso]><style>body, table, tr, td, h1, h2, h3, h4, h5, h6, center p, =
+a, span, table.MsoNormalTable {font-family: "Helvetica", "Arial", sans-seri=
+f !important}</style><![endif]--><style data-styled=3D"sWWsi" data-styled-v=
+ersion=3D"4.4.1">
+/* sc-component-id: sc-ifAKCX */
+.sWWsi{display:none;}</style></head><body topmargin=3D"0" leftmargin=3D"0" =
+rightmargin=3D"0" bottommargin=3D"0" marginheight=3D"0" marginwidth=3D"0" s=
+tyle=3D"-webkit-font-smoothing:antialiased;width:100% !important;-webkit-te=
+xt-size-adjust:none;margin:0;padding:0"><!--TEST-FORM--><span style=3D"bord=
+er:none;padding:0;margin:0;display:none;font-size:1px">All the music, witho=
+ut hearing ads</span>
+<!--[if (mso) | (IE)]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" valign=3D"top" width=3D"480" align=3D"center"><tr><td valign=3D"top" ali=
+gn=3D"left" style=3D" word-break:normal; border-collapse:collapse; font-fam=
+ily:'Circular', Helvetica, Arial, sans-serif; font-size:12px; line-height:1=
+8px; color:#555555;"><![endif]--><table style=3D"border-collapse:collapse;p=
+adding:0;max-width:480px;width:100%;border:0;background-color:#f59b23;margi=
+n:0 auto;word-break:break-word" cellpadding=3D"0" cellspacing=3D"0"><tbody =
+style=3D"border:none;padding:0;margin:0"><tr style=3D"border:none;margin:0p=
+x;padding:0px"><td style=3D"border:none;padding:0;margin:0"><div id=3D"main=
+" style=3D"border:none;padding:0;margin:0"><table class=3D"header-root" sty=
+le=3D"border-collapse:collapse;padding:0;background-color:#f59b23;text-alig=
+n:left;width:100%;height:50px"><tbody style=3D"border:none;padding:0;margin=
+:0"><tr style=3D"border:none;margin:0px;padding:0px;height:24px" data-testi=
+d=3D"table-padding-top"><td colspan=3D"3" style=3D"border:none;padding:0;ma=
+rgin:0;height:24px"></td></tr><tr style=3D"border:none;margin:0px;padding:0=
+px"><td data-testid=3D"table-padding-left" style=3D"border:none;padding:0;m=
+argin:0;width:24px"></td><td style=3D"border:none;padding:0;margin:0"><a hr=
+ef=3D"https://wl.spotify.com/ss/c/luBzz2tVm8UlIamR0anXqUf3BsHtXUcUR3rnz7Tdb=
+j8/3la/Gz9YOg5PRS606BsItp9X4w/h0/qbHNLBK-FGSSqP_ZPG7H74hIbikyuWn-DiVKPI3Yt6=
+0" style=3D"text-decoration:none;color:#1ed760"><img alt=3D"" class=3D"logo=
+" style=3D"display:block;max-width:100%;margin-right:auto;height:37px" heig=
+ht=3D"37" src=3D"https://message-editor.scdn.co/18c03260-4db6-4f1e-b2d8-fb3=
+1269efcd4"></a></td><td data-testid=3D"table-padding-right" style=3D"border=
+:none;padding:0;margin:0;width:24px"></td></tr></tbody></table><table style=
+=3D"border-collapse:collapse;padding:0;width:100%;background-color:#f59b23;=
+font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif !important=
+;font-size:36px" dir=3D"auto"><tbody style=3D"border:none;padding:0;margin:=
+0"><tr style=3D"border:none;margin:0px;padding:0px;height:24px" data-testid=
+=3D"table-padding-top"><td colspan=3D"3" style=3D"border:none;padding:0;mar=
+gin:0;height:24px"></td></tr><tr style=3D"border:none;margin:0px;padding:0p=
+x"><td data-testid=3D"table-padding-left" style=3D"border:none;padding:0;ma=
+rgin:0;width:24px"></td><td style=3D"border:none;padding:0;margin:0"><p sty=
+le=3D"border:none;padding:0;margin:0;background-color:#f59b23;color:#503750=
+;font-size:36px;font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-=
+serif !important;font-weight:400;text-align:left"><b style=3D"border:none;p=
+adding:0;margin:0">Let your freak flag fly with Premium.<b style=3D"border:=
+none;padding:0;margin:0"></b></b></p></td><td data-testid=3D"table-padding-=
+right" style=3D"border:none;padding:0;margin:0;width:24px"></td></tr></tbod=
+y></table><table class=3D"call-to-action-root" data-testid=3D"call-to-actio=
+n-root" style=3D"border-collapse:collapse;padding:0;width:100%;background-c=
+olor:#f59b23;text-align:center"><tbody style=3D"border:none;padding:0;margi=
+n:0"><tr style=3D"border:none;margin:0px;padding:0px;height:24px" data-test=
+id=3D"table-padding-top"><td colspan=3D"3" style=3D"border:none;padding:0;m=
+argin:0;height:24px"></td></tr><tr style=3D"border:none;margin:0px;padding:=
+0px"><td data-testid=3D"table-padding-left" style=3D"border:none;padding:0;=
+margin:0;width:24px"></td><td style=3D"border:none;padding:0;margin:0"><tab=
+le style=3D"border-collapse:collapse;padding:0;width:100%"><tbody style=3D"=
+border:none;padding:0;margin:0"><tr style=3D"border:none;margin:0px;padding=
+:0px"><td class=3D"font" style=3D"border:none;padding:0;margin:0;font-famil=
+y:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif;font-weight:700;line=
+-height:1.1em;letter-spacing:0.15px;font-size:14px;text-decoration:none;tex=
+t-align:center;text-transform:uppercase"><div style=3D"border:none;padding:=
+0;margin:0;text-align:center;line-height:0">
+<!--[if mso]><div style=3D"line-height:1em;"><v:roundrect xmlns:v=3D"urn:sc=
+hemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+href=3D"https://www.spotify.com/premium?utm_source=3Dspotify&utm_medium=3De=
+mail&utm_campaign=3D2022_q2_midyear_intro_email&utm_content=3Dwave_1_&splot=
+=3DwZ1RsxuXSnCN-KqKSuCmXA" style=3D"v-text-anchor: middle; width: 240px; ma=
+x-width: 240px; height: 48px; text-decoration: none; color: '#f59b23'; font=
+-family: 'Helvetica', 'Arial', sans-serif; font-size: 13px; font-weight: bo=
+ld; line-height: 48px" arcsize=3D"50%" fillcolor=3D"#503750" strokecolor=3D=
+"#503750"><w:anchorlock /><center style=3D"color: #f59b23; font-family: 'He=
+lvetica', 'Arial', sans-serif; font-size: 13px; font-weight: bold; line-hei=
+ght: 16px; text-transform:uppercase">GET 3 MONTHS FREE</center></v:roundrec=
+t></div><![endif]-->
+<!--[if mso]><div style=3D"mso-hide: all"><![endif]--><a href=3D"https://wl=
+.spotify.com/ss/c/NcOg9etoQJvwfdKhGmCY2Timt7btHN9M3aymuo8gHXJ14_48zg3nVM72n=
+Q3JuGZkD_PBBUHdWhZlgxCZ8EcVz1bRcZhfPQzKR6NVxtATi3cc2xE6ej3ZHeROBsPlfoAvVOuN=
+MJUSHqxUOhLaBzYCF02SvtHanPOKKnAV0hf1B4FI9fCXYf2GsYtCglVn0jWISHFA0BI-E_YtfAu=
+Y-aaJaNyaPbuxGhS7fEDkSUTT-VI/3la/Gz9YOg5PRS606BsItp9X4w/h1/v7lk1HMRBaDAAKyY=
+eRdkO6KPpXv3sRR8VbSr7WidIQs" clicktracking=3D"on" universal=3D"false" class=
+=3D"call-to-action-button" style=3D"text-decoration:none;color:#f59b23;marg=
+in-left:auto;margin-right:auto;max-width:240px;background-color:#503750;bor=
+der-radius:24px;display:block" data-testid=3D"call-to-action-button"><table=
+ class=3D"call-to-action-container" style=3D"border-collapse:collapse;paddi=
+ng:0;mso-hide:all;width:100%;max-width:240px;min-height:48px"><tbody style=
+=3D"border:none;padding:0;margin:0"><tr style=3D"border:none;margin:0px;pad=
+ding:0px"><td class=3D"call-to-action-inner-padding" style=3D"border:none;p=
+adding:0;margin:0;width:24px"></td><td style=3D"border:none;padding:0;margi=
+n:0;font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif;font-w=
+eight:700;line-height:1.1em;letter-spacing:0.15px;font-size:14px;text-decor=
+ation:none;text-align:center;text-transform:uppercase;color:#f59b23" class=
+=3D"font call-to-action-cell">GET 3 MONTHS FREE</td><td class=3D"call-to-ac=
+tion-inner-padding" style=3D"border:none;padding:0;margin:0;width:24px"></t=
+d></tr></tbody></table></a>
+<!--[if mso]></div><![endif]--></div></td></tr></tbody></table></td><td dat=
+a-testid=3D"table-padding-right" style=3D"border:none;padding:0;margin:0;wi=
+dth:24px"></td></tr><tr style=3D"border:none;margin:0px;padding:0px;height:=
+8px" data-testid=3D"table-padding-bottom"><td colspan=3D"3" style=3D"border=
+:none;padding:0;margin:0;height:8px"></td></tr></tbody></table><table style=
+=3D"border-collapse:collapse;padding:0;width:100%;background-color:#f59b23;=
+font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif !important=
+;font-size:10px" dir=3D"auto"><tbody style=3D"border:none;padding:0;margin:=
+0"><tr style=3D"border:none;margin:0px;padding:0px;height:8px" data-testid=
+=3D"table-padding-top"><td colspan=3D"3" style=3D"border:none;padding:0;mar=
+gin:0;height:8px"></td></tr><tr style=3D"border:none;margin:0px;padding:0px=
+"><td data-testid=3D"table-padding-left" style=3D"border:none;padding:0;mar=
+gin:0;width:24px"></td><td style=3D"border:none;padding:0;margin:0"><p styl=
+e=3D"border:none;padding:0;margin:0;background-color:#f59b23;color:#503750;=
+font-size:10px;font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-s=
+erif !important;font-weight:400;text-align:center"><i style=3D"border:none;=
+padding:0;margin:0">Individual plan only. =E2=82=B1129/month after. Terms a=
+nd conditions apply. Open only to users who haven't already tried Premium. =
+Offer ends May 12, 2022. Clicking the button will log you into your Spotify=
+ account, where you can choose to accept this offer. Do not forward this em=
+ail to anyone not authorized to access your account.</i></p></td><td data-t=
+estid=3D"table-padding-right" style=3D"border:none;padding:0;margin:0;width=
+:24px"></td></tr><tr style=3D"border:none;margin:0px;padding:0px;height:24p=
+x" data-testid=3D"table-padding-bottom"><td colspan=3D"3" style=3D"border:n=
+one;padding:0;margin:0;height:24px"></td></tr></tbody></table><table class=
+=3D"hero-image-root" style=3D"border-collapse:collapse;padding:0;background=
+-color:#f59b23;width:100%" dir=3D"auto"><tbody style=3D"border:none;padding=
+:0;margin:0"><tr style=3D"border:none;margin:0px;padding:0px"><td data-test=
+id=3D"image-fragment-td" style=3D"border:none;padding:0;margin:0;padding-to=
+p:0px;padding-bottom:0px"><table style=3D"border-collapse:collapse;padding:=
+0;width:100%" data-testid=3D"alignment-container"><tbody style=3D"border:no=
+ne;padding:0;margin:0"><tr style=3D"border:none;margin:0px;padding:0px"><td=
+ style=3D"border:none;padding:0;margin:0;width:100%" data-testid=3D"alignme=
+nt-container-content"><a href=3D"https://www.spotify.com/premium?utm_source=
+=3Dspotify&amp;utm_medium=3Demail&amp;utm_campaign=3D2022_q2_midyear_intro_=
+email&amp;utm_content=3Dwave_1_&amp;splot=3DwZ1RsxuXSnCN-KqKSuCmXA" data-co=
+nditional-falsy-markup=3D"<div style=3D&quot;border:none;padding:0;margin:0=
+&quot;></div>" data-conditional-truthy-markup=3D"<a href=3D&quot;https://ww=
+w.spotify.com/premium?utm_source=3Dspotify&amp;amp;utm_medium=3Demail&amp;a=
+mp;utm_campaign=3D2022_q2_midyear_intro_email&amp;amp;utm_content=3Dwave_1_=
+&amp;amp;splot=3DwZ1RsxuXSnCN-KqKSuCmXA&quot; style=3D&quot;text-decoration=
+:none;color:#1ed760&quot;></a>" data-conditional-value=3D"https://www.spoti=
+fy.com/premium?utm_source=3Dspotify&amp;utm_medium=3Demail&amp;utm_campaign=
+=3D2022_q2_midyear_intro_email&amp;utm_content=3Dwave_1_&amp;splot=3DwZ1Rsx=
+uXSnCN-KqKSuCmXA" style=3D"text-decoration:none;color:#1ed760">
+<!--[if mso]><img alt=3D"Get Premium" style=3D"width: 100%; display: block"=
+ width=3D"100%" src=3Dhttps://message-editor.scdn.co/37ac7111-3731-4348-83d=
+f-8327cb955380" /><![endif]-->
+<!--[if mso]><div style=3D"mso-hide: all"><![endif]--><div data-testid=3D"i=
+mage-container" style=3D"border:none;padding:0;margin:0;padding-right:0px;p=
+adding-left:0px;height:inherit;overflow:inherit"><img data-testid=3D"image-=
+fragment-image" alt=3D"Get Premium" class=3D"hero-image-image" style=3D"dis=
+play:block;max-width:100%;width:100%;height:inherit;margin-bottom:-1px" src=
+=3D"https://message-editor.scdn.co/37ac7111-3731-4348-83df-8327cb955380"></=
+div>
+<!--[if mso]></div><![endif]--></a></td></tr></tbody></table></td></tr></tb=
+ody></table><table style=3D"border-collapse:collapse;padding:0;width:100%;b=
+ackground-color:#f59b23;font-family:&quot;helvetica&quot;, &quot;arial&quot=
+;, sans-serif !important;font-size:18px" dir=3D"auto"><tbody style=3D"borde=
+r:none;padding:0;margin:0"><tr style=3D"border:none;margin:0px;padding:0px;=
+height:24px" data-testid=3D"table-padding-top"><td colspan=3D"3" style=3D"b=
+order:none;padding:0;margin:0;height:24px"></td></tr><tr style=3D"border:no=
+ne;margin:0px;padding:0px"><td data-testid=3D"table-padding-left" style=3D"=
+border:none;padding:0;margin:0;width:24px"></td><td style=3D"border:none;pa=
+dding:0;margin:0"><p style=3D"border:none;padding:0;margin:0;background-col=
+or:#f59b23;color:#503750;font-size:18px;font-family:&quot;helvetica&quot;, =
+&quot;arial&quot;, sans-serif !important;font-weight:400;text-align:left">V=
+ibe out and live proud by listening to the songs you love, nonstop. Premium=
+ lets you play music without hearing ads =E2=80=93 and it's free for 3 whol=
+e months. Cancel anytime.</p></td><td data-testid=3D"table-padding-right" s=
+tyle=3D"border:none;padding:0;margin:0;width:24px"></td></tr><tr style=3D"b=
+order:none;margin:0px;padding:0px;height:24px" data-testid=3D"table-padding=
+-bottom"><td colspan=3D"3" style=3D"border:none;padding:0;margin:0;height:2=
+4px"></td></tr></tbody></table><table class=3D"call-to-action-root" data-te=
+stid=3D"call-to-action-root" style=3D"border-collapse:collapse;padding:0;wi=
+dth:100%;background-color:#f59b23;text-align:center"><tbody style=3D"border=
+:none;padding:0;margin:0"><tr style=3D"border:none;margin:0px;padding:0px">=
+<td data-testid=3D"table-padding-left" style=3D"border:none;padding:0;margi=
+n:0;width:24px"></td><td style=3D"border:none;padding:0;margin:0"><table st=
+yle=3D"border-collapse:collapse;padding:0;width:100%"><tbody style=3D"borde=
+r:none;padding:0;margin:0"><tr style=3D"border:none;margin:0px;padding:0px"=
+><td class=3D"font" style=3D"border:none;padding:0;margin:0;font-family:&qu=
+ot;helvetica&quot;, &quot;arial&quot;, sans-serif;font-weight:700;line-heig=
+ht:1.1em;letter-spacing:0.15px;font-size:14px;text-decoration:none;text-ali=
+gn:center;text-transform:uppercase"><div style=3D"border:none;padding:0;mar=
+gin:0;text-align:center;line-height:0">
+<!--[if mso]><div style=3D"line-height:1em;"><v:roundrect xmlns:v=3D"urn:sc=
+hemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+href=3D"https://www.spotify.com/premium?utm_source=3Dspotify&utm_medium=3De=
+mail&utm_campaign=3D2022_q2_midyear_intro_email&utm_content=3Dwave_1_&splot=
+=3DwZ1RsxuXSnCN-KqKSuCmXA" style=3D"v-text-anchor: middle; width: 240px; ma=
+x-width: 240px; height: 48px; text-decoration: none; color: '#f59b23'; font=
+-family: 'Helvetica', 'Arial', sans-serif; font-size: 13px; font-weight: bo=
+ld; line-height: 48px" arcsize=3D"50%" fillcolor=3D"#503750" strokecolor=3D=
+"#503750"><w:anchorlock /><center style=3D"color: #f59b23; font-family: 'He=
+lvetica', 'Arial', sans-serif; font-size: 13px; font-weight: bold; line-hei=
+ght: 16px; text-transform:uppercase">GET 3 MONTHS FREE</center></v:roundrec=
+t></div><![endif]-->
+<!--[if mso]><div style=3D"mso-hide: all"><![endif]--><a href=3D"https://wl=
+.spotify.com/ss/c/NcOg9etoQJvwfdKhGmCY2Timt7btHN9M3aymuo8gHXJ14_48zg3nVM72n=
+Q3JuGZkD_PBBUHdWhZlgxCZ8EcVz1bRcZhfPQzKR6NVxtATi3cc2xE6ej3ZHeROBsPlfoAvVOuN=
+MJUSHqxUOhLaBzYCF02SvtHanPOKKnAV0hf1B4FI9fCXYf2GsYtCglVn0jWISHFA0BI-E_YtfAu=
+Y-aaJaNyaPbuxGhS7fEDkSUTT-VI/3la/Gz9YOg5PRS606BsItp9X4w/h2/2zqC0lLWCkuUd--v=
+rw3CK8E57tPxVumCUI6XuTq_SrY" clicktracking=3D"on" universal=3D"false" class=
+=3D"call-to-action-button" style=3D"text-decoration:none;color:#f59b23;marg=
+in-left:auto;margin-right:auto;max-width:240px;background-color:#503750;bor=
+der-radius:24px;display:block" data-testid=3D"call-to-action-button"><table=
+ class=3D"call-to-action-container" style=3D"border-collapse:collapse;paddi=
+ng:0;mso-hide:all;width:100%;max-width:240px;min-height:48px"><tbody style=
+=3D"border:none;padding:0;margin:0"><tr style=3D"border:none;margin:0px;pad=
+ding:0px"><td class=3D"call-to-action-inner-padding" style=3D"border:none;p=
+adding:0;margin:0;width:24px"></td><td style=3D"border:none;padding:0;margi=
+n:0;font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif;font-w=
+eight:700;line-height:1.1em;letter-spacing:0.15px;font-size:14px;text-decor=
+ation:none;text-align:center;text-transform:uppercase;color:#f59b23" class=
+=3D"font call-to-action-cell">GET 3 MONTHS FREE</td><td class=3D"call-to-ac=
+tion-inner-padding" style=3D"border:none;padding:0;margin:0;width:24px"></t=
+d></tr></tbody></table></a>
+<!--[if mso]></div><![endif]--></div></td></tr></tbody></table></td><td dat=
+a-testid=3D"table-padding-right" style=3D"border:none;padding:0;margin:0;wi=
+dth:24px"></td></tr></tbody></table><table style=3D"border-collapse:collaps=
+e;padding:0;width:100%;background-color:#f59b23;font-family:&quot;helvetica=
+&quot;, &quot;arial&quot;, sans-serif !important;font-size:10px" dir=3D"aut=
+o"><tbody style=3D"border:none;padding:0;margin:0"><tr style=3D"border:none=
+;margin:0px;padding:0px;height:16px" data-testid=3D"table-padding-top"><td =
+colspan=3D"3" style=3D"border:none;padding:0;margin:0;height:16px"></td></t=
+r><tr style=3D"border:none;margin:0px;padding:0px"><td data-testid=3D"table=
+-padding-left" style=3D"border:none;padding:0;margin:0;width:24px"></td><td=
+ style=3D"border:none;padding:0;margin:0"><p style=3D"border:none;padding:0=
+;margin:0;background-color:#f59b23;color:#503750;font-size:10px;font-family=
+:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif !important;font-weigh=
+t:400;text-align:center"><i style=3D"border:none;padding:0;margin:0">Indivi=
+dual plan only. =E2=82=B1129/month after. Terms and conditions apply. Open =
+only to users who haven't already tried Premium. Offer ends May 12, 2022. C=
+licking the button will log you into your Spotify account, where you can ch=
+oose to accept this offer. Do not forward this email to anyone not authoriz=
+ed to access your account.</i></p></td><td data-testid=3D"table-padding-rig=
+ht" style=3D"border:none;padding:0;margin:0;width:24px"></td></tr><tr style=
+=3D"border:none;margin:0px;padding:0px;height:24px" data-testid=3D"table-pa=
+dding-bottom"><td colspan=3D"3" style=3D"border:none;padding:0;margin:0;hei=
+ght:24px"></td></tr></tbody></table><table style=3D"border-collapse:collaps=
+e;padding:0;background-color:#f7f7f7;width:100%" class=3D"footer-root" dir=
+=3D"auto"><tbody style=3D"border:none;padding:0;margin:0"><tr style=3D"bord=
+er:none;margin:0px;padding:0px;height:25px"><td colspan=3D"3" style=3D"bord=
+er:none;padding:6.25px;margin:0;height:25px"></td></tr><tr style=3D"border:=
+none;margin:0px;padding:0px"><td style=3D"border:none;padding:0;margin:0;wi=
+dth:6.25%"></td><td style=3D"border:none;padding:0;margin:0"><img alt=3D"Sp=
+otify Logo" height=3D"23" style=3D"display:block;max-width:100%;height:23px=
+" src=3D"http://message-editor.scdn.co/newsletter/images/logo_footer.png"><=
+/td><td style=3D"border:none;padding:0;margin:0;width:6.25%"></td></tr><tr =
+style=3D"border:none;margin:0px;padding:0px;height:25px"><td colspan=3D"3" =
+style=3D"border:none;padding:6.25px;margin:0;height:25px"></td></tr><tr sty=
+le=3D"border:none;margin:0px;padding:0px"><td style=3D"border:none;padding:=
+0;margin:0;width:6.25%"></td><td style=3D"border:none;padding:0;margin:0"><=
+hr style=3D"height:1px;background-color:#d1d5d9;border:none;margin:0px;padd=
+ing:0px"></td><td style=3D"border:none;padding:0;margin:0;width:6.25%"></td=
+></tr><tr style=3D"border:none;margin:0px;padding:0px;height:12px"><td cols=
+pan=3D"3" style=3D"border:none;padding:3px;margin:0;height:12px"></td></tr>=
+<tr style=3D"border:none;margin:0px;padding:0px"><td style=3D"border:none;p=
+adding:0;margin:0;width:6.25%"></td><td class=3D"font" style=3D"border:none=
+;padding:0;margin:0;font-family:&quot;helvetica&quot;, &quot;arial&quot;, s=
+ans-serif;font-weight:400;line-height:1.65em;letter-spacing:0.15px;font-siz=
+e:11px;text-decoration:none;color:#88898c">Get Spotify for: &nbsp;<a class=
+=3D"footer-separated-text" style=3D"text-decoration:none;color:#6d6d6d;disp=
+lay:inline-block;font-weight:700" href=3D"https://wl.spotify.com/ss/c/LamQ6=
+0llzuDczOYk0tvsVVb_SVJdGTIfQ_1t3ZEqsocA89S5jCd9p0IlNqMwxH3JqzQnktd1uTGceMdF=
+7hhGNw/3la/Gz9YOg5PRS606BsItp9X4w/h3/QTwtzLgstMxjR_rk4pvfA_jiZKLxAGu86BMgeS=
+E_-3c">iPhone</a><span style=3D"border:none;padding:4px 0;margin:0 7px;widt=
+h:1px;border-left:solid 1px #c3c3c3;border-right:solid 1px transparent">&nb=
+sp;</span><a class=3D"footer-separated-text" style=3D"text-decoration:none;=
+color:#6d6d6d;display:inline-block;font-weight:700" href=3D"https://wl.spot=
+ify.com/ss/c/LamQ60llzuDczOYk0tvsVVb_SVJdGTIfQ_1t3ZEqsocA89S5jCd9p0IlNqMwxH=
+3JqzQnktd1uTGceMdF7hhGNw/3la/Gz9YOg5PRS606BsItp9X4w/h4/nasmuHa0zWcNtp-xd5_b=
+1JJHESHwPae05Tyka9v_0Dg">iPad</a><span style=3D"border:none;padding:4px 0;m=
+argin:0 7px;width:1px;border-left:solid 1px #c3c3c3;border-right:solid 1px =
+transparent">&nbsp;</span><a class=3D"footer-separated-text" style=3D"text-=
+decoration:none;color:#6d6d6d;display:inline-block;font-weight:700" href=3D=
+"https://wl.spotify.com/ss/c/LSBBlYVQQ_VCiEyN29qgQnMlOf9Jt7hsFVsIAtx2fduVQ-=
+RD06uqH_MglQiwpeh4yz3YFY9r5mVv70uX9UksCPAlDPpkTad4_quXpiIygHA/3la/Gz9YOg5PR=
+S606BsItp9X4w/h5/vwY0H5abW2Vl1RQ9yRyx7k1vTzhe4ZaBoh2B-bgRqmU">Android</a><s=
+pan style=3D"border:none;padding:4px 0;margin:0 7px;width:1px;border-left:s=
+olid 1px #c3c3c3;border-right:solid 1px transparent">&nbsp;</span><a class=
+=3D"footer-separated-text" style=3D"text-decoration:none;color:#6d6d6d;disp=
+lay:inline-block;font-weight:700" href=3D"https://wl.spotify.com/ss/c/NcOg9=
+etoQJvwfdKhGmCY2X7wwCLpJpAe5ncSaY1irojI3pkk08KAuyLzK6h-UxjZ/3la/Gz9YOg5PRS6=
+06BsItp9X4w/h6/VRFwy9pkov708byrqIeMYUmZC3y8-EV06WGc--bICKU">Other</a></td><=
+td style=3D"border:none;padding:0;margin:0;width:6.25%"></td></tr><tr style=
+=3D"border:none;margin:0px;padding:0px;height:12px"><td colspan=3D"3" style=
+=3D"border:none;padding:3px;margin:0;height:12px"></td></tr><tr style=3D"bo=
+rder:none;margin:0px;padding:0px"><td style=3D"border:none;padding:0;margin=
+:0;width:6.25%"></td><td style=3D"border:none;padding:0;margin:0"><hr style=
+=3D"height:1px;background-color:#d1d5d9;border:none;margin:0px;padding:0px"=
+></td><td style=3D"border:none;padding:0;margin:0;width:6.25%"></td></tr><t=
+r style=3D"border:none;margin:0px;padding:0px;height:25px"><td colspan=3D"3=
+" style=3D"border:none;padding:6.25px;margin:0;height:25px"></td></tr><tr s=
+tyle=3D"border:none;margin:0px;padding:0px"><td style=3D"border:none;paddin=
+g:0;margin:0;width:6.25%"></td><td class=3D"font" style=3D"border:none;padd=
+ing:0;margin:0;font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-s=
+erif;font-weight:400;line-height:1.65em;letter-spacing:0.15px;font-size:11p=
+x;text-decoration:none;color:#88898c"> <span style=3D"border:none;padding:0=
+;margin:0">This message was sent to patriogabrielpatdu@gmail.com.</span> If=
+ you don't want to receive these emails from Spotify in the future, you can=
+ <a class=3D"footer-link" href=3D"https://wl.spotify.com/ss/c/NcOg9etoQJvwf=
+dKhGmCY2Tg4LW1ey7esc5l6X6-eqGF-QyfLxArYtrRWBbbxnK85/3la/Gz9YOg5PRS606BsItp9=
+X4w/h7/79CsNCdA0BgqawhiYuUR0ZFFobL7G5G5oR7ah7yFkUU" style=3D"text-decoratio=
+n:none;color:rgb(109, 109, 109);border:none;margin:0px;padding:0px;font-wei=
+ght:bold">edit your profile</a> or <a class=3D"footer-link" href=3D"https:/=
+/wl.spotify.com/ss/c/NcOg9etoQJvwfdKhGmCY2Tg4LW1ey7esc5l6X6-eqGEqmIL0iCiYfb=
+2sP410pYkvxoPgNPNKUYCG2HHPzSmsAuxFs7pZCt3vBkV4HYJKOk4fIzlVywFsczTioAinvTWMe=
+UtZeNiI8Wsqw1Q-Jpuw7TSCXjpmwPKeWWkOC7OBVzt9Sf3h_EPHiHoaUHvRfkgX9YwkrjWFJI2U=
+59sKbGkPby99wsi1uzfnomflTRd6YcNRHfKOoLHsXtIWo2V1Tfbt/3la/Gz9YOg5PRS606BsItp=
+9X4w/h8/FZ2kVFmG9Lc0_89kcSweYCZn79noemtfg5mDcLRCZ4E" style=3D"text-decorati=
+on:none;color:rgb(109, 109, 109);border:none;margin:0px;padding:0px;font-we=
+ight:bold">unsubscribe</a>.</td><td style=3D"border:none;padding:0;margin:0=
+;width:6.25%"></td></tr><tr style=3D"border:none;margin:0px;padding:0px;hei=
+ght:33px"><td colspan=3D"3" style=3D"border:none;padding:8.25px;margin:0;he=
+ight:33px"></td></tr><tr style=3D"border:none;margin:0px;padding:0px"><td s=
+tyle=3D"border:none;padding:0;margin:0;width:6.25%"></td><td class=3D"font =
+font-small" style=3D"border:none;padding:0;margin:0;font-family:&quot;helve=
+tica&quot;, &quot;arial&quot;, sans-serif;font-weight:400;line-height:1.65e=
+m;letter-spacing:0.15px;font-size:11px;text-decoration:none;color:#88898c">=
+<a class=3D"footer-separated-text" style=3D"text-decoration:none;color:#6d6=
+d6d;display:inline-block;font-weight:700" href=3D"https://wl.spotify.com/ss=
+/c/NcOg9etoQJvwfdKhGmCY2fcBnoxmjKsVnFK97F3n2xpfrSiLOBmqYfyUpU7EqHEhY3m2JdYY=
+xb7oVoLbzu-jlQ/3la/Gz9YOg5PRS606BsItp9X4w/h9/xJYe7-Ha2gLEWzlDgxlNQaBq6KXTOn=
+SUelyaIggA700">Terms of Use</a><span style=3D"border:none;padding:4px 0;mar=
+gin:0 7px;width:1px;border-left:solid 1px #c3c3c3;border-right:solid 1px tr=
+ansparent">&nbsp;</span><a class=3D"footer-separated-text" style=3D"text-de=
+coration:none;color:#6d6d6d;display:inline-block;font-weight:700" href=3D"h=
+ttps://wl.spotify.com/ss/c/NcOg9etoQJvwfdKhGmCY2fcBnoxmjKsVnFK97F3n2xrJwED8=
+Ww28_ARd9o75w0L3P54amTh-3KUFl3nQvHsy8A/3la/Gz9YOg5PRS606BsItp9X4w/h10/RNLw8=
+PqhKpBngF0Wroh4qmoodHczr_onWtVVAuPY6vY">Privacy Policy</a><span style=3D"bo=
+rder:none;padding:4px 0;margin:0 7px;width:1px;border-left:solid 1px #c3c3c=
+3;border-right:solid 1px transparent">&nbsp;</span><a class=3D"footer-separ=
+ated-text" style=3D"text-decoration:none;color:#6d6d6d;display:inline-block=
+;font-weight:700" href=3D"https://wl.spotify.com/ss/c/NcOg9etoQJvwfdKhGmCY2=
+SM2WHtDeWpixSGNnLCcXfuP7mNHsv5L3zy1pG5dDltl/3la/Gz9YOg5PRS606BsItp9X4w/h11/=
+8n25jprIuGcUs4qSZfo3jHz0cd4GBBshUsqHGZJbzwU">Contact Us</a></td><td style=
+=3D"border:none;padding:0;margin:0;width:6.25%"></td></tr><tr style=3D"bord=
+er:none;margin:0px;padding:0px;height:12px"><td colspan=3D"3" style=3D"bord=
+er:none;padding:3px;margin:0;height:12px"></td></tr><tr style=3D"border:non=
+e;margin:0px;padding:0px"><td style=3D"border:none;padding:0;margin:0;width=
+:6.25%"></td><td class=3D"font font-small" style=3D"border:none;padding:0;m=
+argin:0;font-family:&quot;helvetica&quot;, &quot;arial&quot;, sans-serif;fo=
+nt-weight:400;line-height:1.65em;letter-spacing:0.15px;font-size:11px;text-=
+decoration:none;color:#88898c">Spotify AB, Regeringsgatan 19, 111 53, Stock=
+holm, Sweden</td><td style=3D"border:none;padding:0;margin:0;width:6.25%"><=
+/td></tr><tr style=3D"border:none;margin:0px;padding:0px;height:25px"><td c=
+olspan=3D"3" style=3D"border:none;padding:6.25px;margin:0;height:25px"></td=
+></tr></tbody></table></div></td></tr></tbody></table>
+<!--[if (mso) | (IE)]></td></tr></table><![endif]--><img src=3D"https://wl.=
+spotify.com/ss/o/BIFIEceKwRrl2okIkGwAPQ/3la/Gz9YOg5PRS606BsItp9X4w/ho.gif" =
+alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !importa=
+nt;width:1px !important;border-width:0 !important;margin-top:0 !important;m=
+argin-bottom:0 !important;margin-right:0 !important;margin-left:0 !importan=
+t;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !imp=
+ortant;padding-left:0 !important;"/></body></html>
+--aa11890e3ae5ed49d9b72a4d615dbc081c961d08a35c63b91ba4f6936774--

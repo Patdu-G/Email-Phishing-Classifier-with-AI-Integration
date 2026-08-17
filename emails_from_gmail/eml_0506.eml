@@ -1,0 +1,1579 @@
+X-GM-THRID: 1859948612716084562
+X-Gmail-Labels: Inbox,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6359:4c83:b0:285:74b7:ac41 with SMTP id kk3csp902280rwc;
+        Tue, 17 Mar 2026 15:07:02 -0700 (PDT)
+X-Received: by 2002:a05:620a:7104:b0:8ca:2cf9:819d with SMTP id
+ af79cd13be357-8cfad2467e0mr182746185a.26.1773785222033;
+        Tue, 17 Mar 2026 15:07:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1773785222; cv=none;
+        d=google.com; s=arc-20240605;
+        b=AjJ3ffoYP2Jr2SBRg907Sn1FrsHrsEfdtADqXLKFKw1CIi15pYi7//dyiH6VJq3s4d
+         2T7s4uTYardIZ2Hm5reAtzLRM1Nqh3LtO7+X4fLKljddv7x6s8XVdgTJkIqhF9Z+rBUy
+         wdbD4qCnMNk1aC1gd2uae5zNhrHLclRNa+kwhwsS/VTQrEA2R3sjUSEz1kNqVwxbOylt
+         Hi9aoTKnvQdmf//hggju+2wL2aRmK1po3PbgjhHHTEKEfw2H8ZSokB7tIOXSSflBHCUK
+         7alx1B1eTvr5sFM5Qzx/e9SSEfsrzyzpruVQLOzwX5D1PfJIsJvw3FlwOnIkWLWi3oCr
+         nGEw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=list-unsubscribe-post:list-unsubscribe:to:subject:message-id
+         :mime-version:from:date:content-transfer-encoding:dkim-signature
+         :dkim-signature;
+        bh=PUmFqAu6C71PxGgr+C68uR+hoJ9U/Xfm6p08fq2ZNEg=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=S/8zCBvKjcjnDd8WkOhcVhy+mEAalkEABsZ838jWFoi6p6FJkrVIfMm/TsNfiO2JTR
+         hXMKvaD7jIg0LtHbA9B7+u2oCs9G3longqkeiPNec7Ca40cQCGg7kmWOr0gkuJ+EYu9A
+         iwWQXOyvA/YMspqlf7WPUMO8vn437lMjEzqf/BdYDo8rpDuUZUVdUpQvic4mtq/0SdD4
+         4aFac+NVaPYeV9EbqcuPFLXqyz1oyAw8MmeI7s95wr6Aia1Pk3T9rSq2jNxaK8Dci431
+         hK27UyeIklf2mukE7oJD3Shcb6DxgrKyQFbpBU4S9N0ks7Ga16u86meT7yVrRJ9BNiF7
+         3hXA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b="1/s3L6EA";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qGv7z0Pz;
+       spf=pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 168.245.3.220 as permitted sender)
+ smtp.mailfrom="bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+Return-Path: 
+ <bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com>
+Received: from xvfrhpdc.outbound-mail.sendgrid.net
+ (xvfrhpdc.outbound-mail.sendgrid.net. [168.245.3.220])
+        by mx.google.com with ESMTPS id
+ af79cd13be357-8cfad248139si117876885a.226.2026.03.17.15.07.01
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Mar 2026 15:07:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 168.245.3.220 as permitted sender) client-ip=168.245.3.220;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.openai.com header.s=s1 header.b="1/s3L6EA";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qGv7z0Pz;
+       spf=pass (google.com: domain of
+ bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com
+ designates 168.245.3.220 as permitted sender)
+ smtp.mailfrom="bounces+20216706-1eae-patriogabrielpatdu=gmail.com@em6623.email.openai.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=openai.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.openai.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=s1; t=1773785220; bh=PUmFqAu6C71PxGgr+C68uR+hoJ9U/Xfm6p08fq2ZNEg=;
+	b=1/s3L6EAROOhDEjxB0vBYkyihj0ZEGe/RmMq8E2fOEkopKAX5JSJBt+baRpIRGZzaxMv
+	mhnAys+2GrXZw5or0A9KKNgV3fnSnHrDuCCQOZZUsLMOdZBTyRJkjHRknp33JUxE1soCxE
+	H+zurnevkqwGQ5YrUnIbrFAdyMfRM/bEMHYHtQlvZwAsZk7KRxxsVev05qfIS1NYownc2M
+	rV8lKfwGLh1JREt6pKwdErNjEpjjB5mH50wdmaw2Cwxxt/7AztOJCYVBJTEbux0ziX8N8P
+	I1vL/nMDZFwI/5LD6UpYPrAMhksOtYW+jjeNs4maorgOKaQcsy9vV6hCLSR8g48A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+	feedback-id:from:subject:to;
+	s=smtpapi; t=1773785220; bh=PUmFqAu6C71PxGgr+C68uR+hoJ9U/Xfm6p08fq2ZNEg=;
+	b=qGv7z0PzZBuOAsxMfoPnn0j42hSEh2X6QL5fmt9tF3UP2Dv7I6e/KGcXXXFqCakhCo2A
+	umOw2o6iHqG7qsynGJJ2KvgPeXCmXDfe+lVckHMJBVNSjtmoKhl5kUqmkszdmtMl7jlD4W
+	5u5sl0rk/R91WALjLl+PNf/wsGV102IuU=
+Received: by recvd-c545696f7-nwz76 with SMTP id
+ recvd-c545696f7-nwz76-1-69B9D083-BB
+	2026-03-17 22:06:59.978945386 +0000 UTC m=+701489.393941076
+Received: from MjAyMTY3MDY (unknown)
+	by geopod-ismtpd-50 (SG) with HTTP
+	id dFnN8LMRRSOlagBGK4SRcA
+	Tue, 17 Mar 2026 22:06:59.953 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 17 Mar 2026 22:07:00 +0000 (UTC)
+From: ChatGPT <noreply@email.openai.com>
+Mime-Version: 1.0
+Message-ID: <dFnN8LMRRSOlagBGK4SRcA@geopod-ismtpd-50>
+Subject: Try a new look, no strings attached
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E2cVJOEP6rValQfJKwZO1ZPPp2yIilXnDhherIW4DlfmwSM5DUph+QZwre?=
+ =?us-ascii?Q?qLMgSI4FMsfC5+p8Cia8sKY9FC7+tEkOlcOMXff?=
+ =?us-ascii?Q?GucmXJwqBq8JVlJrW6nkY1aQ19U+GmbcXj0tozg?=
+ =?us-ascii?Q?QxkcLWGUhxHFQO6aEsE1OlfUxlnNe1XJyoKJPCi?=
+ =?us-ascii?Q?kWXRhzYQRuYW6yXm3xcC=2F33gebHtw3TW1Aae9EH?=
+ =?us-ascii?Q?Fgb1VHeI80Q=2FpP7R9F22thppgjDXIY4EGNzJwfx?= =?us-ascii?Q?99iW?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCfzdk8Q6weRGnug?=
+ =?us-ascii?Q?VdQiDX=2FPdrVmHq1udZ4YbnqfgE0AFIEB2A5atwb?=
+ =?us-ascii?Q?nQ3dZPr5cUDA9VlctLEt3fuAwW+k8yYj0784P9I?=
+ =?us-ascii?Q?AUPOBn31Pm=2FEKuGIg9RdW7XTCEYMDvlXaA=2FA5RW?=
+ =?us-ascii?Q?iSGioE4lM+HkMEUsKrU+AMfGcLmGPgeDGoJ7JgU?=
+ =?us-ascii?Q?ZLr=2FWeia8RNp7EInWA6oOPQacLPh00Rir4TrMCD?=
+ =?us-ascii?Q?2U35ZRKZyQ3=2FcN+NWyUGIRhstPwupzOf9Vm4Fs3?=
+ =?us-ascii?Q?P8I0El75Pc40W68fsh5K0wb52jrN3YntBBBclUx?=
+ =?us-ascii?Q?prVanBUJZIDMwmKqt+cWApsFiwMnwzu=2FQdtY=2F1P?=
+ =?us-ascii?Q?PjQguNA=2FLfNgy6Og1bTF1vlYAryZvvpI1H3EWMA?=
+ =?us-ascii?Q?ac9EREiTvFQuZRx+LaqtRjcvY+th7l=2FHD9deyGn?= =?us-ascii?Q?L?=
+To: patriogabrielpatdu@gmail.com
+X-Entity-ID: u001.bVuJR+6WQkYgHBZFem2ybw==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fu20216706=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2EWG03?=
+ =?us-ascii?Q?Xv4yQWv26pn8oTu2WyzixVD6DzzEYD3ENvhDdNu?=
+ =?us-ascii?Q?5tNs4L5UZxIrqlr4R2L86zXynFyiHlOD8i8JGMZ?=
+ =?us-ascii?Q?MBdkR35PNAZGZxWnDkA0o=5FNwMCDuZNkYryOrEo0?=
+ =?us-ascii?Q?iEs1AtnGksy-XXOXDd8zXENOhKIGfZmtVwIM=5FpN?=
+ =?us-ascii?Q?Dg1BKrBLydicFvEjRTg=5FODGnNnbYIcabJ0KwhII?=
+ =?us-ascii?Q?LIbR-wIkfb19j7KGkSpQdKaUcK8Ceg--cTQ3=5FYN?=
+ =?us-ascii?Q?B3cLktI5ixyzByR2J2FccqkK5aloPFkpZ7GQnvS?=
+ =?us-ascii?Q?tS4l5bPYtlWS9zFaRkdT5UOw1QWIL91spSifk-W?=
+ =?us-ascii?Q?I7CbHeDyHkQlVS6V3nX1BmISOGZeZ5HDOkVwYzR?=
+ =?us-ascii?Q?2NNXnT9Iv6NoFxzR0w7d6JAHIub6RPHEN9Odyhb?=
+ =?us-ascii?Q?NQSahNIM4ioowt7=5FqtsOwPHDV4RZ5FHZhOKKi8m?=
+ =?us-ascii?Q?--zRRybcSC-SjY4qhalCe=5FqAIbLDqTNwsQs6RHS?=
+ =?us-ascii?Q?yV-QdBZ-dDRg5nkOxB=5FMWUehvjtYH0paXLLY8oW?=
+ =?us-ascii?Q?y4PsmpF-FobWG0wrn7pCPmCk=5FzccOCynFENLIF5?=
+ =?us-ascii?Q?VofwRuwiW49=5FuAwkTtYZ7fs1EOek4-xwZdPSru=5F?=
+ =?us-ascii?Q?Ue7ht5PSLxEv768fX3kQjss5EIGYdfmWS=5FfgX5d?=
+ =?us-ascii?Q?MZaRrEs0Zo-qM1uFwmc0xTdGD83S9I0XiIUj=5F6d?=
+ =?us-ascii?Q?m23GcUAiWNLip8mGl92uWMp4Nv9AnxYy8vpCXU0?=
+ =?us-ascii?Q?lVDG6PwPJ5TV=5FyOI3-fk-kQWsxQ4CTA0G1Yi6Xa?=
+ =?us-ascii?Q?WliqRkLRWWLXc5k6qS-8c7y7YxfKswkZ-5X03gW?=
+ =?us-ascii?Q?67X-HbLPuFv2jPhqNRGq91YaFWrBzyB9dQjnhJC?=
+ =?us-ascii?Q?JLkylqGBRYq5unJVIe1=5Ft-vzpA90jL7FIDocIT1?=
+ =?us-ascii?Q?FWxnZV1tGhiYSWejxQLL6RVhy3a9cvNhEtk9fHQ?=
+ =?us-ascii?Q?NyMQl=5F998yY5VxsXF3M5en0YCO4EpPfErWV7Xe1?=
+ =?us-ascii?Q?lr1r8hQZGvwwdyHjPBKvIc1HZZsdbhAAIXpaRXF?=
+ =?us-ascii?Q?=5Fu1FpY2kfBB-pN0hIoF5A8Qk=5FPCU-iOTtusu6R9?=
+ =?us-ascii?Q?b0sP6wOxt5CczC9w6vNProitFQENs4XvFcA3jvL?=
+ =?us-ascii?Q?HyMhOh08ogTxMso-pn8SDurQU0HKxhHiCn1y-Z=5F?=
+ =?us-ascii?Q?Gihi=5FJRTICCscs9NYetQQstMFZggpgp9t2py1j6?=
+ =?us-ascii?Q?pxqC=5FeIBKGkELKNGmu9SDWhYretfGRwzBGBRa6r?=
+ =?us-ascii?Q?kr1ZVJtOSCvOb8aBxXA49x3snIrIts9Spfshvwr?=
+ =?us-ascii?Q?PzSNmy2NWh=5FpVkOVzpfoId954gpzDhFSFxDL1MC?=
+ =?us-ascii?Q?A4sEgXVMFR1OsrlM-xYFryhmps9JCS5s01qC3SN?=
+ =?us-ascii?Q?6zvUDuVgcvg=3E=2C=3Cmailto=3Aunsubscribe=40em6623?=
+ =?us-ascii?Q?=2Eemail=2Eopenai=2Ecom=3Fsubject=3D20216706=2ETCk-?=
+ =?us-ascii?Q?KmVC-vnLKIcRexLme2FBMToaQlc2EwR=5FEz2qYFd?=
+ =?us-ascii?Q?oMDAwdTAwMENTVTM1ESeI1ZUdONmf24mlsioMDG?=
+ =?us-ascii?Q?uBi2M6D-5Cq4VZOteEjA=5F4COxXWYhGuvE3lpvkc?=
+ =?us-ascii?Q?QXGE8oOEfhOcLPG=5FoUBKotndvlzw8-iM-ETW0ez?=
+ =?us-ascii?Q?TXWejSAD1qGan0HSkL19YQ=3D=3D=2E2KzxT=5Fx4RAxloO?=
+ =?us-ascii?Q?q6HFIFY9LgyRYb=5F5gUmzBOXlvn9y5oMDAwdTAwM?=
+ =?us-ascii?Q?DO=5FG2uxO2=5FqOAfffLI6qK1vK8n0f-Erb5RCf6cZ?=
+ =?us-ascii?Q?d2N7E1c1xabpEWJkD29bLW9b97C-JlcscNxDI=5FT?=
+ =?us-ascii?Q?daw3hNtI1PD2QxUeVsggTJKQPPrihLBoZlA9pas?=
+ =?us-ascii?Q?bHOUjJXJmbzlLrCa4e6wnrytg4zwdiMKpwa7jXE?=
+ =?us-ascii?Q?VFzyStj5Wc9oRbQqt3LsdbLl4L7Hbl1FNVdqO=5Fq?=
+ =?us-ascii?Q?yyxUjuGxXbn6irPmyaS6QsyKKuGXGUBaInPEIdD?=
+ =?us-ascii?Q?wmyDaA1Np881RHYGPVnQ=5FE5S0RN306BoyCbT9he?=
+ =?us-ascii?Q?0yLrZ21Vkxspk-nmF8mlt4jVavZsonZz0429Usv?=
+ =?us-ascii?Q?eglQAbfhoyEjXKFXSPeW4a8bC01v8z00l6P83Nh?=
+ =?us-ascii?Q?suODv4vgyK=5F-tyzJEkswK9Qzno6aU7mWz2bdBjK?=
+ =?us-ascii?Q?1W8BLr9dSQmdbm=5FGZZGF9I7SLUCHDcBiyUgdsPQ?=
+ =?us-ascii?Q?D=5FYjqL7GQZU9chln=5FjtplUZMpaFiqCh1bThxe=5FF?=
+ =?us-ascii?Q?XF-g-aQihctzRl-WsjEFBBlUnpIAmZcxLsOQGgo?=
+ =?us-ascii?Q?TPychJkFu0N4g5F4eVwGhSaOtJowgZDoTVZwX0q?=
+ =?us-ascii?Q?7tJSFs8-6xACSzpmfGYzp2IjtMh4iH77T=5Fvs8pL?=
+ =?us-ascii?Q?6sp8sEq4Ebp3E-MTgg4hJyWkbSDkhJ1gNY=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+<!DOCTYPE html>
+<html dir=3D"ltr">
+<head>
+  <meta charset=3D"utf-8">
+  <meta http-equiv=3D"x-ua-compatible" content=3D"ie=3Dedge">
+  <title></title>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <!-- Hint clients that we explicitly support light/dark rendering. -->
+  <meta name=3D"color-scheme" content=3D"light dark only">
+  <meta name=3D"supported-color-schemes" content=3D"light dark only">
+  <style type=3D"text/css">
+  /**
+   * Google webfonts. Recommended to include the .woff version for cross-cl=
+ient compatibility.
+   */
+  @media screen {
+    /* OpenAI Sans font family */
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 400;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Regular.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 500;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Medium.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 600;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Semibold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "OpenAI Sans";
+      font-style: normal;
+      font-weight: 700;
+      src: url("https://cdn.openai.com/common/fonts/openai-sans/v2/OpenAISa=
+ns-Bold.woff2") format("woff2");
+    }
+  }
+
+  :root {
+    color-scheme: light dark only;
+    supported-color-schemes: light dark only;
+  }
+
+  /**
+   * Avoid browser level font resizing.
+   * 1. Windows Mobile
+   * 2. iOS / OSX
+   */
+  body,
+  table,
+  td,
+  a {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    font-family: 'OpenAI Sans', Helvetica, Arial, sans-serif;
+  }
+
+  /**
+   * Remove extra space added to tables and cells in Outlook.
+   */
+  table,
+  td {
+    mso-table-rspace: 0pt;
+    mso-table-lspace: 0pt;
+    vertical-align: top; /* Align content to the top of table cells */
+  }
+
+  /**
+   * Better fluid images in Internet Explorer.
+   */
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /**
+   * Remove blue links for iOS devices.
+   */
+  a[x-apple-data-detectors] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /**
+   * Fix centering issues in Android 4.4.
+   */
+  div[style*=3D"margin: 16px 0;"] {
+    margin: 0 !important;
+  }
+
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Collapse table borders to avoid space between cells.
+   */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  a {
+    color: #898A8D;
+  }
+
+  .image-reset-bullets,
+  .image-reset-bullets .email-bullet-link {
+      color: #000000;
+  }
+
+  /* Give the ChatGPT logo pill consistent breathing room in light mode. */
+  .email-logo-pill {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 13px;
+      display: inline-block;
+  }
+
+  img {
+    height: auto;
+    line-height: 100%;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+  }
+
+  /* Composer image sizing (mobile default) */
+  .composer-img {
+      width: 83px !important;
+      height: auto !important;
+      padding: 16px !important;
+  }
+
+  h1 {
+      font-size: 34px;
+      line-height: 41px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+      margin: 0;
+  }
+  h2 {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 150%;
+      letter-spacing: -0.2px;
+  }
+  p {
+      font-size: 16px;
+      line-height: 130%;
+      font-weight: 500;
+      margin: 0;
+  }
+  p + p {
+      margin-top: 16px;
+  }
+  /* Intro blocks (H1/H2) sizing */
+  .intro-block {
+      width: 345px !important;
+      max-width: 345px !important;
+  }
+  /* Composer card sizing */
+  .composer-card {
+      width: 377px !important;
+      max-width: 377px !important;
+  }
+  /* Button styling */
+  a.button {
+      background-color: #000000 !important; /* default black */
+      border-radius: 24px !important; /* make button curvy */
+      padding: 11.5px 24px 11.5px !important; /* bigger size */
+      font-size: 16px !important; /* revert text size */
+      line-height: 24px !important;
+  }
+
+  a.button:active {
+      background-color: #414141 !important; /* dark gray on click */
+      border-radius: 36px !important;
+  }
+  /* CTA button hover state (supported clients only) */
+  a.button-invert:hover,
+  a.button-invert:focus {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+      border-color: #FFFFFF !important;
+  }
+  a.button-invert:hover span,
+  a.button-invert:focus span {
+      color: #FFFFFF !important;
+  }
+  @media (prefers-color-scheme: dark) {
+      a.button-invert {
+          background-color: #FFFFFF !important;
+          color: #000000 !important;
+          border-color: #FFFFFF !important;
+          -webkit-text-fill-color: #000000 !important;
+      }
+      a.button-invert span {
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+      }
+  }
+  [data-ogsc] a.button-invert,
+  [data-ogsb] a.button-invert {
+      background-color: #FFFFFF !important;
+      color: #000000 !important;
+      border-color: #FFFFFF !important;
+      -webkit-text-fill-color: #000000 !important;
+  }
+  [data-ogsc] a.button-invert span,
+  [data-ogsb] a.button-invert span {
+      color: #000000 !important;
+      -webkit-text-fill-color: #000000 !important;
+  }
+  /* Ensure hover keeps text legible even with dark-mode overrides. */
+  a.button-invert:hover,
+  a.button-invert:focus {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  a.button-invert:hover span,
+  a.button-invert:focus span {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  /* Badges: use real rows so the stacked layout survives across email clie=
+nts */
+  .badges {
+      width: 100% !important;
+      max-width: 128px !important;
+  }
+  .badges .badge {
+      width: 100% !important;
+      vertical-align: bottom !important;
+  }
+  .badges .badge img {
+      width: 120px !important;
+      max-width: 120px !important;
+      height: auto !important;
+      margin: 0 auto !important;
+  }
+
+  /* Desktop: larger typography */
+  @media screen and (min-width:480px) {
+      h1 {
+          font-size: 34px !important;
+          line-height: 41px !important;
+          letter-spacing: 0.4px;
+          font-weight: 400 !important;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        line-height: 150%;
+        letter-spacing: -0.2px;
+      }
+      /* Header cell: increase side padding on desktop only */
+      td.header-td {
+          padding-left: 57px !important;
+          padding-right: 57px !important;
+      }
+      /* Composer image sizing for desktop */
+      .composer-img {
+          width: 98px !important;
+      }
+      /* Body content cells: increase side padding on desktop */
+      td.content-td {
+          padding-left: 60px !important;
+          padding-right: 60px !important;
+      }
+      td.footer-td {
+          padding-left: 56px !important;
+          padding-right: 56px !important;
+      }
+      p {
+          font-size: 16px !important;
+          line-height: 130% !important;
+          font-weight: 400;
+      }
+      td {
+          font-size: 10px !important;
+          line-height: 16px !important;
+          font-weight: 400;
+      }
+      a.button {
+          font-size: 16px !important;
+          line-height: 24px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 0 !important;
+      }
+      /* Composer card width on desktop */
+      .composer-card {
+          width: 400px !important;
+          max-width: 400px !important;
+      }
+      /* Intro blocks width on desktop */
+      .intro-block {
+          width: 360px !important;
+          max-width: 360px !important;
+      }
+  }
+  /* Mobile stacking helper for columns */
+  @media screen and (max-width:480px) {
+      /* Ensure footer badges bottom-align with copyright on mobile */
+      td.header-td {
+          padding-left: 21px !important;
+          padding-right: 21px !important;
+      }
+      /* Body content cells: smaller side padding on mobile */
+      td.content-td {
+          padding-left: 24px !important;
+          padding-right: 24px !important;
+      }
+      td.footer-td {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+      }
+      .footer-row td {
+          vertical-align: bottom !important;
+          padding-left: 0 !important;
+      }
+  }
+
+  /* Dark mode: render the email on a true-black canvas with high-contrast =
+cards */
+  @media (prefers-color-scheme: dark) {
+      body.generic,
+      .wrapperMod,
+      .heroMod03 {
+          background-color: #000000 !important;
+      }
+      body {
+          background-color: #000000 !important;
+          color: #ffffff !important;
+      }
+      .email-shell {
+          background-color: #000000 !important;
+      }
+      .content-td {
+          background-color: #000000 !important;
+      }
+      h1, h2, p {
+          color: #ffffff !important;
+      }
+      .heroMod03 h1,
+      .heroMod03 h2,
+      .heroMod03 p,
+      .box h1,
+      .box h2,
+      .box p,
+      .box a {
+          color: #FFFFFF !important;
+          -webkit-text-fill-color: #FFFFFF !important;
+      }
+      .prompt-card-table {
+          background: #000000 !important;
+          box-shadow: none !important;
+      }
+      .prompt-card-border {
+          border-color: #FFFFFF !important;
+      }
+      .prompt-card-text,
+      .prompt-card-text h2 {
+          color: #FFFFFF !important;
+      }
+      .email-header-td {
+          background-color: #000000 !important;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+      }
+      .email-header-inner {
+          padding-top: 16px !important;
+          padding-bottom: 16px !important;
+      }
+      .email-footer-surface {
+          background-color: #1f1f1f !important;
+          border-radius: 16px !important;
+          padding: 24px !important;
+      }
+      .email-footer-row {
+          background-color: #000000 !important;
+      }
+      .email-footer-logo-cell {
+          padding-bottom: 12px !important;
+      }
+      .email-logo-pill {
+          background-color: #ffffff !important;
+          border-radius: 12px !important;
+          padding: 4px !important;
+          display: inline-block !important;
+      }
+      .email-header-logo-pill {
+          border-radius: 16px !important;
+          padding: 12px !important;
+      }
+      .email-logo-pill img {
+          background-color: transparent !important;
+      }
+      .email-footer-logo-img {
+          width: 90px !important;
+          height: auto !important;
+      }
+      .email-footer-copy {
+          color: #ffffff !important;
+          padding-left: 0 !important;
+      }
+      .email-footer-copy a {
+          color: #ffffff !important;
+      }
+      .email-footer-copy .email-footer-copyright {
+          color: #a0a0a0 !important;
+      }
+      .image-reset-bullets,
+      .image-reset-bullets .email-bullet-link,
+      .image-reset-bullets .email-bullet-link strong {
+          color: #FFFFFF !important;
+          -webkit-text-fill-color: #FFFFFF !important;
+      }
+  }
+
+  /* Dark mode fallback for clients that use data-ogsc/data-ogsb */
+  [data-ogsc] body,
+  [data-ogsb] body {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+  }
+  [data-ogsc] body.generic,
+  [data-ogsb] body.generic,
+  [data-ogsc] .wrapperMod,
+  [data-ogsb] .wrapperMod,
+  [data-ogsc] .heroMod03,
+  [data-ogsb] .heroMod03 {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] .email-shell,
+  [data-ogsb] .email-shell {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] .content-td,
+  [data-ogsb] .content-td {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] h1,
+  [data-ogsb] h1,
+  [data-ogsc] h2,
+  [data-ogsb] h2,
+  [data-ogsc] p,
+  [data-ogsb] p {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  [data-ogsc] .heroMod03 h1,
+  [data-ogsb] .heroMod03 h1,
+  [data-ogsc] .heroMod03 h2,
+  [data-ogsb] .heroMod03 h2,
+  [data-ogsc] .heroMod03 p,
+  [data-ogsb] .heroMod03 p,
+  [data-ogsc] .box h1,
+  [data-ogsb] .box h1,
+  [data-ogsc] .box h2,
+  [data-ogsb] .box h2,
+  [data-ogsc] .box p,
+  [data-ogsb] .box p,
+  [data-ogsc] .box a,
+  [data-ogsb] .box a {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+  [data-ogsc] .prompt-card-table,
+  [data-ogsb] .prompt-card-table {
+      background: #000000 !important;
+      box-shadow: none !important;
+  }
+  [data-ogsc] .prompt-card-border,
+  [data-ogsb] .prompt-card-border {
+      border-color: #FFFFFF !important;
+  }
+  [data-ogsc] .prompt-card-text,
+  [data-ogsb] .prompt-card-text,
+  [data-ogsc] .prompt-card-text h2,
+  [data-ogsb] .prompt-card-text h2 {
+      color: #FFFFFF !important;
+  }
+  [data-ogsc] .email-header-td,
+  [data-ogsb] .email-header-td {
+      background-color: #000000 !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+  }
+  [data-ogsc] .email-footer-surface,
+  [data-ogsb] .email-footer-surface {
+      background-color: #1f1f1f !important;
+      border-radius: 16px !important;
+      padding: 24px !important;
+  }
+  [data-ogsc] .email-footer-row,
+  [data-ogsb] .email-footer-row {
+      background-color: #000000 !important;
+  }
+  [data-ogsc] .email-header-inner,
+  [data-ogsb] .email-header-inner {
+      padding-top: 16px !important;
+      padding-bottom: 16px !important;
+  }
+  [data-ogsc] .email-footer-logo-cell,
+  [data-ogsb] .email-footer-logo-cell {
+      padding-bottom: 12px !important;
+  }
+  [data-ogsc] .email-logo-pill,
+  [data-ogsb] .email-logo-pill {
+      background-color: #ffffff !important;
+      border-radius: 12px !important;
+      padding: 4px !important;
+      display: inline-block !important;
+  }
+  [data-ogsc] .email-header-logo-pill,
+  [data-ogsb] .email-header-logo-pill {
+      border-radius: 16px !important;
+      padding: 12px !important;
+  }
+  [data-ogsc] .email-logo-pill img,
+  [data-ogsb] .email-logo-pill img {
+      background-color: transparent !important;
+  }
+  [data-ogsc] .email-footer-logo-img,
+  [data-ogsb] .email-footer-logo-img {
+      width: 90px !important;
+      height: auto !important;
+  }
+  [data-ogsc] .email-footer-copy,
+  [data-ogsb] .email-footer-copy {
+      color: #ffffff !important;
+      padding-left: 0 !important;
+  }
+  [data-ogsc] .email-footer-copy a,
+  [data-ogsb] .email-footer-copy a {
+      color: #ffffff !important;
+  }
+  [data-ogsc] .email-footer-copy .email-footer-copyright,
+  [data-ogsb] .email-footer-copy .email-footer-copyright {
+      color: #a0a0a0 !important;
+  }
+  [data-ogsc] .image-reset-bullets,
+  [data-ogsb] .image-reset-bullets,
+  [data-ogsc] .image-reset-bullets .email-bullet-link,
+  [data-ogsb] .image-reset-bullets .email-bullet-link,
+  [data-ogsc] .image-reset-bullets .email-bullet-link strong,
+  [data-ogsb] .image-reset-bullets .email-bullet-link strong {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+  }
+
+
+  /* RTL mirroring */
+  [dir=3D"rtl"] body,
+  [dir=3D"rtl"] table,
+  [dir=3D"rtl"] td,
+  [dir=3D"rtl"] a {
+      direction: rtl !important;
+  }
+  [dir=3D"rtl"] h1,
+  [dir=3D"rtl"] h2,
+  [dir=3D"rtl"] p {
+      text-align: right !important;
+  }
+ =20
+
+  </style>
+
+
+
+</head>
+<body dir=3D"ltr" class=3D"generic" bgcolor=3D"#FFFFFF">
+
+  <div class=3D"preheader" style=3D"display: none; max-width: 0; max-height=
+: 600; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opa=
+city: 0;">
+    Reimagine your photos with the latest styles
+  </div>
+
+  <!-- start body -->
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" di=
+r=3D"ltr" class=3D"wrapperMod">
+    <!-- start body block -->
+    <tr>
+      <td align=3D"center">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"360">
+        <tr>
+        <td align=3D"center" valign=3D"top" width=3D"360">
+        <![endif]-->
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" class=3D"email-shell heroMod03" style=3D"width: 100%; max-width: 600px;=
+">
+                      <!-- header image -->
+           =20
+           =20
+            <tr>
+                <td valign=3D"top" class=3D"header-td email-header-td" styl=
+e=3D"padding: 42px 24px 42px 24px;">
+                    <table align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"email-header-surface" style=3D"mi=
+n-width:100%; background-color:transparent;">
+                        <tbody><tr>
+                            <td valign=3D"top" align=3D"center" class=3D"em=
+ail-header-inner" style=3D"padding-top: 0; padding-bottom: 0;">
+                                <a href=3D"http://url3243.email.openai.com/=
+ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMna-2FvdU3LpcC4-2FNA3wSLoyKmfwc7s=
+VlrwBiXppNE-2ByUJLsd1rPpU7N07mTrG-2Fm-2FW7dXJkkpGFMwvy2uV4dvGhQn10-2FOeV92P=
+C27TcuQ3xTYgGuXSeiPczHgd-2B3bBc2ZEmH5xRX1I8KOmoSZaTLARyWb1mRfBbFXTLC3WCQd87=
+w2vLC-2Bzvv8N3E0NKJfYiwPBjMuSmlFGwvh6MJ4mY3XaQro-3DwzZK_ifpdZN5Unwyz9jUhBw0=
+jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduGQpNlhY=
+EB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZvgQRMkL=
+g1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F3wrADz=
+OmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesLHslCMp=
+3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF0G-2Fi=
+M9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG3kRQ8K=
+fcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RheFy4MJyl3hjGb1-2F0FjAmutkWNRo=
+5i1r2BmUco-2FchccoSeUbW0E-2FgOqJf-2F0jXBLVqX7TBY-2BiKlpe8N6y5SSM5-2FGYuDOxW=
+Q3GBzV71ZApy61X-2FB8eYjMkZcmxmAHLKa0fEWfkyd25HCk8BMz0OKSbWnNP3VMiBgLMVinrIc=
+97MgtQ-3D-3D" target=3D"_blank" class=3D"email-logo-pill email-header-logo-=
+pill" style=3D"display:inline-block; background-color:#ffffff; background-i=
+mage:linear-gradient(#ffffff,#ffffff); border-radius:12px; padding:4px;">
+                                  <img alt=3D"" src=3D"https://persistent.o=
+aistatic.com/chatgpt/icons/chatgpt_logo.png" width=3D"103" style=3D"display=
+:block; margin:0 auto; width:103px; height:auto; max-width:100%; border:0; =
+background-color:#ffffff; background-image:linear-gradient(#ffffff,#ffffff)=
+; border-radius:10px;">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+         =20
+   =20
+<tr>
+  <td align=3D"center" class=3D"content-td" style=3D"padding: 12px 24px 0px=
+ 24px;">
+    <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 345px; width: 10=
+0%;">
+      <tr>
+        <td align=3D"center" style=3D"padding:0;">
+          <h1 style=3D"margin:0; text-align:center; color:#000000; font-fam=
+ily:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:34px; line-heigh=
+t:41px; font-weight:400; letter-spacing:0.4px;">
+              Not sure where to start? Just pick a style
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </td>
+  </tr>
+   =20
+<tr>
+  <td align=3D"center" class=3D"content-td" style=3D"padding: 12px 24px 0px=
+ 24px;">
+    <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 345px; width: 10=
+0%;">
+      <tr>
+        <td align=3D"center" style=3D"padding:0;">
+          <h2 style=3D"margin:0 auto; text-align:center; color:#000000; fon=
+t-family:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:18px; line-=
+height:150%; font-weight:400; letter-spacing:-0.2px;">
+              Create something totally different using one of your photos a=
+nd our trending styles.
+          </h2>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+     =20
+
+
+
+
+
+
+<tr>
+  <td align=3D"center" style=3D"">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+      <tr>
+        <td align=3D"center" class=3D"content-td" style=3D"padding: 24px 24=
+px 28px 24px;">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" role=3D"presentation">
+            <tr>
+              <td align=3D"center">
+                <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-=
+com:vml" href=3D"https://chatgpt.com/images" style=3D"height:44px;v-text-an=
+chor:middle;width:200px;" arcsize=3D"50%" stroke=3D"t" strokecolor=3D"#0000=
+00" strokeweight=3D"1px" fillcolor=3D"#000000"><w:anchorlock/><center style=
+=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:16px;fon=
+t-weight:400;letter-spacing:-0.32px;">Start creating</center></v:roundrect>=
+<![endif]-->
+                <!--[if !mso]><!-- --><a href=3D"http://url3243.email.opena=
+i.com/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMnka020Su-2B4x7LUg4leZhPFyW=
+aMDvw0bhteuyuqcBDZhfEL5iCgjCG-2F2oqS0UmVmuukm8qQj7tfwh-2F71a2K-2FUBHuFZzNr7=
+tF24jTvJyWC2aQtE-2Fl6v04RmL7pxWvs0miO012qfRLX8YuF5mAYSoRTb1s-2BRAgaUxtaNduh=
+CMODuTXVZPykYWbUYy9fM-2F8pJ-2FL7o8zaiwcGfwMHpZrWgWurq8-3D-5zK_ifpdZN5Unwyz9=
+jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduG=
+QpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZv=
+gQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F=
+3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesL=
+HslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF=
+0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG=
+3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RjVvNOYx95-2F6pLcWa0Bv26E=
+N18SV51MYv9NUu1UUXKnbJpqnOxHCabjo9-2FeQWSyJ4XhflS0afHLpTlViL6SbeOjTPLPq02az=
+t35R1FrGy1F-2Fh7Q-2B8ELL7nHwKX6lHuVU1euN5XT2w9EqdKl9Rz6wKZFIno6nxKDcnH6DpRE=
+K6HUCw-3D-3D" target=3D"_blank" bgcolor=3D"#000000" class=3D"button-invert"=
+ style=3D"font-size:16px; line-height:20px; font-family: Helvetica, Arial, =
+sans-serif, 'OpenAI Sans'; font-weight:400; background-color:#000000; text-=
+decoration:none; padding:12px 24px; color:#FFFFFF; border:1px solid #000000=
+; border-radius:24px; display:inline-block; mso-padding-alt:0;"><span style=
+=3D"mso-text-raise:10pt;">Start creating</span></a><!--<![endif]-->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+    <tr>
+        <td align=3D"center" class=3D"content-td heroMod03" style=3D"paddin=
+g: 16px 24px 0 24px;">
+          <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" align=3D"center" style=3D"max-width: 552px;">
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"http://url3243.email.openai.com/ls/click?upn=3Du001.IQLfsj=
+4kk-2BK7JhymNusRMiBSZsyodAo0AOyPArZaeSuvqd3CHyIoo7fgPL9z3xpMl0qUolu9kc-2FlB=
+yfblwhHswZfsp1I1RgXQU7LzruIWc4VXDSXRMTPUjbQN1J7y9IwaZ8Xa-2BUZBrWcCFTBDGHp30=
+q8FRSr68mYi2XGPl4I7icFR9MveiuzGppls3VdyRurX-2F9TinwGOXdw3ZMdfh4RWx827g3i3-2=
+Brtz0281E-2FZnD-2B-2BhEZ9Jc02mzykqnkcPT0-2B3erZxLGuLYDLmu165sH5ZmGMMYmE77jM=
+oRl9wdsz5YMxvpMrdRAOHBUBVvp86xHaqhovZP-2BMlgbNCxdYOiDgG3erkFyXmZpFa1NczFJLB=
+OC-2B4vbur4AIWuTseYONlrnwbbAlr9oe3HrqX-2F00qvHxrSkWX17Tg2GDvxDJ1owvxNyhgIt-=
+2BCgN0WmdwyQBOyLmKsMOg03bWUp6Fl1NmfRwPy4bTQA5VQmofMfTUH1yntKOibvMillzWrajJK=
+WuclRO5cvi-2FURKZYc53mc2jcHC79O7NvkgTphimrnaX99C5enV83pDIDKlrv-2BYzIibQhI3q=
+Nuv8ZgWJmgVtXl0yh6jToHT-2F8zKmPZcD0z0CLW0BEtut1SgqrF4TSFKbT8EvGtJYttmcnhoek=
+OHVd5pdMWUNqz0XLrXcawqmhHQ4cDexdZddtpMjjNbxN7FD0yn0-2FjCtWwo-2B7-2FkNsKGZI5=
+FsDZPGiKW05GF6O3sZjIVjfh-2B8teXLsJS69PwKmThjj9e1wCs4mjw5OqxT6-2Bp0gc9yRemg8=
+GkDmRabejyi4QJnCh4UB0TrSYkO2BsrhKA8vc7UtBzRNyMCC8fTAntFlEE-2F3VLeFUyRTZXE2e=
+oDKOxlq648MQEvTrIrIjBKuPHBL79cMlbKFIEXOuA5sTu-2F2FJJaT3vfekxn0kfXWxpGZ2Pwaz=
+jm7yXhHomJsNy6rfPqh6X8mK1g2cS-2BMwl5F-2BIWZaFdtTTsfIG3L0aAupH4UCgfz4R-2Bqc9=
+K03Bsixq8johd9EHbeJhEFK8LIUi-2BKFnjyFMBK6xwI5FRMHE1NC0OECbo2VhHrCOYbE7G1dZH=
+PSFQTUGwHYN000vrcsJU7juNvGi5d14270aWcYmiHrODbKjwlKLVmxARYzgadgK125sDwwPr302=
+vhEfPSn-2BCJp-2BG0etO1CJukRsXTew-2BwDUaCeaAvKL6KPbT7cNk3APuBOG21YrlO0ZuR42e=
+sQZP5Pbbut-2FrSHtOm5Nk-2BGzzWeGlScWKVAmLA96dAiSaNhwevTIiATmzzrCPsKXb1qrT3qk=
+sNKMfBrHpXpuQ5bBxb6LqNuB3WoNtqDdtYvhEzuEdinAJ-2F89V6TNcxL8_ifpdZN5Unwyz9jUh=
+Bw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduGQpN=
+lhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZvgQR=
+MkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F3wr=
+ADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesLHsl=
+CMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF0G-=
+2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG3kR=
+Q8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RjblzFXNbpBJD2j1sLTD-2BNX81W=
+QuZMIwKMktOXcLqWi19mVNDVlpGV4JosT1S1RiVEtS1tr29eJspf2VtWdlhGgrJiKvx56MSUFU6=
+MqnrlkX5KEXZk-2BvPX2bp8LQdEyHPXAaDHMw0ZkgYwWKUA8XWd-2Fi-2B7T1cGrtV9Y4vgXlN-=
+2FFnA-3D-3D" target=3D"_blank" style=3D"display:block; text-decoration:none=
+; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card box" style=
+=3D"border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td class=3D"prompt-card-border" style=3D"font-size:1px;line-he=
+ight:1px;vertical-align:middle;border-radius:20px; padding:2px; border:2px =
+solid #E5E7EB;" valign=3D"middle" align=3D"center">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr" class=3D"prompt-card-table" sty=
+le=3D"border-collapse: separate !important; border-spacing: 0; border-radiu=
+s:18px;">
+                <tr>
+                  <td class=3D"prompt-card-inner" style=3D"padding:10px;">
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                      <tr>
+                       =20
+                          <td valign=3D"middle">
+                            <img class=3D"composer-img" src=3D"https://pers=
+istent.oaistatic.com/images-app/email/recurring/sketch_email.png" width=3D"=
+56" height=3D"56" alt=3D"" style=3D"display:block; border:0; border-radius:=
+12px; width:56px; height:56px;">
+                          </td>
+                          <td valign=3D"middle" width=3D"12" style=3D"width=
+:12px; min-width:12px; font-size:1px;line-height:1px;">&nbsp;</td>
+                          <td valign=3D"middle" dir=3D"ltr" class=3D"prompt=
+-card-text" style=3D"width:100%; font-family:'OpenAI Sans', Helvetica, Aria=
+l, sans-serif; font-size:16px; line-height:150%; color:#000000; vertical-al=
+ign:middle; text-align:left; padding:0;">
+                            <h2 style=3D"margin:0; color:#000000; font-fami=
+ly:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:16px; line-height=
+:150%; font-weight:400; letter-spacing:-0.2px;">
+                              Turn my photo into a sketch
+                            </h2>
+                          </td>
+                          <td valign=3D"bottom" align=3D"right" width=3D"48=
+" style=3D"vertical-align: bottom; padding: 16px;">
+                            <img src=3D"http://cdn.mcauto-images-production=
+.sendgrid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139=
+.png" width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; h=
+eight:32px;">
+                          </td>
+                       =20
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"http://url3243.email.openai.com/ls/click?upn=3Du001.IQLfsj=
+4kk-2BK7JhymNusRMiBSZsyodAo0AOyPArZaeSv4KPLtuEwEbxsvweKVYjWrgQ7RlvdNe2Oj36Z=
+9oj2qFhMGxbyDiP63E-2F0mg8yacFWYioCSNUPvtKa-2F7qJE10hZxrc3pIqk3Rjq4byz0TWyLO=
+id2Tjcw0ikObklfLQ5nAj5VTJPGMooVWE3yJlLnqzBuImLjLRxtBHOh6ZWD7m2FoCJbHE6zeaGH=
+kxG98faehBhT32ktnD9G3u9Mnf2zMga64S0PO2XCa7A8LaNWdbYiOUaiQribTmzHm-2BgiVzPqm=
+4sqQqMWtaa2STkCMAtTHkJdR1zaUWI0MLyaMltjHMuLly0tDNKxXzItJ3xAvHxb3SOR-2BBcjqe=
+towPfr0MYzkO8jW8wtuBEAq-2BeZAd00mgd5v0-2F8eQiu0OfUbi6ygIA0jh-2BzT2hojxTg1Br=
+xb2ITo-2Bj0-2BthUqp8QcNhlWfyv1SQbYsXElVItHHQVAa7JK0yBgnaskCcb3Y3twf2Kv9BZQM=
+iHn6nQWJhdZNbeP7NN08mwbqTvL1hIpU3ZzVdGpcfwXaDu9rg9SkKMrez1rw2mogmguWcNRZmdE=
+GuWugC5w9G7sUKBpqnmIdnUQGaAiRMIbzh6CHvyWqHH4-2BVbW0ayYXDHqsv5dYSe7bx94-2FFA=
+0upXIuKkoOQX5XURWUKu6Y5GR3YaIHshiNQ-2FG5h0KzyV7dUesD19xpMgbx5fBbQ2VWoVQBXre=
+urk-2FuN3mcARLJ-2FouKOaZuLg5N7cfhM-2F-2B6sg3Cr73GB3LfPPcR5r7n6TYnY1DZbDoFm6=
+pgsa5JUjPzXRBz6V-2F-2FGcZlKOB66bnr96flt2gFOlAsttwBxye-2BxJpzBu-2Bmi76omNp-2=
+F1HGD1ipfr-2FyrcKteI-2Fj6cZwpBQgkdnwNl-2B1djzXCrvgiq5gPROUPN6wv-2FSH0r3VkSZ=
+kuDgz0Q917sFqfuCFWYQLqTk-2BxgAKDF94SPtcgdxiYkR33xP9h5wCaaH34IIstvgNOnv-2FBf=
+mpHMbh9fofvJXIRn39O6SSdwzvkFK5dmn9cBOcPfJQy5RPSynRkps0T-2FfKqGU6GJAc2Gzi7hU=
+btTASbkBmdMRDlP1-2FdKSUmZW92Z-2BWM0jO4s-2BOExkohr1wFSCSGb6zHHoh4-3DfL-P_ifp=
+dZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vY=
+fyNfenhduGQpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0=
+lfCkrtpFZvgQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6k=
+FKR9aXq80F3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2=
+FuYmHjbesLHslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy2=
+9YLT03QvJF0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm=
+9V-2BxtvLG3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RhGzbHFI7E0GwaF=
+m-2FNvbl3kYLvvSSVuTvbIJ6jjVo1X-2ByR-2BbWnwtJ5xF4ZWgd0EvgzssMSCzqX-2B3qzC8so=
+Az1qQJld5CJRwBp6lKI40eKN5JRUvogiXUfjHu7-2BrkscnD1wLXuQXPA-2B8YvfHR9K-2B84cb=
+XIow8oOM3NwV2eN-2BtGVbfw-3D-3D" target=3D"_blank" style=3D"display:block; t=
+ext-decoration:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card box" style=
+=3D"border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td class=3D"prompt-card-border" style=3D"font-size:1px;line-he=
+ight:1px;vertical-align:middle;border-radius:20px; padding:2px; border:2px =
+solid #E5E7EB;" valign=3D"middle" align=3D"center">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr" class=3D"prompt-card-table" sty=
+le=3D"border-collapse: separate !important; border-spacing: 0; border-radiu=
+s:18px;">
+                <tr>
+                  <td class=3D"prompt-card-inner" style=3D"padding:10px;">
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                      <tr>
+                       =20
+                          <td valign=3D"middle">
+                            <img class=3D"composer-img" src=3D"https://pers=
+istent.oaistatic.com/images-app/email/recurring/create-a-dreamy-pastel-port=
+rait-of-me.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display:block;=
+ border:0; border-radius:12px; width:56px; height:56px;">
+                          </td>
+                          <td valign=3D"middle" width=3D"12" style=3D"width=
+:12px; min-width:12px; font-size:1px;line-height:1px;">&nbsp;</td>
+                          <td valign=3D"middle" dir=3D"ltr" class=3D"prompt=
+-card-text" style=3D"width:100%; font-family:'OpenAI Sans', Helvetica, Aria=
+l, sans-serif; font-size:16px; line-height:150%; color:#000000; vertical-al=
+ign:middle; text-align:left; padding:0;">
+                            <h2 style=3D"margin:0; color:#000000; font-fami=
+ly:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:16px; line-height=
+:150%; font-weight:400; letter-spacing:-0.2px;">
+                              Create a dreamy pastel portrait of me
+                            </h2>
+                          </td>
+                          <td valign=3D"bottom" align=3D"right" width=3D"48=
+" style=3D"vertical-align: bottom; padding: 16px;">
+                            <img src=3D"http://cdn.mcauto-images-production=
+.sendgrid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139=
+.png" width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; h=
+eight:32px;">
+                          </td>
+                       =20
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"http://url3243.email.openai.com/ls/click?upn=3Du001.IQLfsj=
+4kk-2BK7JhymNusRMiBSZsyodAo0AOyPArZaeSsrDj2qDyLy4nCbTPM2iwTxwpDvCjt0kOTbAuD=
+1NRsxkKBbHffMT-2FFTXjn-2Ff-2B8IdZR8D0SoUFhGJaFGoJLRQ1nhO2WYAX2cdPBjZ6ez4P5t=
+pAN322x1ZOE9LV9CCv8dATxFHYK8O7Yhevcd4KU-2FPWlDFUjff2MiWj7aOCEvrmLfyeT5y8oRE=
+ZREDyaC2aAvLqQRkupGw6O2iUZzd6ZYNF-2BftcsQVEhZc8RHichHdJLUk9YRp5ltlKd786vyOj=
+zNkaiNJglEcZRI75h9EoHDqPPqdxMqwqMW-2FrcAdfQAQoE4UbMFAyNhu5fWzLDoDD9HmBB-2BI=
+NIh1B6htj0onhHldTPnhIw-2F0o8tWZrQxyupgaQc-2Bndo6Fp2GXg284gjIuzvBLWm-2FMmtQe=
+EdVitpptVkqT-2FvUOEgVlqngkcgyHp9hZVRmUogxZHexFBqw81fQtHa52G1X0aHXJIF45hZLDi=
+dGyjNQBhqD3kRK3csxVLv4HfJhcUgxDft9XfvCBsffuZrr3H0AsEDXTJX2h1UwoUJVrFUoLuktC=
+g37HegpJPzXAysaQ-2F2XSsMoK8DAHpTpYQuxyjPMkJ-2Fovje7eFmDAhqW4athXcBtis8j9uN4=
+8BR4nSiGdbuC08wmp4Tfi8amjfas5eI9x0J6NYgf2TFxtPkOpQeSs9tpRddT-2BL41BRc86Vu4c=
+J43RjOOwoV7ReW1S7kS26VlxFVWd0X1T-2FsCnnNHbXuorjySrZIrlrZKKx-2FnsmtS7TEpb7Id=
+kZQumf010gaLjl-2B1CMu9ww8dkOmR0I0os1GN-2F3RFX3ABV-2Bcsa-2Ba2-2BHiLW35WXQ9HU=
+WJWcyn0EekECt569fEvSD4pZqdXltYv3u4w3yrIjuPm10zOI1rH3bHzTOUBzu288eIn-2B9Ppzw=
+EDKLAC0vBX3HpfPkJeFDOcsFC54xIr62B5uhIWjIp-2FQSE4zUBNfC6nuZJLtCSKM-2FcoAW1a2=
+R3IBGSWznuC9gbu5qU-2FAimx8dSaAq-2BLiE2-2FV8j1MqDF9toLQ1Rc7v2vRXCgHjhRpp9kkd=
+kQ0zmJeb6CHbmgdrDnxfeuwQmbEs1Cya2ea6xLRA-2FQvX-2BSW5qQ1qJcJl4WcssH0DdCVBBi3=
+fDXmo4SZWwm9QhyWDvJ9TkOGTK7gqGRJb7n46LkIo7BvkZG6bi-2BGGbGcjdg0ZMv7BQowquxN0=
+KjoSbhYUGJrXZoSwcZFcojP7WpInuD91CMm7nzf9hy9rYKjVvzOJobChOFnFMvkExQpYXg1bIbI=
+zzqQ0zGHRk3bcKmxH0-2FaXsmaj4xNXnD8A2hkT5lRxW4Key79QPBGA4tc8DVypQs2d2YtE7kNh=
+XydGwyI1pg5U-2Blx-2FA4k0l5mxM5N0aaJsZjNGDxpWzKqRm1gjr7NZGQhYYWSC8-2Bt6-2FQF=
+UzfbEo5u53N54QH-2Fv5l65DYaHqZScCtco9bFT3LrreF7SZYmkdGM7fFYwULn5gAcKiK6O0hsp=
+ZTBTrNDJXmwPhByunFi7HRxN5YB-2BVg0kK5btDqgm7sdWhQdnKaLqhbBD7SOjUGAYun9LtqRaK=
+lWSnkVFeHEbxRoEkpgamSSJMdNEctxplbyDW-2Bvob-2Bu0PnJw99kbfLFyXtc-2Fab7kXJr-2B=
+Yaa-2BqIh8pspGVHepHRJATWjj6JZMJh4afYVzr5dF6kqEN93tZ4h70-2FDqq0hJoFX0s3Yyli1=
+DXiM31-2FAeG74vttDd3KGcDvYy5iL6N9wWxXD1yB-2FEOk86bsH8J0y50pLSaFUQaga2K3d2vX=
+nOSHdCt4EsG03Yz-2BOHCV2J8f7jpfjELjOli6HEOzTluFUyl94-2FX1FF7YpFUggFasoTEfNLh=
+_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6=
+W5vYfyNfenhduGQpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEs=
+HFY0lfCkrtpFZvgQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM=
+2O6kFKR9aXq80F3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6S=
+Bl-2FuYmHjbesLHslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n=
+5Gy29YLT03QvJF0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5d=
+n6Wm9V-2BxtvLG3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8Rjnd6PE2aGT=
+aBjMkHkVsKFLuXEU78-2FWIU9z1bQYEBIecszSskboA-2BjmbLo2r6BjnS2x4OskRMrLIN2A-2B=
+TFBw63qNjFvdhfL4YTSdJNJs6VTZ-2BXH5iY3yY9N-2BkkLunzNenqs4a1UPNq48RlyCQUxOgSB=
+-2BXZ0XjLSZgFdbTIVWSPH3g-3D-3D" target=3D"_blank" style=3D"display:block; t=
+ext-decoration:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card box" style=
+=3D"border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td class=3D"prompt-card-border" style=3D"font-size:1px;line-he=
+ight:1px;vertical-align:middle;border-radius:20px; padding:2px; border:2px =
+solid #E5E7EB;" valign=3D"middle" align=3D"center">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr" class=3D"prompt-card-table" sty=
+le=3D"border-collapse: separate !important; border-spacing: 0; border-radiu=
+s:18px;">
+                <tr>
+                  <td class=3D"prompt-card-inner" style=3D"padding:10px;">
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                      <tr>
+                       =20
+                          <td valign=3D"middle">
+                            <img class=3D"composer-img" src=3D"https://pers=
+istent.oaistatic.com/images-app/email/recurring/show-me-what-i-look-like-as=
+-a-k-pop-icon.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display:blo=
+ck; border:0; border-radius:12px; width:56px; height:56px;">
+                          </td>
+                          <td valign=3D"middle" width=3D"12" style=3D"width=
+:12px; min-width:12px; font-size:1px;line-height:1px;">&nbsp;</td>
+                          <td valign=3D"middle" dir=3D"ltr" class=3D"prompt=
+-card-text" style=3D"width:100%; font-family:'OpenAI Sans', Helvetica, Aria=
+l, sans-serif; font-size:16px; line-height:150%; color:#000000; vertical-al=
+ign:middle; text-align:left; padding:0;">
+                            <h2 style=3D"margin:0; color:#000000; font-fami=
+ly:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:16px; line-height=
+:150%; font-weight:400; letter-spacing:-0.2px;">
+                              Show me what I look like as a K-pop icon
+                            </h2>
+                          </td>
+                          <td valign=3D"bottom" align=3D"right" width=3D"48=
+" style=3D"vertical-align: bottom; padding: 16px;">
+                            <img src=3D"http://cdn.mcauto-images-production=
+.sendgrid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139=
+.png" width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; h=
+eight:32px;">
+                          </td>
+                       =20
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+             =20
+  <tr>
+    <td style=3D"padding: 8px 0;">
+      <a href=3D"http://url3243.email.openai.com/ls/click?upn=3Du001.IQLfsj=
+4kk-2BK7JhymNusRMiBSZsyodAo0AOyPArZaeSu7QkihTndbPwWxPM7Oa6XSDtyELH1l-2F0J1-=
+2BhF6JQjHbagHTskEtBo3l8WMBnn1E2xrJBaUqdopZ3RPQXJU4rTtvp84Z7rXVzmZVcHjCaU8Ki=
+Y-2FYLixe3H-2BroXSSqExxck9crfVp78YpnIfh-2FzTwsLJ22HX5rY9bSuQziL2SuNNXP36nPe=
+ae6MIcwxJ8-2BMpTC5dIb-2FccuOpfmVIfdsPqtxYzEDnre-2FelVEoNMXsPoWDIZde5i3uvNxm=
+h4bU1LB5UyhBvpsLPEo6Xda-2F2DEVvjq3V-2BxP-2FkjlHjXDVxgWA6BKKNC-2Bc-2FuL05BTX=
+0NxoayWTNMR8xM4bXAeLUPxppgiJyfgxmIJYFGeMtoE5v4Zho8DYgsU5qqzN-2F-2BbxE73BcFC=
+11lK9muEuZaoF91LqyB7Kg4wB45TEQe1dmHKd6FXF9Ldmu4yYrmR7xaDNVd-2BGG-2BKrURv-2F=
+uxR41FhdpcQGzGwwQReZS5sQOT3Uu2pCdozbHP5uuPTeLwfMKZVOWwOOj0r-2BrR5uGp-2FILJx=
+1RutVIpQeRr6ZVMlZg5cOCjMCeCIRwcwWT4obMiROmC4LSSFPmJrsJIpc4P7S9SfkPdtyi6naqU=
+5OuJ6Y5NhQYrp4uqDA5KIW0byakCsZk0hrLx8tpp0B-2BgTR8LIzvIBnCpFhmsXx4Iuj6V08EfC=
+2fcHIf8hMZroASRoKMSuFM1m3jTkV402ASNz5vvUL2HMrLOY2s3OUPIzSBh6Xah8J6lsomjscOe=
+icsZ7VKA2DTigYAk3b4iC5JPvjaViOzBpx1AzJuK7VZjOJf-2B-2B0oKXonpsFAYSUdp3FV-2BP=
+7UgqvLnkfSq3Kp0P1UXUHIN5SEBaZoXnKda42aFhSKoampycGUFvQX51FcVgYgEVKDzf2uBeHpt=
+Gjj8s2dnjZqRn2bfra-2B6bkkZdal-2F5Sg6UQRhjoHR11JlhXXTWzEzh7mWFpkzGkQ0T-2FKzd=
+m-2BntSDyC4xU7IBpphXeoIEghLTys1ZDlPf3zFniupoxsF-2FE5j22MiFlDmgOMs6lz4D4hKP2=
+kPLriLRjbe5OrWWMbcSox_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qg=
+W04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduGQpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ=
+8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZvgQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThk=
+gN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwn=
+ciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesLHslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6m=
+ubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsT=
+UC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBY=
+lQcmcVuor8Rj4Wc26gLCVug6Hq5UuuKFZZKl0Lifaa1WrgvB-2BZ6Jv4zFiDCJpAFOi5f44oXcw=
+KGsu-2F94h7oD8-2Fkk7ywPLg9Polgrbfh1C-2BIABJbKRRWQioeN1qhaBjj5cvBV6hOZTbLl1g=
+Q0mnQb9Eg9PBoW1gR3K67g-2FsULHMx8I00lk-2BDhKZA-3D-3D" target=3D"_blank" styl=
+e=3D"display:block; text-decoration:none; color:inherit;">
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"377" align=3D"center" class=3D"composer-card box" style=
+=3D"border-collapse: separate !important; border-spacing: 0;">
+          <tr>
+            <td class=3D"prompt-card-border" style=3D"font-size:1px;line-he=
+ight:1px;vertical-align:middle;border-radius:20px; padding:2px; border:2px =
+solid #E5E7EB;" valign=3D"middle" align=3D"center">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" dir=3D"ltr" class=3D"prompt-card-table" sty=
+le=3D"border-collapse: separate !important; border-spacing: 0; border-radiu=
+s:18px;">
+                <tr>
+                  <td class=3D"prompt-card-inner" style=3D"padding:10px;">
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" dir=3D"ltr">
+                      <tr>
+                       =20
+                          <td valign=3D"middle">
+                            <img class=3D"composer-img" src=3D"https://pers=
+istent.oaistatic.com/images-app/email/recurring/drop-me-into-a-yearbook-pho=
+to.png" width=3D"56" height=3D"56" alt=3D"" style=3D"display:block; border:=
+0; border-radius:12px; width:56px; height:56px;">
+                          </td>
+                          <td valign=3D"middle" width=3D"12" style=3D"width=
+:12px; min-width:12px; font-size:1px;line-height:1px;">&nbsp;</td>
+                          <td valign=3D"middle" dir=3D"ltr" class=3D"prompt=
+-card-text" style=3D"width:100%; font-family:'OpenAI Sans', Helvetica, Aria=
+l, sans-serif; font-size:16px; line-height:150%; color:#000000; vertical-al=
+ign:middle; text-align:left; padding:0;">
+                            <h2 style=3D"margin:0; color:#000000; font-fami=
+ly:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:16px; line-height=
+:150%; font-weight:400; letter-spacing:-0.2px;">
+                              Drop me into a yearbook photo
+                            </h2>
+                          </td>
+                          <td valign=3D"bottom" align=3D"right" width=3D"48=
+" style=3D"vertical-align: bottom; padding: 16px;">
+                            <img src=3D"http://cdn.mcauto-images-production=
+.sendgrid.net/d4ef4a73d51fe844/53e215ea-a410-4b4f-b55d-10e00d42bd2e/139x139=
+.png" width=3D"32" alt=3D"" style=3D"display:block; border:0; width:32px; h=
+eight:32px;">
+                          </td>
+                       =20
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </td>
+  </tr>
+           =20
+          </table>
+        </td>
+    </tr>
+   =20
+     =20
+<tr>
+  <td align=3D"center" class=3D"content-td" style=3D"padding: 12px 24px 0px=
+ 24px;">
+    <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" width=3D"100%" style=3D"max-width: 345px; width: 10=
+0%;">
+      <tr>
+        <td align=3D"center" style=3D"padding:0;">
+          <h1 style=3D"margin:0; text-align:center; color:#000000; font-fam=
+ily:'OpenAI Sans', Helvetica, Arial, sans-serif; font-size:34px; line-heigh=
+t:41px; font-weight:400; letter-spacing:0.4px;">
+              Our most advanced image model
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </td>
+  </tr>
+   =20
+   =20
+     =20
+
+
+
+
+
+
+<tr>
+  <td align=3D"center" style=3D"">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+      <tr>
+        <td align=3D"center" class=3D"content-td" style=3D"padding: 24px 24=
+px 28px 24px;">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" role=3D"presentation">
+            <tr>
+              <td align=3D"center">
+                <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-=
+com:vml" href=3D"https://chatgpt.com/?mode=3Ddefault" style=3D"height:44px;=
+v-text-anchor:middle;width:200px;" arcsize=3D"50%" stroke=3D"t" strokecolor=
+=3D"#000000" strokeweight=3D"1px" fillcolor=3D"#000000"><w:anchorlock/><cen=
+ter style=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size=
+:16px;font-weight:400;letter-spacing:-0.32px;">Try ChatGPT Images</center><=
+/v:roundrect><![endif]-->
+                <!--[if !mso]><!-- --><a href=3D"http://url3243.email.opena=
+i.com/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMlXspfX3cfxmQi0ZLE-2BMg-2B8=
+c6ve6K7qNGwaVyYTqTldSjHtvyL0anhJ25j4Ame4ALyc4rnLRS6bKHeEl-2Bp9fNBtUBbPTZcO7=
+jMsb-2BcfPKzqTD4n3B4zUDyUBOWylgm44ni2h-2BsHnmOOVF7NrYfqqdAJanCSufQ0YE7zA5ZJ=
+14g5dABEXQ-2F50Z9Mbuhwxc3KGFCvjsSk-2FbcFYuKwLZD4V0b0-3Dp_8w_ifpdZN5Unwyz9jU=
+hBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduGQp=
+NlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZvgQ=
+RMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F3w=
+rADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesLHs=
+lCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF0G=
+-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG3k=
+RQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RhDhvQKAppcW-2B-2BOXpBAKtn6=
+k86eDihOr9xHWve6LPrMdQJIoQIoTJEARi6EGfTxxJAoa8IntWKOWFhJuQsNhtZu-2F2zXQ3JVY=
+uBXhemWo6Uyu8aqmniD9xVkZ-2FzFkXChArn6DAjF-2Bya-2FdVszdpM-2BZUItK-2FDrDBxkuo=
+A7DEHE2UNQwQ-3D-3D" target=3D"_blank" bgcolor=3D"#000000" class=3D"button-i=
+nvert" style=3D"font-size:16px; line-height:20px; font-family: Helvetica, A=
+rial, sans-serif, 'OpenAI Sans'; font-weight:400; background-color:#000000;=
+ text-decoration:none; padding:12px 24px; color:#FFFFFF; border:1px solid #=
+000000; border-radius:24px; display:inline-block; mso-padding-alt:0;"><span=
+ style=3D"mso-text-raise:10pt;">Try ChatGPT Images</span></a><!--<![endif]-=
+->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+   =20
+
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end body block -->
+
+        <!-- start footer -->
+   =20
+   =20
+    <tr>
+      <td align=3D"center" class=3D"email-footer-row" style=3D"padding:12px=
+ 0;">
+        <!--[if mso]>
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"600"><tr><td>
+        <![endif]-->
+        <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" style=3D"max-width:600px;">
+          <tr>
+            <td align=3D"center" class=3D"footer-td email-footer-surface" s=
+tyle=3D"background-color:#ededed; border-radius:12px; padding:24px;">
+              <table role=3D"presentation" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%">
+                <tr>
+                  <td align=3D"left" class=3D"email-footer-logo-cell" style=
+=3D"padding-bottom:12px;">
+                    <a href=3D"http://url3243.email.openai.com/ls/click?upn=
+=3Du001.IQLfsj4kk-2BK7JhymNusRMna-2FvdU3LpcC4-2FNA3wSLoyKmfwc7sVlrwBiXppNE-=
+2ByUJLsd1rPpU7N07mTrG-2Fm-2FW7dXJkkpGFMwvy2uV4dvGhQn10-2FOeV92PC27TcuQ3xTYg=
+GuXSeiPczHgd-2B3bBc2ZEmH5xRX1I8KOmoSZaTLARyWb1mRfBbFXTLC3WCQd87w2vLC-2Bzvv8=
+N3E0NKJfYiwPBjMuSmlFGwvh6MJ4mY3XaQro-3DmFjw_ifpdZN5Unwyz9jUhBw0jKiHiXszPB84=
+TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduGQpNlhYEB99A-2F73pp=
+6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZvgQRMkLg1TxO71vmomp=
+jm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F3wrADzOmsYkZzEHu6W=
+nGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesLHslCMp3QXdCsL-2Fi1=
+D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF0G-2FiM9DrLkS3J2Fb=
+mX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG3kRQ8KfcsaUYHHAtpv=
+Aji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RhNRURb7vUh7B-2BC02AOSWJBL1ziEtP4pZXz8bF0t8=
+wKHNvY0rKC4Ai2OS1kWStTuVr1O79HNp0RAtmm-2F18qH5XFER0vQ-2BxoB9uRbhAAThevtgX-2=
+B4KZCzDzGesQMSgDsUEa7SIvuV9Kcz7OkYpbMQotjutkCbu1naTMVKZlaU8OufA-3D-3D" targ=
+et=3D"_blank" style=3D"display:inline-block;">
+                      <img src=3D"https://cdn.mcauto-images-production.send=
+grid.net/d4ef4a73d51fe844/23791e46-5717-4e4f-a33c-0cc5ba7cf5aa/176x45.png" =
+width=3D"88" height=3D"23" alt=3D"ChatGPT Logo" class=3D"email-footer-logo-=
+img" style=3D"display:block;border:0;">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%">
+                      <tr class=3D"footer-row">
+                        <td valign=3D"bottom" align=3D"left" class=3D"email=
+-footer-copy" style=3D"font-size:10px; line-height:1.8; color:#000; width:6=
+0%; padding-right:12px; vertical-align: bottom; padding-left: 0;">
+                          OpenAI<br/>
+                          1455 3rd Street<br/>San Francisco, CA 94158<br/>
+                         =20
+                            <a href=3D"http://url3243.email.openai.com/asm/=
+unsubscribe/?user_id=3D20216706&amp;data=3DZcd3Wmr0KQ6yGrbFpeYWrYwqSvKjolfU=
+DpXxYDZut_loMDAwdTAwMFjkXwcroSC2svbzqyZs1TF-Pftos16XH4pnsgMZwKXVNh35ipnp9fG=
+C0pUaayM34ljj6VriRui16EJgsLmKvIcLZskpKBCroOSbZ0F1md_upKdU-YJbwo-tbJWKOIzs_X=
+oSogQeb6BEM5wIgQMHTrlwbiY1r8PltdFU22hvmna-xTmFJpNNFQB4dQAueX6jvZsGa8QYwaY6J=
+coVxwn6R6mmzm1BlYNolPKhNsX5SCidoQTeKfHKzaA-kctiUAKXtxEwY8JdeteHbvYiUtca5zD_=
+iuj2zW3k5BU1K29JnTbNsgV2PbmFBoeQw7AOoxovKOEqTYl_VyELTHRD7tHrGXxyYtt7atVbdAa=
+XA4P_yf3kHFvXNy8xQHFreER1Ck7HbF2d5ZVuZ8GJDzsiPpzNjcOzVnForDKus7r9DVUX2zSTXe=
+Lo35GM4UHhJwSXRK0NpBmr6AWLEhi7OexK7yutm_pMIO2y0NdBFwAoBC-WIepT4SFiYxT2j1h7A=
+GXcxb7ExR2wVRnUwR251xnd1VPbvfNNyBLDEgUHUXWSVnLY9zK9yxaXztZ5vsSWVI61BwvRAYWI=
+kxNu-n797HbjVlvgmL4GXSnNjU5zYfoAADqJ6n-lgKS2RqA8iWhWS-L1676pBs6z8k-YeYthe26=
+uSlpFcA4dmzJQEPwINtjDk-o8DKS8NkLj8nhRN25Qiw5vk_XzdinF2xAWFpSwXt47OO1p4holkJ=
+eJHD6thxd-a2EcVXg4fF3P5PKJoPVrUaYPl0jojoJG2tiR8Lq-sD4XunLP8mSoH5mzdGnABrOBg=
+BkJ0_VqKXk9KKSUipow6uw0kTBDyQ=3D=3D" target=3D"_blank" style=3D"color:#898A=
+8D; text-decoration:underline;">Unsubscribe</a><br/>
+                         =20
+                          <a href=3D"http://url3243.email.openai.com/ls/cli=
+ck?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMlO-2BNuxxFiPq4chNMg084bhEGj50e3olcSQHU=
+JMMkPiozRBz01nwCKx4sxlHNaM7y1itVxw20203L78JoXrBnp2dFvcxinS29CpBPKRDakvPOxF-=
+2Fv80LxgUeyGTlAderwTyG9bj-2F4fEg3h-2FyihxyJQ9bwcV7cGId8g9h-2BZ-2BA1xqo5KSwQ=
+dF1j2-2FfhKe2kkpV5cDxdgi1Zik7X1oi8KQmzsT1VDHJR2PZDdd-2FTDmbU7476inS_ifpdZN5=
+Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNf=
+enhduGQpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCk=
+rtpFZvgQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9=
+aXq80F3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYm=
+HjbesLHslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT=
+03QvJF0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2=
+BxtvLG3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RjO0l2KmCXDRwTcE9b5=
+W4T44Z2ZZS-2BvI0tgTJ3PaKgKFDt4YteOkMw1KEfxwY7UL0WHFRJv80BpQGR1rWfCLxcDa-2FC=
+-2BxXio3coj43zAH4Puj-2FLjJSB6LzPHDHMCP1SX173p0SiKPr5sS9nDiQTpazfTQWwWRwxvcs=
+5NEIaYkCA-2FGA-3D-3D" target=3D"_blank" style=3D"color:#898A8D; text-decora=
+tion:underline;">Privacy</a> &middot; <a href=3D"http://url3243.email.opena=
+i.com/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMsvdFvmwMTgWtkeYwJPvVy67U0P=
+-2FC-2BUXHl56ySmueHD0C-2FehblJqUOOzRMOQ2Osatjf28rI6UajaZzlLE8PvUW9JI5eX1NWG=
+7iHZu4RPMXQQXMFBK5yq5w1t9B7jPjxmhf-2BhCv0HmaRvBQ-2FIkaORkhY77dOIWyjdWEW5qhy=
+vIbczTHULMsBFj5gEXTAwbZfiqCuHFAMJzr-2BvXbXsQ-2BDUmgE-3DE3H5_ifpdZN5Unwyz9jU=
+hBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduGQp=
+NlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZvgQ=
+RMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F3w=
+rADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesLHs=
+lCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF0G=
+-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG3k=
+RQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RgF9L-2Fa7e-2FkVYTOzRHRwd02=
+o5lU9ZKc41E8BLaHfLWJzN4eWYsGEn5D0r-2BBpl7StEjcPY27VorknuvXdkPdCT-2FB6YWviJy=
+ApfA9-2BdwE9oiFCBmyj0TIZgtP7z85LQSzvmuTFQ96lriAmganHs7t7j3ScaVD1McAYCa73XLM=
+M0MpXg-3D-3D" target=3D"_blank" style=3D"color:#898A8D; text-decoration:und=
+erline;">Terms</a><br/>
+                          <span class=3D"email-footer-copyright" style=3D"c=
+olor:#888; display:block; margin-top: 1.8em;">OpenAI =C2=A9 2015=E2=80=9320=
+26</span>
+                        </td>
+                       =20
+                          <td valign=3D"bottom" width=3D"40%" style=3D"widt=
+h:40%; text-align:center; vertical-align: bottom;">
+                            <table role=3D"presentation" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" class=3D"badges" style=3D"width:100%; max-wi=
+dth:128px;">
+                              <tr>
+                                <td class=3D"badge" style=3D"text-align:cen=
+ter; padding:0 4px 8px 4px;">
+                                  <a href=3D"http://url3243.email.openai.co=
+m/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMtD-2BVMO9vVCyWEdp43dehRwKnLcSD=
+IdcT8iXDeqHYaFTCnaK2ChDusu4AphrKyq-2Baqa7Tmc6YxYxg4SQlTvXMvamvRJ1NdTvDQb2KV=
+vN7e-2B7zpFzOadNA3d2X0rr7z7F8lSl-2FVJxigrsGzhqZ7B0JjRiHFTNqlC9TymIrRcjSFDKV=
+-2FL0Nnt5zw5nF2-2BzNedR83rYNFRbViJalptxTCHJigROlLD9z1A5vvDVUjPJe4I6SJAGPR-2=
+B-2Fj2HDjwt6LrqZ288AWKAEi-2BCovFAjhb8pu9lyxqWuF71GWp1nCHwf-2Bhdtso4MKs3CBqn=
+vii3y-2Bb1jqS7iJUEFjS0x6zU2TflBnlfLoEr0-2BCYrUQJpxc7hNJJrKS7f_ifpdZN5Unwyz9=
+jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5vYfyNfenhduG=
+QpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHFY0lfCkrtpFZv=
+gQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O6kFKR9aXq80F=
+3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl-2FuYmHjbesL=
+HslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5Gy29YLT03QvJF=
+0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6Wm9V-2BxtvLG=
+3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8RgEp3KhkpDSlbqjvyR0SR19Iz=
+ic2huWrA2fm18vIjN29kcQAK76OHaMHW3B2fhTx75f3jKM51ELgy0Ur5AY-2FmGqI6DovMfD-2B=
+1HLJ5m2cCxC0Qv9y8Okyby5WRjxgOsPfJbYPr1odAHgWzs-2FO-2BYoK57hg-2FZjBO9PQWbXgd=
+TkaNiMBQ-3D-3D" target=3D"_blank" style=3D"display:inline-block;">
+                                    <img src=3D"http://cdn.mcauto-images-pr=
+oduction.sendgrid.net/d4ef4a73d51fe844/f0bb62f0-5199-4600-a341-38aa871bde57=
+/240x80.png" width=3D"120" alt=3D"Get it on Google Play" style=3D"display:b=
+lock; border:0; width:120px; height:auto;">
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class=3D"badge" style=3D"text-align:cen=
+ter; padding:0 4px;">
+                                  <a href=3D"http://url3243.email.openai.co=
+m/ls/click?upn=3Du001.IQLfsj4kk-2BK7JhymNusRMuAhSqai8qJ-2B1O2-2B81u67QpwNUg=
+J-2Bd0SCWbzBz1KsXgnWp6TJZGGyYVXyadoVtWOVnM0-2FtgZm49K4LRTWyIrSwSNPqlhn-2Bn3=
+XEg50IczhVxuqIqdMaWMBvXHXlVnUsWWFMMeZVmtrOvsVC8Bw5h73nDLAHoFRUBo7x4XRYLtfBh=
+IncjHNVOhims6ZMOnlZ0eynmMAyTRCQrFg3PkO20VsGR3f-2FJlVVxw3-2BboreORA7ystHWe_i=
+fpdZN5Unwyz9jUhBw0jKiHiXszPB84TmBbBPLJ-2B9OZfkjxd6qgW04U1Sd3ReEa76YtpvQe6W5=
+vYfyNfenhduGQpNlhYEB99A-2F73pp6zGMH7Cdem9BwCQIMlmmgQ8-2FVqLSlK1IcaL9xCWEsHF=
+Y0lfCkrtpFZvgQRMkLg1TxO71vmompjm07-2BXPZ2ppJM10kZThkgN2qQUbqKzzcu-2FLMmtM2O=
+6kFKR9aXq80F3wrADzOmsYkZzEHu6WnGAYXP8fuZmb3rKILFvrwnciymAsvVI8lhcwuo-2F6SBl=
+-2FuYmHjbesLHslCMp3QXdCsL-2Fi1D47d2tXLW60TrpHhlSUl6mubOQdhs0wrne4Pm0b165n5G=
+y29YLT03QvJF0G-2FiM9DrLkS3J2FbmX6IUqL7GPRhhFYyalIXsTUC0TATswmI7rBlUy5Oy5dn6=
+Wm9V-2BxtvLG3kRQ8KfcsaUYHHAtpvAji-2F1FNy9UDw9-2BqNBYlQcmcVuor8Rj5ui4GMhmNSO=
+xbrsLNT8qNoxFxxL-2FoK1H0Q0urgmB5ixed7sguXPbw9L4aemIBUCnHrUEJZ02zOtKbN5AF2XZ=
+07MMl3qvNj-2B7ZwrYhwHBnEBOiKo1jxIrQWyySX6ywNbSDHEBuxK9C1re7WJ4uBEXBVwiQbjG5=
+U4XOKy2XM68fQQ-3D-3D" target=3D"_blank" style=3D"display:inline-block;">
+                                    <img src=3D"http://cdn.mcauto-images-pr=
+oduction.sendgrid.net/d4ef4a73d51fe844/7556e4e9-fd26-44ce-b5db-098b33274c20=
+/240x80.png" width=3D"120" alt=3D"Download on the App Store" style=3D"displ=
+ay:block; border:0; width:120px; height:auto;">
+                                  </a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                       =20
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!--[if mso]></td></tr></table><![endif]-->
+      </td>
+    </tr>
+    <!-- end footer -->
+
+  </table>
+  <!-- end body -->
+
+<img src=3D"http://url3243.email.openai.com/wf/open?upn=3Du001.mRvjWa6a2tdi=
+7UgUZ6HZrkXhqfFHG3WP-2BJ6jpRS1ZInmI0OdeUUu6X1ABb7JFZszauk-2FtLuX3qTpWitWor4=
+DA4MqS-2Fi7K6KzdAKSpPwYaMdhnt7yFkzuUeqn-2BucPW-2BGU2Ub7DZGyJ3Xc2OopYriFXFo7=
+15-2BobS5PpYW05XdraG4ZdSt3oN0qeA26z1oxqhTSJQA8FELbT-2BnDOmO0JUhv-2BtEUvmVHF=
+i-2BKpElnRl-2F5CJJpZTVwHSvx1A37fhowgElxYvGLdCBDIKsNaKJAs-2FgUO8C-2Byl3x6jc6=
+Z6LPVadsxNTJc7CEpRjuV4vUT3m-2FdQ0o-2BoYxPlODDDXjnZ14-2FVGyAl5JRXA8dCDAYZQhl=
+Tr6jOmM4sT84har-2FEphxHYdreaV9BHjf68DdLgBPoCCOgpRUznUR1hPUOBOxIndO1G16hc0Vi=
+EtSLm7rNWORRKlJK5hzYADZxZrU2CF0cfLcWKnwqCvTO7uYUyuBJ-2BVpey4WmmFh8Lbg1grfFO=
+qY3FT2Q4PpWq9hfXLZ1gjJrN6Y9UUqgHzor8Phoy4MNrjhuFVNLI-2FeemlwDfW1VwgNEK1-2BI=
+ZVFgcaXY8Po2DN7fnPYq5DYuHAaI2y5XeQAkqvSxSqOOIxp9-2FBdZriP9TtxtIxgguch4hf3Nm=
+kISVoMz5m1ctfQg-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>

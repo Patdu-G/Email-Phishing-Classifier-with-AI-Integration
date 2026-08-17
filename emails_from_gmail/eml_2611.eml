@@ -1,0 +1,1399 @@
+X-GM-THRID: 1747388329150857705
+X-Gmail-Labels: Inbox,Important,Category Updates,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:7000:5ac8:b0:3c1:dbcb:812a with SMTP id b8csp1897338maz;
+        Sat, 22 Oct 2022 04:49:30 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AMsMyM4uzIU9H4IEzDQJYcVYM3NbS1DChf7wh+FeTDFBJ3f1NqWdfIphUYwQEaEtQtaBEX2pxV/U
+X-Received: by 2002:a25:be8a:0:b0:6a7:3314:52c8 with SMTP id
+ i10-20020a25be8a000000b006a7331452c8mr21210626ybk.210.1666439370583;
+        Sat, 22 Oct 2022 04:49:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1666439370; cv=none;
+        d=google.com; s=arc-20160816;
+        b=OUk0fQrX0EHEdXuAFRwHmdPqChySlFANppVzLLrQupGRFqNCfJuq3+EdywFUQqfj1b
+         TxaFdrHSvLGHB0tZfFcx8/doMbKq++hAmuuMk6Bf0D0ZzJDikIVSQ/+hIpEu049vVFJh
+         Nz70Q1i35kdkIVv0v6Ud99Cgpnsog6/Bl8uGkZEWsoplyx15amQYs2SqrHDiRI8jZ3Kp
+         v+2Wx8heGMgt2T1tu41HaU/Iq6LrR7wm0pLS+Zm0wHQrGnPwyECVJYYr9TB3YxQ3/PF5
+         3IVnRV5HT4zyH5pyA2odZA6iEP/i6gxchb6QNqNxTEYo8oEPdKaThzZfPlgt6U0S/urw
+         gNfw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=message-id:feedback-id:subject:reply-to:from:to:date
+         :content-transfer-encoding:mime-version:dkim-signature
+         :dkim-signature;
+        bh=cyTjJl751KOZlsHE3jBfBP71IKIr8JqDLgjz0bQLC14=;
+        b=vczlc5tZxnMDtWvDklbbbvF9V71QCWENN/D0iMlXL9iygiYbzxVMxQuIc75lH8Zshp
+         Ni59P4Lt6BXqWQ5PbtvqHbJ2uXV5U3X/VuXw1KvkdKOw11XHt5qhkAElHXL5zizfwADn
+         ohCXOnq1LrmRt0UUuZZvp2oz23pmNUmha/TU7DMipR/tLPjR8v9MuSBKKhWHtw4jvwvt
+         x1N90fIQfe+QHj6LhM1OD2vtyCV0ifmX/3cmRIAyHVsTnW3PFuSjDpEIYeugPpWigHyw
+         8BGfYBxcVB1+gavRcSLE7e1tU6+0Jk24TAtn6CS6Axq7wYw8aRKa/QiK/lDz3e403jXg
+         Tjwg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@notifications.wix.com header.s=wix1
+ header.b=Lv4mVNCm;
+       dkim=pass header.i=@responsys.net header.s=oraclersys
+ header.b=g7UtVnvQ;
+       spf=pass (google.com: domain of wix-team@notifications.wix.com
+ designates 12.130.154.176 as permitted sender)
+ smtp.mailfrom=wix-team@notifications.wix.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=notifications.wix.com
+Return-Path: <wix-team@notifications.wix.com>
+Received: from omptrans.emails.wix.com (omptrans.emails.wix.com.
+ [12.130.154.176])
+        by mx.google.com with ESMTPS id
+ x13-20020a056902102d00b006bbf705fb1bsi258762ybt.681.2022.10.22.04.49.29
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 22 Oct 2022 04:49:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of wix-team@notifications.wix.com
+ designates 12.130.154.176 as permitted sender) client-ip=12.130.154.176;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@notifications.wix.com header.s=wix1
+ header.b=Lv4mVNCm;
+       dkim=pass header.i=@responsys.net header.s=oraclersys
+ header.b=g7UtVnvQ;
+       spf=pass (google.com: domain of wix-team@notifications.wix.com
+ designates 12.130.154.176 as permitted sender)
+ smtp.mailfrom=wix-team@notifications.wix.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE)
+ header.from=notifications.wix.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=wix1;
+ d=notifications.wix.com;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:To:From:Reply-To:
+ Subject:Feedback-ID:Message-ID; i=wix-team@notifications.wix.com;
+ bh=cyTjJl751KOZlsHE3jBfBP71IKIr8JqDLgjz0bQLC14=;
+ b=Lv4mVNCmh+JmQ50ep54qTVrMKUUza4c13Rij/atQtVkRWrpcyCka9vAwCSLfuwf6VPa7C2tY50P+
+   17Ivwa3mSSQXnntr7UFT0trL4HsyW2iuba/alHnmOPSSW5F8TGtFoloEMy8DYWZngDIZhi4wN+yR
+   P3mPe2mN3QvhlCN18J0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=oraclersys;
+ d=responsys.net;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:To:From:Reply-To:
+ Subject:Feedback-ID:Message-ID;
+ bh=cyTjJl751KOZlsHE3jBfBP71IKIr8JqDLgjz0bQLC14=;
+ b=g7UtVnvQIZj7zKU0FcySiaptr/0wZ5rOnEqWQCzdPiSd5iKmi4vGJKApT00kym4jUT5xq+/+OqzK
+   R9gMBGqj8RAB22aiY3psP0OCrqQNXpRPiTqNFGUEyIFWybFzi5onSQwQvocStmKfuJi5P5TWAeIO
+   02QPSdAhEg9F8hJOiAc=
+Received: by omptrans.emails.wix.com id hafcci2tlo8s for
+ <patriogabrielpatdu@gmail.com>;
+ Sat,
+ 22 Oct 2022 04:49:29 -0700 (envelope-from <wix-team@notifications.wix.com>)
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Date: Sat, 22 Oct 2022 04:49:29 -0700
+To: patriogabrielpatdu@gmail.com
+From: =?UTF-8?B?V2l4LmNvbQ==?= <wix-team@notifications.wix.com>
+Reply-To: =?UTF-8?B?V2l4LmNvbQ==?= <team@notifications.wix.com>
+Subject: prncssjwltolentino@gmail.com Has Invited You to Collaborate on a
+ Website
+Feedback-ID: 8736:61765762:oraclersys
+X-sgxh1: iHljphnHIjpLtiHlKmxnuHptQJhu
+X-rext: 6.interact2.EZV78o0PpfJigxWkpw1WCd9Xd7fQK3bVHi6QsK8KAXdymMFe-3oBPjCi
+X-cid: wix.55128022
+X-ei: EZb4kCS-JBENpff2Y8eD-h5wW4YTMXswwyiIbxhyS6ILMNaulX9Hmrp_oOAdY89AiPdr
+Message-ID: <0.1.F.C2A.1D8E60C57BFDB7C.0@omptrans.emails.wix.com>
+
+<=21DOCTYPE html>
+<html xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22>
+
+<head>
+  <meta name=3D=22viewport=22 content=3D=22width=3Ddevice-width, user-scala=
+ble=3Dno, initial-scale=3D1=2E0=22>
+  <meta http-equiv=3D=22Content-Type=22 content=3D=22text/html;charset=3DUT=
+F-8=22>
+  <meta name=3D=22format-detection=22 content=3D=22telephone=3Dno=22>
+  <=21-- rpcampaign:blogbackupEN2017-->
+  <title>Wix=2Ecom </title>
+  <style type=3D=22text/css=22>
+    body =7B
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      font-family: Helvetica, arial, sans-serif;
+    =7D
+   =20
+    body =7B
+      margin: 0;
+      padding: 0;
+    =7D
+   =20
+    table =7B
+      border-spacing: 0;
+    =7D
+   =20
+    table td =7B
+      border-collapse: collapse;
+    =7D
+   =20
+    a =7B
+      text-decoration: none;
+    =7D
+   =20
+    =2Ecorners-small =7B
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+    =7D
+   =20
+    div=2Edesktop-header =7B
+      color: =23ffffff;
+    =7D
+   =20
+    table=2Econtainer =7B
+      width: 600px =21important;
+    =7D
+   =20
+    =2EappleLinksBlack a =7B
+      color: =23ffffff =21important;
+      text-decoration: none;
+    =7D
+   =20
+    =2EappleLinksBlack-b a =7B
+      color: rgb(150, 158, 161) =21important;
+      text-decoration: none;
+    =7D
+    /* Desktops and laptops ----------- */
+   =20
+    =40media only screen and (max-width:1290px) =7B
+      =2Econtainer-padding-3 =7B
+        -webkit-border-radius: 0 =21important;
+        padding-left: 4% =21important;
+        padding-right: 4% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 100% =21important;
+        line-height: 100% =21important;
+       =20
+      =7D
+      =2Etext-block-sub-titel =7B
+        font-size: 100% =21important;
+        line-height: 150% =21important;
+      =7D
+      =2Emobile-text-block-center =7B
+        text-align: center =21important;
+      =7D
+      =2Efacebook-icon=7B
+        width: 50% =21important;
+      =7D
+    =7D
+   =20
+    =40media only screen and (max-width:600px) =7B
+      =2Elogo-width =7B
+        width: 90%=21important;
+      =7D
+      =2Emobile-double-cta-width =7B
+        width: 100%=21important;
+        max-width: 100%=21important;
+      =7D
+      =2Emobile-float-left =7B
+        float: left=21important;
+      =7D
+      =2EappleLinksBlack a =7B
+        color: =23ffffff =21important;
+        text-decoration: none;
+      =7D
+      =2Emobile-text-block-center =7B
+        text-align: center =21important;
+      =7D
+      =2EappleLinksBlack-b a =7B
+        color: rgb(150, 158, 161) =21important;
+        text-decoration: none;
+      =7D
+      =2Etext-block =7B
+        display: block;
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 85% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block-sub-titel =7B
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+      =2Etext-block-bold-header =7B
+        font-size: 18px =21important;
+      =7D
+      =2Etext-block-cta-mobile =7B
+        font-size: 16px =21important;
+      =7D
+      =2Epadding-zero =7B
+        padding: 0 0 0 0 =21important;
+      =7D
+      =2Emob-padding-top-0 =7B
+        padding-top: 0px =21important;
+      =7D
+      =2Emob-padding-bottom-0 =7B
+        padding-top: 0px =21important;
+      =7D
+      =2Emob-padding-top-10 =7B
+        padding-top: 10px =21important;
+      =7D
+      =2Emob-padding-top-15 =7B
+        padding-top: 15px =21important;
+      =7D
+      =2Emob-padding-top-18 =7B
+        padding-top: 18px =21important;
+      =7D
+      =2Emob-padding-top-20 =7B
+        padding-top: 20px =21important;
+      =7D
+      =2Emob-padding-top-25 =7B
+        padding-top: 25px =21important;
+      =7D
+      =2Emob-padding-top-30 =7B
+        padding-top: 30px =21important;
+      =7D
+      =2Emob-padding-top-35 =7B
+        padding-top: 35px =21important;
+      =7D
+      =2Emob-padding-top-40 =7B
+        padding-top: 40px =21important;
+      =7D
+      =2Emob-padding-top-45 =7B
+        padding-top: 45px =21important;
+      =7D
+      =2Emob-padding-top-50 =7B
+        padding-top: 50px =21important;
+      =7D
+      =2Emob-padding-top-60 =7B
+        padding-top: 60px =21important;
+      =7D
+      =2Emob-padding-top-70 =7B
+        padding-top: 70px =21important;
+      =7D
+      =2Emob-padding-bottom-0 =7B
+        padding-bottom: 0px =21important;
+      =7D
+      =2Emob-padding-bottom-10 =7B
+        padding-bottom: 10px =21important;
+      =7D
+      =2Emob-padding-bottom-15 =7B
+        padding-bottom: 15px =21important;
+      =7D
+      =2Emob-padding-bottom-18 =7B
+        padding-bottom: 18px =21important;
+      =7D
+      =2Emob-padding-bottom-20 =7B
+        padding-bottom: 20px =21important;
+      =7D
+      =2Emob-padding-bottom-25 =7B
+        padding-bottom: 25px =21important;
+      =7D
+      =2Emob-padding-bottom-30 =7B
+        padding-bottom: 30px =21important;
+      =7D
+      =2Emob-padding-bottom-35 =7B
+        padding-bottom: 35px =21important;
+      =7D
+      =2Emob-padding-bottom-45 =7B
+        padding-bottom: 45px =21important;
+      =7D
+      =2Emob-padding-bottom-50 =7B
+        padding-bottom: 50px =21important;
+      =7D
+      =2Emob-padding-bottom-60 =7B
+        padding-bottom: 60px =21important;
+      =7D
+      =2Emob-padding-bottom-70 =7B
+        padding-bottom: 70px =21important;
+      =7D
+      =2Emob-img-full-width =7B
+        width: 100% =21important;
+        max-width: 100% =21important;
+      =7D
+      =2Eno-border-mob =7B
+        border: none=21important;
+      =7D
+      div,
+      span =7B
+        text-size-adjust: none;
+      =7D
+      =2Econtainer-padding-3 =7B
+        -webkit-border-radius: 0 =21important;
+        padding-left: 0 =21important;
+        padding-right: 0% =21important;
+      =7D
+      =2Econtainer-padding =7B
+        -webkit-border-radius: 0 =21important;
+        padding-left: 3% =21important;
+        padding-right: 3% =21important;
+      =7D
+      =2Econtainer-padding-2 =7B
+        -webkit-border-radius: 0 =21important;
+        padding-left: 3% =21important;
+        padding-right: 3% =21important;
+      =7D
+      =2Econtainer-padding-logo =7B
+        -webkit-border-radius: 0 =21important;
+        padding-left: 2% =21important;
+        padding-right: 3% =21important;
+      =7D
+      div =7B
+        -webkit-text-size-adjust: none;
+      =7D
+      table=2Econtainer =7B
+        width: 100% =21important;
+        padding-left: 0 =21important;
+        padding-right: 0 =21important;
+      =7D
+      =2Edesktop-block =7B
+        display: none =21important;
+      =7D
+      =2Emobile-block-holder =7B
+        width: 100% =21important;
+        height: auto =21important;
+        max-width: none =21important;
+        max-height: none =21important;
+        display: block =21important;
+      =7D
+      =2Emobile-block =7B
+        display: block =21important;
+      =7D
+      =2Emobile-disclaimer =7B
+        background-color: =23ffffff;
+      =7D
+      =2Etext-block-2 =7B
+        font-size: 90% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Emobile-bullet-padding =7B
+        vertical-align: top =21important;
+      =7D
+    =7D
+   =20
+    =40media screen and (max-device-width: 480px) and (min-device-width: 40=
+6px) =7B
+      u+=2Ebody =2Efull-wrap =7B
+        width: 100% =21important;
+        width: 100vw =21important;
+      =7D
+     =20
+      =2Etext-block-titel=7B
+        font-size: 85% =21important;
+        line-height: 120% =21important;
+      =7D
+    =7D
+   =20
+    =40media only screen and (max-width:492px) =7B
+      =2Etext-block-titel =7B
+        font-size: 70% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block-sub-title =7B
+        font-size: 95% =21important;
+        line-height: 130% =21important;
+      =7D
+    =7D
+    =40media only screen and (max-width:438px) =7B
+      =2Etext-block-titel =7B
+        font-size: 67% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block-sub-titel =7B
+        font-size: 90% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block =7B
+        display: block;
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+      =2Etext-block-sub-title =7B
+        font-size: 95% =21important;
+        line-height: 130% =21important;
+      =7D
+    =7D
+    =40media only screen and (min-width:377px) and (max-width:399px) =7B
+      =2Etext-block-titel =7B
+        font-size: 75% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block-sub-title =7B
+        font-size: 90% =21important;
+        line-height: 130% =21important;
+      =7D
+    =7D
+   =20
+   =20
+    /*SAMSUNG EDGE GMAIL and NATIVE*/
+    =40media screen and (min-width:400px) and (max-width: 420px) =7B
+      =2Etext-block-titel =7B
+        font-size: 70% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block-sub-title =7B
+        font-size: 95% =21important;
+        line-height: 130% =21important;
+      =7D
+    =7D
+   =20
+    /*iPHONE WHITE HUGE GMAIL*/
+    =40media screen and (min-width:414px) and (max-width: 420px) =7B
+      =2Etext-block-sub-title =7B
+        font-size: 95% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 85% =21important;
+        line-height: 120% =21important;
+      =7D
+    =7D
+   =20
+    /* all Sumsungs Gmail App*/
+    =40media only screen and (min-device-width:358px) and (max-device-width=
+:363px)  =7B
+      =2Etext-block-sub-title =7B
+        font-size: 90% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 70% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block =7B
+        display: block;
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+      =2Etext-block-sub-titel =7B
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+    =7D
+   =20
+    /*Samsung green/turkiz Native*/
+    =40media screen and (min-device-width: 320px) and (max-device-width: 64=
+0px) and (-webkit-device-pixel-ratio: 4) =7B
+      =2Etext-block-sub-title =7B
+        font-size: 120% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 3rem =21important;
+        line-height: 36px =21important;
+      =7D
+      =2Etext-block =7B
+        display: block;
+        font-size: 90% =21important;
+      =7D
+    =7D
+   =20
+    /*Samsung 7 black Native*/
+    =40media screen and (min-device-width: 192px) and (max-device-height: 6=
+40px) and (-webkit-device-pixel-ratio: 3) =7B
+      =2Etext-block-sub-title =7B
+        font-size: 120% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 80% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block =7B
+        display: block;
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+      =2Etext-block-2 =7B
+        font-size: 12px=21important;
+        line-height: 16px =21important;
+      =7D
+    =7D
+   =20
+    /*Iphone 5+4  Native + Gmail App*/
+    =40media only screen and (min-width:320px) and (max-width:320px) =7B
+      =2Etext-block-sub-title =7B
+        font-size: 1em =21important;
+        line-height: 1em =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 70% =21important;
+        line-height: 120%=21important;
+      =7D
+      =2Etext-block-sub-titel =7B
+        font-size: 0=2E7em =21important;
+        line-height: 150%=21important;
+      =7D
+      =2Etext-block =7B
+        display: block;
+        font-size: 90% =21important;
+        line-height: 150% =21important;
+      =7D
+      u+=2Ebody =2Efull-wrap =7B
+        width: 100% =21important;
+        width: 100vw =21important;
+      =7D
+    =7D
+   =20
+    /*Iphone 6,7 and iPhone Xs Big Gmail App*/
+    =40media only screen and (min-device-width:375px) and (max-width:376px)=
+ =7B
+      =2Etext-block-sub-title =7B
+        font-size: 95% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 60% =21important;
+        line-height: 120% =21important;
+      =7D
+      =2Etext-block-sub-titel =7B
+        font-size: 90% =21important;
+        line-height: 130% =21important;
+      =7D
+      u+=2Ebody =2Efull-wrap =7B
+        width: 100% =21important;
+        width: 100vw =21important;
+      =7D
+    =7D
+   =20
+    /*Iphone White Huge and iPhone Xs Native*/
+    =40media only screen and (min-device-width:375px) and (max-device-width=
+:521px) and (-webkit-min-device-pixel-ratio:3) =7B
+      =2Etext-block-sub-title =7B
+        font-size: 90% =21important;
+        line-height: 130% =21important;
+      =7D
+      =2Etext-block-titel =7B
+        font-size: 70% =21important;
+        line-height: 120% =21important;
+      =7D
+    =7D
+   =20
+    =2Emobile-block-holder =7B
+      width: 0;
+      height: 0;
+      max-width: 0;
+      max-height: 0;
+      overflow: hidden;
+    =7D
+   =20
+    =2Emobile-block-holder,
+    =2Emobile-block =7B
+      display: none;
+    =7D
+   =20
+    =2Edesktop-block,
+    =2Edesktop-header,
+    =2Edesktop-image =7B
+      display: block;
+    =7D
+  </style>
+</head>
+
+<body class=3D=22body=22 yahoo=3D=22fix=22 style=3D=22background-color: =23=
+fff; margin: 0; min-width: 100%; height: 100%;margin: 0; padding: 0; width:=
+ 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22>
+
+
+  =20
+
+
+
+<div>
+  <center>
+    <=21--=5Bif gte mso 9=5D>
+    <table align=3D'center' border=3D'0' cellspacing=3D'0' cellpadding=3D'0=
+' width=3D'800'>
+      <tr>
+        <td align=3D'center' valign=3D'top'>
+    <=21=5Bendif=5D-->
+    <table class=3D=22full-wrap=22 border=3D=220=22 cellpadding=3D=220=22 c=
+ellspacing=3D=220=22 height=3D=22100%=22 width=3D=22100%=22 style=3D=22back=
+ground-color: =23fff; min-width: 320px; direction: ltr;border-collapse: col=
+lapse; mso-table-lspace: 0pt; margin: 0 auto; mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%; height: 100%; margin: =
+0;padding: 0; width: 100%=22>
+      <tbody>
+      <tr>
+        <td align=3D=22center=22 height=3D=22100%=22 valign=3D=22top=22 wid=
+th=3D=22100%=22 style=3D=22mso-line-height-rule: exactly;-ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; background-color: =23fff=22>
+          =20
+            <span id=3D=22prehader=22 style=3D=22color: =2318130F; display:=
+ none; height: 0; line-height: 0;max-height: 0; max-width: 0; opacity: 0; o=
+verflow: hidden; visibility: hidden;width: 0=22>
+                                                           Start working to=
+gether on https://prncssjwltolentino=2Ewixsite=2Ecom/circle=2E
+      </span>
+        <=21--=5Bif gte mso 9=5D>
+      <table align=3D'center' border=3D'0' cellspacing=3D'0' cellpadding=3D=
+'0' width=3D'800'>
+        <tr>
+          <td align=3D'center' valign=3D'top'>
+        <=21=5Bendif=5D-->
+      <table align=3D=22center=22 border=3D=220=22 cellpadding=3D=220=22 ce=
+llspacing=3D=220=22 width=3D=22100%=22 style=3D=22max-width: 800px;margin: =
+0 auto; background-color: =23fff; border-collapse: collapse; mso-table-lspa=
+ce: 0pt;mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%=22>
+        <=21--Here Is the cant see this email-->
+        <tbody>
+        <tr>
+          <td class=3D=22desktop-block=22 align=3D=22left=22 valign=3D=22to=
+p=22 style=3D=22 padding-top: 10px; padding-bottom: 10px;mso-line-height-ru=
+le: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22>
+            <table style=3D=22min-width: 100%; border-collapse: collapse; m=
+so-table-lspace: 0pt;mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%=22 border=3D=220=22 cellpadding=3D=220=22 cells=
+pacing=3D=220=22 width=3D=22100%=22>
+              <tbody>
+              <tr>
+                <td align=3D=22center=22 colspan=3D=222=22 style=3D=22text-=
+align: center=22 class=3D=22desktop-block=22>
+<div class=3D =22special-bg=22 style=3D=22text-align: center; font-size: 13=
+px; color: rgb(51, 51, 51); padding-bottom: 10px;border: 0; background-colo=
+r: =23fff=22 class=3D=22disclaimer mobile-disclaimer=22>
+    <br> Can't see this email?
+    <a href=3D=22https://emails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLj=
+HJlTQGzdzeBChRyiMcpnzf4siOS48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpK=
+X%3DTRCDWTCTT&_ei_=3DEWFAmz8IWWA-dUIycHV6pfhHvRsJmLca06Hoy_-4ATpkPOeaC4YXyl=
+4rtl8Xq7zAoQ_2Q9FROcsOIPG9yfj2y1C2I_nMMdaCh62f7jrEmOJpB2gZqKqb3kI6pNxubOKkj=
+ztDVZXs0L6AVhCYuLa0LZTTCr_FcacAiUZKmeoDgeMLO_1gpHgIi-q93zVlGvjG0frQXni6cUvP=
+cyWKxhCHoBKfETobvBF4UCM33tfh7wxfYA2xINV7W5n7iu6RwR9izFb9aehOydSgbHncTw62sF5=
+0uSEm9UBDdQxz4172iYHyIMCSmkxohfKEHjkR1VOeXJ4FPgSlJ2YR21Wto_zuyK97yNQ8A0Xx9h=
+ayleJGeuuXDQdKH0-OgWbVXQJz9GEikx8sdDUVlayUiFpgmhGmV5lduz4LFyUYo3SltE6-9lxzn=
+-O2pVAnCoeUoWD_2XHmXmz9jI9QP3nXE9DdYDvve7RdHj3jStynMjW3ggduDwBqrWkjVcq238xd=
+NxpC6Y2PANYswEYZcoPft0F27Y1NotFTP7slEsqX9w-fJMqVSI-j8G8UXv-L9CM13WyZ7LqKJZE=
+KtSRHzjc80CngL9h637hFnYhsXaXUXfPDnYgjwze9UDjcc-UQFlWFkzovsROpRt2wnnQNbt6sO9=
+h6H9rgcwdmE47SrjHZG1Jq5YaSVCxuNS255kjbQlb7LGREgUTUTVBC_z_BVSgTs7iJEhIoU5Xvw=
+g_c4iZwJI1bSfuUCiKXMcLq_6uYgIkoI1N9SkoX7GqJzloh2TJynbuBhEgzaY4tpL2iukdvuHis=
+98bGMXJXY25cK3d-a1iC_hrQKs6BKtzFd5zCKMTEvRwVpJZoU5lt6ISqdTUfx28i90YcGi_xreZ=
+WbfcQcwBgsY7gbYQnVEYyszKc5TNEj42gUF-Gp0ReF3bfQODbZzhjOBmV-lPEwUuVatRckoNCkE=
+jWhmx_sOwGjQhyg9F8Qki99BmuWWYsnuPQOkYLfDx9QrbF-bpIpVs_OUxKoeKiv87pcB8ughFqZ=
+WhHhWKIZ_koLcsCzwB_J1zgYC9lSQ12am5dLUeFruMEXquqvcFTjASyr6JRIN-fpj3_EwR2VLqU=
+cp9H6Wcp3q_LB6PFqRjsWT49TmOgv8EXU1hyVptsGzw6Uow3_uiZtTJoIcFF40vCMh1b-HM9DzQ=
+ehjfixn-ind23WlSpWvBaXllRFlv9nbZvX-IVKZhOc9cntTjJPn8XDn3ZbJy5X2MAOtXsTSXO3C=
+HnztEzulHmDHRXrAff_KWe0mw8sElQW_AD76BvUFmK6tijcchX6k5SOgwDzrGlfrzjSl28nV2nH=
+fnPc-48kajDfLdEX3kDNV6iqmiP0BqvScwVf20zp2MNopqzEkjUu9bm-Azx93DpwKvXh4x5OR40=
+1bysHc5tm1gZEmj5bUXCXiJIEJ5EImNLFozcm7-fq7WehOTPRJr-T1wZdZg=2E&_di_=3Ducjga=
+aer759pn3q6hm6ruvc7jq647140e8ca1f0lphe2d3pc6ok0=22target=3D=22_blank=22 sha=
+pe=3D=22rect=22 style=3D=22text-decoration: none; color: =23459fed=22>
+        Click here</a>=2E
+</div>                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align=3D=22center=22 valign=3D=22top=22 class=3D=22no-border-=
+mob=22 style=3D=22padding-top: 0; padding-bottom: 0; mso-line-height-rule: =
+exactly;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; backgro=
+und-color: =23ffffff;=22>
+            <table align=3D=22center=22 class=3D=22no-border-mob=22 border=
+=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22 s=
+tyle=3D=22background-color:=23ffffff;border-collapse: collapse; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;border:1px solid black=22>
+              <tbody>
+              <tr>
+                <td align=3D=22center=22 valign=3D=22top=22 style=3D=22padd=
+ing-right: 0px; padding-bottom: 0px; background-color: =23ffffff;padding-le=
+ft: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-=
+text-size-adjust: 100%=22>
+                  <table style=3D=22border-collapse: collapse; mso-table-ls=
+pace: 0pt; max-width: 800px;background-color: =23ffffff; mso-table-rspace: =
+0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22 border=
+=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22>
+                    <tbody>
+                    <tr>
+                      <td class=3D=22mobile-disclaimer=22 align=3D=22center=
+=22 valign=3D=22top=22 style=3D=22=22>
+                        <div style=3D=22display: inline-block; max-width: 1=
+00%; vertical-align: top; width: 100%; =22>
+                          <=21--=5Bif (gte mso 9)=7C(IE)=5D>
+                          <table align=3D'center' border=3D'0' cellspacing=
+=3D'0' cellpadding=3D'0' width=3D'800'>
+                            <tr>
+                              <td align=3D'center' valign=3D'top' width=3D'=
+800'> <=21=5Bendif=5D-->
+                          <table  align=3D=22center=22 border=3D=220=22 cel=
+lpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22 style=3D=22max-=
+width: 800px; =22>
+                            <tbody>
+                            <tr>
+                              <td align=3D=22center=22 valign=3D=22top=22 w=
+idth=3D=22100%=22 style=3D=22padding-left: 0px; margin-left: 0px; backgroun=
+d-color: =23ffffff;=22>
+                                <table align=3D=22center=22 border=3D=220=
+=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22 style=3D=
+ =22max-width: 720px;background-color: =23ffffff; border-collapse: collapse=
+; mso-table-lspace: 0pt;mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%=22>
+                                  <tbody>
+                                  <tr>
+                                    <td class=3D=22padding-zero container-p=
+adding container-padding-3=22 align=3D=22left=22 valign=3D=22top=22 style=
+=3D=22padding-top: 15px;background-color: =23ffffff;=22>
+                                      <=21--=5Bif gte mso 9=5D>
+                                      <table align=3D'center' border=3D'0' =
+cellspacing=3D'0' cellpadding=3D'0' width=3D'720'>
+                                        <tr>
+                                          <td align=3D'center' valign=3D'to=
+p'>
+                                      <=21=5Bendif=5D-->
+                                      <table style=3D=22min-width: 100%; bo=
+rder-collapse: collapse; mso-table-lspace: 0pt;background-color: =23ffffff;=
+ max-width: 720px; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%=22 border=3D=220=22 cellpadding=3D=220=22 cellspac=
+ing=3D=220=22 width=3D=22100%=22>
+                                        <tbody>
+                                        <tr>
+                                          <td class=3D=22mob-padding-top-20=
+=22 style=3D=22background-color: =23ffffff;=22 align=3D=22left=22>
+                                            <img src=3D=22https://static=2E=
+cdn=2Eresponsys=2Enet/i2/responsysimages/wix//contentlibrary/matrix-blocks/=
+media/wix_logo_dark_mode=2Epng=22 width=3D=2280=22 style=3D=22padding-top: =
+15px; padding-bottom: 15px; display: block=22>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                      <=21--=5Bif gte mso 9>
+                                      </td>
+                                      </tr>
+                                      </table>
+                                      <=21=5Bendif=5D-->
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                           =20
+                            <tr>
+                              <td class=3D=22container-padding-3=22 align=
+=3D=22center=22 valign=3D=22top=22 width=3D=22100%=22 style=3D=22padding-to=
+p: 15px; padding-bottom: 0px; margin: 0px; background-color: =23ffffff;=22>
+                                <=21--=5Bif gte mso 9=5D>
+                                <table align=3D'center' border=3D'0' cellsp=
+acing=3D'0' cellpadding=3D'0' width=3D'720'>
+                                  <tr>
+                                    <td align=3D'center' valign=3D'top'>
+                                <=21=5Bendif=5D-->
+                                <table align=3D=22center=22 border=3D=220=
+=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22 style=3D=
+=22margin:0; max-width: 720px;background-color: =23DAE6FD; border-collapse:=
+ collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;-ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%; padding-right:40px; padding-left:3=
+9px;=22>
+                                  <tbody>
+                                  <tr>
+                                    <td align=3D=22center=22 valign=3D=22to=
+p=22>
+                                      <=21--=5Bif gte mso 9=5D>
+                                      <table align=3D'center' border=3D'0' =
+cellspacing=3D'0' cellpadding=3D'0' width=3D'600'>
+                                        <tr>
+                                          <td align=3D'center' valign=3D'to=
+p'> <=21=5Bendif=5D-->
+                                      <table style=3D=22min-width: 100%; bo=
+rder-collapse: collapse; mso-table-lspace: 0pt;max-width: 600px; mso-table-=
+rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22 =
+border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100=
+%=22>
+                                        <tbody>
+                                        <tr>
+                                          <td class=3D=22container-padding =
+container-padding-3 mob-padding-top-40 mob-padding-bottom-40=22 style=3D=22=
+max-width: 600px; text-size-adjust: 100%; padding: 50px 0px 50px 0px;backgr=
+ound-color:=23DAE6FD; color: =23000000;font-family: Arial, Helvetica, sans-=
+serif; font-size: 40px; font-style: normal;font-weight: normal; line-height=
+: 50px; text-align: left;=22 valign=3D=22top=22>
+                                            <table align=3D=22center=22>
+                                              <tr>
+                                                <td class=3D=22container-pa=
+dding container-padding-3=22 width=3D=22600=22 style=3D=22max-width:600px; =
+word-break: keep-all; color: =23000000; line-height: 70px;font-size: 58px; =
+padding-bottom: 0px; text-align: left; font-weight: bold; border: 0px;=22 >
+                                                  <div class=3D=22text-bloc=
+k-titel=22>
+                                                                           =
+                   You=E2=80=99re Invited to Collaborate on a Website
+                       =20
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <=21--=5Bif gte mso 9>
+            </td>
+            </tr>
+            </table><=21=5Bendif=5D-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+        <=21--=5Bif gte mso 9>
+              </td>
+              </tr>
+              </table>
+              <=21=5Bendif=5D-->
+      </td>
+      </tr>
+     =20
+      </tbody>
+    </table>
+    <=21--=5Bif gte mso 9>
+                </td>
+                </tr>
+                </table><=21=5Bendif=5D-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+  <td class=3D=22 mobile-disclaimer no-border-mob=22 align=3D=22center=22 v=
+align=3D=22top=22 style=3D=22=22>
+    <div style=3D=22display: inline-block; max-width: 100%; vertical-align:=
+ top; width: 100%;=22>
+      <=21--=5Bif (gte mso 9)=7C(IE)=5D> <table align=3D'center' border=3D'=
+0' cellspacing=3D'0' cellpadding=3D'0' width=3D'800'><tr> <td align=3D'cent=
+er' valign=3D'top' width=3D'800'=22> <=21=5Bendif=5D-->
+      <table  align=3D=22center=22 border=3D=220=22 cellpadding=3D=220=22 c=
+ellspacing=3D=220=22 width=3D=22100%=22 style=3D=22max-width: 800px;=22>
+        <tbody>
+        <=21--<=21=5Bendif=5D-->
+       =20
+        <tr>
+          <td align=3D=22center=22 valign=3D=22top=22 style=3D=22padding-to=
+p: 0; padding-bottom: 0; mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%; -webkit-text-size-adjust: 100%; background-color: =23fff;=22>
+            <table align=3D=22center=22 border=3D=220=22 cellpadding=3D=220=
+=22 cellspacing=3D=220=22 width=3D=22100%=22 style=3D=22background-color: =
+=23fff;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: =
+0pt; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=22>
+              <tbody>
+              <tr>
+                <td align=3D=22center=22 valign=3D=22top=22 style=3D=22padd=
+ing-right: 0px; padding-bottom: 0px; background-color: =23fff;padding-left:=
+ 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%=22>
+                  <table style=3D=22border-collapse: collapse; mso-table-ls=
+pace: 0pt; max-width: 800px;background-color: =23fff; mso-table-rspace: 0pt=
+; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22 border=3D=
+=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22>
+                    <tbody>
+                    <tr>
+                      <td class=3D=22mobile-disclaimer=22 align=3D=22center=
+=22 valign=3D=22top=22>
+                        <div style=3D=22display: inline-block; max-width: 1=
+00%; vertical-align: top; width: 100%;=22>
+                          <=21--=5Bif (gte mso 9)=7C(IE)=5D>
+                          <table align=3D'center' border=3D'0' cellspacing=
+=3D'0' cellpadding=3D'0' width=3D'800'>
+                            <tr>
+                              <td align=3D'center' valign=3D'top' width=3D'=
+800'=22> <=21=5Bendif=5D-->
+                          <table class=3D=22mob-padding-bottom-70=22 align=
+=3D=22center=22 border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=
+=22 width=3D=22100%=22 style=3D=22max-width: 800px; padding-bottom:90px; =
+=22>
+                            <tbody>
+                            <tr>
+                              <td class=3D=22container-padding container-pa=
+dding-3=22 align=3D=22center=22 valign=3D=22top=22 width=3D=22100%=22 style=
+=3D=22margin: 0px; background-color: =23fff;=22>
+                                <table align=3D=22center=22 border=3D=220=
+=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22 style=3D=
+=22max-width: 600px;border-collapse: collapse; mso-table-lspace: 0pt; mso-t=
+able-rspace: 0pt; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+=22>
+                                  <tbody>
+                                  <tr>
+                                    <td class=3D=22container-padding contai=
+ner-padding-3=22 align=3D=22center=22 valign=3D=22top=22 >
+                                      <=21--=5Bif gte mso 9=5D>
+                                      <table align=3D'center' border=3D'0' =
+cellspacing=3D'0' cellpadding=3D'0' width=3D'600'>
+                                        <tr>
+                                          <td align=3D'center' valign=3D'to=
+p'> <=21=5Bendif=5D-->
+                                      <table style=3D=22min-width: 50%; bor=
+der-collapse: collapse; mso-table-lspace: 0pt; max-width: 600px;background-=
+color: =23fff; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%=22 border=3D=220=22 cellpadding=3D=220=22 cellspacing=
+=3D=220=22 width=3D=22100%=22>
+                                        <tr>
+                                          <td style=3D=22background-color: =
+=23fff; padding-top: 17px;text-size-adjust: 100%; color: =23000000; font-fa=
+mily: Arial, Helvetica, sans-serif;font-size: 16px; font-style: normal; fon=
+t-weight: normal; line-height: 24px;text-align: left;=22 valign=3D=22top=22=
+ >
+                                                                   <span st=
+yle=3D=22padding-bottom: 0px; font-weight: normal; color: =23000000;=22 cla=
+ss=3D=22text-block-sub-title=22>
+                                                                    <br>
+                                                                    prncssj=
+wltolentino=40gmail=2Ecom has invited you to get started on the https://prn=
+cssjwltolentino=2Ewixsite=2Ecom/circle site=2E=20
+                                                                    <br>
+                                                                    <br>
+                                                                    Once yo=
+u accept, you=E2=80=99ll be able to contribute based on your assigned role =
+and permissions and access this site from My Sites=2E
+                                            </span>
+                                         =20
+                                          </td>
+                                        </tr>
+                                       =20
+                                        <tr>
+                                          <td class=3D=22mob-padding-top-30=
+=22 align=3D=22center=22 valign=3D=22top=22 style=3D=22padding: 32px 0px 0p=
+x 0px;background-color:transparent; mso-line-height-rule: exactly; -ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%=22>
+                                            <table class=3D=22mob-table-wid=
+th=22 style=3D=22min-width: 50%; border-collapse: collapse; mso-table-lspac=
+e: 0pt; max-width: 600px;background-color:transparent; mso-table-rspace: 0p=
+t; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=22 border=3D=
+=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22100%=22>
+                                              <tbody>
+                                              <tr>
+                                                <td align=3D=22left=22 vali=
+gn=3D=22top=22 style=3D=22padding-bottom: 0px;padding-top: 0px; font-size: =
+0;=22>
+                                                  <=21--=5Bif (gte mso 9)=
+=7C(IE)=5D>
+                                                  <table align=3D'left' bor=
+der=3D'0' cellspacing=3D'0' cellpadding=3D'0' width=3D'600' style=3D=22=22>
+                                                    <tr>
+                                                      <td align=3D'left' va=
+lign=3D'top' width=3D'198'>
+                                                  <=21=5Bendif=5D-->
+                                                  <div style=3D=22display: =
+inline-block; max-width: 50%; min-width: 198px; vertical-align: top;=22 cla=
+ss=3D=22mobile-double-cta-width=22>
+                                                    <table align=3D=22left=
+=22 border=3D=220=22 cellpadding=3D=220=22 cellspacing=3D=220=22 width=3D=
+=22100%=22 style=3D=22max-width: 198px;=22 class=3D=22mobile-float-left=22>
+                                                      <tbody>
+                                                      <tr>
+                                                        <td class=3D=22mobi=
+le-text-block-center=22 style=3D=22padding: 0px; text-align: center=22>
+                                                          <=21--Resp button=
+-->
+                                                          <a href=3D=22http=
+s://emails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnz=
+f4siOS48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWTCWT&amp;_ei=
+_=3DEWNp27QWMuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAM=
+AvbkPKx0qmff7COzBSkjrHFLrs4SX8Hmv8GJynY_WHvL2668wQnQ3Ldsj2hGIG3sRwLYoSvz02z=
+wd2HdrifxWfBE1fF1tAaH2DcdO0q3cP54xNhCRbhlyQc_aWC-ZVRDO58ncnEUHGgSaGVvWHDi8K=
+R0d5mLAO2n1U47SywEAu5CPF83-KO7GT5RlyyeFZUKeWALkaACJClz6u-581212mAbJKbzbifx2=
+lpQLgMkVzdmKLWUqyxJ0_XQleEQJwg2Qb-_W8zlndrPmg9eL_fCZdXN5knu6sqMJmopjUxhEoua=
+bZJuMF9rwHVA0Wj5OsK7iuGIxO3INd7sV0q6uTzSzn6wPucs8cqPos_PZP9DRl0l2I0pN2vB-WA=
+5bcPwvSTZt4NMYPKuy9dJXW0NNA_1LP4KOMfc3d1i2DzzYDUDyUKgahdfxJjRy0a0IPUEheOy6P=
+iTdJyCmN33gnotORmLsH-YAS94a5gugNRg6pBchybYcEh3jfdI-gLPkFU-hL_RhC0q8J9sL-X2U=
+kRFboynsrCP_SNsypIHdoHWmEz5GlwhKBu2APi2lkAftSS_t4uZkT3uv4RdllGZouLsJGTAGr0T=
+uLF1I7dlEgxYNbmFmuwi8xtin68fXc7tmNC3Ee6IGPyQzfhz5ECkK4eFfr9CCiZl1GpZ4t64Xjg=
+6kZfNyYYgrFenKtK_o6WJozROppL4vZ1jffJzff7S50OqiBhOVD0XiYxhehYHnEXIlE_bavXYgm=
+oOiXw0ZNA5nAcqSzT5rX7bIT3_2FSB1932mIjdtER3hhFkdN13SBDFI8MmQewEcZFITUTQNMW2c=
+wt707kzy4fXT9FRmME6q9MLN0m-ul0iAWRjqdAokITKMWbrBCyPaKoXQbWhyA0CqA9lLDizylKY=
+VpZRISPfMSE2EEh5S9ZsGAw23LLR1n0QVMvPIz_sK4zAMzneFnGwPYcA3bYOW=2E&amp;_di_=
+=3Dpeog248j796gimq0c5jlktggstlj7ludo1gbfe57luftt0efvlmg=22 style=3D=22text-=
+decoration: none;=22 class=3D=22=22>
+                                                            <table cellspac=
+ing=3D=220=22 cellpadding=3D=220=22 style=3D=22=22>
+                                                              <tbody>
+                                                              <tr>
+                                                                <td style=
+=3D=22text-align: center; display: table-row=22>
+                                                                  <table ce=
+llspacing=3D=220=22 cellpadding=3D=220=22 style=3D=22=22>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                      <td a=
+lign=3D=22left=22 bgcolor=3D=22=23000000=22 style=3D=22border-radius: 40px;=
+ display: block; text-align: center;margin: 0 auto; padding: 16px 39px; fon=
+t-size: 20px; line-height: 20px;background-color: =23000000=22>
+                                                                        <a =
+href=3D=22https://emails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGz=
+dzeBChRyiMcpnzf4siOS48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRC=
+DWTCWT&amp;_ei_=3DEWNp27QWMuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI=
+1E5qDLBvC3koAMAvbkPKx0qmff7COzBSkjrHFLrs4SX8Hmv8GJynY_WHvL2668wQnQ3Ldsj2hGI=
+G3sRwLYoSvz02zwd2HdrifxWfBE1fF1tAaH2DcdO0q3cP54xNhCRbhlyQc_aWC-ZVRDO58ncnEU=
+HGgSaGVvWHDi8KR0d5mLAO2n1U47SywEAu5CPF83-KO7GT5RlyyeFZUKeWALkaACJClz6u-5812=
+12mAbJKbzbifx2lpQLgMkVzdmKLWUqyxJ0_XQleEQJwg2Qb-_W8zlndrPmg9eL_fCZdXN5knu6s=
+qMJmopjUxhEouabZJuMF9rwHVA0Wj5OsK7iuGIxO3INd7sV0q6uTzSzn6wPucs8cqPos_PZP9DR=
+l0l2I0pN2vB-WA5bcPwvSTZt4NMYPKuy9dJXW0NNA_1LP4KOMfc3d1i2DzzYDUDyUKgahdfxJjR=
+y0a0IPUEheOy6PiTdJyCmN33gnotORmLsH-YAS94a5gugNRg6pBchybYcEh3jfdI-gLPkFU-hL_=
+RhC0q8J9sL-X2UkRFboynsrCP_SNsypIHdoHWmEz5GlwhKBu2APi2lkAftSS_t4uZkT3uv4Rdll=
+GZouLsJGTAGr0TuLF1I7dlEgxYNbmFmuwi8xtin68fXc7tmNC3Ee6IGPyQzfhz5ECkK4eFfr9CC=
+iZl1GpZ4t64Xjg6k5f8J41SWgNUWigy8-YjcfaDmilfYU4gqTd5Nx_gfPeHVxDhOcgzIgTuLGyo=
+gyDNvjXG8OQ7gDb-aGwi0bRQpycJqshamBd-s0rjbFsHDEfuexeM5EXzYTRqP-vVEsngli9rQjl=
+Roo9DzL6YmMjpb1-OCuZyPhUx49O4YPO9CJpIi0QoY4AmrVyeNhQmMY9ANkdA9q8nOiixcSH14s=
+_7cjMgR7TLDoxvRBuRk4nfFDjnn9MJvGr4U0w_tNWCSra0p8yqFKPkO05zx-E0DtGfTmlcABM=
+=2E&amp;_di_=3D846s736um5c0cct18vk4f7ers3b137are1oh308kpl033vn85si0=22 styl=
+e=3D=22color: =23fff; white-space:nowrap; font-weight: normal; font-family:=
+ Helvetica, Arial, sans-serif; text-decoration: none;width: 100%; display: =
+inline-block=22>
+                                                                          A=
+ccept&nbsp;Invite
+                                                          </a>
+                                                        </td>
+                                                      </tr>
+                                                      </tbody>
+                                                    </table>
+                                                </td>
+                                              </tr>
+                                              </tbody>
+                                            </table>
+                                            </a>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                        </div>
+                       =20
+                       =20
+                        <=21--=5Bif (gte mso 9)=7C(IE)=5D> </td><td align=
+=3D'center' valign=3D'top' width=3D'10'> <=21=5Bendif=5D-->
+                        <=21--=5Bif (gte mso 9)=7C(IE)=5D> </td> <td align=
+=3D'center' valign=3D'top' width=3D'198'> <=21=5Bendif=5D-->
+                       =20
+                        <=21--=5Bif (gte mso 9)=7C(IE)=5D> </td><td width=
+=3D'20' style=3D'font-size: 1px;'>&nbsp;</td><td width=3D'398' style=3D'fon=
+t-size: 1px;'>&nbsp;</td> </tr></table><=21=5Bendif=5D-->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style=3D=22padding-top: 32px; text-size-adjust: 1=
+00%; color: =23000000; font-family: Arial, Helvetica, sans-serif;font-size:=
+ 16px; font-style: normal; font-weight: normal; line-height: 24px;text-alig=
+n: left;=22>
+                                                                          <=
+span class=3D=22text-block-sub-title=22>
+                                                                           =
+   Have questions? Our <a href=3D'https://emails=2Ewix=2Ecom/pub/cc?_ri_=3D=
+X0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS48KDzcKBMzadUIzeapAzakdCd6zcKPu=
+fzgLqUh7yr8pVXtpKX%3DTRCDWTCAT&_ei_=3DEWNp27QWMuWHDEmRNsxiBGep8jGyNG9aouM5L=
+NBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qmff7COwk4X14mlkHropi9RmteYCQQ90M=
+t9EhPZuA-AnnoL2aQREYVeTz8ttq6e6r_7ntRPN7IEhpC1NhJW1E-Icx3f_Zuagh0z2LV9_1Fv7=
+734yVwRCm2eHL5ixKIR0M6rkcIEBqY9H94KvQIATQtlTQ87OTq6qILmdEc1KaqnfwWqya_I84fe=
+OBrDGRTjDoEphzx7dhrAzjP0VO_UODOa5pNsso1YIbqrN_o8LsVpmneSE=2E&_di_=3Dm4tn762=
+n7k9vdjvq6qd32f6jvtf3k186e9qetbdhedv943p06km0' style=3D'color: =23459fed; t=
+ext-decoration: underline;'>Customer Care Experts</a> are available for you=
+ 24/7=2E
+                        </span>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <=21--=5Bif gte mso 9>
+            </td>
+            </tr>
+            </table><=21=5Bendif=5D-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+  </td>
+</tr>
+</tbody>
+</table>
+<=21--=5Bif gte mso 9>
+            </td>
+            </tr>
+            </table><=21=5Bendif=5D-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<=21--=5Bif gte mso 9>
+                                </td>
+                                </tr>
+                                </table><=21=5Bendif=5D-->
+
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+  <td class=3D=22=22 align=3D=22center=22 valign=3D=22top=22 width=3D=22100=
+%=22 style=3D=22margin: 0px; background-color: =23fff;=22 class=3D=22mob-pa=
+dding-top-30=22>
+    <=21--=5Bif gte mso 9=5D>
+    <table align=3D'center' border=3D'0' cellspacing=3D'0' cellpadding=3D'0=
+' width=3D'800'>
+      <tr>
+        <td align=3D'center' valign=3D'top'>
+    <=21=5Bendif=5D-->
+    <table align=3D=22center=22 border=3D=220=22 cellpadding=3D=220=22 cell=
+spacing=3D=220=22 width=3D=22100%=22 style=3D=22background-color: =23fff; b=
+order-collapse: collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22>
+      <tr>
+        <td class=3D=22container-padding container-padding-3-2 container-pa=
+dding-3=22 align=3D=22center=22 valign=3D=22top=22 style=3D=22padding-top: =
+0; padding-bottom: 0; mso-line-height-rule: exactly;padding: 0; margin: 0; =
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;background-color=
+: =23fff=22>
+          <table align=3D=22center=22 border=3D=220=22 cellpadding=3D=220=
+=22 cellspacing=3D=220=22 width=3D=22100%=22 style=3D=22margin: 0 auto; max=
+-width: 600px;border-collapse: collapse;mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=22>
+            <tbody>
+            <tr>
+              <td style=3D=22padding: 0px=22>
+                <table cellpadding=3D=220=22 cellspacing=3D=220=22 style=3D=
+=22text-align: center; margin: 0 auto=22 width=3D=22100%=22 align=3D=22cent=
+er=22>
+                 =20
+                 =20
+                  <=21--=5Bif =21mso=5D>
+                     <=21-- -->
+                  <tr>
+                    <td>
+                      <table border=3D=220=22 cellpadding=3D=220=22 cellspa=
+cing=3D=220=22 width=3D=22100%=22>
+                        <tr>
+                          <td>
+                            <=21-- DO NOT DELETE TABLE BELOW -->
+                            <table border=3D=220=22 cellpadding=3D=220=22 c=
+ellspacing=3D=220=22 width=3D=22100%=22 class=3D=22mobile-block container-p=
+adding-3=22 style=3D=22mso-hide: all; display: table=21important;=22>
+                              <tr>
+                                <td class=3D=22mobile-block=22 width=3D=221=
+00%=22 style=3D=22border-top: 1px solid =23000000;=22>
+                                  <=21-- PLACE APP STORE BUTTONS BLOCK HERE=
+ -->
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <=21--<=21=5Bendif=5D-->
+                 =20
+                  <=21-- SOCIAL HEADER -->
+               =20
+                </table>
+                <table cellpadding=3D=220=22 cellspacing=3D=220=22 style=3D=
+=22text-align: center; margin: 0 auto=22 align=3D=22center=22>
+                  <tbody>
+                  <=21-- SOCIAL ICONS -->
+                  <tr>
+                    <td style=3D=22padding-top: 20px; padding-bottom:0px;=
+=22>
+                      <table cellpadding=3D=220=22 cellspacing=3D=220=22 st=
+yle=3D=22text-align: center; margin: 0 auto=22 align=3D=22center=22>
+                        <tbody>
+                       =20
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <=21-- FOOTER START -->
+                            =20
+                              <tr>
+                                <td style=3D=22background-color: =23fff; te=
+xt-size-adjust: 100%; font-family: Arial, Helvetica, sans-serif;font-size: =
+14px; font-style: normal; font-weight: normal; line-height: 2em;text-align:=
+ center;=22 valign=3D=22top=22 >
+                                                  <span class=3D=22desktop-=
+block text-block=22 style=3D=22padding-bottom: 20px; font-weight: normal; c=
+olor: =23000000;=22>
+                                                      <b>Please do not repl=
+y to this email=2E</b>
+                                                      <br>
+                                                    <a href=3D=22https://em=
+ails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS=
+48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTUBRTUSAT&_ei_=3DEWNp27=
+QWMuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qm=
+ff7COwR2IA7oIWgVhQl_HdwZCpoNPbm4PpKbyW6czFKyWaqmKiang3mYZREbNW1l4GKIshYG1zw=
+SePBwKwdELKIHQYigUC_x2a74CVK5h6_xu2H4OJpPZ2B8_Qrbk_LHsUT-DGIwXT7hu8COs-X0hO=
+tLoIqj_xuSEH3-1EK88NAfn4YIR9OMHPuQRB59HCUj0SWnaiQEJLvrxoHlzyw93bwgfxlilXCrk=
+91KFlItaK8n8X7ZW1esY_5jfWZ8RsZpygLzTMe01qg_8tTH5kYD3HQR3QCxHh8h-mjrTWhixP3=
+=2E&_di_=3D78gftg3mqno8fu3l8cud80hus3uruqa3msp7a5rqnngin59bq5s0=22 style=3D=
+=22color: =23000000; white-space:nowrap; font-weight: normal; font-family: =
+Helvetica, Arial, sans-serif; text-decoration: underline=21important;width:=
+ 100%=22>
+                                                    Help Center</a> &=23124=
+; <br class=3D=22mobile-block=22>
+                                                    <a href=3D=22https://em=
+ails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS=
+48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWTDCT&_ei_=3DEWNp27=
+QWMuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qm=
+ff7COyylsZ228VLKbZ8OTk048l6vU9EbTH_El8K7XiVE894Arp-GW5D6akLnbH9heHlvP83jl6s=
+Br9rBiTnv3HNRlk9xrY8O8fYPDA6jrh-E_uCF6Q-ulB8hcHBoem50CSzkiaaCpPe2yXo2vqMrUl=
+hOYeerbyZ4U1WlxqB3UVO99do-WEY6NRVayUkAQbonPfQqoVAY-1T=2E&_di_=3Dh188imk8tcr=
+1apn3ph7pi8qjc7j43q13c50kej7eviqok5id2de0=22 style=3D=22color: =23000000; w=
+hite-space:nowrap; font-weight: normal; font-family: Helvetica, Arial, sans=
+-serif; text-decoration: underline=21important;width: 100%=22>
+                                                    Privacy Policy</a> &=23=
+124;
+                                                    <a href=3D=22https://em=
+ails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS=
+48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWURRT&_ei_=3DEWNp27=
+QWMuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qm=
+ff7COyylsZ228VLKbZ8OTk048l68OF8kk-IB7Kftn3t1PvAffFMEXJwj46hgC3-H5nMcVx49LvA=
+o5ftSSP1KUW2iaYeSVrJ6p1zY4aKi0vA2JB42Icpjdx_TZu_kWp7cXi23MkO6a-7bWvYdURjs_X=
+lZZNjlXgoSfQYZp2Y7h-ZLibxErp3lxGVcVQjrI0NFJtLFaa3_xz13b3Ge88=2E&_di_=3Dabh2=
+m7vg2816ogm4h3mbnub4rprpn7nps3kksbhv7kfqju3v7bag=22 style=3D=22color: =2300=
+0000; white-space:nowrap; font-weight: normal; font-family: Helvetica, Aria=
+l, sans-serif; text-decoration: underline=21important;width: 100%=22>
+                                                    Terms of Use</a><br>
+                                                    500 Terry A Francois Bl=
+vd San Francisco, CA 94158 &bull;
+                                                    <br class=3Dmobile-bloc=
+k>
+                                                    Wix=2Ecom Ltd &bull; Wi=
+x=2Ecom Inc=2E &bull;       =20
+                                                    <a href=3D=22https://em=
+ails=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS=
+48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWURTT&_ei_=3DEWNp27=
+QWMuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qm=
+ff7COwk4X14mlkHropi9RmteYCQz8aNWm3y7bqp0zED04XhXAnOBIBL_Fph9oEbvNnUVpyd9jAB=
+ZCcCT86XazxFHXpv5dQya4WMv_ssrO5yGOtTYwn-nIe0riBg2rb30Ln2zeGVzxebLboh6Vx5zgO=
+NPQpVhOjE0mTxCmzbg7piGIvigSByPO24Prk=2E&_di_=3Dh2hee5v3ji20obllmr4j6jb65lr0=
+8imjdv361chk3hb1maavc9e0=22 target=3D=22_blank=22 shape=3D=22rect=22 style=
+=3D=22color: =23000000; white-space:nowrap; font-weight: normal; font-famil=
+y: Helvetica, Arial, sans-serif; text-decoration: none=21important;width: 1=
+00%=22>
+                                                    Wix=2Ecom
+                                                      </a>
+                                                  </span>
+                                                    <=21--=5Bif =21mso=5D>
+                              <=21-- -->
+                                                  <span class=3D=22mobile-b=
+lock text-block=22 style=3D=22padding-bottom: 20px; font-weight: normal; co=
+lor: =23000000;=22>
+                                                    <b>Please do not reply =
+to this email=2E</b>
+                                                    <br>
+                                                  <a href=3D=22https://emai=
+ls=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS48=
+KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTUBRTUSAT&_ei_=3DEWNp27QW=
+MuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qmff=
+7COwR2IA7oIWgVhQl_HdwZCpoNPbm4PpKbyW6czFKyWaqmKiang3mYZREbNW1l4GKIshYG1zwSe=
+PBwKwdELKIHQYigUC_x2a74CVK5h6_xu2H4OJpPZ2B8_Qrbk_LHsUT-DGIwXT7hu8COs-X0hOtL=
+oIqj_xuSEH3-1EK88NAfn4YIR9OMHPuQRB59HCUj0SWnaiQEJLvrxoHlzyw93bwgfxlilXCrk91=
+KFlItaK8n8X7ZW1esY_5jfWZ8RsZpygLzTMe01qg_8tTH5kYD3HQR3QCxHh8h-mjrTWhixP3=2E=
+&_di_=3D78gftg3mqno8fu3l8cud80hus3uruqa3msp7a5rqnngin59bq5s0=22 style=3D=22=
+color: =23000000=21important; white-space:nowrap; font-weight: normal; font=
+-family: Helvetica, Arial, sans-serif; text-decoration: underline=21importa=
+nt;width: 100%=22>
+                                                  Help Center</a>  &nbsp;
+                                                  <a href=3D=22https://emai=
+ls=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS48=
+KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWTDCT&_ei_=3DEWNp27QW=
+MuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qmff=
+7COyylsZ228VLKbZ8OTk048l6vU9EbTH_El8K7XiVE894Arp-GW5D6akLnbH9heHlvP83jl6sBr=
+9rBiTnv3HNRlk9xrY8O8fYPDA6jrh-E_uCF6Q-ulB8hcHBoem50CSzkiaaCpPe2yXo2vqMrUlhO=
+YeerbyZ4U1WlxqB3UVO99do-WEY6NRVayUkAQbonPfQqoVAY-1T=2E&_di_=3Dh188imk8tcr1a=
+pn3ph7pi8qjc7j43q13c50kej7eviqok5id2de0=22 style=3D=22color: =23000000=21im=
+portant; white-space:nowrap; font-weight: normal; font-family: Helvetica, A=
+rial, sans-serif; text-decoration: underline=21important;width: 100%=22>
+                                                  Privacy Policy</a>  &nbsp;
+                                                  <a href=3D=22https://emai=
+ls=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS48=
+KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWURRT&_ei_=3DEWNp27QW=
+MuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qmff=
+7COyylsZ228VLKbZ8OTk048l68OF8kk-IB7Kftn3t1PvAffFMEXJwj46hgC3-H5nMcVx49LvAo5=
+ftSSP1KUW2iaYeSVrJ6p1zY4aKi0vA2JB42Icpjdx_TZu_kWp7cXi23MkO6a-7bWvYdURjs_XlZ=
+ZNjlXgoSfQYZp2Y7h-ZLibxErp3lxGVcVQjrI0NFJtLFaa3_xz13b3Ge88=2E&_di_=3Dabh2m7=
+vg2816ogm4h3mbnub4rprpn7nps3kksbhv7kfqju3v7bag=22 style=3D=22color: =230000=
+00=21important; white-space:nowrap; font-weight: normal; font-family: Helve=
+tica, Arial, sans-serif; text-decoration: underline=21important;width: 100%=
+=22>
+                                                  Terms of Use</a><br><br>
+                                                  500 Terry A Francois Blvd=
+ San Francisco, CA&nbsp;94158
+                                                  <br>
+                                                  Wix=2Ecom Ltd &nbsp;&bull=
+; Wix=2Ecom Inc=2E &nbsp;&bull;=20
+                                                  <a href=3D=22https://emai=
+ls=2Ewix=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzdzeBChRyiMcpnzf4siOS48=
+KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXtpKX%3DTRCDWURTT&_ei_=3DEWNp27QW=
+MuWHDEmRNsxiBGep8jGyNG9aouM5LNBuExuJktXb-Qc0DN-NI1E5qDLBvC3koAMAvbkPKx0qmff=
+7COwk4X14mlkHropi9RmteYCQz8aNWm3y7bqp0zED04XhXAnOBIBL_Fph9oEbvNnUVpyd9jABZC=
+cCT86XazxFHXpv5dQya4WMv_ssrO5yGOtTYwn-nIe0riBg2rb30Ln2zeGVzxebLboh6Vx5zgONP=
+QpVhOjE0mTxCmzbg7piGIvigSByPO24Prk=2E&_di_=3Dh2hee5v3ji20obllmr4j6jb65lr08i=
+mjdv361chk3hb1maavc9e0=22 target=3D=22_blank=22 shape=3D=22rect=22 style=3D=
+=22color: =23000000; white-space:nowrap; font-weight: normal; font-family: =
+Helvetica, Arial, sans-serif; text-decoration: none=21important;width: 100%=
+=22>
+                                                  Wix=2Ecom
+                                                  </a>
+                                                </span>
+                                                    <=21--<=21=5Bendif=5D-->
+                                </td>
+                              </tr>
+                    <=21-- FOOTER END -->
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <=21--=5Bif gte mso 9>
+          </td>
+          </tr>
+          </table>
+          <=21=5Bendif=5D-->
+  </td>
+</tr>
+</tbody>
+</table>
+<=21--=5Bif gte mso 9>
+                                    </td>
+                                    </tr>
+                                    </table><=21=5Bendif=5D-->
+</td>
+</tr>
+</tbody>
+</table>
+<=21--=5Bif gte mso 9>
+                                      </td>
+                                      </tr>
+                                      </table><=21=5Bendif=5D-->
+
+</center>
+</div><table cellpadding=3D=220=22 cellspacing=3D=220=22 style=3D=22border:=
+ 0px; padding: 0px; margin: 0px; position: absolute; display: none; float: =
+left=22>
+<tr>
+<td height=3D=221=22 style=3D=22font-size: 1px; line-height: 1px; padding: =
+0px;=22>
+<br><img src=3D=22https://emails=2Ewix=2Ecom/pub/as?_ri_=3DX0Gzc2X%3DAQpglL=
+jHJlTQGzdzeBChRyiMcpnzf4siOS48KDzcKBMzadUIzeapAzakdCd6zcKPufzgLqUh7yr8pVXHk=
+MX%3Dw&_ei_=3DEWFAmz8IWWA-dUIycHV6pfhHvRsJmLca06Hoy_-4ATpkPOeaC4YXyl4rtl8Xq=
+7zAoSBeB91b8ckHwmuCIFLigKs6JyBotd1HXm1FzTpgh-HDVxo7Zx-NJab3fWf79KRWTcJLlNVj=
+SeG6o3G9dKoaubfxoSMMBRNwcNViy7EJUVYub2ZWRRKzZwmFr6KLtk5KywAs6hcGX2cu0Wi3Huk=
+Hrainug=2E=22></img>
+</td>
+</tr>
+</table>
+</body>
+</html>
+
+

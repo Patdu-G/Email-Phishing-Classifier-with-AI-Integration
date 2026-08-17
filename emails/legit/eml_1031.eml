@@ -1,0 +1,767 @@
+X-GM-THRID: 1842165657152122174
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:640c:a08e:10b0:23e:5997:2fa8 with SMTP id
+ em14-n1csp2049362eib;
+        Tue, 2 Sep 2025 08:14:34 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AGHT+IEWN7/DLlZzYdS6vtAotDWUPEaDKo8uK2bjx9FQg5OdTKRNTj5QTsTH5Fn1Vn89UTAiydP2
+X-Received: by 2002:a05:620a:4146:b0:7e9:f198:142b with SMTP id
+ af79cd13be357-7ff2c32fad4mr1319397585a.57.1756826073670;
+        Tue, 02 Sep 2025 08:14:33 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1756826073; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ICzJh3/aRRCrpnpa+Su2uvKpklC1A4G46bIIuXibevVml/s+QQTsF33Wn2fGSfRh9i
+         drsWcDndO490S7lEo2h8Xwm2LKT1EYJyKetrBm5Pm7ZZlrChmDBA+ilxtnJ2NmCa6n/Z
+         z3qNENdPv4XWthQL7Sv+cRbkVI3FrXM8WKYTZJ3qRfVdStpf/awnTfnMcPwXkHljjAD0
+         GR9GlHnWaKcGmpFxA/TFMl3uiuK4wcYl9U7batUnINUz+LptOOSd7gVB+uasqz0NXuj2
+         2fhgk8QmXrrtC8h6rHiWiUgEVCbfFZOI+6I3ubsI787FvYVj2LFFtMFgXnTh7987SMR8
+         SxHQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=/YFxO6YL02JV/0qBuUy4IIptKlvBD8hIEmxiN37UL2s=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=NRFRPfTZfWSVx22eASXbvU1p58A8FnRcK28GAcd5wde7JlCITPeAohYoIXCpt7bUgL
+         LNqggy7akq65lIDshIAxA4q5eG6oOstQwUKJuPzl9OLWAgz2hRmb+EVIAXI6Xc24DhBu
+         sJp/QcdAzc0OXnim96vVyYj5qKbCyC3ALCJpPxvD/Tlr5XAgOo4hhv2e9etCCae4eweh
+         Gj1QXMizZCPDRKB5RGnGxSaHxv4UocpHdXP1tvLyXyKPCTZDSAg+rlaVR1zEb42lKz96
+         AGsfMWagsgsILwZ08x8ZkiFp4f8MhQ2OVlt6jRDvRgZBbiD1eEUWlL1QoJa3q9je6o7r
+         Ou8g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=FSIy6mbo;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=IDufydV6;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from m241-138.mailgun.net (m241-138.mailgun.net. [159.112.241.138])
+        by mx.google.com with UTF8SMTPS id
+ af79cd13be357-8069ec30f2dsi79687385a.710.2025.09.02.08.14.33
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 02 Sep 2025 08:14:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender) client-ip=159.112.241.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b=FSIy6mbo;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=IDufydV6;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.138 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1756826073; x=1756833273;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=/YFxO6YL02JV/0qBuUy4IIptKlvBD8hIEmxiN37UL2s=;
+ b=FSIy6mboUcdm+syg7OyZxV1vYRK/5+REG0A3ev5/1lm5sF/Vs4ZC99TSTG7dCbLTyy5Txsj18xEwaSVhze1SlXcDiVnz4m3tdOrzbYsU0VD1FWj8kizcqGLCX4BL+DP2U1Nkt7m57WVEp01oGEYj1Cgp2ASLT09ZOc0zW7BxXWw=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1756826073; x=1756833273;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From:
+ Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=/YFxO6YL02JV/0qBuUy4IIptKlvBD8hIEmxiN37UL2s=;
+ b=IDufydV6d4fO1yeIuZwM4pG4OTuGpYfYt/cqwJm6/3k4aKPY+Bw4bK3Y5tqxNVKTU+SdR2czaGJQ9ZObhNVJuiuDMQq48wbw83H1ilaMRSwy3E/Cs3MbgxJh9P/IaDq4iHlvcNQP03nMKzEMRN3u2AqQEMYPsUnP9XB+ann4Lgc=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by 0fb257825b2778809fe343de35b207ebc5493e8353882f29ac4c2308b2c241b7
+ with HTTP
+ id 68b709d87512fab1f9728038; Tue, 02 Sep 2025 15:14:32 GMT
+X-Mailgun-Sending-Ip: 159.112.241.138
+Date: Tue, 02 Sep 2025 15:14:32 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="cbfe060ec54c4e274a5ad37f1506d47e86a06cd1ac7ba383dc9730327c8c"
+Subject: 
+ =?UTF-8?q?Hack2Win_is_heating_up_=F0=9F=94=A5_How_many_tickets_do_YOU_hav?=
+ =?UTF-8?q?e=3F?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+List-Unsubscribe: 
+ <mailto:32.MRTVISZRKFKUYQKLPJTTE52POI2E442EIFNGWS27NZCGYRDWIZ4EQ22KOBMTIUDSKBIT2PI=@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wOr4NsDAZkK_nDlDvFxHkJpY4PrPQ==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZkK_nDlDvFxHkJpY4PrPQ==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZkK_nDlDvFxHkJpY4PrPQ=="}
+Message-Id: <20250902151432.975455b6212e7736@cio56239.tryhackme.com>
+
+--cbfe060ec54c4e274a5ad37f1506d47e86a06cd1ac7ba383dc9730327c8c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+TryHackMe Logo ( https://tryhackme.com/hack2win?utm_source=3Dcio&utm_medium=
+=3Demail&utm_campaign=3Dhack2win250902 )
+
+Banner ( https://tryhackme.com/hack2win?utm_source=3Dcio&utm_medium=3Demail=
+&utm_campaign=3Dhack2win250902 )
+
+**************************
+It=E2=80=99s Your Time to Shine!
+**************************
+
+We=E2=80=99re just a day in, and the excitement is off the charts. Over 20,=
+000 tickets have already been earned! The bronze raffle is now live, so com=
+plete your bronze stamp card to claim instant prizes and work toward even b=
+igger rewards.
+
+------------------------------------
+Quick tips to maximize your chances:
+------------------------------------
+
+* Complete rooms (beginner or advanced) to fill your stamp cards faster.
+* Each room earns you tickets. More rooms mean more chances to win!
+* If you're a premium user, you get double the tickets.
+
+Don=E2=80=99t miss out, momentum is building!
+
+Earn your next ticket ( https://tryhackme.com/hack2win?utm_source=3Dcio&utm=
+_medium=3Demail&utm_campaign=3Dhack2win250902 )
+
+-----------------------------------
+Want extra tickets? Refer a friend!
+-----------------------------------
+
+* Refer a friend to TryHackMe with your unique link: tryhackme.com/invite/p=
+atriogabrielpatdu
+* Your friend signs up & verifies their email
+* You win extra tickets! Your friends win discounts on Premium
+
+Win extra tickets ( https://tryhackme.com/room/hack2win?utm_source=3Dcio&ut=
+m_medium=3Demail&utm_campaign=3Dhack2win250902 )
+
+Win extra tickets ( https://tryhackme.com/room/hack2win?utm_source=3Dcio&ut=
+m_medium=3Demail&utm_campaign=3Dhack2win250902 )
+
+Feature 3 ( https://tryhackme.com/room/hack2win?utm_source=3Dcio&utm_medium=
+=3Demail&utm_campaign=3Dhack2win250902 )
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/realtryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) |
+Unsubscribe ( http://track.customer.io/unsubscribe/dgTK1QULAKzg2wOr4NsDAZkK=
+_nDlDvFxHkJpY4PrPQ=3D=3D )
+
+=C2=A9 2025 TryHackMe. All rights reserved.
+--cbfe060ec54c4e274a5ad37f1506d47e86a06cd1ac7ba383dc9730327c8c
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en" style=3D"background-color: #151d2b;"><head=
+>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <title>TryHackMe =E2=80=93 Modular Email</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=3DUbuntu:wght@400=
+;700&display=3Dswap');
+    body {
+      margin: 0;
+      padding: 0;
+      background: #151d2b;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #151d2b;
+    }
+    h1 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin-top: 0;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'Ubuntu', sans-serif;
+      color: #a3ea2a;
+      margin-top: 0;
+    }
+    p {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 15px;
+    }
+    ul {
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.5;
+      padding-left: 20px;
+    }
+    .section {
+      background-color: #1c2538;
+      border-radius: 10px;
+      padding: 10px 40px;
+      margin-bottom: 20px;
+     =20
+    }
+    .feature-block {
+      display: flex;
+      border: 2px solid #a3ea2a;   /* green border all around */
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-top: 40px;
+  color: #ffffff;
+  background-color: #232f48;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
+    .feature-text {
+      flex: 1;
+    }
+    .feature-img {
+      flex: 0 0 auto;
+    }
+    .feature-img img {
+      display: block;
+      border-radius: 6px;
+      height: auto;
+    }
+    .cta {
+      display: inline-block;
+      background-color: #a3ea2a;
+      color: #151d2b;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #f9f9fb;
+      font-size: 14px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: auto;
+      margin: 0 5px;
+      margin-bottom: 30px;
+    }
+    .legal a {
+      color: #ffffff;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .feature-block,
+      .feature-block.reverse {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .feature-text,
+      .feature-img {
+        width: 100% !important;
+        flex: 0 0 100%;
+      }
+      .feature-img {
+        text-align: center;
+        order: -1; /* This moves the image to the top */
+        margin-bottom: 5px; /* Further reduced spacing after image */
+      }
+      .feature-img img {
+        margin: 0 auto 0; /* Remove bottom margin from image */
+      }
+      .feature-text {
+        order: 1; /* This ensures text content comes after image */
+        text-align: left; /* Keep text left-aligned */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the CTA */
+        margin-top: 0; /* Remove any top margin */
+      }
+      .feature-text h2 {
+        align-self: flex-start; /* Keep header left-aligned */
+        width: 100%;
+        margin-top: 0; /* Remove top margin from header */
+      }
+      .feature-text ul {
+        align-self: flex-start; /* Keep list left-aligned */
+        width: 100%;
+      }
+      .cta {
+        padding: 10px 20px;
+        align-self: center; /* Center the CTA within the flex container */
+        margin-top: 15px;
+      }
+      .social-icons img {
+        margin: 0 5px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .email-body {
+        background-color: #121212 !important;
+        color: #e6e6e6 !important;
+      }
+      @media screen and (max-width:600px) {
+  .stack-col {
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .stack-img {
+    margin-top:16px !important;
+    text-align:center !important;
+  }
+  .stack-img img {
+    width:200px !important;
+    max-width:100% !important;
+    height:auto !important;
+  }
+}
+@media screen and (max-width:600px) {
+  .desktop-only { display: none !important; }
+  .mobile-only { display: table !important; }
+}
+@media screen and (max-width:600px) {
+  .stack-column {
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .stack-image {
+    padding-top:16px !important;
+    text-align:center !important;
+  }
+  .stack-image img {
+    margin:0 auto !important;
+  }
+}
+
+    }
+  </style>
+<link href=3D"https://fonts.googleapis.com/css?family=3DUbuntu:100,100i,200=
+,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" as=3D=
+"style" rel=3D"preload" media=3D"screen"/><link media=3D"screen" rel=3D"sty=
+lesheet" href=3D"https://fonts.googleapis.com/css?family=3DUbuntu%3A100%2C1=
+00i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%=
+2C700i%2C800%2C800i%2C900%2C900i"/><style>.c1x30091{max-width:100% !importa=
+nt;}@media screen and (min-width: 600px) { .cqoe92k{display:table;} .c11j6c=
+dn{display:table-row;} .c1uw7jhe{display:table-cell;width:70%;} .c1sn7t8n{d=
+isplay:table-cell;} .cp4al7q{display:table-cell;width:30%;} }@media (min-wi=
+dth: 600px) { .clp4498{display:block !important;} .c17pjakt{display:none !i=
+mportant;} }</style><style data-isolated=3D"thunderbird" media=3D"min-width=
+: 600px">
+=2Emoz-text-html .cqoe92k{display:table;}
+=2Emoz-text-html .c11j6cdn{display:tab=
+le-row;}</style><style data-isolated=3D=
+"thunderbird" media=3D"(min-width: 600px)">
+=2Emoz-text-html .clp4498{display:block !important;}
+=2Emoz-text-html .c17pjakt{display:none=
+ !important;}</style><style data-isola=
+ted=3D"outlook-web">
+[class~=3D"x_c11j6cdn"]{display:flex !important;flex-wrap:wrap;gap:20px;col=
+umn-gap:20px;}
+[class~=3D"x_c1uw7jhe"]{flex-grow:1;box-sizing:border-box;flex-basis:406px;=
+}[class~=3D"x_c1sn7t8n"]{display:none !important;}
+[class~=3D"x_cp4al7q"]{flex-grow:1;box-sizing:border-box;flex-basis:174px;}=
+[class~=3D"x_c1sn7t8n"]{display:none !important;}</style></head>
+<body style=3D"background-color: #151d2b; margin: 0; padding: 0;"><div styl=
+e=3D"display: none; max-height: 0px; overflow: hidden; mso-hide:all;">20,00=
+0+ tickets earned and the bronze raffle is live!=E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=A0</div>
+  <div class=3D"wrapper">
+
+    <!-- Logo -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"text-align: center; margin-bottom: 20px;">
+       =20
+  <div style=3D"text-align: center;"><a href=3D"https://e.customeriomail.co=
+m/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0U=
+HJQUT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9oYWNrMndpbj91dG1fc291cmNl=
+PWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249aGFjazJ3aW4yNTA=
+5MDIiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNj=
+Y4fQ/4bcfb31861996643fa17d22c73bfd02722b0ae42f03b62c061b2e4261b92e6eb" styl=
+e=3D"text-decoration: none; display: inline-block;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-bee.customeriomail.c=
+om/images/client-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe Logo" w=
+idth=3D"118" style=3D"vertical-align: middle; max-width: 100%; width: 118px=
+;height:auto;"/>
+      </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Banner -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div style=3D"margin-bottom: 20px;">
+       =20
+  <div style=3D"text-align: center;"><a href=3D"https://e.customeriomail.co=
+m/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0U=
+HJQUT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9oYWNrMndpbj91dG1fc291cmNl=
+PWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1haWxcdTAwMjZ1dG1fY2FtcGFpZ249aGFjazJ3aW4yNTA=
+5MDIiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNj=
+Y4fQ/4bcfb31861996643fa17d22c73bfd02722b0ae42f03b62c061b2e4261b92e6eb" styl=
+e=3D"text-decoration: none; display: inline-block;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-assets.customeriomai=
+l.com/images/client-env-92874/bronze%20raffle-03%20(1)_01K455F6XPBJEG8G8YA4=
+EYA5S3.png" alt=3D"Banner" width=3D"600" style=3D"vertical-align: middle; m=
+ax-width: 100%; width: auto;height:auto;"/>
+      </a></div>
+ =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+    <!-- Main Section -->
+   =20
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+      <div class=3D"section">
+       =20
+ =20
+  <h1 style=3D"font-size: 28px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 15px 0px 21px;">It=E2=80=99s Your Time to Shine!</h1>
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">We=E2=80=99re just a day in, and the excitem=
+ent is off the charts. Over 20,000 tickets have already been earned! The br=
+onze raffle is now live, so complete your bronze stamp card to claim instan=
+t prizes and work toward even bigger rewards.</p>
+ =20
+ =20
+  <h2 style=3D"font-size: 20px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 20px 0;"><strong><strong>Quick tips to maximize your chances:</stro=
+ng></strong></h2>
+ =20
+ =20
+    <ul>
+      <li>Complete rooms (beginner or advanced) to fill your stamp cards fa=
+ster.</li><li>Each room earns you tickets. More rooms mean more chances to =
+win!</li><li>If you&#39;re a premium user, you get double the tickets.</li>
+    </ul>
+ =20
+ =20
+ =20
+  <p style=3D"margin: 16px 0;">Don=E2=80=99t miss out, momentum is building=
+!<br/></p>
+ =20
+       =20
+       =20
+  <div style=3D"text-align: center; margin: 8px 0px 15px; font-size: 16px;"=
+>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS9oYWNrMndpbj91dG1fc291cmNlPWNpb1x1MDAyNnV0bV9tZWRpdW09ZW1=
+haWxcdTAwMjZ1dG1fY2FtcGFpZ249aGFjazJ3aW4yNTA5MDIiLCJpbnRlcm5hbCI6ImNhZDUwNT=
+gzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNjY4fQ/4bcfb31861996643fa17d22c73=
+bfd02722b0ae42f03b62c061b2e4261b92e6eb" style=3D"display: inline-block; mso=
+-padding-alt: 0; color: #151d2b; font-family: &#39;Ubuntu&#39;, sans-serif;=
+ font-weight: 700; text-decoration: none; text-align: center; opacity: 1; b=
+ackground: #a3ea2a; border-radius: 4px; text-underline-color: #a3ea2a;"><!-=
+-[if mso]><i
+            hidden
+            style=3D"mso-font-width: 125%; mso-text-raise: 125%;"
+            >=E2=80=8B=E2=80=83</i
+          ><![endif]--><span style=3D"mso-text-raise: 62.5%; padding: 10px =
+20px; display: block;">Earn your next ticket</span><!--[if mso]><i hidden s=
+tyle=3D"mso-font-width: 125%;"
+            >=E2=80=83=E2=80=8B</i
+          ><![endif]--></a></div>
+ =20
+     =20
+      </div>
+   =20
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+<!-- Feature 3 -->
+
+ =20
+   =20
+     =20
+       =20
+       =20
+          <div style=3D"overflow: auto;">
+           =20
+  <div class=3D"feature-block">
+   =20
+
+ =20
+    <div style=3D"width: 100%; mso-para-margin: 0;" class=3D"cqoe92k">
+    <!--[if true]><table role=3D"none" class=3D"mso"  style=3D"width: 100%;=
+ border-collapse: collapse;">
+      <tr>
+        <![endif]--><div class=3D"c11j6cdn">
+       =20
+     =20
+      <!-- Text Column -->
+      <!--[if true]><td style=3D"width: 70%; vertical-align: top;">
+  <![endif]--><div style=3D"vertical-align: top; overflow: auto;" class=3D"=
+c1uw7jhe">
+   =20
+       =20
+ =20
+  <h2 style=3D"font-size: 24px; font-family: &#39;Ubuntu&#39;, sans-serif; =
+margin: 10px 0 0;">Want extra tickets? Refer a friend!</h2>
+ =20
+       =20
+ =20
+    <ul style=3D"text-align: left;">
+     =20
+          <li>Refer a friend to TryHackMe with your unique link: <strong>tr=
+yhackme.com/invite/patriogabrielpatdu</strong></li>
+          <li>Your friend signs up &amp; verifies their email</li>
+          <li>You win extra tickets! Your friends win discounts on Premium<=
+/li>
+       =20
+    </ul>
+ =20
+ =20
+       =20
+  <div style=3D"display: none; mso-hide: none; text-align: left; margin: 8p=
+x 0; font-size: 16px;" class=3D"clp4498">
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS9yb29tL2hhY2syd2luP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl=
+1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj1oYWNrMndpbjI1MDkwMiIsImludGVybmFsIjoiY2=
+FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZCI6MjI2Njl9/a6caf1ece24487619955=
+b4b4bdc7af0a48867ec0b182d7d686ee64b26ccbd15d" style=3D"display: inline-bloc=
+k; mso-padding-alt: 0; color: #151d2b; font-family: &#39;Ubuntu&#39;, sans-=
+serif; font-weight: 700; text-decoration: none; text-align: center; opacity=
+: 1; background: #a3ea2a; border-radius: 4px; text-underline-color: #a3ea2a=
+;" class=3D"c1tuz7x0"><!--[if mso]><i
+            hidden
+            style=3D"mso-font-width: 125%; mso-text-raise: 125%;"
+            >=E2=80=8B=E2=80=83</i
+          ><![endif]--><span style=3D"mso-text-raise: 62.5%; padding: 10px =
+20px; display: block;">Win extra tickets</span><!--[if mso]><i hidden style=
+=3D"mso-font-width: 125%;"
+            >=E2=80=83=E2=80=8B</i
+          ><![endif]--></a></div>
+ =20
+  <!--[if !mso]><!--><div style=3D"text-align: center; margin: 8px 0px 0px;=
+ font-size: 16px;" class=3D"c17pjakt">
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHJ5aGFja21lLmNvbS9yb29tL2hhY2syd2luP3V0bV9zb3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl=
+1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj1oYWNrMndpbjI1MDkwMiIsImludGVybmFsIjoiY2=
+FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZCI6MjI2Njl9/a6caf1ece24487619955=
+b4b4bdc7af0a48867ec0b182d7d686ee64b26ccbd15d" style=3D"display: inline-bloc=
+k; color: #151d2b; font-family: &#39;Ubuntu&#39;, sans-serif; font-weight: =
+700; text-decoration: none; text-align: center; opacity: 1; background: #a3=
+ea2a; border-radius: 4px;" class=3D"c1tuz7x0"><span style=3D"padding: 10px =
+20px; display: block;">Win extra tickets</span></a></div>
+  <!--<![endif]-->
+     =20
+  </div>
+  <!--[if true]></td>
+  <td style=3D"padding-left:20px;width:20px;"></td><![endif]--><div style=
+=3D"min-width: 20px; width: 20px; height: 20px; mso-hide: all;" class=3D"c1=
+sn7t8n"></div>
+
+      <!-- Image Column -->
+      <!--[if true]><td style=3D"width: 30%; vertical-align: top;">
+  <![endif]--><div style=3D"vertical-align: top; overflow: auto;" class=3D"=
+cp4al7q">
+   =20
+       =20
+  <div style=3D"text-align: center;"><a href=3D"https://e.customeriomail.co=
+m/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0U=
+HJQUT09IiwiaHJlZiI6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9yb29tL2hhY2syd2luP3V0bV9z=
+b3VyY2U9Y2lvXHUwMDI2dXRtX21lZGl1bT1lbWFpbFx1MDAyNnV0bV9jYW1wYWlnbj1oYWNrMnd=
+pbjI1MDkwMiIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkYjAzIiwibGlua19pZC=
+I6MjI2Njl9/a6caf1ece24487619955b4b4bdc7af0a48867ec0b182d7d686ee64b26ccbd15d=
+" style=3D"text-decoration: none; display: inline-block;">
+     =20
+        <img class=3D"c1x30091" src=3D"https://userimg-assets.customeriomai=
+l.com/images/client-env-92874/Ticketing%20illustration%20option%202-06%201_=
+01K42DKZYG31RE8DJF2NTAWNR9.png" alt=3D"Feature 3" width=3D"174" style=3D"ve=
+rtical-align: middle; max-width: 100%; width: 200;display:block; width:200p=
+x; height:auto; margin:0 auto;"/>
+      </a></div>
+ =20
+     =20
+  </div>
+  <!--[if true]></td>
+  <![endif]-->
+   =20
+      </div>
+      <!--[if true]></tr>
+      </table>
+    <![endif]--></div>
+ =20
+  <div style=3D"line-height:1;font-size:0;display:none;mso-hide:none;">
+    <br clear=3D"all"/>
+  </div>
+  </div>
+
+          </div>
+         =20
+     =20
+       =20
+     =20
+ =20
+ =20
+
+
+
+    <!-- Fixed Footer -->
+    <div class=3D"footer">
+      <!-- SOCIAL ICONS -->
+  =20
+      <div class=3D"social-icons">
+        <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEs=
+xUVVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi=
+8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZ=
+GIwMyIsImxpbmtfaWQiOjIyMzQxfQ/941fb44f8a1204aa6b24df099c68b360adfc2547102df=
+8a246bca1dae2d82a6e" style=3D"margin: 0 8px; text-decoration:none; display:=
+inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" width=3D"3=
+2"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+dHdpdHRlci5jb20vcmVhbHRyeWhhY2ttZSIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWF=
+jZTBkYjAzIiwibGlua19pZCI6Mn0/4c935749f9baa3231baf6bb7c480f29acebaa240ea6699=
+06b23cbe7bb79c2522" style=3D"margin: 0 8px; text-decoration:none; display:i=
+nline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=3D"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+aW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTA=
+xYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/9042a809fcd117c2bf79c6993601c8a836b39ce377a=
+4bde2578165572c9223aa" style=3D"margin: 0 8px; text-decoration:none; displa=
+y:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Instagram" width=
+=3D"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+bGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aGFja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJ=
+jMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5OX0/4aed6fbceddb8975f1855d3a9ce3b27147=
+8b39cf6e8f82684696a9d732a76901" style=3D"margin: 0 8px; text-decoration:non=
+e; display:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=3D"LinkedIn" width=3D=
+"32"/>
+      </a>
+      <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxU=
+VVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi8v=
+eW91dHViZS5jb20vQHJlYWx0cnloYWNrbWUiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDF=
+hY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxfQ/35137154270da5c170fb305099d846bae22c17e=
+ba3f43536a8ec562ae21010e6" style=3D"margin: 0 8px; text-decoration:none; di=
+splay:inline-block;">
+        <img src=3D"https://app-rsrc.getbee.io/public/resources/social-netw=
+orks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"YouTube" width=3D"3=
+2"/>
+      </a>
+      </div>
+      <div class=3D"legal" style=3D"margin-bottom:10px;">
+        <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEs=
+xUVVMQUt6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09IiwiaHJlZiI6Imh0dHBzOi=
+8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwMWFjZTBkY=
+jAzIiwibGlua19pZCI6MTB9/0145f136832b062fd61382817682e3e0319971dcb2b8ef18f0e=
+908a5d0014d1e">Terms</a> |
+        <a href=3D"https://e.customeriomail.com/unsubscribe/dgTK1QULAKzg2wO=
+r4NsDAZkK_nDlDvFxHkJpY4PrPQ=3D=3D">Unsubscribe</a>
+      </div>
+      <div>=C2=A9 2025 TryHackMe. All rights reserved.</div>
+    </div>
+
+  </div>
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVprS19uRGxEdkZ4SGtKcFk0UHJQUT09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--cbfe060ec54c4e274a5ad37f1506d47e86a06cd1ac7ba383dc9730327c8c--

@@ -1,0 +1,809 @@
+X-GM-THRID: 1869957317135270955
+X-Gmail-Labels: Inbox,Category Promotions,Unread
+Delivered-To: patriogabrielpatdu@gmail.com
+Received: by 2002:a05:6358:e4a6:b0:29b:179e:1f84 with SMTP id
+ by38csp5117954rwb;
+        Mon, 6 Jul 2026 02:31:06 -0700 (PDT)
+X-Received: by 2002:a05:622a:5918:b0:51c:19d8:e30a with SMTP id
+ d75a77b69052e-51c4c1e421fmr136855991cf.15.1783330266548;
+        Mon, 06 Jul 2026 02:31:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1783330266; cv=none;
+        d=google.com; s=arc-20260327;
+        b=H9WGuxV2O5rgjS7E9szgIpyqruwpUSybYeD0DYBb/7S8d5p7vOmYFndkV+lvMV88YR
+         OtH9IuJUG/W4AaK5Kssr9IeIi3AQcyEos3FgdAotPbHPAPVcY/BLTeMAEh69d0HeEwhd
+         QA1uqPz1UqEl32IpP86X9SXWT9DN/HD30X9bQwu17ODfYef6ocxccS/9iMAt7ssCZ07o
+         Ql+u2dyWCCf3/TnUXB2PlDnJ+dsPsfiADOfynvYe/DFxZ5Ztg2FU71rvGzcMc0iGAdBj
+         0dMTtlnCnz9NreAbg05f4yJs2Btrftj9Ti97nFVDaYUv4mZuCNSuhU2uMui5xtuMa1LG
+         aTxA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20260327;
+        h=message-id:to:from:subject:mime-version:date:dkim-signature
+         :dkim-signature;
+        bh=GoExCxiBsrJ04WA0QQ5Km3RxI+OG0Q2b0DdEKkTW02s=;
+        fh=vkfW2fpTVVVll2h2Oo6evjD2kW9FYFmpP1tq25nPQGU=;
+        b=Ztwm7VvbqiDtRla77dDX1/U5Ca8NgnmvAJ4t8c8jtP6SN05DjfMa4UPdeIC03fk5Ez
+         NfA+Froy/V8s1scFd/92ijwU8NWH9Km42rl17+JqnhTm0/L9hfJgH31VT21bibCGO2ab
+         /eDtsw53A0/mrBsLnz77TL/18/rwcMeFZ9onqb0i2RqQiJZ0ftqqjsfJE8RbX8seYIU9
+         ftK9YXSJHNBYZ7awYEhh7TzYYGBA8t3akz6BpfZh3Iq/AmsIkceiKSXPDuvZZ6iiSY/l
+         vTcuGtTCAxEB/ncPNsSVpYmwKnIVxaijfHSytQau/OIC7mt4BAEOdOtgeYf4INX9qs1F
+         Y8ng==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b="dWO/9ZeU";
+       dkim=pass header.i=@mailgun.org header.s=mg header.b="BO5/kApu";
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from v5136.v5c4dda55.use4.send.mailgun.net
+ (v5136.v5c4dda55.use4.send.mailgun.net. [159.112.241.136])
+        by mx.google.com with UTF8SMTPS id
+ d75a77b69052e-51c41db0de1si117984971cf.168.2026.07.06.02.31.06
+        for <patriogabrielpatdu@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Jul 2026 02:31:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender) client-ip=159.112.241.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp
+ header.b="dWO/9ZeU";
+       dkim=pass header.i=@mailgun.org header.s=mg header.b="BO5/kApu";
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com
+ designates 159.112.241.136 as permitted sender)
+ smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1783330266; x=1783337466;
+ h=Message-Id: To: To: From: From: Subject: Subject: Content-Type:
+ Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=GoExCxiBsrJ04WA0QQ5Km3RxI+OG0Q2b0DdEKkTW02s=;
+ b=dWO/9ZeUjggVEwL33EM8m7XpRyQC+g+IKC4yZSCjciab4l1q/9Bh2jep//tdQbIpoJgl5yAvRX6DGn+3hNcwSSlXIMb3PlgKgMjbxCdNY+PS1l4CMIIIH5nlaTOdmCqFtu0SI5J+9E6cnJ/U2zhFCOP9p3SI34L1PFO+qp7WmBA=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1783330266; x=1783337466;
+ h=Message-Id: To: To: From: From: Subject: Subject: Content-Type:
+ Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=GoExCxiBsrJ04WA0QQ5Km3RxI+OG0Q2b0DdEKkTW02s=;
+ b=BO5/kApuUqJ/j9dQf7GhvtOtbQDaurIzL3NrOI22ZSE8SiIQlmT7iUWCHu/6MqRPWNROUs99+q7GhO/zZ4Q8WL9d/JraUh4thtRskAt3WLA1mL4ReozoWFJbzPoQFMGvm0Z6uJn1fzgWJigdqwkIZ0EDhzJqAbsiUiovHenPLIs=
+X-Mailgun-Sid: 
+ WyIyYTM4MiIsInBhdHJpb2dhYnJpZWxwYXRkdUBnbWFpbC5jb20iLCIyODZkNWEiXQ==
+X-Feedback-Id: 
+ postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+Received: by cf3a6fa9d31977d236b69dbb996837da2974b28c7c92d7ddb583e9027baa052e
+ with HTTP
+ id 6a4b75dae45a1ab22fe4699e; Mon, 06 Jul 2026 09:31:06 GMT
+X-Mailgun-Sending-Ip: 159.112.241.136
+Date: Mon, 06 Jul 2026 09:31:06 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="23638de69179e4c10b9305520f088535a2317a7edd2ff665b4f10314f603"
+Subject: =?UTF-8?q?Last_chance_to_start_easy_=F0=9F=93=B1?=
+From: TryHackMe <donotreply@tryhackme.com>
+To: patriogabrielpatdu@gmail.com
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailgun-Track-Clicks: false
+X-Mailer: Customer.io (dgTK1QULAKzg2wOr4NsDAZ82xFoFK__jzAsPIohXBQ==;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+X-Mailgun-Variables: {"email_id":
+ "dgTK1QULAKzg2wOr4NsDAZ82xFoFK__jzAsPIohXBQ=="}
+Message-Id: <20260706093106.5a20c826f6b6f965@cio56239.tryhackme.com>
+
+--23638de69179e4c10b9305520f088535a2317a7edd2ff665b4f10314f603
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+No laptop. No setup. No excuses. =C2=A0
+
+This is our last Pulse email.=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C
+
+TryHackMe ( https://tryhackme.com/dashboard )
+
+LAST CALL FOR YOUR STREAK =E2=80=94 TryHackMe Pulse ( https://tryhackme.com=
+/dashboard?utm_source=3Dcio&utm_medium=3Demail&utm_campaign=3D260612MobileA=
+ppLastReminderStale )
+
+TryHackMe Pulse
+
+*********************
+This is the last time
+we'll mention it.
+*********************
+
+=C2=A0
+
+A quick one.
+
+TryHackMe Pulse is live.
+
+Cyber security learning now fits into coffee queues, commutes, waiting room=
+s, and all the other places your phone already goes.
+
+Waiting for coffee? =C2=A0Learn something useful.
+
+On the train? =C2=A0Keep your streak alive.
+
+Stuck scrolling? =C2=A0Turn it into progress.
+
+No countdown timer. No fake urgency.
+
+Just one final nudge.
+
+=C2=A0
+
+=C2=A0
+
+Save My Streak
+
+=E2=86=93 Download on iOS ( https://apps.apple.com/us/app/tryhackme-pulse/i=
+d6758337592 )
+
+=C2=A0
+
+=E2=86=93 Get it on Android ( https://play.google.com/store/apps/details?id=
+=3Dcom.tryhackme.mobileapp )
+
+What's in tryhackme Pulse
+
+fire
+
+Save your streak
+
+Because losing momentum over a busy day should be illegal.
+
+trophy
+
+Climb the leagues
+
+Your competition isn't waiting for desktop time.
+
+lightning
+
+Complete quick missions
+
+Tiny challenges. Real progress.
+
+brain
+
+Stay sharp with quizzes
+
+Keep your cyber brain warmed up between rooms.
+
+mobile phone
+
+Learn anywhere
+
+Coffee queue. Commute. Couch.
+
+See you in tryhackme Pulse.
+
+Discord ( https://discord.gg/tryhackme )
+X ( https://twitter.com/tryhackme )
+Instagram ( https://instagram.com/realtryhackme )
+LinkedIn ( https://linkedin.com/company/tryhackme )
+YouTube ( https://youtube.com/@realtryhackme )
+
+Terms ( https://tryhackme.com/terms ) =C2=A0|=C2=A0 Unsubscribe ( # )
+
+=C2=A9 2026 TryHackMe. All rights reserved.
+--23638de69179e4c10b9305520f088535a2317a7edd2ff665b4f10314f603
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+  <meta charset=3D"utf-8"/>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1"/>
+  <meta name=3D"x-apple-disable-message-reformatting"/>
+  <meta name=3D"color-scheme" content=3D"light only"/>
+  <meta name=3D"supported-color-schemes" content=3D"light"/>
+  <title>TryHackMe =E2=80=93 Last call: your streak is mobile</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #151d2b; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-spacing: 0; border-collapse: collapse; }
+    img { border: 0; display: block; max-width: 100%; height: auto; }
+    .wrap { width: 100%; max-width: 600px; }
+    .body-p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #d7e1f0;
+      margin: 0;
+    }
+    .headline {
+      font-family: Arial Black, Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #a3ea2a;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .cta-a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 700;
+      color: #151d2b !important;
+      text-decoration: none;
+    }
+    .footer-link { color: #6b7a8d !important; text-decoration: underline; }
+    @media screen and (max-width: 620px) {
+      .wrap { width: 100% !important; max-width: 100% !important; }
+      .mobile-pad { padding-left: 20px !important; padding-right: 20px !imp=
+ortant; }
+      .headline { font-size: 24px !important; }
+      .cta-td { width: 100% !important; border-radius: 10px !important; }
+    }
+  </style>
+</head>
+<body style=3D"margin:0; padding:0; background-color:#151d2b;"><div style=
+=3D"display: none">No laptop. No setup. No excuses. =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD=C2=A0</div>
+
+  <!-- Preheader -->
+  <div style=3D"display:none; max-height:0; overflow:hidden; opacity:0; mso=
+-hide:all;">
+    This is our last Pulse email.=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C
+  </div>
+
+  <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"background-color:#151d2b;">
+    <tbody><tr>
+      <td align=3D"center" style=3D"padding: 24px 16px 40px;">
+        <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" class=3D"wrap">
+
+          <!-- Logo -->
+          <tbody><tr>
+            <td align=3D"center" style=3D"padding-bottom: 22px;">
+              <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6I=
+mRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19qekFzUElvaFhCUT09IiwiaHJlZiI6Imh0=
+dHBzOi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmM=
+xMDFhY2UwZGIwMyIsImxpbmtfaWQiOjEyMX0/246bb5f77fe46158f3bc09544c8195aa17e8ca=
+67cbbbbd185c709853e0788c48" style=3D"text-decoration:none;">
+                <img src=3D"https://userimg-bee.customeriomail.com/images/c=
+lient-env-92874/THMlogo-gray_scale.png" alt=3D"TryHackMe" width=3D"118" sty=
+le=3D"width:118px; height:auto;"/>
+              </a>
+            </td>
+          </tr>
+
+          <!-- CARD: full rounded, single container -->
+          <tr>
+            <td style=3D"background-color:#1c2538; border-radius:16px; over=
+flow:hidden;">
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0">
+
+                <!-- Banner image =E2=80=94 replace with LAST CALL FOR YOUR=
+ STREAK asset -->
+                <tbody><tr>
+                  <td style=3D"font-size:0; line-height:0; padding:16px 16p=
+x 0 16px;">
+                    <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9=
+pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19qekFzUElvaFhCUT09IiwiaHJlZi=
+I6Imh0dHBzOi8vdHJ5aGFja21lLmNvbS9kYXNoYm9hcmQ_dXRtX3NvdXJjZT1jaW9cdTAwMjZ1d=
+G1fbWVkaXVtPWVtYWlsXHUwMDI2dXRtX2NhbXBhaWduPTI2MDYxMk1vYmlsZUFwcExhc3RSZW1p=
+bmRlclN0YWxlIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2l=
+kIjozNDIxOH0/9001644977ce2a9acbc55e96ae9f60ce74c3e00bc661820d13c2a03e069470=
+5a" style=3D"text-decoration:none;">
+                      <img src=3D"https://userimg-assets.customeriomail.com=
+/images/client-env-92874/01KTVE4AQG188CWM5QEYE9W0CR.png" alt=3D"LAST CALL F=
+OR YOUR STREAK =E2=80=94 TryHackMe Pulse" width=3D"568" style=3D"width:100%=
+; max-width:568px; height:auto; display:block; border-radius:10px;"/>
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Content area -->
+                <tr>
+                  <td class=3D"mobile-pad" style=3D"padding: 36px 40px 0 40=
+px;">
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+
+                      <!-- Eyebrow -->
+                      <tbody><tr>
+                        <td style=3D"padding-bottom: 10px;">
+                          <p class=3D"eyebrow">TryHackMe Pulse</p>
+                        </td>
+                      </tr>
+
+                      <!-- Headline -->
+                      <tr>
+                        <td style=3D"padding-bottom: 24px;">
+                          <h1 class=3D"headline">This is the last time<br/>=
+we'll mention it.</h1>
+                        </td>
+                      </tr>
+
+                      <!-- Divider -->
+                      <tr>
+                        <td style=3D"border-top: 1px solid #2a3650; padding=
+-bottom: 24px; font-size:0; line-height:0;">=C2=A0</td>
+                      </tr>
+
+                      <!-- Body copy -->
+                      <tr>
+                        <td style=3D"padding-bottom: 16px;">
+                          <p class=3D"body-p">A quick one.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding-bottom: 16px;">
+                          <p class=3D"body-p">TryHackMe Pulse is live.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding-bottom: 24px;">
+                          <p class=3D"body-p">Cyber security learning now f=
+its into coffee queues, commutes, waiting rooms, and all the other places y=
+our phone already goes.</p>
+                        </td>
+                      </tr>
+
+                      <!-- Staccato block =E2=80=94 Courier only here -->
+                      <tr>
+                        <td style=3D"padding-bottom: 24px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#1319=
+2a; border-radius:10px; border-left: 3px solid #a3ea2a;">
+                            <tbody><tr>
+                              <td style=3D"padding: 20px 24px;">
+                                <p style=3D"margin:0; font-family:'Courier =
+New',Courier,monospace; font-size:14px; line-height:2.1; color:#c9d8e8;">
+                                  Waiting for coffee? =C2=A0<span style=3D"=
+color:#a3ea2a; font-weight:700;">Learn something useful.</span><br/>
+                                  On the train? =C2=A0<span style=3D"color:=
+#a3ea2a; font-weight:700;">Keep your streak alive.</span><br/>
+                                  Stuck scrolling? =C2=A0<span style=3D"col=
+or:#a3ea2a; font-weight:700;">Turn it into progress.</span>
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                      <!-- Closing body lines -->
+                      <tr>
+                        <td style=3D"padding-bottom: 8px;">
+                          <p class=3D"body-p">No countdown timer. No fake u=
+rgency.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"padding-bottom: 32px;">
+                          <p style=3D"margin:0; font-family:Arial Black, Ar=
+ial, Helvetica, sans-serif; font-size:16px; font-weight:900; color:#ffffff;=
+ text-transform:uppercase; letter-spacing:0.5px;">Just one final nudge.</p>
+                        </td>
+                      </tr>
+
+                      <!-- CTA bridge + download links =E2=80=94 Option C: =
+full-width dark band -->
+                      <tr>
+                        <td style=3D"padding-bottom: 36px;">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:#0d11=
+17; border-radius:8px;">
+                            <tbody><tr>
+                              <td align=3D"center" style=3D"padding: 22px 2=
+4px 18px;">
+                                <table role=3D"presentation" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" align=3D"center" style=3D"margin:0 auto =
+14px auto;">
+                                  <tbody><tr>
+                                    <td align=3D"center" valign=3D"middle" =
+style=3D"padding-right:8px;">
+                                      <table role=3D"presentation" cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"15" height=3D"22" style=
+=3D"width:15px; height:22px; border:2px solid #a3ea2a; border-radius:4px; b=
+order-collapse:separate;">
+                                        <tbody><tr>
+                                          <td align=3D"center" valign=3D"to=
+p" style=3D"font-size:0; line-height:0; padding-top:3px;">
+                                            <span style=3D"display:block; w=
+idth:7px; height:1px; background-color:#a3ea2a; font-size:0; line-height:0;=
+">=C2=A0</span>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align=3D"center" valign=3D"bo=
+ttom" style=3D"font-size:0; line-height:0; padding-bottom:2px;">
+                                            <span style=3D"display:block; w=
+idth:3px; height:3px; background-color:#a3ea2a; border-radius:50%; font-siz=
+e:0; line-height:0;">=C2=A0</span>
+                                          </td>
+                                        </tr>
+                                      </tbody></table>
+                                    </td>
+                                    <td align=3D"center" valign=3D"middle" =
+style=3D"font-family:Arial Black,Arial,Helvetica,sans-serif; font-size:17px=
+; line-height:22px; font-weight:900; color:#ffffff; text-align:center; lett=
+er-spacing:0.5px;">
+                                      Save My Streak
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                                <table role=3D"presentation" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" style=3D"margin:0 auto;">
+                                  <tbody><tr>
+                                    <td align=3D"center" style=3D"padding-r=
+ight: 20px;">
+                                      <a href=3D"https://e.customeriomail.c=
+om/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19qekFzUElv=
+aFhCUT09IiwiaHJlZiI6Imh0dHBzOi8vYXBwcy5hcHBsZS5jb20vdXMvYXBwL3RyeWhhY2ttZS1=
+wdWxzZS9pZDY3NTgzMzc1OTIiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMy=
+IsImxpbmtfaWQiOjM0MDg4fQ/b72b0247cb49a78d2c0c93d8d4978acb596e314f5138eb116c=
+e4314810411d84" style=3D"font-family:Arial,Helvetica,sans-serif; font-size:=
+13px; font-weight:700; color:#a3ea2a; text-decoration:none;">=E2=86=93 Down=
+load on iOS</a>
+                                    </td>
+                                    <td style=3D"background-color:#2a3650; =
+width:1px; font-size:0; line-height:0;">=C2=A0</td>
+                                    <td align=3D"center" style=3D"padding-l=
+eft: 20px;">
+                                      <a href=3D"https://e.customeriomail.c=
+om/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19qekFzUElv=
+aFhCUT09IiwiaHJlZiI6Imh0dHBzOi8vcGxheS5nb29nbGUuY29tL3N0b3JlL2FwcHMvZGV0YWl=
+scz9pZD1jb20udHJ5aGFja21lLm1vYmlsZWFwcCIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYz=
+EwMWFjZTBkYjAzIiwibGlua19pZCI6MzQwODl9/c0fb4c4e6b5b14f4a7952475824ac254612d=
+40cbdfae6a3713cc8a36a76fee8b" style=3D"font-family:Arial,Helvetica,sans-ser=
+if; font-size:13px; font-weight:700; color:#a3ea2a; text-decoration:none;">=
+=E2=86=93 Get it on Android</a>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+
+                    </tbody></table>
+                  </td>
+                </tr>
+
+                <!-- APP FEATURES CONTENT BLOCK
+                     Modular: swap, reorder or remove individual feature ro=
+ws independently -->
+               <tr>
+                  <td>
+                    <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+                      <tbody><tr>
+                        <td style=3D"background-color:#13192a; border-top:1=
+px solid #2a3650; border-bottom:1px solid #2a3650; padding:26px 40px;" clas=
+s=3D"mobile-pad">
+                          <table role=3D"presentation" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0">
+
+                            <!-- Block label -->
+                            <tbody><tr>
+                              <td style=3D"padding-bottom:16px;">
+                                <p style=3D"margin:0; font-family:Arial,Hel=
+vetica,sans-serif; font-size:10px; font-weight:700; color:#a3ea2a; letter-s=
+pacing:2px; text-transform:uppercase;">What's in tryhackme Pulse</p>
+                              </td>
+                            </tr>
+
+                            <!-- Feature: streak -->
+                            <tr>
+                              <td style=3D"padding-bottom:14px;">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                  <tbody><tr>
+                                    <td width=3D"36" valign=3D"top" style=
+=3D"padding-right:14px; padding-top:1px;">
+                                      <div style=3D"width:32px; height:32px=
+; background-color:#1c2538; border-radius:6px; text-align:center; line-heig=
+ht:32px; font-size:0;">
+                                        <img src=3D"https://cdn.jsdelivr.ne=
+t/gh/twitter/twemoji@14.0.2/assets/72x72/1f525.png" width=3D"18" height=3D"=
+18" alt=3D"fire" style=3D"display:inline-block; vertical-align:middle;"/>
+                                      </div>
+                                    </td>
+                                    <td valign=3D"top">
+                                      <p style=3D"margin:0 0 2px 0; font-fa=
+mily:Arial,Helvetica,sans-serif; font-size:13px; font-weight:700; color:#ff=
+ffff;">Save your streak</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al,Helvetica,sans-serif; font-size:12px; color:#6b7a8d; line-height:1.5;">B=
+ecause losing momentum over a busy day should be illegal.</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Feature: leagues -->
+                            <tr>
+                              <td style=3D"padding-bottom:14px;">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                  <tbody><tr>
+                                    <td width=3D"36" valign=3D"top" style=
+=3D"padding-right:14px; padding-top:1px;">
+                                      <div style=3D"width:32px; height:32px=
+; background-color:#1c2538; border-radius:6px; text-align:center; line-heig=
+ht:32px; font-size:0;">
+                                        <img src=3D"https://cdn.jsdelivr.ne=
+t/gh/twitter/twemoji@14.0.2/assets/72x72/1f3c6.png" width=3D"18" height=3D"=
+18" alt=3D"trophy" style=3D"display:inline-block; vertical-align:middle;"/>
+                                      </div>
+                                    </td>
+                                    <td valign=3D"top">
+                                      <p style=3D"margin:0 0 2px 0; font-fa=
+mily:Arial,Helvetica,sans-serif; font-size:13px; font-weight:700; color:#ff=
+ffff;">Climb the leagues</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al,Helvetica,sans-serif; font-size:12px; color:#6b7a8d; line-height:1.5;">Y=
+our competition isn't waiting for desktop time.</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Feature: missions -->
+                            <tr>
+                              <td style=3D"padding-bottom:14px;">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                  <tbody><tr>
+                                    <td width=3D"36" valign=3D"top" style=
+=3D"padding-right:14px; padding-top:1px;">
+                                      <div style=3D"width:32px; height:32px=
+; background-color:#1c2538; border-radius:6px; text-align:center; line-heig=
+ht:32px; font-size:0;">
+                                        <img src=3D"https://cdn.jsdelivr.ne=
+t/gh/twitter/twemoji@14.0.2/assets/72x72/26a1.png" width=3D"18" height=3D"1=
+8" alt=3D"lightning" style=3D"display:inline-block; vertical-align:middle;"=
+/>
+                                      </div>
+                                    </td>
+                                    <td valign=3D"top">
+                                      <p style=3D"margin:0 0 2px 0; font-fa=
+mily:Arial,Helvetica,sans-serif; font-size:13px; font-weight:700; color:#ff=
+ffff;">Complete quick missions</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al,Helvetica,sans-serif; font-size:12px; color:#6b7a8d; line-height:1.5;">T=
+iny challenges. Real progress.</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Feature: quizzes -->
+                            <tr>
+                              <td style=3D"padding-bottom:14px;">
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                  <tbody><tr>
+                                    <td width=3D"36" valign=3D"top" style=
+=3D"padding-right:14px; padding-top:1px;">
+                                      <div style=3D"width:32px; height:32px=
+; background-color:#1c2538; border-radius:6px; text-align:center; line-heig=
+ht:32px; font-size:0;">
+                                        <img src=3D"https://cdn.jsdelivr.ne=
+t/gh/twitter/twemoji@14.0.2/assets/72x72/1f9e0.png" width=3D"18" height=3D"=
+18" alt=3D"brain" style=3D"display:inline-block; vertical-align:middle;"/>
+                                      </div>
+                                    </td>
+                                    <td valign=3D"top">
+                                      <p style=3D"margin:0 0 2px 0; font-fa=
+mily:Arial,Helvetica,sans-serif; font-size:13px; font-weight:700; color:#ff=
+ffff;">Stay sharp with quizzes</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al,Helvetica,sans-serif; font-size:12px; color:#6b7a8d; line-height:1.5;">K=
+eep your cyber brain warmed up between rooms.</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                            <!-- Feature: anywhere -->
+                            <tr>
+                              <td>
+                                <table role=3D"presentation" width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                  <tbody><tr>
+                                    <td width=3D"36" valign=3D"top" style=
+=3D"padding-right:14px; padding-top:1px;">
+                                      <div style=3D"width:32px; height:32px=
+; background-color:#1c2538; border-radius:6px; text-align:center; line-heig=
+ht:32px; font-size:0;">
+                                        <img src=3D"https://cdn.jsdelivr.ne=
+t/gh/twitter/twemoji@14.0.2/assets/72x72/1f4f1.png" width=3D"18" height=3D"=
+18" alt=3D"mobile phone" style=3D"display:inline-block; vertical-align:midd=
+le;"/>
+                                      </div>
+                                    </td>
+                                    <td valign=3D"top">
+                                      <p style=3D"margin:0 0 2px 0; font-fa=
+mily:Arial,Helvetica,sans-serif; font-size:13px; font-weight:700; color:#ff=
+ffff;">Learn anywhere</p>
+                                      <p style=3D"margin:0; font-family:Ari=
+al,Helvetica,sans-serif; font-size:12px; color:#6b7a8d; line-height:1.5;">C=
+offee queue. Commute. Couch.</p>
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                              </td>
+                            </tr>
+
+                          </tbody></table>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr>
+                <!-- END APP FEATURES CONTENT BLOCK -->
+
+                <!-- Closing line -->
+                <tr>
+                  <td class=3D"mobile-pad" style=3D"padding: 30px 40px 36px=
+ 40px;">
+                    <p style=3D"margin:0; font-family:Arial Black,Arial,Hel=
+vetica,sans-serif; font-size:17px; font-weight:900; color:#a3ea2a; text-ali=
+gn:center; text-transform:uppercase; letter-spacing:1px; line-height:1.4;">=
+See you in tryhackme Pulse.</p>
+                  </td>
+                </tr>
+
+              </tbody></table>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align=3D"center" style=3D"padding: 28px 20px 10px 20px;">
+              <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" style=3D"margin:0 auto 20px auto;">
+                <tbody><tr>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19=
+qekFzUElvaFhCUT09IiwiaHJlZiI6Imh0dHBzOi8vZGlzY29yZC5nZy90cnloYWNrbWUiLCJpbn=
+Rlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyMzQxfQ/f3c867=
+6289180aa144c0ca0237cee3c3b4867dad02086184610ed5bb71093b3b" style=3D"text-d=
+ecoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/so=
+cial-networks-icon-sets/t-only-logo-white/discord@2x.png" alt=3D"Discord" w=
+idth=3D"28"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19=
+qekFzUElvaFhCUT09IiwiaHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vdHJ5aGFja21lIiwiaW=
+50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyMjE5N30/99a88=
+0cb63a8947a65effc3e7fc0390a943d0b3fc812029d83f78912baed77fe" style=3D"text-=
+decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resources/s=
+ocial-networks-icon-sets/t-only-logo-white/twitter@2x.png" alt=3D"X" width=
+=3D"28"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19=
+qekFzUElvaFhCUT09IiwiaHJlZiI6Imh0dHBzOi8vaW5zdGFncmFtLmNvbS9yZWFsdHJ5aGFja2=
+1lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjozfQ/f8=
+8136ede2c6e3a665c096b287940bb789ca95c844c6528520ede66a22deb632" style=3D"te=
+xt-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/resource=
+s/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" alt=3D"Inst=
+agram" width=3D"28"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19=
+qekFzUElvaFhCUT09IiwiaHJlZiI6Imh0dHBzOi8vbGlua2VkaW4uY29tL2NvbXBhbnkvdHJ5aG=
+Fja21lIiwiaW50ZXJuYWwiOiJjYWQ1MDU4MzAyOWJjMTAxYWNlMGRiMDMiLCJsaW5rX2lkIjoyM=
+jE5OX0/bb66c3f0e5c239fb5121b414cb47f8f1013f62d12db4aae681279114c38a8466" st=
+yle=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public=
+/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" alt=
+=3D"LinkedIn" width=3D"28"/></a></td>
+                  <td style=3D"padding:0 6px;"><a href=3D"https://e.custome=
+riomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19=
+qekFzUElvaFhCUT09IiwiaHJlZiI6Imh0dHBzOi8veW91dHViZS5jb20vQHJlYWx0cnloYWNrbW=
+UiLCJpbnRlcm5hbCI6ImNhZDUwNTgzMDI5YmMxMDFhY2UwZGIwMyIsImxpbmtfaWQiOjIyNDMxf=
+Q/b58f8f4b3e850d85649f89ab77e3896f291474880713c49f96258da2ac867054" style=
+=3D"text-decoration:none;"><img src=3D"https://app-rsrc.getbee.io/public/re=
+sources/social-networks-icon-sets/t-only-logo-white/youtube@2x.png" alt=3D"=
+YouTube" width=3D"28"/></a></td>
+                </tr>
+              </tbody></table>
+              <p style=3D"margin:0 0 8px 0; font-family:Arial,Helvetica,san=
+s-serif; font-size:13px; line-height:1.6; color:#ffffff; text-align:center;=
+">
+                <a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI=
+6ImRnVEsxUVVMQUt6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19qekFzUElvaFhCUT09IiwiaHJlZiI6Im=
+h0dHBzOi8vdHJ5aGFja21lLmNvbS90ZXJtcyIsImludGVybmFsIjoiY2FkNTA1ODMwMjliYzEwM=
+WFjZTBkYjAzIiwibGlua19pZCI6MTB9/18b37edb5b3f51d2d854bdb3518178b87baf3d7a6e3=
+6d561b01ef55dd855461b" class=3D"footer-link" style=3D"color:#ffffff !import=
+ant;">Terms</a> =C2=A0|=C2=A0 <a href=3D"#" class=3D"footer-link" style=3D"=
+color:#ffffff !important;">Unsubscribe</a>
+              </p>
+              <p style=3D"margin:0; font-family:Arial,Helvetica,sans-serif;=
+ font-size:13px; line-height:1.6; color:#ffffff; text-align:center;">=C2=A9=
+ 2026 TryHackMe. All rights reserved.</p>
+            </td>
+          </tr>
+
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+
+
+<img src=3D"https://e.customeriomail.com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVMQU=
+t6ZzJ3T3I0TnNEQVo4MnhGb0ZLX19qekFzUElvaFhCUT09In0=3D" style=3D"height: 1px =
+!important; max-height: 1px !important; max-width: 1px !important; width: 1=
+px !important; display: none !important;" alt=3D""/></body></html>
+--23638de69179e4c10b9305520f088535a2317a7edd2ff665b4f10314f603--
