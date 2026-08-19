@@ -5,6 +5,16 @@ from email.utils import parseaddr
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
+import codecs
+
+
+def _unknown_8bit_search(name):
+    if name in ("unknown-8bit", "unknown_8bit"):
+        return codecs.lookup("latin-1")
+    return None
+
+
+codecs.register(_unknown_8bit_search)
 
 URGENCY_KEYWORDS = [
     "urgent", "verify your account", "act now", "suspended",
@@ -59,6 +69,22 @@ def check_auth_headers(msg):
         results[mechanism] = match.group(1).lower() if match else "none"
     
     return results
+
+def _extract_domain(header_value):
+    """
+    Parse an email header (From, Reply-To, etc.) and return its domain,
+    lowercased. Handles the same malformed-header edge case as
+    check_display_name_mismatch: headers where parseaddr() fails because
+    the "display name" is itself an unquoted email address.
+    """
+    if not header_value:
+        return ""
+    _, address = parseaddr(header_value)
+    if not address:
+        angle_match = re.search(r'<([^<>]+)>', header_value)
+        if angle_match:
+            address = angle_match.group(1).strip()
+    return address.split("@")[-1].lower() if "@" in address else ""
 
 
 def check_display_name_mismatch(sender_header):
@@ -140,6 +166,25 @@ def check_suspicious_local_part(actual_address, min_length=20, min_digits=8):
     digit_count = sum(c.isdigit() for c in local_part)
     return 1 if (len(local_part) >= min_length and digit_count >= min_digits) else 0
 
+def check_reply_to_mismatch(sender_header, reply_to_header):
+    """
+    Flags when Reply-To domain differs from From domain — classic spoofing
+    tell where the visible sender looks legitimate but replies route
+    elsewhere.
+
+    Returns 1 if Reply-To is present AND its domain differs from From's domain.
+    Returns 0 if Reply-To is absent, or if domains match.
+    """
+    if not reply_to_header:
+        return 0
+
+    from_domain = _extract_domain(sender_header)
+    reply_to_domain = _extract_domain(reply_to_header)
+
+    if not from_domain or not reply_to_domain:
+        return 0
+
+    return 1 if from_domain != reply_to_domain else 0
 
 def decode_str(s):
     if s is None:
@@ -163,9 +208,11 @@ def analyze_email(filename, verbose=True):
 
     subject = decode_str(msg["subject"])
     sender = decode_str(msg["from"])
+    reply_to = decode_str(msg["reply-to"])
     if verbose:
         print("Subject:", subject)
         print("From:", sender)
+        print("Reply-To:", reply_to)
 
     auth_results = check_auth_headers(msg)
     if verbose:
@@ -227,6 +274,7 @@ def analyze_email(filename, verbose=True):
         "filename": filename,
         "subject": subject,
         "sender": sender,
+        "reply_to": reply_to,
         "auth_results": auth_results,
         "display_name_results": display_name_results,
         "num_links": len(links),
@@ -252,6 +300,7 @@ def extract_features(email_data):
         "embedded_address_mismatch": dn["embedded_address_mismatch"],
         "generic_authority_sender": check_generic_authority_sender(dn["display_name"]),
         "suspicious_local_part": check_suspicious_local_part(dn["actual_address"]),
+        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),
     }
     return features
 
