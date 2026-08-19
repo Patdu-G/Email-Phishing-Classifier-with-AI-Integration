@@ -86,7 +86,24 @@ def _extract_domain(header_value):
             address = angle_match.group(1).strip()
     return address.split("@")[-1].lower() if "@" in address else ""
 
+def _root_domain(domain):
+    """
+    Return the registrable root domain — typically the last two labels
+    (e.g. 'discover.pinterest.com' -> 'pinterest.com'). Not fully correct
+    for multi-part TLDs like '.co.uk', but good enough for this dataset.
+    """
+    parts = domain.split(".")
+    return ".".join(parts[-2:]) if len(parts) >= 2 else domain
 
+
+def _domains_related(domain1, domain2):
+    """
+    True if domain1 and domain2 share the same registrable root domain
+    (e.g. 'discover.pinterest.com' and 'reply.pinterest.com' both root to
+    'pinterest.com'). Used so Reply-To checks don't flag legitimate
+    cross-subdomain mail infrastructure as a mismatch.
+    """
+    return _root_domain(domain1) == _root_domain(domain2)
 def check_display_name_mismatch(sender_header):
     """
     Given a raw 'From' header string (e.g. 'PayPal Support <security@paypa1-verify.com>'),
@@ -170,10 +187,11 @@ def check_reply_to_mismatch(sender_header, reply_to_header):
     """
     Flags when Reply-To domain differs from From domain — classic spoofing
     tell where the visible sender looks legitimate but replies route
-    elsewhere.
+    elsewhere. Related domains (subdomains of the same organization, e.g.
+    'pinterest.com' vs 'reply.pinterest.com') are NOT flagged as mismatches.
 
-    Returns 1 if Reply-To is present AND its domain differs from From's domain.
-    Returns 0 if Reply-To is absent, or if domains match.
+    Returns 1 if Reply-To is present AND its domain is unrelated to From's domain.
+    Returns 0 if Reply-To is absent, domains match, or domains are related.
     """
     if not reply_to_header:
         return 0
@@ -184,7 +202,53 @@ def check_reply_to_mismatch(sender_header, reply_to_header):
     if not from_domain or not reply_to_domain:
         return 0
 
-    return 1 if from_domain != reply_to_domain else 0
+    return 0 if _domains_related(from_domain, reply_to_domain) else 1
+def _levenshtein(a, b):
+    """Standard edit distance, no external deps."""
+    if a == b:
+        return 0
+    if not a:
+        return len(b)
+    if not b:
+        return len(a)
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        curr = [i] + [0] * len(b)
+        for j, cb in enumerate(b, 1):
+            cost = 0 if ca == cb else 1
+            curr[j] = min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost)
+        prev = curr
+    return prev[-1]
+
+
+def check_homograph_domain(actual_domain, max_distance=2, min_domain_length=6):
+    """
+    Flags sending domains that are suspiciously close (small edit distance)
+    to a known brand's legitimate domain but NOT an exact or subdomain
+    match — catches lookalike/typosquat domains (e.g. 'paypa1.com',
+    'micros0ft-verify.com') that check_display_name_mismatch's brand check
+    misses because the display name doesn't mention the brand at all.
+
+    min_domain_length guards against short legit domains (e.g. 'dhl.com',
+    7 chars) colliding at edit-distance-2 with unrelated short domains that
+    have nothing to do with the brand.
+
+    Returns 1 if actual_domain is within max_distance of some known brand's
+    legit domain but isn't that domain (or a subdomain of it), and the legit
+    domain being compared against is at least min_domain_length chars.
+    Returns 0 otherwise.
+    """
+    if not actual_domain:
+        return 0
+
+    for legit_domains in KNOWN_BRANDS.values():
+        for legit in legit_domains:
+            if actual_domain == legit or actual_domain.endswith("." + legit):
+                return 0  # legitimate match to this brand — never flag
+            if len(legit) >= min_domain_length and _levenshtein(actual_domain, legit) <= max_distance:
+                return 1
+
+    return 0
 
 def decode_str(s):
     if s is None:
@@ -300,18 +364,28 @@ def extract_features(email_data):
         "embedded_address_mismatch": dn["embedded_address_mismatch"],
         "generic_authority_sender": check_generic_authority_sender(dn["display_name"]),
         "suspicious_local_part": check_suspicious_local_part(dn["actual_address"]),
-        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),
+        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),
+        "homograph_domain": check_homograph_domain(dn["actual_domain"]),
     }
     return features
 
 
 if __name__ == "__main__":
     files_to_analyze = [
-        "emails/legit/legit_sample.eml",
-        "emails/legit/legit_sample1.eml",
+        "emails/phishing/phish_0028.eml",
+        "emails/phishing/phish_0144.eml",
+        "emails/phishing/phish_0161.eml",
+        "emails/legit/eml_2277.eml",
     ]
     for filename in files_to_analyze:
-        data = analyze_email(filename)
+        data = analyze_email(filename, verbose=False)
         features = extract_features(data)
-        print("\n--- Feature vector ---")
-        print(features)
+        print(f"\n--- {filename} ---")
+        print("From:", data["sender"])
+        print("Reply-To:", data["reply_to"])
+        print("reply_to_mismatch:", features["reply_to_mismatch"])
+
+    print(check_homograph_domain("paypa1.com"))       # expect 1
+    print(check_homograph_domain("paypal.com"))       # expect 0 (exact match)
+    print(check_homograph_domain("mail.paypal.com"))  # expect 0 (subdomain)
+    print(check_homograph_domain("random-blog.com"))  # expect 0 (too far from any brand)
