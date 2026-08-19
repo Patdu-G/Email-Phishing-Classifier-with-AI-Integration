@@ -345,6 +345,8 @@ def analyze_email(filename, verbose=True):
         "num_urgency_keywords": len(found_keywords),
         "urgency_keywords_found": found_keywords,
         "num_link_mismatches": mismatch_count,
+        "body": body,
+        "html_body": html_body,
     }
 
 
@@ -364,7 +366,7 @@ def extract_features(email_data):
         "embedded_address_mismatch": dn["embedded_address_mismatch"],
         "generic_authority_sender": check_generic_authority_sender(dn["display_name"]),
         "suspicious_local_part": check_suspicious_local_part(dn["actual_address"]),
-        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),
+        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),       
         "homograph_domain": check_homograph_domain(dn["actual_domain"]),
     }
     return features

@@ -6,7 +6,7 @@ df = pd.read_csv("dataset.csv")
 print(df.shape)
 print(df["label"].value_counts())
 
-X = df.drop(columns=["label"])
+X = df.drop(columns=["label", "filename"])
 y = df["label"]
 
 X_train, X_test, y_train, y_test = train_test_split(

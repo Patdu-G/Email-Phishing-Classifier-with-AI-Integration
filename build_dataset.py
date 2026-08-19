@@ -19,6 +19,7 @@ def build_dataset():
             try:
                 data = analyze_email(filepath, verbose=False)
                 features = extract_features(data)
+                features["filename"] = filename
                 features["label"] = label
                 rows.append(features)
             except Exception as e:
