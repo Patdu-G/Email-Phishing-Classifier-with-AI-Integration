@@ -21,7 +21,11 @@ URGENCY_KEYWORDS = [
     "click here", "confirm your identity", "limited time",
     "your account has been", "immediately", "security alert",
     "last email", "account is on its way out", "log in within",
-    "we miss you", "expire", "final notice", "don't miss"
+    "we miss you", "expire", "final notice", "don't miss",
+    "unusual activity", "pending status", "new document",
+    "shared with you", "voice message", "delivery", "parcel",
+    "mailbox", "incoming mail", "connection error",
+    "immediate attention", "password has expired", "cancellation",
 ]
 
 # Map of brand keyword -> legitimate domain(s) for that brand.
@@ -307,8 +311,8 @@ def analyze_email(filename, verbose=True):
         for link in links:
             print(link)
 
-    body_lower = body.lower()
-    found_keywords = [kw for kw in URGENCY_KEYWORDS if kw in body_lower]
+    combined_text_lower = (subject + " " + body).lower()
+    found_keywords = [kw for kw in URGENCY_KEYWORDS if kw in combined_text_lower]
     if verbose:
         print("\n--- Urgency keywords found ---")
         print(found_keywords)
