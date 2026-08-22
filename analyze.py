@@ -16,16 +16,19 @@ def _unknown_8bit_search(name):
 
 codecs.register(_unknown_8bit_search)
 
-URGENCY_KEYWORDS = [
+HARD_URGENCY_KEYWORDS = [
     "urgent", "verify your account", "act now", "suspended",
-    "click here", "confirm your identity", "limited time",
-    "your account has been", "immediately", "security alert",
-    "last email", "account is on its way out", "log in within",
-    "we miss you", "expire", "final notice", "don't miss",
-    "unusual activity", "pending status", "new document",
-    "shared with you", "voice message", "delivery", "parcel",
-    "mailbox", "incoming mail", "connection error",
-    "immediate attention", "password has expired", "cancellation",
+    "confirm your identity", "your account has been", "immediately",
+    "security alert", "final notice", "unusual activity",
+    "immediate attention", "password has expired", "log in within",
+    "account is on its way out", "don't miss", "limited time",
+]
+
+SOFT_URGENCY_KEYWORDS = [
+    "click here", "delivery", "parcel", "mailbox", "incoming mail",
+    "connection error", "new document", "shared with you",
+    "voice message", "cancellation", "expire", "we miss you",
+    "pending status",
 ]
 
 # Map of brand keyword -> legitimate domain(s) for that brand.
@@ -66,12 +69,12 @@ GENERIC_AUTHORITY_TERMS = [
 def check_auth_headers(msg):
     """Extract SPF/DKIM/DMARC verdicts from Authentication-Results header."""
     auth_header = msg.get("Authentication-Results", "")
-    
+
     results = {}
     for mechanism in ["spf", "dkim", "dmarc"]:
         match = re.search(rf"{mechanism}=(\w+)", auth_header, re.IGNORECASE)
         results[mechanism] = match.group(1).lower() if match else "none"
-    
+
     return results
 
 def _extract_domain(header_value):
@@ -312,10 +315,13 @@ def analyze_email(filename, verbose=True):
             print(link)
 
     combined_text_lower = (subject + " " + body).lower()
-    found_keywords = [kw for kw in URGENCY_KEYWORDS if kw in combined_text_lower]
+    found_hard_keywords = [kw for kw in HARD_URGENCY_KEYWORDS if kw in combined_text_lower]
+    found_soft_keywords = [kw for kw in SOFT_URGENCY_KEYWORDS if kw in combined_text_lower]
     if verbose:
-        print("\n--- Urgency keywords found ---")
-        print(found_keywords)
+        print("\n--- Hard urgency keywords found ---")
+        print(found_hard_keywords)
+        print("--- Soft urgency keywords found ---")
+        print(found_soft_keywords)
 
     if verbose:
         print("\n--- Link mismatches ---")
@@ -346,8 +352,10 @@ def analyze_email(filename, verbose=True):
         "auth_results": auth_results,
         "display_name_results": display_name_results,
         "num_links": len(links),
-        "num_urgency_keywords": len(found_keywords),
-        "urgency_keywords_found": found_keywords,
+        "num_hard_urgency_keywords": len(found_hard_keywords),
+        "num_soft_urgency_keywords": len(found_soft_keywords),
+        "hard_urgency_keywords_found": found_hard_keywords,
+        "soft_urgency_keywords_found": found_soft_keywords,
         "num_link_mismatches": mismatch_count,
         "body": body,
         "html_body": html_body,
@@ -364,13 +372,14 @@ def extract_features(email_data):
         "dkim_pass": 1 if auth["dkim"] == "pass" else 0,
         "dmarc_pass": 1 if auth["dmarc"] == "pass" else 0,
         "num_links": email_data["num_links"],
-        "num_urgency_keywords": email_data["num_urgency_keywords"],
+        "num_hard_urgency_keywords": email_data["num_hard_urgency_keywords"],
+        "num_soft_urgency_keywords": email_data["num_soft_urgency_keywords"],
         "num_link_mismatches": email_data["num_link_mismatches"],
         "brand_mismatch": dn["brand_mismatch"],
         "embedded_address_mismatch": dn["embedded_address_mismatch"],
         "generic_authority_sender": check_generic_authority_sender(dn["display_name"]),
         "suspicious_local_part": check_suspicious_local_part(dn["actual_address"]),
-        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),       
+        "reply_to_mismatch": check_reply_to_mismatch(email_data["sender"], email_data["reply_to"]),
         "homograph_domain": check_homograph_domain(dn["actual_domain"]),
     }
     return features

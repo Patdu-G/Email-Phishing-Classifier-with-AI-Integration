@@ -18,10 +18,16 @@ print(X[["spf_pass", "dkim_pass", "dmarc_pass"]].corr())
 
 print(df["homograph_domain"].value_counts())
 
+print(df.groupby("label")["num_hard_urgency_keywords"].value_counts().sort_index())
+print(df.groupby("label")["num_soft_urgency_keywords"].value_counts().sort_index())
+
+# --- Collapse collinear auth features into one ordinal score ---
+X["auth_score"] = X["spf_pass"] + X["dkim_pass"] + X["dmarc_pass"]
+X = X.drop(columns=["spf_pass", "dkim_pass", "dmarc_pass"])
+
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
-
 print("Train:", X_train.shape, "Test:", X_test.shape)
 
 # --- Scale features so coefficients are comparable ---
@@ -72,3 +78,24 @@ print("\n--- Sign check ---")
 for _, row in coefficients.iterrows():
     direction = "→ pushes toward PHISHING" if row["coefficient"] > 0 else "→ pushes toward LEGIT"
     print(f"{row['feature']:30s} {row['coefficient']:+.4f}  {direction}")
+
+print("\n--- Sign check ---")
+for _, row in coefficients.iterrows():
+    direction = "→ pushes toward PHISHING" if row["coefficient"] > 0 else "→ pushes toward LEGIT"
+    print(f"{row['feature']:30s} {row['coefficient']:+.4f}  {direction}")
+
+# --- Per-row contribution breakdown for a specific false positive ---
+import numpy as np
+
+row_index = X_test.index.get_loc(43)  # change 43 to inspect a different row
+scaled_row = X_test_scaled[row_index]
+contributions = scaled_row * model.coef_[0]
+contrib_df = pd.DataFrame({
+    "feature": X_train.columns,
+    "scaled_value": scaled_row,
+    "coefficient": model.coef_[0],
+    "contribution": contributions
+}).sort_values("contribution", key=abs, ascending=False)
+print("\n--- Contribution breakdown for row 43 ---")
+print(contrib_df.to_string(index=False))
+print("Sum of contributions + intercept:", contributions.sum() + model.intercept_[0])    
