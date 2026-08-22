@@ -4,6 +4,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
+pd.set_option('display.max_columns', None)
+
 df = pd.read_csv("dataset.csv")
 
 print(df.shape)
@@ -11,6 +13,10 @@ print(df["label"].value_counts())
 
 X = df.drop(columns=["label", "filename"])
 y = df["label"]
+
+print(X[["spf_pass", "dkim_pass", "dmarc_pass"]].corr())
+
+print(df["homograph_domain"].value_counts())
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
